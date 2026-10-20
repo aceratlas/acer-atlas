@@ -40,3 +40,10 @@ De backendkeuze moet worden gemaakt voordat we accounts en codes veilig kunnen i
 - Veiliger migreren van eerder opgeslagen collectiegegevens uit bekende oudere opslagvormen.
 - Bestaande collectie-items kunnen opnieuw aan cultivars gekoppeld worden op database-ID, cultivar-naam, geaccepteerde naam of synoniem.
 - Bronopslag wordt niet verwijderd tijdens herstel.
+
+
+## v3.1 — collectie zichtbaar en aantallen
+- Collectiesortering beperkt tot naam en soort; favorietenfilter blijft beschikbaar.
+- Aantal exemplaren per collectie-item instelbaar (standaard 1).
+- PDF-overzicht toont totaal aantal exemplaren en aantal unieke cultivars boven de tabel.
+- Collectie-weergave bevat een defensieve foutmelding als renderen mislukt; opgeslagen gegevens worden niet verwijderd.
