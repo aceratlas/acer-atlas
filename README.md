@@ -1,4 +1,4 @@
-# Acer Atlas v3.0 — collectie, favorieten en PDF-export
+# Acer Atlas v3.0 — collectie, favorieten en lijstweergave en afdrukken-export
 
 Deze versie bouwt voort op de aangeleverde v2.7-bestanden. De 58 cultivarrecords en bestaande lokale collectieopslag zijn behouden.
 
@@ -6,9 +6,9 @@ Deze versie bouwt voort op de aangeleverde v2.7-bestanden. De 58 cultivarrecords
 - In de catalogus staat de afbeelding links naast de cultivarnaam, in een vergelijkbare indeling als Mijn collectie. De afbeelding opent het cultivarprofiel.
 - Per boom in Mijn collectie kan een favoriet worden ingesteld en weer uitgezet.
 - Filter om alleen favoriete bomen te tonen.
-- PDF/afdrukexport van de volledige collectie.
-- PDF/afdrukexport van alleen favorieten.
-- De export bevat precies de kolommen Naam, Soort, Aankoop en Leeftijd. Kies in het afdrukvenster 'Opslaan als PDF'.
+- lijstweergave en afdrukken/afdrukexport van de volledige collectie.
+- lijstweergave en afdrukken/afdrukexport van alleen favorieten.
+- De export bevat precies de kolommen Naam, Soort, Aankoop en Leeftijd. Kies in het afdrukvenster 'Opslaan als lijstweergave en afdrukken'.
 - Versienummer en service-worker-cache bijgewerkt naar v3.0.
 
 ## Belangrijk: wat nog niet in v3.0 zit
@@ -24,7 +24,7 @@ Accounts, gedeelde collecties tussen apparaten, centrale foto-opslag, moderatie 
 1. Pak de ZIP uit.
 2. Upload de bestanden uit de map `acer-atlas-main` naar de hoofdmap van de repository en vervang gelijknamige bestanden.
 3. Commit de wijzigingen en wacht tot GitHub Pages is bijgewerkt.
-4. Open de app en controleer de versie, favorieten en beide PDF-knoppen.
+4. Open de app en controleer de versie, favorieten en beide lijstweergave en afdrukken-knoppen.
 
 ## Volgende fase
 De backendkeuze moet worden gemaakt voordat we accounts en codes veilig kunnen implementeren. Daarna kunnen we accountregistratie, persoonlijke collectie-synchronisatie, foto-inzendingen met goedkeuring, beheerdersrechten en instelbare toegangscodes bouwen.
@@ -32,8 +32,8 @@ De backendkeuze moet worden gemaakt voordat we accounts en codes veilig kunnen i
 
 ## v3.0
 - Herstelde collectie-rendering door ontbrekende status- en favorietenfuncties toe te voegen.
-- PDF-exportknoppen verplaatst naar aparte tab Uitvoer.
-- PDF-export gebruikt uitsluitend Naam, Soort, Aankoop en Leeftijd.
+- lijstweergave en afdrukken-exportknoppen verplaatst naar aparte tab Uitvoer.
+- lijstweergave en afdrukken-export gebruikt uitsluitend Naam, Soort, Aankoop en Leeftijd.
 
 
 ## v3.0 — herstel collectie-koppelingen
@@ -45,7 +45,7 @@ De backendkeuze moet worden gemaakt voordat we accounts en codes veilig kunnen i
 ## v3.1 — collectie zichtbaar en aantallen
 - Collectiesortering beperkt tot naam en soort; favorietenfilter blijft beschikbaar.
 - Aantal exemplaren per collectie-item instelbaar (standaard 1).
-- PDF-overzicht toont totaal aantal exemplaren en aantal unieke cultivars boven de tabel.
+- lijstweergave en afdrukken-overzicht toont totaal aantal exemplaren en aantal unieke cultivars boven de tabel.
 - Collectie-weergave bevat een defensieve foutmelding als renderen mislukt; opgeslagen gegevens worden niet verwijderd.
 
 
@@ -72,7 +72,13 @@ De backendkeuze moet worden gemaakt voordat we accounts en codes veilig kunnen i
 - De service-worker-cache is bijgewerkt naar v3.5.
 
 
-## v3.6
+## v3.7
 - Favorietenfilter samengevoegd met de sorteerkeuze in Mijn collectie.
-- PDF-uitvoer bevat nu ook de kolom Aantal.
-- PDF gebruikt liggend A4 en bredere kolommen om koppen op één regel te houden.
+- lijstweergave en afdrukken-uitvoer bevat nu ook de kolom Aantal.
+- lijstweergave en afdrukken gebruikt liggend A4 en bredere kolommen om koppen op één regel te houden.
+
+
+## v3.7
+- Corrected the visible version label to v3.7.
+- Export actions now open a previewable list instead of immediately opening the print dialog. Use the explicit print button to choose a printer or save as list/print.
+- Table widths are adjusted for landscape A4; cell text wraps instead of being ellipsized.
