@@ -1,17 +1,17 @@
-# Acer Atlas v2.8 — collectie, favorieten en PDF-export
+# Acer Atlas v2.9 — collectie, favorieten en PDF-export
 
 Deze versie bouwt voort op de aangeleverde v2.7-bestanden. De 58 cultivarrecords en bestaande lokale collectieopslag zijn behouden.
 
-## Nieuw in v2.8
+## Nieuw in v2.9
 - In de catalogus staat de afbeelding links naast de cultivarnaam, in een vergelijkbare indeling als Mijn collectie. De afbeelding opent het cultivarprofiel.
 - Per boom in Mijn collectie kan een favoriet worden ingesteld en weer uitgezet.
 - Filter om alleen favoriete bomen te tonen.
 - PDF/afdrukexport van de volledige collectie.
 - PDF/afdrukexport van alleen favorieten.
 - De export bevat precies de kolommen Naam, Soort, Aankoop en Leeftijd. Kies in het afdrukvenster 'Opslaan als PDF'.
-- Versienummer en service-worker-cache bijgewerkt naar v2.8.
+- Versienummer en service-worker-cache bijgewerkt naar v2.9.
 
-## Belangrijk: wat nog niet in v2.8 zit
+## Belangrijk: wat nog niet in v2.9 zit
 Accounts, gedeelde collecties tussen apparaten, centrale foto-opslag, moderatie van inzendingen, beheeromgeving en toegangscodes zijn nog niet actief. Die functies vereisen een beveiligde backend/database. Deze versie doet niet alsof die functies al werken en stuurt geen gegevens naar een server.
 
 ## Veiligheid en bestaande gegevens
@@ -28,3 +28,9 @@ Accounts, gedeelde collecties tussen apparaten, centrale foto-opslag, moderatie 
 
 ## Volgende fase
 De backendkeuze moet worden gemaakt voordat we accounts en codes veilig kunnen implementeren. Daarna kunnen we accountregistratie, persoonlijke collectie-synchronisatie, foto-inzendingen met goedkeuring, beheerdersrechten en instelbare toegangscodes bouwen.
+
+
+## v2.9
+- Herstelde collectie-rendering door ontbrekende status- en favorietenfuncties toe te voegen.
+- PDF-exportknoppen verplaatst naar aparte tab Uitvoer.
+- PDF-export gebruikt uitsluitend Naam, Soort, Aankoop en Leeftijd.
