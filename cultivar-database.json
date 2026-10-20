@@ -1,8 +1,8 @@
 {
   "app": "Acer Atlas",
-  "version": "2.6-esveld-first-batch",
+  "version": "2.7-collection-focus",
   "record_count": 58,
-  "note": "58 cultivar records retained. Esveld is primary horticultural source. Seven exact Esveld cultivar profiles were reviewed for this batch; remaining entries have clearly labelled Esveld search links only. Historical details are not inferred.",
+  "note": "v2.7 collection-first test build. Cultivar descriptions are shown under Information. Photo URLs still require individual matching/verification; no guessed cultivar images are inserted.",
   "records": [
     {
       "id": "cultivar-ariadne",
@@ -45,7 +45,8 @@
       },
       "review_needed": true,
       "height_after_10_years": "250 cm na 10 jaar",
-      "last_checked": "2026-10-20"
+      "last_checked": "2026-10-20",
+      "photo_status": "needs_verified_photo"
     },
     {
       "id": "cultivar-benimaiko",
@@ -88,7 +89,8 @@
       },
       "review_needed": true,
       "height_after_10_years": "250 cm na 10 jaar",
-      "last_checked": "2026-10-20"
+      "last_checked": "2026-10-20",
+      "photo_status": "needs_verified_photo"
     },
     {
       "id": "cultivar-benitsukasa",
@@ -140,7 +142,8 @@
         "en": "Selector / introducer: Unknown until a reliable cultivar-specific source confirms it. Introduction year not established."
       },
       "review_needed": true,
-      "esveld_review_status": "search-link-only"
+      "esveld_review_status": "search-link-only",
+      "photo_status": "needs_verified_photo"
     },
     {
       "id": "cultivar-bloodgood",
@@ -183,7 +186,8 @@
       },
       "review_needed": true,
       "last_checked": "2026-10-20",
-      "height_after_10_years": "3 m na 10 jaar"
+      "height_after_10_years": "3 m na 10 jaar",
+      "photo_status": "needs_verified_photo"
     },
     {
       "id": "cultivar-burgundylace",
@@ -235,7 +239,8 @@
         "en": "Selector / introducer: Unknown until a reliable cultivar-specific source confirms it. Introduction year not established."
       },
       "review_needed": true,
-      "esveld_review_status": "search-link-only"
+      "esveld_review_status": "search-link-only",
+      "photo_status": "needs_verified_photo"
     },
     {
       "id": "cultivar-chitoseyama",
@@ -287,7 +292,8 @@
         "en": "Selector / introducer: Unknown until a reliable cultivar-specific source confirms it. Introduction year not established."
       },
       "review_needed": true,
-      "esveld_review_status": "search-link-only"
+      "esveld_review_status": "search-link-only",
+      "photo_status": "needs_verified_photo"
     },
     {
       "id": "cultivar-corallinum",
@@ -335,7 +341,8 @@
       },
       "review_needed": true,
       "last_checked": "2026-10-20",
-      "esveld_review_status": "search-link-only"
+      "esveld_review_status": "search-link-only",
+      "photo_status": "needs_verified_photo"
     },
     {
       "id": "cultivar-crimsonqueen",
@@ -378,7 +385,8 @@
       },
       "review_needed": true,
       "height_after_10_years": "150 cm na 10 jaar",
-      "last_checked": "2026-10-20"
+      "last_checked": "2026-10-20",
+      "photo_status": "needs_verified_photo"
     },
     {
       "id": "cultivar-eddisbury",
@@ -430,7 +438,8 @@
         "en": "Selector / introducer: Unknown until a reliable cultivar-specific source confirms it. Introduction year not established."
       },
       "review_needed": true,
-      "esveld_review_status": "search-link-only"
+      "esveld_review_status": "search-link-only",
+      "photo_status": "needs_verified_photo"
     },
     {
       "id": "cultivar-elegans",
@@ -478,7 +487,8 @@
       },
       "review_needed": true,
       "last_checked": "2026-10-20",
-      "esveld_review_status": "search-link-only"
+      "esveld_review_status": "search-link-only",
+      "photo_status": "needs_verified_photo"
     },
     {
       "id": "cultivar-emeraldlace",
@@ -530,7 +540,8 @@
         "en": "Selector / introducer: Unknown until a reliable cultivar-specific source confirms it. Introduction year not established."
       },
       "review_needed": true,
-      "esveld_review_status": "search-link-only"
+      "esveld_review_status": "search-link-only",
+      "photo_status": "needs_verified_photo"
     },
     {
       "id": "cultivar-garnet",
@@ -578,7 +589,8 @@
       },
       "review_needed": true,
       "last_checked": "2026-10-20",
-      "esveld_review_status": "search-link-only"
+      "esveld_review_status": "search-link-only",
+      "photo_status": "needs_verified_photo"
     },
     {
       "id": "cultivar-inabashidare",
@@ -630,7 +642,8 @@
         "en": "Selector / introducer: Unknown until a reliable cultivar-specific source confirms it. Introduction year not established."
       },
       "review_needed": true,
-      "esveld_review_status": "search-link-only"
+      "esveld_review_status": "search-link-only",
+      "photo_status": "needs_verified_photo"
     },
     {
       "id": "cultivar-katsura",
@@ -673,7 +686,8 @@
       },
       "review_needed": true,
       "height_after_10_years": "300 cm na 10 jaar",
-      "last_checked": "2026-10-20"
+      "last_checked": "2026-10-20",
+      "photo_status": "needs_verified_photo"
     },
     {
       "id": "cultivar-kinshi",
@@ -725,7 +739,8 @@
         "en": "Selector / introducer: Unknown until a reliable cultivar-specific source confirms it. Introduction year not established."
       },
       "review_needed": true,
-      "esveld_review_status": "search-link-only"
+      "esveld_review_status": "search-link-only",
+      "photo_status": "needs_verified_photo"
     },
     {
       "id": "cultivar-kiyohime",
@@ -773,7 +788,8 @@
       },
       "review_needed": true,
       "last_checked": "2026-10-20",
-      "esveld_review_status": "search-link-only"
+      "esveld_review_status": "search-link-only",
+      "photo_status": "needs_verified_photo"
     },
     {
       "id": "cultivar-orangedream",
@@ -816,7 +832,8 @@
       },
       "review_needed": true,
       "height_after_10_years": "250 cm na 10 jaar",
-      "last_checked": "2026-10-20"
+      "last_checked": "2026-10-20",
+      "photo_status": "needs_verified_photo"
     },
     {
       "id": "cultivar-orangeola",
@@ -868,7 +885,8 @@
         "en": "Selector / introducer: Unknown until a reliable cultivar-specific source confirms it. Introduction year not established."
       },
       "review_needed": true,
-      "esveld_review_status": "search-link-only"
+      "esveld_review_status": "search-link-only",
+      "photo_status": "needs_verified_photo"
     },
     {
       "id": "cultivar-ornatum",
@@ -916,7 +934,8 @@
       },
       "review_needed": true,
       "last_checked": "2026-10-20",
-      "esveld_review_status": "search-link-only"
+      "esveld_review_status": "search-link-only",
+      "photo_status": "needs_verified_photo"
     },
     {
       "id": "cultivar-osakazuki",
@@ -967,7 +986,8 @@
       },
       "review_needed": true,
       "last_checked": "2026-10-20",
-      "esveld_review_status": "search-link-only"
+      "esveld_review_status": "search-link-only",
+      "photo_status": "needs_verified_photo"
     },
     {
       "id": "cultivar-redpygmy",
@@ -1019,7 +1039,8 @@
         "en": "Selector / introducer: Unknown until a reliable cultivar-specific source confirms it. Introduction year not established."
       },
       "review_needed": true,
-      "esveld_review_status": "search-link-only"
+      "esveld_review_status": "search-link-only",
+      "photo_status": "needs_verified_photo"
     },
     {
       "id": "cultivar-sangokaku",
@@ -1062,7 +1083,8 @@
       },
       "review_needed": true,
       "last_checked": "2026-10-20",
-      "height_after_10_years": "3 m na 10 jaar"
+      "height_after_10_years": "3 m na 10 jaar",
+      "photo_status": "needs_verified_photo"
     },
     {
       "id": "cultivar-seiryu",
@@ -1112,7 +1134,8 @@
       },
       "review_needed": true,
       "last_checked": "2026-10-20",
-      "esveld_review_status": "search-link-only"
+      "esveld_review_status": "search-link-only",
+      "photo_status": "needs_verified_photo"
     },
     {
       "id": "cultivar-shindeshojo",
@@ -1166,7 +1189,8 @@
         "en": "Selector / introducer: Unknown until a reliable cultivar-specific source confirms it. Introduction year not established."
       },
       "review_needed": true,
-      "esveld_review_status": "search-link-only"
+      "esveld_review_status": "search-link-only",
+      "photo_status": "needs_verified_photo"
     },
     {
       "id": "cultivar-shishigashira",
@@ -1218,7 +1242,8 @@
         "en": "Selector / introducer: Unknown until a reliable cultivar-specific source confirms it. Introduction year not established."
       },
       "review_needed": true,
-      "esveld_review_status": "search-link-only"
+      "esveld_review_status": "search-link-only",
+      "photo_status": "needs_verified_photo"
     },
     {
       "id": "cultivar-trompenburg",
@@ -1270,7 +1295,8 @@
         "en": "Selector / introducer: Unknown until a reliable cultivar-specific source confirms it. Introduction year not established."
       },
       "review_needed": true,
-      "esveld_review_status": "search-link-only"
+      "esveld_review_status": "search-link-only",
+      "photo_status": "needs_verified_photo"
     },
     {
       "id": "cultivar-villataranto",
@@ -1322,7 +1348,8 @@
         "en": "Selector / introducer: Unknown until a reliable cultivar-specific source confirms it. Introduction year not established."
       },
       "review_needed": true,
-      "esveld_review_status": "search-link-only"
+      "esveld_review_status": "search-link-only",
+      "photo_status": "needs_verified_photo"
     },
     {
       "id": "cultivar-mikawayatsubusa",
@@ -1376,7 +1403,8 @@
         "en": "Selector / introducer: Unknown until a reliable cultivar-specific source confirms it. Introduction year not established."
       },
       "review_needed": true,
-      "esveld_review_status": "search-link-only"
+      "esveld_review_status": "search-link-only",
+      "photo_status": "needs_verified_photo"
     },
     {
       "id": "cultivar-seigen",
@@ -1428,7 +1456,8 @@
         "en": "Selector / introducer: Unknown until a reliable cultivar-specific source confirms it. Introduction year not established."
       },
       "review_needed": true,
-      "esveld_review_status": "search-link-only"
+      "esveld_review_status": "search-link-only",
+      "photo_status": "needs_verified_photo"
     },
     {
       "id": "cultivar-deshojo",
@@ -1482,7 +1511,8 @@
         "en": "Selector / introducer: Unknown until a reliable cultivar-specific source confirms it. Introduction year not established."
       },
       "review_needed": true,
-      "esveld_review_status": "search-link-only"
+      "esveld_review_status": "search-link-only",
+      "photo_status": "needs_verified_photo"
     },
     {
       "id": "cultivar-viridis",
@@ -1534,7 +1564,8 @@
         "en": "Selector / introducer: Unknown until a reliable cultivar-specific source confirms it. Introduction year not established."
       },
       "review_needed": true,
-      "esveld_review_status": "search-link-only"
+      "esveld_review_status": "search-link-only",
+      "photo_status": "needs_verified_photo"
     },
     {
       "id": "cultivar-waterfall",
@@ -1586,7 +1617,8 @@
         "en": "Selector / introducer: Unknown until a reliable cultivar-specific source confirms it. Introduction year not established."
       },
       "review_needed": true,
-      "esveld_review_status": "search-link-only"
+      "esveld_review_status": "search-link-only",
+      "photo_status": "needs_verified_photo"
     },
     {
       "id": "cultivar-suminagashi",
@@ -1640,7 +1672,8 @@
         "en": "Selector / introducer: Unknown until a reliable cultivar-specific source confirms it. Introduction year not established."
       },
       "review_needed": true,
-      "esveld_review_status": "search-link-only"
+      "esveld_review_status": "search-link-only",
+      "photo_status": "needs_verified_photo"
     },
     {
       "id": "cultivar-firstghost",
@@ -1692,7 +1725,8 @@
         "en": "Selector / introducer: Unknown until a reliable cultivar-specific source confirms it. Introduction year not established."
       },
       "review_needed": true,
-      "esveld_review_status": "search-link-only"
+      "esveld_review_status": "search-link-only",
+      "photo_status": "needs_verified_photo"
     },
     {
       "id": "cultivar-pevestarfish",
@@ -1746,7 +1780,8 @@
         "en": "Selector / introducer: Unknown until a reliable cultivar-specific source confirms it. Introduction year not established."
       },
       "review_needed": true,
-      "esveld_review_status": "search-link-only"
+      "esveld_review_status": "search-link-only",
+      "photo_status": "needs_verified_photo"
     },
     {
       "id": "cultivar-aoshidare",
@@ -1798,7 +1833,8 @@
         "en": "Selector / introducer: Unknown until a reliable cultivar-specific source confirms it. Introduction year not established."
       },
       "review_needed": true,
-      "esveld_review_status": "search-link-only"
+      "esveld_review_status": "search-link-only",
+      "photo_status": "needs_verified_photo"
     },
     {
       "id": "cultivar-kihachijo",
@@ -1848,7 +1884,8 @@
       },
       "review_needed": true,
       "last_checked": "2026-10-20",
-      "esveld_review_status": "search-link-only"
+      "esveld_review_status": "search-link-only",
+      "photo_status": "needs_verified_photo"
     },
     {
       "id": "cultivar-flavescens",
@@ -1900,7 +1937,8 @@
         "en": "Selector / introducer: Unknown until a reliable cultivar-specific source confirms it. Introduction year not established."
       },
       "review_needed": true,
-      "esveld_review_status": "search-link-only"
+      "esveld_review_status": "search-link-only",
+      "photo_status": "needs_verified_photo"
     },
     {
       "id": "cultivar-ukigumo",
@@ -1952,7 +1990,8 @@
         "en": "Selector / introducer: Unknown until a reliable cultivar-specific source confirms it. Introduction year not established."
       },
       "review_needed": true,
-      "esveld_review_status": "search-link-only"
+      "esveld_review_status": "search-link-only",
+      "photo_status": "needs_verified_photo"
     },
     {
       "id": "cultivar-murasakikiyohime",
@@ -2006,7 +2045,8 @@
         "en": "Selector / introducer: Unknown until a reliable cultivar-specific source confirms it. Introduction year not established."
       },
       "review_needed": true,
-      "esveld_review_status": "search-link-only"
+      "esveld_review_status": "search-link-only",
+      "photo_status": "needs_verified_photo"
     },
     {
       "id": "cultivar-benikawa",
@@ -2060,7 +2100,8 @@
         "en": "Selector / introducer: Unknown until a reliable cultivar-specific source confirms it. Introduction year not established."
       },
       "review_needed": true,
-      "esveld_review_status": "search-link-only"
+      "esveld_review_status": "search-link-only",
+      "photo_status": "needs_verified_photo"
     },
     {
       "id": "cultivar-butterfly",
@@ -2108,7 +2149,8 @@
       },
       "review_needed": true,
       "last_checked": "2026-10-20",
-      "esveld_review_status": "search-link-only"
+      "esveld_review_status": "search-link-only",
+      "photo_status": "needs_verified_photo"
     },
     {
       "id": "cultivar-kotonoito",
@@ -2160,7 +2202,8 @@
         "en": "Selector / introducer: Unknown until a reliable cultivar-specific source confirms it. Introduction year not established."
       },
       "review_needed": true,
-      "esveld_review_status": "search-link-only"
+      "esveld_review_status": "search-link-only",
+      "photo_status": "needs_verified_photo"
     },
     {
       "id": "cultivar-shaina",
@@ -2212,7 +2255,8 @@
         "en": "Selector / introducer: Unknown until a reliable cultivar-specific source confirms it. Introduction year not established."
       },
       "review_needed": true,
-      "esveld_review_status": "search-link-only"
+      "esveld_review_status": "search-link-only",
+      "photo_status": "needs_verified_photo"
     },
     {
       "id": "cultivar-higasayama",
@@ -2260,7 +2304,8 @@
       },
       "review_needed": true,
       "last_checked": "2026-10-20",
-      "esveld_review_status": "search-link-only"
+      "esveld_review_status": "search-link-only",
+      "photo_status": "needs_verified_photo"
     },
     {
       "id": "cultivar-mikawakaen",
@@ -2312,7 +2357,8 @@
         "en": "Selector / introducer: Unknown until a reliable cultivar-specific source confirms it. Introduction year not established."
       },
       "review_needed": true,
-      "esveld_review_status": "search-link-only"
+      "esveld_review_status": "search-link-only",
+      "photo_status": "needs_verified_photo"
     },
     {
       "id": "cultivar-tamukeyama",
@@ -2364,7 +2410,8 @@
         "en": "Selector / introducer: Unknown until a reliable cultivar-specific source confirms it. Introduction year not established."
       },
       "review_needed": true,
-      "esveld_review_status": "search-link-only"
+      "esveld_review_status": "search-link-only",
+      "photo_status": "needs_verified_photo"
     },
     {
       "id": "cultivar-akashigitatsusawa",
@@ -2418,7 +2465,8 @@
         "en": "Selector / introducer: Unknown until a reliable cultivar-specific source confirms it. Introduction year not established."
       },
       "review_needed": true,
-      "esveld_review_status": "search-link-only"
+      "esveld_review_status": "search-link-only",
+      "photo_status": "needs_verified_photo"
     },
     {
       "id": "cultivar-benikomachi",
@@ -2472,7 +2520,8 @@
         "en": "Selector / introducer: Unknown until a reliable cultivar-specific source confirms it. Introduction year not established."
       },
       "review_needed": true,
-      "esveld_review_status": "search-link-only"
+      "esveld_review_status": "search-link-only",
+      "photo_status": "needs_verified_photo"
     },
     {
       "id": "cultivar-kotohime",
@@ -2526,7 +2575,8 @@
         "en": "Selector / introducer: Unknown until a reliable cultivar-specific source confirms it. Introduction year not established."
       },
       "review_needed": true,
-      "esveld_review_status": "search-link-only"
+      "esveld_review_status": "search-link-only",
+      "photo_status": "needs_verified_photo"
     },
     {
       "id": "shira-aureum",
@@ -2572,7 +2622,8 @@
         "en": "Introduction year and selector unconfirmed; not filled from assumptions."
       },
       "review_needed": true,
-      "esveld_review_status": "search-link-only"
+      "esveld_review_status": "search-link-only",
+      "photo_status": "needs_verified_photo"
     },
     {
       "id": "shira-autumn-moon",
@@ -2618,7 +2669,8 @@
         "en": "Introduction year and selector unconfirmed; not filled from assumptions."
       },
       "review_needed": true,
-      "esveld_review_status": "search-link-only"
+      "esveld_review_status": "search-link-only",
+      "photo_status": "needs_verified_photo"
     },
     {
       "id": "shira-jordan",
@@ -2664,7 +2716,8 @@
         "en": "Introduction year and selector unconfirmed; not filled from assumptions."
       },
       "review_needed": true,
-      "esveld_review_status": "search-link-only"
+      "esveld_review_status": "search-link-only",
+      "photo_status": "needs_verified_photo"
     },
     {
       "id": "shira-moonrise",
@@ -2710,7 +2763,8 @@
         "en": "Introduction year and selector unconfirmed; not filled from assumptions."
       },
       "review_needed": true,
-      "esveld_review_status": "search-link-only"
+      "esveld_review_status": "search-link-only",
+      "photo_status": "needs_verified_photo"
     },
     {
       "id": "shira-johin",
@@ -2756,7 +2810,8 @@
         "en": "Introduction year and selector unconfirmed; not filled from assumptions."
       },
       "review_needed": true,
-      "esveld_review_status": "search-link-only"
+      "esveld_review_status": "search-link-only",
+      "photo_status": "needs_verified_photo"
     },
     {
       "id": "shira-mikawa-kaen",
@@ -2802,7 +2857,8 @@
         "en": "Introduction year and selector unconfirmed; not filled from assumptions."
       },
       "review_needed": true,
-      "esveld_review_status": "search-link-only"
+      "esveld_review_status": "search-link-only",
+      "photo_status": "needs_verified_photo"
     },
     {
       "id": "shira-mr-sun",
@@ -2848,7 +2904,8 @@
         "en": "Introduction year and selector unconfirmed; not filled from assumptions."
       },
       "review_needed": true,
-      "esveld_review_status": "search-link-only"
+      "esveld_review_status": "search-link-only",
+      "photo_status": "needs_verified_photo"
     },
     {
       "id": "shira-blue-moon",
@@ -2894,7 +2951,8 @@
         "en": "Introduction year and selector unconfirmed; not filled from assumptions."
       },
       "review_needed": true,
-      "esveld_review_status": "search-link-only"
+      "esveld_review_status": "search-link-only",
+      "photo_status": "needs_verified_photo"
     }
   ]
 }
