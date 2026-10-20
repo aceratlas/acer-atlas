@@ -49,7 +49,12 @@ De backendkeuze moet worden gemaakt voordat we accounts en codes veilig kunnen i
 - Collectie-weergave bevat een defensieve foutmelding als renderen mislukt; opgeslagen gegevens worden niet verwijderd.
 
 
-## v3.2
+## v3.3
 - Encyclopedia filters now include only dynamic group and species filters; evidence-status filter removed.
 - Group and species choices are generated from the loaded cultivar database.
 - Collection cultivar suggestions are limited to cultivars already present in the user collection, not the full database.
+
+
+## v3.3 wijzigingen
+- Suggesties voor cultivars worden uitsluitend opgebouwd uit de zichtbare collectie-items; databasecultivars die niet in die lijst staan worden niet als optie aangeboden.
+- Bij het cultivarprofiel staat de knop Favoriet maken boven de sectie Informatie, indien die cultivar in de collectie voorkomt.
