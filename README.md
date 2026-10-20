@@ -1,30 +1,16 @@
-# Acer Atlas — PWA prototype v0.2
+# Acer Atlas v0.4
 
-Tweetalige mobiele webapp (Nederlands/Engels) voor een cultivar-encyclopedie en persoonlijke Japanse-esdoorncollectie.
+Bilingual Dutch/English PWA for a Japanese maple cultivar encyclopedia and personal collection.
 
-## Wat werkt
-- 50 startrecords, met duidelijke labels voor RHS AGM-lijstvermeldingen versus records die nog cultivar-specifiek moeten worden onderzocht.
-- Zoeken, filteren en cultivarprofielen bekijken.
-- De selecteur/introducteur wordt getoond als **Onbekend / Unknown** totdat een betrouwbare cultivar-specifieke bron een persoon bevestigt.
-- Persoonlijke collectie: cultivars toevoegen en eigen bomen registreren met aankoopjaar, kweker, standplaats en notities.
-- Nederlands/Engels wisselen.
-- Lokale opslag op hetzelfde apparaat/browser.
-- PWA-manifest, service worker en iPhone home-screen icon; offline shell na eerste succesvolle online bezoek.
+## Database
+- `index.html` contains the 50 cultivar starter records used by the app and suggestions.
+- `cultivar-database.json` is the transparent export of those same 50 records.
+- Search and add-tree suggestions match cultivar names and the included orthographic aliases.
+- Unknown selectors/introducers are always `Onbekend` / `Unknown`.
+- RHS AGM-listing status only confirms inclusion in that list; it does not establish cultivar history. Other records remain candidates pending cultivar-specific review.
 
-## Belangrijke inhoudelijke grens
-De 50 records zijn een startset, geen 50 volledig geverifieerde historische profielen. Een RHS AGM-lijstvermelding bewijst alleen dat de naam in die lijst staat. De geschiedenis, introductiejaar en selecteur moeten per cultivar met passende bronnen worden onderzocht. Kandidaten zijn expliciet gemarkeerd.
+## Publish
+Upload/replace the files in the repository root, then commit the changes. GitHub Pages should deploy from `main` and `/ (root)`. The service worker cache version is bumped to v0.4.
 
-## Lokaal testen
-Gebruik een lokale webserver, bijvoorbeeld `python -m http.server 8000`, en open `http://localhost:8000/acer_atlas_pwa/`. PWA-installatie en service-worker-gedrag vereisen HTTPS of localhost.
-
-## Op een telefoon installeren
-1. Publiceer de map op een HTTPS-host.
-2. Android: open de URL in Chrome en kies **Install app** of **Add to Home screen**.
-3. iPhone: open de URL in Safari, tik op **Deel**, kies **Zet op beginscherm**, laat **Open als webapp** ingeschakeld en tik op **Voeg toe**.
-
-## Nog niet aanwezig
-- Online accounts en synchronisatie tussen apparaten.
-- Backend-database, beheerinterface, moderatie en community-bijdragen.
-- Automatisch ophalen van internetbronnen.
-- Volledige handmatige verificatie van alle 50 cultivarprofielen.
-- App Store / Google Play publicatie.
+## Important
+This is a starter database, not a fully researched authoritative cultivar registry. Historical data is deliberately marked as unverified until reliable cultivar-specific sources are checked.

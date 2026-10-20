@@ -1,0 +1,2335 @@
+{
+  "app": "Acer Atlas",
+  "version": "0.4",
+  "record_count": 50,
+  "note": "50 startrecords. Source status is explicit; historical claims are not verified merely by a general or RHS-list source.",
+  "records": [
+    {
+      "id": "cultivar-ariadne",
+      "name": "Ariadne",
+      "accepted_name": "Acer palmatum 'Ariadne'",
+      "synonyms": [],
+      "group": "unknown",
+      "traits": {
+        "nl": "Kenmerken nog niet individueel geverifieerd.",
+        "en": "Traits not yet individually verified."
+      },
+      "history": {
+        "nl": "Historische herkomst nog niet voldoende geverifieerd.",
+        "en": "Historical origin not yet sufficiently verified."
+      },
+      "introduction_year": null,
+      "selector_or_introducer": {
+        "nl": "Onbekend",
+        "en": "Unknown"
+      },
+      "origin": {
+        "nl": "Onbekend",
+        "en": "Unknown"
+      },
+      "evidence_status": "rhs-list",
+      "evidence_label": {
+        "nl": "Vermeld in RHS AGM-lijst; historie niet onderzocht",
+        "en": "Listed in RHS AGM list; history not researched"
+      },
+      "sources": [
+        {
+          "title": "RHS Award of Garden Merit — ornamental plants (naamvermelding; geen bewijs van historische introductie)",
+          "url": "https://www.rhs.org.uk/plants/pdfs/agm-lists/agm-ornamentals.pdf",
+          "supports": "RHS AGM-listing only"
+        },
+        {
+          "title": "Trees and Shrubs Online — Acer palmatum (soortcontext, geen cultivar-specifiek bewijs)",
+          "url": "https://www.treesandshrubsonline.org/articles/acer/acer-palmatum/",
+          "supports": "Species-level context only"
+        }
+      ],
+      "historical_notes": {
+        "nl": "Selecteur / introducteur: Onbekend totdat een cultivar-specifieke betrouwbare bron dit bevestigt. Introductiejaar niet vastgesteld.",
+        "en": "Selector / introducer: Unknown until a reliable cultivar-specific source confirms it. Introduction year not established."
+      },
+      "review_needed": true
+    },
+    {
+      "id": "cultivar-benimaiko",
+      "name": "Beni-maiko",
+      "accepted_name": "Acer palmatum 'Beni-maiko'",
+      "synonyms": [],
+      "group": "unknown",
+      "traits": {
+        "nl": "Kenmerken nog niet individueel geverifieerd.",
+        "en": "Traits not yet individually verified."
+      },
+      "history": {
+        "nl": "Historische herkomst nog niet voldoende geverifieerd.",
+        "en": "Historical origin not yet sufficiently verified."
+      },
+      "introduction_year": null,
+      "selector_or_introducer": {
+        "nl": "Onbekend",
+        "en": "Unknown"
+      },
+      "origin": {
+        "nl": "Onbekend",
+        "en": "Unknown"
+      },
+      "evidence_status": "rhs-list",
+      "evidence_label": {
+        "nl": "Vermeld in RHS AGM-lijst; historie niet onderzocht",
+        "en": "Listed in RHS AGM list; history not researched"
+      },
+      "sources": [
+        {
+          "title": "RHS Award of Garden Merit — ornamental plants (naamvermelding; geen bewijs van historische introductie)",
+          "url": "https://www.rhs.org.uk/plants/pdfs/agm-lists/agm-ornamentals.pdf",
+          "supports": "RHS AGM-listing only"
+        },
+        {
+          "title": "Trees and Shrubs Online — Acer palmatum (soortcontext, geen cultivar-specifiek bewijs)",
+          "url": "https://www.treesandshrubsonline.org/articles/acer/acer-palmatum/",
+          "supports": "Species-level context only"
+        }
+      ],
+      "historical_notes": {
+        "nl": "Selecteur / introducteur: Onbekend totdat een cultivar-specifieke betrouwbare bron dit bevestigt. Introductiejaar niet vastgesteld.",
+        "en": "Selector / introducer: Unknown until a reliable cultivar-specific source confirms it. Introduction year not established."
+      },
+      "review_needed": true
+    },
+    {
+      "id": "cultivar-benitsukasa",
+      "name": "Beni-tsukasa",
+      "accepted_name": "Acer palmatum 'Beni-tsukasa'",
+      "synonyms": [],
+      "group": "unknown",
+      "traits": {
+        "nl": "Kenmerken nog niet individueel geverifieerd.",
+        "en": "Traits not yet individually verified."
+      },
+      "history": {
+        "nl": "Historische herkomst nog niet voldoende geverifieerd.",
+        "en": "Historical origin not yet sufficiently verified."
+      },
+      "introduction_year": null,
+      "selector_or_introducer": {
+        "nl": "Onbekend",
+        "en": "Unknown"
+      },
+      "origin": {
+        "nl": "Onbekend",
+        "en": "Unknown"
+      },
+      "evidence_status": "rhs-list",
+      "evidence_label": {
+        "nl": "Vermeld in RHS AGM-lijst; historie niet onderzocht",
+        "en": "Listed in RHS AGM list; history not researched"
+      },
+      "sources": [
+        {
+          "title": "RHS Award of Garden Merit — ornamental plants (naamvermelding; geen bewijs van historische introductie)",
+          "url": "https://www.rhs.org.uk/plants/pdfs/agm-lists/agm-ornamentals.pdf",
+          "supports": "RHS AGM-listing only"
+        },
+        {
+          "title": "Trees and Shrubs Online — Acer palmatum (soortcontext, geen cultivar-specifiek bewijs)",
+          "url": "https://www.treesandshrubsonline.org/articles/acer/acer-palmatum/",
+          "supports": "Species-level context only"
+        }
+      ],
+      "historical_notes": {
+        "nl": "Selecteur / introducteur: Onbekend totdat een cultivar-specifieke betrouwbare bron dit bevestigt. Introductiejaar niet vastgesteld.",
+        "en": "Selector / introducer: Unknown until a reliable cultivar-specific source confirms it. Introduction year not established."
+      },
+      "review_needed": true
+    },
+    {
+      "id": "cultivar-bloodgood",
+      "name": "Bloodgood",
+      "accepted_name": "Acer palmatum 'Bloodgood'",
+      "synonyms": [],
+      "group": "unknown",
+      "traits": {
+        "nl": "Kenmerken nog niet individueel geverifieerd.",
+        "en": "Traits not yet individually verified."
+      },
+      "history": {
+        "nl": "Historische herkomst nog niet voldoende geverifieerd.",
+        "en": "Historical origin not yet sufficiently verified."
+      },
+      "introduction_year": null,
+      "selector_or_introducer": {
+        "nl": "Onbekend",
+        "en": "Unknown"
+      },
+      "origin": {
+        "nl": "Onbekend",
+        "en": "Unknown"
+      },
+      "evidence_status": "rhs-list",
+      "evidence_label": {
+        "nl": "Vermeld in RHS AGM-lijst; historie niet onderzocht",
+        "en": "Listed in RHS AGM list; history not researched"
+      },
+      "sources": [
+        {
+          "title": "RHS Award of Garden Merit — ornamental plants (naamvermelding; geen bewijs van historische introductie)",
+          "url": "https://www.rhs.org.uk/plants/pdfs/agm-lists/agm-ornamentals.pdf",
+          "supports": "RHS AGM-listing only"
+        },
+        {
+          "title": "Trees and Shrubs Online — Acer palmatum (soortcontext, geen cultivar-specifiek bewijs)",
+          "url": "https://www.treesandshrubsonline.org/articles/acer/acer-palmatum/",
+          "supports": "Species-level context only"
+        }
+      ],
+      "historical_notes": {
+        "nl": "Selecteur / introducteur: Onbekend totdat een cultivar-specifieke betrouwbare bron dit bevestigt. Introductiejaar niet vastgesteld.",
+        "en": "Selector / introducer: Unknown until a reliable cultivar-specific source confirms it. Introduction year not established."
+      },
+      "review_needed": true
+    },
+    {
+      "id": "cultivar-burgundylace",
+      "name": "Burgundy Lace",
+      "accepted_name": "Acer palmatum 'Burgundy Lace'",
+      "synonyms": [],
+      "group": "unknown",
+      "traits": {
+        "nl": "Kenmerken nog niet individueel geverifieerd.",
+        "en": "Traits not yet individually verified."
+      },
+      "history": {
+        "nl": "Historische herkomst nog niet voldoende geverifieerd.",
+        "en": "Historical origin not yet sufficiently verified."
+      },
+      "introduction_year": null,
+      "selector_or_introducer": {
+        "nl": "Onbekend",
+        "en": "Unknown"
+      },
+      "origin": {
+        "nl": "Onbekend",
+        "en": "Unknown"
+      },
+      "evidence_status": "rhs-list",
+      "evidence_label": {
+        "nl": "Vermeld in RHS AGM-lijst; historie niet onderzocht",
+        "en": "Listed in RHS AGM list; history not researched"
+      },
+      "sources": [
+        {
+          "title": "RHS Award of Garden Merit — ornamental plants (naamvermelding; geen bewijs van historische introductie)",
+          "url": "https://www.rhs.org.uk/plants/pdfs/agm-lists/agm-ornamentals.pdf",
+          "supports": "RHS AGM-listing only"
+        },
+        {
+          "title": "Trees and Shrubs Online — Acer palmatum (soortcontext, geen cultivar-specifiek bewijs)",
+          "url": "https://www.treesandshrubsonline.org/articles/acer/acer-palmatum/",
+          "supports": "Species-level context only"
+        }
+      ],
+      "historical_notes": {
+        "nl": "Selecteur / introducteur: Onbekend totdat een cultivar-specifieke betrouwbare bron dit bevestigt. Introductiejaar niet vastgesteld.",
+        "en": "Selector / introducer: Unknown until a reliable cultivar-specific source confirms it. Introduction year not established."
+      },
+      "review_needed": true
+    },
+    {
+      "id": "cultivar-chitoseyama",
+      "name": "Chitose-yama",
+      "accepted_name": "Acer palmatum 'Chitose-yama'",
+      "synonyms": [],
+      "group": "unknown",
+      "traits": {
+        "nl": "Kenmerken nog niet individueel geverifieerd.",
+        "en": "Traits not yet individually verified."
+      },
+      "history": {
+        "nl": "Historische herkomst nog niet voldoende geverifieerd.",
+        "en": "Historical origin not yet sufficiently verified."
+      },
+      "introduction_year": null,
+      "selector_or_introducer": {
+        "nl": "Onbekend",
+        "en": "Unknown"
+      },
+      "origin": {
+        "nl": "Onbekend",
+        "en": "Unknown"
+      },
+      "evidence_status": "rhs-list",
+      "evidence_label": {
+        "nl": "Vermeld in RHS AGM-lijst; historie niet onderzocht",
+        "en": "Listed in RHS AGM list; history not researched"
+      },
+      "sources": [
+        {
+          "title": "RHS Award of Garden Merit — ornamental plants (naamvermelding; geen bewijs van historische introductie)",
+          "url": "https://www.rhs.org.uk/plants/pdfs/agm-lists/agm-ornamentals.pdf",
+          "supports": "RHS AGM-listing only"
+        },
+        {
+          "title": "Trees and Shrubs Online — Acer palmatum (soortcontext, geen cultivar-specifiek bewijs)",
+          "url": "https://www.treesandshrubsonline.org/articles/acer/acer-palmatum/",
+          "supports": "Species-level context only"
+        }
+      ],
+      "historical_notes": {
+        "nl": "Selecteur / introducteur: Onbekend totdat een cultivar-specifieke betrouwbare bron dit bevestigt. Introductiejaar niet vastgesteld.",
+        "en": "Selector / introducer: Unknown until a reliable cultivar-specific source confirms it. Introduction year not established."
+      },
+      "review_needed": true
+    },
+    {
+      "id": "cultivar-corallinum",
+      "name": "Corallinum",
+      "accepted_name": "Acer palmatum 'Corallinum'",
+      "synonyms": [],
+      "group": "unknown",
+      "traits": {
+        "nl": "Kenmerken nog niet individueel geverifieerd.",
+        "en": "Traits not yet individually verified."
+      },
+      "history": {
+        "nl": "Historische herkomst nog niet voldoende geverifieerd.",
+        "en": "Historical origin not yet sufficiently verified."
+      },
+      "introduction_year": null,
+      "selector_or_introducer": {
+        "nl": "Onbekend",
+        "en": "Unknown"
+      },
+      "origin": {
+        "nl": "Onbekend",
+        "en": "Unknown"
+      },
+      "evidence_status": "rhs-list",
+      "evidence_label": {
+        "nl": "Vermeld in RHS AGM-lijst; historie niet onderzocht",
+        "en": "Listed in RHS AGM list; history not researched"
+      },
+      "sources": [
+        {
+          "title": "RHS Award of Garden Merit — ornamental plants (naamvermelding; geen bewijs van historische introductie)",
+          "url": "https://www.rhs.org.uk/plants/pdfs/agm-lists/agm-ornamentals.pdf",
+          "supports": "RHS AGM-listing only"
+        },
+        {
+          "title": "Trees and Shrubs Online — Acer palmatum (soortcontext, geen cultivar-specifiek bewijs)",
+          "url": "https://www.treesandshrubsonline.org/articles/acer/acer-palmatum/",
+          "supports": "Species-level context only"
+        }
+      ],
+      "historical_notes": {
+        "nl": "Selecteur / introducteur: Onbekend totdat een cultivar-specifieke betrouwbare bron dit bevestigt. Introductiejaar niet vastgesteld.",
+        "en": "Selector / introducer: Unknown until a reliable cultivar-specific source confirms it. Introduction year not established."
+      },
+      "review_needed": true
+    },
+    {
+      "id": "cultivar-crimsonqueen",
+      "name": "Crimson Queen",
+      "accepted_name": "Acer palmatum 'Crimson Queen'",
+      "synonyms": [],
+      "group": "unknown",
+      "traits": {
+        "nl": "Kenmerken nog niet individueel geverifieerd.",
+        "en": "Traits not yet individually verified."
+      },
+      "history": {
+        "nl": "Historische herkomst nog niet voldoende geverifieerd.",
+        "en": "Historical origin not yet sufficiently verified."
+      },
+      "introduction_year": null,
+      "selector_or_introducer": {
+        "nl": "Onbekend",
+        "en": "Unknown"
+      },
+      "origin": {
+        "nl": "Onbekend",
+        "en": "Unknown"
+      },
+      "evidence_status": "rhs-list",
+      "evidence_label": {
+        "nl": "Vermeld in RHS AGM-lijst; historie niet onderzocht",
+        "en": "Listed in RHS AGM list; history not researched"
+      },
+      "sources": [
+        {
+          "title": "RHS Award of Garden Merit — ornamental plants (naamvermelding; geen bewijs van historische introductie)",
+          "url": "https://www.rhs.org.uk/plants/pdfs/agm-lists/agm-ornamentals.pdf",
+          "supports": "RHS AGM-listing only"
+        },
+        {
+          "title": "Trees and Shrubs Online — Acer palmatum (soortcontext, geen cultivar-specifiek bewijs)",
+          "url": "https://www.treesandshrubsonline.org/articles/acer/acer-palmatum/",
+          "supports": "Species-level context only"
+        }
+      ],
+      "historical_notes": {
+        "nl": "Selecteur / introducteur: Onbekend totdat een cultivar-specifieke betrouwbare bron dit bevestigt. Introductiejaar niet vastgesteld.",
+        "en": "Selector / introducer: Unknown until a reliable cultivar-specific source confirms it. Introduction year not established."
+      },
+      "review_needed": true
+    },
+    {
+      "id": "cultivar-eddisbury",
+      "name": "Eddisbury",
+      "accepted_name": "Acer palmatum 'Eddisbury'",
+      "synonyms": [],
+      "group": "unknown",
+      "traits": {
+        "nl": "Kenmerken nog niet individueel geverifieerd.",
+        "en": "Traits not yet individually verified."
+      },
+      "history": {
+        "nl": "Historische herkomst nog niet voldoende geverifieerd.",
+        "en": "Historical origin not yet sufficiently verified."
+      },
+      "introduction_year": null,
+      "selector_or_introducer": {
+        "nl": "Onbekend",
+        "en": "Unknown"
+      },
+      "origin": {
+        "nl": "Onbekend",
+        "en": "Unknown"
+      },
+      "evidence_status": "rhs-list",
+      "evidence_label": {
+        "nl": "Vermeld in RHS AGM-lijst; historie niet onderzocht",
+        "en": "Listed in RHS AGM list; history not researched"
+      },
+      "sources": [
+        {
+          "title": "RHS Award of Garden Merit — ornamental plants (naamvermelding; geen bewijs van historische introductie)",
+          "url": "https://www.rhs.org.uk/plants/pdfs/agm-lists/agm-ornamentals.pdf",
+          "supports": "RHS AGM-listing only"
+        },
+        {
+          "title": "Trees and Shrubs Online — Acer palmatum (soortcontext, geen cultivar-specifiek bewijs)",
+          "url": "https://www.treesandshrubsonline.org/articles/acer/acer-palmatum/",
+          "supports": "Species-level context only"
+        }
+      ],
+      "historical_notes": {
+        "nl": "Selecteur / introducteur: Onbekend totdat een cultivar-specifieke betrouwbare bron dit bevestigt. Introductiejaar niet vastgesteld.",
+        "en": "Selector / introducer: Unknown until a reliable cultivar-specific source confirms it. Introduction year not established."
+      },
+      "review_needed": true
+    },
+    {
+      "id": "cultivar-elegans",
+      "name": "Elegans",
+      "accepted_name": "Acer palmatum 'Elegans'",
+      "synonyms": [],
+      "group": "unknown",
+      "traits": {
+        "nl": "Kenmerken nog niet individueel geverifieerd.",
+        "en": "Traits not yet individually verified."
+      },
+      "history": {
+        "nl": "Historische herkomst nog niet voldoende geverifieerd.",
+        "en": "Historical origin not yet sufficiently verified."
+      },
+      "introduction_year": null,
+      "selector_or_introducer": {
+        "nl": "Onbekend",
+        "en": "Unknown"
+      },
+      "origin": {
+        "nl": "Onbekend",
+        "en": "Unknown"
+      },
+      "evidence_status": "rhs-list",
+      "evidence_label": {
+        "nl": "Vermeld in RHS AGM-lijst; historie niet onderzocht",
+        "en": "Listed in RHS AGM list; history not researched"
+      },
+      "sources": [
+        {
+          "title": "RHS Award of Garden Merit — ornamental plants (naamvermelding; geen bewijs van historische introductie)",
+          "url": "https://www.rhs.org.uk/plants/pdfs/agm-lists/agm-ornamentals.pdf",
+          "supports": "RHS AGM-listing only"
+        },
+        {
+          "title": "Trees and Shrubs Online — Acer palmatum (soortcontext, geen cultivar-specifiek bewijs)",
+          "url": "https://www.treesandshrubsonline.org/articles/acer/acer-palmatum/",
+          "supports": "Species-level context only"
+        }
+      ],
+      "historical_notes": {
+        "nl": "Selecteur / introducteur: Onbekend totdat een cultivar-specifieke betrouwbare bron dit bevestigt. Introductiejaar niet vastgesteld.",
+        "en": "Selector / introducer: Unknown until a reliable cultivar-specific source confirms it. Introduction year not established."
+      },
+      "review_needed": true
+    },
+    {
+      "id": "cultivar-emeraldlace",
+      "name": "Emerald Lace",
+      "accepted_name": "Acer palmatum 'Emerald Lace'",
+      "synonyms": [],
+      "group": "unknown",
+      "traits": {
+        "nl": "Kenmerken nog niet individueel geverifieerd.",
+        "en": "Traits not yet individually verified."
+      },
+      "history": {
+        "nl": "Historische herkomst nog niet voldoende geverifieerd.",
+        "en": "Historical origin not yet sufficiently verified."
+      },
+      "introduction_year": null,
+      "selector_or_introducer": {
+        "nl": "Onbekend",
+        "en": "Unknown"
+      },
+      "origin": {
+        "nl": "Onbekend",
+        "en": "Unknown"
+      },
+      "evidence_status": "rhs-list",
+      "evidence_label": {
+        "nl": "Vermeld in RHS AGM-lijst; historie niet onderzocht",
+        "en": "Listed in RHS AGM list; history not researched"
+      },
+      "sources": [
+        {
+          "title": "RHS Award of Garden Merit — ornamental plants (naamvermelding; geen bewijs van historische introductie)",
+          "url": "https://www.rhs.org.uk/plants/pdfs/agm-lists/agm-ornamentals.pdf",
+          "supports": "RHS AGM-listing only"
+        },
+        {
+          "title": "Trees and Shrubs Online — Acer palmatum (soortcontext, geen cultivar-specifiek bewijs)",
+          "url": "https://www.treesandshrubsonline.org/articles/acer/acer-palmatum/",
+          "supports": "Species-level context only"
+        }
+      ],
+      "historical_notes": {
+        "nl": "Selecteur / introducteur: Onbekend totdat een cultivar-specifieke betrouwbare bron dit bevestigt. Introductiejaar niet vastgesteld.",
+        "en": "Selector / introducer: Unknown until a reliable cultivar-specific source confirms it. Introduction year not established."
+      },
+      "review_needed": true
+    },
+    {
+      "id": "cultivar-garnet",
+      "name": "Garnet",
+      "accepted_name": "Acer palmatum 'Garnet'",
+      "synonyms": [],
+      "group": "unknown",
+      "traits": {
+        "nl": "Kenmerken nog niet individueel geverifieerd.",
+        "en": "Traits not yet individually verified."
+      },
+      "history": {
+        "nl": "Historische herkomst nog niet voldoende geverifieerd.",
+        "en": "Historical origin not yet sufficiently verified."
+      },
+      "introduction_year": null,
+      "selector_or_introducer": {
+        "nl": "Onbekend",
+        "en": "Unknown"
+      },
+      "origin": {
+        "nl": "Onbekend",
+        "en": "Unknown"
+      },
+      "evidence_status": "rhs-list",
+      "evidence_label": {
+        "nl": "Vermeld in RHS AGM-lijst; historie niet onderzocht",
+        "en": "Listed in RHS AGM list; history not researched"
+      },
+      "sources": [
+        {
+          "title": "RHS Award of Garden Merit — ornamental plants (naamvermelding; geen bewijs van historische introductie)",
+          "url": "https://www.rhs.org.uk/plants/pdfs/agm-lists/agm-ornamentals.pdf",
+          "supports": "RHS AGM-listing only"
+        },
+        {
+          "title": "Trees and Shrubs Online — Acer palmatum (soortcontext, geen cultivar-specifiek bewijs)",
+          "url": "https://www.treesandshrubsonline.org/articles/acer/acer-palmatum/",
+          "supports": "Species-level context only"
+        }
+      ],
+      "historical_notes": {
+        "nl": "Selecteur / introducteur: Onbekend totdat een cultivar-specifieke betrouwbare bron dit bevestigt. Introductiejaar niet vastgesteld.",
+        "en": "Selector / introducer: Unknown until a reliable cultivar-specific source confirms it. Introduction year not established."
+      },
+      "review_needed": true
+    },
+    {
+      "id": "cultivar-inabashidare",
+      "name": "Inaba-shidare",
+      "accepted_name": "Acer palmatum 'Inaba-shidare'",
+      "synonyms": [],
+      "group": "unknown",
+      "traits": {
+        "nl": "Kenmerken nog niet individueel geverifieerd.",
+        "en": "Traits not yet individually verified."
+      },
+      "history": {
+        "nl": "Historische herkomst nog niet voldoende geverifieerd.",
+        "en": "Historical origin not yet sufficiently verified."
+      },
+      "introduction_year": null,
+      "selector_or_introducer": {
+        "nl": "Onbekend",
+        "en": "Unknown"
+      },
+      "origin": {
+        "nl": "Onbekend",
+        "en": "Unknown"
+      },
+      "evidence_status": "rhs-list",
+      "evidence_label": {
+        "nl": "Vermeld in RHS AGM-lijst; historie niet onderzocht",
+        "en": "Listed in RHS AGM list; history not researched"
+      },
+      "sources": [
+        {
+          "title": "RHS Award of Garden Merit — ornamental plants (naamvermelding; geen bewijs van historische introductie)",
+          "url": "https://www.rhs.org.uk/plants/pdfs/agm-lists/agm-ornamentals.pdf",
+          "supports": "RHS AGM-listing only"
+        },
+        {
+          "title": "Trees and Shrubs Online — Acer palmatum (soortcontext, geen cultivar-specifiek bewijs)",
+          "url": "https://www.treesandshrubsonline.org/articles/acer/acer-palmatum/",
+          "supports": "Species-level context only"
+        }
+      ],
+      "historical_notes": {
+        "nl": "Selecteur / introducteur: Onbekend totdat een cultivar-specifieke betrouwbare bron dit bevestigt. Introductiejaar niet vastgesteld.",
+        "en": "Selector / introducer: Unknown until a reliable cultivar-specific source confirms it. Introduction year not established."
+      },
+      "review_needed": true
+    },
+    {
+      "id": "cultivar-katsura",
+      "name": "Katsura",
+      "accepted_name": "Acer palmatum 'Katsura'",
+      "synonyms": [],
+      "group": "unknown",
+      "traits": {
+        "nl": "Kenmerken nog niet individueel geverifieerd.",
+        "en": "Traits not yet individually verified."
+      },
+      "history": {
+        "nl": "Historische herkomst nog niet voldoende geverifieerd.",
+        "en": "Historical origin not yet sufficiently verified."
+      },
+      "introduction_year": null,
+      "selector_or_introducer": {
+        "nl": "Onbekend",
+        "en": "Unknown"
+      },
+      "origin": {
+        "nl": "Onbekend",
+        "en": "Unknown"
+      },
+      "evidence_status": "rhs-list",
+      "evidence_label": {
+        "nl": "Vermeld in RHS AGM-lijst; historie niet onderzocht",
+        "en": "Listed in RHS AGM list; history not researched"
+      },
+      "sources": [
+        {
+          "title": "RHS Award of Garden Merit — ornamental plants (naamvermelding; geen bewijs van historische introductie)",
+          "url": "https://www.rhs.org.uk/plants/pdfs/agm-lists/agm-ornamentals.pdf",
+          "supports": "RHS AGM-listing only"
+        },
+        {
+          "title": "Trees and Shrubs Online — Acer palmatum (soortcontext, geen cultivar-specifiek bewijs)",
+          "url": "https://www.treesandshrubsonline.org/articles/acer/acer-palmatum/",
+          "supports": "Species-level context only"
+        }
+      ],
+      "historical_notes": {
+        "nl": "Selecteur / introducteur: Onbekend totdat een cultivar-specifieke betrouwbare bron dit bevestigt. Introductiejaar niet vastgesteld.",
+        "en": "Selector / introducer: Unknown until a reliable cultivar-specific source confirms it. Introduction year not established."
+      },
+      "review_needed": true
+    },
+    {
+      "id": "cultivar-kinshi",
+      "name": "Kinshi",
+      "accepted_name": "Acer palmatum 'Kinshi'",
+      "synonyms": [],
+      "group": "unknown",
+      "traits": {
+        "nl": "Kenmerken nog niet individueel geverifieerd.",
+        "en": "Traits not yet individually verified."
+      },
+      "history": {
+        "nl": "Historische herkomst nog niet voldoende geverifieerd.",
+        "en": "Historical origin not yet sufficiently verified."
+      },
+      "introduction_year": null,
+      "selector_or_introducer": {
+        "nl": "Onbekend",
+        "en": "Unknown"
+      },
+      "origin": {
+        "nl": "Onbekend",
+        "en": "Unknown"
+      },
+      "evidence_status": "rhs-list",
+      "evidence_label": {
+        "nl": "Vermeld in RHS AGM-lijst; historie niet onderzocht",
+        "en": "Listed in RHS AGM list; history not researched"
+      },
+      "sources": [
+        {
+          "title": "RHS Award of Garden Merit — ornamental plants (naamvermelding; geen bewijs van historische introductie)",
+          "url": "https://www.rhs.org.uk/plants/pdfs/agm-lists/agm-ornamentals.pdf",
+          "supports": "RHS AGM-listing only"
+        },
+        {
+          "title": "Trees and Shrubs Online — Acer palmatum (soortcontext, geen cultivar-specifiek bewijs)",
+          "url": "https://www.treesandshrubsonline.org/articles/acer/acer-palmatum/",
+          "supports": "Species-level context only"
+        }
+      ],
+      "historical_notes": {
+        "nl": "Selecteur / introducteur: Onbekend totdat een cultivar-specifieke betrouwbare bron dit bevestigt. Introductiejaar niet vastgesteld.",
+        "en": "Selector / introducer: Unknown until a reliable cultivar-specific source confirms it. Introduction year not established."
+      },
+      "review_needed": true
+    },
+    {
+      "id": "cultivar-kiyohime",
+      "name": "Kiyohime",
+      "accepted_name": "Acer palmatum 'Kiyohime'",
+      "synonyms": [],
+      "group": "unknown",
+      "traits": {
+        "nl": "Kenmerken nog niet individueel geverifieerd.",
+        "en": "Traits not yet individually verified."
+      },
+      "history": {
+        "nl": "Historische herkomst nog niet voldoende geverifieerd.",
+        "en": "Historical origin not yet sufficiently verified."
+      },
+      "introduction_year": null,
+      "selector_or_introducer": {
+        "nl": "Onbekend",
+        "en": "Unknown"
+      },
+      "origin": {
+        "nl": "Onbekend",
+        "en": "Unknown"
+      },
+      "evidence_status": "rhs-list",
+      "evidence_label": {
+        "nl": "Vermeld in RHS AGM-lijst; historie niet onderzocht",
+        "en": "Listed in RHS AGM list; history not researched"
+      },
+      "sources": [
+        {
+          "title": "RHS Award of Garden Merit — ornamental plants (naamvermelding; geen bewijs van historische introductie)",
+          "url": "https://www.rhs.org.uk/plants/pdfs/agm-lists/agm-ornamentals.pdf",
+          "supports": "RHS AGM-listing only"
+        },
+        {
+          "title": "Trees and Shrubs Online — Acer palmatum (soortcontext, geen cultivar-specifiek bewijs)",
+          "url": "https://www.treesandshrubsonline.org/articles/acer/acer-palmatum/",
+          "supports": "Species-level context only"
+        }
+      ],
+      "historical_notes": {
+        "nl": "Selecteur / introducteur: Onbekend totdat een cultivar-specifieke betrouwbare bron dit bevestigt. Introductiejaar niet vastgesteld.",
+        "en": "Selector / introducer: Unknown until a reliable cultivar-specific source confirms it. Introduction year not established."
+      },
+      "review_needed": true
+    },
+    {
+      "id": "cultivar-orangedream",
+      "name": "Orange Dream",
+      "accepted_name": "Acer palmatum 'Orange Dream'",
+      "synonyms": [],
+      "group": "unknown",
+      "traits": {
+        "nl": "Kenmerken nog niet individueel geverifieerd.",
+        "en": "Traits not yet individually verified."
+      },
+      "history": {
+        "nl": "Historische herkomst nog niet voldoende geverifieerd.",
+        "en": "Historical origin not yet sufficiently verified."
+      },
+      "introduction_year": null,
+      "selector_or_introducer": {
+        "nl": "Onbekend",
+        "en": "Unknown"
+      },
+      "origin": {
+        "nl": "Onbekend",
+        "en": "Unknown"
+      },
+      "evidence_status": "rhs-list",
+      "evidence_label": {
+        "nl": "Vermeld in RHS AGM-lijst; historie niet onderzocht",
+        "en": "Listed in RHS AGM list; history not researched"
+      },
+      "sources": [
+        {
+          "title": "RHS Award of Garden Merit — ornamental plants (naamvermelding; geen bewijs van historische introductie)",
+          "url": "https://www.rhs.org.uk/plants/pdfs/agm-lists/agm-ornamentals.pdf",
+          "supports": "RHS AGM-listing only"
+        },
+        {
+          "title": "Trees and Shrubs Online — Acer palmatum (soortcontext, geen cultivar-specifiek bewijs)",
+          "url": "https://www.treesandshrubsonline.org/articles/acer/acer-palmatum/",
+          "supports": "Species-level context only"
+        }
+      ],
+      "historical_notes": {
+        "nl": "Selecteur / introducteur: Onbekend totdat een cultivar-specifieke betrouwbare bron dit bevestigt. Introductiejaar niet vastgesteld.",
+        "en": "Selector / introducer: Unknown until a reliable cultivar-specific source confirms it. Introduction year not established."
+      },
+      "review_needed": true
+    },
+    {
+      "id": "cultivar-orangeola",
+      "name": "Orangeola",
+      "accepted_name": "Acer palmatum 'Orangeola'",
+      "synonyms": [],
+      "group": "unknown",
+      "traits": {
+        "nl": "Kenmerken nog niet individueel geverifieerd.",
+        "en": "Traits not yet individually verified."
+      },
+      "history": {
+        "nl": "Historische herkomst nog niet voldoende geverifieerd.",
+        "en": "Historical origin not yet sufficiently verified."
+      },
+      "introduction_year": null,
+      "selector_or_introducer": {
+        "nl": "Onbekend",
+        "en": "Unknown"
+      },
+      "origin": {
+        "nl": "Onbekend",
+        "en": "Unknown"
+      },
+      "evidence_status": "rhs-list",
+      "evidence_label": {
+        "nl": "Vermeld in RHS AGM-lijst; historie niet onderzocht",
+        "en": "Listed in RHS AGM list; history not researched"
+      },
+      "sources": [
+        {
+          "title": "RHS Award of Garden Merit — ornamental plants (naamvermelding; geen bewijs van historische introductie)",
+          "url": "https://www.rhs.org.uk/plants/pdfs/agm-lists/agm-ornamentals.pdf",
+          "supports": "RHS AGM-listing only"
+        },
+        {
+          "title": "Trees and Shrubs Online — Acer palmatum (soortcontext, geen cultivar-specifiek bewijs)",
+          "url": "https://www.treesandshrubsonline.org/articles/acer/acer-palmatum/",
+          "supports": "Species-level context only"
+        }
+      ],
+      "historical_notes": {
+        "nl": "Selecteur / introducteur: Onbekend totdat een cultivar-specifieke betrouwbare bron dit bevestigt. Introductiejaar niet vastgesteld.",
+        "en": "Selector / introducer: Unknown until a reliable cultivar-specific source confirms it. Introduction year not established."
+      },
+      "review_needed": true
+    },
+    {
+      "id": "cultivar-ornatum",
+      "name": "Ornatum",
+      "accepted_name": "Acer palmatum 'Ornatum'",
+      "synonyms": [],
+      "group": "unknown",
+      "traits": {
+        "nl": "Kenmerken nog niet individueel geverifieerd.",
+        "en": "Traits not yet individually verified."
+      },
+      "history": {
+        "nl": "Historische herkomst nog niet voldoende geverifieerd.",
+        "en": "Historical origin not yet sufficiently verified."
+      },
+      "introduction_year": null,
+      "selector_or_introducer": {
+        "nl": "Onbekend",
+        "en": "Unknown"
+      },
+      "origin": {
+        "nl": "Onbekend",
+        "en": "Unknown"
+      },
+      "evidence_status": "rhs-list",
+      "evidence_label": {
+        "nl": "Vermeld in RHS AGM-lijst; historie niet onderzocht",
+        "en": "Listed in RHS AGM list; history not researched"
+      },
+      "sources": [
+        {
+          "title": "RHS Award of Garden Merit — ornamental plants (naamvermelding; geen bewijs van historische introductie)",
+          "url": "https://www.rhs.org.uk/plants/pdfs/agm-lists/agm-ornamentals.pdf",
+          "supports": "RHS AGM-listing only"
+        },
+        {
+          "title": "Trees and Shrubs Online — Acer palmatum (soortcontext, geen cultivar-specifiek bewijs)",
+          "url": "https://www.treesandshrubsonline.org/articles/acer/acer-palmatum/",
+          "supports": "Species-level context only"
+        }
+      ],
+      "historical_notes": {
+        "nl": "Selecteur / introducteur: Onbekend totdat een cultivar-specifieke betrouwbare bron dit bevestigt. Introductiejaar niet vastgesteld.",
+        "en": "Selector / introducer: Unknown until a reliable cultivar-specific source confirms it. Introduction year not established."
+      },
+      "review_needed": true
+    },
+    {
+      "id": "cultivar-osakazuki",
+      "name": "Ōsakazuki",
+      "accepted_name": "Acer palmatum 'Ōsakazuki'",
+      "synonyms": [
+        "Osakazuki",
+        "O-sakazuki"
+      ],
+      "group": "unknown",
+      "traits": {
+        "nl": "Kenmerken nog niet individueel geverifieerd.",
+        "en": "Traits not yet individually verified."
+      },
+      "history": {
+        "nl": "Historische herkomst nog niet voldoende geverifieerd.",
+        "en": "Historical origin not yet sufficiently verified."
+      },
+      "introduction_year": null,
+      "selector_or_introducer": {
+        "nl": "Onbekend",
+        "en": "Unknown"
+      },
+      "origin": {
+        "nl": "Onbekend",
+        "en": "Unknown"
+      },
+      "evidence_status": "rhs-list",
+      "evidence_label": {
+        "nl": "Vermeld in RHS AGM-lijst; historie niet onderzocht",
+        "en": "Listed in RHS AGM list; history not researched"
+      },
+      "sources": [
+        {
+          "title": "RHS Award of Garden Merit — ornamental plants (naamvermelding; geen bewijs van historische introductie)",
+          "url": "https://www.rhs.org.uk/plants/pdfs/agm-lists/agm-ornamentals.pdf",
+          "supports": "RHS AGM-listing only"
+        },
+        {
+          "title": "Trees and Shrubs Online — Acer palmatum (soortcontext, geen cultivar-specifiek bewijs)",
+          "url": "https://www.treesandshrubsonline.org/articles/acer/acer-palmatum/",
+          "supports": "Species-level context only"
+        }
+      ],
+      "historical_notes": {
+        "nl": "Selecteur / introducteur: Onbekend totdat een cultivar-specifieke betrouwbare bron dit bevestigt. Introductiejaar niet vastgesteld.",
+        "en": "Selector / introducer: Unknown until a reliable cultivar-specific source confirms it. Introduction year not established."
+      },
+      "review_needed": true
+    },
+    {
+      "id": "cultivar-redpygmy",
+      "name": "Red Pygmy",
+      "accepted_name": "Acer palmatum 'Red Pygmy'",
+      "synonyms": [],
+      "group": "unknown",
+      "traits": {
+        "nl": "Kenmerken nog niet individueel geverifieerd.",
+        "en": "Traits not yet individually verified."
+      },
+      "history": {
+        "nl": "Historische herkomst nog niet voldoende geverifieerd.",
+        "en": "Historical origin not yet sufficiently verified."
+      },
+      "introduction_year": null,
+      "selector_or_introducer": {
+        "nl": "Onbekend",
+        "en": "Unknown"
+      },
+      "origin": {
+        "nl": "Onbekend",
+        "en": "Unknown"
+      },
+      "evidence_status": "rhs-list",
+      "evidence_label": {
+        "nl": "Vermeld in RHS AGM-lijst; historie niet onderzocht",
+        "en": "Listed in RHS AGM list; history not researched"
+      },
+      "sources": [
+        {
+          "title": "RHS Award of Garden Merit — ornamental plants (naamvermelding; geen bewijs van historische introductie)",
+          "url": "https://www.rhs.org.uk/plants/pdfs/agm-lists/agm-ornamentals.pdf",
+          "supports": "RHS AGM-listing only"
+        },
+        {
+          "title": "Trees and Shrubs Online — Acer palmatum (soortcontext, geen cultivar-specifiek bewijs)",
+          "url": "https://www.treesandshrubsonline.org/articles/acer/acer-palmatum/",
+          "supports": "Species-level context only"
+        }
+      ],
+      "historical_notes": {
+        "nl": "Selecteur / introducteur: Onbekend totdat een cultivar-specifieke betrouwbare bron dit bevestigt. Introductiejaar niet vastgesteld.",
+        "en": "Selector / introducer: Unknown until a reliable cultivar-specific source confirms it. Introduction year not established."
+      },
+      "review_needed": true
+    },
+    {
+      "id": "cultivar-sangokaku",
+      "name": "Sango-kaku",
+      "accepted_name": "Acer palmatum 'Sango-kaku'",
+      "synonyms": [],
+      "group": "unknown",
+      "traits": {
+        "nl": "Kenmerken nog niet individueel geverifieerd.",
+        "en": "Traits not yet individually verified."
+      },
+      "history": {
+        "nl": "Historische herkomst nog niet voldoende geverifieerd.",
+        "en": "Historical origin not yet sufficiently verified."
+      },
+      "introduction_year": null,
+      "selector_or_introducer": {
+        "nl": "Onbekend",
+        "en": "Unknown"
+      },
+      "origin": {
+        "nl": "Onbekend",
+        "en": "Unknown"
+      },
+      "evidence_status": "rhs-list",
+      "evidence_label": {
+        "nl": "Vermeld in RHS AGM-lijst; historie niet onderzocht",
+        "en": "Listed in RHS AGM list; history not researched"
+      },
+      "sources": [
+        {
+          "title": "RHS Award of Garden Merit — ornamental plants (naamvermelding; geen bewijs van historische introductie)",
+          "url": "https://www.rhs.org.uk/plants/pdfs/agm-lists/agm-ornamentals.pdf",
+          "supports": "RHS AGM-listing only"
+        },
+        {
+          "title": "Trees and Shrubs Online — Acer palmatum (soortcontext, geen cultivar-specifiek bewijs)",
+          "url": "https://www.treesandshrubsonline.org/articles/acer/acer-palmatum/",
+          "supports": "Species-level context only"
+        }
+      ],
+      "historical_notes": {
+        "nl": "Selecteur / introducteur: Onbekend totdat een cultivar-specifieke betrouwbare bron dit bevestigt. Introductiejaar niet vastgesteld.",
+        "en": "Selector / introducer: Unknown until a reliable cultivar-specific source confirms it. Introduction year not established."
+      },
+      "review_needed": true
+    },
+    {
+      "id": "cultivar-seiryu",
+      "name": "Seiryū",
+      "accepted_name": "Acer palmatum 'Seiryū'",
+      "synonyms": [
+        "Seiryu"
+      ],
+      "group": "unknown",
+      "traits": {
+        "nl": "Kenmerken nog niet individueel geverifieerd.",
+        "en": "Traits not yet individually verified."
+      },
+      "history": {
+        "nl": "Historische herkomst nog niet voldoende geverifieerd.",
+        "en": "Historical origin not yet sufficiently verified."
+      },
+      "introduction_year": null,
+      "selector_or_introducer": {
+        "nl": "Onbekend",
+        "en": "Unknown"
+      },
+      "origin": {
+        "nl": "Onbekend",
+        "en": "Unknown"
+      },
+      "evidence_status": "rhs-list",
+      "evidence_label": {
+        "nl": "Vermeld in RHS AGM-lijst; historie niet onderzocht",
+        "en": "Listed in RHS AGM list; history not researched"
+      },
+      "sources": [
+        {
+          "title": "RHS Award of Garden Merit — ornamental plants (naamvermelding; geen bewijs van historische introductie)",
+          "url": "https://www.rhs.org.uk/plants/pdfs/agm-lists/agm-ornamentals.pdf",
+          "supports": "RHS AGM-listing only"
+        },
+        {
+          "title": "Trees and Shrubs Online — Acer palmatum (soortcontext, geen cultivar-specifiek bewijs)",
+          "url": "https://www.treesandshrubsonline.org/articles/acer/acer-palmatum/",
+          "supports": "Species-level context only"
+        }
+      ],
+      "historical_notes": {
+        "nl": "Selecteur / introducteur: Onbekend totdat een cultivar-specifieke betrouwbare bron dit bevestigt. Introductiejaar niet vastgesteld.",
+        "en": "Selector / introducer: Unknown until a reliable cultivar-specific source confirms it. Introduction year not established."
+      },
+      "review_needed": true
+    },
+    {
+      "id": "cultivar-shindeshojo",
+      "name": "Shin-deshōjō",
+      "accepted_name": "Acer palmatum 'Shin-deshōjō'",
+      "synonyms": [
+        "Shin-deshojo"
+      ],
+      "group": "unknown",
+      "traits": {
+        "nl": "Kenmerken nog niet individueel geverifieerd.",
+        "en": "Traits not yet individually verified."
+      },
+      "history": {
+        "nl": "Historische herkomst nog niet voldoende geverifieerd.",
+        "en": "Historical origin not yet sufficiently verified."
+      },
+      "introduction_year": null,
+      "selector_or_introducer": {
+        "nl": "Onbekend",
+        "en": "Unknown"
+      },
+      "origin": {
+        "nl": "Onbekend",
+        "en": "Unknown"
+      },
+      "evidence_status": "rhs-list",
+      "evidence_label": {
+        "nl": "Vermeld in RHS AGM-lijst; historie niet onderzocht",
+        "en": "Listed in RHS AGM list; history not researched"
+      },
+      "sources": [
+        {
+          "title": "RHS Award of Garden Merit — ornamental plants (naamvermelding; geen bewijs van historische introductie)",
+          "url": "https://www.rhs.org.uk/plants/pdfs/agm-lists/agm-ornamentals.pdf",
+          "supports": "RHS AGM-listing only"
+        },
+        {
+          "title": "Trees and Shrubs Online — Acer palmatum (soortcontext, geen cultivar-specifiek bewijs)",
+          "url": "https://www.treesandshrubsonline.org/articles/acer/acer-palmatum/",
+          "supports": "Species-level context only"
+        }
+      ],
+      "historical_notes": {
+        "nl": "Selecteur / introducteur: Onbekend totdat een cultivar-specifieke betrouwbare bron dit bevestigt. Introductiejaar niet vastgesteld.",
+        "en": "Selector / introducer: Unknown until a reliable cultivar-specific source confirms it. Introduction year not established."
+      },
+      "review_needed": true
+    },
+    {
+      "id": "cultivar-shishigashira",
+      "name": "Shishi-gashira",
+      "accepted_name": "Acer palmatum 'Shishi-gashira'",
+      "synonyms": [],
+      "group": "unknown",
+      "traits": {
+        "nl": "Kenmerken nog niet individueel geverifieerd.",
+        "en": "Traits not yet individually verified."
+      },
+      "history": {
+        "nl": "Historische herkomst nog niet voldoende geverifieerd.",
+        "en": "Historical origin not yet sufficiently verified."
+      },
+      "introduction_year": null,
+      "selector_or_introducer": {
+        "nl": "Onbekend",
+        "en": "Unknown"
+      },
+      "origin": {
+        "nl": "Onbekend",
+        "en": "Unknown"
+      },
+      "evidence_status": "rhs-list",
+      "evidence_label": {
+        "nl": "Vermeld in RHS AGM-lijst; historie niet onderzocht",
+        "en": "Listed in RHS AGM list; history not researched"
+      },
+      "sources": [
+        {
+          "title": "RHS Award of Garden Merit — ornamental plants (naamvermelding; geen bewijs van historische introductie)",
+          "url": "https://www.rhs.org.uk/plants/pdfs/agm-lists/agm-ornamentals.pdf",
+          "supports": "RHS AGM-listing only"
+        },
+        {
+          "title": "Trees and Shrubs Online — Acer palmatum (soortcontext, geen cultivar-specifiek bewijs)",
+          "url": "https://www.treesandshrubsonline.org/articles/acer/acer-palmatum/",
+          "supports": "Species-level context only"
+        }
+      ],
+      "historical_notes": {
+        "nl": "Selecteur / introducteur: Onbekend totdat een cultivar-specifieke betrouwbare bron dit bevestigt. Introductiejaar niet vastgesteld.",
+        "en": "Selector / introducer: Unknown until a reliable cultivar-specific source confirms it. Introduction year not established."
+      },
+      "review_needed": true
+    },
+    {
+      "id": "cultivar-trompenburg",
+      "name": "Trompenburg",
+      "accepted_name": "Acer palmatum 'Trompenburg'",
+      "synonyms": [],
+      "group": "unknown",
+      "traits": {
+        "nl": "Kenmerken nog niet individueel geverifieerd.",
+        "en": "Traits not yet individually verified."
+      },
+      "history": {
+        "nl": "Historische herkomst nog niet voldoende geverifieerd.",
+        "en": "Historical origin not yet sufficiently verified."
+      },
+      "introduction_year": null,
+      "selector_or_introducer": {
+        "nl": "Onbekend",
+        "en": "Unknown"
+      },
+      "origin": {
+        "nl": "Onbekend",
+        "en": "Unknown"
+      },
+      "evidence_status": "rhs-list",
+      "evidence_label": {
+        "nl": "Vermeld in RHS AGM-lijst; historie niet onderzocht",
+        "en": "Listed in RHS AGM list; history not researched"
+      },
+      "sources": [
+        {
+          "title": "RHS Award of Garden Merit — ornamental plants (naamvermelding; geen bewijs van historische introductie)",
+          "url": "https://www.rhs.org.uk/plants/pdfs/agm-lists/agm-ornamentals.pdf",
+          "supports": "RHS AGM-listing only"
+        },
+        {
+          "title": "Trees and Shrubs Online — Acer palmatum (soortcontext, geen cultivar-specifiek bewijs)",
+          "url": "https://www.treesandshrubsonline.org/articles/acer/acer-palmatum/",
+          "supports": "Species-level context only"
+        }
+      ],
+      "historical_notes": {
+        "nl": "Selecteur / introducteur: Onbekend totdat een cultivar-specifieke betrouwbare bron dit bevestigt. Introductiejaar niet vastgesteld.",
+        "en": "Selector / introducer: Unknown until a reliable cultivar-specific source confirms it. Introduction year not established."
+      },
+      "review_needed": true
+    },
+    {
+      "id": "cultivar-villataranto",
+      "name": "Villa Taranto",
+      "accepted_name": "Acer palmatum 'Villa Taranto'",
+      "synonyms": [],
+      "group": "unknown",
+      "traits": {
+        "nl": "Kenmerken nog niet individueel geverifieerd.",
+        "en": "Traits not yet individually verified."
+      },
+      "history": {
+        "nl": "Historische herkomst nog niet voldoende geverifieerd.",
+        "en": "Historical origin not yet sufficiently verified."
+      },
+      "introduction_year": null,
+      "selector_or_introducer": {
+        "nl": "Onbekend",
+        "en": "Unknown"
+      },
+      "origin": {
+        "nl": "Onbekend",
+        "en": "Unknown"
+      },
+      "evidence_status": "rhs-list",
+      "evidence_label": {
+        "nl": "Vermeld in RHS AGM-lijst; historie niet onderzocht",
+        "en": "Listed in RHS AGM list; history not researched"
+      },
+      "sources": [
+        {
+          "title": "RHS Award of Garden Merit — ornamental plants (naamvermelding; geen bewijs van historische introductie)",
+          "url": "https://www.rhs.org.uk/plants/pdfs/agm-lists/agm-ornamentals.pdf",
+          "supports": "RHS AGM-listing only"
+        },
+        {
+          "title": "Trees and Shrubs Online — Acer palmatum (soortcontext, geen cultivar-specifiek bewijs)",
+          "url": "https://www.treesandshrubsonline.org/articles/acer/acer-palmatum/",
+          "supports": "Species-level context only"
+        }
+      ],
+      "historical_notes": {
+        "nl": "Selecteur / introducteur: Onbekend totdat een cultivar-specifieke betrouwbare bron dit bevestigt. Introductiejaar niet vastgesteld.",
+        "en": "Selector / introducer: Unknown until a reliable cultivar-specific source confirms it. Introduction year not established."
+      },
+      "review_needed": true
+    },
+    {
+      "id": "cultivar-mikawayatsubusa",
+      "name": "Mikawa yatsubusa",
+      "accepted_name": "Acer palmatum 'Mikawa yatsubusa'",
+      "synonyms": [
+        "Mikawa-yatsubusa"
+      ],
+      "group": "unknown",
+      "traits": {
+        "nl": "Kenmerken nog niet individueel geverifieerd.",
+        "en": "Traits not yet individually verified."
+      },
+      "history": {
+        "nl": "Historische herkomst nog niet voldoende geverifieerd.",
+        "en": "Historical origin not yet sufficiently verified."
+      },
+      "introduction_year": null,
+      "selector_or_introducer": {
+        "nl": "Onbekend",
+        "en": "Unknown"
+      },
+      "origin": {
+        "nl": "Onbekend",
+        "en": "Unknown"
+      },
+      "evidence_status": "candidate",
+      "evidence_label": {
+        "nl": "Kandidaatrecord; cultivarbron nog te controleren",
+        "en": "Candidate record; cultivar-specific source review pending"
+      },
+      "sources": [
+        {
+          "title": "The Maple Society — Cultivar Area (startpunt voor nader onderzoek; record niet individueel bevestigd)",
+          "url": "https://maplesociety.org/maple-home-2/common-area/cultivar-area/",
+          "supports": "Discovery source only"
+        },
+        {
+          "title": "Trees and Shrubs Online — Acer palmatum (soortcontext, geen cultivar-specifiek bewijs)",
+          "url": "https://www.treesandshrubsonline.org/articles/acer/acer-palmatum/",
+          "supports": "Species-level context only"
+        }
+      ],
+      "historical_notes": {
+        "nl": "Selecteur / introducteur: Onbekend totdat een cultivar-specifieke betrouwbare bron dit bevestigt. Introductiejaar niet vastgesteld.",
+        "en": "Selector / introducer: Unknown until a reliable cultivar-specific source confirms it. Introduction year not established."
+      },
+      "review_needed": true
+    },
+    {
+      "id": "cultivar-seigen",
+      "name": "Seigen",
+      "accepted_name": "Acer palmatum 'Seigen'",
+      "synonyms": [],
+      "group": "unknown",
+      "traits": {
+        "nl": "Kenmerken nog niet individueel geverifieerd.",
+        "en": "Traits not yet individually verified."
+      },
+      "history": {
+        "nl": "Historische herkomst nog niet voldoende geverifieerd.",
+        "en": "Historical origin not yet sufficiently verified."
+      },
+      "introduction_year": null,
+      "selector_or_introducer": {
+        "nl": "Onbekend",
+        "en": "Unknown"
+      },
+      "origin": {
+        "nl": "Onbekend",
+        "en": "Unknown"
+      },
+      "evidence_status": "candidate",
+      "evidence_label": {
+        "nl": "Kandidaatrecord; cultivarbron nog te controleren",
+        "en": "Candidate record; cultivar-specific source review pending"
+      },
+      "sources": [
+        {
+          "title": "The Maple Society — Cultivar Area (startpunt voor nader onderzoek; record niet individueel bevestigd)",
+          "url": "https://maplesociety.org/maple-home-2/common-area/cultivar-area/",
+          "supports": "Discovery source only"
+        },
+        {
+          "title": "Trees and Shrubs Online — Acer palmatum (soortcontext, geen cultivar-specifiek bewijs)",
+          "url": "https://www.treesandshrubsonline.org/articles/acer/acer-palmatum/",
+          "supports": "Species-level context only"
+        }
+      ],
+      "historical_notes": {
+        "nl": "Selecteur / introducteur: Onbekend totdat een cultivar-specifieke betrouwbare bron dit bevestigt. Introductiejaar niet vastgesteld.",
+        "en": "Selector / introducer: Unknown until a reliable cultivar-specific source confirms it. Introduction year not established."
+      },
+      "review_needed": true
+    },
+    {
+      "id": "cultivar-deshojo",
+      "name": "Deshōjō",
+      "accepted_name": "Acer palmatum 'Deshōjō'",
+      "synonyms": [
+        "Deshojo"
+      ],
+      "group": "unknown",
+      "traits": {
+        "nl": "Kenmerken nog niet individueel geverifieerd.",
+        "en": "Traits not yet individually verified."
+      },
+      "history": {
+        "nl": "Historische herkomst nog niet voldoende geverifieerd.",
+        "en": "Historical origin not yet sufficiently verified."
+      },
+      "introduction_year": null,
+      "selector_or_introducer": {
+        "nl": "Onbekend",
+        "en": "Unknown"
+      },
+      "origin": {
+        "nl": "Onbekend",
+        "en": "Unknown"
+      },
+      "evidence_status": "candidate",
+      "evidence_label": {
+        "nl": "Kandidaatrecord; cultivarbron nog te controleren",
+        "en": "Candidate record; cultivar-specific source review pending"
+      },
+      "sources": [
+        {
+          "title": "The Maple Society — Cultivar Area (startpunt voor nader onderzoek; record niet individueel bevestigd)",
+          "url": "https://maplesociety.org/maple-home-2/common-area/cultivar-area/",
+          "supports": "Discovery source only"
+        },
+        {
+          "title": "Trees and Shrubs Online — Acer palmatum (soortcontext, geen cultivar-specifiek bewijs)",
+          "url": "https://www.treesandshrubsonline.org/articles/acer/acer-palmatum/",
+          "supports": "Species-level context only"
+        }
+      ],
+      "historical_notes": {
+        "nl": "Selecteur / introducteur: Onbekend totdat een cultivar-specifieke betrouwbare bron dit bevestigt. Introductiejaar niet vastgesteld.",
+        "en": "Selector / introducer: Unknown until a reliable cultivar-specific source confirms it. Introduction year not established."
+      },
+      "review_needed": true
+    },
+    {
+      "id": "cultivar-viridis",
+      "name": "Viridis",
+      "accepted_name": "Acer palmatum 'Viridis'",
+      "synonyms": [],
+      "group": "unknown",
+      "traits": {
+        "nl": "Kenmerken nog niet individueel geverifieerd.",
+        "en": "Traits not yet individually verified."
+      },
+      "history": {
+        "nl": "Historische herkomst nog niet voldoende geverifieerd.",
+        "en": "Historical origin not yet sufficiently verified."
+      },
+      "introduction_year": null,
+      "selector_or_introducer": {
+        "nl": "Onbekend",
+        "en": "Unknown"
+      },
+      "origin": {
+        "nl": "Onbekend",
+        "en": "Unknown"
+      },
+      "evidence_status": "candidate",
+      "evidence_label": {
+        "nl": "Kandidaatrecord; cultivarbron nog te controleren",
+        "en": "Candidate record; cultivar-specific source review pending"
+      },
+      "sources": [
+        {
+          "title": "The Maple Society — Cultivar Area (startpunt voor nader onderzoek; record niet individueel bevestigd)",
+          "url": "https://maplesociety.org/maple-home-2/common-area/cultivar-area/",
+          "supports": "Discovery source only"
+        },
+        {
+          "title": "Trees and Shrubs Online — Acer palmatum (soortcontext, geen cultivar-specifiek bewijs)",
+          "url": "https://www.treesandshrubsonline.org/articles/acer/acer-palmatum/",
+          "supports": "Species-level context only"
+        }
+      ],
+      "historical_notes": {
+        "nl": "Selecteur / introducteur: Onbekend totdat een cultivar-specifieke betrouwbare bron dit bevestigt. Introductiejaar niet vastgesteld.",
+        "en": "Selector / introducer: Unknown until a reliable cultivar-specific source confirms it. Introduction year not established."
+      },
+      "review_needed": true
+    },
+    {
+      "id": "cultivar-waterfall",
+      "name": "Waterfall",
+      "accepted_name": "Acer palmatum 'Waterfall'",
+      "synonyms": [],
+      "group": "unknown",
+      "traits": {
+        "nl": "Kenmerken nog niet individueel geverifieerd.",
+        "en": "Traits not yet individually verified."
+      },
+      "history": {
+        "nl": "Historische herkomst nog niet voldoende geverifieerd.",
+        "en": "Historical origin not yet sufficiently verified."
+      },
+      "introduction_year": null,
+      "selector_or_introducer": {
+        "nl": "Onbekend",
+        "en": "Unknown"
+      },
+      "origin": {
+        "nl": "Onbekend",
+        "en": "Unknown"
+      },
+      "evidence_status": "candidate",
+      "evidence_label": {
+        "nl": "Kandidaatrecord; cultivarbron nog te controleren",
+        "en": "Candidate record; cultivar-specific source review pending"
+      },
+      "sources": [
+        {
+          "title": "The Maple Society — Cultivar Area (startpunt voor nader onderzoek; record niet individueel bevestigd)",
+          "url": "https://maplesociety.org/maple-home-2/common-area/cultivar-area/",
+          "supports": "Discovery source only"
+        },
+        {
+          "title": "Trees and Shrubs Online — Acer palmatum (soortcontext, geen cultivar-specifiek bewijs)",
+          "url": "https://www.treesandshrubsonline.org/articles/acer/acer-palmatum/",
+          "supports": "Species-level context only"
+        }
+      ],
+      "historical_notes": {
+        "nl": "Selecteur / introducteur: Onbekend totdat een cultivar-specifieke betrouwbare bron dit bevestigt. Introductiejaar niet vastgesteld.",
+        "en": "Selector / introducer: Unknown until a reliable cultivar-specific source confirms it. Introduction year not established."
+      },
+      "review_needed": true
+    },
+    {
+      "id": "cultivar-suminagashi",
+      "name": "Sumi-nagashi",
+      "accepted_name": "Acer palmatum 'Sumi-nagashi'",
+      "synonyms": [
+        "Sumi Nagashi"
+      ],
+      "group": "unknown",
+      "traits": {
+        "nl": "Kenmerken nog niet individueel geverifieerd.",
+        "en": "Traits not yet individually verified."
+      },
+      "history": {
+        "nl": "Historische herkomst nog niet voldoende geverifieerd.",
+        "en": "Historical origin not yet sufficiently verified."
+      },
+      "introduction_year": null,
+      "selector_or_introducer": {
+        "nl": "Onbekend",
+        "en": "Unknown"
+      },
+      "origin": {
+        "nl": "Onbekend",
+        "en": "Unknown"
+      },
+      "evidence_status": "candidate",
+      "evidence_label": {
+        "nl": "Kandidaatrecord; cultivarbron nog te controleren",
+        "en": "Candidate record; cultivar-specific source review pending"
+      },
+      "sources": [
+        {
+          "title": "The Maple Society — Cultivar Area (startpunt voor nader onderzoek; record niet individueel bevestigd)",
+          "url": "https://maplesociety.org/maple-home-2/common-area/cultivar-area/",
+          "supports": "Discovery source only"
+        },
+        {
+          "title": "Trees and Shrubs Online — Acer palmatum (soortcontext, geen cultivar-specifiek bewijs)",
+          "url": "https://www.treesandshrubsonline.org/articles/acer/acer-palmatum/",
+          "supports": "Species-level context only"
+        }
+      ],
+      "historical_notes": {
+        "nl": "Selecteur / introducteur: Onbekend totdat een cultivar-specifieke betrouwbare bron dit bevestigt. Introductiejaar niet vastgesteld.",
+        "en": "Selector / introducer: Unknown until a reliable cultivar-specific source confirms it. Introduction year not established."
+      },
+      "review_needed": true
+    },
+    {
+      "id": "cultivar-firstghost",
+      "name": "First Ghost",
+      "accepted_name": "Acer palmatum 'First Ghost'",
+      "synonyms": [],
+      "group": "unknown",
+      "traits": {
+        "nl": "Kenmerken nog niet individueel geverifieerd.",
+        "en": "Traits not yet individually verified."
+      },
+      "history": {
+        "nl": "Historische herkomst nog niet voldoende geverifieerd.",
+        "en": "Historical origin not yet sufficiently verified."
+      },
+      "introduction_year": null,
+      "selector_or_introducer": {
+        "nl": "Onbekend",
+        "en": "Unknown"
+      },
+      "origin": {
+        "nl": "Onbekend",
+        "en": "Unknown"
+      },
+      "evidence_status": "candidate",
+      "evidence_label": {
+        "nl": "Kandidaatrecord; cultivarbron nog te controleren",
+        "en": "Candidate record; cultivar-specific source review pending"
+      },
+      "sources": [
+        {
+          "title": "The Maple Society — Cultivar Area (startpunt voor nader onderzoek; record niet individueel bevestigd)",
+          "url": "https://maplesociety.org/maple-home-2/common-area/cultivar-area/",
+          "supports": "Discovery source only"
+        },
+        {
+          "title": "Trees and Shrubs Online — Acer palmatum (soortcontext, geen cultivar-specifiek bewijs)",
+          "url": "https://www.treesandshrubsonline.org/articles/acer/acer-palmatum/",
+          "supports": "Species-level context only"
+        }
+      ],
+      "historical_notes": {
+        "nl": "Selecteur / introducteur: Onbekend totdat een cultivar-specifieke betrouwbare bron dit bevestigt. Introductiejaar niet vastgesteld.",
+        "en": "Selector / introducer: Unknown until a reliable cultivar-specific source confirms it. Introduction year not established."
+      },
+      "review_needed": true
+    },
+    {
+      "id": "cultivar-pevestarfish",
+      "name": "Peve Starfish",
+      "accepted_name": "Acer palmatum 'Peve Starfish'",
+      "synonyms": [
+        "Peve Starfish"
+      ],
+      "group": "unknown",
+      "traits": {
+        "nl": "Kenmerken nog niet individueel geverifieerd.",
+        "en": "Traits not yet individually verified."
+      },
+      "history": {
+        "nl": "Historische herkomst nog niet voldoende geverifieerd.",
+        "en": "Historical origin not yet sufficiently verified."
+      },
+      "introduction_year": null,
+      "selector_or_introducer": {
+        "nl": "Onbekend",
+        "en": "Unknown"
+      },
+      "origin": {
+        "nl": "Onbekend",
+        "en": "Unknown"
+      },
+      "evidence_status": "candidate",
+      "evidence_label": {
+        "nl": "Kandidaatrecord; cultivarbron nog te controleren",
+        "en": "Candidate record; cultivar-specific source review pending"
+      },
+      "sources": [
+        {
+          "title": "The Maple Society — Cultivar Area (startpunt voor nader onderzoek; record niet individueel bevestigd)",
+          "url": "https://maplesociety.org/maple-home-2/common-area/cultivar-area/",
+          "supports": "Discovery source only"
+        },
+        {
+          "title": "Trees and Shrubs Online — Acer palmatum (soortcontext, geen cultivar-specifiek bewijs)",
+          "url": "https://www.treesandshrubsonline.org/articles/acer/acer-palmatum/",
+          "supports": "Species-level context only"
+        }
+      ],
+      "historical_notes": {
+        "nl": "Selecteur / introducteur: Onbekend totdat een cultivar-specifieke betrouwbare bron dit bevestigt. Introductiejaar niet vastgesteld.",
+        "en": "Selector / introducer: Unknown until a reliable cultivar-specific source confirms it. Introduction year not established."
+      },
+      "review_needed": true
+    },
+    {
+      "id": "cultivar-aoshidare",
+      "name": "Ao shidare",
+      "accepted_name": "Acer palmatum 'Ao shidare'",
+      "synonyms": [],
+      "group": "unknown",
+      "traits": {
+        "nl": "Kenmerken nog niet individueel geverifieerd.",
+        "en": "Traits not yet individually verified."
+      },
+      "history": {
+        "nl": "Historische herkomst nog niet voldoende geverifieerd.",
+        "en": "Historical origin not yet sufficiently verified."
+      },
+      "introduction_year": null,
+      "selector_or_introducer": {
+        "nl": "Onbekend",
+        "en": "Unknown"
+      },
+      "origin": {
+        "nl": "Onbekend",
+        "en": "Unknown"
+      },
+      "evidence_status": "candidate",
+      "evidence_label": {
+        "nl": "Kandidaatrecord; cultivarbron nog te controleren",
+        "en": "Candidate record; cultivar-specific source review pending"
+      },
+      "sources": [
+        {
+          "title": "The Maple Society — Cultivar Area (startpunt voor nader onderzoek; record niet individueel bevestigd)",
+          "url": "https://maplesociety.org/maple-home-2/common-area/cultivar-area/",
+          "supports": "Discovery source only"
+        },
+        {
+          "title": "Trees and Shrubs Online — Acer palmatum (soortcontext, geen cultivar-specifiek bewijs)",
+          "url": "https://www.treesandshrubsonline.org/articles/acer/acer-palmatum/",
+          "supports": "Species-level context only"
+        }
+      ],
+      "historical_notes": {
+        "nl": "Selecteur / introducteur: Onbekend totdat een cultivar-specifieke betrouwbare bron dit bevestigt. Introductiejaar niet vastgesteld.",
+        "en": "Selector / introducer: Unknown until a reliable cultivar-specific source confirms it. Introduction year not established."
+      },
+      "review_needed": true
+    },
+    {
+      "id": "cultivar-kihachijo",
+      "name": "Ki Hachijō",
+      "accepted_name": "Acer palmatum 'Ki Hachijō'",
+      "synonyms": [
+        "Ki Hachijo"
+      ],
+      "group": "unknown",
+      "traits": {
+        "nl": "Kenmerken nog niet individueel geverifieerd.",
+        "en": "Traits not yet individually verified."
+      },
+      "history": {
+        "nl": "Historische herkomst nog niet voldoende geverifieerd.",
+        "en": "Historical origin not yet sufficiently verified."
+      },
+      "introduction_year": null,
+      "selector_or_introducer": {
+        "nl": "Onbekend",
+        "en": "Unknown"
+      },
+      "origin": {
+        "nl": "Onbekend",
+        "en": "Unknown"
+      },
+      "evidence_status": "candidate",
+      "evidence_label": {
+        "nl": "Kandidaatrecord; cultivarbron nog te controleren",
+        "en": "Candidate record; cultivar-specific source review pending"
+      },
+      "sources": [
+        {
+          "title": "The Maple Society — Cultivar Area (startpunt voor nader onderzoek; record niet individueel bevestigd)",
+          "url": "https://maplesociety.org/maple-home-2/common-area/cultivar-area/",
+          "supports": "Discovery source only"
+        },
+        {
+          "title": "Trees and Shrubs Online — Acer palmatum (soortcontext, geen cultivar-specifiek bewijs)",
+          "url": "https://www.treesandshrubsonline.org/articles/acer/acer-palmatum/",
+          "supports": "Species-level context only"
+        }
+      ],
+      "historical_notes": {
+        "nl": "Selecteur / introducteur: Onbekend totdat een cultivar-specifieke betrouwbare bron dit bevestigt. Introductiejaar niet vastgesteld.",
+        "en": "Selector / introducer: Unknown until a reliable cultivar-specific source confirms it. Introduction year not established."
+      },
+      "review_needed": true
+    },
+    {
+      "id": "cultivar-flavescens",
+      "name": "Flavescens",
+      "accepted_name": "Acer palmatum 'Flavescens'",
+      "synonyms": [],
+      "group": "unknown",
+      "traits": {
+        "nl": "Kenmerken nog niet individueel geverifieerd.",
+        "en": "Traits not yet individually verified."
+      },
+      "history": {
+        "nl": "Historische herkomst nog niet voldoende geverifieerd.",
+        "en": "Historical origin not yet sufficiently verified."
+      },
+      "introduction_year": null,
+      "selector_or_introducer": {
+        "nl": "Onbekend",
+        "en": "Unknown"
+      },
+      "origin": {
+        "nl": "Onbekend",
+        "en": "Unknown"
+      },
+      "evidence_status": "candidate",
+      "evidence_label": {
+        "nl": "Kandidaatrecord; cultivarbron nog te controleren",
+        "en": "Candidate record; cultivar-specific source review pending"
+      },
+      "sources": [
+        {
+          "title": "The Maple Society — Cultivar Area (startpunt voor nader onderzoek; record niet individueel bevestigd)",
+          "url": "https://maplesociety.org/maple-home-2/common-area/cultivar-area/",
+          "supports": "Discovery source only"
+        },
+        {
+          "title": "Trees and Shrubs Online — Acer palmatum (soortcontext, geen cultivar-specifiek bewijs)",
+          "url": "https://www.treesandshrubsonline.org/articles/acer/acer-palmatum/",
+          "supports": "Species-level context only"
+        }
+      ],
+      "historical_notes": {
+        "nl": "Selecteur / introducteur: Onbekend totdat een cultivar-specifieke betrouwbare bron dit bevestigt. Introductiejaar niet vastgesteld.",
+        "en": "Selector / introducer: Unknown until a reliable cultivar-specific source confirms it. Introduction year not established."
+      },
+      "review_needed": true
+    },
+    {
+      "id": "cultivar-ukigumo",
+      "name": "Ukigumo",
+      "accepted_name": "Acer palmatum 'Ukigumo'",
+      "synonyms": [],
+      "group": "unknown",
+      "traits": {
+        "nl": "Kenmerken nog niet individueel geverifieerd.",
+        "en": "Traits not yet individually verified."
+      },
+      "history": {
+        "nl": "Historische herkomst nog niet voldoende geverifieerd.",
+        "en": "Historical origin not yet sufficiently verified."
+      },
+      "introduction_year": null,
+      "selector_or_introducer": {
+        "nl": "Onbekend",
+        "en": "Unknown"
+      },
+      "origin": {
+        "nl": "Onbekend",
+        "en": "Unknown"
+      },
+      "evidence_status": "candidate",
+      "evidence_label": {
+        "nl": "Kandidaatrecord; cultivarbron nog te controleren",
+        "en": "Candidate record; cultivar-specific source review pending"
+      },
+      "sources": [
+        {
+          "title": "The Maple Society — Cultivar Area (startpunt voor nader onderzoek; record niet individueel bevestigd)",
+          "url": "https://maplesociety.org/maple-home-2/common-area/cultivar-area/",
+          "supports": "Discovery source only"
+        },
+        {
+          "title": "Trees and Shrubs Online — Acer palmatum (soortcontext, geen cultivar-specifiek bewijs)",
+          "url": "https://www.treesandshrubsonline.org/articles/acer/acer-palmatum/",
+          "supports": "Species-level context only"
+        }
+      ],
+      "historical_notes": {
+        "nl": "Selecteur / introducteur: Onbekend totdat een cultivar-specifieke betrouwbare bron dit bevestigt. Introductiejaar niet vastgesteld.",
+        "en": "Selector / introducer: Unknown until a reliable cultivar-specific source confirms it. Introduction year not established."
+      },
+      "review_needed": true
+    },
+    {
+      "id": "cultivar-murasakikiyohime",
+      "name": "Murasaki kiyohime",
+      "accepted_name": "Acer palmatum 'Murasaki kiyohime'",
+      "synonyms": [
+        "Murasaki Kiyohime"
+      ],
+      "group": "unknown",
+      "traits": {
+        "nl": "Kenmerken nog niet individueel geverifieerd.",
+        "en": "Traits not yet individually verified."
+      },
+      "history": {
+        "nl": "Historische herkomst nog niet voldoende geverifieerd.",
+        "en": "Historical origin not yet sufficiently verified."
+      },
+      "introduction_year": null,
+      "selector_or_introducer": {
+        "nl": "Onbekend",
+        "en": "Unknown"
+      },
+      "origin": {
+        "nl": "Onbekend",
+        "en": "Unknown"
+      },
+      "evidence_status": "candidate",
+      "evidence_label": {
+        "nl": "Kandidaatrecord; cultivarbron nog te controleren",
+        "en": "Candidate record; cultivar-specific source review pending"
+      },
+      "sources": [
+        {
+          "title": "The Maple Society — Cultivar Area (startpunt voor nader onderzoek; record niet individueel bevestigd)",
+          "url": "https://maplesociety.org/maple-home-2/common-area/cultivar-area/",
+          "supports": "Discovery source only"
+        },
+        {
+          "title": "Trees and Shrubs Online — Acer palmatum (soortcontext, geen cultivar-specifiek bewijs)",
+          "url": "https://www.treesandshrubsonline.org/articles/acer/acer-palmatum/",
+          "supports": "Species-level context only"
+        }
+      ],
+      "historical_notes": {
+        "nl": "Selecteur / introducteur: Onbekend totdat een cultivar-specifieke betrouwbare bron dit bevestigt. Introductiejaar niet vastgesteld.",
+        "en": "Selector / introducer: Unknown until a reliable cultivar-specific source confirms it. Introduction year not established."
+      },
+      "review_needed": true
+    },
+    {
+      "id": "cultivar-benikawa",
+      "name": "Beni kawa",
+      "accepted_name": "Acer palmatum 'Beni kawa'",
+      "synonyms": [
+        "Beni-kawa"
+      ],
+      "group": "unknown",
+      "traits": {
+        "nl": "Kenmerken nog niet individueel geverifieerd.",
+        "en": "Traits not yet individually verified."
+      },
+      "history": {
+        "nl": "Historische herkomst nog niet voldoende geverifieerd.",
+        "en": "Historical origin not yet sufficiently verified."
+      },
+      "introduction_year": null,
+      "selector_or_introducer": {
+        "nl": "Onbekend",
+        "en": "Unknown"
+      },
+      "origin": {
+        "nl": "Onbekend",
+        "en": "Unknown"
+      },
+      "evidence_status": "candidate",
+      "evidence_label": {
+        "nl": "Kandidaatrecord; cultivarbron nog te controleren",
+        "en": "Candidate record; cultivar-specific source review pending"
+      },
+      "sources": [
+        {
+          "title": "The Maple Society — Cultivar Area (startpunt voor nader onderzoek; record niet individueel bevestigd)",
+          "url": "https://maplesociety.org/maple-home-2/common-area/cultivar-area/",
+          "supports": "Discovery source only"
+        },
+        {
+          "title": "Trees and Shrubs Online — Acer palmatum (soortcontext, geen cultivar-specifiek bewijs)",
+          "url": "https://www.treesandshrubsonline.org/articles/acer/acer-palmatum/",
+          "supports": "Species-level context only"
+        }
+      ],
+      "historical_notes": {
+        "nl": "Selecteur / introducteur: Onbekend totdat een cultivar-specifieke betrouwbare bron dit bevestigt. Introductiejaar niet vastgesteld.",
+        "en": "Selector / introducer: Unknown until a reliable cultivar-specific source confirms it. Introduction year not established."
+      },
+      "review_needed": true
+    },
+    {
+      "id": "cultivar-butterfly",
+      "name": "Butterfly",
+      "accepted_name": "Acer palmatum 'Butterfly'",
+      "synonyms": [],
+      "group": "unknown",
+      "traits": {
+        "nl": "Kenmerken nog niet individueel geverifieerd.",
+        "en": "Traits not yet individually verified."
+      },
+      "history": {
+        "nl": "Historische herkomst nog niet voldoende geverifieerd.",
+        "en": "Historical origin not yet sufficiently verified."
+      },
+      "introduction_year": null,
+      "selector_or_introducer": {
+        "nl": "Onbekend",
+        "en": "Unknown"
+      },
+      "origin": {
+        "nl": "Onbekend",
+        "en": "Unknown"
+      },
+      "evidence_status": "candidate",
+      "evidence_label": {
+        "nl": "Kandidaatrecord; cultivarbron nog te controleren",
+        "en": "Candidate record; cultivar-specific source review pending"
+      },
+      "sources": [
+        {
+          "title": "The Maple Society — Cultivar Area (startpunt voor nader onderzoek; record niet individueel bevestigd)",
+          "url": "https://maplesociety.org/maple-home-2/common-area/cultivar-area/",
+          "supports": "Discovery source only"
+        },
+        {
+          "title": "Trees and Shrubs Online — Acer palmatum (soortcontext, geen cultivar-specifiek bewijs)",
+          "url": "https://www.treesandshrubsonline.org/articles/acer/acer-palmatum/",
+          "supports": "Species-level context only"
+        }
+      ],
+      "historical_notes": {
+        "nl": "Selecteur / introducteur: Onbekend totdat een cultivar-specifieke betrouwbare bron dit bevestigt. Introductiejaar niet vastgesteld.",
+        "en": "Selector / introducer: Unknown until a reliable cultivar-specific source confirms it. Introduction year not established."
+      },
+      "review_needed": true
+    },
+    {
+      "id": "cultivar-kotonoito",
+      "name": "Koto-no-ito",
+      "accepted_name": "Acer palmatum 'Koto-no-ito'",
+      "synonyms": [],
+      "group": "unknown",
+      "traits": {
+        "nl": "Kenmerken nog niet individueel geverifieerd.",
+        "en": "Traits not yet individually verified."
+      },
+      "history": {
+        "nl": "Historische herkomst nog niet voldoende geverifieerd.",
+        "en": "Historical origin not yet sufficiently verified."
+      },
+      "introduction_year": null,
+      "selector_or_introducer": {
+        "nl": "Onbekend",
+        "en": "Unknown"
+      },
+      "origin": {
+        "nl": "Onbekend",
+        "en": "Unknown"
+      },
+      "evidence_status": "candidate",
+      "evidence_label": {
+        "nl": "Kandidaatrecord; cultivarbron nog te controleren",
+        "en": "Candidate record; cultivar-specific source review pending"
+      },
+      "sources": [
+        {
+          "title": "The Maple Society — Cultivar Area (startpunt voor nader onderzoek; record niet individueel bevestigd)",
+          "url": "https://maplesociety.org/maple-home-2/common-area/cultivar-area/",
+          "supports": "Discovery source only"
+        },
+        {
+          "title": "Trees and Shrubs Online — Acer palmatum (soortcontext, geen cultivar-specifiek bewijs)",
+          "url": "https://www.treesandshrubsonline.org/articles/acer/acer-palmatum/",
+          "supports": "Species-level context only"
+        }
+      ],
+      "historical_notes": {
+        "nl": "Selecteur / introducteur: Onbekend totdat een cultivar-specifieke betrouwbare bron dit bevestigt. Introductiejaar niet vastgesteld.",
+        "en": "Selector / introducer: Unknown until a reliable cultivar-specific source confirms it. Introduction year not established."
+      },
+      "review_needed": true
+    },
+    {
+      "id": "cultivar-shaina",
+      "name": "Shaina",
+      "accepted_name": "Acer palmatum 'Shaina'",
+      "synonyms": [],
+      "group": "unknown",
+      "traits": {
+        "nl": "Kenmerken nog niet individueel geverifieerd.",
+        "en": "Traits not yet individually verified."
+      },
+      "history": {
+        "nl": "Historische herkomst nog niet voldoende geverifieerd.",
+        "en": "Historical origin not yet sufficiently verified."
+      },
+      "introduction_year": null,
+      "selector_or_introducer": {
+        "nl": "Onbekend",
+        "en": "Unknown"
+      },
+      "origin": {
+        "nl": "Onbekend",
+        "en": "Unknown"
+      },
+      "evidence_status": "candidate",
+      "evidence_label": {
+        "nl": "Kandidaatrecord; cultivarbron nog te controleren",
+        "en": "Candidate record; cultivar-specific source review pending"
+      },
+      "sources": [
+        {
+          "title": "The Maple Society — Cultivar Area (startpunt voor nader onderzoek; record niet individueel bevestigd)",
+          "url": "https://maplesociety.org/maple-home-2/common-area/cultivar-area/",
+          "supports": "Discovery source only"
+        },
+        {
+          "title": "Trees and Shrubs Online — Acer palmatum (soortcontext, geen cultivar-specifiek bewijs)",
+          "url": "https://www.treesandshrubsonline.org/articles/acer/acer-palmatum/",
+          "supports": "Species-level context only"
+        }
+      ],
+      "historical_notes": {
+        "nl": "Selecteur / introducteur: Onbekend totdat een cultivar-specifieke betrouwbare bron dit bevestigt. Introductiejaar niet vastgesteld.",
+        "en": "Selector / introducer: Unknown until a reliable cultivar-specific source confirms it. Introduction year not established."
+      },
+      "review_needed": true
+    },
+    {
+      "id": "cultivar-higasayama",
+      "name": "Higasayama",
+      "accepted_name": "Acer palmatum 'Higasayama'",
+      "synonyms": [],
+      "group": "unknown",
+      "traits": {
+        "nl": "Kenmerken nog niet individueel geverifieerd.",
+        "en": "Traits not yet individually verified."
+      },
+      "history": {
+        "nl": "Historische herkomst nog niet voldoende geverifieerd.",
+        "en": "Historical origin not yet sufficiently verified."
+      },
+      "introduction_year": null,
+      "selector_or_introducer": {
+        "nl": "Onbekend",
+        "en": "Unknown"
+      },
+      "origin": {
+        "nl": "Onbekend",
+        "en": "Unknown"
+      },
+      "evidence_status": "candidate",
+      "evidence_label": {
+        "nl": "Kandidaatrecord; cultivarbron nog te controleren",
+        "en": "Candidate record; cultivar-specific source review pending"
+      },
+      "sources": [
+        {
+          "title": "The Maple Society — Cultivar Area (startpunt voor nader onderzoek; record niet individueel bevestigd)",
+          "url": "https://maplesociety.org/maple-home-2/common-area/cultivar-area/",
+          "supports": "Discovery source only"
+        },
+        {
+          "title": "Trees and Shrubs Online — Acer palmatum (soortcontext, geen cultivar-specifiek bewijs)",
+          "url": "https://www.treesandshrubsonline.org/articles/acer/acer-palmatum/",
+          "supports": "Species-level context only"
+        }
+      ],
+      "historical_notes": {
+        "nl": "Selecteur / introducteur: Onbekend totdat een cultivar-specifieke betrouwbare bron dit bevestigt. Introductiejaar niet vastgesteld.",
+        "en": "Selector / introducer: Unknown until a reliable cultivar-specific source confirms it. Introduction year not established."
+      },
+      "review_needed": true
+    },
+    {
+      "id": "cultivar-mikawakaen",
+      "name": "Mikawa Kaen",
+      "accepted_name": "Acer palmatum 'Mikawa Kaen'",
+      "synonyms": [],
+      "group": "unknown",
+      "traits": {
+        "nl": "Kenmerken nog niet individueel geverifieerd.",
+        "en": "Traits not yet individually verified."
+      },
+      "history": {
+        "nl": "Historische herkomst nog niet voldoende geverifieerd.",
+        "en": "Historical origin not yet sufficiently verified."
+      },
+      "introduction_year": null,
+      "selector_or_introducer": {
+        "nl": "Onbekend",
+        "en": "Unknown"
+      },
+      "origin": {
+        "nl": "Onbekend",
+        "en": "Unknown"
+      },
+      "evidence_status": "candidate",
+      "evidence_label": {
+        "nl": "Kandidaatrecord; cultivarbron nog te controleren",
+        "en": "Candidate record; cultivar-specific source review pending"
+      },
+      "sources": [
+        {
+          "title": "The Maple Society — Cultivar Area (startpunt voor nader onderzoek; record niet individueel bevestigd)",
+          "url": "https://maplesociety.org/maple-home-2/common-area/cultivar-area/",
+          "supports": "Discovery source only"
+        },
+        {
+          "title": "Trees and Shrubs Online — Acer palmatum (soortcontext, geen cultivar-specifiek bewijs)",
+          "url": "https://www.treesandshrubsonline.org/articles/acer/acer-palmatum/",
+          "supports": "Species-level context only"
+        }
+      ],
+      "historical_notes": {
+        "nl": "Selecteur / introducteur: Onbekend totdat een cultivar-specifieke betrouwbare bron dit bevestigt. Introductiejaar niet vastgesteld.",
+        "en": "Selector / introducer: Unknown until a reliable cultivar-specific source confirms it. Introduction year not established."
+      },
+      "review_needed": true
+    },
+    {
+      "id": "cultivar-tamukeyama",
+      "name": "Tamukeyama",
+      "accepted_name": "Acer palmatum 'Tamukeyama'",
+      "synonyms": [],
+      "group": "unknown",
+      "traits": {
+        "nl": "Kenmerken nog niet individueel geverifieerd.",
+        "en": "Traits not yet individually verified."
+      },
+      "history": {
+        "nl": "Historische herkomst nog niet voldoende geverifieerd.",
+        "en": "Historical origin not yet sufficiently verified."
+      },
+      "introduction_year": null,
+      "selector_or_introducer": {
+        "nl": "Onbekend",
+        "en": "Unknown"
+      },
+      "origin": {
+        "nl": "Onbekend",
+        "en": "Unknown"
+      },
+      "evidence_status": "candidate",
+      "evidence_label": {
+        "nl": "Kandidaatrecord; cultivarbron nog te controleren",
+        "en": "Candidate record; cultivar-specific source review pending"
+      },
+      "sources": [
+        {
+          "title": "The Maple Society — Cultivar Area (startpunt voor nader onderzoek; record niet individueel bevestigd)",
+          "url": "https://maplesociety.org/maple-home-2/common-area/cultivar-area/",
+          "supports": "Discovery source only"
+        },
+        {
+          "title": "Trees and Shrubs Online — Acer palmatum (soortcontext, geen cultivar-specifiek bewijs)",
+          "url": "https://www.treesandshrubsonline.org/articles/acer/acer-palmatum/",
+          "supports": "Species-level context only"
+        }
+      ],
+      "historical_notes": {
+        "nl": "Selecteur / introducteur: Onbekend totdat een cultivar-specifieke betrouwbare bron dit bevestigt. Introductiejaar niet vastgesteld.",
+        "en": "Selector / introducer: Unknown until a reliable cultivar-specific source confirms it. Introduction year not established."
+      },
+      "review_needed": true
+    },
+    {
+      "id": "cultivar-akashigitatsusawa",
+      "name": "Aka shigitatsu sawa",
+      "accepted_name": "Acer palmatum 'Aka shigitatsu sawa'",
+      "synonyms": [
+        "Aka Shigitatsu Sawa"
+      ],
+      "group": "unknown",
+      "traits": {
+        "nl": "Kenmerken nog niet individueel geverifieerd.",
+        "en": "Traits not yet individually verified."
+      },
+      "history": {
+        "nl": "Historische herkomst nog niet voldoende geverifieerd.",
+        "en": "Historical origin not yet sufficiently verified."
+      },
+      "introduction_year": null,
+      "selector_or_introducer": {
+        "nl": "Onbekend",
+        "en": "Unknown"
+      },
+      "origin": {
+        "nl": "Onbekend",
+        "en": "Unknown"
+      },
+      "evidence_status": "candidate",
+      "evidence_label": {
+        "nl": "Kandidaatrecord; cultivarbron nog te controleren",
+        "en": "Candidate record; cultivar-specific source review pending"
+      },
+      "sources": [
+        {
+          "title": "The Maple Society — Cultivar Area (startpunt voor nader onderzoek; record niet individueel bevestigd)",
+          "url": "https://maplesociety.org/maple-home-2/common-area/cultivar-area/",
+          "supports": "Discovery source only"
+        },
+        {
+          "title": "Trees and Shrubs Online — Acer palmatum (soortcontext, geen cultivar-specifiek bewijs)",
+          "url": "https://www.treesandshrubsonline.org/articles/acer/acer-palmatum/",
+          "supports": "Species-level context only"
+        }
+      ],
+      "historical_notes": {
+        "nl": "Selecteur / introducteur: Onbekend totdat een cultivar-specifieke betrouwbare bron dit bevestigt. Introductiejaar niet vastgesteld.",
+        "en": "Selector / introducer: Unknown until a reliable cultivar-specific source confirms it. Introduction year not established."
+      },
+      "review_needed": true
+    },
+    {
+      "id": "cultivar-benikomachi",
+      "name": "Beni komachi",
+      "accepted_name": "Acer palmatum 'Beni komachi'",
+      "synonyms": [
+        "Beni-komachi"
+      ],
+      "group": "unknown",
+      "traits": {
+        "nl": "Kenmerken nog niet individueel geverifieerd.",
+        "en": "Traits not yet individually verified."
+      },
+      "history": {
+        "nl": "Historische herkomst nog niet voldoende geverifieerd.",
+        "en": "Historical origin not yet sufficiently verified."
+      },
+      "introduction_year": null,
+      "selector_or_introducer": {
+        "nl": "Onbekend",
+        "en": "Unknown"
+      },
+      "origin": {
+        "nl": "Onbekend",
+        "en": "Unknown"
+      },
+      "evidence_status": "candidate",
+      "evidence_label": {
+        "nl": "Kandidaatrecord; cultivarbron nog te controleren",
+        "en": "Candidate record; cultivar-specific source review pending"
+      },
+      "sources": [
+        {
+          "title": "The Maple Society — Cultivar Area (startpunt voor nader onderzoek; record niet individueel bevestigd)",
+          "url": "https://maplesociety.org/maple-home-2/common-area/cultivar-area/",
+          "supports": "Discovery source only"
+        },
+        {
+          "title": "Trees and Shrubs Online — Acer palmatum (soortcontext, geen cultivar-specifiek bewijs)",
+          "url": "https://www.treesandshrubsonline.org/articles/acer/acer-palmatum/",
+          "supports": "Species-level context only"
+        }
+      ],
+      "historical_notes": {
+        "nl": "Selecteur / introducteur: Onbekend totdat een cultivar-specifieke betrouwbare bron dit bevestigt. Introductiejaar niet vastgesteld.",
+        "en": "Selector / introducer: Unknown until a reliable cultivar-specific source confirms it. Introduction year not established."
+      },
+      "review_needed": true
+    },
+    {
+      "id": "cultivar-kotohime",
+      "name": "Koto hime",
+      "accepted_name": "Acer palmatum 'Koto hime'",
+      "synonyms": [
+        "Koto-hime"
+      ],
+      "group": "unknown",
+      "traits": {
+        "nl": "Kenmerken nog niet individueel geverifieerd.",
+        "en": "Traits not yet individually verified."
+      },
+      "history": {
+        "nl": "Historische herkomst nog niet voldoende geverifieerd.",
+        "en": "Historical origin not yet sufficiently verified."
+      },
+      "introduction_year": null,
+      "selector_or_introducer": {
+        "nl": "Onbekend",
+        "en": "Unknown"
+      },
+      "origin": {
+        "nl": "Onbekend",
+        "en": "Unknown"
+      },
+      "evidence_status": "candidate",
+      "evidence_label": {
+        "nl": "Kandidaatrecord; cultivarbron nog te controleren",
+        "en": "Candidate record; cultivar-specific source review pending"
+      },
+      "sources": [
+        {
+          "title": "The Maple Society — Cultivar Area (startpunt voor nader onderzoek; record niet individueel bevestigd)",
+          "url": "https://maplesociety.org/maple-home-2/common-area/cultivar-area/",
+          "supports": "Discovery source only"
+        },
+        {
+          "title": "Trees and Shrubs Online — Acer palmatum (soortcontext, geen cultivar-specifiek bewijs)",
+          "url": "https://www.treesandshrubsonline.org/articles/acer/acer-palmatum/",
+          "supports": "Species-level context only"
+        }
+      ],
+      "historical_notes": {
+        "nl": "Selecteur / introducteur: Onbekend totdat een cultivar-specifieke betrouwbare bron dit bevestigt. Introductiejaar niet vastgesteld.",
+        "en": "Selector / introducer: Unknown until a reliable cultivar-specific source confirms it. Introduction year not established."
+      },
+      "review_needed": true
+    }
+  ]
+}
