@@ -1,7 +1,3 @@
-Acer Atlas v3.9
-
-Uitvoer toont eerst een lijst in staand A4-formaat met vier kolommen: Naam, Soort, Aantal en Aankoop. De lijst opent zonder automatisch het printervenster te starten; de gebruiker kan desgewenst zelf op Afdrukken / opslaan als PDF klikken.
-
 # Acer Atlas v3.0 — collectie, favorieten en lijstweergave en afdrukken-export
 
 Deze versie bouwt voort op de aangeleverde v2.7-bestanden. De 58 cultivarrecords en bestaande lokale collectieopslag zijn behouden.
@@ -76,19 +72,13 @@ De backendkeuze moet worden gemaakt voordat we accounts en codes veilig kunnen i
 - De service-worker-cache is bijgewerkt naar v3.5.
 
 
-## v3.7
+## v3.10
 - Favorietenfilter samengevoegd met de sorteerkeuze in Mijn collectie.
 - lijstweergave en afdrukken-uitvoer bevat nu ook de kolom Aantal.
 - lijstweergave en afdrukken gebruikt liggend A4 en bredere kolommen om koppen op één regel te houden.
 
 
-## v3.7
-- Corrected the visible version label to v3.7.
+## v3.10
+- Corrected the visible version label to v3.10.
 - Export actions now open a previewable list instead of immediately opening the print dialog. Use the explicit print button to choose a printer or save as list/print.
 - Table widths are adjusted for landscape A4; cell text wraps instead of being ellipsized.
-
-
-## v3.9 — uitvoerlijst-opties
-- Versieaanduiding overal bijgewerkt naar v3.9.
-- Uitvoer gebruikt standaard Naam, Soort en Aantal. Aankoop en Leeftijd zijn optionele kolommen via vinkjes.
-- Leeftijd wordt als bijvoorbeeld “2 jaar” weergegeven.
