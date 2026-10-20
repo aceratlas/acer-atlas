@@ -1,4 +1,4 @@
-Acer Atlas v3.8
+Acer Atlas v3.9
 
 Uitvoer toont eerst een lijst in staand A4-formaat met vier kolommen: Naam, Soort, Aantal en Aankoop. De lijst opent zonder automatisch het printervenster te starten; de gebruiker kan desgewenst zelf op Afdrukken / opslaan als PDF klikken.
 
@@ -86,3 +86,9 @@ De backendkeuze moet worden gemaakt voordat we accounts en codes veilig kunnen i
 - Corrected the visible version label to v3.7.
 - Export actions now open a previewable list instead of immediately opening the print dialog. Use the explicit print button to choose a printer or save as list/print.
 - Table widths are adjusted for landscape A4; cell text wraps instead of being ellipsized.
+
+
+## v3.9 — uitvoerlijst-opties
+- Versieaanduiding overal bijgewerkt naar v3.9.
+- Uitvoer gebruikt standaard Naam, Soort en Aantal. Aankoop en Leeftijd zijn optionele kolommen via vinkjes.
+- Leeftijd wordt als bijvoorbeeld “2 jaar” weergegeven.
