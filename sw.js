@@ -1,4 +1,4 @@
-const CACHE='acer-atlas-v35-star-only-favorites';
+const CACHE='acer-atlas-v36-favorites-sort-pdf-quantity';
 const FILES=['./','./index.html','./cultivar-database.json','./manifest.webmanifest','./icon.svg','./apple-touch-icon.png','./acer-maple-leaf.png'];
 self.addEventListener('install',e=>e.waitUntil(caches.open(CACHE).then(c=>c.addAll(FILES)).then(()=>self.skipWaiting())));
 self.addEventListener('activate',e=>e.waitUntil(caches.keys().then(keys=>Promise.all(keys.filter(k=>k!==CACHE).map(k=>caches.delete(k)))).then(()=>self.clients.claim())));

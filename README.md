@@ -70,3 +70,9 @@ De backendkeuze moet worden gemaakt voordat we accounts en codes veilig kunnen i
 - Dezelfde ster wordt naast de naam in het cultivarprofiel getoond wanneer die cultivar in de eigen collectie staat.
 - De ster behoudt de bestaande favorietenopslag en heeft een toegankelijke labeltekst voor schermlezers.
 - De service-worker-cache is bijgewerkt naar v3.5.
+
+
+## v3.6
+- Favorietenfilter samengevoegd met de sorteerkeuze in Mijn collectie.
+- PDF-uitvoer bevat nu ook de kolom Aantal.
+- PDF gebruikt liggend A4 en bredere kolommen om koppen op één regel te houden.
