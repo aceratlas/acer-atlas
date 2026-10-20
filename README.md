@@ -47,3 +47,9 @@ De backendkeuze moet worden gemaakt voordat we accounts en codes veilig kunnen i
 - Aantal exemplaren per collectie-item instelbaar (standaard 1).
 - PDF-overzicht toont totaal aantal exemplaren en aantal unieke cultivars boven de tabel.
 - Collectie-weergave bevat een defensieve foutmelding als renderen mislukt; opgeslagen gegevens worden niet verwijderd.
+
+
+## v3.2
+- Encyclopedia filters now include only dynamic group and species filters; evidence-status filter removed.
+- Group and species choices are generated from the loaded cultivar database.
+- Collection cultivar suggestions are limited to cultivars already present in the user collection, not the full database.
