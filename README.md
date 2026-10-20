@@ -1,3 +1,7 @@
+Acer Atlas v3.8
+
+Uitvoer toont eerst een lijst in staand A4-formaat met vier kolommen: Naam, Soort, Aantal en Aankoop. De lijst opent zonder automatisch het printervenster te starten; de gebruiker kan desgewenst zelf op Afdrukken / opslaan als PDF klikken.
+
 # Acer Atlas v3.0 — collectie, favorieten en lijstweergave en afdrukken-export
 
 Deze versie bouwt voort op de aangeleverde v2.7-bestanden. De 58 cultivarrecords en bestaande lokale collectieopslag zijn behouden.
