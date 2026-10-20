@@ -17,3 +17,9 @@ Acer Atlas is still a research-in-progress database, not a complete authoritativ
 
 
 Version 2.1 adds eight Acer shirasawanum records: Aureum, Autumn Moon, Jordan, Moonrise, Johin, Mikawa Kaen, Mr. Sun, and Blue Moon. Each record includes a source URL and marks historical data unknown where not confirmed.
+
+
+## Versie 2.4
+- Encyclopediekaarten en cultivarprofielen kunnen een cultivarafbeelding uit het veld `image` in `cultivar-database.json` tonen. Als die nog niet is ingevuld, verschijnt de standaard esdoornblad-afbeelding.
+- In Mijn collectie kun je bij meerdere eigen foto’s zelf kiezen welke foto als overzichtsfoto wordt gebruikt.
+- Cacheversie vernieuwd.
