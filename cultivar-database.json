@@ -1,8 +1,8 @@
 {
   "app": "Acer Atlas",
-  "version": "2.1-shirasawanum",
+  "version": "2.6-esveld-first-batch",
   "record_count": 58,
-  "note": "Added 8 Acer shirasawanum cultivar records with source-specific descriptions; historical claims remain marked unknown unless sourced.",
+  "note": "58 cultivar records retained. Esveld is primary horticultural source. Seven exact Esveld cultivar profiles were reviewed for this batch; remaining entries have clearly labelled Esveld search links only. Historical details are not inferred.",
   "records": [
     {
       "id": "cultivar-ariadne",
@@ -11,12 +11,12 @@
       "synonyms": [],
       "group": "unknown",
       "traits": {
-        "nl": "Kenmerken nog niet individueel geverifieerd.",
-        "en": "Traits not yet individually verified."
+        "nl": "Oudroze, bont voorjaarsblad met afwijkend gekleurde nerven; lossere groei. Hoogte na 10 jaar circa 250 cm. Goed winterhard; halfschaduw en humusrijke grond.",
+        "en": "Old-rose variegated spring foliage with contrasting veins; loose habit. About 250 cm after 10 years. Hardy; partial shade and humus-rich soil."
       },
       "history": {
-        "nl": "Historische herkomst nog niet voldoende geverifieerd.",
-        "en": "Historical origin not yet sufficiently verified."
+        "nl": "Esveld beschrijft Ariadne als een eigen introductie, vernoemd naar de dochter van de kweker. Esveld vermeldt introductie in 1991. Dit is Esvelds eigen bronvermelding.",
+        "en": "Esveld describes Ariadne as its own introduction, named after the grower’s daughter. Esveld lists its introduction in 1991. This is Esveld’s own account."
       },
       "introduction_year": null,
       "selector_or_introducer": {
@@ -27,28 +27,25 @@
         "nl": "Onbekend",
         "en": "Unknown"
       },
-      "evidence_status": "rhs-list",
+      "evidence_status": "partial",
       "evidence_label": {
-        "nl": "Vermeld in RHS AGM-lijst; historie niet onderzocht",
-        "en": "Listed in RHS AGM list; history not researched"
+        "nl": "Cultivarkenmerken gecontroleerd bij Esveld; historische gegevens beperkt",
+        "en": "Cultivar traits checked against Esveld; historical details limited"
       },
       "sources": [
         {
-          "title": "RHS Award of Garden Merit — ornamental plants (naamvermelding; geen bewijs van historische introductie)",
-          "url": "https://www.rhs.org.uk/plants/pdfs/agm-lists/agm-ornamentals.pdf",
-          "supports": "RHS AGM-listing only"
-        },
-        {
-          "title": "Trees and Shrubs Online — Acer palmatum (soortcontext, geen cultivar-specifiek bewijs)",
-          "url": "https://www.treesandshrubsonline.org/articles/acer/acer-palmatum/",
-          "supports": "Species-level context only"
+          "title": "Plantentuin Esveld — individueel gecontroleerd cultivarprofiel",
+          "url": "https://esveld.nl/a/product/acer-palmatum-ariadne/",
+          "supports": "Cultivar characteristics and horticultural description; historical details only where explicitly stated on the page"
         }
       ],
       "historical_notes": {
         "nl": "Selecteur / introducteur: Onbekend totdat een cultivar-specifieke betrouwbare bron dit bevestigt. Introductiejaar niet vastgesteld.",
         "en": "Selector / introducer: Unknown until a reliable cultivar-specific source confirms it. Introduction year not established."
       },
-      "review_needed": true
+      "review_needed": true,
+      "height_after_10_years": "250 cm na 10 jaar",
+      "last_checked": "2026-10-20"
     },
     {
       "id": "cultivar-benimaiko",
@@ -57,12 +54,12 @@
       "synonyms": [],
       "group": "unknown",
       "traits": {
-        "nl": "Kenmerken nog niet individueel geverifieerd.",
-        "en": "Traits not yet individually verified."
+        "nl": "Compacte struik met helder rozerood voorjaarsblad dat later via rood naar groen met nerven verkleurt. Hoogte na 10 jaar circa 250 cm; goed winterhard.",
+        "en": "Compact shrub with bright pink-red spring foliage, later changing through red to veined green. About 250 cm after 10 years; hardy."
       },
       "history": {
-        "nl": "Historische herkomst nog niet voldoende geverifieerd.",
-        "en": "Historical origin not yet sufficiently verified."
+        "nl": "Esveld vermeldt dat de cultivar door Esveld eind jaren zeventig werd geïntroduceerd; de productpagina noemt 1989 als introductiejaar. Omdat de bron beide tijdsaanduidingen bevat, is het exacte jaar niet eenduidig.",
+        "en": "Esveld says it was introduced by Esveld in the late 1970s; the product page also lists 1989 as the introduction year. The exact year is therefore not unambiguous within the source."
       },
       "introduction_year": null,
       "selector_or_introducer": {
@@ -73,28 +70,25 @@
         "nl": "Onbekend",
         "en": "Unknown"
       },
-      "evidence_status": "rhs-list",
+      "evidence_status": "partial",
       "evidence_label": {
-        "nl": "Vermeld in RHS AGM-lijst; historie niet onderzocht",
-        "en": "Listed in RHS AGM list; history not researched"
+        "nl": "Cultivarkenmerken gecontroleerd bij Esveld; historische gegevens beperkt",
+        "en": "Cultivar traits checked against Esveld; historical details limited"
       },
       "sources": [
         {
-          "title": "RHS Award of Garden Merit — ornamental plants (naamvermelding; geen bewijs van historische introductie)",
-          "url": "https://www.rhs.org.uk/plants/pdfs/agm-lists/agm-ornamentals.pdf",
-          "supports": "RHS AGM-listing only"
-        },
-        {
-          "title": "Trees and Shrubs Online — Acer palmatum (soortcontext, geen cultivar-specifiek bewijs)",
-          "url": "https://www.treesandshrubsonline.org/articles/acer/acer-palmatum/",
-          "supports": "Species-level context only"
+          "title": "Plantentuin Esveld — individueel gecontroleerd cultivarprofiel",
+          "url": "https://esveld.nl/a/product/acer-palmatum-beni-maiko/",
+          "supports": "Cultivar characteristics and horticultural description; historical details only where explicitly stated on the page"
         }
       ],
       "historical_notes": {
         "nl": "Selecteur / introducteur: Onbekend totdat een cultivar-specifieke betrouwbare bron dit bevestigt. Introductiejaar niet vastgesteld.",
         "en": "Selector / introducer: Unknown until a reliable cultivar-specific source confirms it. Introduction year not established."
       },
-      "review_needed": true
+      "review_needed": true,
+      "height_after_10_years": "250 cm na 10 jaar",
+      "last_checked": "2026-10-20"
     },
     {
       "id": "cultivar-benitsukasa",
@@ -134,13 +128,19 @@
           "title": "Trees and Shrubs Online — Acer palmatum (soortcontext, geen cultivar-specifiek bewijs)",
           "url": "https://www.treesandshrubsonline.org/articles/acer/acer-palmatum/",
           "supports": "Species-level context only"
+        },
+        {
+          "title": "Plantentuin Esveld — zoekresultaat (individueel cultivarprofiel nog niet gecontroleerd)",
+          "url": "https://esveld.nl/a/winkel/?compact=1&swoof=1&woof_text=Acer%20palmatum%20%27Beni-tsukasa%27",
+          "supports": "Search starting point only; not evidence until the matching cultivar profile is reviewed"
         }
       ],
       "historical_notes": {
         "nl": "Selecteur / introducteur: Onbekend totdat een cultivar-specifieke betrouwbare bron dit bevestigt. Introductiejaar niet vastgesteld.",
         "en": "Selector / introducer: Unknown until a reliable cultivar-specific source confirms it. Introduction year not established."
       },
-      "review_needed": true
+      "review_needed": true,
+      "esveld_review_status": "search-link-only"
     },
     {
       "id": "cultivar-bloodgood",
@@ -149,12 +149,12 @@
       "synonyms": [],
       "group": "palmatum",
       "traits": {
-        "nl": "Donker wijnrood blad dat de kleur relatief goed vasthoudt; een selectie uit de Atropurpureum-groep.",
-        "en": "Dark wine-red foliage that holds its colour relatively well; a selection from the Atropurpureum group."
+        "nl": "Opgaand groeiende Japanse esdoorn met donker wijnrood zomerblad. Ongeveer even breed als hoog; hoogte na 10 jaar circa 3 meter. Zeer winterhard.",
+        "en": "Upright Japanese maple with dark wine-red summer foliage. Roughly as wide as tall; about 3 m after 10 years. Very hardy."
       },
       "history": {
-        "nl": "De specialistische bron beschrijft Bloodgood als een selectie uit de Atropurpureum-groep, verspreid door Bloodgood Nurseries op Long Island (VS). Een introductiejaar of oorspronkelijke selecteur wordt in deze bron niet vastgesteld.",
-        "en": "The specialist source describes Bloodgood as a selection from the Atropurpureum group, distributed by Bloodgood Nurseries on Long Island, USA. This source does not establish an introduction year or original selector."
+        "nl": "Esveld beschrijft Bloodgood als een sterke, bekende selectie; de pagina noemt geen introductiejaar of oorspronkelijke selecteur.",
+        "en": "Esveld describes Bloodgood as a strong, well-known selection; the page does not name an introduction year or original selector."
       },
       "introduction_year": null,
       "selector_or_introducer": {
@@ -165,16 +165,16 @@
         "nl": "Onbekend",
         "en": "Unknown"
       },
-      "evidence_status": "supported",
+      "evidence_status": "partial",
       "evidence_label": {
-        "nl": "Ondersteund door specialistische cultivarbeschrijving; historische details beperkt",
-        "en": "Supported by specialist cultivar description; historical details limited"
+        "nl": "Cultivarkenmerken gecontroleerd bij Esveld; historische gegevens beperkt",
+        "en": "Cultivar traits checked against Esveld; historical details limited"
       },
       "sources": [
         {
-          "title": "Trees and Shrubs Online — Acer palmatum (cultivar descriptions; article from New Trees by John Grimshaw & Ross Bayton)",
-          "url": "https://www.treesandshrubsonline.org/articles/acer/acer-palmatum/",
-          "supports": "Cultivar-specific traits and the limited historical statements described in this record"
+          "title": "Plantentuin Esveld — individueel gecontroleerd cultivarprofiel",
+          "url": "https://esveld.nl/a/product/acer-palmatum-bloodgood/",
+          "supports": "Cultivar characteristics and horticultural description; historical details only where explicitly stated on the page"
         }
       ],
       "historical_notes": {
@@ -182,7 +182,8 @@
         "en": "The specialist source describes Bloodgood as a selection from the Atropurpureum group, distributed by Bloodgood Nurseries on Long Island, USA. This source does not establish an introduction year or original selector."
       },
       "review_needed": true,
-      "last_checked": "2026-10-20"
+      "last_checked": "2026-10-20",
+      "height_after_10_years": "3 m na 10 jaar"
     },
     {
       "id": "cultivar-burgundylace",
@@ -222,13 +223,19 @@
           "title": "Trees and Shrubs Online — Acer palmatum (soortcontext, geen cultivar-specifiek bewijs)",
           "url": "https://www.treesandshrubsonline.org/articles/acer/acer-palmatum/",
           "supports": "Species-level context only"
+        },
+        {
+          "title": "Plantentuin Esveld — zoekresultaat (individueel cultivarprofiel nog niet gecontroleerd)",
+          "url": "https://esveld.nl/a/winkel/?compact=1&swoof=1&woof_text=Acer%20palmatum%20%27Burgundy%20Lace%27",
+          "supports": "Search starting point only; not evidence until the matching cultivar profile is reviewed"
         }
       ],
       "historical_notes": {
         "nl": "Selecteur / introducteur: Onbekend totdat een cultivar-specifieke betrouwbare bron dit bevestigt. Introductiejaar niet vastgesteld.",
         "en": "Selector / introducer: Unknown until a reliable cultivar-specific source confirms it. Introduction year not established."
       },
-      "review_needed": true
+      "review_needed": true,
+      "esveld_review_status": "search-link-only"
     },
     {
       "id": "cultivar-chitoseyama",
@@ -268,13 +275,19 @@
           "title": "Trees and Shrubs Online — Acer palmatum (soortcontext, geen cultivar-specifiek bewijs)",
           "url": "https://www.treesandshrubsonline.org/articles/acer/acer-palmatum/",
           "supports": "Species-level context only"
+        },
+        {
+          "title": "Plantentuin Esveld — zoekresultaat (individueel cultivarprofiel nog niet gecontroleerd)",
+          "url": "https://esveld.nl/a/winkel/?compact=1&swoof=1&woof_text=Acer%20palmatum%20%27Chitose-yama%27",
+          "supports": "Search starting point only; not evidence until the matching cultivar profile is reviewed"
         }
       ],
       "historical_notes": {
         "nl": "Selecteur / introducteur: Onbekend totdat een cultivar-specifieke betrouwbare bron dit bevestigt. Introductiejaar niet vastgesteld.",
         "en": "Selector / introducer: Unknown until a reliable cultivar-specific source confirms it. Introduction year not established."
       },
-      "review_needed": true
+      "review_needed": true,
+      "esveld_review_status": "search-link-only"
     },
     {
       "id": "cultivar-corallinum",
@@ -309,6 +322,11 @@
           "title": "Trees and Shrubs Online — Acer palmatum (cultivar descriptions; article from New Trees by John Grimshaw & Ross Bayton)",
           "url": "https://www.treesandshrubsonline.org/articles/acer/acer-palmatum/",
           "supports": "Cultivar-specific traits and the limited historical statements described in this record"
+        },
+        {
+          "title": "Plantentuin Esveld — zoekresultaat (individueel cultivarprofiel nog niet gecontroleerd)",
+          "url": "https://esveld.nl/a/winkel/?compact=1&swoof=1&woof_text=Acer%20palmatum%20%27Corallinum%27",
+          "supports": "Search starting point only; not evidence until the matching cultivar profile is reviewed"
         }
       ],
       "historical_notes": {
@@ -316,7 +334,8 @@
         "en": "A horticultural description from 1905 is cited. The name Corallinum has sometimes been confused with Senkaki/Sango-kaku in Dutch trade and literature; verify the identity of plants sold under this name."
       },
       "review_needed": true,
-      "last_checked": "2026-10-20"
+      "last_checked": "2026-10-20",
+      "esveld_review_status": "search-link-only"
     },
     {
       "id": "cultivar-crimsonqueen",
@@ -325,12 +344,12 @@
       "synonyms": [],
       "group": "unknown",
       "traits": {
-        "nl": "Kenmerken nog niet individueel geverifieerd.",
-        "en": "Traits not yet individually verified."
+        "nl": "Dissectum-type met fijn kantachtig, donker wijnrood blad en paddenstoelvormige, overhangende groei. Hoogte na 10 jaar circa 150 cm; zeer winterhard.",
+        "en": "Dissectum type with finely cut, lace-like dark wine-red foliage and a mounded, cascading habit. About 150 cm after 10 years; very hardy."
       },
       "history": {
-        "nl": "Historische herkomst nog niet voldoende geverifieerd.",
-        "en": "Historical origin not yet sufficiently verified."
+        "nl": "Esveld vermeldt dat Crimson Queen in de jaren vijftig in de Verenigde Staten werd geselecteerd. De pagina geeft geen exacte selecteur of exact jaar.",
+        "en": "Esveld says Crimson Queen was selected in the United States in the 1950s. The page gives no exact selector or year."
       },
       "introduction_year": null,
       "selector_or_introducer": {
@@ -341,28 +360,25 @@
         "nl": "Onbekend",
         "en": "Unknown"
       },
-      "evidence_status": "rhs-list",
+      "evidence_status": "partial",
       "evidence_label": {
-        "nl": "Vermeld in RHS AGM-lijst; historie niet onderzocht",
-        "en": "Listed in RHS AGM list; history not researched"
+        "nl": "Cultivarkenmerken gecontroleerd bij Esveld; historische gegevens beperkt",
+        "en": "Cultivar traits checked against Esveld; historical details limited"
       },
       "sources": [
         {
-          "title": "RHS Award of Garden Merit — ornamental plants (naamvermelding; geen bewijs van historische introductie)",
-          "url": "https://www.rhs.org.uk/plants/pdfs/agm-lists/agm-ornamentals.pdf",
-          "supports": "RHS AGM-listing only"
-        },
-        {
-          "title": "Trees and Shrubs Online — Acer palmatum (soortcontext, geen cultivar-specifiek bewijs)",
-          "url": "https://www.treesandshrubsonline.org/articles/acer/acer-palmatum/",
-          "supports": "Species-level context only"
+          "title": "Plantentuin Esveld — individueel gecontroleerd cultivarprofiel",
+          "url": "https://esveld.nl/a/product/acer-palmatum-crimson-queen/",
+          "supports": "Cultivar characteristics and horticultural description; historical details only where explicitly stated on the page"
         }
       ],
       "historical_notes": {
         "nl": "Selecteur / introducteur: Onbekend totdat een cultivar-specifieke betrouwbare bron dit bevestigt. Introductiejaar niet vastgesteld.",
         "en": "Selector / introducer: Unknown until a reliable cultivar-specific source confirms it. Introduction year not established."
       },
-      "review_needed": true
+      "review_needed": true,
+      "height_after_10_years": "150 cm na 10 jaar",
+      "last_checked": "2026-10-20"
     },
     {
       "id": "cultivar-eddisbury",
@@ -402,13 +418,19 @@
           "title": "Trees and Shrubs Online — Acer palmatum (soortcontext, geen cultivar-specifiek bewijs)",
           "url": "https://www.treesandshrubsonline.org/articles/acer/acer-palmatum/",
           "supports": "Species-level context only"
+        },
+        {
+          "title": "Plantentuin Esveld — zoekresultaat (individueel cultivarprofiel nog niet gecontroleerd)",
+          "url": "https://esveld.nl/a/winkel/?compact=1&swoof=1&woof_text=Acer%20palmatum%20%27Eddisbury%27",
+          "supports": "Search starting point only; not evidence until the matching cultivar profile is reviewed"
         }
       ],
       "historical_notes": {
         "nl": "Selecteur / introducteur: Onbekend totdat een cultivar-specifieke betrouwbare bron dit bevestigt. Introductiejaar niet vastgesteld.",
         "en": "Selector / introducer: Unknown until a reliable cultivar-specific source confirms it. Introduction year not established."
       },
-      "review_needed": true
+      "review_needed": true,
+      "esveld_review_status": "search-link-only"
     },
     {
       "id": "cultivar-elegans",
@@ -443,6 +465,11 @@
           "title": "Trees and Shrubs Online — Acer palmatum (cultivar descriptions; article from New Trees by John Grimshaw & Ross Bayton)",
           "url": "https://www.treesandshrubsonline.org/articles/acer/acer-palmatum/",
           "supports": "Cultivar-specific traits and the limited historical statements described in this record"
+        },
+        {
+          "title": "Plantentuin Esveld — zoekresultaat (individueel cultivarprofiel nog niet gecontroleerd)",
+          "url": "https://esveld.nl/a/winkel/?compact=1&swoof=1&woof_text=Acer%20palmatum%20%27Elegans%27",
+          "supports": "Search starting point only; not evidence until the matching cultivar profile is reviewed"
         }
       ],
       "historical_notes": {
@@ -450,7 +477,8 @@
         "en": "The specialist source describes the leaf form and mentions the older name Acer palmatum septemlobum elegans. No reliable introduction year or selector established."
       },
       "review_needed": true,
-      "last_checked": "2026-10-20"
+      "last_checked": "2026-10-20",
+      "esveld_review_status": "search-link-only"
     },
     {
       "id": "cultivar-emeraldlace",
@@ -490,13 +518,19 @@
           "title": "Trees and Shrubs Online — Acer palmatum (soortcontext, geen cultivar-specifiek bewijs)",
           "url": "https://www.treesandshrubsonline.org/articles/acer/acer-palmatum/",
           "supports": "Species-level context only"
+        },
+        {
+          "title": "Plantentuin Esveld — zoekresultaat (individueel cultivarprofiel nog niet gecontroleerd)",
+          "url": "https://esveld.nl/a/winkel/?compact=1&swoof=1&woof_text=Acer%20palmatum%20%27Emerald%20Lace%27",
+          "supports": "Search starting point only; not evidence until the matching cultivar profile is reviewed"
         }
       ],
       "historical_notes": {
         "nl": "Selecteur / introducteur: Onbekend totdat een cultivar-specifieke betrouwbare bron dit bevestigt. Introductiejaar niet vastgesteld.",
         "en": "Selector / introducer: Unknown until a reliable cultivar-specific source confirms it. Introduction year not established."
       },
-      "review_needed": true
+      "review_needed": true,
+      "esveld_review_status": "search-link-only"
     },
     {
       "id": "cultivar-garnet",
@@ -531,6 +565,11 @@
           "title": "Trees and Shrubs Online — Acer palmatum (cultivar descriptions; article from New Trees by John Grimshaw & Ross Bayton)",
           "url": "https://www.treesandshrubsonline.org/articles/acer/acer-palmatum/",
           "supports": "Cultivar-specific traits and the limited historical statements described in this record"
+        },
+        {
+          "title": "Plantentuin Esveld — zoekresultaat (individueel cultivarprofiel nog niet gecontroleerd)",
+          "url": "https://esveld.nl/a/winkel/?compact=1&swoof=1&woof_text=Acer%20palmatum%20%27Garnet%27",
+          "supports": "Search starting point only; not evidence until the matching cultivar profile is reviewed"
         }
       ],
       "historical_notes": {
@@ -538,7 +577,8 @@
         "en": "The source states that Garnet was selected by the Dutch firm Guldemond & Co and entered commerce in 1960. This is a documented trade/introduction detail in the specialist source."
       },
       "review_needed": true,
-      "last_checked": "2026-10-20"
+      "last_checked": "2026-10-20",
+      "esveld_review_status": "search-link-only"
     },
     {
       "id": "cultivar-inabashidare",
@@ -578,13 +618,19 @@
           "title": "Trees and Shrubs Online — Acer palmatum (soortcontext, geen cultivar-specifiek bewijs)",
           "url": "https://www.treesandshrubsonline.org/articles/acer/acer-palmatum/",
           "supports": "Species-level context only"
+        },
+        {
+          "title": "Plantentuin Esveld — zoekresultaat (individueel cultivarprofiel nog niet gecontroleerd)",
+          "url": "https://esveld.nl/a/winkel/?compact=1&swoof=1&woof_text=Acer%20palmatum%20%27Inaba-shidare%27",
+          "supports": "Search starting point only; not evidence until the matching cultivar profile is reviewed"
         }
       ],
       "historical_notes": {
         "nl": "Selecteur / introducteur: Onbekend totdat een cultivar-specifieke betrouwbare bron dit bevestigt. Introductiejaar niet vastgesteld.",
         "en": "Selector / introducer: Unknown until a reliable cultivar-specific source confirms it. Introduction year not established."
       },
-      "review_needed": true
+      "review_needed": true,
+      "esveld_review_status": "search-link-only"
     },
     {
       "id": "cultivar-katsura",
@@ -593,12 +639,12 @@
       "synonyms": [],
       "group": "unknown",
       "traits": {
-        "nl": "Kenmerken nog niet individueel geverifieerd.",
-        "en": "Traits not yet individually verified."
+        "nl": "Dichtvertakte struik met oranjegeel voorjaarsblad dat in de zomer fris geelgroen wordt. Hoogte na 10 jaar circa 300 cm; goed winterhard.",
+        "en": "Dense-branched shrub with orange-yellow spring foliage that becomes fresh yellow-green in summer. About 300 cm after 10 years; hardy."
       },
       "history": {
-        "nl": "Historische herkomst nog niet voldoende geverifieerd.",
-        "en": "Historical origin not yet sufficiently verified."
+        "nl": "Esveld noemt Katsura een klassieker uit de Aureum-groep, maar geeft op deze pagina geen selecteur of introductiejaar.",
+        "en": "Esveld calls Katsura a classic in the Aureum group, but does not give a selector or introduction year on this page."
       },
       "introduction_year": null,
       "selector_or_introducer": {
@@ -609,28 +655,25 @@
         "nl": "Onbekend",
         "en": "Unknown"
       },
-      "evidence_status": "rhs-list",
+      "evidence_status": "partial",
       "evidence_label": {
-        "nl": "Vermeld in RHS AGM-lijst; historie niet onderzocht",
-        "en": "Listed in RHS AGM list; history not researched"
+        "nl": "Cultivarkenmerken gecontroleerd bij Esveld; historische gegevens beperkt",
+        "en": "Cultivar traits checked against Esveld; historical details limited"
       },
       "sources": [
         {
-          "title": "RHS Award of Garden Merit — ornamental plants (naamvermelding; geen bewijs van historische introductie)",
-          "url": "https://www.rhs.org.uk/plants/pdfs/agm-lists/agm-ornamentals.pdf",
-          "supports": "RHS AGM-listing only"
-        },
-        {
-          "title": "Trees and Shrubs Online — Acer palmatum (soortcontext, geen cultivar-specifiek bewijs)",
-          "url": "https://www.treesandshrubsonline.org/articles/acer/acer-palmatum/",
-          "supports": "Species-level context only"
+          "title": "Plantentuin Esveld — individueel gecontroleerd cultivarprofiel",
+          "url": "https://esveld.nl/a/product/acer-palmatum-katsura/",
+          "supports": "Cultivar characteristics and horticultural description; historical details only where explicitly stated on the page"
         }
       ],
       "historical_notes": {
         "nl": "Selecteur / introducteur: Onbekend totdat een cultivar-specifieke betrouwbare bron dit bevestigt. Introductiejaar niet vastgesteld.",
         "en": "Selector / introducer: Unknown until a reliable cultivar-specific source confirms it. Introduction year not established."
       },
-      "review_needed": true
+      "review_needed": true,
+      "height_after_10_years": "300 cm na 10 jaar",
+      "last_checked": "2026-10-20"
     },
     {
       "id": "cultivar-kinshi",
@@ -670,13 +713,19 @@
           "title": "Trees and Shrubs Online — Acer palmatum (soortcontext, geen cultivar-specifiek bewijs)",
           "url": "https://www.treesandshrubsonline.org/articles/acer/acer-palmatum/",
           "supports": "Species-level context only"
+        },
+        {
+          "title": "Plantentuin Esveld — zoekresultaat (individueel cultivarprofiel nog niet gecontroleerd)",
+          "url": "https://esveld.nl/a/winkel/?compact=1&swoof=1&woof_text=Acer%20palmatum%20%27Kinshi%27",
+          "supports": "Search starting point only; not evidence until the matching cultivar profile is reviewed"
         }
       ],
       "historical_notes": {
         "nl": "Selecteur / introducteur: Onbekend totdat een cultivar-specifieke betrouwbare bron dit bevestigt. Introductiejaar niet vastgesteld.",
         "en": "Selector / introducer: Unknown until a reliable cultivar-specific source confirms it. Introduction year not established."
       },
-      "review_needed": true
+      "review_needed": true,
+      "esveld_review_status": "search-link-only"
     },
     {
       "id": "cultivar-kiyohime",
@@ -711,6 +760,11 @@
           "title": "Trees and Shrubs Online — Acer palmatum (cultivar descriptions; article from New Trees by John Grimshaw & Ross Bayton)",
           "url": "https://www.treesandshrubsonline.org/articles/acer/acer-palmatum/",
           "supports": "Cultivar-specific traits and the limited historical statements described in this record"
+        },
+        {
+          "title": "Plantentuin Esveld — zoekresultaat (individueel cultivarprofiel nog niet gecontroleerd)",
+          "url": "https://esveld.nl/a/winkel/?compact=1&swoof=1&woof_text=Acer%20palmatum%20%27Kiyohime%27",
+          "supports": "Search starting point only; not evidence until the matching cultivar profile is reviewed"
         }
       ],
       "historical_notes": {
@@ -718,7 +772,8 @@
         "en": "The specialist source supports the described habit and foliage traits; introduction year and selector are not established."
       },
       "review_needed": true,
-      "last_checked": "2026-10-20"
+      "last_checked": "2026-10-20",
+      "esveld_review_status": "search-link-only"
     },
     {
       "id": "cultivar-orangedream",
@@ -727,12 +782,12 @@
       "synonyms": [],
       "group": "unknown",
       "traits": {
-        "nl": "Kenmerken nog niet individueel geverifieerd.",
-        "en": "Traits not yet individually verified."
+        "nl": "Dichtvertakte struik met oranje voorjaarsblad dat in de zomer geelgroen wordt; herfstkleur geel tot oranjerood, afhankelijk van de standplaats. Hoogte na 10 jaar circa 250 cm.",
+        "en": "Dense-branched shrub with orange spring foliage turning yellow-green in summer; autumn colour yellow to orange-red depending on site. About 250 cm after 10 years."
       },
       "history": {
-        "nl": "Historische herkomst nog niet voldoende geverifieerd.",
-        "en": "Historical origin not yet sufficiently verified."
+        "nl": "Esveld vermeldt de cultivar en de RHS AGM-onderscheiding uit 2012, maar stelt op deze pagina geen introductiejaar of selecteur vast.",
+        "en": "Esveld lists the cultivar and its RHS AGM award from 2012, but does not establish an introduction year or selector on this page."
       },
       "introduction_year": null,
       "selector_or_introducer": {
@@ -743,28 +798,25 @@
         "nl": "Onbekend",
         "en": "Unknown"
       },
-      "evidence_status": "rhs-list",
+      "evidence_status": "partial",
       "evidence_label": {
-        "nl": "Vermeld in RHS AGM-lijst; historie niet onderzocht",
-        "en": "Listed in RHS AGM list; history not researched"
+        "nl": "Cultivarkenmerken gecontroleerd bij Esveld; historische gegevens beperkt",
+        "en": "Cultivar traits checked against Esveld; historical details limited"
       },
       "sources": [
         {
-          "title": "RHS Award of Garden Merit — ornamental plants (naamvermelding; geen bewijs van historische introductie)",
-          "url": "https://www.rhs.org.uk/plants/pdfs/agm-lists/agm-ornamentals.pdf",
-          "supports": "RHS AGM-listing only"
-        },
-        {
-          "title": "Trees and Shrubs Online — Acer palmatum (soortcontext, geen cultivar-specifiek bewijs)",
-          "url": "https://www.treesandshrubsonline.org/articles/acer/acer-palmatum/",
-          "supports": "Species-level context only"
+          "title": "Plantentuin Esveld — individueel gecontroleerd cultivarprofiel",
+          "url": "https://esveld.nl/a/product/acer-palmatum-orange-dream/",
+          "supports": "Cultivar characteristics and horticultural description; historical details only where explicitly stated on the page"
         }
       ],
       "historical_notes": {
         "nl": "Selecteur / introducteur: Onbekend totdat een cultivar-specifieke betrouwbare bron dit bevestigt. Introductiejaar niet vastgesteld.",
         "en": "Selector / introducer: Unknown until a reliable cultivar-specific source confirms it. Introduction year not established."
       },
-      "review_needed": true
+      "review_needed": true,
+      "height_after_10_years": "250 cm na 10 jaar",
+      "last_checked": "2026-10-20"
     },
     {
       "id": "cultivar-orangeola",
@@ -804,13 +856,19 @@
           "title": "Trees and Shrubs Online — Acer palmatum (soortcontext, geen cultivar-specifiek bewijs)",
           "url": "https://www.treesandshrubsonline.org/articles/acer/acer-palmatum/",
           "supports": "Species-level context only"
+        },
+        {
+          "title": "Plantentuin Esveld — zoekresultaat (individueel cultivarprofiel nog niet gecontroleerd)",
+          "url": "https://esveld.nl/a/winkel/?compact=1&swoof=1&woof_text=Acer%20palmatum%20%27Orangeola%27",
+          "supports": "Search starting point only; not evidence until the matching cultivar profile is reviewed"
         }
       ],
       "historical_notes": {
         "nl": "Selecteur / introducteur: Onbekend totdat een cultivar-specifieke betrouwbare bron dit bevestigt. Introductiejaar niet vastgesteld.",
         "en": "Selector / introducer: Unknown until a reliable cultivar-specific source confirms it. Introduction year not established."
       },
-      "review_needed": true
+      "review_needed": true,
+      "esveld_review_status": "search-link-only"
     },
     {
       "id": "cultivar-ornatum",
@@ -845,6 +903,11 @@
           "title": "Trees and Shrubs Online — Acer palmatum (cultivar descriptions; article from New Trees by John Grimshaw & Ross Bayton)",
           "url": "https://www.treesandshrubsonline.org/articles/acer/acer-palmatum/",
           "supports": "Cultivar-specific traits and the limited historical statements described in this record"
+        },
+        {
+          "title": "Plantentuin Esveld — zoekresultaat (individueel cultivarprofiel nog niet gecontroleerd)",
+          "url": "https://esveld.nl/a/winkel/?compact=1&swoof=1&woof_text=Acer%20palmatum%20%27Ornatum%27",
+          "supports": "Search starting point only; not evidence until the matching cultivar profile is reviewed"
         }
       ],
       "historical_notes": {
@@ -852,7 +915,8 @@
         "en": "The specialist source refers to an 1867 description by Carrière of plants exhibited in Paris by Belgian nurseryman Verschaeffelt. This documents the name historically, but is not necessarily an exact introduction year."
       },
       "review_needed": true,
-      "last_checked": "2026-10-20"
+      "last_checked": "2026-10-20",
+      "esveld_review_status": "search-link-only"
     },
     {
       "id": "cultivar-osakazuki",
@@ -890,6 +954,11 @@
           "title": "Trees and Shrubs Online — Acer palmatum (cultivar descriptions; article from New Trees by John Grimshaw & Ross Bayton)",
           "url": "https://www.treesandshrubsonline.org/articles/acer/acer-palmatum/",
           "supports": "Cultivar-specific traits and the limited historical statements described in this record"
+        },
+        {
+          "title": "Plantentuin Esveld — zoekresultaat (individueel cultivarprofiel nog niet gecontroleerd)",
+          "url": "https://esveld.nl/a/winkel/?compact=1&swoof=1&woof_text=Acer%20palmatum%20%27%C5%8Csakazuki%27",
+          "supports": "Search starting point only; not evidence until the matching cultivar profile is reviewed"
         }
       ],
       "historical_notes": {
@@ -897,7 +966,8 @@
         "en": "The source discusses historical naming confusion and refers to catalogues predating 1911, but does not provide a definitive introduction year or certain original selector."
       },
       "review_needed": true,
-      "last_checked": "2026-10-20"
+      "last_checked": "2026-10-20",
+      "esveld_review_status": "search-link-only"
     },
     {
       "id": "cultivar-redpygmy",
@@ -937,13 +1007,19 @@
           "title": "Trees and Shrubs Online — Acer palmatum (soortcontext, geen cultivar-specifiek bewijs)",
           "url": "https://www.treesandshrubsonline.org/articles/acer/acer-palmatum/",
           "supports": "Species-level context only"
+        },
+        {
+          "title": "Plantentuin Esveld — zoekresultaat (individueel cultivarprofiel nog niet gecontroleerd)",
+          "url": "https://esveld.nl/a/winkel/?compact=1&swoof=1&woof_text=Acer%20palmatum%20%27Red%20Pygmy%27",
+          "supports": "Search starting point only; not evidence until the matching cultivar profile is reviewed"
         }
       ],
       "historical_notes": {
         "nl": "Selecteur / introducteur: Onbekend totdat een cultivar-specifieke betrouwbare bron dit bevestigt. Introductiejaar niet vastgesteld.",
         "en": "Selector / introducer: Unknown until a reliable cultivar-specific source confirms it. Introduction year not established."
       },
-      "review_needed": true
+      "review_needed": true,
+      "esveld_review_status": "search-link-only"
     },
     {
       "id": "cultivar-sangokaku",
@@ -952,12 +1028,12 @@
       "synonyms": [],
       "group": "palmatum",
       "traits": {
-        "nl": "Vooral gewaardeerd om de intens koraalrode jonge twijgen in de winter; het lichtgroene, fijn ingesneden blad kleurt in de herfst geel-oranje.",
-        "en": "Especially valued for intensely coral-red young twigs in winter; light-green, finely divided foliage turns yellow-orange in autumn."
+        "nl": "Opgaand groeiende struik met frisgroen blad, opvallende rode takken en gouden herfstkleur. Hoogte na 10 jaar circa 3 meter; goed winterhard.",
+        "en": "Upright shrub with fresh green foliage, conspicuous red branches and golden autumn colour. About 3 m after 10 years; hardy."
       },
       "history": {
-        "nl": "De bron behandelt Sango-kaku als naam die ook voor Senkaki wordt gebruikt, maar waarschuwt dat materiaal uit verschillende bronnen kan verschillen. Zij noemt introductie in Engeland via T. H. Lowinsky en handel via Sunningdale Nurseries rond 1920, met een mogelijke onafhankelijke introductie in Ierland.",
-        "en": "The source treats Sango-kaku as a name also used for Senkaki, but warns that material from different sources may differ. It mentions introduction to England via T. H. Lowinsky and commerce through Sunningdale Nurseries around 1920, with a possible independent introduction in Ireland."
+        "nl": "Esveld legt de Japanse naam uit als “koraalrode toren” en noemt de RHS AGM-onderscheiding uit 1993; geen introductiejaar of selecteur vermeld.",
+        "en": "Esveld explains the Japanese name as “coral tower” and lists the RHS AGM award from 1993; no introduction year or selector is given."
       },
       "introduction_year": null,
       "selector_or_introducer": {
@@ -968,16 +1044,16 @@
         "nl": "Onbekend",
         "en": "Unknown"
       },
-      "evidence_status": "supported",
+      "evidence_status": "partial",
       "evidence_label": {
-        "nl": "Ondersteund door specialistische cultivarbeschrijving; historische details beperkt",
-        "en": "Supported by specialist cultivar description; historical details limited"
+        "nl": "Cultivarkenmerken gecontroleerd bij Esveld; historische gegevens beperkt",
+        "en": "Cultivar traits checked against Esveld; historical details limited"
       },
       "sources": [
         {
-          "title": "Trees and Shrubs Online — Acer palmatum (cultivar descriptions; article from New Trees by John Grimshaw & Ross Bayton)",
-          "url": "https://www.treesandshrubsonline.org/articles/acer/acer-palmatum/",
-          "supports": "Cultivar-specific traits and the limited historical statements described in this record"
+          "title": "Plantentuin Esveld — individueel gecontroleerd cultivarprofiel",
+          "url": "https://esveld.nl/a/product/acer-palmatum-sango-kaku/",
+          "supports": "Cultivar characteristics and horticultural description; historical details only where explicitly stated on the page"
         }
       ],
       "historical_notes": {
@@ -985,7 +1061,8 @@
         "en": "The source treats Sango-kaku as a name also used for Senkaki, but warns that material from different sources may differ. It mentions introduction to England via T. H. Lowinsky and commerce through Sunningdale Nurseries around 1920, with a possible independent introduction in Ireland."
       },
       "review_needed": true,
-      "last_checked": "2026-10-20"
+      "last_checked": "2026-10-20",
+      "height_after_10_years": "3 m na 10 jaar"
     },
     {
       "id": "cultivar-seiryu",
@@ -1022,6 +1099,11 @@
           "title": "Trees and Shrubs Online — Acer palmatum (cultivar descriptions; article from New Trees by John Grimshaw & Ross Bayton)",
           "url": "https://www.treesandshrubsonline.org/articles/acer/acer-palmatum/",
           "supports": "Cultivar-specific traits and the limited historical statements described in this record"
+        },
+        {
+          "title": "Plantentuin Esveld — zoekresultaat (individueel cultivarprofiel nog niet gecontroleerd)",
+          "url": "https://esveld.nl/a/winkel/?compact=1&swoof=1&woof_text=Acer%20palmatum%20%27Seiry%C5%AB%27",
+          "supports": "Search starting point only; not evidence until the matching cultivar profile is reviewed"
         }
       ],
       "historical_notes": {
@@ -1029,7 +1111,8 @@
         "en": "The specialist source describes the cultivar as a distinctive upright form within the Dissectum group; introduction year and selector are not established."
       },
       "review_needed": true,
-      "last_checked": "2026-10-20"
+      "last_checked": "2026-10-20",
+      "esveld_review_status": "search-link-only"
     },
     {
       "id": "cultivar-shindeshojo",
@@ -1071,13 +1154,19 @@
           "title": "Trees and Shrubs Online — Acer palmatum (soortcontext, geen cultivar-specifiek bewijs)",
           "url": "https://www.treesandshrubsonline.org/articles/acer/acer-palmatum/",
           "supports": "Species-level context only"
+        },
+        {
+          "title": "Plantentuin Esveld — zoekresultaat (individueel cultivarprofiel nog niet gecontroleerd)",
+          "url": "https://esveld.nl/a/winkel/?compact=1&swoof=1&woof_text=Acer%20palmatum%20%27Shin-desh%C5%8Dj%C5%8D%27",
+          "supports": "Search starting point only; not evidence until the matching cultivar profile is reviewed"
         }
       ],
       "historical_notes": {
         "nl": "Selecteur / introducteur: Onbekend totdat een cultivar-specifieke betrouwbare bron dit bevestigt. Introductiejaar niet vastgesteld.",
         "en": "Selector / introducer: Unknown until a reliable cultivar-specific source confirms it. Introduction year not established."
       },
-      "review_needed": true
+      "review_needed": true,
+      "esveld_review_status": "search-link-only"
     },
     {
       "id": "cultivar-shishigashira",
@@ -1117,13 +1206,19 @@
           "title": "Trees and Shrubs Online — Acer palmatum (soortcontext, geen cultivar-specifiek bewijs)",
           "url": "https://www.treesandshrubsonline.org/articles/acer/acer-palmatum/",
           "supports": "Species-level context only"
+        },
+        {
+          "title": "Plantentuin Esveld — zoekresultaat (individueel cultivarprofiel nog niet gecontroleerd)",
+          "url": "https://esveld.nl/a/winkel/?compact=1&swoof=1&woof_text=Acer%20palmatum%20%27Shishi-gashira%27",
+          "supports": "Search starting point only; not evidence until the matching cultivar profile is reviewed"
         }
       ],
       "historical_notes": {
         "nl": "Selecteur / introducteur: Onbekend totdat een cultivar-specifieke betrouwbare bron dit bevestigt. Introductiejaar niet vastgesteld.",
         "en": "Selector / introducer: Unknown until a reliable cultivar-specific source confirms it. Introduction year not established."
       },
-      "review_needed": true
+      "review_needed": true,
+      "esveld_review_status": "search-link-only"
     },
     {
       "id": "cultivar-trompenburg",
@@ -1163,13 +1258,19 @@
           "title": "Trees and Shrubs Online — Acer palmatum (soortcontext, geen cultivar-specifiek bewijs)",
           "url": "https://www.treesandshrubsonline.org/articles/acer/acer-palmatum/",
           "supports": "Species-level context only"
+        },
+        {
+          "title": "Plantentuin Esveld — zoekresultaat (individueel cultivarprofiel nog niet gecontroleerd)",
+          "url": "https://esveld.nl/a/winkel/?compact=1&swoof=1&woof_text=Acer%20palmatum%20%27Trompenburg%27",
+          "supports": "Search starting point only; not evidence until the matching cultivar profile is reviewed"
         }
       ],
       "historical_notes": {
         "nl": "Selecteur / introducteur: Onbekend totdat een cultivar-specifieke betrouwbare bron dit bevestigt. Introductiejaar niet vastgesteld.",
         "en": "Selector / introducer: Unknown until a reliable cultivar-specific source confirms it. Introduction year not established."
       },
-      "review_needed": true
+      "review_needed": true,
+      "esveld_review_status": "search-link-only"
     },
     {
       "id": "cultivar-villataranto",
@@ -1209,13 +1310,19 @@
           "title": "Trees and Shrubs Online — Acer palmatum (soortcontext, geen cultivar-specifiek bewijs)",
           "url": "https://www.treesandshrubsonline.org/articles/acer/acer-palmatum/",
           "supports": "Species-level context only"
+        },
+        {
+          "title": "Plantentuin Esveld — zoekresultaat (individueel cultivarprofiel nog niet gecontroleerd)",
+          "url": "https://esveld.nl/a/winkel/?compact=1&swoof=1&woof_text=Acer%20palmatum%20%27Villa%20Taranto%27",
+          "supports": "Search starting point only; not evidence until the matching cultivar profile is reviewed"
         }
       ],
       "historical_notes": {
         "nl": "Selecteur / introducteur: Onbekend totdat een cultivar-specifieke betrouwbare bron dit bevestigt. Introductiejaar niet vastgesteld.",
         "en": "Selector / introducer: Unknown until a reliable cultivar-specific source confirms it. Introduction year not established."
       },
-      "review_needed": true
+      "review_needed": true,
+      "esveld_review_status": "search-link-only"
     },
     {
       "id": "cultivar-mikawayatsubusa",
@@ -1257,13 +1364,19 @@
           "title": "Trees and Shrubs Online — Acer palmatum (soortcontext, geen cultivar-specifiek bewijs)",
           "url": "https://www.treesandshrubsonline.org/articles/acer/acer-palmatum/",
           "supports": "Species-level context only"
+        },
+        {
+          "title": "Plantentuin Esveld — zoekresultaat (individueel cultivarprofiel nog niet gecontroleerd)",
+          "url": "https://esveld.nl/a/winkel/?compact=1&swoof=1&woof_text=Acer%20palmatum%20%27Mikawa%20yatsubusa%27",
+          "supports": "Search starting point only; not evidence until the matching cultivar profile is reviewed"
         }
       ],
       "historical_notes": {
         "nl": "Selecteur / introducteur: Onbekend totdat een cultivar-specifieke betrouwbare bron dit bevestigt. Introductiejaar niet vastgesteld.",
         "en": "Selector / introducer: Unknown until a reliable cultivar-specific source confirms it. Introduction year not established."
       },
-      "review_needed": true
+      "review_needed": true,
+      "esveld_review_status": "search-link-only"
     },
     {
       "id": "cultivar-seigen",
@@ -1303,13 +1416,19 @@
           "title": "Trees and Shrubs Online — Acer palmatum (soortcontext, geen cultivar-specifiek bewijs)",
           "url": "https://www.treesandshrubsonline.org/articles/acer/acer-palmatum/",
           "supports": "Species-level context only"
+        },
+        {
+          "title": "Plantentuin Esveld — zoekresultaat (individueel cultivarprofiel nog niet gecontroleerd)",
+          "url": "https://esveld.nl/a/winkel/?compact=1&swoof=1&woof_text=Acer%20palmatum%20%27Seigen%27",
+          "supports": "Search starting point only; not evidence until the matching cultivar profile is reviewed"
         }
       ],
       "historical_notes": {
         "nl": "Selecteur / introducteur: Onbekend totdat een cultivar-specifieke betrouwbare bron dit bevestigt. Introductiejaar niet vastgesteld.",
         "en": "Selector / introducer: Unknown until a reliable cultivar-specific source confirms it. Introduction year not established."
       },
-      "review_needed": true
+      "review_needed": true,
+      "esveld_review_status": "search-link-only"
     },
     {
       "id": "cultivar-deshojo",
@@ -1351,13 +1470,19 @@
           "title": "Trees and Shrubs Online — Acer palmatum (soortcontext, geen cultivar-specifiek bewijs)",
           "url": "https://www.treesandshrubsonline.org/articles/acer/acer-palmatum/",
           "supports": "Species-level context only"
+        },
+        {
+          "title": "Plantentuin Esveld — zoekresultaat (individueel cultivarprofiel nog niet gecontroleerd)",
+          "url": "https://esveld.nl/a/winkel/?compact=1&swoof=1&woof_text=Acer%20palmatum%20%27Desh%C5%8Dj%C5%8D%27",
+          "supports": "Search starting point only; not evidence until the matching cultivar profile is reviewed"
         }
       ],
       "historical_notes": {
         "nl": "Selecteur / introducteur: Onbekend totdat een cultivar-specifieke betrouwbare bron dit bevestigt. Introductiejaar niet vastgesteld.",
         "en": "Selector / introducer: Unknown until a reliable cultivar-specific source confirms it. Introduction year not established."
       },
-      "review_needed": true
+      "review_needed": true,
+      "esveld_review_status": "search-link-only"
     },
     {
       "id": "cultivar-viridis",
@@ -1397,13 +1522,19 @@
           "title": "Trees and Shrubs Online — Acer palmatum (soortcontext, geen cultivar-specifiek bewijs)",
           "url": "https://www.treesandshrubsonline.org/articles/acer/acer-palmatum/",
           "supports": "Species-level context only"
+        },
+        {
+          "title": "Plantentuin Esveld — zoekresultaat (individueel cultivarprofiel nog niet gecontroleerd)",
+          "url": "https://esveld.nl/a/winkel/?compact=1&swoof=1&woof_text=Acer%20palmatum%20%27Viridis%27",
+          "supports": "Search starting point only; not evidence until the matching cultivar profile is reviewed"
         }
       ],
       "historical_notes": {
         "nl": "Selecteur / introducteur: Onbekend totdat een cultivar-specifieke betrouwbare bron dit bevestigt. Introductiejaar niet vastgesteld.",
         "en": "Selector / introducer: Unknown until a reliable cultivar-specific source confirms it. Introduction year not established."
       },
-      "review_needed": true
+      "review_needed": true,
+      "esveld_review_status": "search-link-only"
     },
     {
       "id": "cultivar-waterfall",
@@ -1443,13 +1574,19 @@
           "title": "Trees and Shrubs Online — Acer palmatum (soortcontext, geen cultivar-specifiek bewijs)",
           "url": "https://www.treesandshrubsonline.org/articles/acer/acer-palmatum/",
           "supports": "Species-level context only"
+        },
+        {
+          "title": "Plantentuin Esveld — zoekresultaat (individueel cultivarprofiel nog niet gecontroleerd)",
+          "url": "https://esveld.nl/a/winkel/?compact=1&swoof=1&woof_text=Acer%20palmatum%20%27Waterfall%27",
+          "supports": "Search starting point only; not evidence until the matching cultivar profile is reviewed"
         }
       ],
       "historical_notes": {
         "nl": "Selecteur / introducteur: Onbekend totdat een cultivar-specifieke betrouwbare bron dit bevestigt. Introductiejaar niet vastgesteld.",
         "en": "Selector / introducer: Unknown until a reliable cultivar-specific source confirms it. Introduction year not established."
       },
-      "review_needed": true
+      "review_needed": true,
+      "esveld_review_status": "search-link-only"
     },
     {
       "id": "cultivar-suminagashi",
@@ -1491,13 +1628,19 @@
           "title": "Trees and Shrubs Online — Acer palmatum (soortcontext, geen cultivar-specifiek bewijs)",
           "url": "https://www.treesandshrubsonline.org/articles/acer/acer-palmatum/",
           "supports": "Species-level context only"
+        },
+        {
+          "title": "Plantentuin Esveld — zoekresultaat (individueel cultivarprofiel nog niet gecontroleerd)",
+          "url": "https://esveld.nl/a/winkel/?compact=1&swoof=1&woof_text=Acer%20palmatum%20%27Sumi-nagashi%27",
+          "supports": "Search starting point only; not evidence until the matching cultivar profile is reviewed"
         }
       ],
       "historical_notes": {
         "nl": "Selecteur / introducteur: Onbekend totdat een cultivar-specifieke betrouwbare bron dit bevestigt. Introductiejaar niet vastgesteld.",
         "en": "Selector / introducer: Unknown until a reliable cultivar-specific source confirms it. Introduction year not established."
       },
-      "review_needed": true
+      "review_needed": true,
+      "esveld_review_status": "search-link-only"
     },
     {
       "id": "cultivar-firstghost",
@@ -1537,13 +1680,19 @@
           "title": "Trees and Shrubs Online — Acer palmatum (soortcontext, geen cultivar-specifiek bewijs)",
           "url": "https://www.treesandshrubsonline.org/articles/acer/acer-palmatum/",
           "supports": "Species-level context only"
+        },
+        {
+          "title": "Plantentuin Esveld — zoekresultaat (individueel cultivarprofiel nog niet gecontroleerd)",
+          "url": "https://esveld.nl/a/winkel/?compact=1&swoof=1&woof_text=Acer%20palmatum%20%27First%20Ghost%27",
+          "supports": "Search starting point only; not evidence until the matching cultivar profile is reviewed"
         }
       ],
       "historical_notes": {
         "nl": "Selecteur / introducteur: Onbekend totdat een cultivar-specifieke betrouwbare bron dit bevestigt. Introductiejaar niet vastgesteld.",
         "en": "Selector / introducer: Unknown until a reliable cultivar-specific source confirms it. Introduction year not established."
       },
-      "review_needed": true
+      "review_needed": true,
+      "esveld_review_status": "search-link-only"
     },
     {
       "id": "cultivar-pevestarfish",
@@ -1585,13 +1734,19 @@
           "title": "Trees and Shrubs Online — Acer palmatum (soortcontext, geen cultivar-specifiek bewijs)",
           "url": "https://www.treesandshrubsonline.org/articles/acer/acer-palmatum/",
           "supports": "Species-level context only"
+        },
+        {
+          "title": "Plantentuin Esveld — zoekresultaat (individueel cultivarprofiel nog niet gecontroleerd)",
+          "url": "https://esveld.nl/a/winkel/?compact=1&swoof=1&woof_text=Acer%20palmatum%20%27Peve%20Starfish%27",
+          "supports": "Search starting point only; not evidence until the matching cultivar profile is reviewed"
         }
       ],
       "historical_notes": {
         "nl": "Selecteur / introducteur: Onbekend totdat een cultivar-specifieke betrouwbare bron dit bevestigt. Introductiejaar niet vastgesteld.",
         "en": "Selector / introducer: Unknown until a reliable cultivar-specific source confirms it. Introduction year not established."
       },
-      "review_needed": true
+      "review_needed": true,
+      "esveld_review_status": "search-link-only"
     },
     {
       "id": "cultivar-aoshidare",
@@ -1631,13 +1786,19 @@
           "title": "Trees and Shrubs Online — Acer palmatum (soortcontext, geen cultivar-specifiek bewijs)",
           "url": "https://www.treesandshrubsonline.org/articles/acer/acer-palmatum/",
           "supports": "Species-level context only"
+        },
+        {
+          "title": "Plantentuin Esveld — zoekresultaat (individueel cultivarprofiel nog niet gecontroleerd)",
+          "url": "https://esveld.nl/a/winkel/?compact=1&swoof=1&woof_text=Acer%20palmatum%20%27Ao%20shidare%27",
+          "supports": "Search starting point only; not evidence until the matching cultivar profile is reviewed"
         }
       ],
       "historical_notes": {
         "nl": "Selecteur / introducteur: Onbekend totdat een cultivar-specifieke betrouwbare bron dit bevestigt. Introductiejaar niet vastgesteld.",
         "en": "Selector / introducer: Unknown until a reliable cultivar-specific source confirms it. Introduction year not established."
       },
-      "review_needed": true
+      "review_needed": true,
+      "esveld_review_status": "search-link-only"
     },
     {
       "id": "cultivar-kihachijo",
@@ -1674,6 +1835,11 @@
           "title": "Trees and Shrubs Online — Acer palmatum (cultivar descriptions; article from New Trees by John Grimshaw & Ross Bayton)",
           "url": "https://www.treesandshrubsonline.org/articles/acer/acer-palmatum/",
           "supports": "Cultivar-specific traits and the limited historical statements described in this record"
+        },
+        {
+          "title": "Plantentuin Esveld — zoekresultaat (individueel cultivarprofiel nog niet gecontroleerd)",
+          "url": "https://esveld.nl/a/winkel/?compact=1&swoof=1&woof_text=Acer%20palmatum%20%27Ki%20Hachij%C5%8D%27",
+          "supports": "Search starting point only; not evidence until the matching cultivar profile is reviewed"
         }
       ],
       "historical_notes": {
@@ -1681,7 +1847,8 @@
         "en": "The specialist source describes its traits but does not establish an introduction year or original selector."
       },
       "review_needed": true,
-      "last_checked": "2026-10-20"
+      "last_checked": "2026-10-20",
+      "esveld_review_status": "search-link-only"
     },
     {
       "id": "cultivar-flavescens",
@@ -1721,13 +1888,19 @@
           "title": "Trees and Shrubs Online — Acer palmatum (soortcontext, geen cultivar-specifiek bewijs)",
           "url": "https://www.treesandshrubsonline.org/articles/acer/acer-palmatum/",
           "supports": "Species-level context only"
+        },
+        {
+          "title": "Plantentuin Esveld — zoekresultaat (individueel cultivarprofiel nog niet gecontroleerd)",
+          "url": "https://esveld.nl/a/winkel/?compact=1&swoof=1&woof_text=Acer%20palmatum%20%27Flavescens%27",
+          "supports": "Search starting point only; not evidence until the matching cultivar profile is reviewed"
         }
       ],
       "historical_notes": {
         "nl": "Selecteur / introducteur: Onbekend totdat een cultivar-specifieke betrouwbare bron dit bevestigt. Introductiejaar niet vastgesteld.",
         "en": "Selector / introducer: Unknown until a reliable cultivar-specific source confirms it. Introduction year not established."
       },
-      "review_needed": true
+      "review_needed": true,
+      "esveld_review_status": "search-link-only"
     },
     {
       "id": "cultivar-ukigumo",
@@ -1767,13 +1940,19 @@
           "title": "Trees and Shrubs Online — Acer palmatum (soortcontext, geen cultivar-specifiek bewijs)",
           "url": "https://www.treesandshrubsonline.org/articles/acer/acer-palmatum/",
           "supports": "Species-level context only"
+        },
+        {
+          "title": "Plantentuin Esveld — zoekresultaat (individueel cultivarprofiel nog niet gecontroleerd)",
+          "url": "https://esveld.nl/a/winkel/?compact=1&swoof=1&woof_text=Acer%20palmatum%20%27Ukigumo%27",
+          "supports": "Search starting point only; not evidence until the matching cultivar profile is reviewed"
         }
       ],
       "historical_notes": {
         "nl": "Selecteur / introducteur: Onbekend totdat een cultivar-specifieke betrouwbare bron dit bevestigt. Introductiejaar niet vastgesteld.",
         "en": "Selector / introducer: Unknown until a reliable cultivar-specific source confirms it. Introduction year not established."
       },
-      "review_needed": true
+      "review_needed": true,
+      "esveld_review_status": "search-link-only"
     },
     {
       "id": "cultivar-murasakikiyohime",
@@ -1815,13 +1994,19 @@
           "title": "Trees and Shrubs Online — Acer palmatum (soortcontext, geen cultivar-specifiek bewijs)",
           "url": "https://www.treesandshrubsonline.org/articles/acer/acer-palmatum/",
           "supports": "Species-level context only"
+        },
+        {
+          "title": "Plantentuin Esveld — zoekresultaat (individueel cultivarprofiel nog niet gecontroleerd)",
+          "url": "https://esveld.nl/a/winkel/?compact=1&swoof=1&woof_text=Acer%20palmatum%20%27Murasaki%20kiyohime%27",
+          "supports": "Search starting point only; not evidence until the matching cultivar profile is reviewed"
         }
       ],
       "historical_notes": {
         "nl": "Selecteur / introducteur: Onbekend totdat een cultivar-specifieke betrouwbare bron dit bevestigt. Introductiejaar niet vastgesteld.",
         "en": "Selector / introducer: Unknown until a reliable cultivar-specific source confirms it. Introduction year not established."
       },
-      "review_needed": true
+      "review_needed": true,
+      "esveld_review_status": "search-link-only"
     },
     {
       "id": "cultivar-benikawa",
@@ -1863,13 +2048,19 @@
           "title": "Trees and Shrubs Online — Acer palmatum (soortcontext, geen cultivar-specifiek bewijs)",
           "url": "https://www.treesandshrubsonline.org/articles/acer/acer-palmatum/",
           "supports": "Species-level context only"
+        },
+        {
+          "title": "Plantentuin Esveld — zoekresultaat (individueel cultivarprofiel nog niet gecontroleerd)",
+          "url": "https://esveld.nl/a/winkel/?compact=1&swoof=1&woof_text=Acer%20palmatum%20%27Beni%20kawa%27",
+          "supports": "Search starting point only; not evidence until the matching cultivar profile is reviewed"
         }
       ],
       "historical_notes": {
         "nl": "Selecteur / introducteur: Onbekend totdat een cultivar-specifieke betrouwbare bron dit bevestigt. Introductiejaar niet vastgesteld.",
         "en": "Selector / introducer: Unknown until a reliable cultivar-specific source confirms it. Introduction year not established."
       },
-      "review_needed": true
+      "review_needed": true,
+      "esveld_review_status": "search-link-only"
     },
     {
       "id": "cultivar-butterfly",
@@ -1904,6 +2095,11 @@
           "title": "Trees and Shrubs Online — Acer palmatum (cultivar descriptions; article from New Trees by John Grimshaw & Ross Bayton)",
           "url": "https://www.treesandshrubsonline.org/articles/acer/acer-palmatum/",
           "supports": "Cultivar-specific traits and the limited historical statements described in this record"
+        },
+        {
+          "title": "Plantentuin Esveld — zoekresultaat (individueel cultivarprofiel nog niet gecontroleerd)",
+          "url": "https://esveld.nl/a/winkel/?compact=1&swoof=1&woof_text=Acer%20palmatum%20%27Butterfly%27",
+          "supports": "Search starting point only; not evidence until the matching cultivar profile is reviewed"
         }
       ],
       "historical_notes": {
@@ -1911,7 +2107,8 @@
         "en": "The specialist source lists Kocho Nishiki as an alternative name and describes the traits, but does not establish a definitive introduction year or selector. Synonyms and name usage need further checking."
       },
       "review_needed": true,
-      "last_checked": "2026-10-20"
+      "last_checked": "2026-10-20",
+      "esveld_review_status": "search-link-only"
     },
     {
       "id": "cultivar-kotonoito",
@@ -1951,13 +2148,19 @@
           "title": "Trees and Shrubs Online — Acer palmatum (soortcontext, geen cultivar-specifiek bewijs)",
           "url": "https://www.treesandshrubsonline.org/articles/acer/acer-palmatum/",
           "supports": "Species-level context only"
+        },
+        {
+          "title": "Plantentuin Esveld — zoekresultaat (individueel cultivarprofiel nog niet gecontroleerd)",
+          "url": "https://esveld.nl/a/winkel/?compact=1&swoof=1&woof_text=Acer%20palmatum%20%27Koto-no-ito%27",
+          "supports": "Search starting point only; not evidence until the matching cultivar profile is reviewed"
         }
       ],
       "historical_notes": {
         "nl": "Selecteur / introducteur: Onbekend totdat een cultivar-specifieke betrouwbare bron dit bevestigt. Introductiejaar niet vastgesteld.",
         "en": "Selector / introducer: Unknown until a reliable cultivar-specific source confirms it. Introduction year not established."
       },
-      "review_needed": true
+      "review_needed": true,
+      "esveld_review_status": "search-link-only"
     },
     {
       "id": "cultivar-shaina",
@@ -1997,13 +2200,19 @@
           "title": "Trees and Shrubs Online — Acer palmatum (soortcontext, geen cultivar-specifiek bewijs)",
           "url": "https://www.treesandshrubsonline.org/articles/acer/acer-palmatum/",
           "supports": "Species-level context only"
+        },
+        {
+          "title": "Plantentuin Esveld — zoekresultaat (individueel cultivarprofiel nog niet gecontroleerd)",
+          "url": "https://esveld.nl/a/winkel/?compact=1&swoof=1&woof_text=Acer%20palmatum%20%27Shaina%27",
+          "supports": "Search starting point only; not evidence until the matching cultivar profile is reviewed"
         }
       ],
       "historical_notes": {
         "nl": "Selecteur / introducteur: Onbekend totdat een cultivar-specifieke betrouwbare bron dit bevestigt. Introductiejaar niet vastgesteld.",
         "en": "Selector / introducer: Unknown until a reliable cultivar-specific source confirms it. Introduction year not established."
       },
-      "review_needed": true
+      "review_needed": true,
+      "esveld_review_status": "search-link-only"
     },
     {
       "id": "cultivar-higasayama",
@@ -2038,6 +2247,11 @@
           "title": "Trees and Shrubs Online — Acer palmatum (cultivar descriptions; article from New Trees by John Grimshaw & Ross Bayton)",
           "url": "https://www.treesandshrubsonline.org/articles/acer/acer-palmatum/",
           "supports": "Cultivar-specific traits and the limited historical statements described in this record"
+        },
+        {
+          "title": "Plantentuin Esveld — zoekresultaat (individueel cultivarprofiel nog niet gecontroleerd)",
+          "url": "https://esveld.nl/a/winkel/?compact=1&swoof=1&woof_text=Acer%20palmatum%20%27Higasayama%27",
+          "supports": "Search starting point only; not evidence until the matching cultivar profile is reviewed"
         }
       ],
       "historical_notes": {
@@ -2045,7 +2259,8 @@
         "en": "The specialist source describes Higasayama as an old cultivar and warns that it is sometimes misnamed Roseomarginatum. Introduction year and selector are not established."
       },
       "review_needed": true,
-      "last_checked": "2026-10-20"
+      "last_checked": "2026-10-20",
+      "esveld_review_status": "search-link-only"
     },
     {
       "id": "cultivar-mikawakaen",
@@ -2085,13 +2300,19 @@
           "title": "Trees and Shrubs Online — Acer palmatum (soortcontext, geen cultivar-specifiek bewijs)",
           "url": "https://www.treesandshrubsonline.org/articles/acer/acer-palmatum/",
           "supports": "Species-level context only"
+        },
+        {
+          "title": "Plantentuin Esveld — zoekresultaat (individueel cultivarprofiel nog niet gecontroleerd)",
+          "url": "https://esveld.nl/a/winkel/?compact=1&swoof=1&woof_text=Acer%20palmatum%20%27Mikawa%20Kaen%27",
+          "supports": "Search starting point only; not evidence until the matching cultivar profile is reviewed"
         }
       ],
       "historical_notes": {
         "nl": "Selecteur / introducteur: Onbekend totdat een cultivar-specifieke betrouwbare bron dit bevestigt. Introductiejaar niet vastgesteld.",
         "en": "Selector / introducer: Unknown until a reliable cultivar-specific source confirms it. Introduction year not established."
       },
-      "review_needed": true
+      "review_needed": true,
+      "esveld_review_status": "search-link-only"
     },
     {
       "id": "cultivar-tamukeyama",
@@ -2131,13 +2352,19 @@
           "title": "Trees and Shrubs Online — Acer palmatum (soortcontext, geen cultivar-specifiek bewijs)",
           "url": "https://www.treesandshrubsonline.org/articles/acer/acer-palmatum/",
           "supports": "Species-level context only"
+        },
+        {
+          "title": "Plantentuin Esveld — zoekresultaat (individueel cultivarprofiel nog niet gecontroleerd)",
+          "url": "https://esveld.nl/a/winkel/?compact=1&swoof=1&woof_text=Acer%20palmatum%20%27Tamukeyama%27",
+          "supports": "Search starting point only; not evidence until the matching cultivar profile is reviewed"
         }
       ],
       "historical_notes": {
         "nl": "Selecteur / introducteur: Onbekend totdat een cultivar-specifieke betrouwbare bron dit bevestigt. Introductiejaar niet vastgesteld.",
         "en": "Selector / introducer: Unknown until a reliable cultivar-specific source confirms it. Introduction year not established."
       },
-      "review_needed": true
+      "review_needed": true,
+      "esveld_review_status": "search-link-only"
     },
     {
       "id": "cultivar-akashigitatsusawa",
@@ -2179,13 +2406,19 @@
           "title": "Trees and Shrubs Online — Acer palmatum (soortcontext, geen cultivar-specifiek bewijs)",
           "url": "https://www.treesandshrubsonline.org/articles/acer/acer-palmatum/",
           "supports": "Species-level context only"
+        },
+        {
+          "title": "Plantentuin Esveld — zoekresultaat (individueel cultivarprofiel nog niet gecontroleerd)",
+          "url": "https://esveld.nl/a/winkel/?compact=1&swoof=1&woof_text=Acer%20palmatum%20%27Aka%20shigitatsu%20sawa%27",
+          "supports": "Search starting point only; not evidence until the matching cultivar profile is reviewed"
         }
       ],
       "historical_notes": {
         "nl": "Selecteur / introducteur: Onbekend totdat een cultivar-specifieke betrouwbare bron dit bevestigt. Introductiejaar niet vastgesteld.",
         "en": "Selector / introducer: Unknown until a reliable cultivar-specific source confirms it. Introduction year not established."
       },
-      "review_needed": true
+      "review_needed": true,
+      "esveld_review_status": "search-link-only"
     },
     {
       "id": "cultivar-benikomachi",
@@ -2227,13 +2460,19 @@
           "title": "Trees and Shrubs Online — Acer palmatum (soortcontext, geen cultivar-specifiek bewijs)",
           "url": "https://www.treesandshrubsonline.org/articles/acer/acer-palmatum/",
           "supports": "Species-level context only"
+        },
+        {
+          "title": "Plantentuin Esveld — zoekresultaat (individueel cultivarprofiel nog niet gecontroleerd)",
+          "url": "https://esveld.nl/a/winkel/?compact=1&swoof=1&woof_text=Acer%20palmatum%20%27Beni%20komachi%27",
+          "supports": "Search starting point only; not evidence until the matching cultivar profile is reviewed"
         }
       ],
       "historical_notes": {
         "nl": "Selecteur / introducteur: Onbekend totdat een cultivar-specifieke betrouwbare bron dit bevestigt. Introductiejaar niet vastgesteld.",
         "en": "Selector / introducer: Unknown until a reliable cultivar-specific source confirms it. Introduction year not established."
       },
-      "review_needed": true
+      "review_needed": true,
+      "esveld_review_status": "search-link-only"
     },
     {
       "id": "cultivar-kotohime",
@@ -2275,13 +2514,19 @@
           "title": "Trees and Shrubs Online — Acer palmatum (soortcontext, geen cultivar-specifiek bewijs)",
           "url": "https://www.treesandshrubsonline.org/articles/acer/acer-palmatum/",
           "supports": "Species-level context only"
+        },
+        {
+          "title": "Plantentuin Esveld — zoekresultaat (individueel cultivarprofiel nog niet gecontroleerd)",
+          "url": "https://esveld.nl/a/winkel/?compact=1&swoof=1&woof_text=Acer%20palmatum%20%27Koto%20hime%27",
+          "supports": "Search starting point only; not evidence until the matching cultivar profile is reviewed"
         }
       ],
       "historical_notes": {
         "nl": "Selecteur / introducteur: Onbekend totdat een cultivar-specifieke betrouwbare bron dit bevestigt. Introductiejaar niet vastgesteld.",
         "en": "Selector / introducer: Unknown until a reliable cultivar-specific source confirms it. Introduction year not established."
       },
-      "review_needed": true
+      "review_needed": true,
+      "esveld_review_status": "search-link-only"
     },
     {
       "id": "shira-aureum",
@@ -2315,13 +2560,19 @@
         {
           "title": "Oregon State University beschrijft de gele bladeren en mogelijke goudgele tot oranje herfstkleur",
           "url": "https://landscapeplants.oregonstate.edu/plants/acer-shirasawanum"
+        },
+        {
+          "title": "Plantentuin Esveld — zoekresultaat (individueel cultivarprofiel nog niet gecontroleerd)",
+          "url": "https://esveld.nl/a/winkel/?compact=1&swoof=1&woof_text=Acer%20shirasawanum%20%27Aureum%27",
+          "supports": "Search starting point only; not evidence until the matching cultivar profile is reviewed"
         }
       ],
       "historical_notes": {
         "nl": "Introductiejaar en selecteur niet bevestigd; niet ingevuld op basis van aannames.",
         "en": "Introduction year and selector unconfirmed; not filled from assumptions."
       },
-      "review_needed": true
+      "review_needed": true,
+      "esveld_review_status": "search-link-only"
     },
     {
       "id": "shira-autumn-moon",
@@ -2355,13 +2606,19 @@
         {
           "title": "Dawes Arboretum beschrijft de groeiwijze, voorjaarskleur en herfstkleur",
           "url": "https://dawesarb.arboretumexplorer.org/taxon-19728.aspx"
+        },
+        {
+          "title": "Plantentuin Esveld — zoekresultaat (individueel cultivarprofiel nog niet gecontroleerd)",
+          "url": "https://esveld.nl/a/winkel/?compact=1&swoof=1&woof_text=Acer%20shirasawanum%20%27Autumn%20Moon%27",
+          "supports": "Search starting point only; not evidence until the matching cultivar profile is reviewed"
         }
       ],
       "historical_notes": {
         "nl": "Introductiejaar en selecteur niet bevestigd; niet ingevuld op basis van aannames.",
         "en": "Introduction year and selector unconfirmed; not filled from assumptions."
       },
-      "review_needed": true
+      "review_needed": true,
+      "esveld_review_status": "search-link-only"
     },
     {
       "id": "shira-jordan",
@@ -2395,13 +2652,19 @@
         {
           "title": "Gardenia beschrijft seizoenskleur en bladvorm; cultivarvermelding wordt ook bevestigd door gespecialiseerde kwekerlijsten",
           "url": "https://www.gardenia.net/plant/acer-shirasawanum-jordan"
+        },
+        {
+          "title": "Plantentuin Esveld — zoekresultaat (individueel cultivarprofiel nog niet gecontroleerd)",
+          "url": "https://esveld.nl/a/winkel/?compact=1&swoof=1&woof_text=Acer%20shirasawanum%20%27Jordan%27",
+          "supports": "Search starting point only; not evidence until the matching cultivar profile is reviewed"
         }
       ],
       "historical_notes": {
         "nl": "Introductiejaar en selecteur niet bevestigd; niet ingevuld op basis van aannames.",
         "en": "Introduction year and selector unconfirmed; not filled from assumptions."
       },
-      "review_needed": true
+      "review_needed": true,
+      "esveld_review_status": "search-link-only"
     },
     {
       "id": "shira-moonrise",
@@ -2435,13 +2698,19 @@
         {
           "title": "Oregon State University noemt bladkleur, ontdekker en herkomst als zaailing van ‘Aureum’",
           "url": "https://landscapeplants.oregonstate.edu/plants/acer-shirasawanum"
+        },
+        {
+          "title": "Plantentuin Esveld — zoekresultaat (individueel cultivarprofiel nog niet gecontroleerd)",
+          "url": "https://esveld.nl/a/winkel/?compact=1&swoof=1&woof_text=Acer%20shirasawanum%20%27Moonrise%27",
+          "supports": "Search starting point only; not evidence until the matching cultivar profile is reviewed"
         }
       ],
       "historical_notes": {
         "nl": "Introductiejaar en selecteur niet bevestigd; niet ingevuld op basis van aannames.",
         "en": "Introduction year and selector unconfirmed; not filled from assumptions."
       },
-      "review_needed": true
+      "review_needed": true,
+      "esveld_review_status": "search-link-only"
     },
     {
       "id": "shira-johin",
@@ -2475,13 +2744,19 @@
         {
           "title": "Bays Nursery geeft seizoenskleuren voor ‘Johin’; geen introductiejaar of selecteur vermeld",
           "url": "https://www.baysnurseryandacercentre.co.uk/our-plant-varieties/acer-shirasawanum"
+        },
+        {
+          "title": "Plantentuin Esveld — zoekresultaat (individueel cultivarprofiel nog niet gecontroleerd)",
+          "url": "https://esveld.nl/a/winkel/?compact=1&swoof=1&woof_text=Acer%20shirasawanum%20%27Johin%27",
+          "supports": "Search starting point only; not evidence until the matching cultivar profile is reviewed"
         }
       ],
       "historical_notes": {
         "nl": "Introductiejaar en selecteur niet bevestigd; niet ingevuld op basis van aannames.",
         "en": "Introduction year and selector unconfirmed; not filled from assumptions."
       },
-      "review_needed": true
+      "review_needed": true,
+      "esveld_review_status": "search-link-only"
     },
     {
       "id": "shira-mikawa-kaen",
@@ -2515,13 +2790,19 @@
         {
           "title": "Vermeld op de specialistische Acer shirasawanum A–Z lijst van Dick van der Maat; alleen naamvermelding bevestigd",
           "url": "https://www.dvandermaat.com/acer-shirasawanum-a-z/"
+        },
+        {
+          "title": "Plantentuin Esveld — zoekresultaat (individueel cultivarprofiel nog niet gecontroleerd)",
+          "url": "https://esveld.nl/a/winkel/?compact=1&swoof=1&woof_text=Acer%20shirasawanum%20%27Mikawa%20Kaen%27",
+          "supports": "Search starting point only; not evidence until the matching cultivar profile is reviewed"
         }
       ],
       "historical_notes": {
         "nl": "Introductiejaar en selecteur niet bevestigd; niet ingevuld op basis van aannames.",
         "en": "Introduction year and selector unconfirmed; not filled from assumptions."
       },
-      "review_needed": true
+      "review_needed": true,
+      "esveld_review_status": "search-link-only"
     },
     {
       "id": "shira-mr-sun",
@@ -2555,13 +2836,19 @@
         {
           "title": "Pacific NorthWest Propagators geeft een korte beschrijving van groeiwijze en herfstkleur",
           "url": "https://www.pacificnorthwestplants.ca/acer"
+        },
+        {
+          "title": "Plantentuin Esveld — zoekresultaat (individueel cultivarprofiel nog niet gecontroleerd)",
+          "url": "https://esveld.nl/a/winkel/?compact=1&swoof=1&woof_text=Acer%20shirasawanum%20%27Mr.%20Sun%27",
+          "supports": "Search starting point only; not evidence until the matching cultivar profile is reviewed"
         }
       ],
       "historical_notes": {
         "nl": "Introductiejaar en selecteur niet bevestigd; niet ingevuld op basis van aannames.",
         "en": "Introduction year and selector unconfirmed; not filled from assumptions."
       },
-      "review_needed": true
+      "review_needed": true,
+      "esveld_review_status": "search-link-only"
     },
     {
       "id": "shira-blue-moon",
@@ -2595,13 +2882,19 @@
         {
           "title": "Specialistische kwekerlijst beschrijft seizoenskleur en relatie tot ‘Moonrise’; historische details niet onafhankelijk bevestigd",
           "url": "https://sheet2site.com/api/v3/index.php?e=1&g=1&key=1JYueJ3K-RPx-Jy5h5Q9JiA29K3fahLzc2beNyNRrjtY"
+        },
+        {
+          "title": "Plantentuin Esveld — zoekresultaat (individueel cultivarprofiel nog niet gecontroleerd)",
+          "url": "https://esveld.nl/a/winkel/?compact=1&swoof=1&woof_text=Acer%20shirasawanum%20%27Blue%20Moon%27",
+          "supports": "Search starting point only; not evidence until the matching cultivar profile is reviewed"
         }
       ],
       "historical_notes": {
         "nl": "Introductiejaar en selecteur niet bevestigd; niet ingevuld op basis van aannames.",
         "en": "Introduction year and selector unconfirmed; not filled from assumptions."
       },
-      "review_needed": true
+      "review_needed": true,
+      "esveld_review_status": "search-link-only"
     }
   ]
 }
