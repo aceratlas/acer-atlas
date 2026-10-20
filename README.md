@@ -1,16 +1,19 @@
-# Acer Atlas v0.4
+# Acer Atlas v2.0 — research batch 1
 
 Bilingual Dutch/English PWA for a Japanese maple cultivar encyclopedia and personal collection.
 
-## Database
-- `index.html` contains the 50 cultivar starter records used by the app and suggestions.
-- `cultivar-database.json` is the transparent export of those same 50 records.
-- Search and add-tree suggestions match cultivar names and the included orthographic aliases.
-- Unknown selectors/introducers are always `Onbekend` / `Unknown`.
-- RHS AGM-listing status only confirms inclusion in that list; it does not establish cultivar history. Other records remain candidates pending cultivar-specific review.
+## Research status
+- The current database contains 50 candidate cultivars.
+- This research pass adds cultivar-specific, paraphrased descriptions and a source link for 12 cultivars, based on *Trees and Shrubs Online*, article “Acer palmatum” (John Grimshaw & Ross Bayton; accessed 2026-10-20).
+- Historical information is only entered when the cited source supports it. For example, the source states that 'Garnet' was selected by Guldemond & Co and entered commerce in 1960; other records retain unknown years/selectors where evidence is insufficient.
+- The remaining records are not yet individually verified. A generic RHS species profile or AGM-listing is not treated as proof of cultivar history.
+- The JSON and CSV exports are included for review.
 
 ## Publish
-Upload/replace the files in the repository root, then commit the changes. GitHub Pages should deploy from `main` and `/ (root)`. The service worker cache version is bumped to v0.4.
+Upload/replace the files in this folder in the GitHub repository root and commit changes. GitHub Pages should deploy from `main` and `/ (root)`.
 
 ## Important
-This is a starter database, not a fully researched authoritative cultivar registry. Historical data is deliberately marked as unverified until reliable cultivar-specific sources are checked.
+Acer Atlas is still a research-in-progress database, not a complete authoritative cultivar registry. Do not infer that unreviewed entries are fully verified.
+
+
+Version 2.1 adds eight Acer shirasawanum records: Aureum, Autumn Moon, Jordan, Moonrise, Johin, Mikawa Kaen, Mr. Sun, and Blue Moon. Each record includes a source URL and marks historical data unknown where not confirmed.

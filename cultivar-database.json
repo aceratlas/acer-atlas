@@ -1,8 +1,8 @@
 {
   "app": "Acer Atlas",
-  "version": "0.4",
-  "record_count": 50,
-  "note": "50 startrecords. Source status is explicit; historical claims are not verified merely by a general or RHS-list source.",
+  "version": "2.1-shirasawanum",
+  "record_count": 58,
+  "note": "Added 8 Acer shirasawanum cultivar records with source-specific descriptions; historical claims remain marked unknown unless sourced.",
   "records": [
     {
       "id": "cultivar-ariadne",
@@ -147,14 +147,14 @@
       "name": "Bloodgood",
       "accepted_name": "Acer palmatum 'Bloodgood'",
       "synonyms": [],
-      "group": "unknown",
+      "group": "palmatum",
       "traits": {
-        "nl": "Kenmerken nog niet individueel geverifieerd.",
-        "en": "Traits not yet individually verified."
+        "nl": "Donker wijnrood blad dat de kleur relatief goed vasthoudt; een selectie uit de Atropurpureum-groep.",
+        "en": "Dark wine-red foliage that holds its colour relatively well; a selection from the Atropurpureum group."
       },
       "history": {
-        "nl": "Historische herkomst nog niet voldoende geverifieerd.",
-        "en": "Historical origin not yet sufficiently verified."
+        "nl": "De specialistische bron beschrijft Bloodgood als een selectie uit de Atropurpureum-groep, verspreid door Bloodgood Nurseries op Long Island (VS). Een introductiejaar of oorspronkelijke selecteur wordt in deze bron niet vastgesteld.",
+        "en": "The specialist source describes Bloodgood as a selection from the Atropurpureum group, distributed by Bloodgood Nurseries on Long Island, USA. This source does not establish an introduction year or original selector."
       },
       "introduction_year": null,
       "selector_or_introducer": {
@@ -165,28 +165,24 @@
         "nl": "Onbekend",
         "en": "Unknown"
       },
-      "evidence_status": "rhs-list",
+      "evidence_status": "supported",
       "evidence_label": {
-        "nl": "Vermeld in RHS AGM-lijst; historie niet onderzocht",
-        "en": "Listed in RHS AGM list; history not researched"
+        "nl": "Ondersteund door specialistische cultivarbeschrijving; historische details beperkt",
+        "en": "Supported by specialist cultivar description; historical details limited"
       },
       "sources": [
         {
-          "title": "RHS Award of Garden Merit — ornamental plants (naamvermelding; geen bewijs van historische introductie)",
-          "url": "https://www.rhs.org.uk/plants/pdfs/agm-lists/agm-ornamentals.pdf",
-          "supports": "RHS AGM-listing only"
-        },
-        {
-          "title": "Trees and Shrubs Online — Acer palmatum (soortcontext, geen cultivar-specifiek bewijs)",
+          "title": "Trees and Shrubs Online — Acer palmatum (cultivar descriptions; article from New Trees by John Grimshaw & Ross Bayton)",
           "url": "https://www.treesandshrubsonline.org/articles/acer/acer-palmatum/",
-          "supports": "Species-level context only"
+          "supports": "Cultivar-specific traits and the limited historical statements described in this record"
         }
       ],
       "historical_notes": {
-        "nl": "Selecteur / introducteur: Onbekend totdat een cultivar-specifieke betrouwbare bron dit bevestigt. Introductiejaar niet vastgesteld.",
-        "en": "Selector / introducer: Unknown until a reliable cultivar-specific source confirms it. Introduction year not established."
+        "nl": "De specialistische bron beschrijft Bloodgood als een selectie uit de Atropurpureum-groep, verspreid door Bloodgood Nurseries op Long Island (VS). Een introductiejaar of oorspronkelijke selecteur wordt in deze bron niet vastgesteld.",
+        "en": "The specialist source describes Bloodgood as a selection from the Atropurpureum group, distributed by Bloodgood Nurseries on Long Island, USA. This source does not establish an introduction year or original selector."
       },
-      "review_needed": true
+      "review_needed": true,
+      "last_checked": "2026-10-20"
     },
     {
       "id": "cultivar-burgundylace",
@@ -285,14 +281,14 @@
       "name": "Corallinum",
       "accepted_name": "Acer palmatum 'Corallinum'",
       "synonyms": [],
-      "group": "unknown",
+      "group": "palmatum",
       "traits": {
-        "nl": "Kenmerken nog niet individueel geverifieerd.",
-        "en": "Traits not yet individually verified."
+        "nl": "Bekend om zeer opvallend, helder gekleurd jong voorjaarsblad. De bron waarschuwt dat de naam in Nederland ook verkeerdelijk voor Sango-kaku wordt gebruikt.",
+        "en": "Known for exceptionally vivid young spring foliage. The source warns that in the Netherlands the name has also been misapplied to Sango-kaku."
       },
       "history": {
-        "nl": "Historische herkomst nog niet voldoende geverifieerd.",
-        "en": "Historical origin not yet sufficiently verified."
+        "nl": "Een horticulturele beschrijving uit 1905 wordt geciteerd. De naam Corallinum is in Nederlandse handel en literatuur soms verward met Senkaki/Sango-kaku; controleer daarom de identiteit van planten onder deze naam.",
+        "en": "A horticultural description from 1905 is cited. The name Corallinum has sometimes been confused with Senkaki/Sango-kaku in Dutch trade and literature; verify the identity of plants sold under this name."
       },
       "introduction_year": null,
       "selector_or_introducer": {
@@ -303,28 +299,24 @@
         "nl": "Onbekend",
         "en": "Unknown"
       },
-      "evidence_status": "rhs-list",
+      "evidence_status": "supported",
       "evidence_label": {
-        "nl": "Vermeld in RHS AGM-lijst; historie niet onderzocht",
-        "en": "Listed in RHS AGM list; history not researched"
+        "nl": "Ondersteund door specialistische cultivarbeschrijving; historische details beperkt",
+        "en": "Supported by specialist cultivar description; historical details limited"
       },
       "sources": [
         {
-          "title": "RHS Award of Garden Merit — ornamental plants (naamvermelding; geen bewijs van historische introductie)",
-          "url": "https://www.rhs.org.uk/plants/pdfs/agm-lists/agm-ornamentals.pdf",
-          "supports": "RHS AGM-listing only"
-        },
-        {
-          "title": "Trees and Shrubs Online — Acer palmatum (soortcontext, geen cultivar-specifiek bewijs)",
+          "title": "Trees and Shrubs Online — Acer palmatum (cultivar descriptions; article from New Trees by John Grimshaw & Ross Bayton)",
           "url": "https://www.treesandshrubsonline.org/articles/acer/acer-palmatum/",
-          "supports": "Species-level context only"
+          "supports": "Cultivar-specific traits and the limited historical statements described in this record"
         }
       ],
       "historical_notes": {
-        "nl": "Selecteur / introducteur: Onbekend totdat een cultivar-specifieke betrouwbare bron dit bevestigt. Introductiejaar niet vastgesteld.",
-        "en": "Selector / introducer: Unknown until a reliable cultivar-specific source confirms it. Introduction year not established."
+        "nl": "Een horticulturele beschrijving uit 1905 wordt geciteerd. De naam Corallinum is in Nederlandse handel en literatuur soms verward met Senkaki/Sango-kaku; controleer daarom de identiteit van planten onder deze naam.",
+        "en": "A horticultural description from 1905 is cited. The name Corallinum has sometimes been confused with Senkaki/Sango-kaku in Dutch trade and literature; verify the identity of plants sold under this name."
       },
-      "review_needed": true
+      "review_needed": true,
+      "last_checked": "2026-10-20"
     },
     {
       "id": "cultivar-crimsonqueen",
@@ -425,12 +417,12 @@
       "synonyms": [],
       "group": "unknown",
       "traits": {
-        "nl": "Kenmerken nog niet individueel geverifieerd.",
-        "en": "Traits not yet individually verified."
+        "nl": "Blad met zeven lobben die diep, bijna tot de bladvoet, zijn ingesneden; de bladranden zijn opvallend getand. De bron plaatst deze cultivar bij de Elegans-groep.",
+        "en": "Leaves have seven lobes divided deeply, almost to the base; margins are conspicuously toothed. The source places this cultivar in the Elegans group."
       },
       "history": {
-        "nl": "Historische herkomst nog niet voldoende geverifieerd.",
-        "en": "Historical origin not yet sufficiently verified."
+        "nl": "De specialistische bron beschrijft de bladvorm en vermeldt de oudere naam Acer palmatum septemlobum elegans. Geen betrouwbaar introductiejaar of selecteur vastgesteld.",
+        "en": "The specialist source describes the leaf form and mentions the older name Acer palmatum septemlobum elegans. No reliable introduction year or selector established."
       },
       "introduction_year": null,
       "selector_or_introducer": {
@@ -441,28 +433,24 @@
         "nl": "Onbekend",
         "en": "Unknown"
       },
-      "evidence_status": "rhs-list",
+      "evidence_status": "supported",
       "evidence_label": {
-        "nl": "Vermeld in RHS AGM-lijst; historie niet onderzocht",
-        "en": "Listed in RHS AGM list; history not researched"
+        "nl": "Ondersteund door specialistische cultivarbeschrijving; historische details beperkt",
+        "en": "Supported by specialist cultivar description; historical details limited"
       },
       "sources": [
         {
-          "title": "RHS Award of Garden Merit — ornamental plants (naamvermelding; geen bewijs van historische introductie)",
-          "url": "https://www.rhs.org.uk/plants/pdfs/agm-lists/agm-ornamentals.pdf",
-          "supports": "RHS AGM-listing only"
-        },
-        {
-          "title": "Trees and Shrubs Online — Acer palmatum (soortcontext, geen cultivar-specifiek bewijs)",
+          "title": "Trees and Shrubs Online — Acer palmatum (cultivar descriptions; article from New Trees by John Grimshaw & Ross Bayton)",
           "url": "https://www.treesandshrubsonline.org/articles/acer/acer-palmatum/",
-          "supports": "Species-level context only"
+          "supports": "Cultivar-specific traits and the limited historical statements described in this record"
         }
       ],
       "historical_notes": {
-        "nl": "Selecteur / introducteur: Onbekend totdat een cultivar-specifieke betrouwbare bron dit bevestigt. Introductiejaar niet vastgesteld.",
-        "en": "Selector / introducer: Unknown until a reliable cultivar-specific source confirms it. Introduction year not established."
+        "nl": "De specialistische bron beschrijft de bladvorm en vermeldt de oudere naam Acer palmatum septemlobum elegans. Geen betrouwbaar introductiejaar of selecteur vastgesteld.",
+        "en": "The specialist source describes the leaf form and mentions the older name Acer palmatum septemlobum elegans. No reliable introduction year or selector established."
       },
-      "review_needed": true
+      "review_needed": true,
+      "last_checked": "2026-10-20"
     },
     {
       "id": "cultivar-emeraldlace",
@@ -515,46 +503,42 @@
       "name": "Garnet",
       "accepted_name": "Acer palmatum 'Garnet'",
       "synonyms": [],
-      "group": "unknown",
+      "group": "dissectum",
       "traits": {
-        "nl": "Kenmerken nog niet individueel geverifieerd.",
-        "en": "Traits not yet individually verified."
+        "nl": "Dissectum-type blad met zeven vrij grof ingesneden lobben; het blad blijft doorgaans bruinrood gedurende het seizoen, vooral bij voldoende licht.",
+        "en": "Dissectum-type foliage with seven rather coarsely cut lobes; foliage is generally brownish red through the season, especially with sufficient light."
       },
       "history": {
-        "nl": "Historische herkomst nog niet voldoende geverifieerd.",
-        "en": "Historical origin not yet sufficiently verified."
+        "nl": "De bron vermeldt dat Garnet door de Nederlandse firma Guldemond & Co werd geselecteerd en in 1960 in de handel kwam. Dit is een gedocumenteerd handels-/introductiegegeven uit deze specialistische bron.",
+        "en": "The source states that Garnet was selected by the Dutch firm Guldemond & Co and entered commerce in 1960. This is a documented trade/introduction detail in the specialist source."
       },
-      "introduction_year": null,
+      "introduction_year": 1960,
       "selector_or_introducer": {
-        "nl": "Onbekend",
-        "en": "Unknown"
+        "nl": "Guldemond & Co",
+        "en": "Guldemond & Co"
       },
       "origin": {
         "nl": "Onbekend",
         "en": "Unknown"
       },
-      "evidence_status": "rhs-list",
+      "evidence_status": "supported",
       "evidence_label": {
-        "nl": "Vermeld in RHS AGM-lijst; historie niet onderzocht",
-        "en": "Listed in RHS AGM list; history not researched"
+        "nl": "Ondersteund door specialistische cultivarbeschrijving; historische details beperkt",
+        "en": "Supported by specialist cultivar description; historical details limited"
       },
       "sources": [
         {
-          "title": "RHS Award of Garden Merit — ornamental plants (naamvermelding; geen bewijs van historische introductie)",
-          "url": "https://www.rhs.org.uk/plants/pdfs/agm-lists/agm-ornamentals.pdf",
-          "supports": "RHS AGM-listing only"
-        },
-        {
-          "title": "Trees and Shrubs Online — Acer palmatum (soortcontext, geen cultivar-specifiek bewijs)",
+          "title": "Trees and Shrubs Online — Acer palmatum (cultivar descriptions; article from New Trees by John Grimshaw & Ross Bayton)",
           "url": "https://www.treesandshrubsonline.org/articles/acer/acer-palmatum/",
-          "supports": "Species-level context only"
+          "supports": "Cultivar-specific traits and the limited historical statements described in this record"
         }
       ],
       "historical_notes": {
-        "nl": "Selecteur / introducteur: Onbekend totdat een cultivar-specifieke betrouwbare bron dit bevestigt. Introductiejaar niet vastgesteld.",
-        "en": "Selector / introducer: Unknown until a reliable cultivar-specific source confirms it. Introduction year not established."
+        "nl": "De bron vermeldt dat Garnet door de Nederlandse firma Guldemond & Co werd geselecteerd en in 1960 in de handel kwam. Dit is een gedocumenteerd handels-/introductiegegeven uit deze specialistische bron.",
+        "en": "The source states that Garnet was selected by the Dutch firm Guldemond & Co and entered commerce in 1960. This is a documented trade/introduction detail in the specialist source."
       },
-      "review_needed": true
+      "review_needed": true,
+      "last_checked": "2026-10-20"
     },
     {
       "id": "cultivar-inabashidare",
@@ -699,14 +683,14 @@
       "name": "Kiyohime",
       "accepted_name": "Acer palmatum 'Kiyohime'",
       "synonyms": [],
-      "group": "unknown",
+      "group": "dwarf",
       "traits": {
-        "nl": "Kenmerken nog niet individueel geverifieerd.",
-        "en": "Traits not yet individually verified."
+        "nl": "Kleine, compacte struik; kleine donkergroene bladeren met rood-oranje rand of tint bij jong blad, geel-oranje in de herfst.",
+        "en": "Small, compact shrub; small dark-green leaves with a red-orange edge or flush when young, turning yellow-orange in autumn."
       },
       "history": {
-        "nl": "Historische herkomst nog niet voldoende geverifieerd.",
-        "en": "Historical origin not yet sufficiently verified."
+        "nl": "De specialistische bron ondersteunt de beschreven groeiwijze en bladkenmerken; introductiejaar en selecteur zijn niet vastgesteld.",
+        "en": "The specialist source supports the described habit and foliage traits; introduction year and selector are not established."
       },
       "introduction_year": null,
       "selector_or_introducer": {
@@ -717,28 +701,24 @@
         "nl": "Onbekend",
         "en": "Unknown"
       },
-      "evidence_status": "rhs-list",
+      "evidence_status": "supported",
       "evidence_label": {
-        "nl": "Vermeld in RHS AGM-lijst; historie niet onderzocht",
-        "en": "Listed in RHS AGM list; history not researched"
+        "nl": "Ondersteund door specialistische cultivarbeschrijving; historische details beperkt",
+        "en": "Supported by specialist cultivar description; historical details limited"
       },
       "sources": [
         {
-          "title": "RHS Award of Garden Merit — ornamental plants (naamvermelding; geen bewijs van historische introductie)",
-          "url": "https://www.rhs.org.uk/plants/pdfs/agm-lists/agm-ornamentals.pdf",
-          "supports": "RHS AGM-listing only"
-        },
-        {
-          "title": "Trees and Shrubs Online — Acer palmatum (soortcontext, geen cultivar-specifiek bewijs)",
+          "title": "Trees and Shrubs Online — Acer palmatum (cultivar descriptions; article from New Trees by John Grimshaw & Ross Bayton)",
           "url": "https://www.treesandshrubsonline.org/articles/acer/acer-palmatum/",
-          "supports": "Species-level context only"
+          "supports": "Cultivar-specific traits and the limited historical statements described in this record"
         }
       ],
       "historical_notes": {
-        "nl": "Selecteur / introducteur: Onbekend totdat een cultivar-specifieke betrouwbare bron dit bevestigt. Introductiejaar niet vastgesteld.",
-        "en": "Selector / introducer: Unknown until a reliable cultivar-specific source confirms it. Introduction year not established."
+        "nl": "De specialistische bron ondersteunt de beschreven groeiwijze en bladkenmerken; introductiejaar en selecteur zijn niet vastgesteld.",
+        "en": "The specialist source supports the described habit and foliage traits; introduction year and selector are not established."
       },
-      "review_needed": true
+      "review_needed": true,
+      "last_checked": "2026-10-20"
     },
     {
       "id": "cultivar-orangedream",
@@ -837,14 +817,14 @@
       "name": "Ornatum",
       "accepted_name": "Acer palmatum 'Ornatum'",
       "synonyms": [],
-      "group": "unknown",
+      "group": "dissectum",
       "traits": {
-        "nl": "Kenmerken nog niet individueel geverifieerd.",
-        "en": "Traits not yet individually verified."
+        "nl": "Fijn ingesneden blad; jong blad is bronsrood, wordt later groener en kleurt rood in de herfst.",
+        "en": "Finely divided foliage; young leaves are bronzy red, become greener later, and turn red in autumn."
       },
       "history": {
-        "nl": "Historische herkomst nog niet voldoende geverifieerd.",
-        "en": "Historical origin not yet sufficiently verified."
+        "nl": "De specialistische bron verwijst naar een beschrijving door Carrière in 1867 van planten die in Parijs werden tentoongesteld door de Belgische kweker Verschaeffelt. Dit is historische documentatie van de naam, niet noodzakelijk een exact introductiejaar.",
+        "en": "The specialist source refers to an 1867 description by Carrière of plants exhibited in Paris by Belgian nurseryman Verschaeffelt. This documents the name historically, but is not necessarily an exact introduction year."
       },
       "introduction_year": null,
       "selector_or_introducer": {
@@ -855,28 +835,24 @@
         "nl": "Onbekend",
         "en": "Unknown"
       },
-      "evidence_status": "rhs-list",
+      "evidence_status": "supported",
       "evidence_label": {
-        "nl": "Vermeld in RHS AGM-lijst; historie niet onderzocht",
-        "en": "Listed in RHS AGM list; history not researched"
+        "nl": "Ondersteund door specialistische cultivarbeschrijving; historische details beperkt",
+        "en": "Supported by specialist cultivar description; historical details limited"
       },
       "sources": [
         {
-          "title": "RHS Award of Garden Merit — ornamental plants (naamvermelding; geen bewijs van historische introductie)",
-          "url": "https://www.rhs.org.uk/plants/pdfs/agm-lists/agm-ornamentals.pdf",
-          "supports": "RHS AGM-listing only"
-        },
-        {
-          "title": "Trees and Shrubs Online — Acer palmatum (soortcontext, geen cultivar-specifiek bewijs)",
+          "title": "Trees and Shrubs Online — Acer palmatum (cultivar descriptions; article from New Trees by John Grimshaw & Ross Bayton)",
           "url": "https://www.treesandshrubsonline.org/articles/acer/acer-palmatum/",
-          "supports": "Species-level context only"
+          "supports": "Cultivar-specific traits and the limited historical statements described in this record"
         }
       ],
       "historical_notes": {
-        "nl": "Selecteur / introducteur: Onbekend totdat een cultivar-specifieke betrouwbare bron dit bevestigt. Introductiejaar niet vastgesteld.",
-        "en": "Selector / introducer: Unknown until a reliable cultivar-specific source confirms it. Introduction year not established."
+        "nl": "De specialistische bron verwijst naar een beschrijving door Carrière in 1867 van planten die in Parijs werden tentoongesteld door de Belgische kweker Verschaeffelt. Dit is historische documentatie van de naam, niet noodzakelijk een exact introductiejaar.",
+        "en": "The specialist source refers to an 1867 description by Carrière of plants exhibited in Paris by Belgian nurseryman Verschaeffelt. This documents the name historically, but is not necessarily an exact introduction year."
       },
-      "review_needed": true
+      "review_needed": true,
+      "last_checked": "2026-10-20"
     },
     {
       "id": "cultivar-osakazuki",
@@ -886,14 +862,14 @@
         "Osakazuki",
         "O-sakazuki"
       ],
-      "group": "unknown",
+      "group": "palmatum",
       "traits": {
-        "nl": "Kenmerken nog niet individueel geverifieerd.",
-        "en": "Traits not yet individually verified."
+        "nl": "Bekend om de intens rode herfstkleur. De naam is historisch verwarrend gebruikt voor minstens twee klonen en mogelijk ook zaailingen; planten onder deze naam kunnen verschillen.",
+        "en": "Known for intense red autumn colour. Historically, the name has been used confusingly for at least two clones and possibly seedlings; plants sold under this name may differ."
       },
       "history": {
-        "nl": "Historische herkomst nog niet voldoende geverifieerd.",
-        "en": "Historical origin not yet sufficiently verified."
+        "nl": "De bron bespreekt historische naamverwarring en verwijst naar catalogi van vóór 1911, maar levert geen eenduidig introductiejaar of zekere oorspronkelijke selecteur.",
+        "en": "The source discusses historical naming confusion and refers to catalogues predating 1911, but does not provide a definitive introduction year or certain original selector."
       },
       "introduction_year": null,
       "selector_or_introducer": {
@@ -904,28 +880,24 @@
         "nl": "Onbekend",
         "en": "Unknown"
       },
-      "evidence_status": "rhs-list",
+      "evidence_status": "supported",
       "evidence_label": {
-        "nl": "Vermeld in RHS AGM-lijst; historie niet onderzocht",
-        "en": "Listed in RHS AGM list; history not researched"
+        "nl": "Ondersteund door specialistische cultivarbeschrijving; historische details beperkt",
+        "en": "Supported by specialist cultivar description; historical details limited"
       },
       "sources": [
         {
-          "title": "RHS Award of Garden Merit — ornamental plants (naamvermelding; geen bewijs van historische introductie)",
-          "url": "https://www.rhs.org.uk/plants/pdfs/agm-lists/agm-ornamentals.pdf",
-          "supports": "RHS AGM-listing only"
-        },
-        {
-          "title": "Trees and Shrubs Online — Acer palmatum (soortcontext, geen cultivar-specifiek bewijs)",
+          "title": "Trees and Shrubs Online — Acer palmatum (cultivar descriptions; article from New Trees by John Grimshaw & Ross Bayton)",
           "url": "https://www.treesandshrubsonline.org/articles/acer/acer-palmatum/",
-          "supports": "Species-level context only"
+          "supports": "Cultivar-specific traits and the limited historical statements described in this record"
         }
       ],
       "historical_notes": {
-        "nl": "Selecteur / introducteur: Onbekend totdat een cultivar-specifieke betrouwbare bron dit bevestigt. Introductiejaar niet vastgesteld.",
-        "en": "Selector / introducer: Unknown until a reliable cultivar-specific source confirms it. Introduction year not established."
+        "nl": "De bron bespreekt historische naamverwarring en verwijst naar catalogi van vóór 1911, maar levert geen eenduidig introductiejaar of zekere oorspronkelijke selecteur.",
+        "en": "The source discusses historical naming confusion and refers to catalogues predating 1911, but does not provide a definitive introduction year or certain original selector."
       },
-      "review_needed": true
+      "review_needed": true,
+      "last_checked": "2026-10-20"
     },
     {
       "id": "cultivar-redpygmy",
@@ -978,14 +950,14 @@
       "name": "Sango-kaku",
       "accepted_name": "Acer palmatum 'Sango-kaku'",
       "synonyms": [],
-      "group": "unknown",
+      "group": "palmatum",
       "traits": {
-        "nl": "Kenmerken nog niet individueel geverifieerd.",
-        "en": "Traits not yet individually verified."
+        "nl": "Vooral gewaardeerd om de intens koraalrode jonge twijgen in de winter; het lichtgroene, fijn ingesneden blad kleurt in de herfst geel-oranje.",
+        "en": "Especially valued for intensely coral-red young twigs in winter; light-green, finely divided foliage turns yellow-orange in autumn."
       },
       "history": {
-        "nl": "Historische herkomst nog niet voldoende geverifieerd.",
-        "en": "Historical origin not yet sufficiently verified."
+        "nl": "De bron behandelt Sango-kaku als naam die ook voor Senkaki wordt gebruikt, maar waarschuwt dat materiaal uit verschillende bronnen kan verschillen. Zij noemt introductie in Engeland via T. H. Lowinsky en handel via Sunningdale Nurseries rond 1920, met een mogelijke onafhankelijke introductie in Ierland.",
+        "en": "The source treats Sango-kaku as a name also used for Senkaki, but warns that material from different sources may differ. It mentions introduction to England via T. H. Lowinsky and commerce through Sunningdale Nurseries around 1920, with a possible independent introduction in Ireland."
       },
       "introduction_year": null,
       "selector_or_introducer": {
@@ -996,28 +968,24 @@
         "nl": "Onbekend",
         "en": "Unknown"
       },
-      "evidence_status": "rhs-list",
+      "evidence_status": "supported",
       "evidence_label": {
-        "nl": "Vermeld in RHS AGM-lijst; historie niet onderzocht",
-        "en": "Listed in RHS AGM list; history not researched"
+        "nl": "Ondersteund door specialistische cultivarbeschrijving; historische details beperkt",
+        "en": "Supported by specialist cultivar description; historical details limited"
       },
       "sources": [
         {
-          "title": "RHS Award of Garden Merit — ornamental plants (naamvermelding; geen bewijs van historische introductie)",
-          "url": "https://www.rhs.org.uk/plants/pdfs/agm-lists/agm-ornamentals.pdf",
-          "supports": "RHS AGM-listing only"
-        },
-        {
-          "title": "Trees and Shrubs Online — Acer palmatum (soortcontext, geen cultivar-specifiek bewijs)",
+          "title": "Trees and Shrubs Online — Acer palmatum (cultivar descriptions; article from New Trees by John Grimshaw & Ross Bayton)",
           "url": "https://www.treesandshrubsonline.org/articles/acer/acer-palmatum/",
-          "supports": "Species-level context only"
+          "supports": "Cultivar-specific traits and the limited historical statements described in this record"
         }
       ],
       "historical_notes": {
-        "nl": "Selecteur / introducteur: Onbekend totdat een cultivar-specifieke betrouwbare bron dit bevestigt. Introductiejaar niet vastgesteld.",
-        "en": "Selector / introducer: Unknown until a reliable cultivar-specific source confirms it. Introduction year not established."
+        "nl": "De bron behandelt Sango-kaku als naam die ook voor Senkaki wordt gebruikt, maar waarschuwt dat materiaal uit verschillende bronnen kan verschillen. Zij noemt introductie in Engeland via T. H. Lowinsky en handel via Sunningdale Nurseries rond 1920, met een mogelijke onafhankelijke introductie in Ierland.",
+        "en": "The source treats Sango-kaku as a name also used for Senkaki, but warns that material from different sources may differ. It mentions introduction to England via T. H. Lowinsky and commerce through Sunningdale Nurseries around 1920, with a possible independent introduction in Ireland."
       },
-      "review_needed": true
+      "review_needed": true,
+      "last_checked": "2026-10-20"
     },
     {
       "id": "cultivar-seiryu",
@@ -1026,14 +994,14 @@
       "synonyms": [
         "Seiryu"
       ],
-      "group": "unknown",
+      "group": "dissectum",
       "traits": {
-        "nl": "Kenmerken nog niet individueel geverifieerd.",
-        "en": "Traits not yet individually verified."
+        "nl": "Fijn ingesneden blad dat past bij de Dissectum-groep, maar met een opvallend opgaande groeiwijze; groen blad kleurt geel met rood in de herfst.",
+        "en": "Finely divided foliage typical of the Dissectum group, but with a notably upright habit; green foliage turns yellow tinged with red in autumn."
       },
       "history": {
-        "nl": "Historische herkomst nog niet voldoende geverifieerd.",
-        "en": "Historical origin not yet sufficiently verified."
+        "nl": "De specialistische bron beschrijft de cultivar als een opvallende opgaande vorm binnen de Dissectum-groep; introductiejaar en selecteur zijn niet vastgesteld.",
+        "en": "The specialist source describes the cultivar as a distinctive upright form within the Dissectum group; introduction year and selector are not established."
       },
       "introduction_year": null,
       "selector_or_introducer": {
@@ -1044,28 +1012,24 @@
         "nl": "Onbekend",
         "en": "Unknown"
       },
-      "evidence_status": "rhs-list",
+      "evidence_status": "supported",
       "evidence_label": {
-        "nl": "Vermeld in RHS AGM-lijst; historie niet onderzocht",
-        "en": "Listed in RHS AGM list; history not researched"
+        "nl": "Ondersteund door specialistische cultivarbeschrijving; historische details beperkt",
+        "en": "Supported by specialist cultivar description; historical details limited"
       },
       "sources": [
         {
-          "title": "RHS Award of Garden Merit — ornamental plants (naamvermelding; geen bewijs van historische introductie)",
-          "url": "https://www.rhs.org.uk/plants/pdfs/agm-lists/agm-ornamentals.pdf",
-          "supports": "RHS AGM-listing only"
-        },
-        {
-          "title": "Trees and Shrubs Online — Acer palmatum (soortcontext, geen cultivar-specifiek bewijs)",
+          "title": "Trees and Shrubs Online — Acer palmatum (cultivar descriptions; article from New Trees by John Grimshaw & Ross Bayton)",
           "url": "https://www.treesandshrubsonline.org/articles/acer/acer-palmatum/",
-          "supports": "Species-level context only"
+          "supports": "Cultivar-specific traits and the limited historical statements described in this record"
         }
       ],
       "historical_notes": {
-        "nl": "Selecteur / introducteur: Onbekend totdat een cultivar-specifieke betrouwbare bron dit bevestigt. Introductiejaar niet vastgesteld.",
-        "en": "Selector / introducer: Unknown until a reliable cultivar-specific source confirms it. Introduction year not established."
+        "nl": "De specialistische bron beschrijft de cultivar als een opvallende opgaande vorm binnen de Dissectum-groep; introductiejaar en selecteur zijn niet vastgesteld.",
+        "en": "The specialist source describes the cultivar as a distinctive upright form within the Dissectum group; introduction year and selector are not established."
       },
-      "review_needed": true
+      "review_needed": true,
+      "last_checked": "2026-10-20"
     },
     {
       "id": "cultivar-shindeshojo",
@@ -1682,14 +1646,14 @@
       "synonyms": [
         "Ki Hachijo"
       ],
-      "group": "unknown",
+      "group": "palmatum",
       "traits": {
-        "nl": "Kenmerken nog niet individueel geverifieerd.",
-        "en": "Traits not yet individually verified."
+        "nl": "Blad meestal met negen diep ingesneden, getande lobben; herfstkleur verloopt van geel met roze tinten naar oranje en rood.",
+        "en": "Leaves usually have nine deeply divided, toothed lobes; autumn colour progresses from yellow flushed with rose to orange and red."
       },
       "history": {
-        "nl": "Historische herkomst nog niet voldoende geverifieerd.",
-        "en": "Historical origin not yet sufficiently verified."
+        "nl": "De geraadpleegde specialistische bron beschrijft kenmerken, maar stelt geen introductiejaar of oorspronkelijke selecteur vast.",
+        "en": "The specialist source describes its traits but does not establish an introduction year or original selector."
       },
       "introduction_year": null,
       "selector_or_introducer": {
@@ -1700,28 +1664,24 @@
         "nl": "Onbekend",
         "en": "Unknown"
       },
-      "evidence_status": "candidate",
+      "evidence_status": "supported",
       "evidence_label": {
-        "nl": "Kandidaatrecord; cultivarbron nog te controleren",
-        "en": "Candidate record; cultivar-specific source review pending"
+        "nl": "Ondersteund door specialistische cultivarbeschrijving; historische details beperkt",
+        "en": "Supported by specialist cultivar description; historical details limited"
       },
       "sources": [
         {
-          "title": "The Maple Society — Cultivar Area (startpunt voor nader onderzoek; record niet individueel bevestigd)",
-          "url": "https://maplesociety.org/maple-home-2/common-area/cultivar-area/",
-          "supports": "Discovery source only"
-        },
-        {
-          "title": "Trees and Shrubs Online — Acer palmatum (soortcontext, geen cultivar-specifiek bewijs)",
+          "title": "Trees and Shrubs Online — Acer palmatum (cultivar descriptions; article from New Trees by John Grimshaw & Ross Bayton)",
           "url": "https://www.treesandshrubsonline.org/articles/acer/acer-palmatum/",
-          "supports": "Species-level context only"
+          "supports": "Cultivar-specific traits and the limited historical statements described in this record"
         }
       ],
       "historical_notes": {
-        "nl": "Selecteur / introducteur: Onbekend totdat een cultivar-specifieke betrouwbare bron dit bevestigt. Introductiejaar niet vastgesteld.",
-        "en": "Selector / introducer: Unknown until a reliable cultivar-specific source confirms it. Introduction year not established."
+        "nl": "De geraadpleegde specialistische bron beschrijft kenmerken, maar stelt geen introductiejaar of oorspronkelijke selecteur vast.",
+        "en": "The specialist source describes its traits but does not establish an introduction year or original selector."
       },
-      "review_needed": true
+      "review_needed": true,
+      "last_checked": "2026-10-20"
     },
     {
       "id": "cultivar-flavescens",
@@ -1918,12 +1878,12 @@
       "synonyms": [],
       "group": "unknown",
       "traits": {
-        "nl": "Kenmerken nog niet individueel geverifieerd.",
-        "en": "Traits not yet individually verified."
+        "nl": "Bonte bladeren met een onregelmatige crèmekleurige rand; de bladvorm en bladgrootte kunnen variëren. De twijgen zijn slank en de groei is dicht.",
+        "en": "Variegated leaves with an irregular cream margin; leaf shape and size can vary. Twigs are slender and the habit is dense."
       },
       "history": {
-        "nl": "Historische herkomst nog niet voldoende geverifieerd.",
-        "en": "Historical origin not yet sufficiently verified."
+        "nl": "De specialistische bron noemt Kocho Nishiki als alternatieve naam en beschrijft de kenmerken, maar maakt geen definitief introductiejaar of selecteur duidelijk. Synoniemen en naamgebruik vragen extra controle.",
+        "en": "The specialist source lists Kocho Nishiki as an alternative name and describes the traits, but does not establish a definitive introduction year or selector. Synonyms and name usage need further checking."
       },
       "introduction_year": null,
       "selector_or_introducer": {
@@ -1934,28 +1894,24 @@
         "nl": "Onbekend",
         "en": "Unknown"
       },
-      "evidence_status": "candidate",
+      "evidence_status": "supported",
       "evidence_label": {
-        "nl": "Kandidaatrecord; cultivarbron nog te controleren",
-        "en": "Candidate record; cultivar-specific source review pending"
+        "nl": "Ondersteund door specialistische cultivarbeschrijving; historische details beperkt",
+        "en": "Supported by specialist cultivar description; historical details limited"
       },
       "sources": [
         {
-          "title": "The Maple Society — Cultivar Area (startpunt voor nader onderzoek; record niet individueel bevestigd)",
-          "url": "https://maplesociety.org/maple-home-2/common-area/cultivar-area/",
-          "supports": "Discovery source only"
-        },
-        {
-          "title": "Trees and Shrubs Online — Acer palmatum (soortcontext, geen cultivar-specifiek bewijs)",
+          "title": "Trees and Shrubs Online — Acer palmatum (cultivar descriptions; article from New Trees by John Grimshaw & Ross Bayton)",
           "url": "https://www.treesandshrubsonline.org/articles/acer/acer-palmatum/",
-          "supports": "Species-level context only"
+          "supports": "Cultivar-specific traits and the limited historical statements described in this record"
         }
       ],
       "historical_notes": {
-        "nl": "Selecteur / introducteur: Onbekend totdat een cultivar-specifieke betrouwbare bron dit bevestigt. Introductiejaar niet vastgesteld.",
-        "en": "Selector / introducer: Unknown until a reliable cultivar-specific source confirms it. Introduction year not established."
+        "nl": "De specialistische bron noemt Kocho Nishiki als alternatieve naam en beschrijft de kenmerken, maar maakt geen definitief introductiejaar of selecteur duidelijk. Synoniemen en naamgebruik vragen extra controle.",
+        "en": "The specialist source lists Kocho Nishiki as an alternative name and describes the traits, but does not establish a definitive introduction year or selector. Synonyms and name usage need further checking."
       },
-      "review_needed": true
+      "review_needed": true,
+      "last_checked": "2026-10-20"
     },
     {
       "id": "cultivar-kotonoito",
@@ -2056,12 +2012,12 @@
       "synonyms": [],
       "group": "unknown",
       "traits": {
-        "nl": "Kenmerken nog niet individueel geverifieerd.",
-        "en": "Traits not yet individually verified."
+        "nl": "Blad met zeven langwerpige, diep getande lobben; de bladranden zijn wit en onderbroken door groene banden langs de hoofdnerven. Jong blad kan roze getint zijn.",
+        "en": "Leaves have seven elongated, deeply toothed lobes; margins are white, interrupted by green bands along the main veins. Young foliage may be tinged pink."
       },
       "history": {
-        "nl": "Historische herkomst nog niet voldoende geverifieerd.",
-        "en": "Historical origin not yet sufficiently verified."
+        "nl": "De specialistische bron noemt Higasayama een oude cultivar en waarschuwt dat deze soms verkeerdelijk Roseomarginatum wordt genoemd. Introductiejaar en selecteur zijn niet vastgesteld.",
+        "en": "The specialist source describes Higasayama as an old cultivar and warns that it is sometimes misnamed Roseomarginatum. Introduction year and selector are not established."
       },
       "introduction_year": null,
       "selector_or_introducer": {
@@ -2072,28 +2028,24 @@
         "nl": "Onbekend",
         "en": "Unknown"
       },
-      "evidence_status": "candidate",
+      "evidence_status": "supported",
       "evidence_label": {
-        "nl": "Kandidaatrecord; cultivarbron nog te controleren",
-        "en": "Candidate record; cultivar-specific source review pending"
+        "nl": "Ondersteund door specialistische cultivarbeschrijving; historische details beperkt",
+        "en": "Supported by specialist cultivar description; historical details limited"
       },
       "sources": [
         {
-          "title": "The Maple Society — Cultivar Area (startpunt voor nader onderzoek; record niet individueel bevestigd)",
-          "url": "https://maplesociety.org/maple-home-2/common-area/cultivar-area/",
-          "supports": "Discovery source only"
-        },
-        {
-          "title": "Trees and Shrubs Online — Acer palmatum (soortcontext, geen cultivar-specifiek bewijs)",
+          "title": "Trees and Shrubs Online — Acer palmatum (cultivar descriptions; article from New Trees by John Grimshaw & Ross Bayton)",
           "url": "https://www.treesandshrubsonline.org/articles/acer/acer-palmatum/",
-          "supports": "Species-level context only"
+          "supports": "Cultivar-specific traits and the limited historical statements described in this record"
         }
       ],
       "historical_notes": {
-        "nl": "Selecteur / introducteur: Onbekend totdat een cultivar-specifieke betrouwbare bron dit bevestigt. Introductiejaar niet vastgesteld.",
-        "en": "Selector / introducer: Unknown until a reliable cultivar-specific source confirms it. Introduction year not established."
+        "nl": "De specialistische bron noemt Higasayama een oude cultivar en waarschuwt dat deze soms verkeerdelijk Roseomarginatum wordt genoemd. Introductiejaar en selecteur zijn niet vastgesteld.",
+        "en": "The specialist source describes Higasayama as an old cultivar and warns that it is sometimes misnamed Roseomarginatum. Introduction year and selector are not established."
       },
-      "review_needed": true
+      "review_needed": true,
+      "last_checked": "2026-10-20"
     },
     {
       "id": "cultivar-mikawakaen",
@@ -2328,6 +2280,326 @@
       "historical_notes": {
         "nl": "Selecteur / introducteur: Onbekend totdat een cultivar-specifieke betrouwbare bron dit bevestigt. Introductiejaar niet vastgesteld.",
         "en": "Selector / introducer: Unknown until a reliable cultivar-specific source confirms it. Introduction year not established."
+      },
+      "review_needed": true
+    },
+    {
+      "id": "shira-aureum",
+      "name": "Aureum",
+      "accepted_name": "Acer shirasawanum 'Aureum'",
+      "synonyms": [],
+      "group": "shirasawanum",
+      "traits": {
+        "nl": "Goudgeel tot geelgroen, rond en handvormig blad; herfstkleur kan goudgeel tot oranje zijn.",
+        "en": "Golden-yellow to yellow-green, rounded palmate leaves; autumn colour can be golden yellow to orange."
+      },
+      "history": {
+        "nl": "Oregon State University beschrijft de gele bladeren en mogelijke goudgele tot oranje herfstkleur. Introductiejaar en oorspronkelijke selecteur: Onbekend.",
+        "en": "Oregon State University beschrijft de gele bladeren en mogelijke goudgele tot oranje herfstkleur. Introduction year and original selector: Unknown."
+      },
+      "introduction_year": null,
+      "selector_or_introducer": {
+        "nl": "Onbekend",
+        "en": "Unknown"
+      },
+      "origin": {
+        "nl": "Japan; cultivar-specifieke herkomst niet volledig geverifieerd",
+        "en": "Japan; cultivar-specific provenance not fully verified"
+      },
+      "evidence_status": "partial",
+      "evidence_label": {
+        "nl": "Kenmerken deels ondersteund door specialistische bron; historie beperkt",
+        "en": "Traits partly supported by specialist source; history limited"
+      },
+      "sources": [
+        {
+          "title": "Oregon State University beschrijft de gele bladeren en mogelijke goudgele tot oranje herfstkleur",
+          "url": "https://landscapeplants.oregonstate.edu/plants/acer-shirasawanum"
+        }
+      ],
+      "historical_notes": {
+        "nl": "Introductiejaar en selecteur niet bevestigd; niet ingevuld op basis van aannames.",
+        "en": "Introduction year and selector unconfirmed; not filled from assumptions."
+      },
+      "review_needed": true
+    },
+    {
+      "id": "shira-autumn-moon",
+      "name": "Autumn Moon",
+      "accepted_name": "Acer shirasawanum 'Autumn Moon'",
+      "synonyms": [],
+      "group": "shirasawanum",
+      "traits": {
+        "nl": "Jong blad vaak koperachtig, roze-oranje of gebronsd; later geelgroen; herfstkleur kan oranje en rood zijn.",
+        "en": "Young foliage often coppery, pink-orange or bronzed; later yellow-green; autumn colour can be orange and red."
+      },
+      "history": {
+        "nl": "Dawes Arboretum beschrijft de groeiwijze, voorjaarskleur en herfstkleur. Introductiejaar en oorspronkelijke selecteur: Onbekend.",
+        "en": "Dawes Arboretum beschrijft de groeiwijze, voorjaarskleur en herfstkleur. Introduction year and original selector: Unknown."
+      },
+      "introduction_year": null,
+      "selector_or_introducer": {
+        "nl": "Onbekend",
+        "en": "Unknown"
+      },
+      "origin": {
+        "nl": "Japan; cultivar-specifieke herkomst niet volledig geverifieerd",
+        "en": "Japan; cultivar-specific provenance not fully verified"
+      },
+      "evidence_status": "partial",
+      "evidence_label": {
+        "nl": "Kenmerken deels ondersteund door specialistische bron; historie beperkt",
+        "en": "Traits partly supported by specialist source; history limited"
+      },
+      "sources": [
+        {
+          "title": "Dawes Arboretum beschrijft de groeiwijze, voorjaarskleur en herfstkleur",
+          "url": "https://dawesarb.arboretumexplorer.org/taxon-19728.aspx"
+        }
+      ],
+      "historical_notes": {
+        "nl": "Introductiejaar en selecteur niet bevestigd; niet ingevuld op basis van aannames.",
+        "en": "Introduction year and selector unconfirmed; not filled from assumptions."
+      },
+      "review_needed": true
+    },
+    {
+      "id": "shira-jordan",
+      "name": "Jordan",
+      "accepted_name": "Acer shirasawanum 'Jordan'",
+      "synonyms": [],
+      "group": "shirasawanum",
+      "traits": {
+        "nl": "Voorjaarsblad helder geel, vaak met roze-oranje rand; in de zomer geel tot geelgroen; herfstkleur oranje en rood.",
+        "en": "Spring leaves bright yellow, often with a pink-orange margin; yellow to yellow-green in summer; orange and red in autumn."
+      },
+      "history": {
+        "nl": "Gardenia beschrijft seizoenskleur en bladvorm; cultivarvermelding wordt ook bevestigd door gespecialiseerde kwekerlijsten. Introductiejaar en oorspronkelijke selecteur: Onbekend.",
+        "en": "Gardenia beschrijft seizoenskleur en bladvorm; cultivarvermelding wordt ook bevestigd door gespecialiseerde kwekerlijsten. Introduction year and original selector: Unknown."
+      },
+      "introduction_year": null,
+      "selector_or_introducer": {
+        "nl": "Onbekend",
+        "en": "Unknown"
+      },
+      "origin": {
+        "nl": "Japan; cultivar-specifieke herkomst niet volledig geverifieerd",
+        "en": "Japan; cultivar-specific provenance not fully verified"
+      },
+      "evidence_status": "partial",
+      "evidence_label": {
+        "nl": "Kenmerken deels ondersteund door specialistische bron; historie beperkt",
+        "en": "Traits partly supported by specialist source; history limited"
+      },
+      "sources": [
+        {
+          "title": "Gardenia beschrijft seizoenskleur en bladvorm; cultivarvermelding wordt ook bevestigd door gespecialiseerde kwekerlijsten",
+          "url": "https://www.gardenia.net/plant/acer-shirasawanum-jordan"
+        }
+      ],
+      "historical_notes": {
+        "nl": "Introductiejaar en selecteur niet bevestigd; niet ingevuld op basis van aannames.",
+        "en": "Introduction year and selector unconfirmed; not filled from assumptions."
+      },
+      "review_needed": true
+    },
+    {
+      "id": "shira-moonrise",
+      "name": "Moonrise",
+      "accepted_name": "Acer shirasawanum 'Moonrise'",
+      "synonyms": [],
+      "group": "shirasawanum",
+      "traits": {
+        "nl": "Nieuw blad karmijnrood; verkleurt naar geel; in de schaduw vaak limegroen.",
+        "en": "New foliage emerges carmine red, then turns yellow; shade foliage is often lime green."
+      },
+      "history": {
+        "nl": "Oregon State University noemt bladkleur, ontdekker en herkomst als zaailing van ‘Aureum’. Introductiejaar en oorspronkelijke selecteur: Onbekend.",
+        "en": "Oregon State University noemt bladkleur, ontdekker en herkomst als zaailing van ‘Aureum’. Introduction year and original selector: Unknown."
+      },
+      "introduction_year": null,
+      "selector_or_introducer": {
+        "nl": "Onbekend",
+        "en": "Unknown"
+      },
+      "origin": {
+        "nl": "Japan; cultivar-specifieke herkomst niet volledig geverifieerd",
+        "en": "Japan; cultivar-specific provenance not fully verified"
+      },
+      "evidence_status": "partial",
+      "evidence_label": {
+        "nl": "Kenmerken deels ondersteund door specialistische bron; historie beperkt",
+        "en": "Traits partly supported by specialist source; history limited"
+      },
+      "sources": [
+        {
+          "title": "Oregon State University noemt bladkleur, ontdekker en herkomst als zaailing van ‘Aureum’",
+          "url": "https://landscapeplants.oregonstate.edu/plants/acer-shirasawanum"
+        }
+      ],
+      "historical_notes": {
+        "nl": "Introductiejaar en selecteur niet bevestigd; niet ingevuld op basis van aannames.",
+        "en": "Introduction year and selector unconfirmed; not filled from assumptions."
+      },
+      "review_needed": true
+    },
+    {
+      "id": "shira-johin",
+      "name": "Johin",
+      "accepted_name": "Acer shirasawanum 'Johin'",
+      "synonyms": [],
+      "group": "shirasawanum",
+      "traits": {
+        "nl": "Voorjaarsblad roodbruin tot roodpaars; zomerkleur kan donkerder roodbruin worden; herfstkleur oranje-rood.",
+        "en": "Spring foliage reddish brown to red-purple; summer colour may deepen to dark brick red; autumn colour orange-red."
+      },
+      "history": {
+        "nl": "Bays Nursery geeft seizoenskleuren voor ‘Johin’; geen introductiejaar of selecteur vermeld. Introductiejaar en oorspronkelijke selecteur: Onbekend.",
+        "en": "Bays Nursery geeft seizoenskleuren voor ‘Johin’; geen introductiejaar of selecteur vermeld. Introduction year and original selector: Unknown."
+      },
+      "introduction_year": null,
+      "selector_or_introducer": {
+        "nl": "Onbekend",
+        "en": "Unknown"
+      },
+      "origin": {
+        "nl": "Japan; cultivar-specifieke herkomst niet volledig geverifieerd",
+        "en": "Japan; cultivar-specific provenance not fully verified"
+      },
+      "evidence_status": "partial",
+      "evidence_label": {
+        "nl": "Kenmerken deels ondersteund door specialistische bron; historie beperkt",
+        "en": "Traits partly supported by specialist source; history limited"
+      },
+      "sources": [
+        {
+          "title": "Bays Nursery geeft seizoenskleuren voor ‘Johin’; geen introductiejaar of selecteur vermeld",
+          "url": "https://www.baysnurseryandacercentre.co.uk/our-plant-varieties/acer-shirasawanum"
+        }
+      ],
+      "historical_notes": {
+        "nl": "Introductiejaar en selecteur niet bevestigd; niet ingevuld op basis van aannames.",
+        "en": "Introduction year and selector unconfirmed; not filled from assumptions."
+      },
+      "review_needed": true
+    },
+    {
+      "id": "shira-mikawa-kaen",
+      "name": "Mikawa Kaen",
+      "accepted_name": "Acer shirasawanum 'Mikawa Kaen'",
+      "synonyms": [],
+      "group": "shirasawanum",
+      "traits": {
+        "nl": "Cultivarnaam aangetroffen in gespecialiseerde Japanse-esdoornlijsten; specifieke bladkenmerken nog niet voldoende onafhankelijk bevestigd.",
+        "en": "Cultivar name appears in specialist Japanese maple lists; specific foliage traits are not yet independently confirmed sufficiently."
+      },
+      "history": {
+        "nl": "Vermeld op de specialistische Acer shirasawanum A–Z lijst van Dick van der Maat; alleen naamvermelding bevestigd. Introductiejaar en oorspronkelijke selecteur: Onbekend.",
+        "en": "Vermeld op de specialistische Acer shirasawanum A–Z lijst van Dick van der Maat; alleen naamvermelding bevestigd. Introduction year and original selector: Unknown."
+      },
+      "introduction_year": null,
+      "selector_or_introducer": {
+        "nl": "Onbekend",
+        "en": "Unknown"
+      },
+      "origin": {
+        "nl": "Japan; cultivar-specifieke herkomst niet volledig geverifieerd",
+        "en": "Japan; cultivar-specific provenance not fully verified"
+      },
+      "evidence_status": "partial",
+      "evidence_label": {
+        "nl": "Kenmerken deels ondersteund door specialistische bron; historie beperkt",
+        "en": "Traits partly supported by specialist source; history limited"
+      },
+      "sources": [
+        {
+          "title": "Vermeld op de specialistische Acer shirasawanum A–Z lijst van Dick van der Maat; alleen naamvermelding bevestigd",
+          "url": "https://www.dvandermaat.com/acer-shirasawanum-a-z/"
+        }
+      ],
+      "historical_notes": {
+        "nl": "Introductiejaar en selecteur niet bevestigd; niet ingevuld op basis van aannames.",
+        "en": "Introduction year and selector unconfirmed; not filled from assumptions."
+      },
+      "review_needed": true
+    },
+    {
+      "id": "shira-mr-sun",
+      "name": "Mr. Sun",
+      "accepted_name": "Acer shirasawanum 'Mr. Sun'",
+      "synonyms": [],
+      "group": "shirasawanum",
+      "traits": {
+        "nl": "Groen blad; herfstkleur wordt beschreven als oranje en geel.",
+        "en": "Green foliage; autumn colour is described as orange and yellow."
+      },
+      "history": {
+        "nl": "Pacific NorthWest Propagators geeft een korte beschrijving van groeiwijze en herfstkleur. Introductiejaar en oorspronkelijke selecteur: Onbekend.",
+        "en": "Pacific NorthWest Propagators geeft een korte beschrijving van groeiwijze en herfstkleur. Introduction year and original selector: Unknown."
+      },
+      "introduction_year": null,
+      "selector_or_introducer": {
+        "nl": "Onbekend",
+        "en": "Unknown"
+      },
+      "origin": {
+        "nl": "Japan; cultivar-specifieke herkomst niet volledig geverifieerd",
+        "en": "Japan; cultivar-specific provenance not fully verified"
+      },
+      "evidence_status": "partial",
+      "evidence_label": {
+        "nl": "Kenmerken deels ondersteund door specialistische bron; historie beperkt",
+        "en": "Traits partly supported by specialist source; history limited"
+      },
+      "sources": [
+        {
+          "title": "Pacific NorthWest Propagators geeft een korte beschrijving van groeiwijze en herfstkleur",
+          "url": "https://www.pacificnorthwestplants.ca/acer"
+        }
+      ],
+      "historical_notes": {
+        "nl": "Introductiejaar en selecteur niet bevestigd; niet ingevuld op basis van aannames.",
+        "en": "Introduction year and selector unconfirmed; not filled from assumptions."
+      },
+      "review_needed": true
+    },
+    {
+      "id": "shira-blue-moon",
+      "name": "Blue Moon",
+      "accepted_name": "Acer shirasawanum 'Blue Moon'",
+      "synonyms": [],
+      "group": "shirasawanum",
+      "traits": {
+        "nl": "Voorjaarskleur wordt beschreven als meer bronskleurig dan bij ‘Moonrise’; zomerkleur meer geelgroen.",
+        "en": "Spring colour is described as more bronze than ‘Moonrise’; summer colour more yellow-green."
+      },
+      "history": {
+        "nl": "Specialistische kwekerlijst beschrijft seizoenskleur en relatie tot ‘Moonrise’; historische details niet onafhankelijk bevestigd. Introductiejaar en oorspronkelijke selecteur: Onbekend.",
+        "en": "Specialistische kwekerlijst beschrijft seizoenskleur en relatie tot ‘Moonrise’; historische details niet onafhankelijk bevestigd. Introduction year and original selector: Unknown."
+      },
+      "introduction_year": null,
+      "selector_or_introducer": {
+        "nl": "Onbekend",
+        "en": "Unknown"
+      },
+      "origin": {
+        "nl": "Japan; cultivar-specifieke herkomst niet volledig geverifieerd",
+        "en": "Japan; cultivar-specific provenance not fully verified"
+      },
+      "evidence_status": "partial",
+      "evidence_label": {
+        "nl": "Kenmerken deels ondersteund door specialistische bron; historie beperkt",
+        "en": "Traits partly supported by specialist source; history limited"
+      },
+      "sources": [
+        {
+          "title": "Specialistische kwekerlijst beschrijft seizoenskleur en relatie tot ‘Moonrise’; historische details niet onafhankelijk bevestigd",
+          "url": "https://sheet2site.com/api/v3/index.php?e=1&g=1&key=1JYueJ3K-RPx-Jy5h5Q9JiA29K3fahLzc2beNyNRrjtY"
+        }
+      ],
+      "historical_notes": {
+        "nl": "Introductiejaar en selecteur niet bevestigd; niet ingevuld op basis van aannames.",
+        "en": "Introduction year and selector unconfirmed; not filled from assumptions."
       },
       "review_needed": true
     }
