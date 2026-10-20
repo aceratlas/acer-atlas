@@ -1,17 +1,17 @@
-# Acer Atlas v2.9 — collectie, favorieten en PDF-export
+# Acer Atlas v3.0 — collectie, favorieten en PDF-export
 
 Deze versie bouwt voort op de aangeleverde v2.7-bestanden. De 58 cultivarrecords en bestaande lokale collectieopslag zijn behouden.
 
-## Nieuw in v2.9
+## Nieuw in v3.0
 - In de catalogus staat de afbeelding links naast de cultivarnaam, in een vergelijkbare indeling als Mijn collectie. De afbeelding opent het cultivarprofiel.
 - Per boom in Mijn collectie kan een favoriet worden ingesteld en weer uitgezet.
 - Filter om alleen favoriete bomen te tonen.
 - PDF/afdrukexport van de volledige collectie.
 - PDF/afdrukexport van alleen favorieten.
 - De export bevat precies de kolommen Naam, Soort, Aankoop en Leeftijd. Kies in het afdrukvenster 'Opslaan als PDF'.
-- Versienummer en service-worker-cache bijgewerkt naar v2.9.
+- Versienummer en service-worker-cache bijgewerkt naar v3.0.
 
-## Belangrijk: wat nog niet in v2.9 zit
+## Belangrijk: wat nog niet in v3.0 zit
 Accounts, gedeelde collecties tussen apparaten, centrale foto-opslag, moderatie van inzendingen, beheeromgeving en toegangscodes zijn nog niet actief. Die functies vereisen een beveiligde backend/database. Deze versie doet niet alsof die functies al werken en stuurt geen gegevens naar een server.
 
 ## Veiligheid en bestaande gegevens
@@ -30,7 +30,13 @@ Accounts, gedeelde collecties tussen apparaten, centrale foto-opslag, moderatie 
 De backendkeuze moet worden gemaakt voordat we accounts en codes veilig kunnen implementeren. Daarna kunnen we accountregistratie, persoonlijke collectie-synchronisatie, foto-inzendingen met goedkeuring, beheerdersrechten en instelbare toegangscodes bouwen.
 
 
-## v2.9
+## v3.0
 - Herstelde collectie-rendering door ontbrekende status- en favorietenfuncties toe te voegen.
 - PDF-exportknoppen verplaatst naar aparte tab Uitvoer.
 - PDF-export gebruikt uitsluitend Naam, Soort, Aankoop en Leeftijd.
+
+
+## v3.0 — herstel collectie-koppelingen
+- Veiliger migreren van eerder opgeslagen collectiegegevens uit bekende oudere opslagvormen.
+- Bestaande collectie-items kunnen opnieuw aan cultivars gekoppeld worden op database-ID, cultivar-naam, geaccepteerde naam of synoniem.
+- Bronopslag wordt niet verwijderd tijdens herstel.

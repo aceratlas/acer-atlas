@@ -18,3 +18,7 @@
 7. Privacyverklaring, voorwaarden, toestemming voor fotohergebruik en export/verwijdering van persoonsgegevens.
 
 Deze functies zijn bewust niet als nep-front-end toegevoegd: ze moeten server-side worden beveiligd om misbruik en dataverlies te voorkomen.
+
+
+## v3.0 — collectieherstel
+De app probeert bekende oudere opslagvormen te migreren en koppelt bestaande collectie-items opnieuw aan databasecultivars op basis van ID, naam en synoniemen. Dit kan geen gegevens terughalen die al volledig uit de browseropslag zijn verdwenen.
