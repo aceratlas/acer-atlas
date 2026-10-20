@@ -63,3 +63,10 @@ De backendkeuze moet worden gemaakt voordat we accounts en codes veilig kunnen i
 ## v3.4
 - De zoekbalk is contextafhankelijk: in de Encyclopedie zoekt deze door de volledige database; in Mijn collectie toont en filtert deze uitsluitend items die daadwerkelijk in de collectie staan.
 - Favorietenknop in het cultivarprofiel staat links uitgelijnd direct boven Informatie.
+
+
+## v3.5 — stervormige favorieten
+- De tekstknop “Favoriet maken” is vervangen door alleen een ster direct achter de cultivarnaam.
+- Dezelfde ster wordt naast de naam in het cultivarprofiel getoond wanneer die cultivar in de eigen collectie staat.
+- De ster behoudt de bestaande favorietenopslag en heeft een toegankelijke labeltekst voor schermlezers.
+- De service-worker-cache is bijgewerkt naar v3.5.
