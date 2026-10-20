@@ -1,14 +1,10 @@
-# Acer Atlas v2.6 — Esveld als hoofdbron (eerste gecontroleerde batch)
+# Acer Atlas v2.6 — neutrale beschrijvingen en volledige database
 
-Deze versie bouwt voort op de aangeleverde Acer Atlas v2.5 en behoudt de bestaande collectie- en foto-functies.
+- De app laadt nu de 58 records uit `cultivar-database.json` bij het openen.
+- In beschrijvingen en geschiedenis wordt Esveld niet meer in de lopende tekst genoemd; de bronvermelding en URL blijven per record onderaan beschikbaar.
+- De zeven gecontroleerde Esveld-profielen blijven als specifieke links behouden; overige Esveld-links zijn zoeklinks en worden niet als gecontroleerd profiel gepresenteerd.
+- De bestaande foto- en collectiecode is behouden. Collectie en eigen foto's staan lokaal in de browser; wis geen websitegegevens.
+- Service-worker-cache is verhoogd en de database is aan de cachelijst toegevoegd.
 
-- De database bevat nog steeds 58 cultivars.
-- Esveld is toegevoegd als primaire horticulturele bron bij alle 58 records.
-- Voor Ariadne, Beni-maiko, Bloodgood, Crimson Queen, Katsura, Orange Dream en Sango-kaku zijn de specifieke Esveld-profielen individueel gecontroleerd en zijn beschrijvingen aangevuld.
-- Bij overige cultivars is de link uitdrukkelijk een Esveld-zoeklink, niet een claim dat de profielpagina al is gecontroleerd.
-- Historische gegevens worden alleen ingevuld waar de bron ze ondersteunt. Bij Beni-maiko is de jaaraanduiding op de Esveld-pagina niet eenduidig, dus het introductiejaar blijft leeg.
-- Afbeeldingen worden niet van Esveld gekopieerd; bestaande fotokoppelingen en eigen foto's blijven gescheiden.
-- Service-worker-cache is verhoogd naar v2.6.
-
-## Uploaden
-Upload alle bestanden uit deze ZIP naar de hoofdmap van de GitHub-repository en kies **Replace** wanneer GitHub dat vraagt. Commit daarna de wijzigingen. De persoonlijke collectie en eigen foto's zijn lokaal opgeslagen; wis geen websitegegevens.
+## Uploaden naar GitHub
+Upload alle bestanden uit deze map naar de hoofdmap van de repository en vervang de bestaande bestanden met dezelfde naam. Commit de wijziging. Upload ook `cultivar-database.json` en `sw.js`. Wacht daarna op de groene GitHub Pages-deployment.
