@@ -111,7 +111,14 @@ Gebruikers kunnen in Instellingen kiezen uit Botanical Green, Japanese Maple en 
 - Configure/verify the Firebase web app config in `index.html` before publishing.
 
 
-## Wijzigingen v4.3
+## Wijzigingen v4.4
 - Accountformulier heeft een eigen Account-scherm en staat niet meer onder Instellingen.
 - De toelichting onder de kop Instellingen is verwijderd.
 - Het accounticoon in de bovenbalk is vervangen door een profielicoon.
+
+
+## v4.4 — Wenslijst en gratis limiet
+- Gratis collectie begrensd op 10 exemplaren; toevoegen boven de limiet leidt naar Account.
+- Wenslijst toegevoegd aan de navigatie en aan de encyclopedie.
+- PDF/printoptie voor de wenslijst toegevoegd.
+- Wenslijst wordt lokaal opgeslagen en opgenomen in back-up/herstel.
