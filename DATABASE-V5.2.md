@@ -26,3 +26,7 @@ Per cultivar staan bronlinks in `cultivar-database.json`. De database is een eer
 ## Foto-inzendingen door gebruikers
 
 De functie waarmee ingelogde gebruikers eigen foto's insturen en toestemming geven voor publicatie is nog niet geïmplementeerd in deze versie. Deze database-uitbreiding voegt alleen de gestructureerde gegevens en reeds gecontroleerde vrije foto's toe.
+
+
+## v5.4 — Hoofdfoto’s
+De eerste foto met gecontroleerde licentie uit `photos` wordt gebruikt als miniatuur bij de cultivarnaam in de encyclopedie. De bestaande detailpagina blijft de foto, auteur, licentie en bronlink tonen. Voor records zonder foto blijft de illustratie-placeholder staan.
