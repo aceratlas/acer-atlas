@@ -122,3 +122,8 @@ Gebruikers kunnen in Instellingen kiezen uit Botanical Green, Japanese Maple en 
 - Wenslijst toegevoegd aan de navigatie en aan de encyclopedie.
 - PDF/printoptie voor de wenslijst toegevoegd.
 - Wenslijst wordt lokaal opgeslagen en opgenomen in back-up/herstel.
+
+
+## v4.5 — Instellingen en knopteksten
+- Back-up en herstel staat onderaan Instellingen.
+- De knoppen voor informatie, collectie en wenslijst gebruiken duidelijke, gelijkvormige teksten.
