@@ -14,7 +14,8 @@ service cloud.firestore {
         && request.auth.uid == userId
         && request.resource.data.plan == resource.data.plan
         && resource.data.plan == 'free'
-        && request.resource.data.diff(resource.data).affectedKeys().hasOnly(['email', 'updatedAt']);
+        && request.resource.data.diff(resource.data).affectedKeys().hasOnly(['email', 'updatedAt', 'plusInterest'])
+        && (!('plusInterest' in request.resource.data) || request.resource.data.plusInterest is bool);
       allow delete: if request.auth != null && request.auth.uid == userId;
     }
   }
