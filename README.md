@@ -72,13 +72,18 @@ De backendkeuze moet worden gemaakt voordat we accounts en codes veilig kunnen i
 - De service-worker-cache is bijgewerkt naar v3.5.
 
 
-## v3.10
+## v3.11
 - Favorietenfilter samengevoegd met de sorteerkeuze in Mijn collectie.
 - lijstweergave en afdrukken-uitvoer bevat nu ook de kolom Aantal.
 - lijstweergave en afdrukken gebruikt liggend A4 en bredere kolommen om koppen op één regel te houden.
 
 
-## v3.10
-- Corrected the visible version label to v3.10.
+## v3.11
+- Corrected the visible version label to v3.11.
 - Export actions now open a previewable list instead of immediately opening the print dialog. Use the explicit print button to choose a printer or save as list/print.
 - Table widths are adjusted for landscape A4; cell text wraps instead of being ellipsized.
+
+
+## v3.11 — favorietenknop met extra afstand
+- De sterknop voor favorieten is verplaatst van naast de cultivarnaam naar een aparte rij onderaan de collectiekaart.
+- Er is extra verticale ruimte en een scheidingslijn toegevoegd om onbedoeld klikken op favorieten te voorkomen.
