@@ -109,3 +109,9 @@ Gebruikers kunnen in Instellingen kiezen uit Botanical Green, Japanese Maple en 
 - Personal collections, photos and lists remain local; no personal data is uploaded by this account screen.
 - Firestore access remains closed until security rules are deliberately configured.
 - Configure/verify the Firebase web app config in `index.html` before publishing.
+
+
+## Wijzigingen v4.3
+- Accountformulier heeft een eigen Account-scherm en staat niet meer onder Instellingen.
+- De toelichting onder de kop Instellingen is verwijderd.
+- Het accounticoon in de bovenbalk is vervangen door een profielicoon.
