@@ -1,8 +1,8 @@
 {
   "app": "Acer Atlas",
-  "version": "5.2-structured-cultivar-data",
+  "version": "5.3-more-free-photos",
   "record_count": 58,
-  "note": "v5.2: 58 cultivarrecords behouden. Profielen aangevuld met gestructureerde seizoenskenmerken, groei en standplaats waar betrouwbare broninformatie beschikbaar is. Ontbrekende cultivar-specifieke gegevens staan expliciet als Onbekend. Vrije foto’s worden alleen toegevoegd als de specifieke Commons-bestandspagina en licentie zijn gecontroleerd.",
+  "note": "v5.3: 58 bestaande cultivarrecords behouden. Meer cultivar-specifieke foto’s toegevoegd uit Wikimedia Commons na controle van de bestands-pagina en licentie. Per foto staan auteur, licentie en bronlink vermeld; ontbrekende seizoensidentificatie blijft Onbekend.",
   "records": [
     {
       "id": "cultivar-ariadne",
@@ -1337,6 +1337,15 @@
           "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
           "credit": "Foto: Agnieszka Kwiecień (Nova) · CC BY-SA 4.0",
           "season": "Voorjaar"
+        },
+        {
+          "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Acer_palmatum_%27Orange_Dream%27_-_2020-05-08_-_Andy_Mabbett_-_04.jpg",
+          "page_url": "https://commons.wikimedia.org/wiki/File:Acer_palmatum_%27Orange_Dream%27_-_2020-05-08_-_Andy_Mabbett_-_04.jpg",
+          "author": "Andy Mabbett",
+          "license": "CC BY-SA 4.0",
+          "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+          "credit": "Foto: Andy Mabbett · CC BY-SA 4.0",
+          "season": "Voorjaar"
         }
       ],
       "data_completeness": "partly documented"
@@ -1586,6 +1595,15 @@
           "license_url": "https://creativecommons.org/licenses/by-sa/3.0/",
           "credit": "Foto: Jean-Pol GRANDMONT · CC BY-SA 3.0",
           "season": "Onbekend"
+        },
+        {
+          "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Acer_palmatum_%27Osakazuki%27_JPG2.jpg",
+          "page_url": "https://commons.wikimedia.org/wiki/File:Acer_palmatum_%27Osakazuki%27_JPG2.jpg",
+          "author": "Wikimedia Commons contributor",
+          "license": "CC BY-SA 3.0 (bestandspagina vermeldt ook CC BY 3.0)",
+          "license_url": "https://creativecommons.org/licenses/by-sa/3.0/",
+          "credit": "Foto: Wikimedia Commons contributor · CC BY-SA 3.0",
+          "season": "Onbekend"
         }
       ],
       "data_completeness": "partly documented"
@@ -1748,6 +1766,24 @@
           "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
           "credit": "Foto: Jean-Pol GRANDMONT · CC BY-SA 4.0",
           "season": "Onbekend"
+        },
+        {
+          "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Acer_palmatum_Sango_kaku_5zz.jpg",
+          "page_url": "https://commons.wikimedia.org/wiki/File:Acer_palmatum_Sango_kaku_5zz.jpg",
+          "author": "David J. Stang",
+          "license": "CC BY-SA 4.0",
+          "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+          "credit": "Foto: David J. Stang · CC BY-SA 4.0",
+          "season": "Onbekend"
+        },
+        {
+          "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Acer_palmatum_Sango_kaku_4zz.jpg",
+          "page_url": "https://commons.wikimedia.org/wiki/File:Acer_palmatum_Sango_kaku_4zz.jpg",
+          "author": "David J. Stang",
+          "license": "CC BY-SA 4.0",
+          "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+          "credit": "Foto: David J. Stang · CC BY-SA 4.0",
+          "season": "Onbekend"
         }
       ],
       "data_completeness": "partly documented"
@@ -1801,7 +1837,7 @@
       "review_needed": true,
       "last_checked": "2026-10-21",
       "esveld_review_status": "search-link-only",
-      "photo_status": "no-photo-yet",
+      "photo_status": "free-license-verified",
       "name_data": {
         "botanical_name": "Acer palmatum 'Seiryū'",
         "cultivar_name": "Seiryū",
@@ -1829,7 +1865,17 @@
         "climate_zone": "Exacte klimaatzone onbekend. Winterhardheid verschilt per cultivar en microklimaat.",
         "source_scope": "Algemene teeltinformatie voor Acer palmatum / Acer shirasawanum; cultivar-specifieke details alleen waar expliciet genoemd."
       },
-      "photos": [],
+      "photos": [
+        {
+          "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Acer_palmatum_Seiryu_1zz.jpg",
+          "page_url": "https://commons.wikimedia.org/wiki/File:Acer_palmatum_Seiryu_1zz.jpg",
+          "author": "David J. Stang",
+          "license": "CC BY-SA 4.0",
+          "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+          "credit": "Foto: David J. Stang · CC BY-SA 4.0",
+          "season": "Onbekend"
+        }
+      ],
       "data_completeness": "partly documented"
     },
     {
@@ -1968,7 +2014,7 @@
       },
       "review_needed": true,
       "esveld_review_status": "search-link-only",
-      "photo_status": "no-photo-yet",
+      "photo_status": "free-license-verified",
       "name_data": {
         "botanical_name": "Acer palmatum 'Shishi-gashira'",
         "cultivar_name": "Shishi-gashira",
@@ -1994,7 +2040,26 @@
         "climate_zone": "Exacte klimaatzone onbekend. Winterhardheid verschilt per cultivar en microklimaat.",
         "source_scope": "Algemene teeltinformatie voor Acer palmatum / Acer shirasawanum; cultivar-specifieke details alleen waar expliciet genoemd."
       },
-      "photos": [],
+      "photos": [
+        {
+          "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Acer_palmatum_Shishigashira_0zz.jpg",
+          "page_url": "https://commons.wikimedia.org/wiki/File:Acer_palmatum_Shishigashira_0zz.jpg",
+          "author": "David J. Stang",
+          "license": "CC BY-SA 4.0",
+          "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+          "credit": "Foto: David J. Stang · CC BY-SA 4.0",
+          "season": "Onbekend"
+        },
+        {
+          "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Acer_palmatum_Shishigashira_11zz.jpg",
+          "page_url": "https://commons.wikimedia.org/wiki/File:Acer_palmatum_Shishigashira_11zz.jpg",
+          "author": "David J. Stang",
+          "license": "CC BY-SA 4.0",
+          "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+          "credit": "Foto: David J. Stang · CC BY-SA 4.0",
+          "season": "Onbekend"
+        }
+      ],
       "data_completeness": "needs cultivar-specific research",
       "last_checked": "2026-10-21"
     },
@@ -2502,7 +2567,7 @@
       },
       "review_needed": true,
       "esveld_review_status": "search-link-only",
-      "photo_status": "no-photo-yet",
+      "photo_status": "free-license-verified",
       "name_data": {
         "botanical_name": "Acer palmatum 'Viridis'",
         "cultivar_name": "Viridis",
@@ -2528,7 +2593,17 @@
         "climate_zone": "RHS-hardheidsklasse H6 voor het profiel; dit is geen garantie voor elke standplaats.",
         "source_scope": "Algemene teeltinformatie voor Acer palmatum / Acer shirasawanum; cultivar-specifieke details alleen waar expliciet genoemd."
       },
-      "photos": [],
+      "photos": [
+        {
+          "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Acer_palmatum_Viridis_0zz.jpg",
+          "page_url": "https://commons.wikimedia.org/wiki/File:Acer_palmatum_Viridis_0zz.jpg",
+          "author": "Jean-Pol GRANDMONT",
+          "license": "CC BY-SA 4.0",
+          "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+          "credit": "Foto: Jean-Pol GRANDMONT · CC BY-SA 4.0",
+          "season": "Onbekend"
+        }
+      ],
       "data_completeness": "partly documented; cultivar-specific research sources linked",
       "last_checked": "2026-10-21"
     },
@@ -4743,5 +4818,6 @@
       "data_completeness": "partly documented",
       "last_checked": "2026-10-21"
     }
-  ]
+  ],
+  "photo_count": 14
 }
