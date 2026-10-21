@@ -1,8 +1,8 @@
 {
   "app": "Acer Atlas",
-  "version": "2.7-collection-focus",
+  "version": "5.2-structured-cultivar-data",
   "record_count": 58,
-  "note": "v2.7 collection-first test build. Cultivar descriptions are shown under Information. Photo URLs still require individual matching/verification; no guessed cultivar images are inserted.",
+  "note": "v5.2: 58 cultivarrecords behouden. Profielen aangevuld met gestructureerde seizoenskenmerken, groei en standplaats waar betrouwbare broninformatie beschikbaar is. Ontbrekende cultivar-specifieke gegevens staan expliciet als Onbekend. Vrije foto’s worden alleen toegevoegd als de specifieke Commons-bestandspagina en licentie zijn gecontroleerd.",
   "records": [
     {
       "id": "cultivar-ariadne",
@@ -45,8 +45,35 @@
       },
       "review_needed": true,
       "height_after_10_years": "250 cm na 10 jaar",
-      "last_checked": "2026-10-20",
-      "photo_status": "needs_verified_photo"
+      "last_checked": "2026-10-21",
+      "photo_status": "no-photo-yet",
+      "name_data": {
+        "botanical_name": "Acer palmatum 'Ariadne'",
+        "cultivar_name": "Ariadne",
+        "synonyms": [],
+        "common_name": "Onbekend"
+      },
+      "species": "Acer palmatum",
+      "plant_group": "Onbekend",
+      "growth_habit": "Losser groeiend",
+      "seasonal_characteristics": {
+        "spring": "Oudroze, bont blad; afwijkend gekleurde nerven.",
+        "summer": "Onbekend; bron beschrijft geen zomerblad voldoende precies.",
+        "autumn": "Onbekend; betrouwbare cultivar-specifieke herfstkleur niet vastgesteld."
+      },
+      "growth": {
+        "height_after_10_years": "250 cm na 10 jaar",
+        "width_after_10_years": "Onbekend",
+        "growth_rate": "Onbekend"
+      },
+      "site": {
+        "position": "Halfschaduw of gefilterd licht is een veilige algemene keuze; beschut tegen harde wind. Cultivar-specifiek: onbekend.",
+        "soil": "Vochtig maar goed doorlatend, humusrijk; geen langdurig natte grond. Algemene soortinformatie, niet cultivar-specifiek bevestigd.",
+        "climate_zone": "Bron omschrijft de cultivar als goed winterhard; exacte klimaatzone onbekend.",
+        "source_scope": "Algemene teeltinformatie voor Acer palmatum / Acer shirasawanum; cultivar-specifieke details alleen waar expliciet genoemd."
+      },
+      "photos": [],
+      "data_completeness": "partly documented"
     },
     {
       "id": "cultivar-benimaiko",
@@ -89,8 +116,35 @@
       },
       "review_needed": true,
       "height_after_10_years": "250 cm na 10 jaar",
-      "last_checked": "2026-10-20",
-      "photo_status": "needs_verified_photo"
+      "last_checked": "2026-10-21",
+      "photo_status": "no-photo-yet",
+      "name_data": {
+        "botanical_name": "Acer palmatum 'Beni-maiko'",
+        "cultivar_name": "Beni-maiko",
+        "synonyms": [],
+        "common_name": "Onbekend"
+      },
+      "species": "Acer palmatum",
+      "plant_group": "Onbekend",
+      "growth_habit": "Compact",
+      "seasonal_characteristics": {
+        "spring": "Helder rozerood jong blad.",
+        "summer": "Blad verkleurt via rood naar groen; nerven blijven opvallend.",
+        "autumn": "Onbekend; geen betrouwbare cultivar-specifieke beschrijving gevonden."
+      },
+      "growth": {
+        "height_after_10_years": "250 cm na 10 jaar",
+        "width_after_10_years": "Onbekend",
+        "growth_rate": "Onbekend"
+      },
+      "site": {
+        "position": "Halfschaduw of gefilterd licht is een veilige algemene keuze; beschut tegen harde wind. Cultivar-specifiek: onbekend.",
+        "soil": "Vochtig maar goed doorlatend, humusrijk; geen langdurig natte grond. Algemene soortinformatie, niet cultivar-specifiek bevestigd.",
+        "climate_zone": "Bron omschrijft de cultivar als goed winterhard; exacte klimaatzone onbekend.",
+        "source_scope": "Algemene teeltinformatie voor Acer palmatum / Acer shirasawanum; cultivar-specifieke details alleen waar expliciet genoemd."
+      },
+      "photos": [],
+      "data_completeness": "partly documented"
     },
     {
       "id": "cultivar-benitsukasa",
@@ -143,7 +197,35 @@
       },
       "review_needed": true,
       "esveld_review_status": "search-link-only",
-      "photo_status": "needs_verified_photo"
+      "photo_status": "no-photo-yet",
+      "name_data": {
+        "botanical_name": "Acer palmatum 'Beni-tsukasa'",
+        "cultivar_name": "Beni-tsukasa",
+        "synonyms": [],
+        "common_name": "Onbekend"
+      },
+      "species": "Acer palmatum",
+      "plant_group": "Onbekend",
+      "growth_habit": "Onbekend",
+      "seasonal_characteristics": {
+        "spring": "Onbekend",
+        "summer": "Onbekend",
+        "autumn": "Onbekend"
+      },
+      "growth": {
+        "height_after_10_years": "Onbekend",
+        "width_after_10_years": "Onbekend",
+        "growth_rate": "Onbekend"
+      },
+      "site": {
+        "position": "Halfschaduw of gefilterd licht is een veilige algemene keuze; beschut tegen harde wind. Cultivar-specifiek: onbekend.",
+        "soil": "Vochtig maar goed doorlatend, humusrijk; geen langdurig natte grond. Algemene soortinformatie, niet cultivar-specifiek bevestigd.",
+        "climate_zone": "Exacte klimaatzone onbekend. Winterhardheid verschilt per cultivar en microklimaat.",
+        "source_scope": "Algemene teeltinformatie voor Acer palmatum / Acer shirasawanum; cultivar-specifieke details alleen waar expliciet genoemd."
+      },
+      "photos": [],
+      "data_completeness": "needs cultivar-specific research",
+      "last_checked": "2026-10-21"
     },
     {
       "id": "cultivar-bloodgood",
@@ -185,9 +267,46 @@
         "en": "The specialist source describes Bloodgood as a selection from the Atropurpureum group, distributed by Bloodgood Nurseries on Long Island, USA. This source does not establish an introduction year or original selector."
       },
       "review_needed": true,
-      "last_checked": "2026-10-20",
+      "last_checked": "2026-10-21",
       "height_after_10_years": "3 m na 10 jaar",
-      "photo_status": "needs_verified_photo"
+      "photo_status": "free-license-verified",
+      "name_data": {
+        "botanical_name": "Acer palmatum 'Bloodgood'",
+        "cultivar_name": "Bloodgood",
+        "synonyms": [],
+        "common_name": "Onbekend"
+      },
+      "species": "Acer palmatum",
+      "plant_group": "Palmatum-groep (voorlopig)",
+      "growth_habit": "Opgaand",
+      "seasonal_characteristics": {
+        "spring": "Jong blad rood tot roodpaars.",
+        "summer": "Donker wijnrood tot purperrood blad; kleur houdt doorgaans goed stand.",
+        "autumn": "Rood tot karmijnrood; intensiteit afhankelijk van weer en standplaats."
+      },
+      "growth": {
+        "height_after_10_years": "3 m na 10 jaar",
+        "width_after_10_years": "Onbekend",
+        "growth_rate": "Onbekend"
+      },
+      "site": {
+        "position": "Halfschaduw of gefilterd licht is een veilige algemene keuze; beschut tegen harde wind. Cultivar-specifiek: onbekend.",
+        "soil": "Vochtig maar goed doorlatend, humusrijk; geen langdurig natte grond. Algemene soortinformatie, niet cultivar-specifiek bevestigd.",
+        "climate_zone": "Bron omschrijft de cultivar als zeer winterhard; exacte klimaatzone onbekend.",
+        "source_scope": "Algemene teeltinformatie voor Acer palmatum / Acer shirasawanum; cultivar-specifieke details alleen waar expliciet genoemd."
+      },
+      "photos": [
+        {
+          "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Acer%20palmatum%20%27Bloodgood%27%2001.jpg",
+          "page_url": "https://commons.wikimedia.org/wiki/File:Acer_palmatum_%27Bloodgood%27_01.jpg",
+          "author": "Digigalos",
+          "license": "CC BY-SA 3.0 Unported",
+          "license_url": "https://creativecommons.org/licenses/by-sa/3.0/",
+          "credit": "Foto: Digigalos · CC BY-SA 3.0",
+          "season": "Onbekend"
+        }
+      ],
+      "data_completeness": "partly documented"
     },
     {
       "id": "cultivar-burgundylace",
@@ -240,7 +359,35 @@
       },
       "review_needed": true,
       "esveld_review_status": "search-link-only",
-      "photo_status": "needs_verified_photo"
+      "photo_status": "no-photo-yet",
+      "name_data": {
+        "botanical_name": "Acer palmatum 'Burgundy Lace'",
+        "cultivar_name": "Burgundy Lace",
+        "synonyms": [],
+        "common_name": "Onbekend"
+      },
+      "species": "Acer palmatum",
+      "plant_group": "Onbekend",
+      "growth_habit": "Onbekend",
+      "seasonal_characteristics": {
+        "spring": "Onbekend",
+        "summer": "Onbekend",
+        "autumn": "Onbekend"
+      },
+      "growth": {
+        "height_after_10_years": "Onbekend",
+        "width_after_10_years": "Onbekend",
+        "growth_rate": "Onbekend"
+      },
+      "site": {
+        "position": "Halfschaduw of gefilterd licht is een veilige algemene keuze; beschut tegen harde wind. Cultivar-specifiek: onbekend.",
+        "soil": "Vochtig maar goed doorlatend, humusrijk; geen langdurig natte grond. Algemene soortinformatie, niet cultivar-specifiek bevestigd.",
+        "climate_zone": "Exacte klimaatzone onbekend. Winterhardheid verschilt per cultivar en microklimaat.",
+        "source_scope": "Algemene teeltinformatie voor Acer palmatum / Acer shirasawanum; cultivar-specifieke details alleen waar expliciet genoemd."
+      },
+      "photos": [],
+      "data_completeness": "needs cultivar-specific research",
+      "last_checked": "2026-10-21"
     },
     {
       "id": "cultivar-chitoseyama",
@@ -293,7 +440,35 @@
       },
       "review_needed": true,
       "esveld_review_status": "search-link-only",
-      "photo_status": "needs_verified_photo"
+      "photo_status": "no-photo-yet",
+      "name_data": {
+        "botanical_name": "Acer palmatum 'Chitose-yama'",
+        "cultivar_name": "Chitose-yama",
+        "synonyms": [],
+        "common_name": "Onbekend"
+      },
+      "species": "Acer palmatum",
+      "plant_group": "Onbekend",
+      "growth_habit": "Onbekend",
+      "seasonal_characteristics": {
+        "spring": "Onbekend",
+        "summer": "Onbekend",
+        "autumn": "Onbekend"
+      },
+      "growth": {
+        "height_after_10_years": "Onbekend",
+        "width_after_10_years": "Onbekend",
+        "growth_rate": "Onbekend"
+      },
+      "site": {
+        "position": "Halfschaduw of gefilterd licht is een veilige algemene keuze; beschut tegen harde wind. Cultivar-specifiek: onbekend.",
+        "soil": "Vochtig maar goed doorlatend, humusrijk; geen langdurig natte grond. Algemene soortinformatie, niet cultivar-specifiek bevestigd.",
+        "climate_zone": "Exacte klimaatzone onbekend. Winterhardheid verschilt per cultivar en microklimaat.",
+        "source_scope": "Algemene teeltinformatie voor Acer palmatum / Acer shirasawanum; cultivar-specifieke details alleen waar expliciet genoemd."
+      },
+      "photos": [],
+      "data_completeness": "needs cultivar-specific research",
+      "last_checked": "2026-10-21"
     },
     {
       "id": "cultivar-corallinum",
@@ -340,9 +515,36 @@
         "en": "A horticultural description from 1905 is cited. The name Corallinum has sometimes been confused with Senkaki/Sango-kaku in Dutch trade and literature; verify the identity of plants sold under this name."
       },
       "review_needed": true,
-      "last_checked": "2026-10-20",
+      "last_checked": "2026-10-21",
       "esveld_review_status": "search-link-only",
-      "photo_status": "needs_verified_photo"
+      "photo_status": "no-photo-yet",
+      "name_data": {
+        "botanical_name": "Acer palmatum 'Corallinum'",
+        "cultivar_name": "Corallinum",
+        "synonyms": [],
+        "common_name": "Onbekend"
+      },
+      "species": "Acer palmatum",
+      "plant_group": "Palmatum-groep (voorlopig)",
+      "growth_habit": "Onbekend",
+      "seasonal_characteristics": {
+        "spring": "Zeer opvallend helder gekleurd jong blad; vaak roze tot zalmrood.",
+        "summer": "Blad wordt groener naarmate het seizoen vordert; exacte zomerkleur kan variëren.",
+        "autumn": "Onbekend; onvoldoende betrouwbaar vastgelegd."
+      },
+      "growth": {
+        "height_after_10_years": "Onbekend",
+        "width_after_10_years": "Onbekend",
+        "growth_rate": "Onbekend"
+      },
+      "site": {
+        "position": "Halfschaduw of gefilterd licht is een veilige algemene keuze; beschut tegen harde wind. Cultivar-specifiek: onbekend.",
+        "soil": "Vochtig maar goed doorlatend, humusrijk; geen langdurig natte grond. Algemene soortinformatie, niet cultivar-specifiek bevestigd.",
+        "climate_zone": "Exacte klimaatzone onbekend. Winterhardheid verschilt per cultivar en microklimaat.",
+        "source_scope": "Algemene teeltinformatie voor Acer palmatum / Acer shirasawanum; cultivar-specifieke details alleen waar expliciet genoemd."
+      },
+      "photos": [],
+      "data_completeness": "partly documented"
     },
     {
       "id": "cultivar-crimsonqueen",
@@ -385,8 +587,45 @@
       },
       "review_needed": true,
       "height_after_10_years": "150 cm na 10 jaar",
-      "last_checked": "2026-10-20",
-      "photo_status": "needs_verified_photo"
+      "last_checked": "2026-10-21",
+      "photo_status": "free-license-verified",
+      "name_data": {
+        "botanical_name": "Acer palmatum 'Crimson Queen'",
+        "cultivar_name": "Crimson Queen",
+        "synonyms": [],
+        "common_name": "Onbekend"
+      },
+      "species": "Acer palmatum",
+      "plant_group": "Onbekend",
+      "growth_habit": "Overhangend",
+      "seasonal_characteristics": {
+        "spring": "Fijn ingesneden, donker roodpaars blad.",
+        "summer": "Donker wijnrood; overhangende, brede groei.",
+        "autumn": "Rood tot rood-oranje; exacte tint kan variëren."
+      },
+      "growth": {
+        "height_after_10_years": "150 cm na 10 jaar",
+        "width_after_10_years": "Onbekend",
+        "growth_rate": "Onbekend"
+      },
+      "site": {
+        "position": "Halfschaduw of gefilterd licht is een veilige algemene keuze; beschut tegen harde wind. Cultivar-specifiek: onbekend.",
+        "soil": "Vochtig maar goed doorlatend, humusrijk; geen langdurig natte grond. Algemene soortinformatie, niet cultivar-specifiek bevestigd.",
+        "climate_zone": "Bron omschrijft de cultivar als zeer winterhard; exacte klimaatzone onbekend.",
+        "source_scope": "Algemene teeltinformatie voor Acer palmatum / Acer shirasawanum; cultivar-specifieke details alleen waar expliciet genoemd."
+      },
+      "photos": [
+        {
+          "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Acer%20palmatum%20Crimson%20Queen%200zz.jpg",
+          "page_url": "https://commons.wikimedia.org/wiki/File:Acer_palmatum_Crimson_Queen_0zz.jpg",
+          "author": "David J. Stang",
+          "license": "CC BY-SA 4.0",
+          "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+          "credit": "Foto: David J. Stang · CC BY-SA 4.0",
+          "season": "Onbekend"
+        }
+      ],
+      "data_completeness": "partly documented"
     },
     {
       "id": "cultivar-eddisbury",
@@ -439,7 +678,35 @@
       },
       "review_needed": true,
       "esveld_review_status": "search-link-only",
-      "photo_status": "needs_verified_photo"
+      "photo_status": "no-photo-yet",
+      "name_data": {
+        "botanical_name": "Acer palmatum 'Eddisbury'",
+        "cultivar_name": "Eddisbury",
+        "synonyms": [],
+        "common_name": "Onbekend"
+      },
+      "species": "Acer palmatum",
+      "plant_group": "Onbekend",
+      "growth_habit": "Onbekend",
+      "seasonal_characteristics": {
+        "spring": "Onbekend",
+        "summer": "Onbekend",
+        "autumn": "Onbekend"
+      },
+      "growth": {
+        "height_after_10_years": "Onbekend",
+        "width_after_10_years": "Onbekend",
+        "growth_rate": "Onbekend"
+      },
+      "site": {
+        "position": "Halfschaduw of gefilterd licht is een veilige algemene keuze; beschut tegen harde wind. Cultivar-specifiek: onbekend.",
+        "soil": "Vochtig maar goed doorlatend, humusrijk; geen langdurig natte grond. Algemene soortinformatie, niet cultivar-specifiek bevestigd.",
+        "climate_zone": "Exacte klimaatzone onbekend. Winterhardheid verschilt per cultivar en microklimaat.",
+        "source_scope": "Algemene teeltinformatie voor Acer palmatum / Acer shirasawanum; cultivar-specifieke details alleen waar expliciet genoemd."
+      },
+      "photos": [],
+      "data_completeness": "needs cultivar-specific research",
+      "last_checked": "2026-10-21"
     },
     {
       "id": "cultivar-elegans",
@@ -486,9 +753,36 @@
         "en": "The specialist source describes the leaf form and mentions the older name Acer palmatum septemlobum elegans. No reliable introduction year or selector established."
       },
       "review_needed": true,
-      "last_checked": "2026-10-20",
+      "last_checked": "2026-10-21",
       "esveld_review_status": "search-link-only",
-      "photo_status": "needs_verified_photo"
+      "photo_status": "no-photo-yet",
+      "name_data": {
+        "botanical_name": "Acer palmatum 'Elegans'",
+        "cultivar_name": "Elegans",
+        "synonyms": [],
+        "common_name": "Onbekend"
+      },
+      "species": "Acer palmatum",
+      "plant_group": "Onbekend",
+      "growth_habit": "Onbekend",
+      "seasonal_characteristics": {
+        "spring": "Jong blad; exacte kleur onvoldoende betrouwbaar vastgesteld.",
+        "summer": "Zeven lobben, diep ingesneden en opvallend getand; kleur onbekend.",
+        "autumn": "Onbekend; onvoldoende betrouwbaar vastgelegd."
+      },
+      "growth": {
+        "height_after_10_years": "Onbekend",
+        "width_after_10_years": "Onbekend",
+        "growth_rate": "Onbekend"
+      },
+      "site": {
+        "position": "Halfschaduw of gefilterd licht is een veilige algemene keuze; beschut tegen harde wind. Cultivar-specifiek: onbekend.",
+        "soil": "Vochtig maar goed doorlatend, humusrijk; geen langdurig natte grond. Algemene soortinformatie, niet cultivar-specifiek bevestigd.",
+        "climate_zone": "Exacte klimaatzone onbekend. Winterhardheid verschilt per cultivar en microklimaat.",
+        "source_scope": "Algemene teeltinformatie voor Acer palmatum / Acer shirasawanum; cultivar-specifieke details alleen waar expliciet genoemd."
+      },
+      "photos": [],
+      "data_completeness": "partly documented"
     },
     {
       "id": "cultivar-emeraldlace",
@@ -541,7 +835,35 @@
       },
       "review_needed": true,
       "esveld_review_status": "search-link-only",
-      "photo_status": "needs_verified_photo"
+      "photo_status": "no-photo-yet",
+      "name_data": {
+        "botanical_name": "Acer palmatum 'Emerald Lace'",
+        "cultivar_name": "Emerald Lace",
+        "synonyms": [],
+        "common_name": "Onbekend"
+      },
+      "species": "Acer palmatum",
+      "plant_group": "Onbekend",
+      "growth_habit": "Onbekend",
+      "seasonal_characteristics": {
+        "spring": "Onbekend",
+        "summer": "Onbekend",
+        "autumn": "Onbekend"
+      },
+      "growth": {
+        "height_after_10_years": "Onbekend",
+        "width_after_10_years": "Onbekend",
+        "growth_rate": "Onbekend"
+      },
+      "site": {
+        "position": "Halfschaduw of gefilterd licht is een veilige algemene keuze; beschut tegen harde wind. Cultivar-specifiek: onbekend.",
+        "soil": "Vochtig maar goed doorlatend, humusrijk; geen langdurig natte grond. Algemene soortinformatie, niet cultivar-specifiek bevestigd.",
+        "climate_zone": "Exacte klimaatzone onbekend. Winterhardheid verschilt per cultivar en microklimaat.",
+        "source_scope": "Algemene teeltinformatie voor Acer palmatum / Acer shirasawanum; cultivar-specifieke details alleen waar expliciet genoemd."
+      },
+      "photos": [],
+      "data_completeness": "needs cultivar-specific research",
+      "last_checked": "2026-10-21"
     },
     {
       "id": "cultivar-garnet",
@@ -588,9 +910,36 @@
         "en": "The source states that Garnet was selected by the Dutch firm Guldemond & Co and entered commerce in 1960. This is a documented trade/introduction detail in the specialist source."
       },
       "review_needed": true,
-      "last_checked": "2026-10-20",
+      "last_checked": "2026-10-21",
       "esveld_review_status": "search-link-only",
-      "photo_status": "needs_verified_photo"
+      "photo_status": "no-photo-yet",
+      "name_data": {
+        "botanical_name": "Acer palmatum 'Garnet'",
+        "cultivar_name": "Garnet",
+        "synonyms": [],
+        "common_name": "Onbekend"
+      },
+      "species": "Acer palmatum",
+      "plant_group": "Dissectum-groep (voorlopig)",
+      "growth_habit": "Onbekend",
+      "seasonal_characteristics": {
+        "spring": "Jong blad roodbruin.",
+        "summer": "Doorgaans bruinrood; fijn ingesneden blad.",
+        "autumn": "Rood tot oranjerood; exacte tint cultivar-specifiek te controleren."
+      },
+      "growth": {
+        "height_after_10_years": "Onbekend",
+        "width_after_10_years": "Onbekend",
+        "growth_rate": "Onbekend"
+      },
+      "site": {
+        "position": "Halfschaduw of gefilterd licht is een veilige algemene keuze; beschut tegen harde wind. Cultivar-specifiek: onbekend.",
+        "soil": "Vochtig maar goed doorlatend, humusrijk; geen langdurig natte grond. Algemene soortinformatie, niet cultivar-specifiek bevestigd.",
+        "climate_zone": "Exacte klimaatzone onbekend. Winterhardheid verschilt per cultivar en microklimaat.",
+        "source_scope": "Algemene teeltinformatie voor Acer palmatum / Acer shirasawanum; cultivar-specifieke details alleen waar expliciet genoemd."
+      },
+      "photos": [],
+      "data_completeness": "partly documented"
     },
     {
       "id": "cultivar-inabashidare",
@@ -643,7 +992,35 @@
       },
       "review_needed": true,
       "esveld_review_status": "search-link-only",
-      "photo_status": "needs_verified_photo"
+      "photo_status": "no-photo-yet",
+      "name_data": {
+        "botanical_name": "Acer palmatum 'Inaba-shidare'",
+        "cultivar_name": "Inaba-shidare",
+        "synonyms": [],
+        "common_name": "Onbekend"
+      },
+      "species": "Acer palmatum",
+      "plant_group": "Onbekend",
+      "growth_habit": "Onbekend",
+      "seasonal_characteristics": {
+        "spring": "Onbekend",
+        "summer": "Onbekend",
+        "autumn": "Onbekend"
+      },
+      "growth": {
+        "height_after_10_years": "Onbekend",
+        "width_after_10_years": "Onbekend",
+        "growth_rate": "Onbekend"
+      },
+      "site": {
+        "position": "Halfschaduw of gefilterd licht is een veilige algemene keuze; beschut tegen harde wind. Cultivar-specifiek: onbekend.",
+        "soil": "Vochtig maar goed doorlatend, humusrijk; geen langdurig natte grond. Algemene soortinformatie, niet cultivar-specifiek bevestigd.",
+        "climate_zone": "Exacte klimaatzone onbekend. Winterhardheid verschilt per cultivar en microklimaat.",
+        "source_scope": "Algemene teeltinformatie voor Acer palmatum / Acer shirasawanum; cultivar-specifieke details alleen waar expliciet genoemd."
+      },
+      "photos": [],
+      "data_completeness": "needs cultivar-specific research",
+      "last_checked": "2026-10-21"
     },
     {
       "id": "cultivar-katsura",
@@ -686,8 +1063,45 @@
       },
       "review_needed": true,
       "height_after_10_years": "300 cm na 10 jaar",
-      "last_checked": "2026-10-20",
-      "photo_status": "needs_verified_photo"
+      "last_checked": "2026-10-21",
+      "photo_status": "free-license-verified",
+      "name_data": {
+        "botanical_name": "Acer palmatum 'Katsura'",
+        "cultivar_name": "Katsura",
+        "synonyms": [],
+        "common_name": "Onbekend"
+      },
+      "species": "Acer palmatum",
+      "plant_group": "Onbekend",
+      "growth_habit": "Dichtvertakt",
+      "seasonal_characteristics": {
+        "spring": "Oranjegeel tot abrikoos-oranje jong blad.",
+        "summer": "Fris geelgroen tot groen.",
+        "autumn": "Geel tot oranjerood, afhankelijk van standplaats en seizoen."
+      },
+      "growth": {
+        "height_after_10_years": "300 cm na 10 jaar",
+        "width_after_10_years": "Onbekend",
+        "growth_rate": "Onbekend"
+      },
+      "site": {
+        "position": "Halfschaduw of gefilterd licht is een veilige algemene keuze; beschut tegen harde wind. Cultivar-specifiek: onbekend.",
+        "soil": "Vochtig maar goed doorlatend, humusrijk; geen langdurig natte grond. Algemene soortinformatie, niet cultivar-specifiek bevestigd.",
+        "climate_zone": "Bron omschrijft de cultivar als goed winterhard; exacte klimaatzone onbekend.",
+        "source_scope": "Algemene teeltinformatie voor Acer palmatum / Acer shirasawanum; cultivar-specifieke details alleen waar expliciet genoemd."
+      },
+      "photos": [
+        {
+          "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Acer%20palmatum%20katsura002.jpg",
+          "page_url": "https://commons.wikimedia.org/wiki/File:Acer_palmatum_katsura002.jpg",
+          "author": "Piero TH",
+          "license": "CC BY-SA 3.0 Unported (ook GFDL vermeld)",
+          "license_url": "https://creativecommons.org/licenses/by-sa/3.0/",
+          "credit": "Foto: Piero TH · CC BY-SA 3.0",
+          "season": "Onbekend"
+        }
+      ],
+      "data_completeness": "partly documented"
     },
     {
       "id": "cultivar-kinshi",
@@ -740,7 +1154,35 @@
       },
       "review_needed": true,
       "esveld_review_status": "search-link-only",
-      "photo_status": "needs_verified_photo"
+      "photo_status": "no-photo-yet",
+      "name_data": {
+        "botanical_name": "Acer palmatum 'Kinshi'",
+        "cultivar_name": "Kinshi",
+        "synonyms": [],
+        "common_name": "Onbekend"
+      },
+      "species": "Acer palmatum",
+      "plant_group": "Onbekend",
+      "growth_habit": "Onbekend",
+      "seasonal_characteristics": {
+        "spring": "Onbekend",
+        "summer": "Onbekend",
+        "autumn": "Onbekend"
+      },
+      "growth": {
+        "height_after_10_years": "Onbekend",
+        "width_after_10_years": "Onbekend",
+        "growth_rate": "Onbekend"
+      },
+      "site": {
+        "position": "Halfschaduw of gefilterd licht is een veilige algemene keuze; beschut tegen harde wind. Cultivar-specifiek: onbekend.",
+        "soil": "Vochtig maar goed doorlatend, humusrijk; geen langdurig natte grond. Algemene soortinformatie, niet cultivar-specifiek bevestigd.",
+        "climate_zone": "Exacte klimaatzone onbekend. Winterhardheid verschilt per cultivar en microklimaat.",
+        "source_scope": "Algemene teeltinformatie voor Acer palmatum / Acer shirasawanum; cultivar-specifieke details alleen waar expliciet genoemd."
+      },
+      "photos": [],
+      "data_completeness": "needs cultivar-specific research",
+      "last_checked": "2026-10-21"
     },
     {
       "id": "cultivar-kiyohime",
@@ -787,9 +1229,36 @@
         "en": "The specialist source supports the described habit and foliage traits; introduction year and selector are not established."
       },
       "review_needed": true,
-      "last_checked": "2026-10-20",
+      "last_checked": "2026-10-21",
       "esveld_review_status": "search-link-only",
-      "photo_status": "needs_verified_photo"
+      "photo_status": "no-photo-yet",
+      "name_data": {
+        "botanical_name": "Acer palmatum 'Kiyohime'",
+        "cultivar_name": "Kiyohime",
+        "synonyms": [],
+        "common_name": "Onbekend"
+      },
+      "species": "Acer palmatum",
+      "plant_group": "Dwergvorm (plantgroep niet bevestigd)",
+      "growth_habit": "Compact",
+      "seasonal_characteristics": {
+        "spring": "Klein blad met rood-oranje rand of tint bij uitlopen.",
+        "summer": "Klein, donkergroen blad; compacte groei.",
+        "autumn": "Geel tot oranje."
+      },
+      "growth": {
+        "height_after_10_years": "Onbekend",
+        "width_after_10_years": "Onbekend",
+        "growth_rate": "Onbekend"
+      },
+      "site": {
+        "position": "Halfschaduw of gefilterd licht is een veilige algemene keuze; beschut tegen harde wind. Cultivar-specifiek: onbekend.",
+        "soil": "Vochtig maar goed doorlatend, humusrijk; geen langdurig natte grond. Algemene soortinformatie, niet cultivar-specifiek bevestigd.",
+        "climate_zone": "Exacte klimaatzone onbekend. Winterhardheid verschilt per cultivar en microklimaat.",
+        "source_scope": "Algemene teeltinformatie voor Acer palmatum / Acer shirasawanum; cultivar-specifieke details alleen waar expliciet genoemd."
+      },
+      "photos": [],
+      "data_completeness": "partly documented"
     },
     {
       "id": "cultivar-orangedream",
@@ -832,8 +1301,45 @@
       },
       "review_needed": true,
       "height_after_10_years": "250 cm na 10 jaar",
-      "last_checked": "2026-10-20",
-      "photo_status": "needs_verified_photo"
+      "last_checked": "2026-10-21",
+      "photo_status": "free-license-verified",
+      "name_data": {
+        "botanical_name": "Acer palmatum 'Orange Dream'",
+        "cultivar_name": "Orange Dream",
+        "synonyms": [],
+        "common_name": "Onbekend"
+      },
+      "species": "Acer palmatum",
+      "plant_group": "Onbekend",
+      "growth_habit": "Dichtvertakt",
+      "seasonal_characteristics": {
+        "spring": "Oranje tot geel-oranje jong blad.",
+        "summer": "Geelgroen tot lichtgroen.",
+        "autumn": "Geel tot oranjerood; afhankelijk van standplaats."
+      },
+      "growth": {
+        "height_after_10_years": "250 cm na 10 jaar",
+        "width_after_10_years": "Onbekend",
+        "growth_rate": "Onbekend"
+      },
+      "site": {
+        "position": "Halfschaduw of gefilterd licht is een veilige algemene keuze; beschut tegen harde wind. Cultivar-specifiek: onbekend.",
+        "soil": "Vochtig maar goed doorlatend, humusrijk; geen langdurig natte grond. Algemene soortinformatie, niet cultivar-specifiek bevestigd.",
+        "climate_zone": "Exacte klimaatzone onbekend. Winterhardheid verschilt per cultivar en microklimaat.",
+        "source_scope": "Algemene teeltinformatie voor Acer palmatum / Acer shirasawanum; cultivar-specifieke details alleen waar expliciet genoemd."
+      },
+      "photos": [
+        {
+          "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Acer_palmatum_%27Orange_Dream%27_Klon_palmowy_2017-05-14_01.jpg",
+          "page_url": "https://commons.wikimedia.org/wiki/File:Acer_palmatum_%27Orange_Dream%27_Klon_palmowy_2017-05-14_01.jpg",
+          "author": "Agnieszka Kwiecień (Nova)",
+          "license": "CC BY-SA 4.0",
+          "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+          "credit": "Foto: Agnieszka Kwiecień (Nova) · CC BY-SA 4.0",
+          "season": "Voorjaar"
+        }
+      ],
+      "data_completeness": "partly documented"
     },
     {
       "id": "cultivar-orangeola",
@@ -886,7 +1392,35 @@
       },
       "review_needed": true,
       "esveld_review_status": "search-link-only",
-      "photo_status": "needs_verified_photo"
+      "photo_status": "no-photo-yet",
+      "name_data": {
+        "botanical_name": "Acer palmatum 'Orangeola'",
+        "cultivar_name": "Orangeola",
+        "synonyms": [],
+        "common_name": "Onbekend"
+      },
+      "species": "Acer palmatum",
+      "plant_group": "Onbekend",
+      "growth_habit": "Onbekend",
+      "seasonal_characteristics": {
+        "spring": "Onbekend",
+        "summer": "Onbekend",
+        "autumn": "Onbekend"
+      },
+      "growth": {
+        "height_after_10_years": "Onbekend",
+        "width_after_10_years": "Onbekend",
+        "growth_rate": "Onbekend"
+      },
+      "site": {
+        "position": "Halfschaduw of gefilterd licht is een veilige algemene keuze; beschut tegen harde wind. Cultivar-specifiek: onbekend.",
+        "soil": "Vochtig maar goed doorlatend, humusrijk; geen langdurig natte grond. Algemene soortinformatie, niet cultivar-specifiek bevestigd.",
+        "climate_zone": "Exacte klimaatzone onbekend. Winterhardheid verschilt per cultivar en microklimaat.",
+        "source_scope": "Algemene teeltinformatie voor Acer palmatum / Acer shirasawanum; cultivar-specifieke details alleen waar expliciet genoemd."
+      },
+      "photos": [],
+      "data_completeness": "needs cultivar-specific research",
+      "last_checked": "2026-10-21"
     },
     {
       "id": "cultivar-ornatum",
@@ -933,9 +1467,36 @@
         "en": "The specialist source refers to an 1867 description by Carrière of plants exhibited in Paris by Belgian nurseryman Verschaeffelt. This documents the name historically, but is not necessarily an exact introduction year."
       },
       "review_needed": true,
-      "last_checked": "2026-10-20",
+      "last_checked": "2026-10-21",
       "esveld_review_status": "search-link-only",
-      "photo_status": "needs_verified_photo"
+      "photo_status": "no-photo-yet",
+      "name_data": {
+        "botanical_name": "Acer palmatum 'Ornatum'",
+        "cultivar_name": "Ornatum",
+        "synonyms": [],
+        "common_name": "Onbekend"
+      },
+      "species": "Acer palmatum",
+      "plant_group": "Dissectum-groep (voorlopig)",
+      "growth_habit": "Onbekend",
+      "seasonal_characteristics": {
+        "spring": "Fijn ingesneden, bronsrood jong blad.",
+        "summer": "Blad wordt groener naarmate het seizoen vordert.",
+        "autumn": "Rood."
+      },
+      "growth": {
+        "height_after_10_years": "Onbekend",
+        "width_after_10_years": "Onbekend",
+        "growth_rate": "Onbekend"
+      },
+      "site": {
+        "position": "Halfschaduw of gefilterd licht is een veilige algemene keuze; beschut tegen harde wind. Cultivar-specifiek: onbekend.",
+        "soil": "Vochtig maar goed doorlatend, humusrijk; geen langdurig natte grond. Algemene soortinformatie, niet cultivar-specifiek bevestigd.",
+        "climate_zone": "Exacte klimaatzone onbekend. Winterhardheid verschilt per cultivar en microklimaat.",
+        "source_scope": "Algemene teeltinformatie voor Acer palmatum / Acer shirasawanum; cultivar-specifieke details alleen waar expliciet genoemd."
+      },
+      "photos": [],
+      "data_completeness": "partly documented"
     },
     {
       "id": "cultivar-osakazuki",
@@ -985,9 +1546,49 @@
         "en": "The source discusses historical naming confusion and refers to catalogues predating 1911, but does not provide a definitive introduction year or certain original selector."
       },
       "review_needed": true,
-      "last_checked": "2026-10-20",
+      "last_checked": "2026-10-21",
       "esveld_review_status": "search-link-only",
-      "photo_status": "needs_verified_photo"
+      "photo_status": "free-license-verified",
+      "name_data": {
+        "botanical_name": "Acer palmatum 'Ōsakazuki'",
+        "cultivar_name": "Ōsakazuki",
+        "synonyms": [
+          "Osakazuki",
+          "O-sakazuki"
+        ],
+        "common_name": "Onbekend"
+      },
+      "species": "Acer palmatum",
+      "plant_group": "Palmatum-groep (voorlopig)",
+      "growth_habit": "Onbekend",
+      "seasonal_characteristics": {
+        "spring": "Groen blad; jong blad kan licht rood getint zijn.",
+        "summer": "Groot, groen, handvormig blad.",
+        "autumn": "Zeer opvallend helder oranjerood tot scharlakenrood."
+      },
+      "growth": {
+        "height_after_10_years": "Onbekend",
+        "width_after_10_years": "Onbekend",
+        "growth_rate": "Onbekend"
+      },
+      "site": {
+        "position": "Halfschaduw of gefilterd licht is een veilige algemene keuze; beschut tegen harde wind. Cultivar-specifiek: onbekend.",
+        "soil": "Vochtig maar goed doorlatend, humusrijk; geen langdurig natte grond. Algemene soortinformatie, niet cultivar-specifiek bevestigd.",
+        "climate_zone": "Exacte klimaatzone onbekend. Winterhardheid verschilt per cultivar en microklimaat.",
+        "source_scope": "Algemene teeltinformatie voor Acer palmatum / Acer shirasawanum; cultivar-specifieke details alleen waar expliciet genoemd."
+      },
+      "photos": [
+        {
+          "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Acer%20palmatum%20%27Osakazuki%27%20JPG1c.jpg",
+          "page_url": "https://commons.wikimedia.org/wiki/File:Acer_palmatum_%27Osakazuki%27_JPG1c.jpg",
+          "author": "Jean-Pol GRANDMONT",
+          "license": "CC BY-SA 3.0 Unported (ook GFDL vermeld)",
+          "license_url": "https://creativecommons.org/licenses/by-sa/3.0/",
+          "credit": "Foto: Jean-Pol GRANDMONT · CC BY-SA 3.0",
+          "season": "Onbekend"
+        }
+      ],
+      "data_completeness": "partly documented"
     },
     {
       "id": "cultivar-redpygmy",
@@ -1040,7 +1641,35 @@
       },
       "review_needed": true,
       "esveld_review_status": "search-link-only",
-      "photo_status": "needs_verified_photo"
+      "photo_status": "no-photo-yet",
+      "name_data": {
+        "botanical_name": "Acer palmatum 'Red Pygmy'",
+        "cultivar_name": "Red Pygmy",
+        "synonyms": [],
+        "common_name": "Onbekend"
+      },
+      "species": "Acer palmatum",
+      "plant_group": "Onbekend",
+      "growth_habit": "Onbekend",
+      "seasonal_characteristics": {
+        "spring": "Onbekend",
+        "summer": "Onbekend",
+        "autumn": "Onbekend"
+      },
+      "growth": {
+        "height_after_10_years": "Onbekend",
+        "width_after_10_years": "Onbekend",
+        "growth_rate": "Onbekend"
+      },
+      "site": {
+        "position": "Halfschaduw of gefilterd licht is een veilige algemene keuze; beschut tegen harde wind. Cultivar-specifiek: onbekend.",
+        "soil": "Vochtig maar goed doorlatend, humusrijk; geen langdurig natte grond. Algemene soortinformatie, niet cultivar-specifiek bevestigd.",
+        "climate_zone": "Exacte klimaatzone onbekend. Winterhardheid verschilt per cultivar en microklimaat.",
+        "source_scope": "Algemene teeltinformatie voor Acer palmatum / Acer shirasawanum; cultivar-specifieke details alleen waar expliciet genoemd."
+      },
+      "photos": [],
+      "data_completeness": "needs cultivar-specific research",
+      "last_checked": "2026-10-21"
     },
     {
       "id": "cultivar-sangokaku",
@@ -1082,9 +1711,46 @@
         "en": "The source treats Sango-kaku as a name also used for Senkaki, but warns that material from different sources may differ. It mentions introduction to England via T. H. Lowinsky and commerce through Sunningdale Nurseries around 1920, with a possible independent introduction in Ireland."
       },
       "review_needed": true,
-      "last_checked": "2026-10-20",
+      "last_checked": "2026-10-21",
       "height_after_10_years": "3 m na 10 jaar",
-      "photo_status": "needs_verified_photo"
+      "photo_status": "free-license-verified",
+      "name_data": {
+        "botanical_name": "Acer palmatum 'Sango-kaku'",
+        "cultivar_name": "Sango-kaku",
+        "synonyms": [],
+        "common_name": "Onbekend"
+      },
+      "species": "Acer palmatum",
+      "plant_group": "Palmatum-groep (voorlopig)",
+      "growth_habit": "Opgaand",
+      "seasonal_characteristics": {
+        "spring": "Frisgroen blad; jonge twijgen opvallend koraalrood.",
+        "summer": "Groen blad; rode twijgen blijven sierwaarde geven.",
+        "autumn": "Goudgeel tot oranjegeel; twijgen kleuren in de winter koraalrood."
+      },
+      "growth": {
+        "height_after_10_years": "3 m na 10 jaar",
+        "width_after_10_years": "Onbekend",
+        "growth_rate": "Onbekend"
+      },
+      "site": {
+        "position": "Halfschaduw of gefilterd licht is een veilige algemene keuze; beschut tegen harde wind. Cultivar-specifiek: onbekend.",
+        "soil": "Vochtig maar goed doorlatend, humusrijk; geen langdurig natte grond. Algemene soortinformatie, niet cultivar-specifiek bevestigd.",
+        "climate_zone": "Bron omschrijft de cultivar als goed winterhard; exacte klimaatzone onbekend.",
+        "source_scope": "Algemene teeltinformatie voor Acer palmatum / Acer shirasawanum; cultivar-specifieke details alleen waar expliciet genoemd."
+      },
+      "photos": [
+        {
+          "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Acer_palmatum_Sango_kaku_0zz.jpg",
+          "page_url": "https://commons.wikimedia.org/wiki/File:Acer_palmatum_Sango-kaku_0zz.jpg",
+          "author": "Jean-Pol GRANDMONT",
+          "license": "CC BY-SA 4.0",
+          "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+          "credit": "Foto: Jean-Pol GRANDMONT · CC BY-SA 4.0",
+          "season": "Onbekend"
+        }
+      ],
+      "data_completeness": "partly documented"
     },
     {
       "id": "cultivar-seiryu",
@@ -1133,9 +1799,38 @@
         "en": "The specialist source describes the cultivar as a distinctive upright form within the Dissectum group; introduction year and selector are not established."
       },
       "review_needed": true,
-      "last_checked": "2026-10-20",
+      "last_checked": "2026-10-21",
       "esveld_review_status": "search-link-only",
-      "photo_status": "needs_verified_photo"
+      "photo_status": "no-photo-yet",
+      "name_data": {
+        "botanical_name": "Acer palmatum 'Seiryū'",
+        "cultivar_name": "Seiryū",
+        "synonyms": [
+          "Seiryu"
+        ],
+        "common_name": "Onbekend"
+      },
+      "species": "Acer palmatum",
+      "plant_group": "Dissectum-groep (voorlopig)",
+      "growth_habit": "Opgaand",
+      "seasonal_characteristics": {
+        "spring": "Fijn ingesneden, frisgroen blad.",
+        "summer": "Groen blad; opgaande groei voor een dissectum-type.",
+        "autumn": "Geel met rode tinten."
+      },
+      "growth": {
+        "height_after_10_years": "Onbekend",
+        "width_after_10_years": "Onbekend",
+        "growth_rate": "Onbekend"
+      },
+      "site": {
+        "position": "Halfschaduw of gefilterd licht is een veilige algemene keuze; beschut tegen harde wind. Cultivar-specifiek: onbekend.",
+        "soil": "Vochtig maar goed doorlatend, humusrijk; geen langdurig natte grond. Algemene soortinformatie, niet cultivar-specifiek bevestigd.",
+        "climate_zone": "Exacte klimaatzone onbekend. Winterhardheid verschilt per cultivar en microklimaat.",
+        "source_scope": "Algemene teeltinformatie voor Acer palmatum / Acer shirasawanum; cultivar-specifieke details alleen waar expliciet genoemd."
+      },
+      "photos": [],
+      "data_completeness": "partly documented"
     },
     {
       "id": "cultivar-shindeshojo",
@@ -1190,7 +1885,37 @@
       },
       "review_needed": true,
       "esveld_review_status": "search-link-only",
-      "photo_status": "needs_verified_photo"
+      "photo_status": "no-photo-yet",
+      "name_data": {
+        "botanical_name": "Acer palmatum 'Shin-deshōjō'",
+        "cultivar_name": "Shin-deshōjō",
+        "synonyms": [
+          "Shin-deshojo"
+        ],
+        "common_name": "Onbekend"
+      },
+      "species": "Acer palmatum",
+      "plant_group": "Onbekend",
+      "growth_habit": "Onbekend",
+      "seasonal_characteristics": {
+        "spring": "Onbekend",
+        "summer": "Onbekend",
+        "autumn": "Onbekend"
+      },
+      "growth": {
+        "height_after_10_years": "Onbekend",
+        "width_after_10_years": "Onbekend",
+        "growth_rate": "Onbekend"
+      },
+      "site": {
+        "position": "Halfschaduw of gefilterd licht is een veilige algemene keuze; beschut tegen harde wind. Cultivar-specifiek: onbekend.",
+        "soil": "Vochtig maar goed doorlatend, humusrijk; geen langdurig natte grond. Algemene soortinformatie, niet cultivar-specifiek bevestigd.",
+        "climate_zone": "Exacte klimaatzone onbekend. Winterhardheid verschilt per cultivar en microklimaat.",
+        "source_scope": "Algemene teeltinformatie voor Acer palmatum / Acer shirasawanum; cultivar-specifieke details alleen waar expliciet genoemd."
+      },
+      "photos": [],
+      "data_completeness": "needs cultivar-specific research",
+      "last_checked": "2026-10-21"
     },
     {
       "id": "cultivar-shishigashira",
@@ -1243,7 +1968,35 @@
       },
       "review_needed": true,
       "esveld_review_status": "search-link-only",
-      "photo_status": "needs_verified_photo"
+      "photo_status": "no-photo-yet",
+      "name_data": {
+        "botanical_name": "Acer palmatum 'Shishi-gashira'",
+        "cultivar_name": "Shishi-gashira",
+        "synonyms": [],
+        "common_name": "Onbekend"
+      },
+      "species": "Acer palmatum",
+      "plant_group": "Onbekend",
+      "growth_habit": "Onbekend",
+      "seasonal_characteristics": {
+        "spring": "Onbekend",
+        "summer": "Onbekend",
+        "autumn": "Onbekend"
+      },
+      "growth": {
+        "height_after_10_years": "Onbekend",
+        "width_after_10_years": "Onbekend",
+        "growth_rate": "Onbekend"
+      },
+      "site": {
+        "position": "Halfschaduw of gefilterd licht is een veilige algemene keuze; beschut tegen harde wind. Cultivar-specifiek: onbekend.",
+        "soil": "Vochtig maar goed doorlatend, humusrijk; geen langdurig natte grond. Algemene soortinformatie, niet cultivar-specifiek bevestigd.",
+        "climate_zone": "Exacte klimaatzone onbekend. Winterhardheid verschilt per cultivar en microklimaat.",
+        "source_scope": "Algemene teeltinformatie voor Acer palmatum / Acer shirasawanum; cultivar-specifieke details alleen waar expliciet genoemd."
+      },
+      "photos": [],
+      "data_completeness": "needs cultivar-specific research",
+      "last_checked": "2026-10-21"
     },
     {
       "id": "cultivar-trompenburg",
@@ -1252,7 +2005,7 @@
       "synonyms": [],
       "group": "unknown",
       "traits": {
-        "nl": "Kenmerken nog niet individueel geverifieerd.",
+        "nl": "Opgaand groeiende cultivar met purper blad en karakteristieke, naar binnen gebogen bladlobben. Hoogte en breedte na tien jaar zijn nog niet betrouwbaar vastgesteld in de geraadpleegde bronnen.",
         "en": "Traits not yet individually verified."
       },
       "history": {
@@ -1288,6 +2041,11 @@
           "title": "Plantentuin Esveld — zoekresultaat (individueel cultivarprofiel nog niet gecontroleerd)",
           "url": "https://esveld.nl/a/winkel/?compact=1&swoof=1&woof_text=Acer%20palmatum%20%27Trompenburg%27",
           "supports": "Search starting point only; not evidence until the matching cultivar profile is reviewed"
+        },
+        {
+          "title": "Spaargaren — catalogus Acer-cultivars",
+          "url": "https://spaargaren.com/wp-content/uploads/2023/09/USA-COMPLEET_Spaargaren_us2023_2eProef.pdf",
+          "supports": "Groeivorm en bladkenmerken"
         }
       ],
       "historical_notes": {
@@ -1296,7 +2054,35 @@
       },
       "review_needed": true,
       "esveld_review_status": "search-link-only",
-      "photo_status": "needs_verified_photo"
+      "photo_status": "no-photo-yet",
+      "name_data": {
+        "botanical_name": "Acer palmatum 'Trompenburg'",
+        "cultivar_name": "Trompenburg",
+        "synonyms": [],
+        "common_name": "Onbekend"
+      },
+      "species": "Acer palmatum",
+      "plant_group": "Palmatum-groep (voorlopig)",
+      "growth_habit": "Opgaand, relatief smal groeiend; bladlobben kunnen buisvormig oprollen.",
+      "seasonal_characteristics": {
+        "spring": "Roodpaars jong blad; lobben hebben karakteristiek opgerolde randen.",
+        "summer": "Purperrood blad; kleur is afhankelijk van standplaats en seizoen.",
+        "autumn": "Onbekend; exacte cultivar-specifieke herfstkleur niet bevestigd."
+      },
+      "growth": {
+        "height_after_10_years": "Onbekend",
+        "width_after_10_years": "Onbekend",
+        "growth_rate": "Onbekend."
+      },
+      "site": {
+        "position": "Zon tot halfschaduw; beschut tegen droge wind.",
+        "soil": "Vochtig maar goed doorlatend; humusrijk.",
+        "climate_zone": "Exacte klimaatzone onbekend.",
+        "source_scope": "Algemene teeltinformatie voor Acer palmatum / Acer shirasawanum; cultivar-specifieke details alleen waar expliciet genoemd."
+      },
+      "photos": [],
+      "data_completeness": "partly documented; cultivar-specific research sources linked",
+      "last_checked": "2026-10-21"
     },
     {
       "id": "cultivar-villataranto",
@@ -1349,7 +2135,35 @@
       },
       "review_needed": true,
       "esveld_review_status": "search-link-only",
-      "photo_status": "needs_verified_photo"
+      "photo_status": "no-photo-yet",
+      "name_data": {
+        "botanical_name": "Acer palmatum 'Villa Taranto'",
+        "cultivar_name": "Villa Taranto",
+        "synonyms": [],
+        "common_name": "Onbekend"
+      },
+      "species": "Acer palmatum",
+      "plant_group": "Onbekend",
+      "growth_habit": "Onbekend",
+      "seasonal_characteristics": {
+        "spring": "Onbekend",
+        "summer": "Onbekend",
+        "autumn": "Onbekend"
+      },
+      "growth": {
+        "height_after_10_years": "Onbekend",
+        "width_after_10_years": "Onbekend",
+        "growth_rate": "Onbekend"
+      },
+      "site": {
+        "position": "Halfschaduw of gefilterd licht is een veilige algemene keuze; beschut tegen harde wind. Cultivar-specifiek: onbekend.",
+        "soil": "Vochtig maar goed doorlatend, humusrijk; geen langdurig natte grond. Algemene soortinformatie, niet cultivar-specifiek bevestigd.",
+        "climate_zone": "Exacte klimaatzone onbekend. Winterhardheid verschilt per cultivar en microklimaat.",
+        "source_scope": "Algemene teeltinformatie voor Acer palmatum / Acer shirasawanum; cultivar-specifieke details alleen waar expliciet genoemd."
+      },
+      "photos": [],
+      "data_completeness": "needs cultivar-specific research",
+      "last_checked": "2026-10-21"
     },
     {
       "id": "cultivar-mikawayatsubusa",
@@ -1360,7 +2174,7 @@
       ],
       "group": "unknown",
       "traits": {
-        "nl": "Kenmerken nog niet individueel geverifieerd.",
+        "nl": "Compacte dwergvorm met dicht gelaagd blad. Voorjaarsblad geelgroen, zomers middel- tot donkergroen en in de herfst geelgoud tot rood. Geschikt voor kleine tuinen en potcultuur.",
         "en": "Traits not yet individually verified."
       },
       "history": {
@@ -1396,6 +2210,16 @@
           "title": "Plantentuin Esveld — zoekresultaat (individueel cultivarprofiel nog niet gecontroleerd)",
           "url": "https://esveld.nl/a/winkel/?compact=1&swoof=1&woof_text=Acer%20palmatum%20%27Mikawa%20yatsubusa%27",
           "supports": "Search starting point only; not evidence until the matching cultivar profile is reviewed"
+        },
+        {
+          "title": "NC State Extension — cultivarprofiel",
+          "url": "https://plants.ces.ncsu.edu/plants/acer-palmatum-mikawa-yatsubusa/",
+          "supports": "Groeivorm, bladkleur per seizoen, maatindicatie en teeltomstandigheden"
+        },
+        {
+          "title": "The Maple Nursery — cultivarprofiel",
+          "url": "https://themaplenursery.com/nl/products/acer-palmatum-mikawa-yatsubusa",
+          "supports": "Nederlandstalige aanvullende informatie over seizoenskleur en standplaats"
         }
       ],
       "historical_notes": {
@@ -1404,7 +2228,37 @@
       },
       "review_needed": true,
       "esveld_review_status": "search-link-only",
-      "photo_status": "needs_verified_photo"
+      "photo_status": "no-photo-yet",
+      "name_data": {
+        "botanical_name": "Acer palmatum 'Mikawa yatsubusa'",
+        "cultivar_name": "Mikawa yatsubusa",
+        "synonyms": [
+          "Mikawa-yatsubusa"
+        ],
+        "common_name": "Onbekend"
+      },
+      "species": "Acer palmatum",
+      "plant_group": "Dwergvorm; formele cultivar-groep onbekend",
+      "growth_habit": "Dwergvorm, compact en meerstammig; bladlagen geven een bijna gelaagd uiterlijk.",
+      "seasonal_characteristics": {
+        "spring": "Geelgroen jong blad; de bladranden kunnen rood kleuren.",
+        "summer": "Middel- tot donkergroen blad; dicht opeengepakt in lagen die elkaar overlappen.",
+        "autumn": "Geelgoud tot oranje-rood."
+      },
+      "growth": {
+        "height_after_10_years": "Onbekend",
+        "width_after_10_years": "Onbekend",
+        "growth_rate": "Langzaam groeiend."
+      },
+      "site": {
+        "position": "Zon tot halfschaduw; in warme omstandigheden lichte middagbescherming is verstandig.",
+        "soil": "Vochtig maar goed doorlatend; humusrijk, bij voorkeur licht zuur tot neutraal.",
+        "climate_zone": "USDA-zone 5 vermeld door NC State Extension; exacte lokale klimaatzone blijft afhankelijk van microklimaat.",
+        "source_scope": "Algemene teeltinformatie voor Acer palmatum / Acer shirasawanum; cultivar-specifieke details alleen waar expliciet genoemd."
+      },
+      "photos": [],
+      "data_completeness": "partly documented; cultivar-specific research sources linked",
+      "last_checked": "2026-10-21"
     },
     {
       "id": "cultivar-seigen",
@@ -1413,7 +2267,7 @@
       "synonyms": [],
       "group": "unknown",
       "traits": {
-        "nl": "Kenmerken nog niet individueel geverifieerd.",
+        "nl": "Kleine, afgeronde cultivar met intens rood voorjaarsblad dat in de zomer groener wordt. Herfstkleur meestal oranje-rood. De jonge bladkleur kan gevoelig zijn voor koude wind en late nachtvorst.",
         "en": "Traits not yet individually verified."
       },
       "history": {
@@ -1449,6 +2303,16 @@
           "title": "Plantentuin Esveld — zoekresultaat (individueel cultivarprofiel nog niet gecontroleerd)",
           "url": "https://esveld.nl/a/winkel/?compact=1&swoof=1&woof_text=Acer%20palmatum%20%27Seigen%27",
           "supports": "Search starting point only; not evidence until the matching cultivar profile is reviewed"
+        },
+        {
+          "title": "Viriar — cultivarprofiel",
+          "url": "https://www.viriar.com/blogs/bonsai-encyclopedia/acer-palmatum-seigen",
+          "supports": "Bladkleur per seizoen, bladgrootte en groeivorm"
+        },
+        {
+          "title": "Bonsai Today — Japanse esdoorns voor bonsai",
+          "url": "https://bonsaitoday.com/articles/basics/tree-guide/acer-palmatum-bonsai-tree-guide/",
+          "supports": "Vergelijkende informatie over voorjaarskleur en compacte groei"
         }
       ],
       "historical_notes": {
@@ -1457,7 +2321,35 @@
       },
       "review_needed": true,
       "esveld_review_status": "search-link-only",
-      "photo_status": "needs_verified_photo"
+      "photo_status": "no-photo-yet",
+      "name_data": {
+        "botanical_name": "Acer palmatum 'Seigen'",
+        "cultivar_name": "Seigen",
+        "synonyms": [],
+        "common_name": "Onbekend"
+      },
+      "species": "Acer palmatum",
+      "plant_group": "Palmatum-groep (voorlopig)",
+      "growth_habit": "Kleine, afgeronde struik; geschikt voor bonsai.",
+      "seasonal_characteristics": {
+        "spring": "Intens rood tot karmijnrood jong blad.",
+        "summer": "Verkleurt via brons naar licht- tot middelgroen.",
+        "autumn": "Oranje-rood tot rood."
+      },
+      "growth": {
+        "height_after_10_years": "Onbekend",
+        "width_after_10_years": "Onbekend",
+        "growth_rate": "Matig; exacte jaarlijkse groei verschilt met teeltomstandigheden."
+      },
+      "site": {
+        "position": "Ochtendzon en lichte middagbeschaduwing helpen de tere voorjaarskleur te behouden.",
+        "soil": "Vochtig maar goed doorlatend; humusrijk.",
+        "climate_zone": "Exacte klimaatzone niet vastgesteld in de geraadpleegde bronnen.",
+        "source_scope": "Algemene teeltinformatie voor Acer palmatum / Acer shirasawanum; cultivar-specifieke details alleen waar expliciet genoemd."
+      },
+      "photos": [],
+      "data_completeness": "partly documented; cultivar-specific research sources linked",
+      "last_checked": "2026-10-21"
     },
     {
       "id": "cultivar-deshojo",
@@ -1468,7 +2360,7 @@
       ],
       "group": "unknown",
       "traits": {
-        "nl": "Kenmerken nog niet individueel geverifieerd.",
+        "nl": "Opgaande cultivar die vooral gewaardeerd wordt om de felle rood-roze voorjaarskleur. In de zomer wordt het blad groener; in de herfst volgen vaak warme oranje- en roodtinten.",
         "en": "Traits not yet individually verified."
       },
       "history": {
@@ -1504,6 +2396,16 @@
           "title": "Plantentuin Esveld — zoekresultaat (individueel cultivarprofiel nog niet gecontroleerd)",
           "url": "https://esveld.nl/a/winkel/?compact=1&swoof=1&woof_text=Acer%20palmatum%20%27Desh%C5%8Dj%C5%8D%27",
           "supports": "Search starting point only; not evidence until the matching cultivar profile is reviewed"
+        },
+        {
+          "title": "Pureplant — overzicht Japanse esdoorncultivars",
+          "url": "https://pureplant.nl/blogs/planten/bonsai-acer-palmatum-kopen",
+          "supports": "Samenvattende bladkleur en groeivorm"
+        },
+        {
+          "title": "Bonsai Today — Japanse esdoorns voor bonsai",
+          "url": "https://bonsaitoday.com/articles/basics/tree-guide/acer-palmatum-bonsai-tree-guide/",
+          "supports": "Vergelijking van voorjaarskleur bij Deshōjō-typen"
         }
       ],
       "historical_notes": {
@@ -1512,16 +2414,46 @@
       },
       "review_needed": true,
       "esveld_review_status": "search-link-only",
-      "photo_status": "needs_verified_photo"
+      "photo_status": "no-photo-yet",
+      "name_data": {
+        "botanical_name": "Acer palmatum 'Deshōjō'",
+        "cultivar_name": "Deshōjō",
+        "synonyms": [
+          "Deshojo"
+        ],
+        "common_name": "Onbekend"
+      },
+      "species": "Acer palmatum",
+      "plant_group": "Palmatum-groep (voorlopig)",
+      "growth_habit": "Opgaand, afgerond en relatief krachtig groeiend.",
+      "seasonal_characteristics": {
+        "spring": "Helder karmijnrood tot roze-rood jong blad.",
+        "summer": "Blad wordt overwegend groen; jonge groeischeuten kunnen opnieuw rood zijn.",
+        "autumn": "Oranje tot rood."
+      },
+      "growth": {
+        "height_after_10_years": "Onbekend",
+        "width_after_10_years": "Onbekend",
+        "growth_rate": "Krachtig; precieze groeisnelheid afhankelijk van omstandigheden."
+      },
+      "site": {
+        "position": "Zon tot halfschaduw; bescherm jong blad tegen hete middagzon en uitdrogende wind.",
+        "soil": "Vochtig maar goed doorlatend; humusrijk.",
+        "climate_zone": "Exacte klimaatzone onbekend; soort en cultivar zijn geschikt voor gematigde buitenteelt met beschutting.",
+        "source_scope": "Algemene teeltinformatie voor Acer palmatum / Acer shirasawanum; cultivar-specifieke details alleen waar expliciet genoemd."
+      },
+      "photos": [],
+      "data_completeness": "partly documented; cultivar-specific research sources linked",
+      "last_checked": "2026-10-21"
     },
     {
       "id": "cultivar-viridis",
       "name": "Viridis",
       "accepted_name": "Acer palmatum 'Viridis'",
       "synonyms": [],
-      "group": "unknown",
+      "group": "dissectum",
       "traits": {
-        "nl": "Kenmerken nog niet individueel geverifieerd.",
+        "nl": "Laag en breed spreidend type met extreem fijn ingesneden groen blad. Het blad blijft groen in voorjaar en zomer en geeft in de herfst kleur. Vaak geschikt voor pot, rotstuin of lage accentbeplanting.",
         "en": "Traits not yet individually verified."
       },
       "history": {
@@ -1557,6 +2489,11 @@
           "title": "Plantentuin Esveld — zoekresultaat (individueel cultivarprofiel nog niet gecontroleerd)",
           "url": "https://esveld.nl/a/winkel/?compact=1&swoof=1&woof_text=Acer%20palmatum%20%27Viridis%27",
           "supports": "Search starting point only; not evidence until the matching cultivar profile is reviewed"
+        },
+        {
+          "title": "Royal Horticultural Society — Acer ‘Viridis’",
+          "url": "https://www.rhs.org.uk/plants/211019/acer-viridis/details",
+          "supports": "Groeivorm, seizoenskenmerken, volwassen maat, standplaats en hardheidsklasse"
         }
       ],
       "historical_notes": {
@@ -1565,7 +2502,35 @@
       },
       "review_needed": true,
       "esveld_review_status": "search-link-only",
-      "photo_status": "needs_verified_photo"
+      "photo_status": "no-photo-yet",
+      "name_data": {
+        "botanical_name": "Acer palmatum 'Viridis'",
+        "cultivar_name": "Viridis",
+        "synonyms": [],
+        "common_name": "Onbekend"
+      },
+      "species": "Acer palmatum",
+      "plant_group": "Dissectum Viride-groep",
+      "growth_habit": "Laag, breed spreidend; vaak meerstammig.",
+      "seasonal_characteristics": {
+        "spring": "Groen, zeer fijn ingesneden blad.",
+        "summer": "Groen; bladeren diep ingesneden en bijna draadvormig.",
+        "autumn": "Goede herfstkleur; exacte kleur kan per plant en standplaats variëren."
+      },
+      "growth": {
+        "height_after_10_years": "Onbekend; RHS vermeldt volwassen hoogte 1,5–2,5 m, geen exacte hoogte na 10 jaar.",
+        "width_after_10_years": "Onbekend; RHS vermeldt volwassen breedte 1,5–2,5 m, geen exacte breedte na 10 jaar.",
+        "growth_rate": "Langzaam groeiend volgens de algemene habitus; exacte snelheid onbekend."
+      },
+      "site": {
+        "position": "Zon tot halfschaduw; bladkleur blijft vaak mooier in lichte schaduw. Beschut tegen droge wind.",
+        "soil": "Vochtig maar goed doorlatend; zure tot neutrale bodem volgens RHS.",
+        "climate_zone": "RHS-hardheidsklasse H6 voor het profiel; dit is geen garantie voor elke standplaats.",
+        "source_scope": "Algemene teeltinformatie voor Acer palmatum / Acer shirasawanum; cultivar-specifieke details alleen waar expliciet genoemd."
+      },
+      "photos": [],
+      "data_completeness": "partly documented; cultivar-specific research sources linked",
+      "last_checked": "2026-10-21"
     },
     {
       "id": "cultivar-waterfall",
@@ -1618,7 +2583,35 @@
       },
       "review_needed": true,
       "esveld_review_status": "search-link-only",
-      "photo_status": "needs_verified_photo"
+      "photo_status": "no-photo-yet",
+      "name_data": {
+        "botanical_name": "Acer palmatum 'Waterfall'",
+        "cultivar_name": "Waterfall",
+        "synonyms": [],
+        "common_name": "Onbekend"
+      },
+      "species": "Acer palmatum",
+      "plant_group": "Onbekend",
+      "growth_habit": "Onbekend",
+      "seasonal_characteristics": {
+        "spring": "Onbekend",
+        "summer": "Onbekend",
+        "autumn": "Onbekend"
+      },
+      "growth": {
+        "height_after_10_years": "Onbekend",
+        "width_after_10_years": "Onbekend",
+        "growth_rate": "Onbekend"
+      },
+      "site": {
+        "position": "Halfschaduw of gefilterd licht is een veilige algemene keuze; beschut tegen harde wind. Cultivar-specifiek: onbekend.",
+        "soil": "Vochtig maar goed doorlatend, humusrijk; geen langdurig natte grond. Algemene soortinformatie, niet cultivar-specifiek bevestigd.",
+        "climate_zone": "Exacte klimaatzone onbekend. Winterhardheid verschilt per cultivar en microklimaat.",
+        "source_scope": "Algemene teeltinformatie voor Acer palmatum / Acer shirasawanum; cultivar-specifieke details alleen waar expliciet genoemd."
+      },
+      "photos": [],
+      "data_completeness": "needs cultivar-specific research",
+      "last_checked": "2026-10-21"
     },
     {
       "id": "cultivar-suminagashi",
@@ -1629,7 +2622,7 @@
       ],
       "group": "unknown",
       "traits": {
-        "nl": "Kenmerken nog niet individueel geverifieerd.",
+        "nl": "Vaasvormige jonge boom die later breder wordt. Het zevenlobbige, diep ingesneden blad loopt paarsrood uit, wordt in de zomer donker wijnrood en kleurt helder rood in de herfst.",
         "en": "Traits not yet individually verified."
       },
       "history": {
@@ -1665,6 +2658,16 @@
           "title": "Plantentuin Esveld — zoekresultaat (individueel cultivarprofiel nog niet gecontroleerd)",
           "url": "https://esveld.nl/a/winkel/?compact=1&swoof=1&woof_text=Acer%20palmatum%20%27Sumi-nagashi%27",
           "supports": "Search starting point only; not evidence until the matching cultivar profile is reviewed"
+        },
+        {
+          "title": "Royal Horticultural Society — Acer palmatum ‘Sumi-nagashi’",
+          "url": "https://www.rhs.org.uk/plants/48429/acer-palmatum-sumi-nagashi-m/details",
+          "supports": "Bladkleur per seizoen, bladlobben, groeivorm, volwassen hoogte en standplaats"
+        },
+        {
+          "title": "Bays Nursery & Acer Centre — cultivaroverzicht",
+          "url": "https://www.baysnurseryandacercentre.co.uk/our-plant-varieties/acer-palmatum",
+          "supports": "Aanvullende seizoenskleur"
         }
       ],
       "historical_notes": {
@@ -1673,7 +2676,37 @@
       },
       "review_needed": true,
       "esveld_review_status": "search-link-only",
-      "photo_status": "needs_verified_photo"
+      "photo_status": "no-photo-yet",
+      "name_data": {
+        "botanical_name": "Acer palmatum 'Sumi-nagashi'",
+        "cultivar_name": "Sumi-nagashi",
+        "synonyms": [
+          "Sumi Nagashi"
+        ],
+        "common_name": "Onbekend"
+      },
+      "species": "Acer palmatum",
+      "plant_group": "Matsumurae-groep (voorlopig)",
+      "growth_habit": "Als jonge plant vaasvormig; wordt met leeftijd breder.",
+      "seasonal_characteristics": {
+        "spring": "Paarsrood jong blad.",
+        "summer": "Verdiept naar donker maroon- tot wijnrood.",
+        "autumn": "Helder rood."
+      },
+      "growth": {
+        "height_after_10_years": "Onbekend; RHS vermeldt volwassen hoogte circa 2,5–4 m, niet specifiek na 10 jaar.",
+        "width_after_10_years": "Onbekend.",
+        "growth_rate": "Onbekend."
+      },
+      "site": {
+        "position": "Zon tot halfschaduw; beschutte plek.",
+        "soil": "Vochtig maar goed doorlatend; meerdere bodemtypen worden door RHS genoemd.",
+        "climate_zone": "Exacte hardheidsklasse niet overgenomen; lokale winterhardheid nog te bevestigen.",
+        "source_scope": "Algemene teeltinformatie voor Acer palmatum / Acer shirasawanum; cultivar-specifieke details alleen waar expliciet genoemd."
+      },
+      "photos": [],
+      "data_completeness": "partly documented; cultivar-specific research sources linked",
+      "last_checked": "2026-10-21"
     },
     {
       "id": "cultivar-firstghost",
@@ -1682,7 +2715,7 @@
       "synonyms": [],
       "group": "unknown",
       "traits": {
-        "nl": "Kenmerken nog niet individueel geverifieerd.",
+        "nl": "Reticulatum-type met opvallend licht blad en contrasterende groene nerven. Het voorjaarsblad kan een roze-paarse rand hebben; het patroon wordt in de zomer groener en de herfstkleur is goudgeel tot oranje.",
         "en": "Traits not yet individually verified."
       },
       "history": {
@@ -1718,6 +2751,21 @@
           "title": "Plantentuin Esveld — zoekresultaat (individueel cultivarprofiel nog niet gecontroleerd)",
           "url": "https://esveld.nl/a/winkel/?compact=1&swoof=1&woof_text=Acer%20palmatum%20%27First%20Ghost%27",
           "supports": "Search starting point only; not evidence until the matching cultivar profile is reviewed"
+        },
+        {
+          "title": "The Dawes Arboretum — cultivarprofiel",
+          "url": "https://dawesarb.arboretumexplorer.org/taxon-19433.aspx",
+          "supports": "Hoogte na 10 jaar, herfstkleur, hardheidszone en herkomst"
+        },
+        {
+          "title": "Mr Maple — Ghost Series",
+          "url": "https://mrmaple.com/blogs/news/ghost-series",
+          "supports": "Seizoenskenmerken en standplaats"
+        },
+        {
+          "title": "Royal Horticultural Society — Acer palmatum ‘First Ghost’",
+          "url": "https://www.rhs.org.uk/plants/222260/acer-palmatum-first-ghost-m-v/details",
+          "supports": "Naamstatus en botanische groepscontext"
         }
       ],
       "historical_notes": {
@@ -1726,7 +2774,35 @@
       },
       "review_needed": true,
       "esveld_review_status": "search-link-only",
-      "photo_status": "needs_verified_photo"
+      "photo_status": "no-photo-yet",
+      "name_data": {
+        "botanical_name": "Acer palmatum 'First Ghost'",
+        "cultivar_name": "First Ghost",
+        "synonyms": [],
+        "common_name": "Onbekend"
+      },
+      "species": "Acer palmatum",
+      "plant_group": "Reticulatum-groep",
+      "growth_habit": "Opgaand tot half overhangend; later ongeveer even breed als hoog.",
+      "seasonal_characteristics": {
+        "spring": "Crème-wit tot lichtgeel blad met donkergroene nerven; bladrand kan roze-paars zijn.",
+        "summer": "Bontpatroon wordt minder contrastrijk; blad wordt groener met donkerdere nerven.",
+        "autumn": "Goudgeel tot oranje."
+      },
+      "growth": {
+        "height_after_10_years": "Ca. 180 cm na 10 jaar volgens Dawes Arboretum (6 ft); groeiomstandigheden beïnvloeden de maat.",
+        "width_after_10_years": "Onbekend na 10 jaar; volwassen breedte wordt door bronnen als ongeveer gelijk aan de hoogte omschreven.",
+        "growth_rate": "Langzaam tot matig."
+      },
+      "site": {
+        "position": "Halfschaduw; ochtendzon met lichte schaduw in de middag om bleke bladkleur te behouden.",
+        "soil": "Vochtig maar goed doorlatend; gelijkmatige vochtigheid gewenst.",
+        "climate_zone": "Dawes Arboretum noemt USDA-zone 5; lokale winterhardheid blijft afhankelijk van standplaats.",
+        "source_scope": "Algemene teeltinformatie voor Acer palmatum / Acer shirasawanum; cultivar-specifieke details alleen waar expliciet genoemd."
+      },
+      "photos": [],
+      "data_completeness": "partly documented; cultivar-specific research sources linked",
+      "last_checked": "2026-10-21"
     },
     {
       "id": "cultivar-pevestarfish",
@@ -1737,7 +2813,7 @@
       ],
       "group": "unknown",
       "traits": {
-        "nl": "Kenmerken nog niet individueel geverifieerd.",
+        "nl": "Opvallend gekrulde, diep ingesneden bladlobben die aan zeesterren doen denken. Het blad loopt rood uit, wordt donker purperrood in de zomer en kleurt felrood in de herfst. Gepubliceerde maatgegevens lopen uiteen en zijn daarom niet als vast getal opgenomen.",
         "en": "Traits not yet individually verified."
       },
       "history": {
@@ -1773,6 +2849,21 @@
           "title": "Plantentuin Esveld — zoekresultaat (individueel cultivarprofiel nog niet gecontroleerd)",
           "url": "https://esveld.nl/a/winkel/?compact=1&swoof=1&woof_text=Acer%20palmatum%20%27Peve%20Starfish%27",
           "supports": "Search starting point only; not evidence until the matching cultivar profile is reviewed"
+        },
+        {
+          "title": "Tuinadvies — Acer palmatum ‘Peve Starfish’",
+          "url": "https://www.tuinadvies.nl/planten/sierheesters-halfheesters/acer-palmatum-peve-starfish/japanse-esdoorn/",
+          "supports": "Bladvorm, kleur, standplaats en teeltinformatie"
+        },
+        {
+          "title": "Promesse de Fleurs — Acer palmatum ‘Pevé Starfish’",
+          "url": "https://www.promessedefleurs.nl/heesters/heesters-per-ras/japanse-esdoorns/acer-palmatum-peve-starfish-japanse-esdoorn.html",
+          "supports": "Seizoenskleur, bodem, standplaats en maatindicatie"
+        },
+        {
+          "title": "Mr Maple — Peve Starfish",
+          "url": "https://www.youtube.com/watch?v=V_8Uwg_EGLw",
+          "supports": "Aanvullende seizoenskleur en maatindicatie; videobron, niet als enige bron gebruikt"
         }
       ],
       "historical_notes": {
@@ -1781,7 +2872,37 @@
       },
       "review_needed": true,
       "esveld_review_status": "search-link-only",
-      "photo_status": "needs_verified_photo"
+      "photo_status": "no-photo-yet",
+      "name_data": {
+        "botanical_name": "Acer palmatum 'Peve Starfish'",
+        "cultivar_name": "Peve Starfish",
+        "synonyms": [
+          "Peve Starfish"
+        ],
+        "common_name": "Onbekend"
+      },
+      "species": "Acer palmatum",
+      "plant_group": "Plantgroep onbekend; verwant aan Trompenburg volgens kwekerijbron",
+      "growth_habit": "Compact tot opgaand; diep ingesneden, gekrulde bladlobben.",
+      "seasonal_characteristics": {
+        "spring": "Helder rood tot wijnrood jong blad; lobben rollen karakteristiek op en doen aan zeesterren denken.",
+        "summer": "Donker paarsrood tot purper; nieuwe groei kan rood blijven.",
+        "autumn": "Felrood tot scharlakenrood."
+      },
+      "growth": {
+        "height_after_10_years": "Onbekend na 10 jaar; een bron noemt volwassen hoogte tot circa 4 m, een andere circa 2 m. Bronnen verschillen.",
+        "width_after_10_years": "Onbekend na 10 jaar; bronnen verschillen sterk over uiteindelijke breedte.",
+        "growth_rate": "Onbekend; bronnen beschrijven uiteenlopende groeikracht."
+      },
+      "site": {
+        "position": "Zon tot halfschaduw; vermijd hete, droge en winderige plekken.",
+        "soil": "Humusrijk, vochthoudend maar goed doorlatend; bij voorkeur kalkarm.",
+        "climate_zone": "Bronnen noemen goede winterhardheid tot circa -23,5 °C; exacte klimaatzone niet eenduidig.",
+        "source_scope": "Algemene teeltinformatie voor Acer palmatum / Acer shirasawanum; cultivar-specifieke details alleen waar expliciet genoemd."
+      },
+      "photos": [],
+      "data_completeness": "partly documented; cultivar-specific research sources linked",
+      "last_checked": "2026-10-21"
     },
     {
       "id": "cultivar-aoshidare",
@@ -1834,7 +2955,35 @@
       },
       "review_needed": true,
       "esveld_review_status": "search-link-only",
-      "photo_status": "needs_verified_photo"
+      "photo_status": "no-photo-yet",
+      "name_data": {
+        "botanical_name": "Acer palmatum 'Ao shidare'",
+        "cultivar_name": "Ao shidare",
+        "synonyms": [],
+        "common_name": "Onbekend"
+      },
+      "species": "Acer palmatum",
+      "plant_group": "Onbekend",
+      "growth_habit": "Onbekend",
+      "seasonal_characteristics": {
+        "spring": "Onbekend",
+        "summer": "Onbekend",
+        "autumn": "Onbekend"
+      },
+      "growth": {
+        "height_after_10_years": "Onbekend",
+        "width_after_10_years": "Onbekend",
+        "growth_rate": "Onbekend"
+      },
+      "site": {
+        "position": "Halfschaduw of gefilterd licht is een veilige algemene keuze; beschut tegen harde wind. Cultivar-specifiek: onbekend.",
+        "soil": "Vochtig maar goed doorlatend, humusrijk; geen langdurig natte grond. Algemene soortinformatie, niet cultivar-specifiek bevestigd.",
+        "climate_zone": "Exacte klimaatzone onbekend. Winterhardheid verschilt per cultivar en microklimaat.",
+        "source_scope": "Algemene teeltinformatie voor Acer palmatum / Acer shirasawanum; cultivar-specifieke details alleen waar expliciet genoemd."
+      },
+      "photos": [],
+      "data_completeness": "needs cultivar-specific research",
+      "last_checked": "2026-10-21"
     },
     {
       "id": "cultivar-kihachijo",
@@ -1883,9 +3032,38 @@
         "en": "The specialist source describes its traits but does not establish an introduction year or original selector."
       },
       "review_needed": true,
-      "last_checked": "2026-10-20",
+      "last_checked": "2026-10-21",
       "esveld_review_status": "search-link-only",
-      "photo_status": "needs_verified_photo"
+      "photo_status": "no-photo-yet",
+      "name_data": {
+        "botanical_name": "Acer palmatum 'Ki Hachijō'",
+        "cultivar_name": "Ki Hachijō",
+        "synonyms": [
+          "Ki Hachijo"
+        ],
+        "common_name": "Onbekend"
+      },
+      "species": "Acer palmatum",
+      "plant_group": "Palmatum-groep (voorlopig)",
+      "growth_habit": "Onbekend",
+      "seasonal_characteristics": {
+        "spring": "Blad meestal met negen diep ingesneden, getande lobben; kleur onbekend.",
+        "summer": "Groen; precieze zomerkleur onvoldoende bevestigd.",
+        "autumn": "Geel met roze tinten, vervolgens oranje en rood."
+      },
+      "growth": {
+        "height_after_10_years": "Onbekend",
+        "width_after_10_years": "Onbekend",
+        "growth_rate": "Onbekend"
+      },
+      "site": {
+        "position": "Halfschaduw of gefilterd licht is een veilige algemene keuze; beschut tegen harde wind. Cultivar-specifiek: onbekend.",
+        "soil": "Vochtig maar goed doorlatend, humusrijk; geen langdurig natte grond. Algemene soortinformatie, niet cultivar-specifiek bevestigd.",
+        "climate_zone": "Exacte klimaatzone onbekend. Winterhardheid verschilt per cultivar en microklimaat.",
+        "source_scope": "Algemene teeltinformatie voor Acer palmatum / Acer shirasawanum; cultivar-specifieke details alleen waar expliciet genoemd."
+      },
+      "photos": [],
+      "data_completeness": "partly documented"
     },
     {
       "id": "cultivar-flavescens",
@@ -1938,7 +3116,35 @@
       },
       "review_needed": true,
       "esveld_review_status": "search-link-only",
-      "photo_status": "needs_verified_photo"
+      "photo_status": "no-photo-yet",
+      "name_data": {
+        "botanical_name": "Acer palmatum 'Flavescens'",
+        "cultivar_name": "Flavescens",
+        "synonyms": [],
+        "common_name": "Onbekend"
+      },
+      "species": "Acer palmatum",
+      "plant_group": "Onbekend",
+      "growth_habit": "Onbekend",
+      "seasonal_characteristics": {
+        "spring": "Onbekend",
+        "summer": "Onbekend",
+        "autumn": "Onbekend"
+      },
+      "growth": {
+        "height_after_10_years": "Onbekend",
+        "width_after_10_years": "Onbekend",
+        "growth_rate": "Onbekend"
+      },
+      "site": {
+        "position": "Halfschaduw of gefilterd licht is een veilige algemene keuze; beschut tegen harde wind. Cultivar-specifiek: onbekend.",
+        "soil": "Vochtig maar goed doorlatend, humusrijk; geen langdurig natte grond. Algemene soortinformatie, niet cultivar-specifiek bevestigd.",
+        "climate_zone": "Exacte klimaatzone onbekend. Winterhardheid verschilt per cultivar en microklimaat.",
+        "source_scope": "Algemene teeltinformatie voor Acer palmatum / Acer shirasawanum; cultivar-specifieke details alleen waar expliciet genoemd."
+      },
+      "photos": [],
+      "data_completeness": "needs cultivar-specific research",
+      "last_checked": "2026-10-21"
     },
     {
       "id": "cultivar-ukigumo",
@@ -1947,7 +3153,7 @@
       "synonyms": [],
       "group": "unknown",
       "traits": {
-        "nl": "Kenmerken nog niet individueel geverifieerd.",
+        "nl": "Bontbladige cultivar met witte tot crèmekleurige vlekken op groen blad. De verdeling van het bont kan per blad en groeiseizoen variëren; exacte herfstkleur nog niet bevestigd.",
         "en": "Traits not yet individually verified."
       },
       "history": {
@@ -1983,6 +3189,11 @@
           "title": "Plantentuin Esveld — zoekresultaat (individueel cultivarprofiel nog niet gecontroleerd)",
           "url": "https://esveld.nl/a/winkel/?compact=1&swoof=1&woof_text=Acer%20palmatum%20%27Ukigumo%27",
           "supports": "Search starting point only; not evidence until the matching cultivar profile is reviewed"
+        },
+        {
+          "title": "Szmit — catalogus Japanse esdoorns",
+          "url": "https://szmit.pl/download/oferta/SZMIT_Katalog_EN2021_2022.pdf",
+          "supports": "Vermelding van Ukigumo als sterk witgevlekt cultivar; geen volledige teeltfiche"
         }
       ],
       "historical_notes": {
@@ -1991,7 +3202,35 @@
       },
       "review_needed": true,
       "esveld_review_status": "search-link-only",
-      "photo_status": "needs_verified_photo"
+      "photo_status": "no-photo-yet",
+      "name_data": {
+        "botanical_name": "Acer palmatum 'Ukigumo'",
+        "cultivar_name": "Ukigumo",
+        "synonyms": [],
+        "common_name": "Onbekend"
+      },
+      "species": "Acer palmatum",
+      "plant_group": "Variegatum-groep (voorlopig)",
+      "growth_habit": "Onbekend; bontbladige cultivar.",
+      "seasonal_characteristics": {
+        "spring": "Bont blad met onregelmatige witte tot crèmekleurige vlakken; jong blad kan roze tinten hebben.",
+        "summer": "Witte vlekken en groene zones blijven variabel; bontheid kan afnemen afhankelijk van licht en groei.",
+        "autumn": "Onbekend; betrouwbare cultivar-specifieke herfstkleur niet vastgesteld."
+      },
+      "growth": {
+        "height_after_10_years": "Onbekend",
+        "width_after_10_years": "Onbekend",
+        "growth_rate": "Onbekend."
+      },
+      "site": {
+        "position": "Halfschaduw of gefilterd licht; bescherm tegen hete middagzon en uitdrogende wind.",
+        "soil": "Vochtig maar goed doorlatend; humusrijk.",
+        "climate_zone": "Exacte klimaatzone onbekend.",
+        "source_scope": "Algemene teeltinformatie voor Acer palmatum / Acer shirasawanum; cultivar-specifieke details alleen waar expliciet genoemd."
+      },
+      "photos": [],
+      "data_completeness": "partly documented; cultivar-specific research sources linked",
+      "last_checked": "2026-10-21"
     },
     {
       "id": "cultivar-murasakikiyohime",
@@ -2046,7 +3285,37 @@
       },
       "review_needed": true,
       "esveld_review_status": "search-link-only",
-      "photo_status": "needs_verified_photo"
+      "photo_status": "no-photo-yet",
+      "name_data": {
+        "botanical_name": "Acer palmatum 'Murasaki kiyohime'",
+        "cultivar_name": "Murasaki kiyohime",
+        "synonyms": [
+          "Murasaki Kiyohime"
+        ],
+        "common_name": "Onbekend"
+      },
+      "species": "Acer palmatum",
+      "plant_group": "Onbekend",
+      "growth_habit": "Onbekend",
+      "seasonal_characteristics": {
+        "spring": "Onbekend",
+        "summer": "Onbekend",
+        "autumn": "Onbekend"
+      },
+      "growth": {
+        "height_after_10_years": "Onbekend",
+        "width_after_10_years": "Onbekend",
+        "growth_rate": "Onbekend"
+      },
+      "site": {
+        "position": "Halfschaduw of gefilterd licht is een veilige algemene keuze; beschut tegen harde wind. Cultivar-specifiek: onbekend.",
+        "soil": "Vochtig maar goed doorlatend, humusrijk; geen langdurig natte grond. Algemene soortinformatie, niet cultivar-specifiek bevestigd.",
+        "climate_zone": "Exacte klimaatzone onbekend. Winterhardheid verschilt per cultivar en microklimaat.",
+        "source_scope": "Algemene teeltinformatie voor Acer palmatum / Acer shirasawanum; cultivar-specifieke details alleen waar expliciet genoemd."
+      },
+      "photos": [],
+      "data_completeness": "needs cultivar-specific research",
+      "last_checked": "2026-10-21"
     },
     {
       "id": "cultivar-benikawa",
@@ -2101,7 +3370,37 @@
       },
       "review_needed": true,
       "esveld_review_status": "search-link-only",
-      "photo_status": "needs_verified_photo"
+      "photo_status": "no-photo-yet",
+      "name_data": {
+        "botanical_name": "Acer palmatum 'Beni kawa'",
+        "cultivar_name": "Beni kawa",
+        "synonyms": [
+          "Beni-kawa"
+        ],
+        "common_name": "Onbekend"
+      },
+      "species": "Acer palmatum",
+      "plant_group": "Onbekend",
+      "growth_habit": "Onbekend",
+      "seasonal_characteristics": {
+        "spring": "Onbekend",
+        "summer": "Onbekend",
+        "autumn": "Onbekend"
+      },
+      "growth": {
+        "height_after_10_years": "Onbekend",
+        "width_after_10_years": "Onbekend",
+        "growth_rate": "Onbekend"
+      },
+      "site": {
+        "position": "Halfschaduw of gefilterd licht is een veilige algemene keuze; beschut tegen harde wind. Cultivar-specifiek: onbekend.",
+        "soil": "Vochtig maar goed doorlatend, humusrijk; geen langdurig natte grond. Algemene soortinformatie, niet cultivar-specifiek bevestigd.",
+        "climate_zone": "Exacte klimaatzone onbekend. Winterhardheid verschilt per cultivar en microklimaat.",
+        "source_scope": "Algemene teeltinformatie voor Acer palmatum / Acer shirasawanum; cultivar-specifieke details alleen waar expliciet genoemd."
+      },
+      "photos": [],
+      "data_completeness": "needs cultivar-specific research",
+      "last_checked": "2026-10-21"
     },
     {
       "id": "cultivar-butterfly",
@@ -2148,9 +3447,36 @@
         "en": "The specialist source lists Kocho Nishiki as an alternative name and describes the traits, but does not establish a definitive introduction year or selector. Synonyms and name usage need further checking."
       },
       "review_needed": true,
-      "last_checked": "2026-10-20",
+      "last_checked": "2026-10-21",
       "esveld_review_status": "search-link-only",
-      "photo_status": "needs_verified_photo"
+      "photo_status": "no-photo-yet",
+      "name_data": {
+        "botanical_name": "Acer palmatum 'Butterfly'",
+        "cultivar_name": "Butterfly",
+        "synonyms": [],
+        "common_name": "Onbekend"
+      },
+      "species": "Acer palmatum",
+      "plant_group": "Onbekend",
+      "growth_habit": "Onbekend",
+      "seasonal_characteristics": {
+        "spring": "Jong blad kan roze getint zijn; onregelmatige crèmekleurige bladrand.",
+        "summer": "Bont blad met crèmekleurige rand en groene zones; vorm en bladgrootte variëren.",
+        "autumn": "Onbekend; onvoldoende betrouwbaar vastgelegd."
+      },
+      "growth": {
+        "height_after_10_years": "Onbekend",
+        "width_after_10_years": "Onbekend",
+        "growth_rate": "Onbekend"
+      },
+      "site": {
+        "position": "Halfschaduw of gefilterd licht is een veilige algemene keuze; beschut tegen harde wind. Cultivar-specifiek: onbekend.",
+        "soil": "Vochtig maar goed doorlatend, humusrijk; geen langdurig natte grond. Algemene soortinformatie, niet cultivar-specifiek bevestigd.",
+        "climate_zone": "Exacte klimaatzone onbekend. Winterhardheid verschilt per cultivar en microklimaat.",
+        "source_scope": "Algemene teeltinformatie voor Acer palmatum / Acer shirasawanum; cultivar-specifieke details alleen waar expliciet genoemd."
+      },
+      "photos": [],
+      "data_completeness": "partly documented"
     },
     {
       "id": "cultivar-kotonoito",
@@ -2203,7 +3529,35 @@
       },
       "review_needed": true,
       "esveld_review_status": "search-link-only",
-      "photo_status": "needs_verified_photo"
+      "photo_status": "no-photo-yet",
+      "name_data": {
+        "botanical_name": "Acer palmatum 'Koto-no-ito'",
+        "cultivar_name": "Koto-no-ito",
+        "synonyms": [],
+        "common_name": "Onbekend"
+      },
+      "species": "Acer palmatum",
+      "plant_group": "Onbekend",
+      "growth_habit": "Onbekend",
+      "seasonal_characteristics": {
+        "spring": "Onbekend",
+        "summer": "Onbekend",
+        "autumn": "Onbekend"
+      },
+      "growth": {
+        "height_after_10_years": "Onbekend",
+        "width_after_10_years": "Onbekend",
+        "growth_rate": "Onbekend"
+      },
+      "site": {
+        "position": "Halfschaduw of gefilterd licht is een veilige algemene keuze; beschut tegen harde wind. Cultivar-specifiek: onbekend.",
+        "soil": "Vochtig maar goed doorlatend, humusrijk; geen langdurig natte grond. Algemene soortinformatie, niet cultivar-specifiek bevestigd.",
+        "climate_zone": "Exacte klimaatzone onbekend. Winterhardheid verschilt per cultivar en microklimaat.",
+        "source_scope": "Algemene teeltinformatie voor Acer palmatum / Acer shirasawanum; cultivar-specifieke details alleen waar expliciet genoemd."
+      },
+      "photos": [],
+      "data_completeness": "needs cultivar-specific research",
+      "last_checked": "2026-10-21"
     },
     {
       "id": "cultivar-shaina",
@@ -2212,7 +3566,7 @@
       "synonyms": [],
       "group": "unknown",
       "traits": {
-        "nl": "Kenmerken nog niet individueel geverifieerd.",
+        "nl": "Compacte, dicht vertakte cultivar met rood tot purperrood blad. Beschikbare bronnen beschrijven de vorm als een compacte selectie; precieze maat na tien jaar en herfstkleur zijn nog niet bevestigd.",
         "en": "Traits not yet individually verified."
       },
       "history": {
@@ -2248,6 +3602,11 @@
           "title": "Plantentuin Esveld — zoekresultaat (individueel cultivarprofiel nog niet gecontroleerd)",
           "url": "https://esveld.nl/a/winkel/?compact=1&swoof=1&woof_text=Acer%20palmatum%20%27Shaina%27",
           "supports": "Search starting point only; not evidence until the matching cultivar profile is reviewed"
+        },
+        {
+          "title": "Spaargaren — catalogus Acer-cultivars",
+          "url": "https://spaargaren.com/wp-content/uploads/2023/09/USA-COMPLEET_Spaargaren_us2023_2eProef.pdf",
+          "supports": "Beschrijft Shaina als klein vertakt type met rood blad"
         }
       ],
       "historical_notes": {
@@ -2256,7 +3615,35 @@
       },
       "review_needed": true,
       "esveld_review_status": "search-link-only",
-      "photo_status": "needs_verified_photo"
+      "photo_status": "no-photo-yet",
+      "name_data": {
+        "botanical_name": "Acer palmatum 'Shaina'",
+        "cultivar_name": "Shaina",
+        "synonyms": [],
+        "common_name": "Onbekend"
+      },
+      "species": "Acer palmatum",
+      "plant_group": "Plantgroep niet individueel bevestigd",
+      "growth_habit": "Compact en dicht vertakt; dwergachtige vorm.",
+      "seasonal_characteristics": {
+        "spring": "Jong blad rood tot roodpaars; nieuwe groei kan helderder rood zijn.",
+        "summer": "Donker purperrood; kleurbehoud is afhankelijk van licht en temperatuur.",
+        "autumn": "Onbekend; exacte cultivar-specifieke herfstkleur niet bevestigd."
+      },
+      "growth": {
+        "height_after_10_years": "Onbekend",
+        "width_after_10_years": "Onbekend",
+        "growth_rate": "Onbekend."
+      },
+      "site": {
+        "position": "Zon tot halfschaduw; bescherm tegen hete middagzon bij droogte.",
+        "soil": "Vochtig maar goed doorlatend; humusrijk.",
+        "climate_zone": "Exacte klimaatzone onbekend.",
+        "source_scope": "Algemene teeltinformatie voor Acer palmatum / Acer shirasawanum; cultivar-specifieke details alleen waar expliciet genoemd."
+      },
+      "photos": [],
+      "data_completeness": "partly documented; cultivar-specific research sources linked",
+      "last_checked": "2026-10-21"
     },
     {
       "id": "cultivar-higasayama",
@@ -2303,9 +3690,36 @@
         "en": "The specialist source describes Higasayama as an old cultivar and warns that it is sometimes misnamed Roseomarginatum. Introduction year and selector are not established."
       },
       "review_needed": true,
-      "last_checked": "2026-10-20",
+      "last_checked": "2026-10-21",
       "esveld_review_status": "search-link-only",
-      "photo_status": "needs_verified_photo"
+      "photo_status": "no-photo-yet",
+      "name_data": {
+        "botanical_name": "Acer palmatum 'Higasayama'",
+        "cultivar_name": "Higasayama",
+        "synonyms": [],
+        "common_name": "Onbekend"
+      },
+      "species": "Acer palmatum",
+      "plant_group": "Onbekend",
+      "growth_habit": "Onbekend",
+      "seasonal_characteristics": {
+        "spring": "Jong blad kan roze getint zijn; witte bladranden met groene banden langs nerven.",
+        "summer": "Bont blad met witte randen en groene banden langs de hoofdnerven.",
+        "autumn": "Onbekend; onvoldoende betrouwbaar vastgelegd."
+      },
+      "growth": {
+        "height_after_10_years": "Onbekend",
+        "width_after_10_years": "Onbekend",
+        "growth_rate": "Onbekend"
+      },
+      "site": {
+        "position": "Halfschaduw of gefilterd licht is een veilige algemene keuze; beschut tegen harde wind. Cultivar-specifiek: onbekend.",
+        "soil": "Vochtig maar goed doorlatend, humusrijk; geen langdurig natte grond. Algemene soortinformatie, niet cultivar-specifiek bevestigd.",
+        "climate_zone": "Exacte klimaatzone onbekend. Winterhardheid verschilt per cultivar en microklimaat.",
+        "source_scope": "Algemene teeltinformatie voor Acer palmatum / Acer shirasawanum; cultivar-specifieke details alleen waar expliciet genoemd."
+      },
+      "photos": [],
+      "data_completeness": "partly documented"
     },
     {
       "id": "cultivar-mikawakaen",
@@ -2358,7 +3772,35 @@
       },
       "review_needed": true,
       "esveld_review_status": "search-link-only",
-      "photo_status": "needs_verified_photo"
+      "photo_status": "no-photo-yet",
+      "name_data": {
+        "botanical_name": "Acer palmatum 'Mikawa Kaen'",
+        "cultivar_name": "Mikawa Kaen",
+        "synonyms": [],
+        "common_name": "Onbekend"
+      },
+      "species": "Acer palmatum",
+      "plant_group": "Onbekend",
+      "growth_habit": "Onbekend",
+      "seasonal_characteristics": {
+        "spring": "Onbekend",
+        "summer": "Onbekend",
+        "autumn": "Onbekend"
+      },
+      "growth": {
+        "height_after_10_years": "Onbekend",
+        "width_after_10_years": "Onbekend",
+        "growth_rate": "Onbekend"
+      },
+      "site": {
+        "position": "Halfschaduw of gefilterd licht is een veilige algemene keuze; beschut tegen harde wind. Cultivar-specifiek: onbekend.",
+        "soil": "Vochtig maar goed doorlatend, humusrijk; geen langdurig natte grond. Algemene soortinformatie, niet cultivar-specifiek bevestigd.",
+        "climate_zone": "Exacte klimaatzone onbekend. Winterhardheid verschilt per cultivar en microklimaat.",
+        "source_scope": "Algemene teeltinformatie voor Acer palmatum / Acer shirasawanum; cultivar-specifieke details alleen waar expliciet genoemd."
+      },
+      "photos": [],
+      "data_completeness": "needs cultivar-specific research",
+      "last_checked": "2026-10-21"
     },
     {
       "id": "cultivar-tamukeyama",
@@ -2367,7 +3809,7 @@
       "synonyms": [],
       "group": "unknown",
       "traits": {
-        "nl": "Kenmerken nog niet individueel geverifieerd.",
+        "nl": "Overhangende dissectum-cultivar met fijn ingesneden donker roodpaars blad. De kleur blijft doorgaans goed behouden en slaat in de herfst om naar felrood.",
         "en": "Traits not yet individually verified."
       },
       "history": {
@@ -2403,6 +3845,11 @@
           "title": "Plantentuin Esveld — zoekresultaat (individueel cultivarprofiel nog niet gecontroleerd)",
           "url": "https://esveld.nl/a/winkel/?compact=1&swoof=1&woof_text=Acer%20palmatum%20%27Tamukeyama%27",
           "supports": "Search starting point only; not evidence until the matching cultivar profile is reviewed"
+        },
+        {
+          "title": "Spaargaren — catalogus Acer-cultivars",
+          "url": "https://spaargaren.com/wp-content/uploads/2023/09/USA-COMPLEET_Spaargaren_us2023_2eProef.pdf",
+          "supports": "Groeivorm en bladkleur door het seizoen"
         }
       ],
       "historical_notes": {
@@ -2411,7 +3858,35 @@
       },
       "review_needed": true,
       "esveld_review_status": "search-link-only",
-      "photo_status": "needs_verified_photo"
+      "photo_status": "no-photo-yet",
+      "name_data": {
+        "botanical_name": "Acer palmatum 'Tamukeyama'",
+        "cultivar_name": "Tamukeyama",
+        "synonyms": [],
+        "common_name": "Onbekend"
+      },
+      "species": "Acer palmatum",
+      "plant_group": "Dissectum-groep (voorlopig)",
+      "growth_habit": "Breed spreidend met hangende, watervalachtige takken.",
+      "seasonal_characteristics": {
+        "spring": "Fijn ingesneden, donker roodpaars blad.",
+        "summer": "Donker purperrood; kleur houdt doorgaans goed stand.",
+        "autumn": "Scharlakenrood tot felrood."
+      },
+      "growth": {
+        "height_after_10_years": "Onbekend",
+        "width_after_10_years": "Onbekend",
+        "growth_rate": "Onbekend; bronnen noemen groei krachtig, maar geen vergelijkbare groeisnelheid."
+      },
+      "site": {
+        "position": "Zon tot halfschaduw; beschutte plek met voldoende bodemvocht.",
+        "soil": "Vochtig maar goed doorlatend; humusrijk.",
+        "climate_zone": "Exacte klimaatzone onbekend.",
+        "source_scope": "Algemene teeltinformatie voor Acer palmatum / Acer shirasawanum; cultivar-specifieke details alleen waar expliciet genoemd."
+      },
+      "photos": [],
+      "data_completeness": "partly documented; cultivar-specific research sources linked",
+      "last_checked": "2026-10-21"
     },
     {
       "id": "cultivar-akashigitatsusawa",
@@ -2466,7 +3941,37 @@
       },
       "review_needed": true,
       "esveld_review_status": "search-link-only",
-      "photo_status": "needs_verified_photo"
+      "photo_status": "no-photo-yet",
+      "name_data": {
+        "botanical_name": "Acer palmatum 'Aka shigitatsu sawa'",
+        "cultivar_name": "Aka shigitatsu sawa",
+        "synonyms": [
+          "Aka Shigitatsu Sawa"
+        ],
+        "common_name": "Onbekend"
+      },
+      "species": "Acer palmatum",
+      "plant_group": "Onbekend",
+      "growth_habit": "Onbekend",
+      "seasonal_characteristics": {
+        "spring": "Onbekend",
+        "summer": "Onbekend",
+        "autumn": "Onbekend"
+      },
+      "growth": {
+        "height_after_10_years": "Onbekend",
+        "width_after_10_years": "Onbekend",
+        "growth_rate": "Onbekend"
+      },
+      "site": {
+        "position": "Halfschaduw of gefilterd licht is een veilige algemene keuze; beschut tegen harde wind. Cultivar-specifiek: onbekend.",
+        "soil": "Vochtig maar goed doorlatend, humusrijk; geen langdurig natte grond. Algemene soortinformatie, niet cultivar-specifiek bevestigd.",
+        "climate_zone": "Exacte klimaatzone onbekend. Winterhardheid verschilt per cultivar en microklimaat.",
+        "source_scope": "Algemene teeltinformatie voor Acer palmatum / Acer shirasawanum; cultivar-specifieke details alleen waar expliciet genoemd."
+      },
+      "photos": [],
+      "data_completeness": "needs cultivar-specific research",
+      "last_checked": "2026-10-21"
     },
     {
       "id": "cultivar-benikomachi",
@@ -2521,7 +4026,37 @@
       },
       "review_needed": true,
       "esveld_review_status": "search-link-only",
-      "photo_status": "needs_verified_photo"
+      "photo_status": "no-photo-yet",
+      "name_data": {
+        "botanical_name": "Acer palmatum 'Beni komachi'",
+        "cultivar_name": "Beni komachi",
+        "synonyms": [
+          "Beni-komachi"
+        ],
+        "common_name": "Onbekend"
+      },
+      "species": "Acer palmatum",
+      "plant_group": "Onbekend",
+      "growth_habit": "Onbekend",
+      "seasonal_characteristics": {
+        "spring": "Onbekend",
+        "summer": "Onbekend",
+        "autumn": "Onbekend"
+      },
+      "growth": {
+        "height_after_10_years": "Onbekend",
+        "width_after_10_years": "Onbekend",
+        "growth_rate": "Onbekend"
+      },
+      "site": {
+        "position": "Halfschaduw of gefilterd licht is een veilige algemene keuze; beschut tegen harde wind. Cultivar-specifiek: onbekend.",
+        "soil": "Vochtig maar goed doorlatend, humusrijk; geen langdurig natte grond. Algemene soortinformatie, niet cultivar-specifiek bevestigd.",
+        "climate_zone": "Exacte klimaatzone onbekend. Winterhardheid verschilt per cultivar en microklimaat.",
+        "source_scope": "Algemene teeltinformatie voor Acer palmatum / Acer shirasawanum; cultivar-specifieke details alleen waar expliciet genoemd."
+      },
+      "photos": [],
+      "data_completeness": "needs cultivar-specific research",
+      "last_checked": "2026-10-21"
     },
     {
       "id": "cultivar-kotohime",
@@ -2576,7 +4111,37 @@
       },
       "review_needed": true,
       "esveld_review_status": "search-link-only",
-      "photo_status": "needs_verified_photo"
+      "photo_status": "no-photo-yet",
+      "name_data": {
+        "botanical_name": "Acer palmatum 'Koto hime'",
+        "cultivar_name": "Koto hime",
+        "synonyms": [
+          "Koto-hime"
+        ],
+        "common_name": "Onbekend"
+      },
+      "species": "Acer palmatum",
+      "plant_group": "Onbekend",
+      "growth_habit": "Onbekend",
+      "seasonal_characteristics": {
+        "spring": "Onbekend",
+        "summer": "Onbekend",
+        "autumn": "Onbekend"
+      },
+      "growth": {
+        "height_after_10_years": "Onbekend",
+        "width_after_10_years": "Onbekend",
+        "growth_rate": "Onbekend"
+      },
+      "site": {
+        "position": "Halfschaduw of gefilterd licht is een veilige algemene keuze; beschut tegen harde wind. Cultivar-specifiek: onbekend.",
+        "soil": "Vochtig maar goed doorlatend, humusrijk; geen langdurig natte grond. Algemene soortinformatie, niet cultivar-specifiek bevestigd.",
+        "climate_zone": "Exacte klimaatzone onbekend. Winterhardheid verschilt per cultivar en microklimaat.",
+        "source_scope": "Algemene teeltinformatie voor Acer palmatum / Acer shirasawanum; cultivar-specifieke details alleen waar expliciet genoemd."
+      },
+      "photos": [],
+      "data_completeness": "needs cultivar-specific research",
+      "last_checked": "2026-10-21"
     },
     {
       "id": "shira-aureum",
@@ -2623,7 +4188,35 @@
       },
       "review_needed": true,
       "esveld_review_status": "search-link-only",
-      "photo_status": "needs_verified_photo"
+      "photo_status": "no-photo-yet",
+      "name_data": {
+        "botanical_name": "Acer shirasawanum 'Aureum'",
+        "cultivar_name": "Aureum",
+        "synonyms": [],
+        "common_name": "Onbekend"
+      },
+      "species": "Acer shirasawanum",
+      "plant_group": "Shirasawanum-groep (voorlopig)",
+      "growth_habit": "Onbekend",
+      "seasonal_characteristics": {
+        "spring": "Goudgeel tot geel blad.",
+        "summer": "Geelgroen tot geel.",
+        "autumn": "Goudgeel tot oranje."
+      },
+      "growth": {
+        "height_after_10_years": "Onbekend",
+        "width_after_10_years": "Onbekend",
+        "growth_rate": "Onbekend"
+      },
+      "site": {
+        "position": "Halfschaduw of gefilterd licht is een veilige algemene keuze; beschut tegen harde wind. Cultivar-specifiek: onbekend.",
+        "soil": "Vochtig maar goed doorlatend, humusrijk; geen langdurig natte grond. Algemene soortinformatie, niet cultivar-specifiek bevestigd.",
+        "climate_zone": "Exacte klimaatzone onbekend. Winterhardheid verschilt per cultivar en microklimaat.",
+        "source_scope": "Algemene teeltinformatie voor Acer palmatum / Acer shirasawanum; cultivar-specifieke details alleen waar expliciet genoemd."
+      },
+      "photos": [],
+      "data_completeness": "partly documented",
+      "last_checked": "2026-10-21"
     },
     {
       "id": "shira-autumn-moon",
@@ -2670,7 +4263,35 @@
       },
       "review_needed": true,
       "esveld_review_status": "search-link-only",
-      "photo_status": "needs_verified_photo"
+      "photo_status": "no-photo-yet",
+      "name_data": {
+        "botanical_name": "Acer shirasawanum 'Autumn Moon'",
+        "cultivar_name": "Autumn Moon",
+        "synonyms": [],
+        "common_name": "Onbekend"
+      },
+      "species": "Acer shirasawanum",
+      "plant_group": "Shirasawanum-groep (voorlopig)",
+      "growth_habit": "Onbekend",
+      "seasonal_characteristics": {
+        "spring": "Koperachtig, roze-oranje of gebronsd jong blad.",
+        "summer": "Geelgroen.",
+        "autumn": "Oranje en rood; kleur kan per standplaats verschillen."
+      },
+      "growth": {
+        "height_after_10_years": "Onbekend",
+        "width_after_10_years": "Onbekend",
+        "growth_rate": "Onbekend"
+      },
+      "site": {
+        "position": "Halfschaduw of gefilterd licht is een veilige algemene keuze; beschut tegen harde wind. Cultivar-specifiek: onbekend.",
+        "soil": "Vochtig maar goed doorlatend, humusrijk; geen langdurig natte grond. Algemene soortinformatie, niet cultivar-specifiek bevestigd.",
+        "climate_zone": "Exacte klimaatzone onbekend. Winterhardheid verschilt per cultivar en microklimaat.",
+        "source_scope": "Algemene teeltinformatie voor Acer palmatum / Acer shirasawanum; cultivar-specifieke details alleen waar expliciet genoemd."
+      },
+      "photos": [],
+      "data_completeness": "partly documented",
+      "last_checked": "2026-10-21"
     },
     {
       "id": "shira-jordan",
@@ -2717,7 +4338,35 @@
       },
       "review_needed": true,
       "esveld_review_status": "search-link-only",
-      "photo_status": "needs_verified_photo"
+      "photo_status": "no-photo-yet",
+      "name_data": {
+        "botanical_name": "Acer shirasawanum 'Jordan'",
+        "cultivar_name": "Jordan",
+        "synonyms": [],
+        "common_name": "Onbekend"
+      },
+      "species": "Acer shirasawanum",
+      "plant_group": "Shirasawanum-groep (voorlopig)",
+      "growth_habit": "Onbekend",
+      "seasonal_characteristics": {
+        "spring": "Heldergeel blad, vaak met roze-oranje rand.",
+        "summer": "Geel tot geelgroen.",
+        "autumn": "Oranje en rood."
+      },
+      "growth": {
+        "height_after_10_years": "Onbekend",
+        "width_after_10_years": "Onbekend",
+        "growth_rate": "Onbekend"
+      },
+      "site": {
+        "position": "Halfschaduw of gefilterd licht is een veilige algemene keuze; beschut tegen harde wind. Cultivar-specifiek: onbekend.",
+        "soil": "Vochtig maar goed doorlatend, humusrijk; geen langdurig natte grond. Algemene soortinformatie, niet cultivar-specifiek bevestigd.",
+        "climate_zone": "Exacte klimaatzone onbekend. Winterhardheid verschilt per cultivar en microklimaat.",
+        "source_scope": "Algemene teeltinformatie voor Acer palmatum / Acer shirasawanum; cultivar-specifieke details alleen waar expliciet genoemd."
+      },
+      "photos": [],
+      "data_completeness": "partly documented",
+      "last_checked": "2026-10-21"
     },
     {
       "id": "shira-moonrise",
@@ -2764,7 +4413,35 @@
       },
       "review_needed": true,
       "esveld_review_status": "search-link-only",
-      "photo_status": "needs_verified_photo"
+      "photo_status": "no-photo-yet",
+      "name_data": {
+        "botanical_name": "Acer shirasawanum 'Moonrise'",
+        "cultivar_name": "Moonrise",
+        "synonyms": [],
+        "common_name": "Onbekend"
+      },
+      "species": "Acer shirasawanum",
+      "plant_group": "Shirasawanum-groep (voorlopig)",
+      "growth_habit": "Onbekend",
+      "seasonal_characteristics": {
+        "spring": "Karmijnrood jong blad.",
+        "summer": "Blad verkleurt naar geel; in schaduw vaak limegroen.",
+        "autumn": "Onbekend; geen voldoende betrouwbare cultivar-specifieke gegevens."
+      },
+      "growth": {
+        "height_after_10_years": "Onbekend",
+        "width_after_10_years": "Onbekend",
+        "growth_rate": "Onbekend"
+      },
+      "site": {
+        "position": "Halfschaduw of gefilterd licht is een veilige algemene keuze; beschut tegen harde wind. Cultivar-specifiek: onbekend.",
+        "soil": "Vochtig maar goed doorlatend, humusrijk; geen langdurig natte grond. Algemene soortinformatie, niet cultivar-specifiek bevestigd.",
+        "climate_zone": "Exacte klimaatzone onbekend. Winterhardheid verschilt per cultivar en microklimaat.",
+        "source_scope": "Algemene teeltinformatie voor Acer palmatum / Acer shirasawanum; cultivar-specifieke details alleen waar expliciet genoemd."
+      },
+      "photos": [],
+      "data_completeness": "partly documented",
+      "last_checked": "2026-10-21"
     },
     {
       "id": "shira-johin",
@@ -2811,7 +4488,35 @@
       },
       "review_needed": true,
       "esveld_review_status": "search-link-only",
-      "photo_status": "needs_verified_photo"
+      "photo_status": "no-photo-yet",
+      "name_data": {
+        "botanical_name": "Acer shirasawanum 'Johin'",
+        "cultivar_name": "Johin",
+        "synonyms": [],
+        "common_name": "Onbekend"
+      },
+      "species": "Acer shirasawanum",
+      "plant_group": "Shirasawanum-groep (voorlopig)",
+      "growth_habit": "Onbekend",
+      "seasonal_characteristics": {
+        "spring": "Roodbruin tot roodpaars jong blad.",
+        "summer": "Donkerder roodbruin.",
+        "autumn": "Oranje-rood."
+      },
+      "growth": {
+        "height_after_10_years": "Onbekend",
+        "width_after_10_years": "Onbekend",
+        "growth_rate": "Onbekend"
+      },
+      "site": {
+        "position": "Halfschaduw of gefilterd licht is een veilige algemene keuze; beschut tegen harde wind. Cultivar-specifiek: onbekend.",
+        "soil": "Vochtig maar goed doorlatend, humusrijk; geen langdurig natte grond. Algemene soortinformatie, niet cultivar-specifiek bevestigd.",
+        "climate_zone": "Exacte klimaatzone onbekend. Winterhardheid verschilt per cultivar en microklimaat.",
+        "source_scope": "Algemene teeltinformatie voor Acer palmatum / Acer shirasawanum; cultivar-specifieke details alleen waar expliciet genoemd."
+      },
+      "photos": [],
+      "data_completeness": "partly documented",
+      "last_checked": "2026-10-21"
     },
     {
       "id": "shira-mikawa-kaen",
@@ -2858,7 +4563,35 @@
       },
       "review_needed": true,
       "esveld_review_status": "search-link-only",
-      "photo_status": "needs_verified_photo"
+      "photo_status": "no-photo-yet",
+      "name_data": {
+        "botanical_name": "Acer shirasawanum 'Mikawa Kaen'",
+        "cultivar_name": "Mikawa Kaen",
+        "synonyms": [],
+        "common_name": "Onbekend"
+      },
+      "species": "Acer shirasawanum",
+      "plant_group": "Shirasawanum-groep (voorlopig)",
+      "growth_habit": "Onbekend",
+      "seasonal_characteristics": {
+        "spring": "Onbekend",
+        "summer": "Onbekend",
+        "autumn": "Onbekend"
+      },
+      "growth": {
+        "height_after_10_years": "Onbekend",
+        "width_after_10_years": "Onbekend",
+        "growth_rate": "Onbekend"
+      },
+      "site": {
+        "position": "Halfschaduw of gefilterd licht is een veilige algemene keuze; beschut tegen harde wind. Cultivar-specifiek: onbekend.",
+        "soil": "Vochtig maar goed doorlatend, humusrijk; geen langdurig natte grond. Algemene soortinformatie, niet cultivar-specifiek bevestigd.",
+        "climate_zone": "Exacte klimaatzone onbekend. Winterhardheid verschilt per cultivar en microklimaat.",
+        "source_scope": "Algemene teeltinformatie voor Acer palmatum / Acer shirasawanum; cultivar-specifieke details alleen waar expliciet genoemd."
+      },
+      "photos": [],
+      "data_completeness": "needs cultivar-specific research",
+      "last_checked": "2026-10-21"
     },
     {
       "id": "shira-mr-sun",
@@ -2905,7 +4638,35 @@
       },
       "review_needed": true,
       "esveld_review_status": "search-link-only",
-      "photo_status": "needs_verified_photo"
+      "photo_status": "no-photo-yet",
+      "name_data": {
+        "botanical_name": "Acer shirasawanum 'Mr. Sun'",
+        "cultivar_name": "Mr. Sun",
+        "synonyms": [],
+        "common_name": "Onbekend"
+      },
+      "species": "Acer shirasawanum",
+      "plant_group": "Shirasawanum-groep (voorlopig)",
+      "growth_habit": "Onbekend",
+      "seasonal_characteristics": {
+        "spring": "Onbekend; bron beschrijft geen betrouwbaar seizoensdetail.",
+        "summer": "Groen blad.",
+        "autumn": "Oranje en geel."
+      },
+      "growth": {
+        "height_after_10_years": "Onbekend",
+        "width_after_10_years": "Onbekend",
+        "growth_rate": "Onbekend"
+      },
+      "site": {
+        "position": "Halfschaduw of gefilterd licht is een veilige algemene keuze; beschut tegen harde wind. Cultivar-specifiek: onbekend.",
+        "soil": "Vochtig maar goed doorlatend, humusrijk; geen langdurig natte grond. Algemene soortinformatie, niet cultivar-specifiek bevestigd.",
+        "climate_zone": "Exacte klimaatzone onbekend. Winterhardheid verschilt per cultivar en microklimaat.",
+        "source_scope": "Algemene teeltinformatie voor Acer palmatum / Acer shirasawanum; cultivar-specifieke details alleen waar expliciet genoemd."
+      },
+      "photos": [],
+      "data_completeness": "partly documented",
+      "last_checked": "2026-10-21"
     },
     {
       "id": "shira-blue-moon",
@@ -2952,7 +4713,35 @@
       },
       "review_needed": true,
       "esveld_review_status": "search-link-only",
-      "photo_status": "needs_verified_photo"
+      "photo_status": "no-photo-yet",
+      "name_data": {
+        "botanical_name": "Acer shirasawanum 'Blue Moon'",
+        "cultivar_name": "Blue Moon",
+        "synonyms": [],
+        "common_name": "Onbekend"
+      },
+      "species": "Acer shirasawanum",
+      "plant_group": "Shirasawanum-groep (voorlopig)",
+      "growth_habit": "Onbekend",
+      "seasonal_characteristics": {
+        "spring": "Meer bronskleurig jong blad dan bij ‘Moonrise’ volgens de geraadpleegde specialistische bron.",
+        "summer": "Meer geelgroen dan ‘Moonrise’ volgens dezelfde bron.",
+        "autumn": "Onbekend; onvoldoende betrouwbaar vastgelegd."
+      },
+      "growth": {
+        "height_after_10_years": "Onbekend",
+        "width_after_10_years": "Onbekend",
+        "growth_rate": "Onbekend"
+      },
+      "site": {
+        "position": "Halfschaduw of gefilterd licht is een veilige algemene keuze; beschut tegen harde wind. Cultivar-specifiek: onbekend.",
+        "soil": "Vochtig maar goed doorlatend, humusrijk; geen langdurig natte grond. Algemene soortinformatie, niet cultivar-specifiek bevestigd.",
+        "climate_zone": "Exacte klimaatzone onbekend. Winterhardheid verschilt per cultivar en microklimaat.",
+        "source_scope": "Algemene teeltinformatie voor Acer palmatum / Acer shirasawanum; cultivar-specifieke details alleen waar expliciet genoemd."
+      },
+      "photos": [],
+      "data_completeness": "partly documented",
+      "last_checked": "2026-10-21"
     }
   ]
 }
