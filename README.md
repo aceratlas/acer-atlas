@@ -102,3 +102,11 @@ Gebruikers kunnen in Instellingen kiezen uit Botanical Green, Japanese Maple en 
 
 ## v3.14
 - Instellingen is verwijderd uit de bovenste tabrij en staat nu als tandwielknop naast de taalkeuze in de kop. De snelkoppeling Instellingen in de onderste navigatie blijft behouden.
+
+## Lokale back-up (voorbereiding voor versie 4.0)
+
+Acer Atlas bevat in Instellingen de functies **Back-up downloaden** en **Back-up terugzetten**. Het back-upbestand is een JSON-bestand met de lokale collectie, de foto-data (ingesloten in het bestand), kleurthema en taal. Het bestand wordt door de browser rechtstreeks naar het apparaat van de gebruiker gedownload; Acer Atlas uploadt dit bestand niet naar een server.
+
+De gebruiker kan het bestand zelf opslaan in OneDrive, Dropbox, Google Drive, op een USB-stick of op de eigen computer en het op een ander apparaat weer importeren. Terugzetten vervangt de huidige collectie na een bevestigingsvraag. Adviseer gebruikers eerst een back-up te maken van hun huidige collectie.
+
+Dit is een lokale back-upfunctie, geen online account of synchronisatie. De toekomstige account-/database-laag en de eenmalige Plus-betaling moeten apart worden ontworpen en getest voordat ze worden gepubliceerd. De back-up bevat foto's als data-URL's; grote collecties kunnen daardoor grote bestanden opleveren en de beschikbare browseropslag blijft een beperking.
