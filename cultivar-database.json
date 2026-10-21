@@ -1,6 +1,6 @@
 {
   "app": "Acer Atlas",
-  "version": "5.4-main-photo-linking",
+  "version": "5.5-main-photo-linking-cache-fix",
   "record_count": 58,
   "note": "v5.3: bestaande 58 cultivarrecords behouden. Meer cultivar-specifieke foto’s toegevoegd uit Wikimedia Commons na controle van de bestands-pagina en licentie. Per foto staan auteur, licentie en bronlink vermeld; ontbrekende seizoensidentificatie blijft Onbekend. v5.4: de eerste gecontroleerde vrije foto per cultivar wordt als hoofdfoto in de encyclopedielijst gekoppeld; foto-credit, licentie en bron blijven zichtbaar in het detailprofiel.",
   "records": [
