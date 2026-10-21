@@ -89,12 +89,16 @@ De backendkeuze moet worden gemaakt voordat we accounts en codes veilig kunnen i
 - Er is extra verticale ruimte en een scheidingslijn toegevoegd om onbedoeld klikken op favorieten te voorkomen.
 
 
-## v3.13 — favorietenknop als actieknop
+## v3.14 — favorietenknop als actieknop
 - Replaced the star-only collection favorite control with a labelled button.
 - The button shows a leading ☆ “Toevoegen aan favorieten” or ★ “Verwijderen uit favorieten”.
 - Right-aligned the favorite button above “Verwijderen uit collectie”, with a generous gap to reduce accidental taps.
 - Kept the existing favorite storage and toggle handler.
 
 
-## v3.13 — Kleurstijlen
+## v3.14 — Kleurstijlen
 Gebruikers kunnen in Instellingen kiezen uit Botanical Green, Japanese Maple en Modern Japanese. De keuze wordt lokaal bewaard en blijft actief na opnieuw openen.
+
+
+## v3.14
+- Instellingen is verwijderd uit de bovenste tabrij en staat nu als tandwielknop naast de taalkeuze in de kop. De snelkoppeling Instellingen in de onderste navigatie blijft behouden.
