@@ -1,4 +1,4 @@
-# Acer Atlas v3.0 — collectie, favorieten en lijstweergave en afdrukken-export
+# Acer Atlas v4.0 — collectie, favorieten en lijstweergave en afdrukken-export
 
 Deze versie bouwt voort op de aangeleverde v2.7-bestanden. De 58 cultivarrecords en bestaande lokale collectieopslag zijn behouden.
 
