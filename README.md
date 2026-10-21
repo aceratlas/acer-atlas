@@ -87,3 +87,10 @@ De backendkeuze moet worden gemaakt voordat we accounts en codes veilig kunnen i
 ## v3.11 — favorietenknop met extra afstand
 - De sterknop voor favorieten is verplaatst van naast de cultivarnaam naar een aparte rij onderaan de collectiekaart.
 - Er is extra verticale ruimte en een scheidingslijn toegevoegd om onbedoeld klikken op favorieten te voorkomen.
+
+
+## v3.12 — favorietenknop als actieknop
+- Replaced the star-only collection favorite control with a labelled button.
+- The button shows a leading ☆ “Toevoegen aan favorieten” or ★ “Verwijderen uit favorieten”.
+- Right-aligned the favorite button above “Verwijderen uit collectie”, with a generous gap to reduce accidental taps.
+- Kept the existing favorite storage and toggle handler.
