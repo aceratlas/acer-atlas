@@ -110,3 +110,7 @@ Acer Atlas bevat in Instellingen de functies **Back-up downloaden** en **Back-up
 De gebruiker kan het bestand zelf opslaan in OneDrive, Dropbox, Google Drive, op een USB-stick of op de eigen computer en het op een ander apparaat weer importeren. Terugzetten vervangt de huidige collectie na een bevestigingsvraag. Adviseer gebruikers eerst een back-up te maken van hun huidige collectie.
 
 Dit is een lokale back-upfunctie, geen online account of synchronisatie. De toekomstige account-/database-laag en de eenmalige Plus-betaling moeten apart worden ontworpen en getest voordat ze worden gepubliceerd. De back-up bevat foto's als data-URL's; grote collecties kunnen daardoor grote bestanden opleveren en de beschikbare browseropslag blijft een beperking.
+
+
+## v4.1
+Accountarchitectuur voorbereid; zie `ACCOUNT-ARCHITECTUUR-v4.1.md`. Er zijn nog geen accounts of betalingen geactiveerd.
