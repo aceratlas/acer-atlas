@@ -30,7 +30,3 @@ De functie waarmee ingelogde gebruikers eigen foto's insturen en toestemming gev
 
 ## v5.4 — Hoofdfoto’s
 De eerste foto met gecontroleerde licentie uit `photos` wordt gebruikt als miniatuur bij de cultivarnaam in de encyclopedie. De bestaande detailpagina blijft de foto, auteur, licentie en bronlink tonen. Voor records zonder foto blijft de illustratie-placeholder staan.
-
-
-## v5.8 notitie
-De interface ondersteunt nu Nederlands, Engels, Duits en Frans. Dit is geen claim dat alle 58 records volledig vertaald of opnieuw individueel geverifieerd zijn. Per bron blijft onderscheid gemaakt tussen een cultivar-specifieke pagina en een catalogus-/zoekpagina. Foto’s van commerciële kwekers zijn niet hergebruikt zonder expliciete toestemming.

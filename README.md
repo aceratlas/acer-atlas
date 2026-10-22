@@ -127,15 +127,3 @@ Gebruikers kunnen in Instellingen kiezen uit Botanical Green, Japanese Maple en 
 ## v4.5 — Instellingen en knopteksten
 - Back-up en herstel staat onderaan Instellingen.
 - De knoppen voor informatie, collectie en wenslijst gebruiken duidelijke, gelijkvormige teksten.
-
-
-## v5.8 — vier talen en profielkoppen
-- Taalcyclus toegevoegd: Nederlands → Engels → Duits → Frans → Nederlands. De taalkeuze wordt lokaal bewaard.
-- Hoofdnavigatie en de belangrijkste interface-elementen hebben Duitse en Franse vertalingen.
-- Profielkoppen en veldlabels zijn gelokaliseerd. Voor cultivar-specifieke beschrijvingen gebruikt de app een bestaande Engelse vertaling als die beschikbaar is; ontbrekende data blijft onbekend.
-- MrMaple is als tekstbron toegevoegd voor Bloodgood; hun productfoto’s zijn niet hergebruikt.
-- Versie en service-worker-cache bijgewerkt.
-
-
-## v5.8 — talen en controle
-Zie `CONTROLE-V5.8.md` voor de uitgevoerde technische controles en de resterende inhoudelijke beperkingen. De interface biedt Nederlands, Engels, Duits en Frans. De databank bevat 58 records; volledigheid van de cultivar-specifieke feiten, alle foto’s en alle vertalingen is nog niet bereikt.

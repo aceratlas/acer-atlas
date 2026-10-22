@@ -1,8 +1,8 @@
 {
   "app": "Acer Atlas",
-  "version": "5.8-four-languages-profile-labels",
+  "version": "5.5-main-photo-linking-cache-fix",
   "record_count": 58,
-  "note": "v5.3: bestaande 58 cultivarrecords behouden. Meer cultivar-specifieke foto’s toegevoegd uit Wikimedia Commons na controle van de bestands-pagina en licentie. Per foto staan auteur, licentie en bronlink vermeld; ontbrekende seizoensidentificatie blijft Onbekend. v5.4: de eerste gecontroleerde vrije foto per cultivar wordt als hoofdfoto in de encyclopedielijst gekoppeld; foto-credit, licentie en bron blijven zichtbaar in het detailprofiel. v5.8: toegevoegd: taalkeuze Nederlands, Engels, Duits en Frans; profielkoppen zijn vertaald. Bestaande cultivarbronnen en foto-licenties zijn behouden. Vertaalde interface betekent niet dat alle cultivarbeschrijvingen al volledig professioneel vertaald zijn; onbekende gegevens blijven onbekend.",
+  "note": "v5.3: bestaande 58 cultivarrecords behouden. Meer cultivar-specifieke foto’s toegevoegd uit Wikimedia Commons na controle van de bestands-pagina en licentie. Per foto staan auteur, licentie en bronlink vermeld; ontbrekende seizoensidentificatie blijft Onbekend. v5.4: de eerste gecontroleerde vrije foto per cultivar wordt als hoofdfoto in de encyclopedielijst gekoppeld; foto-credit, licentie en bron blijven zichtbaar in het detailprofiel.",
   "records": [
     {
       "id": "cultivar-ariadne",
@@ -260,11 +260,6 @@
           "title": "Plantentuin Esveld — individueel gecontroleerd cultivarprofiel",
           "url": "https://esveld.nl/a/product/acer-palmatum-bloodgood/",
           "supports": "Cultivar characteristics and horticultural description; historical details only where explicitly stated on the page"
-        },
-        {
-          "title": "MrMaple — Acer palmatum Bloodgood (cultivar description; photos not licensed for reuse)",
-          "url": "https://mrmaple.com/products/buy-acer-palmatum-bloodgood-red-japanese-maple-tree",
-          "supports": "Cultivar-specific foliage, growth habit and USDA zone description; product photographs are not included or reused."
         }
       ],
       "historical_notes": {
@@ -4776,27 +4771,5 @@
       "last_checked": "2026-10-21"
     }
   ],
-  "photo_count": 9,
-  "reference_sources": [
-    {
-      "name": "Plantentuin Esveld",
-      "url": "https://esveld.nl/a/webshop/?q=Acer+palmatum&weergave=lijst",
-      "scope": "Primary horticultural catalogue; individual product pages must be checked for cultivar-specific statements."
-    },
-    {
-      "name": "MrMaple",
-      "url": "https://mrmaple.com/collections/all-available-products",
-      "scope": "Specialist Japanese maple catalogue; use text descriptions as research input and paraphrase. Product photographs are not reusable without explicit permission."
-    },
-    {
-      "name": "Baumschule Nielsen",
-      "url": "https://baumschule-nielsen.de/",
-      "scope": "Specialist nursery catalogue for Japanese maples; only individual cultivar pages support cultivar-specific facts."
-    },
-    {
-      "name": "Wikimedia Commons",
-      "url": "https://commons.wikimedia.org/wiki/Category:Acer_palmatum_(cultivars)",
-      "scope": "Image source; each image must be checked individually for author, license and commercial reuse conditions."
-    }
-  ]
+  "photo_count": 9
 }
