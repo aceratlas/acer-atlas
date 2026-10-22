@@ -321,13 +321,13 @@ let acerAccountPlanVerified=false;
  acerAuth.onAuthStateChanged(async user=>{if(user&&!user.emailVerified&&!acerCreatingAccount){$a('accountSignedOut')?.classList.remove('hidden');$a('accountSignedIn')?.classList.add('hidden');if($a('accountMessage'))$a('accountMessage').textContent='Bevestig eerst je e-mailadres via de verificatiemail voordat je Acer Atlas gebruikt.';try{await acerAuth.signOut();}catch(e){}return;}const signedIn=!!user;$a('accountSignedOut')?.classList.toggle('hidden',signedIn);$a('accountSignedIn')?.classList.toggle('hidden',!signedIn);if($a('accountUserEmail'))$a('accountUserEmail').textContent=user?.email||'';if($a('accountEmailVerificationStatus'))$a('accountEmailVerificationStatus').textContent=user?.emailVerified?'E-mailadres bevestigd.':'E-mailadres nog niet bevestigd.';if(signedIn&&$a('accountPassword'))$a('accountPassword').value='';await loadOrCreateAccountProfile(user);});
 })();
 $('exportWishlistPdf')?.addEventListener('click',exportWishlistPdf);$('exportSeedlingsPdf')?.addEventListener('click',exportSeedlingsPdf);boot();
-// Load the checked 58-record database. Source URLs remain in each record and are shown below the description.
+// Load the checked Acer Atlas v7.1 database. Source URLs remain in each record and are shown below the description.
 (async function loadCultivarDatabase(){
  try {
-  const response = await fetch('./cultivar-database.json?build=614', {cache:'no-store'});
+  const response = await fetch('./cultivar-database.json?build=730', {cache:'no-store'});
   if(!response.ok) throw new Error('database fetch failed');
   const payload = await response.json();
-  if(!Array.isArray(payload.records) || payload.records.length !== 58) throw new Error('unexpected cultivar count');
+  if(!Array.isArray(payload.records) || payload.records.length !== payload.record_count) throw new Error('unexpected cultivar count');
   const old = DATA;
   DATA = payload.records.map(rec => {
    const prior = old.find(x => normCultivar(x.name) === normCultivar(rec.name)) || {};
