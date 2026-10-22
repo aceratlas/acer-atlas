@@ -5,8 +5,9 @@
   "original_record_count": 1030,
   "clean_record_count": 1015,
   "merged_group_count": 15,
-  "photo_count": 9,
+  "photo_count": 46,
   "validation_errors": [],
   "duplicate_ids": false,
-  "database_json_valid": true
+  "database_json_valid": true,
+  "latest_photo_batch": "v8.2.1 — 8 photos across 4 A cultivars"
 }

@@ -1,0 +1,23 @@
+Acer Atlas v8.2.1 — A photo batch 9
+
+Added Commons photo references (all page-specific identification/license notes stored in cultivar-database.json):
+
+1. Acuminatilobum — Acer campestre var. acuminatilobum leaf.jpg
+   Author: Pipi69e; public domain, released by author.
+   https://commons.wikimedia.org/wiki/File:Acer_campestre_var._acuminatilobum_leaf.jpg
+
+2. Auratum — A.negundoAuratum3.JPG
+   Author: Aha; CC BY-SA 3.0 (Commons also lists GFDL 1.2+).
+   https://commons.wikimedia.org/wiki/File:A.negundoAuratum3.JPG
+
+3. Autumn Blaze — Acer freemanii Autumn Blaze 0zz.jpg, 1zz.jpg, 2zz.jpg
+   Author: David J. Stang; CC BY-SA 4.0. Each file page names Acer × freemanii 'Autumn Blaze'.
+   https://commons.wikimedia.org/wiki/File:Acer_freemanii_Autumn_Blaze_0zz.jpg
+   https://commons.wikimedia.org/wiki/File:Acer_x_freemanii_Autumn_Blaze_1zz.jpg
+   https://commons.wikimedia.org/wiki/File:Acer_freemanii_Autumn_Blaze_2zz.jpg
+
+4. Autumn Flame — Acer rubrum Autumn Flame 0zz.jpg, 3zz.jpg, 4zz.jpg
+   Author: David J. Stang; CC BY-SA 4.0. Commons cultivar category lists the files; file titles identify the cultivar.
+   https://commons.wikimedia.org/wiki/Category:Acer_rubrum_(cultivars)
+
+Database records preserved; photo references are external Wikimedia Commons links (not image files bundled in this ZIP).

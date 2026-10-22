@@ -4,3 +4,67 @@ Acer Atlas v8.1.2
 - Their DOM elements remain present so existing JavaScript references do not break.
 - Search and all app pages otherwise unchanged.
 - Cache version/build tag updated to 812.
+
+
+v8.1.3 — A-cultivar photos
+- Added two verified Wikimedia Commons photographs to Acer palmatum “Ariadne”.
+- Attribution: Jonathan Billinger; CC BY-SA 2.0; each photo links to its Commons file page and license.
+- Updated database photo count and cache/version identifiers; no app behavior changes.
+
+Acer Atlas v8.1.4 — A-cultivar photo batch 2
+- Added one verified CC BY-SA 4.0 photo for Acer palmatum 'Ao shime no uchi'.
+- Added one verified CC BY-SA 4.0 autumn photo for Acer palmatum 'Atropurpureum'.
+- Added three verified CC BY-SA 4.0 spring photographs for Acer shirasawanum 'Aureum'.
+- Preserved attribution, license URL, Commons file page, and season/date where stated.
+- Existing 1,015 cultivar records and app features retained; cache/version identifiers updated.
+
+8.1.5 — Added six licensed Commons photo references for Aka shigitatsu sawa and Ao shime no uchi. No app features removed.
+
+
+Acer Atlas v8.1.6 — 2026-10-22
+- Added 3 licensed Commons photos for Acer japonicum 'Aconitifolium'.
+- Added 3 licensed Commons photos for Acer shirasawanum 'Autumn Moon'.
+- Stored author, file page, license, license URL, season and date where listed.
+- Kept all 1,015 cultivar records and app features.
+- Cache version and database build updated to 816.
+
+
+Acer Atlas v8.1.8 — A-cultivar photo batch 6
+- Added two further exact-name Acer palmatum Atropurpureum photographs.
+- One image is explicitly released to the public domain; the other permits reuse with attribution.
+- Preserved file-page links and usage/credit notes.
+- Database record count unchanged; cache/version identifiers updated.
+
+
+Acer Atlas v8.1.9 — A-cultivar photo batch 7
+- Added one Wikimedia Commons photograph for Acer palmatum 'Arakawa' (bonsai specimen).
+- Attribution: Sailko; CC BY-SA 4.0; file page and license URL stored with the image record.
+- Existing 1,015 cultivar records and app features retained; cache/database version updated.
+
+v8.2.0 — Added Acer negundo 'Aureovariegatum' as a photo-supported record with three public-domain Commons photos; cache version advanced.
+
+
+v8.2.1 — A photo batch 9
+- Added 8 licensed photo references across 4 previously unillustrated A-cultivar records: Acuminatilobum, Auratum, Autumn Blaze, Autumn Flame.
+- Retained all cultivar records; database photo_count updated.
+- Updated visible app version, database cache-buster, and service-worker cache name.
+
+
+Acer Atlas v8.2.2 — A-photo batch 10
+- Added two Wikimedia Commons photographs to Acer palmatum Aureum (Michael Wolf, CC BY-SA 3.0).
+- Recorded author, file-page URL, license URL, spring season and date as listed by the source.
+- Preserved all 1,016 cultivar records; database photo_count recalculated.
+- Updated visible version, database build query and service-worker cache name.
+
+
+Acer Atlas v8.2.3 — A photo batch 11
+- Added two verified Commons photo references to Acer japonicum 'Aconitifolium': fruit (A. Barra, CC BY 3.0) and autumn foliage (Jean-Pol GRANDMONT, CC BY 3.0).
+- Preserved author, source page, license and license URL.
+- Kept all cultivar records and existing app features; updated visible version and service-worker cache name.
+
+
+v8.2.4 — A-cultivar data batch 12
+- Enriched individual sourced foliage/season traits for Akane, Akegarasu, and Aki-tsuma-gaki.
+- Added direct RHS/Esveld profile references and kept unknown historical details unfilled.
+- No photos added: no explicitly reusable cultivar-specific images were verified for these three in this batch.
+- Database record count and existing photo references preserved; cache/version updated.

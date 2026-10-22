@@ -1,8 +1,8 @@
 {
   "app": "Acer Atlas",
-  "version": "8.1.2-clean-database",
-  "record_count": 1015,
-  "note": "Cleaned database migrated from the user's v7.5 baseline. Same accepted botanical names merged; alternate spellings retained as synonyms. Source claims have not all been independently re-verified.",
+  "version": "8.2.4",
+  "record_count": 1016,
+  "note": "A-photo batch 11: added two additional licensed Wikimedia Commons photographs to Acer japonicum Aconitifolium, including fruit and autumn foliage. Existing cultivar records retained; attribution/license metadata included.",
   "records": [
     {
       "id": "cultivar-ariadne",
@@ -50,8 +50,8 @@
       },
       "review_needed": true,
       "height_after_10_years": "250 cm na 10 jaar",
-      "last_checked": "2026-10-21",
-      "photo_status": "no-photo-yet",
+      "last_checked": "2026-10-22",
+      "photo_status": "licensed-photos-added",
       "name_data": {
         "botanical_name": "Acer palmatum 'Ariadne'",
         "cultivar_name": "Ariadne",
@@ -77,7 +77,28 @@
         "climate_zone": "Bron omschrijft de cultivar als goed winterhard; exacte klimaatzone onbekend.",
         "source_scope": "Algemene teeltinformatie voor Acer palmatum / Acer shirasawanum; cultivar-specifieke details alleen waar expliciet genoemd."
       },
-      "photos": [],
+      "photos": [
+        {
+          "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Acer_palmatum_%27Ariadne%27_-_geograph.org.uk_-_6136438.jpg",
+          "page_url": "https://commons.wikimedia.org/wiki/File:Acer_palmatum_%27Ariadne%27_-_geograph.org.uk_-_6136438.jpg",
+          "author": "Jonathan Billinger",
+          "license": "CC BY-SA 2.0",
+          "license_url": "https://creativecommons.org/licenses/by-sa/2.0/",
+          "credit": "Acer palmatum 'Ariadne' by Jonathan Billinger · CC BY-SA 2.0",
+          "season": "Lente",
+          "date_taken": "2019-04-21"
+        },
+        {
+          "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Acer_palmatum_%27Ariadne%27%2C_5_-_geograph.org.uk_-_6873498.jpg",
+          "page_url": "https://commons.wikimedia.org/wiki/File:Acer_palmatum_%27Ariadne%27%2C_5_-_geograph.org.uk_-_6873498.jpg",
+          "author": "Jonathan Billinger",
+          "license": "CC BY-SA 2.0",
+          "license_url": "https://creativecommons.org/licenses/by-sa/2.0/",
+          "credit": "Acer palmatum 'Ariadne', 5 by Jonathan Billinger · CC BY-SA 2.0",
+          "season": "Lente",
+          "date_taken": "2021-04-07"
+        }
+      ],
       "data_completeness": "partly documented",
       "esveld_inventory_codes": [
         "a12",
@@ -4337,7 +4358,7 @@
       },
       "review_needed": true,
       "esveld_review_status": "search-link-only",
-      "photo_status": "no-photo-yet",
+      "photo_status": "licensed-photos-added",
       "name_data": {
         "botanical_name": "Acer palmatum 'Aka shigitatsu sawa'",
         "cultivar_name": "Aka shigitatsu sawa",
@@ -4365,7 +4386,35 @@
         "climate_zone": "Exacte klimaatzone onbekend. Winterhardheid verschilt per cultivar en microklimaat.",
         "source_scope": "Algemene teeltinformatie voor Acer palmatum / Acer shirasawanum; cultivar-specifieke details alleen waar expliciet genoemd."
       },
-      "photos": [],
+      "photos": [
+        {
+          "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Acer_palmatum_Aka_shigitatsu_sawa_0zz.jpg",
+          "page_url": "https://commons.wikimedia.org/wiki/File:Acer_palmatum_Aka_shigitatsu_sawa_0zz.jpg",
+          "author": "David J. Stang",
+          "license": "CC BY-SA 4.0",
+          "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+          "credit": "Acer palmatum 'Aka shigitatsu sawa' by David J. Stang · CC BY-SA 4.0",
+          "season": "Lente"
+        },
+        {
+          "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Acer_palmatum_Aka_shigitatsu_sawa_1zz.jpg",
+          "page_url": "https://commons.wikimedia.org/wiki/File:Acer_palmatum_Aka_shigitatsu_sawa_1zz.jpg",
+          "author": "David J. Stang",
+          "license": "CC BY-SA 4.0",
+          "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+          "credit": "Acer palmatum 'Aka shigitatsu sawa' by David J. Stang · CC BY-SA 4.0",
+          "season": "Lente"
+        },
+        {
+          "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Acer_palmatum_Aka_shigitatsu_sawa_2zz.jpg",
+          "page_url": "https://commons.wikimedia.org/wiki/File:Acer_palmatum_Aka_shigitatsu_sawa_2zz.jpg",
+          "author": "David J. Stang",
+          "license": "CC BY-SA 4.0",
+          "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+          "credit": "Acer palmatum 'Aka shigitatsu sawa' by David J. Stang · CC BY-SA 4.0",
+          "season": "Lente"
+        }
+      ],
       "data_completeness": "needs cultivar-specific research",
       "last_checked": "2026-10-21"
     },
@@ -4602,6 +4651,11 @@
           "title": "Plantentuin Esveld — inventarislijst (door gebruiker aangeleverd PDF)",
           "url": "https://www.esveld.nl/catal/gedruktecat.pdf",
           "supports": "Presence of this Acer name in the inventory list only"
+        },
+        {
+          "title": "Wikimedia Commons — cultivar photo and reuse license",
+          "url": "https://commons.wikimedia.org/wiki/File:Acer_shirasawanum_%27Aureum%27_Golden_Full_Moon_Maple_at_Myddelton_House%2C_Enfield%2C_London_01.jpg",
+          "supports": "Exact cultivar photo; Acabashi; CC BY-SA 4.0; license checked 2026-10-22"
         }
       ],
       "historical_notes": {
@@ -4610,7 +4664,7 @@
       },
       "review_needed": true,
       "esveld_review_status": "search-link-only",
-      "photo_status": "no-photo-yet",
+      "photo_status": "licensed-photos-added",
       "name_data": {
         "botanical_name": "Acer shirasawanum 'Aureum'",
         "cultivar_name": "Aureum",
@@ -4636,7 +4690,38 @@
         "climate_zone": "Exacte klimaatzone onbekend. Winterhardheid verschilt per cultivar en microklimaat.",
         "source_scope": "Algemene teeltinformatie voor Acer palmatum / Acer shirasawanum; cultivar-specifieke details alleen waar expliciet genoemd."
       },
-      "photos": [],
+      "photos": [
+        {
+          "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Acer%20shirasawanum%20'Aureum'%20Golden%20Full%20Moon%20Maple%20at%20Myddelton%20House,%20Enfield,%20London%2001.jpg",
+          "page_url": "https://commons.wikimedia.org/wiki/File:Acer_shirasawanum_'Aureum'_Golden_Full_Moon_Maple_at_Myddelton_House,_Enfield,_London_01.jpg",
+          "author": "Acabashi",
+          "license": "CC BY-SA 4.0",
+          "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+          "credit": "Acer shirasawanum 'Aureum' by Acabashi · CC BY-SA 4.0",
+          "season": "Lente",
+          "date_taken": "2017-04-23"
+        },
+        {
+          "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Acer%20shirasawanum%20'Aureum'%20Golden%20Full%20Moon%20Maple%20at%20Myddelton%20House,%20Enfield,%20London%2002.jpg",
+          "page_url": "https://commons.wikimedia.org/wiki/File:Acer_shirasawanum_'Aureum'_Golden_Full_Moon_Maple_at_Myddelton_House,_Enfield,_London_02.jpg",
+          "author": "Acabashi",
+          "license": "CC BY-SA 4.0",
+          "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+          "credit": "Acer shirasawanum 'Aureum' by Acabashi · CC BY-SA 4.0",
+          "season": "Lente",
+          "date_taken": "2017-04-23"
+        },
+        {
+          "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Acer%20shirasawanum%20'Aureum'%20Golden%20Full%20Moon%20Maple%20at%20Myddelton%20House,%20Enfield,%20London%2003.jpg",
+          "page_url": "https://commons.wikimedia.org/wiki/File:Acer_shirasawanum_'Aureum'_Golden_Full_Moon_Maple_at_Myddelton_House,_Enfield,_London_03.jpg",
+          "author": "Acabashi",
+          "license": "CC BY-SA 4.0",
+          "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+          "credit": "Acer shirasawanum 'Aureum' by Acabashi · CC BY-SA 4.0",
+          "season": "Lente",
+          "date_taken": "2017-04-23"
+        }
+      ],
       "data_completeness": "partly documented",
       "last_checked": "2026-10-21",
       "esveld_inventory_codes": [
@@ -4686,6 +4771,21 @@
           "title": "Plantentuin Esveld — inventarislijst (door gebruiker aangeleverd PDF)",
           "url": "https://www.esveld.nl/catal/gedruktecat.pdf",
           "supports": "Presence of this Acer name in the inventory list only"
+        },
+        {
+          "title": "Wikimedia Commons — cultivar-specific image and reuse license checked 2026-10-22",
+          "url": "https://commons.wikimedia.org/wiki/File:Acer_shirasawanum_Autumn_Moon_0zz.jpg",
+          "supports": "Exact cultivar image; David J. Stang; CC BY-SA 4.0; license checked 2026-10-22"
+        },
+        {
+          "title": "Wikimedia Commons — cultivar-specific image and reuse license checked 2026-10-22",
+          "url": "https://commons.wikimedia.org/wiki/File:Full_Moon_Maple_‘Autumn_Moon’_Acer_shirasawanum_‘Autumn_Moon’_leaf_fall.jpg",
+          "supports": "Exact cultivar image; Cossey25; CC BY-SA 4.0; license checked 2026-10-22"
+        },
+        {
+          "title": "Wikimedia Commons — cultivar-specific image and reuse license checked 2026-10-22",
+          "url": "https://commons.wikimedia.org/wiki/File:Full_Moon_Maple_‘Autumn_Moon’_Acer_shirasawanum_‘Autumn_Moon’_habit_fall.jpg",
+          "supports": "Exact cultivar image; Cossey25; CC BY-SA 4.0; license checked 2026-10-22"
         }
       ],
       "historical_notes": {
@@ -4694,7 +4794,7 @@
       },
       "review_needed": true,
       "esveld_review_status": "search-link-only",
-      "photo_status": "no-photo-yet",
+      "photo_status": "licensed-photos-added",
       "name_data": {
         "botanical_name": "Acer shirasawanum 'Autumn Moon'",
         "cultivar_name": "Autumn Moon",
@@ -4720,9 +4820,40 @@
         "climate_zone": "Exacte klimaatzone onbekend. Winterhardheid verschilt per cultivar en microklimaat.",
         "source_scope": "Algemene teeltinformatie voor Acer palmatum / Acer shirasawanum; cultivar-specifieke details alleen waar expliciet genoemd."
       },
-      "photos": [],
+      "photos": [
+        {
+          "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Acer_shirasawanum_Autumn_Moon_0zz.jpg",
+          "page_url": "https://commons.wikimedia.org/wiki/File:Acer_shirasawanum_Autumn_Moon_0zz.jpg",
+          "author": "David J. Stang",
+          "license": "CC BY-SA 4.0",
+          "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+          "credit": "Acer shirasawanum Autumn Moon 0zz by David J. Stang · CC BY-SA 4.0",
+          "season": "Lente",
+          "date_taken": "2008-05-02"
+        },
+        {
+          "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Full_Moon_Maple_‘Autumn_Moon’_Acer_shirasawanum_‘Autumn_Moon’_leaf_fall.jpg",
+          "page_url": "https://commons.wikimedia.org/wiki/File:Full_Moon_Maple_‘Autumn_Moon’_Acer_shirasawanum_‘Autumn_Moon’_leaf_fall.jpg",
+          "author": "Cossey25",
+          "license": "CC BY-SA 4.0",
+          "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+          "credit": "Full Moon Maple ‘Autumn Moon’ Acer shirasawanum ‘Autumn Moon’ leaf fall by Cossey25 · CC BY-SA 4.0",
+          "season": "Herfst",
+          "date_taken": "2024-11-11"
+        },
+        {
+          "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Full_Moon_Maple_‘Autumn_Moon’_Acer_shirasawanum_‘Autumn_Moon’_habit_fall.jpg",
+          "page_url": "https://commons.wikimedia.org/wiki/File:Full_Moon_Maple_‘Autumn_Moon’_Acer_shirasawanum_‘Autumn_Moon’_habit_fall.jpg",
+          "author": "Cossey25",
+          "license": "CC BY-SA 4.0",
+          "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+          "credit": "Full Moon Maple ‘Autumn Moon’ Acer shirasawanum ‘Autumn Moon’ habit fall by Cossey25 · CC BY-SA 4.0",
+          "season": "Herfst",
+          "date_taken": "2025-10-02"
+        }
+      ],
       "data_completeness": "partly documented",
-      "last_checked": "2026-10-21",
+      "last_checked": "2026-10-22",
       "esveld_inventory_codes": [
         "c21",
         "wes"
@@ -5756,7 +5887,7 @@
       "review_needed": true,
       "height_after_10_years": "Onbekend",
       "last_checked": "2026-10-22",
-      "photo_status": "no-photo-rights-verified",
+      "photo_status": "photo_available",
       "name_data": {
         "botanical_name": "Acer palmatum 'Arakawa'",
         "cultivar_name": "Arakawa",
@@ -5782,7 +5913,18 @@
         "climate_zone": "Onbekend",
         "source_scope": "Mr Maple A–Z-gids bevestigt hier alleen de naam, niet de teeltkenmerken."
       },
-      "photos": [],
+      "photos": [
+        {
+          "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Pescia%2C_museo_del_bonsai%2C_acer_palmatum_arakawa%2C_stile_moyogi_%28eretto_informale%29%2C_dal_giappone%2C_circa_40_anni.jpg",
+          "page_url": "https://commons.wikimedia.org/wiki/File:Pescia,_museo_del_bonsai,_acer_palmatum_arakawa,_stile_moyogi_(eretto_informale),_dal_giappone,_circa_40_anni.jpg",
+          "author": "Sailko",
+          "license": "CC BY-SA 4.0",
+          "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+          "credit": "Acer palmatum 'Arakawa' bonsai at Museo del Bonsai, Pescia · Sailko · CC BY-SA 4.0",
+          "season": "Onbekend",
+          "notes": "Commons file title identifies Acer palmatum Arakawa; bonsai specimen. Photo page/license checked via Wikimedia Commons. Not a foliage close-up."
+        }
+      ],
       "data_completeness": "name only; traits pending",
       "esveld_inventory_codes": [
         "c05"
@@ -17857,7 +17999,7 @@
       },
       "review_needed": true,
       "last_checked": "2026-10-22",
-      "photo_status": "no-photo-yet",
+      "photo_status": "licensed-photos-added",
       "name_data": {
         "botanical_name": "Acer campestre 'Acuminatilobum'",
         "cultivar_name": "Acuminatilobum",
@@ -17883,7 +18025,19 @@
         "climate_zone": "Onbekend",
         "source_scope": "Nog niet onderzocht; geen teeltadvies afgeleid uit de inventarislijst."
       },
-      "photos": [],
+      "photos": [
+        {
+          "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Acer_campestre_var._acuminatilobum_leaf.jpg",
+          "page_url": "https://commons.wikimedia.org/wiki/File:Acer_campestre_var._acuminatilobum_leaf.jpg",
+          "author": "Pipi69e",
+          "license": "Public domain (released by author)",
+          "license_url": "https://commons.wikimedia.org/wiki/File:Acer_campestre_var._acuminatilobum_leaf.jpg",
+          "credit": "Acer campestre var. acuminatilobum leaf.jpg by Pipi69e · Public domain (released by author)",
+          "season": "Lente",
+          "date_taken": "2009-04-25",
+          "notes": "De bestandspagina identificeert Acer campestre var. acuminatilobum; fotograaf heeft het beeld wereldwijd in het publieke domein vrijgegeven."
+        }
+      ],
       "data_completeness": "name-only",
       "esveld_inventory_codes": [
         "a06"
@@ -21160,7 +21314,7 @@
       },
       "review_needed": true,
       "last_checked": "2026-10-22",
-      "photo_status": "no-photo-yet",
+      "photo_status": "licensed-photos-added",
       "name_data": {
         "botanical_name": "Acer freemanii 'Autumn Blaze'",
         "cultivar_name": "Autumn Blaze",
@@ -21186,7 +21340,41 @@
         "climate_zone": "Onbekend",
         "source_scope": "Nog niet onderzocht; geen teeltadvies afgeleid uit de inventarislijst."
       },
-      "photos": [],
+      "photos": [
+        {
+          "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Acer_freemanii_Autumn_Blaze_0zz.jpg",
+          "page_url": "https://commons.wikimedia.org/wiki/File:Acer_freemanii_Autumn_Blaze_0zz.jpg",
+          "author": "David J. Stang",
+          "license": "CC BY-SA 4.0",
+          "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+          "credit": "Acer freemanii Autumn Blaze 0zz.jpg by David J. Stang · CC BY-SA 4.0",
+          "season": "Herfst",
+          "date_taken": "2005-09-11",
+          "notes": "Commons-bestandspagina identificeert Acer × freemanii “Autumn Blaze”; foto van David J. Stang, licentie CC BY-SA 4.0."
+        },
+        {
+          "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Acer_x_freemanii_Autumn_Blaze_1zz.jpg",
+          "page_url": "https://commons.wikimedia.org/wiki/File:Acer_x_freemanii_Autumn_Blaze_1zz.jpg",
+          "author": "David J. Stang",
+          "license": "CC BY-SA 4.0",
+          "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+          "credit": "Acer freemanii Autumn Blaze 1zz.jpg by David J. Stang · CC BY-SA 4.0",
+          "season": "Zomer",
+          "date_taken": "2006-08-06",
+          "notes": "Commons-bestandspagina identificeert Acer × freemanii “Autumn Blaze”; foto van David J. Stang, licentie CC BY-SA 4.0."
+        },
+        {
+          "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Acer_freemanii_Autumn_Blaze_2zz.jpg",
+          "page_url": "https://commons.wikimedia.org/wiki/File:Acer_freemanii_Autumn_Blaze_2zz.jpg",
+          "author": "David J. Stang",
+          "license": "CC BY-SA 4.0",
+          "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+          "credit": "Acer freemanii Autumn Blaze 2zz.jpg by David J. Stang · CC BY-SA 4.0",
+          "season": "Herfst",
+          "date_taken": "2005-09-11",
+          "notes": "Commons-bestandspagina identificeert Acer × freemanii “Autumn Blaze”; foto van David J. Stang, licentie CC BY-SA 4.0."
+        }
+      ],
       "data_completeness": "name-only",
       "esveld_inventory_codes": [
         "b07"
@@ -21517,6 +21705,21 @@
           "title": "Plantentuin Esveld — inventarislijst (door gebruiker aangeleverd PDF)",
           "url": "https://www.esveld.nl/catal/gedruktecat.pdf",
           "supports": "Presence of this Acer name in the inventory list only; not cultivar traits or historical claims"
+        },
+        {
+          "title": "Wikimedia Commons — cultivar-specific image and reuse license checked 2026-10-22",
+          "url": "https://commons.wikimedia.org/wiki/File:Acer_japonicum_‘Aconitifolium’_kz01.jpg",
+          "supports": "Exact cultivar image; Krzysztof Ziarnek, Kenraiz; CC BY-SA 4.0; license checked 2026-10-22"
+        },
+        {
+          "title": "Wikimedia Commons — cultivar-specific image and reuse license checked 2026-10-22",
+          "url": "https://commons.wikimedia.org/wiki/File:Acer_japonicum_'Aconitifolium'_kz1.jpg",
+          "supports": "Exact cultivar image; Kenraiz; CC BY-SA 4.0; license checked 2026-10-22"
+        },
+        {
+          "title": "Wikimedia Commons — cultivar-specific image and reuse license checked 2026-10-22",
+          "url": "https://commons.wikimedia.org/wiki/File:Acer_japonicum_'Aconitifolium'_JPG1.jpg",
+          "supports": "Exact cultivar image; Jean-Pol GRANDMONT; CC BY-SA 3.0; license checked 2026-10-22"
         }
       ],
       "historical_notes": {
@@ -21525,7 +21728,7 @@
       },
       "review_needed": true,
       "last_checked": "2026-10-22",
-      "photo_status": "no-photo-yet",
+      "photo_status": "has_photos",
       "name_data": {
         "botanical_name": "Acer japonicum 'Aconitifolium'",
         "cultivar_name": "Aconitifolium",
@@ -21551,7 +21754,57 @@
         "climate_zone": "Onbekend",
         "source_scope": "Nog niet onderzocht; geen teeltadvies afgeleid uit de inventarislijst."
       },
-      "photos": [],
+      "photos": [
+        {
+          "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Acer_japonicum_'Aconitifolium'_kz01.jpg",
+          "page_url": "https://commons.wikimedia.org/wiki/File:Acer_japonicum_‘Aconitifolium’_kz01.jpg",
+          "author": "Krzysztof Ziarnek, Kenraiz",
+          "license": "CC BY-SA 4.0",
+          "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+          "credit": "Acer japonicum 'Aconitifolium' kz01 by Krzysztof Ziarnek, Kenraiz · CC BY-SA 4.0",
+          "season": "Herfst",
+          "date_taken": "2018-11-07"
+        },
+        {
+          "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Acer_japonicum_'Aconitifolium'_kz1.jpg",
+          "page_url": "https://commons.wikimedia.org/wiki/File:Acer_japonicum_'Aconitifolium'_kz1.jpg",
+          "author": "Kenraiz",
+          "license": "CC BY-SA 4.0",
+          "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+          "credit": "Acer japonicum 'Aconitifolium' kz1 by Kenraiz · CC BY-SA 4.0",
+          "season": "Zomer",
+          "date_taken": "2011-06-26"
+        },
+        {
+          "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Acer_japonicum_'Aconitifolium'_JPG1.jpg",
+          "page_url": "https://commons.wikimedia.org/wiki/File:Acer_japonicum_'Aconitifolium'_JPG1.jpg",
+          "author": "Jean-Pol GRANDMONT",
+          "license": "CC BY-SA 3.0",
+          "license_url": "https://creativecommons.org/licenses/by-sa/3.0/",
+          "credit": "Acer japonicum 'Aconitifolium' JPG1 by Jean-Pol GRANDMONT · CC BY-SA 3.0",
+          "season": "Herfst",
+          "date_taken": "2008-10-04"
+        },
+        {
+          "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Acer_japonicum_%27Aconitifolium%27.jpg",
+          "page_url": "https://commons.wikimedia.org/wiki/File:Acer_japonicum_%27Aconitifolium%27.jpg",
+          "author": "A. Barra",
+          "license": "CC BY 3.0",
+          "license_url": "https://creativecommons.org/licenses/by/3.0/",
+          "credit": "Acer japonicum 'Aconitifolium' by A. Barra · CC BY 3.0",
+          "season": "Vrucht",
+          "date_taken": "2001-04"
+        },
+        {
+          "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Acer_japonicum_%27Aconitifolium%27_JPG1b.jpg",
+          "page_url": "https://commons.wikimedia.org/wiki/File:Acer_japonicum_%27Aconitifolium%27_JPG1b.jpg",
+          "author": "Jean-Pol GRANDMONT",
+          "license": "CC BY 3.0",
+          "license_url": "https://creativecommons.org/licenses/by/3.0/",
+          "credit": "Acer japonicum 'Aconitifolium' JPG1b by Jean-Pol GRANDMONT · CC BY 3.0",
+          "season": "Herfst"
+        }
+      ],
       "data_completeness": "name-only",
       "esveld_inventory_codes": [
         "c15"
@@ -23067,7 +23320,7 @@
       },
       "review_needed": true,
       "last_checked": "2026-10-22",
-      "photo_status": "no-photo-yet",
+      "photo_status": "licensed-photos-added",
       "name_data": {
         "botanical_name": "Acer negundo 'Auratum'",
         "cultivar_name": "Auratum",
@@ -23093,7 +23346,19 @@
         "climate_zone": "Onbekend",
         "source_scope": "Nog niet onderzocht; geen teeltadvies afgeleid uit de inventarislijst."
       },
-      "photos": [],
+      "photos": [
+        {
+          "url": "https://commons.wikimedia.org/wiki/Special:FilePath/A.negundoAuratum3.JPG",
+          "page_url": "https://commons.wikimedia.org/wiki/File:A.negundoAuratum3.JPG",
+          "author": "Aha",
+          "license": "CC BY-SA 3.0",
+          "license_url": "https://creativecommons.org/licenses/by-sa/3.0/",
+          "credit": "A.negundoAuratum3.JPG by Aha · CC BY-SA 3.0",
+          "season": "Zomer",
+          "date_taken": "2007-06-15",
+          "notes": "Commons-bestandspagina noemt expliciet Acer negundo Auratum; de pagina vermeldt CC BY-SA 3.0 en GFDL 1.2+ als licenties."
+        }
+      ],
       "data_completeness": "name-only",
       "esveld_inventory_codes": [
         "c05"
@@ -23166,7 +23431,41 @@
         "climate_zone": "Onbekend",
         "source_scope": "Nog niet onderzocht; geen teeltadvies afgeleid uit de inventarislijst."
       },
-      "photos": [],
+      "photos": [
+        {
+          "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Acer_negundo_'Aureomarginatum'_R0019899.JPG",
+          "page_url": "https://commons.wikimedia.org/wiki/File:Acer_negundo_'Aureomarginatum'_R0019899.JPG",
+          "author": "TeunSpaans",
+          "license": "CC BY-SA 3.0",
+          "license_url": "https://creativecommons.org/licenses/by-sa/3.0/",
+          "credit": "Acer negundo 'Aureomarginatum' R0019899 by TeunSpaans · CC BY-SA 3.0",
+          "season": "Herfst",
+          "date_taken": "2006-09-30",
+          "notes": "Gefotografeerd bij kwekerij Esveld; exacte cultivar benoemd op Commons."
+        },
+        {
+          "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Acer_negundo_'Aureomarginatum'_R0019900.JPG",
+          "page_url": "https://commons.wikimedia.org/wiki/File:Acer_negundo_'Aureomarginatum'_R0019900.JPG",
+          "author": "TeunSpaans",
+          "license": "CC BY-SA 3.0",
+          "license_url": "https://creativecommons.org/licenses/by-sa/3.0/",
+          "credit": "Acer negundo 'Aureomarginatum' R0019900 by TeunSpaans · CC BY-SA 3.0",
+          "season": "Herfst",
+          "date_taken": "2006-09-30",
+          "notes": "Gefotografeerd bij kwekerij Esveld; exacte cultivar benoemd op Commons."
+        },
+        {
+          "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Acer_negundo_'Aureomarginatum'_R0019901.JPG",
+          "page_url": "https://commons.wikimedia.org/wiki/File:Acer_negundo_'Aureomarginatum'_R0019901.JPG",
+          "author": "TeunSpaans",
+          "license": "CC BY-SA 3.0",
+          "license_url": "https://creativecommons.org/licenses/by-sa/3.0/",
+          "credit": "Acer negundo 'Aureomarginatum' R0019901 by TeunSpaans · CC BY-SA 3.0",
+          "season": "Herfst",
+          "date_taken": "2006-09-30",
+          "notes": "Gefotografeerd bij kwekerij Esveld; exacte cultivar benoemd op Commons."
+        }
+      ],
       "data_completeness": "name-only",
       "esveld_inventory_codes": [
         "b07"
@@ -23911,8 +24210,8 @@
       "synonyms": [],
       "group": "unknown",
       "traits": {
-        "nl": "Eigenschappen nog niet individueel uit de inventarislijst vastgesteld.",
-        "en": "Traits not yet individually established from the inventory list."
+        "nl": "Compacte Japanse esdoorn met 5–7-lobbig blad. Het jonge blad loopt oranje-goud met roze tot donkerroze randen uit, wordt later geel en daarna licht geelgroen; herfstkleur roze en oranje.",
+        "en": "Compact Japanese maple with 5–7-lobed leaves. Young foliage emerges orange-gold with pink to deep-pink margins, becomes yellow and later light greenish-yellow; autumn colour is pink and orange."
       },
       "history": {
         "nl": "Herkomst en introductiegeschiedenis nog niet onderzocht.",
@@ -23927,16 +24226,21 @@
         "nl": "Onbekend",
         "en": "Unknown"
       },
-      "evidence_status": "inventory-only",
+      "evidence_status": "supported",
       "evidence_label": {
-        "nl": "Naam aangetroffen in Esveld-inventarislijst; eigenschappen nog niet verrijkt",
-        "en": "Name found in Esveld inventory list; traits not yet enriched"
+        "nl": "Kenmerken gecontroleerd aan de hand van een individueel cultivarprofiel",
+        "en": "Traits checked against an individual cultivar profile"
       },
       "sources": [
         {
           "title": "Plantentuin Esveld — inventarislijst (door gebruiker aangeleverd PDF)",
           "url": "https://www.esveld.nl/catal/gedruktecat.pdf",
           "supports": "Presence of this Acer name in the inventory list only; not cultivar traits or historical claims"
+        },
+        {
+          "title": "Royal Horticultural Society — Acer palmatum “Akane”",
+          "url": "https://www.rhs.org.uk/plants/134609/acer-palmatum-akane-p/details",
+          "supports": "RHS-profiel ondersteunt bladkleur door het seizoen, bladlobben en volwassen hoogte/spreiding."
         }
       ],
       "historical_notes": {
@@ -23945,7 +24249,7 @@
       },
       "review_needed": true,
       "last_checked": "2026-10-22",
-      "photo_status": "no-photo-yet",
+      "photo_status": "no-photo-rights-verified",
       "name_data": {
         "botanical_name": "Acer palmatum 'Akane'",
         "cultivar_name": "Akane",
@@ -23954,14 +24258,17 @@
       },
       "species": "Acer palmatum",
       "plant_group": "Onbekend",
-      "growth_habit": "Onbekend",
+      "growth_habit": {
+        "nl": "Compacte, bladverliezende kleine boom.",
+        "en": "Compact deciduous small tree."
+      },
       "seasonal_characteristics": {
-        "spring": "Onbekend",
-        "summer": "Onbekend",
-        "autumn": "Onbekend"
+        "spring": "Oranje-goud met roze tot donkerroze bladranden.",
+        "summer": "Eerst helder geel, later licht geelgroen.",
+        "autumn": "Roze en oranje."
       },
       "growth": {
-        "height_after_10_years": "Onbekend",
+        "height_after_10_years": "2.5–4 m volgens RHS; Esveld noemt circa 1 m voor de afgebeelde plant, wat waarschijnlijk de specifieke plantmaat betreft.",
         "width_after_10_years": "Onbekend",
         "growth_rate": "Onbekend"
       },
@@ -23972,11 +24279,12 @@
         "source_scope": "Nog niet onderzocht; geen teeltadvies afgeleid uit de inventarislijst."
       },
       "photos": [],
-      "data_completeness": "name-only",
+      "data_completeness": "traits partly sourced; image rights not verified",
       "esveld_inventory_codes": [
         "c05",
         "c13"
-      ]
+      ],
+      "height_after_10_years": "2.5–4 m volgens RHS; Esveld noemt circa 1 m voor de afgebeelde plant, wat waarschijnlijk de specifieke plantmaat betreft."
     },
     {
       "id": "esveld-acer-palmatum-akegarasu",
@@ -23985,8 +24293,8 @@
       "synonyms": [],
       "group": "unknown",
       "traits": {
-        "nl": "Eigenschappen nog niet individueel uit de inventarislijst vastgesteld.",
-        "en": "Traits not yet individually established from the inventory list."
+        "nl": "Opgaande Japanse esdoorn met groot handvormig blad. Het blad loopt roodpaars uit, verkleurt in de zomer naar brons en wordt in de herfst roodbrons.",
+        "en": "Upright Japanese maple with large palmate leaves. Foliage emerges red-purple, turns bronze during summer and becomes reddish-bronze in autumn."
       },
       "history": {
         "nl": "Herkomst en introductiegeschiedenis nog niet onderzocht.",
@@ -24001,16 +24309,21 @@
         "nl": "Onbekend",
         "en": "Unknown"
       },
-      "evidence_status": "inventory-only",
+      "evidence_status": "supported",
       "evidence_label": {
-        "nl": "Naam aangetroffen in Esveld-inventarislijst; eigenschappen nog niet verrijkt",
-        "en": "Name found in Esveld inventory list; traits not yet enriched"
+        "nl": "Kenmerken gecontroleerd aan de hand van een individueel cultivarprofiel",
+        "en": "Traits checked against an individual cultivar profile"
       },
       "sources": [
         {
           "title": "Plantentuin Esveld — inventarislijst (door gebruiker aangeleverd PDF)",
           "url": "https://www.esveld.nl/catal/gedruktecat.pdf",
           "supports": "Presence of this Acer name in the inventory list only; not cultivar traits or historical claims"
+        },
+        {
+          "title": "Royal Horticultural Society — Acer palmatum “Akegarasu”",
+          "url": "https://www.rhs.org.uk/plants/74539/acer-palmatum-akegarasu-m/details",
+          "supports": "RHS-profiel ondersteunt groeiwijze, bladgrootte en seizoenskleuren."
         }
       ],
       "historical_notes": {
@@ -24019,7 +24332,7 @@
       },
       "review_needed": true,
       "last_checked": "2026-10-22",
-      "photo_status": "no-photo-yet",
+      "photo_status": "no-photo-rights-verified",
       "name_data": {
         "botanical_name": "Acer palmatum 'Akegarasu'",
         "cultivar_name": "Akegarasu",
@@ -24028,14 +24341,17 @@
       },
       "species": "Acer palmatum",
       "plant_group": "Onbekend",
-      "growth_habit": "Onbekend",
+      "growth_habit": {
+        "nl": "Opgaande, bladverliezende boom.",
+        "en": "Upright deciduous tree."
+      },
       "seasonal_characteristics": {
-        "spring": "Onbekend",
-        "summer": "Onbekend",
-        "autumn": "Onbekend"
+        "spring": "Roodpaars.",
+        "summer": "Bronskleurig.",
+        "autumn": "Roodbrons."
       },
       "growth": {
-        "height_after_10_years": "Onbekend",
+        "height_after_10_years": "RHS noemt ongeveer 3–4 m hoog; Esveld noemt een volwassen hoogte van circa 3 m.",
         "width_after_10_years": "Onbekend",
         "growth_rate": "Onbekend"
       },
@@ -24046,10 +24362,11 @@
         "source_scope": "Nog niet onderzocht; geen teeltadvies afgeleid uit de inventarislijst."
       },
       "photos": [],
-      "data_completeness": "name-only",
+      "data_completeness": "traits partly sourced; image rights not verified",
       "esveld_inventory_codes": [
         "c16"
-      ]
+      ],
+      "height_after_10_years": "RHS noemt ongeveer 3–4 m hoog; Esveld noemt een volwassen hoogte van circa 3 m."
     },
     {
       "id": "esveld-acer-palmatum-aki-tsuma-gaki",
@@ -24058,8 +24375,8 @@
       "synonyms": [],
       "group": "unknown",
       "traits": {
-        "nl": "Eigenschappen nog niet individueel uit de inventarislijst vastgesteld.",
-        "en": "Traits not yet individually established from the inventory list."
+        "nl": "Japanse esdoorn met groen blad dat in het voorjaar subtiel rood aan de bladpunten kan zijn; de herfstkleur is goudgeel.",
+        "en": "Japanese maple with green foliage that can have subtle red tips in spring; autumn colour is golden yellow."
       },
       "history": {
         "nl": "Herkomst en introductiegeschiedenis nog niet onderzocht.",
@@ -24074,16 +24391,21 @@
         "nl": "Onbekend",
         "en": "Unknown"
       },
-      "evidence_status": "inventory-only",
+      "evidence_status": "supported",
       "evidence_label": {
-        "nl": "Naam aangetroffen in Esveld-inventarislijst; eigenschappen nog niet verrijkt",
-        "en": "Name found in Esveld inventory list; traits not yet enriched"
+        "nl": "Kenmerken gecontroleerd aan de hand van een individueel cultivarprofiel",
+        "en": "Traits checked against an individual cultivar profile"
       },
       "sources": [
         {
           "title": "Plantentuin Esveld — inventarislijst (door gebruiker aangeleverd PDF)",
           "url": "https://www.esveld.nl/catal/gedruktecat.pdf",
           "supports": "Presence of this Acer name in the inventory list only; not cultivar traits or historical claims"
+        },
+        {
+          "title": "Plantentuin Esveld — Acer palmatum “Aki-tsuma-gaki”",
+          "url": "https://esveld.nl/htmldia/a/acpatg.php",
+          "supports": "Esveld-profiel ondersteunt voorjaarsblad, herfstkleur en hoogte na 10 jaar."
         }
       ],
       "historical_notes": {
@@ -24092,7 +24414,7 @@
       },
       "review_needed": true,
       "last_checked": "2026-10-22",
-      "photo_status": "no-photo-yet",
+      "photo_status": "no-photo-rights-verified",
       "name_data": {
         "botanical_name": "Acer palmatum 'Aki tsuma gaki'",
         "cultivar_name": "Aki tsuma gaki",
@@ -24101,14 +24423,17 @@
       },
       "species": "Acer palmatum",
       "plant_group": "Onbekend",
-      "growth_habit": "Onbekend",
+      "growth_habit": {
+        "nl": "Bladverliezende struik of kleine boom; exacte vorm niet nader geverifieerd.",
+        "en": "Deciduous shrub or small tree; exact habit not further verified."
+      },
       "seasonal_characteristics": {
-        "spring": "Onbekend",
-        "summer": "Onbekend",
-        "autumn": "Onbekend"
+        "spring": "Groen met roodachtige bladpunten.",
+        "summer": "Groen.",
+        "autumn": "Goudgeel."
       },
       "growth": {
-        "height_after_10_years": "Onbekend",
+        "height_after_10_years": "Ongeveer 2,5 m na 10 jaar volgens Esveld.",
         "width_after_10_years": "Onbekend",
         "growth_rate": "Onbekend"
       },
@@ -24119,10 +24444,11 @@
         "source_scope": "Nog niet onderzocht; geen teeltadvies afgeleid uit de inventarislijst."
       },
       "photos": [],
-      "data_completeness": "name-only",
+      "data_completeness": "traits partly sourced; image rights not verified",
       "esveld_inventory_codes": [
         "c05"
-      ]
+      ],
+      "height_after_10_years": "Ongeveer 2,5 m na 10 jaar volgens Esveld."
     },
     {
       "id": "esveld-acer-palmatum-akishino",
@@ -24743,6 +25069,11 @@
           "title": "Plantentuin Esveld — inventarislijst (door gebruiker aangeleverd PDF)",
           "url": "https://www.esveld.nl/catal/gedruktecat.pdf",
           "supports": "Presence of this Acer name in the inventory list only; not cultivar traits or historical claims"
+        },
+        {
+          "title": "Wikimedia Commons — cultivar photo and reuse license",
+          "url": "https://commons.wikimedia.org/wiki/File:Acer_palmatum_Ao_shime_no_uchi_3zz.jpg",
+          "supports": "Exact cultivar photo; David J. Stang; CC BY-SA 4.0; license checked 2026-10-22"
         }
       ],
       "historical_notes": {
@@ -24751,7 +25082,7 @@
       },
       "review_needed": true,
       "last_checked": "2026-10-22",
-      "photo_status": "no-photo-yet",
+      "photo_status": "licensed-photos-added",
       "name_data": {
         "botanical_name": "Acer palmatum 'Ao shime no uchi'",
         "cultivar_name": "Ao shime no uchi",
@@ -24777,7 +25108,45 @@
         "climate_zone": "Onbekend",
         "source_scope": "Nog niet onderzocht; geen teeltadvies afgeleid uit de inventarislijst."
       },
-      "photos": [],
+      "photos": [
+        {
+          "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Acer%20palmatum%20Ao%20shime%20no%20uchi%203zz.jpg",
+          "page_url": "https://commons.wikimedia.org/wiki/File:Acer_palmatum_Ao_shime_no_uchi_3zz.jpg",
+          "author": "David J. Stang",
+          "license": "CC BY-SA 4.0",
+          "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+          "credit": "Acer palmatum 'Ao shime no uchi' by David J. Stang · CC BY-SA 4.0",
+          "season": "Lente",
+          "date_taken": "2007-05-21"
+        },
+        {
+          "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Acer_palmatum_Ao_shime_no_uchi_0zz.jpg",
+          "page_url": "https://commons.wikimedia.org/wiki/File:Acer_palmatum_Ao_shime_no_uchi_0zz.jpg",
+          "author": "David J. Stang",
+          "license": "CC BY-SA 4.0",
+          "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+          "credit": "Acer palmatum 'Ao shime no uchi' by David J. Stang · CC BY-SA 4.0",
+          "season": "Lente"
+        },
+        {
+          "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Acer_palmatum_Ao_shime_no_uchi_1zz.jpg",
+          "page_url": "https://commons.wikimedia.org/wiki/File:Acer_palmatum_Ao_shime_no_uchi_1zz.jpg",
+          "author": "David J. Stang",
+          "license": "CC BY-SA 4.0",
+          "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+          "credit": "Acer palmatum 'Ao shime no uchi' by David J. Stang · CC BY-SA 4.0",
+          "season": "Lente"
+        },
+        {
+          "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Acer_palmatum_Ao_shime_no_uchi_2zz.jpg",
+          "page_url": "https://commons.wikimedia.org/wiki/File:Acer_palmatum_Ao_shime_no_uchi_2zz.jpg",
+          "author": "David J. Stang",
+          "license": "CC BY-SA 4.0",
+          "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+          "credit": "Acer palmatum 'Ao shime no uchi' by David J. Stang · CC BY-SA 4.0",
+          "season": "Lente"
+        }
+      ],
       "data_completeness": "name-only",
       "esveld_inventory_codes": [
         "c05"
@@ -25991,6 +26360,11 @@
           "title": "Plantentuin Esveld — inventarislijst (door gebruiker aangeleverd PDF)",
           "url": "https://www.esveld.nl/catal/gedruktecat.pdf",
           "supports": "Presence of this Acer name in the inventory list only; not cultivar traits or historical claims"
+        },
+        {
+          "title": "Wikimedia Commons — cultivar photo and reuse license",
+          "url": "https://commons.wikimedia.org/wiki/File:Acer_palmatum_%27Atropurpureum%27.jpeg",
+          "supports": "Exact cultivar photo; Lukfunk; CC BY-SA 4.0; license checked 2026-10-22"
         }
       ],
       "historical_notes": {
@@ -25999,7 +26373,7 @@
       },
       "review_needed": true,
       "last_checked": "2026-10-22",
-      "photo_status": "no-photo-yet",
+      "photo_status": "licensed-photos-added",
       "name_data": {
         "botanical_name": "Acer palmatum 'Atropurpureum'",
         "cultivar_name": "Atropurpureum",
@@ -26025,7 +26399,40 @@
         "climate_zone": "Onbekend",
         "source_scope": "Nog niet onderzocht; geen teeltadvies afgeleid uit de inventarislijst."
       },
-      "photos": [],
+      "photos": [
+        {
+          "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Acer%20palmatum%20'Atropurpureum'.jpeg",
+          "page_url": "https://commons.wikimedia.org/wiki/File:Acer_palmatum_'Atropurpureum'.jpeg",
+          "author": "Lukfunk",
+          "license": "CC BY-SA 4.0",
+          "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+          "credit": "Acer palmatum 'Atropurpureum' by Lukfunk · CC BY-SA 4.0",
+          "season": "Herfst",
+          "date_taken": "2020-10-18"
+        },
+        {
+          "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Acer_palmatum_atropurpureum_%28Rentilly%29.jpg",
+          "page_url": "https://commons.wikimedia.org/wiki/File:Acer_palmatum_atropurpureum_(Rentilly).jpg",
+          "author": "Tangopaso",
+          "license": "Public domain (released by copyright holder)",
+          "license_url": "https://commons.wikimedia.org/wiki/File:Acer_palmatum_atropurpureum_(Rentilly).jpg",
+          "credit": "Acer palmatum atropurpureum (Rentilly) by Tangopaso · public domain",
+          "season": "Herfst",
+          "date_taken": "2011-10-30",
+          "notes": "Commons-bestandspagina vermeldt dat de fotograaf het werk wereldwijd in het publieke domein heeft vrijgegeven."
+        },
+        {
+          "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Acer_palmatum_van_houte_thunb.ex_murr._atropurpureum.JPG",
+          "page_url": "https://commons.wikimedia.org/wiki/File:Acer_palmatum_van_houte_thunb.ex_murr._atropurpureum.JPG",
+          "author": "Stefano Bolognini",
+          "license": "Attribution (copyright-holder permission)",
+          "license_url": "https://commons.wikimedia.org/wiki/File:Acer_palmatum_van_houte_thunb.ex_murr._atropurpureum.JPG",
+          "credit": "Acer palmatum atropurpureum by Stefano Bolognini · attribution required",
+          "season": "Lente",
+          "date_taken": "2008-04-19",
+          "notes": "Commons-bestandspagina vermeldt toestemming voor hergebruik, inclusief commercieel gebruik, mits de rechthebbende correct wordt vermeld."
+        }
+      ],
       "data_completeness": "name-only",
       "esveld_inventory_codes": [
         "c05",
@@ -26148,7 +26555,7 @@
       },
       "review_needed": true,
       "last_checked": "2026-10-22",
-      "photo_status": "no-photo-yet",
+      "photo_status": "licensed-photos-added",
       "name_data": {
         "botanical_name": "Acer palmatum 'Aureum'",
         "cultivar_name": "Aureum",
@@ -26174,7 +26581,28 @@
         "climate_zone": "Onbekend",
         "source_scope": "Nog niet onderzocht; geen teeltadvies afgeleid uit de inventarislijst."
       },
-      "photos": [],
+      "photos": [
+        {
+          "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Acer_palmatum_Aureum_BG_Meise_37968.JPG",
+          "page_url": "https://commons.wikimedia.org/wiki/File:Acer_palmatum_Aureum_BG_Meise_37968.JPG",
+          "author": "Michael Wolf",
+          "license": "CC BY-SA 3.0",
+          "license_url": "https://creativecommons.org/licenses/by-sa/3.0/",
+          "credit": "Acer palmatum Aureum BG Meise 37968 by Michael Wolf · CC BY-SA 3.0",
+          "season": "Lente",
+          "date_taken": "2024-04-29"
+        },
+        {
+          "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Acer_palmatum_Aureum_BG_Meise_37969.JPG",
+          "page_url": "https://commons.wikimedia.org/wiki/File:Acer_palmatum_Aureum_BG_Meise_37969.JPG",
+          "author": "Michael Wolf",
+          "license": "CC BY-SA 3.0",
+          "license_url": "https://creativecommons.org/licenses/by-sa/3.0/",
+          "credit": "Acer palmatum Aureum BG Meise 37969 by Michael Wolf · CC BY-SA 3.0",
+          "season": "Lente",
+          "date_taken": "2024-04-29"
+        }
+      ],
       "data_completeness": "name-only",
       "esveld_inventory_codes": [
         "c22"
@@ -71506,7 +71934,7 @@
       },
       "review_needed": true,
       "last_checked": "2026-10-22",
-      "photo_status": "no-photo-yet",
+      "photo_status": "licensed-photos-added",
       "name_data": {
         "botanical_name": "Acer rubrum 'Autumn Flame'",
         "cultivar_name": "Autumn Flame",
@@ -71532,7 +71960,41 @@
         "climate_zone": "Onbekend",
         "source_scope": "Nog niet onderzocht; geen teeltadvies afgeleid uit de inventarislijst."
       },
-      "photos": [],
+      "photos": [
+        {
+          "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Acer_rubrum_Autumn_Flame_0zz.jpg",
+          "page_url": "https://commons.wikimedia.org/wiki/File:Acer_rubrum_Autumn_Flame_0zz.jpg",
+          "author": "David J. Stang",
+          "license": "CC BY-SA 4.0",
+          "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+          "credit": "Acer rubrum Autumn Flame 0zz.jpg by David J. Stang · CC BY-SA 4.0",
+          "season": "Zomer",
+          "date_taken": "2006-08-06",
+          "notes": "Commons-bestandspagina noemt expliciet Acer rubrum “Autumn Flame”; foto van David J. Stang. Licentie CC BY-SA 4.0."
+        },
+        {
+          "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Acer_rubrum_Autumn_Flame_3zz.jpg",
+          "page_url": "https://commons.wikimedia.org/wiki/File:Acer_rubrum_Autumn_Flame_3zz.jpg",
+          "author": "David J. Stang",
+          "license": "CC BY-SA 4.0",
+          "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+          "credit": "Acer rubrum Autumn Flame 3zz.jpg by David J. Stang · CC BY-SA 4.0",
+          "season": "Zomer",
+          "date_taken": "2006-08-06",
+          "notes": "Commons-bestandspagina noemt expliciet Acer rubrum “Autumn Flame”; foto van David J. Stang. Licentie CC BY-SA 4.0."
+        },
+        {
+          "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Acer_rubrum_Autumn_Flame_4zz.jpg",
+          "page_url": "https://commons.wikimedia.org/wiki/File:Acer_rubrum_Autumn_Flame_4zz.jpg",
+          "author": "David J. Stang",
+          "license": "CC BY-SA 4.0",
+          "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+          "credit": "Acer rubrum Autumn Flame 4zz.jpg by David J. Stang · CC BY-SA 4.0",
+          "season": "Herfst",
+          "date_taken": "2006-10-13",
+          "notes": "Commons-bestandspagina noemt expliciet Acer rubrum “Autumn Flame”; foto van David J. Stang. Licentie CC BY-SA 4.0."
+        }
+      ],
       "data_completeness": "name-only",
       "esveld_inventory_codes": [
         "b07"
@@ -75277,12 +75739,141 @@
         "climate_zone": "Onbekend",
         "source_scope": "Nog niet onderzocht; geen teeltadvies afgeleid uit de inventarislijst."
       },
-      "photos": [],
+      "photos": [
+        {
+          "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Acer_zoeschense_'annae'_R0019897.JPG",
+          "page_url": "https://commons.wikimedia.org/wiki/File:Acer_zoeschense_'annae'_R0019897.JPG",
+          "author": "TeunSpaans",
+          "license": "CC BY-SA 3.0",
+          "license_url": "https://creativecommons.org/licenses/by-sa/3.0/",
+          "credit": "Acer zoeschense 'annae' R0019897 by TeunSpaans · CC BY-SA 3.0",
+          "season": "Herfst",
+          "date_taken": "2006-09-30",
+          "notes": "Exacte naam op de Commons-bestandspagina; gefotografeerd bij kwekerij Esveld."
+        }
+      ],
       "data_completeness": "name-only",
       "esveld_inventory_codes": [
         "b07"
       ]
+    },
+    {
+      "id": "commons-acer-negundo-aureovariegatum",
+      "name": "Aureovariegatum",
+      "accepted_name": "Acer negundo 'Aureovariegatum'",
+      "synonyms": [],
+      "group": "unknown",
+      "traits": {
+        "nl": "Eigenschappen nog niet individueel uit de inventarislijst vastgesteld.",
+        "en": "Traits not yet individually established from the inventory list."
+      },
+      "history": {
+        "nl": "Herkomst en introductiegeschiedenis nog niet onderzocht.",
+        "en": "Origin and introduction history not yet researched."
+      },
+      "introduction_year": null,
+      "selector_or_introducer": {
+        "nl": "Onbekend",
+        "en": "Unknown"
+      },
+      "origin": {
+        "nl": "Onbekend",
+        "en": "Unknown"
+      },
+      "evidence_status": "photo-verified-name-only",
+      "evidence_label": {
+        "nl": "Cultivarnaam en foto-identificatie gecontroleerd; teelt- en historische gegevens nog niet onderzocht",
+        "en": "Cultivar name and photo identification checked; horticultural and historical data not yet researched"
+      },
+      "sources": [
+        {
+          "title": "Wikimedia Commons — cultivar-specifieke foto A",
+          "url": "https://commons.wikimedia.org/wiki/File:Acer_negundo_aureovar_A.jpg",
+          "supports": "Exacte identificatie Acer negundo Aureovariegatum en publieke-domeinverklaring van de fotograaf."
+        },
+        {
+          "title": "Wikimedia Commons — cultivar-specifieke foto B",
+          "url": "https://commons.wikimedia.org/wiki/File:Acer_negundo_aureovar_B.jpg",
+          "supports": "Exacte identificatie Acer negundo Aureovariegatum en publieke-domeinverklaring van de fotograaf."
+        },
+        {
+          "title": "Wikimedia Commons — cultivar-specifieke foto C",
+          "url": "https://commons.wikimedia.org/wiki/File:Acer_negundo_aureovar_C.jpg",
+          "supports": "Exacte identificatie Acer negundo Aureovariegatum en publieke-domeinverklaring van de fotograaf."
+        }
+      ],
+      "historical_notes": {
+        "nl": "Selecteur/introducteur en introductiejaar niet vastgesteld; niet afleiden uit de inventarislijst.",
+        "en": "Selector/introducer and introduction year not established; do not infer from the inventory list."
+      },
+      "review_needed": true,
+      "last_checked": "2026-10-22",
+      "photo_status": "licensed-photos-added",
+      "name_data": {
+        "botanical_name": "Acer negundo 'Aureovariegatum'",
+        "cultivar_name": "Aureovariegatum",
+        "synonyms": [],
+        "common_name": "Onbekend"
+      },
+      "species": "Acer negundo",
+      "plant_group": "Onbekend",
+      "growth_habit": "Onbekend",
+      "seasonal_characteristics": {
+        "spring": "Onbekend",
+        "summer": "Onbekend",
+        "autumn": "Onbekend"
+      },
+      "growth": {
+        "height_after_10_years": "Onbekend",
+        "width_after_10_years": "Onbekend",
+        "growth_rate": "Onbekend"
+      },
+      "site": {
+        "position": "Onbekend",
+        "soil": "Onbekend",
+        "climate_zone": "Onbekend",
+        "source_scope": "Nog niet onderzocht; geen teeltadvies afgeleid uit de inventarislijst."
+      },
+      "photos": [
+        {
+          "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Acer%20negundo%20aureovar%20A.jpg",
+          "page_url": "https://commons.wikimedia.org/wiki/File:Acer_negundo_aureovar_A.jpg",
+          "author": "Wouter Hagens",
+          "license": "Public domain (released by author)",
+          "license_url": "https://commons.wikimedia.org/wiki/File:Acer_negundo_aureovar_A.jpg",
+          "credit": "Acer negundo aureovar A by Wouter Hagens · released into the public domain",
+          "season": "Lente",
+          "date_taken": "2007-05-19",
+          "notes": "De Commons-bestandspagina noemt expliciet Acer negundo Aureovariegatum; de fotograaf heeft het werk in het publieke domein vrijgegeven."
+        },
+        {
+          "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Acer%20negundo%20aureovar%20B.jpg",
+          "page_url": "https://commons.wikimedia.org/wiki/File:Acer_negundo_aureovar_B.jpg",
+          "author": "Wouter Hagens",
+          "license": "Public domain (released by author)",
+          "license_url": "https://commons.wikimedia.org/wiki/File:Acer_negundo_aureovar_B.jpg",
+          "credit": "Acer negundo aureovar B by Wouter Hagens · released into the public domain",
+          "season": "Lente",
+          "date_taken": "2007-05-19",
+          "notes": "De Commons-bestandspagina noemt expliciet Acer negundo Aureovariegatum; de fotograaf heeft het werk in het publieke domein vrijgegeven."
+        },
+        {
+          "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Acer%20negundo%20aureovar%20C.jpg",
+          "page_url": "https://commons.wikimedia.org/wiki/File:Acer_negundo_aureovar_C.jpg",
+          "author": "Wouter Hagens",
+          "license": "Public domain (released by author)",
+          "license_url": "https://commons.wikimedia.org/wiki/File:Acer_negundo_aureovar_C.jpg",
+          "credit": "Acer negundo aureovar C by Wouter Hagens · released into the public domain",
+          "season": "Lente",
+          "date_taken": "2007-05-19",
+          "notes": "De Commons-bestandspagina noemt expliciet Acer negundo Aureovariegatum; de fotograaf heeft het werk in het publieke domein vrijgegeven."
+        }
+      ],
+      "data_completeness": "photos-and-name",
+      "esveld_inventory_codes": [
+        "c05"
+      ]
     }
   ],
-  "photo_count": 9
+  "photo_count": 50
 }

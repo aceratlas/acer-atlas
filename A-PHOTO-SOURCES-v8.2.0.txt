@@ -1,0 +1,10 @@
+Acer Atlas v8.2.0 — A-fotobatch 8
+
+Nieuw record: Acer negundo 'Aureovariegatum' (synoniem: Aureovar). Drie cultivar-specifieke foto's toegevoegd.
+
+Bestanden / bron / fotograaf / rechten:
+- https://commons.wikimedia.org/wiki/File:Acer_negundo_aureovar_A.jpg — Wouter Hagens — publiek domein, expliciet vrijgegeven door de auteur.
+- https://commons.wikimedia.org/wiki/File:Acer_negundo_aureovar_B.jpg — Wouter Hagens — publiek domein, expliciet vrijgegeven door de auteur.
+- https://commons.wikimedia.org/wiki/File:Acer_negundo_aureovar_C.jpg — Wouter Hagens — publiek domein, expliciet vrijgegeven door de auteur.
+
+De foto's laden vanaf Wikimedia Commons; ze zijn niet lokaal in deze ZIP opgenomen. De rest van de app en bestaande records zijn behouden.
