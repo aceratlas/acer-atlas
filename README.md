@@ -1,3 +1,20 @@
+## Latest update — v8.2.27 (photo batch 34)
+- Added a CC BY 3.0 photo reference for 'Oshio beni' by Jean-Pol GRANDMONT; source, license and attribution are recorded.
+- 1,016 cultivar records; 87 photo references across 59 cultivars with photos (957 without photo references).
+- ZIP integrity and JavaScript syntax checks passed; browser testing not performed. GitHub unchanged.
+
+## Latest update — v8.2.26 (photo batch 33)
+- Added a CC0 1.0 photo reference for 'Kashima yatsubusa'; source, photographer/uploader, license and credit recorded.
+- 1,016 cultivar records; 86 photo references across 58 cultivars with photos.
+- ZIP integrity checked; browser testing not performed. GitHub unchanged.
+
+## Latest update — v8.2.24 (photo batch 31)
+
+- Added one licensed Wikimedia Commons photo reference for Acer palmatum 'Red Select' (David J. Stang, CC BY-SA 4.0).
+- Database: 1,016 cultivar records, 84 photo references, 56 records with photos, 960 without a photo reference.
+- Photo source and audit details are in PHOTO-SOURCES-v8.2.24.txt and PHOTO-AUDIT-v8.2.24.txt.
+- App/database cache key updated to build=8224. ZIP and JavaScript syntax checks passed; browser testing not performed. GitHub has not been changed.
+
 ## Latest update — v8.2.13 (photo batch 21 / source audit)
 
 - Added cultivar-specific Wikimedia Commons photo references for Acer palmatum 'Waterfall' and 'Viridis', with source page, photographer, license and credit.
@@ -191,3 +208,11 @@ Fotobatch 18 (v8.2.10): zes extra gecontroleerde fotoverwijzingen voor cultivars
 - Twee gecontroleerde Commons-fotoverwijzingen toegevoegd: Acer palmatum 'Inaba-shidare' (Don McCulley, CC BY-SA 4.0) en Acer palmatum 'Garnet' (David J. Stang, CC BY-SA 4.0).
 - Bronpagina, fotograaf en licentie vastgelegd in `PHOTO-SOURCES-v8.2.11.txt` en `cultivar-database.json`.
 - Geen nieuwe cultivarrecords toegevoegd; live browser-test niet uitgevoerd.
+
+
+## Current photo batch
+
+Acer Atlas v8.2.20 — photo status audit (based on batch 27). Added cultivar-specific photo references for Acer japonicum 'Vitifolium' and Acer palmatum 'Yatsubusa'. Source page, author, license URL, attribution and capture date are recorded in cultivar-database.json. Images are loaded from Wikimedia Commons and are not embedded in this ZIP.
+
+
+Version 8.2.20 audit: photo_status fields were normalized to match actual photo arrays; no new images or cultivar records were added. See PHOTO-AUDIT-v8.2.20.txt.

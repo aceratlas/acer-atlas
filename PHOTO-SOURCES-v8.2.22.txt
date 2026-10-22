@@ -1,0 +1,23 @@
+Acer Atlas v8.2.22 — PHOTO SOURCES / BATCH 29
+
+Added to existing cultivar records (no new cultivar records):
+
+1) Acer palmatum 'Deshojo'
+File page: https://commons.wikimedia.org/wiki/File:Acer_palmatum_%27Deshojo%27_-_geograph.org.uk_-_6511671.jpg
+Image URL: https://commons.wikimedia.org/wiki/Special:FilePath/Acer_palmatum_%27Deshojo%27_-_geograph.org.uk_-_6511671.jpg
+Photographer: Jonathan Billinger
+License: CC BY-SA 2.0
+License URL: https://creativecommons.org/licenses/by-sa/2.0/
+Credit: Acer palmatum 'Deshojo' by Jonathan Billinger · CC BY-SA 2.0
+Source page explicitly identifies the cultivar and license. Date shown: 16 June 2020.
+
+2) Acer palmatum 'Mikawa yatsubusa'
+File page: https://commons.wikimedia.org/wiki/File:Acer_palmatum_Yatsubusa_0zz.jpg
+Image URL: https://commons.wikimedia.org/wiki/Special:FilePath/Acer_palmatum_Yatsubusa_0zz.jpg
+Photographer: David J. Stang
+License: CC BY-SA 4.0
+License URL: https://creativecommons.org/licenses/by-sa/4.0/
+Credit: Acer palmatum 'Yatsubusa' by David J. Stang · CC BY-SA 4.0
+Commons categorizes this image under Acer palmatum 'Mikawa yatsubusa'; page description names Acer palmatum 'Yatsubusa'. Date shown: 19 April 2006.
+
+Images are externally loaded from Wikimedia Commons and are not embedded in this ZIP.

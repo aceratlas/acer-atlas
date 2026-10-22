@@ -1,0 +1,21 @@
+ACER ATLAS PHOTO AUDIT v8.2.25 — BATCH 32
+
+Base: Acer Atlas v8.2.24-red-select-photo-batch31.zip
+Change: added one licensed photo reference to the existing Acer palmatum 'Ornatum' record. No cultivar records added or removed.
+
+Photo source: https://commons.wikimedia.org/wiki/File:Acer_palmatum_var._dissectum_Ornatum_0zz.jpg
+Author: David J. Stang
+License: CC BY-SA 4.0
+License URL: https://creativecommons.org/licenses/by-sa/4.0/
+Credit line: Acer palmatum var. dissectum 'Ornatum' by David J. Stang · CC BY-SA 4.0
+Source description states the image is Acer palmatum var. dissectum 'Ornatum', photographed at Brookside Gardens on 2007-05-22.
+
+Cultivar records: 1016
+Cultivars with photos: 57
+Cultivars without photos: 959
+Photo references: 85
+Duplicate image URLs: 0
+Duplicate source page URLs: 0
+
+Validation: JSON parsed successfully; photo totals calculated from records; duplicate URL check completed; JavaScript syntax checks passed for script4.js and sw.js; ZIP integrity test passed after packaging.
+Caveat: this checks metadata and archive integrity, not live browser behavior. The image is loaded externally from Wikimedia Commons and is not embedded in the ZIP.

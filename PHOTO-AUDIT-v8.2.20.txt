@@ -1,0 +1,56 @@
+Acer Atlas v8.2.20 — database- en fotoverwijzingsaudit
+Datum: 22 oktober 2026
+
+Totaal cultivarrecords: 1016
+Records met ten minste één foto: 50
+Records zonder foto: 966
+Fotoverwijzingen (records[].photos): 78
+database.photo_count: 78
+Foto-statuswaarden genormaliseerd: 2 records
+
+Controle verplichte metadata:
+- Ontbrekend url: 0
+- Ontbrekend page_url: 0
+- Ontbrekend author: 0
+- Ontbrekend license: 0
+- Ontbrekend license_url: 0
+- Ontbrekend credit: 0
+- Dubbele afbeeldings-URL extra voorkomens: 0
+- Dubbele bronpagina-URL extra voorkomens: 0
+
+Belangrijk:
+- Deze batch is een metadata-/statuscorrectie; er zijn geen nieuwe afbeeldingen toegevoegd.
+- Volledigheid van velden betekent niet dat alle externe bronpagina’s op dit moment live beschikbaar zijn.
+- App is niet live in een browser getest.
+- GitHub is niet aangepast.
+
+Statuscorrecties:
+- Acer palmatum 'Seigen'
+- Acer palmatum 'Sumi-nagashi'
+
+Ontbrekende fotoverwijzingen per beginletter (naam):
+- A: 58
+- B: 53
+- C: 40
+- D: 27
+- E: 29
+- F: 25
+- G: 49
+- H: 62
+- I: 19
+- J: 20
+- K: 82
+- L: 26
+- M: 90
+- N: 31
+- O: 36
+- P: 31
+- Q: 1
+- R: 62
+- S: 106
+- T: 48
+- U: 11
+- V: 9
+- W: 26
+- Y: 24
+- Z: 1

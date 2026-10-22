@@ -1,0 +1,19 @@
+Acer Atlas v8.2.24 — PHOTO AUDIT / BATCH 31
+
+Base: Acer Atlas v8.2.23 batch 30, verified from ZIP in this session.
+Database records: 1016
+Photo references: 84
+Cultivar records with at least one photo: 56
+Cultivar records without photos: 960
+New cultivar records: 0
+New photo references: 1
+New photo: Red Select (David J. Stang, CC BY-SA 4.0).
+Duplicate image URLs after update: 0
+Duplicate source page URLs after update: 0
+Database JSON parse: PASS
+Record count consistency: PASS
+Photo count consistency: PASS
+ZIP integrity: tested after creation.
+JavaScript syntax: checked separately after creation.
+Browser runtime: NOT tested.
+All previous source pages: NOT re-opened in this batch; this is not a full legal re-audit.

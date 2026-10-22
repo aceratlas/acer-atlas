@@ -1,3 +1,23 @@
+Acer Atlas v8.2.27 — photo batch 34 (2026-10-22)
+- Added a verified Wikimedia Commons photo reference for Acer palmatum 'Oshio beni' to its existing record.
+- Photographer: Jean-Pol GRANDMONT; license CC BY 3.0; attribution and license URL stored in photo metadata.
+- Updated database photo_count from actual records (87 references across 59 records with photos).
+- Updated visible app version, root version attribute, database fetch cache query to build=8227, and service-worker cache key.
+- ZIP integrity and database JSON validation passed. Browser testing not performed; GitHub unchanged.
+
+Acer Atlas v8.2.26 — photo batch 33 (2026-10-22)
+- Added a CC0 1.0 photo reference for Acer palmatum 'Kashima yatsubusa' to its existing record, with source, photographer/uploader, license URL, and credit.
+- Updated database photo_count from actual records (86 references across 58 records with photos).
+- Updated visible app version, root version attribute, database fetch cache query to build=8226, and service-worker cache key.
+- ZIP integrity and database JSON validation passed. Browser testing not performed; GitHub unchanged.
+
+Acer Atlas v8.2.16 — metadata correction (2026-10-22)
+- Rebuilt from the user-uploaded v8.2.15 ZIP, which passed ZIP integrity validation.
+- Corrected cultivar-database.json photo_count from 70 to 72, matching the sum of all records[].photos arrays.
+- Recomputed photo totals and per-letter missing-photo counts in PHOTO-AUDIT-v8.2.16.txt.
+- Updated visible app version and database fetch cache query to build=8216; service-worker cache key refreshed.
+- No cultivar records or image references were added or removed. Browser testing not performed.
+
 Acer Atlas v8.2.13 — batch 21 / photo-source audit (2026-10-22)
 - Added verified Wikimedia Commons photo references for Acer palmatum 'Waterfall' (Mark Pellegrini, CC BY-SA 2.5) and 'Viridis' (David J. Stang, CC BY-SA 4.0).
 - Corrected stale photo_status values on records that already contained photo metadata.
@@ -113,3 +133,43 @@ Acer Atlas v8.2.15 — fotobatch 23 (R–S)
 - Added Commons image references for Seigen and Sumi-nagashi to existing records.
 - Recorded source page, photographer, license URL, attribution, and capture date where available.
 - Updated version/cache label; no new cultivar records.
+
+
+Acer Atlas v8.2.17 — fotobatch 25 (R–S)
+- Added cultivar-specific Wikimedia Commons photo references for Acer palmatum 'Shin-deshōjō' and 'Shigitatsu sawa'.
+- Recorded exact source pages, photographers, CC BY-SA 3.0 license URLs and attribution text.
+- Recalculated photo_count from the records[].photos arrays.
+- Preserved all 1,016 cultivar records; no image was cropped or edited.
+- Updated app version, database build query, and service-worker cache key.
+
+
+Acer Atlas v8.2.19 — fotobatch 27 (V–Y)
+- Added cultivar-specific Wikimedia Commons photo references for Acer japonicum 'Vitifolium' and Acer palmatum 'Yatsubusa'.
+- Recorded original file pages, photographer attribution, CC license and license URLs, attribution text and capture dates.
+- Recalculated photo_count from records[].photos; preserved all 1,016 cultivar records.
+- Updated visible app version, database build query and service-worker cache key.
+- Images remain externally hosted on Wikimedia Commons; no binaries embedded or edited.
+
+
+Acer Atlas v8.2.20 — photo status audit
+- Normalized photo_status values to match whether records actually contain photo references.
+- Recalculated database photo_count from records[].photos; no photos or cultivar records added/removed.
+- Updated app version and service-worker cache key.
+- Audited required photo metadata fields and duplicate image/source URLs.
+
+
+v8.2.21 — Fotobatch 28: toegevoegd: Acer palmatum Shaina en Red Pygmy met Commons-bron en licentie. Geen nieuwe cultivarrecords.
+
+
+Acer Atlas v8.2.22 — fotobatch 29 (2026-10-22)
+- Added CC-licensed cultivar-specific photo references for Deshōjō and Mikawa yatsubusa.
+- Updated database/app version and cache-busting build query.
+- No new cultivar records.
+
+
+Acer Atlas v8.2.24 — photo batch 31 (2026-10-22)
+- Added one verified Wikimedia Commons photo reference for Acer palmatum 'Red Select'.
+- Photographer: David J. Stang; CC BY-SA 4.0; source page, license URL and attribution stored in the existing cultivar record.
+- Database records retained: 1016; photo references: 84; records with photos: 56; records without photos: 960.
+- Updated visible app version, database cache query to build=8224, and service-worker cache key.
+- ZIP integrity and JavaScript syntax checks passed; browser runtime not tested.

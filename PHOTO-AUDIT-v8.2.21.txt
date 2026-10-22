@@ -1,0 +1,52 @@
+Acer Atlas v8.2.21 — fotoaudit (batch 28: Shaina en Red Pygmy)
+Datum: 22 oktober 2026
+
+Totaal cultivarrecords: 1016
+Records met ten minste één foto: 52
+Records zonder foto: 964
+Fotoverwijzingen (records[].photos): 80
+database.photo_count: 80
+
+Controle verplichte metadata:
+- Ontbrekend url: 0
+- Ontbrekend page_url: 0
+- Ontbrekend author: 0
+- Ontbrekend license: 0
+- Ontbrekend license_url: 0
+- Ontbrekend credit: 0
+- Dubbele afbeeldings-URL extra voorkomens: 0
+- Dubbele bronpagina-URL extra voorkomens: 0
+
+Nieuwe verwijzingen:
+- Acer palmatum 'Shaina' — Krzysztof Golik — CC BY-SA 4.0
+- Acer palmatum 'Red Pygmy' — Dinkum — CC BY-SA 3.0
+
+Beide foto's zijn gekoppeld aan bestaande records. De afbeeldingen worden extern via Wikimedia Commons geladen; ze zijn niet in deze ZIP ingebed.
+JavaScript-syntaxis en ZIP-integriteit zijn gecontroleerd. App niet live in browser getest. GitHub niet aangepast.
+
+Records zonder foto per beginletter (naam):
+- A: 58
+- B: 53
+- C: 40
+- D: 27
+- E: 29
+- F: 25
+- G: 49
+- H: 62
+- I: 19
+- J: 20
+- K: 82
+- L: 26
+- M: 90
+- N: 31
+- O: 36
+- P: 31
+- Q: 1
+- R: 61
+- S: 105
+- T: 48
+- U: 11
+- V: 9
+- W: 26
+- Y: 24
+- Z: 1

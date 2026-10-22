@@ -1,0 +1,8 @@
+Acer Atlas v8.2.16 — metadata correction
+Rebuilt from the uploaded v8.2.15 ZIP.
+ZIP source bytes: 494367
+Source files: 57
+Records: 1016
+Actual photo references: 72
+Records with photos: 44
+No photo binaries or cultivar records were added/removed.

@@ -1,0 +1,19 @@
+Acer Atlas v8.2.23 — PHOTO AUDIT / BATCH 30
+
+Base: Acer Atlas v8.2.22 batch 29, verified from the ZIP in this session.
+Database records: 1016
+Photo references: 83
+Cultivar records with at least one photo: 55
+Cultivar records without photos: 961
+New cultivar records: 0
+New photo references: 1
+New photo: Kiyohime (David J. Stang, CC BY-SA 4.0).
+Duplicate image URLs after update: 0
+Duplicate source page URLs after update: 0
+Database JSON parse: PASS
+Record count consistency: PASS
+Photo count consistency: PASS
+ZIP integrity: tested after creation.
+JavaScript syntax: checked separately after creation where available.
+Browser runtime: NOT tested.
+All previous source pages: NOT re-opened in this batch; this is not a full legal re-audit.

@@ -1,0 +1,25 @@
+Acer Atlas v8.2.18 — fotobatch 26 (T–U)
+Datum: 22 oktober 2026
+Basis: gebruikersupload Acer Atlas v8.2.15, metadataherstel v8.2.16 en batch 25 (v8.2.17).
+
+1. Acer palmatum 'Tamukeyama'
+- Commons-bestand: Acer palmatum var. dissectum Tamukeyama 0zz.jpg
+- Bestandspagina: https://commons.wikimedia.org/wiki/File:Acer_palmatum_var._dissectum_Tamukeyama_0zz.jpg
+- Fotograaf: David J. Stang
+- Licentie: CC BY-SA 4.0
+- Licentiepagina: https://creativecommons.org/licenses/by-sa/4.0/
+- Naamsvermelding: Acer palmatum 'Tamukeyama' by David J. Stang · CC BY-SA 4.0
+- Opnamedatum: 12 oktober 2006 (Commons metadata).
+- Cultivar-identiteit en licentie staan op de Commons-bestandspagina.
+
+2. Acer palmatum 'Ukigumo'
+- Commons-bestand: Acer palmatum Ukigumo 1zz.jpg
+- Bestandspagina: https://commons.wikimedia.org/wiki/File:Acer_palmatum_Ukigumo_1zz.jpg
+- Fotograaf: David J. Stang
+- Licentie: CC BY-SA 4.0
+- Licentiepagina: https://creativecommons.org/licenses/by-sa/4.0/
+- Naamsvermelding: Acer palmatum 'Ukigumo' by David J. Stang · CC BY-SA 4.0
+- Opnamedatum: 21 mei 2007 (Commons metadata).
+- Cultivar-identiteit en licentie staan op de Commons-bestandspagina.
+
+Wijzigingen: 2 fotoreferenties toegevoegd aan bestaande records; geen nieuwe cultivars; geen foto binaries gedownload of bewerkt. Foto's laden via Wikimedia Commons Special:FilePath.

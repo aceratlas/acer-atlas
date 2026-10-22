@@ -1,0 +1,18 @@
+Acer Atlas v8.2.22 — PHOTO AUDIT / BATCH 29
+
+Base: user-supplied Acer Atlas v8.2.21 batch 28.
+Database records: 1016
+Photo references: 82
+Cultivar records with at least one photo: 54
+Cultivar records without photos: 962
+New cultivar records: 0
+New photo references: 2
+New photos: Deshōjō (Jonathan Billinger, CC BY-SA 2.0) and Mikawa yatsubusa (David J. Stang, CC BY-SA 4.0).
+Duplicate image URLs after update: 0
+Database JSON parse: PASS
+Record count consistency: PASS
+Photo count consistency: PASS
+ZIP integrity: tested after creation.
+JavaScript syntax: checked separately after creation.
+Browser runtime: NOT tested.
+All previous source pages: NOT re-opened in this batch; this is not a full legal re-audit.

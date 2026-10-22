@@ -1,0 +1,23 @@
+ACER ATLAS PHOTO AUDIT v8.2.27 — 2026-10-22
+
+Source build: v8.2.26-kashima-yatsubusa-photo-batch33.zip
+Input ZIP integrity: passed
+
+Database totals (computed from cultivar-database.json):
+- Cultivar records: 1016
+- Records with one or more photo references: 59
+- Records without photo references: 957
+- Total photo references: 87
+- Duplicate image URLs: 0
+- Duplicate source page URLs: 0
+- Photo entries missing required metadata fields (url, page_url, author, license, license_url, credit): 0
+
+Batch 34 change:
+- Added one photo reference to existing record 'Oshio beni' (esveld-acer-palmatum-oshio-beni).
+- Wikimedia Commons identifies the cultivar, photographer Jean-Pol GRANDMONT, date 2009-04-19 and CC BY 3.0 license.
+- No cultivar records created or removed.
+- Image itself is loaded from Wikimedia Commons and is not embedded in the ZIP.
+
+Validation: database JSON parsed successfully; source-page metadata reviewed; ZIP integrity checked after writing.
+Browser/live app test: not performed. Earlier image source pages were not all re-opened during this batch.
+GitHub: not changed.

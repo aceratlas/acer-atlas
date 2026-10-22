@@ -1,0 +1,47 @@
+Acer Atlas v8.2.16 — database- en fotometadata-audit
+Datum: 22 oktober 2026
+
+Basis: door gebruiker aangeleverde Acer Atlas v8.2.15 ZIP.
+
+Totaal records: 1016
+Records met ten minste één foto: 44
+Records zonder foto: 972
+Fotoverwijzingen (geteld uit alle records[].photos-arrays): 72
+database.photo_count: 72 (gecorrigeerd; komt nu overeen met de arrays)
+
+Letter | Zonder foto / totaal records
+---|---:
+A | 58 / 74
+B | 53 / 58
+C | 40 / 41
+D | 27 / 28
+E | 29 / 33
+F | 25 / 26
+G | 49 / 50
+H | 62 / 62
+I | 19 / 20
+J | 20 / 20
+K | 82 / 83
+L | 26 / 27
+M | 90 / 90
+N | 31 / 32
+O | 36 / 40
+P | 31 / 31
+Q | 1 / 1
+R | 62 / 62
+S | 108 / 113
+T | 49 / 49
+U | 12 / 12
+V | 10 / 11
+W | 26 / 27
+X | 0 / 0
+Y | 25 / 25
+Z | 1 / 1
+
+Controle:
+- ZIP-integriteit: getest met zipfile.testzip(); geen fout gevonden in de bron- of uitvoer-ZIP.
+- Aantal bestanden in de bron-ZIP: 57.
+- Geen cultivars of foto's toegevoegd of verwijderd; alleen versie-, cache- en fototellingmetadata bijgewerkt.
+- De vorige audit had 72 fotoverwijzingen maar database.photo_count stond op 70; dit is hersteld naar 72.
+- De lettertelling is opnieuw uit records berekend; Ō- wordt bij O geteld.
+- De app is niet live in een browser getest.

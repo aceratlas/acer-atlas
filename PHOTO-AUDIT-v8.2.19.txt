@@ -1,0 +1,47 @@
+Acer Atlas v8.2.19 — database- en fotocontrole
+Datum: 22 oktober 2026
+
+Totaal cultivarrecords: 1016
+Records met ten minste één foto: 50
+Records zonder foto: 966
+Fotoverwijzingen (records[].photos): 78
+database.photo_count: 78
+
+Letter | Zonder foto / totaal records
+---|---:
+A | 58 / 74
+B | 53 / 58
+C | 40 / 41
+D | 27 / 28
+E | 29 / 33
+F | 25 / 26
+G | 49 / 50
+H | 62 / 62
+I | 19 / 20
+J | 20 / 20
+K | 82 / 83
+L | 26 / 27
+M | 90 / 90
+N | 31 / 32
+O | 36 / 39
+P | 31 / 31
+Q | 1 / 1
+R | 62 / 62
+S | 106 / 113
+T | 48 / 49
+U | 11 / 12
+V | 9 / 11
+W | 26 / 27
+Y | 24 / 25
+Z | 1 / 1
+
+Batch 27 additions:
+- Acer japonicum 'Vitifolium' — peganum (Steve Law), CC BY-SA 2.0.
+- Acer palmatum 'Yatsubusa' — Cliff, CC BY 2.0.
+
+Validation:
+- JSON parsed successfully.
+- All photo URLs have source page, author, license, license URL and attribution.
+- No duplicate photo URLs found across database.
+- ZIP integrity test run after packaging.
+- JavaScript syntax checked with Node.js if available; browser runtime not tested.

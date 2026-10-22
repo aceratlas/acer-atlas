@@ -1,0 +1,12 @@
+Acer Atlas v8.2.26 — photo batch 33 (2026-10-22)
+
+Cultivar: Acer palmatum 'Kashima yatsubusa'
+Existing record ID: esveld-acer-palmatum-kashima-yatsubusa
+Original Commons page: https://commons.wikimedia.org/wiki/File:Acer_palmatum_%27Kashima_Yatsubusa%27_-_Asticou_Azalea_Garden_-_Northeast_Harbor,_Maine_-_DSC03516.jpg
+Image URL: https://commons.wikimedia.org/wiki/Special:FilePath/Acer_palmatum_%27Kashima_Yatsubusa%27_-_Asticou_Azalea_Garden_-_Northeast_Harbor%2C_Maine_-_DSC03516.jpg
+Photographer/uploader: Daderot
+License: CC0 1.0 Universal Public Domain Dedication
+License URL: https://creativecommons.org/publicdomain/zero/1.0/deed.en
+Attribution credit stored in record: Acer palmatum 'Kashima Yatsubusa' by Daderot · CC0 1.0
+Evidence checked: Wikimedia Commons page explicitly names the cultivar in the file title and description; page lists Daderot as author and CC0 1.0 as license.
+Image file itself is externally loaded; it is not embedded in this ZIP.

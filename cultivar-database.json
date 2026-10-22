@@ -1,8 +1,8 @@
 {
   "app": "Acer Atlas",
-  "version": "8.2.15",
+  "version": "8.2.27",
   "record_count": 1016,
-  "note": "Acer Atlas v8.2.15 — fotobatch 23 (R–S): added verified Wikimedia Commons photo references for Seigen and Sumi-nagashi to existing records; no cultivar records added. Sources and CC license details recorded.",
+  "note": "Acer Atlas v8.2.19 — fotobatch 27 (V–Y). Twee cultivar-specifieke Wikimedia Commons-fotoreferenties toegevoegd aan bestaande records; bron- en licentiegegevens vastgelegd. Geen cultivarrecords toegevoegd of verwijderd.",
   "records": [
     {
       "id": "cultivar-ariadne",
@@ -1461,7 +1461,7 @@
       "review_needed": true,
       "last_checked": "2026-10-21",
       "esveld_review_status": "search-link-only",
-      "photo_status": "no-photo-yet",
+      "photo_status": "photo-present-rights-recorded",
       "name_data": {
         "botanical_name": "Acer palmatum 'Kiyohime'",
         "cultivar_name": "Kiyohime",
@@ -1487,7 +1487,18 @@
         "climate_zone": "Exacte klimaatzone onbekend. Winterhardheid verschilt per cultivar en microklimaat.",
         "source_scope": "Algemene teeltinformatie voor Acer palmatum / Acer shirasawanum; cultivar-specifieke details alleen waar expliciet genoemd."
       },
-      "photos": [],
+      "photos": [
+        {
+          "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Acer_palmatum_Kiyohime_0zz.jpg",
+          "page_url": "https://commons.wikimedia.org/wiki/File:Acer_palmatum_Kiyohime_0zz.jpg",
+          "author": "David J. Stang",
+          "license": "CC BY-SA 4.0",
+          "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+          "credit": "Acer palmatum var. Kiyohime by David J. Stang · CC BY-SA 4.0",
+          "season": "Herfst",
+          "date_taken": "2005-09-29"
+        }
+      ],
       "data_completeness": "partly documented",
       "esveld_inventory_codes": [
         "c05"
@@ -1730,9 +1741,9 @@
         "en": "The specialist source refers to an 1867 description by Carrière of plants exhibited in Paris by Belgian nurseryman Verschaeffelt. This documents the name historically, but is not necessarily an exact introduction year."
       },
       "review_needed": true,
-      "last_checked": "2026-10-21",
+      "last_checked": "2026-10-22",
       "esveld_review_status": "search-link-only",
-      "photo_status": "no-photo-yet",
+      "photo_status": "photo-present-rights-recorded",
       "name_data": {
         "botanical_name": "Acer palmatum 'Ornatum'",
         "cultivar_name": "Ornatum",
@@ -1758,10 +1769,28 @@
         "climate_zone": "Exacte klimaatzone onbekend. Winterhardheid verschilt per cultivar en microklimaat.",
         "source_scope": "Algemene teeltinformatie voor Acer palmatum / Acer shirasawanum; cultivar-specifieke details alleen waar expliciet genoemd."
       },
-      "photos": [],
+      "photos": [
+        {
+          "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Acer_palmatum_var._dissectum_Ornatum_0zz.jpg",
+          "page_url": "https://commons.wikimedia.org/wiki/File:Acer_palmatum_var._dissectum_Ornatum_0zz.jpg",
+          "author": "David J. Stang",
+          "license": "CC BY-SA 4.0",
+          "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+          "credit": "Acer palmatum var. dissectum 'Ornatum' by David J. Stang · CC BY-SA 4.0",
+          "season": "Lente",
+          "date_taken": "2007-05-22"
+        }
+      ],
       "data_completeness": "partly documented",
       "esveld_inventory_codes": [
         "c11"
+      ],
+      "photo_sources": [
+        {
+          "title": "Wikimedia Commons — Acer palmatum var. dissectum Ornatum 0zz.jpg",
+          "url": "https://commons.wikimedia.org/wiki/File:Acer_palmatum_var._dissectum_Ornatum_0zz.jpg",
+          "supports": "Cultivar label in the file description, author attribution, and CC BY-SA 4.0 reuse license"
+        }
       ]
     },
     {
@@ -1904,6 +1933,11 @@
           "title": "Plantentuin Esveld — inventarislijst (door gebruiker aangeleverd PDF)",
           "url": "https://www.esveld.nl/catal/gedruktecat.pdf",
           "supports": "Presence of this Acer name in the inventory list only"
+        },
+        {
+          "title": "Wikimedia Commons — Red Pygmy photo",
+          "url": "https://commons.wikimedia.org/wiki/File:Acer_Palmatum_%27Red_Pygmy%27.jpg",
+          "supports": "Cultivar-specific photograph, author and reuse license."
         }
       ],
       "historical_notes": {
@@ -1912,7 +1946,7 @@
       },
       "review_needed": true,
       "esveld_review_status": "search-link-only",
-      "photo_status": "no-photo-yet",
+      "photo_status": "photo-present-rights-recorded",
       "name_data": {
         "botanical_name": "Acer palmatum 'Red Pygmy'",
         "cultivar_name": "Red Pygmy",
@@ -1938,9 +1972,20 @@
         "climate_zone": "Exacte klimaatzone onbekend. Winterhardheid verschilt per cultivar en microklimaat.",
         "source_scope": "Algemene teeltinformatie voor Acer palmatum / Acer shirasawanum; cultivar-specifieke details alleen waar expliciet genoemd."
       },
-      "photos": [],
+      "photos": [
+        {
+          "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Acer_Palmatum_%27Red_Pygmy%27.jpg",
+          "page_url": "https://commons.wikimedia.org/wiki/File:Acer_Palmatum_%27Red_Pygmy%27.jpg",
+          "author": "Dinkum",
+          "license": "CC BY-SA 3.0",
+          "license_url": "https://creativecommons.org/licenses/by-sa/3.0/",
+          "credit": "Acer palmatum 'Red Pygmy' by Dinkum · CC BY-SA 3.0",
+          "season": "Onbekend",
+          "date_taken": "Onbekend"
+        }
+      ],
       "data_completeness": "needs cultivar-specific research",
-      "last_checked": "2026-10-21",
+      "last_checked": "2026-10-22",
       "esveld_inventory_codes": [
         "a13"
       ]
@@ -2198,6 +2243,11 @@
           "title": "Plantentuin Esveld — zoekresultaat (individueel cultivarprofiel nog niet gecontroleerd)",
           "url": "https://esveld.nl/a/winkel/?compact=1&swoof=1&woof_text=Acer%20palmatum%20%27Shin-desh%C5%8Dj%C5%8D%27",
           "supports": "Search starting point only; not evidence until the matching cultivar profile is reviewed"
+        },
+        {
+          "title": "Wikimedia Commons — cultivar-specific photo and license",
+          "url": "https://commons.wikimedia.org/wiki/File:Acer_palmatum_Shin_Deshojo_BG_Meise_37972.JPG",
+          "supports": "Photograph depicts the named cultivar; photographer and reuse license as stated on the file page."
         }
       ],
       "historical_notes": {
@@ -2206,7 +2256,7 @@
       },
       "review_needed": true,
       "esveld_review_status": "search-link-only",
-      "photo_status": "no-photo-yet",
+      "photo_status": "photo-present-rights-recorded",
       "name_data": {
         "botanical_name": "Acer palmatum 'Shin-deshōjō'",
         "cultivar_name": "Shin-deshōjō",
@@ -2234,9 +2284,19 @@
         "climate_zone": "Exacte klimaatzone onbekend. Winterhardheid verschilt per cultivar en microklimaat.",
         "source_scope": "Algemene teeltinformatie voor Acer palmatum / Acer shirasawanum; cultivar-specifieke details alleen waar expliciet genoemd."
       },
-      "photos": [],
+      "photos": [
+        {
+          "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Acer_palmatum_Shin_Deshojo_BG_Meise_37972.JPG",
+          "page_url": "https://commons.wikimedia.org/wiki/File:Acer_palmatum_Shin_Deshojo_BG_Meise_37972.JPG",
+          "author": "Michael Wolf (Penig)",
+          "license": "CC BY-SA 3.0",
+          "license_url": "https://creativecommons.org/licenses/by-sa/3.0/",
+          "credit": "Acer palmatum 'Shin Deshojo' BG Meise 37972 by Michael Wolf · CC BY-SA 3.0",
+          "season": "Onbekend"
+        }
+      ],
       "data_completeness": "needs cultivar-specific research",
-      "last_checked": "2026-10-21"
+      "last_checked": "2026-10-22"
     },
     {
       "id": "cultivar-shishigashira",
@@ -2595,7 +2655,7 @@
       },
       "review_needed": true,
       "esveld_review_status": "search-link-only",
-      "photo_status": "no-photo-yet",
+      "photo_status": "photo-present-rights-recorded",
       "name_data": {
         "botanical_name": "Acer palmatum 'Mikawa yatsubusa'",
         "cultivar_name": "Mikawa yatsubusa",
@@ -2623,7 +2683,18 @@
         "climate_zone": "USDA-zone 5 vermeld door NC State Extension; exacte lokale klimaatzone blijft afhankelijk van microklimaat.",
         "source_scope": "Algemene teeltinformatie voor Acer palmatum / Acer shirasawanum; cultivar-specifieke details alleen waar expliciet genoemd."
       },
-      "photos": [],
+      "photos": [
+        {
+          "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Acer_palmatum_Yatsubusa_0zz.jpg",
+          "page_url": "https://commons.wikimedia.org/wiki/File:Acer_palmatum_Yatsubusa_0zz.jpg",
+          "author": "David J. Stang",
+          "license": "CC BY-SA 4.0",
+          "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+          "credit": "Acer palmatum 'Yatsubusa' by David J. Stang · CC BY-SA 4.0",
+          "season": "Onbekend",
+          "date_taken": "2006-04-19"
+        }
+      ],
       "data_completeness": "partly documented; cultivar-specific research sources linked",
       "last_checked": "2026-10-21",
       "esveld_inventory_codes": [
@@ -2697,7 +2768,7 @@
       },
       "review_needed": true,
       "esveld_review_status": "search-link-only",
-      "photo_status": "has-photo",
+      "photo_status": "photo-present-rights-recorded",
       "name_data": {
         "botanical_name": "Acer palmatum 'Seigen'",
         "cultivar_name": "Seigen",
@@ -2805,7 +2876,7 @@
       },
       "review_needed": true,
       "esveld_review_status": "search-link-only",
-      "photo_status": "no-photo-yet",
+      "photo_status": "photo-present-rights-recorded",
       "name_data": {
         "botanical_name": "Acer palmatum 'Deshōjō'",
         "cultivar_name": "Deshōjō",
@@ -2833,7 +2904,18 @@
         "climate_zone": "Exacte klimaatzone onbekend; soort en cultivar zijn geschikt voor gematigde buitenteelt met beschutting.",
         "source_scope": "Algemene teeltinformatie voor Acer palmatum / Acer shirasawanum; cultivar-specifieke details alleen waar expliciet genoemd."
       },
-      "photos": [],
+      "photos": [
+        {
+          "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Acer_palmatum_%27Deshojo%27_-_geograph.org.uk_-_6511671.jpg",
+          "page_url": "https://commons.wikimedia.org/wiki/File:Acer_palmatum_%27Deshojo%27_-_geograph.org.uk_-_6511671.jpg",
+          "author": "Jonathan Billinger",
+          "license": "CC BY-SA 2.0",
+          "license_url": "https://creativecommons.org/licenses/by-sa/2.0/",
+          "credit": "Acer palmatum 'Deshojo' by Jonathan Billinger · CC BY-SA 2.0",
+          "season": "Lente",
+          "date_taken": "2020-06-16"
+        }
+      ],
       "data_completeness": "partly documented; cultivar-specific research sources linked",
       "last_checked": "2026-10-21"
     },
@@ -3103,7 +3185,7 @@
       },
       "review_needed": true,
       "esveld_review_status": "search-link-only",
-      "photo_status": "has-photo",
+      "photo_status": "photo-present-rights-recorded",
       "name_data": {
         "botanical_name": "Acer palmatum 'Sumi-nagashi'",
         "cultivar_name": "Sumi-nagashi",
@@ -3677,7 +3759,7 @@
       },
       "review_needed": true,
       "esveld_review_status": "search-link-only",
-      "photo_status": "no-photo-yet",
+      "photo_status": "photo-present-rights-recorded",
       "name_data": {
         "botanical_name": "Acer palmatum 'Ukigumo'",
         "cultivar_name": "Ukigumo",
@@ -3703,7 +3785,18 @@
         "climate_zone": "Exacte klimaatzone onbekend.",
         "source_scope": "Algemene teeltinformatie voor Acer palmatum / Acer shirasawanum; cultivar-specifieke details alleen waar expliciet genoemd."
       },
-      "photos": [],
+      "photos": [
+        {
+          "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Acer_palmatum_Ukigumo_1zz.jpg",
+          "page_url": "https://commons.wikimedia.org/wiki/File:Acer_palmatum_Ukigumo_1zz.jpg",
+          "author": "David J. Stang",
+          "license": "CC BY-SA 4.0",
+          "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+          "credit": "Acer palmatum 'Ukigumo' by David J. Stang · CC BY-SA 4.0",
+          "season": "Lente",
+          "date_taken": "2007-05-21"
+        }
+      ],
       "data_completeness": "partly documented; cultivar-specific research sources linked",
       "last_checked": "2026-10-21",
       "esveld_inventory_codes": [
@@ -4157,6 +4250,11 @@
           "title": "Plantentuin Esveld — inventarislijst (door gebruiker aangeleverd PDF)",
           "url": "https://www.esveld.nl/catal/gedruktecat.pdf",
           "supports": "Presence of this Acer name in the inventory list only"
+        },
+        {
+          "title": "Wikimedia Commons — Shaina photo",
+          "url": "https://commons.wikimedia.org/wiki/File:Acer_palmatum_%27Shaina%27_in_Christchurch_Botanic_Gardens_02.jpg",
+          "supports": "Cultivar-specific photograph, author and reuse license."
         }
       ],
       "historical_notes": {
@@ -4165,7 +4263,7 @@
       },
       "review_needed": true,
       "esveld_review_status": "search-link-only",
-      "photo_status": "no-photo-yet",
+      "photo_status": "photo-present-rights-recorded",
       "name_data": {
         "botanical_name": "Acer palmatum 'Shaina'",
         "cultivar_name": "Shaina",
@@ -4191,9 +4289,20 @@
         "climate_zone": "Exacte klimaatzone onbekend.",
         "source_scope": "Algemene teeltinformatie voor Acer palmatum / Acer shirasawanum; cultivar-specifieke details alleen waar expliciet genoemd."
       },
-      "photos": [],
+      "photos": [
+        {
+          "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Acer_palmatum_%27Shaina%27_in_Christchurch_Botanic_Gardens_02.jpg",
+          "page_url": "https://commons.wikimedia.org/wiki/File:Acer_palmatum_%27Shaina%27_in_Christchurch_Botanic_Gardens_02.jpg",
+          "author": "Krzysztof Golik",
+          "license": "CC BY-SA 4.0",
+          "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+          "credit": "Acer palmatum 'Shaina' in Christchurch Botanic Gardens 02 by Krzysztof Golik · CC BY-SA 4.0",
+          "season": "Onbekend",
+          "date_taken": "2017-11-16"
+        }
+      ],
       "data_completeness": "partly documented; cultivar-specific research sources linked",
-      "last_checked": "2026-10-21",
+      "last_checked": "2026-10-22",
       "esveld_inventory_codes": [
         "b02",
         "c05"
@@ -4430,7 +4539,7 @@
       },
       "review_needed": true,
       "esveld_review_status": "search-link-only",
-      "photo_status": "no-photo-yet",
+      "photo_status": "photo-present-rights-recorded",
       "name_data": {
         "botanical_name": "Acer palmatum 'Tamukeyama'",
         "cultivar_name": "Tamukeyama",
@@ -4456,7 +4565,18 @@
         "climate_zone": "Exacte klimaatzone onbekend.",
         "source_scope": "Algemene teeltinformatie voor Acer palmatum / Acer shirasawanum; cultivar-specifieke details alleen waar expliciet genoemd."
       },
-      "photos": [],
+      "photos": [
+        {
+          "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Acer_palmatum_var._dissectum_Tamukeyama_0zz.jpg",
+          "page_url": "https://commons.wikimedia.org/wiki/File:Acer_palmatum_var._dissectum_Tamukeyama_0zz.jpg",
+          "author": "David J. Stang",
+          "license": "CC BY-SA 4.0",
+          "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+          "credit": "Acer palmatum 'Tamukeyama' by David J. Stang · CC BY-SA 4.0",
+          "season": "Herfst",
+          "date_taken": "2006-10-12"
+        }
+      ],
       "data_completeness": "partly documented; cultivar-specific research sources linked",
       "last_checked": "2026-10-21",
       "esveld_inventory_codes": [
@@ -23289,7 +23409,7 @@
       },
       "review_needed": true,
       "last_checked": "2026-10-22",
-      "photo_status": "no-photo-yet",
+      "photo_status": "photo-present-rights-recorded",
       "name_data": {
         "botanical_name": "Acer japonicum 'Vitifolium'",
         "cultivar_name": "Vitifolium",
@@ -23315,7 +23435,18 @@
         "climate_zone": "Onbekend",
         "source_scope": "Nog niet onderzocht; geen teeltadvies afgeleid uit de inventarislijst."
       },
-      "photos": [],
+      "photos": [
+        {
+          "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Acer_japonicum_vitifolium_%2813623963975%29.jpg",
+          "page_url": "https://commons.wikimedia.org/wiki/File:Acer_japonicum_vitifolium_%2813623963975%29.jpg",
+          "author": "peganum (Steve Law)",
+          "license": "CC BY-SA 2.0",
+          "license_url": "https://creativecommons.org/licenses/by-sa/2.0/",
+          "credit": "Acer japonicum 'Vitifolium' by peganum (Steve Law) · CC BY-SA 2.0",
+          "season": "Lente",
+          "date_taken": "2014-04-04"
+        }
+      ],
       "data_completeness": "name-only",
       "esveld_inventory_codes": [
         "c07",
@@ -42782,7 +42913,7 @@
       },
       "review_needed": true,
       "last_checked": "2026-10-22",
-      "photo_status": "no-photo-yet",
+      "photo_status": "photo-present-rights-recorded",
       "name_data": {
         "botanical_name": "Acer palmatum 'Kashima yatsubusa'",
         "cultivar_name": "Kashima yatsubusa",
@@ -42808,7 +42939,17 @@
         "climate_zone": "Onbekend",
         "source_scope": "Nog niet onderzocht; geen teeltadvies afgeleid uit de inventarislijst."
       },
-      "photos": [],
+      "photos": [
+        {
+          "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Acer_palmatum_%27Kashima_Yatsubusa%27_-_Asticou_Azalea_Garden_-_Northeast_Harbor%2C_Maine_-_DSC03516.jpg",
+          "page_url": "https://commons.wikimedia.org/wiki/File:Acer_palmatum_%27Kashima_Yatsubusa%27_-_Asticou_Azalea_Garden_-_Northeast_Harbor,_Maine_-_DSC03516.jpg",
+          "author": "Daderot",
+          "license": "CC0 1.0",
+          "license_url": "https://creativecommons.org/publicdomain/zero/1.0/deed.en",
+          "credit": "Acer palmatum 'Kashima Yatsubusa' by Daderot · CC0 1.0",
+          "date_taken": "2018-07-21"
+        }
+      ],
       "data_completeness": "name-only",
       "esveld_inventory_codes": [
         "wes"
@@ -53891,7 +54032,7 @@
       },
       "review_needed": true,
       "last_checked": "2026-10-22",
-      "photo_status": "no-photo-yet",
+      "photo_status": "photo-reference-available",
       "name_data": {
         "botanical_name": "Acer palmatum 'Oshio beni'",
         "cultivar_name": "Oshio beni",
@@ -53917,7 +54058,18 @@
         "climate_zone": "Onbekend",
         "source_scope": "Nog niet onderzocht; geen teeltadvies afgeleid uit de inventarislijst."
       },
-      "photos": [],
+      "photos": [
+        {
+          "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Acer_palmatum_%27Oshio_beni%27_-_JPG3.jpg",
+          "page_url": "https://commons.wikimedia.org/wiki/File:Acer_palmatum_%27Oshio_beni%27_-_JPG3.jpg",
+          "author": "Jean-Pol GRANDMONT",
+          "license": "CC BY 3.0",
+          "license_url": "https://creativecommons.org/licenses/by/3.0/",
+          "credit": "Acer palmatum 'Oshio beni' by Jean-Pol GRANDMONT · CC BY 3.0",
+          "season": "Lente",
+          "date_taken": "2009-04-19"
+        }
+      ],
       "data_completeness": "name-only",
       "esveld_inventory_codes": [
         "a13"
@@ -56533,7 +56685,7 @@
       },
       "review_needed": true,
       "last_checked": "2026-10-22",
-      "photo_status": "no-photo-yet",
+      "photo_status": "photo-present-rights-recorded",
       "name_data": {
         "botanical_name": "Acer palmatum 'Red Select'",
         "cultivar_name": "Red Select",
@@ -56559,7 +56711,18 @@
         "climate_zone": "Onbekend",
         "source_scope": "Nog niet onderzocht; geen teeltadvies afgeleid uit de inventarislijst."
       },
-      "photos": [],
+      "photos": [
+        {
+          "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Acer_palmatum_Red_Select_0zz.jpg",
+          "page_url": "https://commons.wikimedia.org/wiki/File:Acer_palmatum_Red_Select_0zz.jpg",
+          "author": "David J. Stang",
+          "license": "CC BY-SA 4.0",
+          "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+          "credit": "Acer palmatum 'Red Select' by David J. Stang · CC BY-SA 4.0",
+          "season": "Onbekend",
+          "date_taken": "2006-10-12"
+        }
+      ],
       "data_completeness": "name-only",
       "esveld_inventory_codes": [
         "c21"
@@ -60419,6 +60582,11 @@
           "title": "Plantentuin Esveld — inventarislijst (door gebruiker aangeleverd PDF)",
           "url": "https://www.esveld.nl/catal/gedruktecat.pdf",
           "supports": "Presence of this Acer name in the inventory list only; not cultivar traits or historical claims"
+        },
+        {
+          "title": "Wikimedia Commons — cultivar-specific photo and license",
+          "url": "https://commons.wikimedia.org/wiki/File:Acer_palmatum_Shigitatsu-sawa_3.jpg",
+          "supports": "Photograph depicts the named cultivar; photographer and reuse license as stated on the file page."
         }
       ],
       "historical_notes": {
@@ -60427,7 +60595,7 @@
       },
       "review_needed": true,
       "last_checked": "2026-10-22",
-      "photo_status": "no-photo-yet",
+      "photo_status": "photo-present-rights-recorded",
       "name_data": {
         "botanical_name": "Acer palmatum 'Shigitatsu sawa'",
         "cultivar_name": "Shigitatsu sawa",
@@ -60453,7 +60621,18 @@
         "climate_zone": "Onbekend",
         "source_scope": "Nog niet onderzocht; geen teeltadvies afgeleid uit de inventarislijst."
       },
-      "photos": [],
+      "photos": [
+        {
+          "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Acer_palmatum_Shigitatsu-sawa_3.jpg",
+          "page_url": "https://commons.wikimedia.org/wiki/File:Acer_palmatum_Shigitatsu-sawa_3.jpg",
+          "author": "Stan Shebs",
+          "license": "CC BY-SA 3.0",
+          "license_url": "https://creativecommons.org/licenses/by-sa/3.0/",
+          "credit": "Acer palmatum 'Shigitatsu-sawa' by Stan Shebs · CC BY-SA 3.0",
+          "season": "Zomer",
+          "date_taken": "2005-07-14"
+        }
+      ],
       "data_completeness": "name-only",
       "esveld_inventory_codes": [
         "a11"
@@ -67773,7 +67952,7 @@
       },
       "review_needed": true,
       "last_checked": "2026-10-22",
-      "photo_status": "no-photo-yet",
+      "photo_status": "photo-present-rights-recorded",
       "name_data": {
         "botanical_name": "Acer palmatum 'Yatsubusa'",
         "cultivar_name": "Yatsubusa",
@@ -67799,7 +67978,18 @@
         "climate_zone": "Onbekend",
         "source_scope": "Nog niet onderzocht; geen teeltadvies afgeleid uit de inventarislijst."
       },
-      "photos": [],
+      "photos": [
+        {
+          "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Japanese_Maple_%28Acer_palmatum%29_Yatsubusa_%283505088626%29.jpg",
+          "page_url": "https://commons.wikimedia.org/wiki/File:Japanese_Maple_%28Acer_palmatum%29_Yatsubusa_%283505088626%29.jpg",
+          "author": "Cliff (Arlington, Virginia, USA)",
+          "license": "CC BY 2.0",
+          "license_url": "https://creativecommons.org/licenses/by/2.0/",
+          "credit": "Japanese Maple (Acer palmatum) 'Yatsubusa' by Cliff · CC BY 2.0",
+          "season": "Lente",
+          "date_taken": "2009-05-01"
+        }
+      ],
       "data_completeness": "name-only",
       "esveld_inventory_codes": [
         "c20"
@@ -76121,5 +76311,5 @@
       ]
     }
   ],
-  "photo_count": 70
+  "photo_count": 87
 }
