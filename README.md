@@ -1,7 +1,3 @@
-Acer Atlas v6.18 — Microsoft-aanmelding testfase
-
-Gebaseerd op de werkende v6.17. Deze release voegt alleen een geïsoleerde Microsoft-aanmeldtest toe in Instellingen. De collectie-/seedlingopslag en databasecode zijn niet gewijzigd. OneDrive lezen/schrijven is nog niet geïmplementeerd; eerst moet Microsoft-aanmelden in de gepubliceerde app succesvol worden getest.
-
 Acer Atlas v6.17 — herstel na fout in OneDrive-testversie
 
 Gebaseerd op de eerder door de gebruiker bevestigde werkende v6.14. De experimentele OneDrive-wijzigingen uit v6.15/v6.16 zijn teruggedraaid. Opslagsleutels voor collectie, wensenlijst en Seedlings zijn niet gewijzigd. Service-worker cacheversie verhoogd naar v6.17. Deze herstelversie is niet live in een echte browser getest; test na publicatie of pagina’s en knoppen werken. Wis geen browsergegevens.
