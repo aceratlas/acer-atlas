@@ -1,14 +1,12 @@
-# Acer Atlas v5.8 — Seedling journal and OneDrive preparation
+# Acer Atlas v6.13 — lokale opslag of OneDrive
 
-## Seedlings
-- Open Mijn collectie and choose Mijn seedlings.
-- Add a seedling with working name, origin, first date, description and optional spring/summer/autumn photos.
-- Add dated observations over time, with season, notes and optional photo.
-- Data is stored locally in this browser. Photos are resized to reduce storage use.
-- Use Instellingen → Back-up maken regularly. Backups include collection, wishlist and seedling records/photos. Keep the backup file in OneDrive to preserve it and manually import it on another device.
+## Opslagkeuze
+Instellingen bevat nu een keuze tussen lokaal opslaan en OneDrive-synchronisatie. Lokale opslag blijft standaard actief. De app houdt een lokale kopie bij; OneDrive synchroniseert een JSON-bestand met collectie, wensen, seedlings, taal en kleurstijl naar de persoonlijke OneDrive App Folder. De app-map wordt via Microsoft Graph `Files.ReadWrite.AppFolder` benaderd.
 
-## OneDrive automatic sync status
-Automatic OneDrive synchronization is NOT enabled in this version. It requires a Microsoft Entra app registration, a client ID, allowed redirect URI(s), delegated Microsoft Graph permission (preferably Files.ReadWrite.AppFolder), and secure OAuth/MSAL implementation. Do not paste client secrets into index.html. The current safe interim method is export the backup JSON and store it in OneDrive; this is manual backup/restore, not live multi-device sync.
+## Eenmalige Microsoft-configuratie vereist
+Automatische OneDrive-synchronisatie werkt pas nadat een Microsoft Entra ID-appregistratie is aangemaakt en de Application (client) ID in Instellingen is ingevuld. Configureer de app als Single-page application (SPA) en voeg de exacte huidige GitHub Pages-app-URL (origin + pathname) toe als redirect URI. Gebruik delegated permissions `User.Read` en `Files.ReadWrite.AppFolder`. Gebruik geen client secret in de webapp.
 
-## Upload
-Upload the contents of `acer-atlas-main` to the GitHub Pages repository. This package has not been deployed to the live site.
+Bij de eerste verbinding uploadt Acer Atlas de lokale gegevens als er nog geen cloudbestand bestaat. Als er al een cloudbestand bestaat, vraagt de app of je OneDrive-gegevens wilt laden of lokale gegevens naar OneDrive wilt uploaden. De lokale gegevens worden niet gewist bij loskoppelen. De OneDrive-kopie wordt bij loskoppelen niet verwijderd.
+
+## Publiceren
+Upload de inhoud van de ZIP naar de hoofdmap van de bestaande GitHub Pages-repository. Test eerst met een back-up.
