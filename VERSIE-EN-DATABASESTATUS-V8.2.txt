@@ -1,0 +1,10 @@
+Acer Atlas v8.2 — database first
+
+Deze versie:
+- Zet het zichtbare app-versienummer op v8.2 waar de bestaande code dat ondersteunt.
+- Verbergt tijdelijk sorteren, soorten en wis filters in de encyclopedie.
+- Behoudt de zoekfunctie en overige app-onderdelen.
+- Verhoogt de service-worker cacheversie en database build-tag naar 820.
+- Verandert de database records niet, behalve de metadata-versie en notitie.
+
+Controle na upload: kijk of de encyclopedie nog steeds records toont en noteer het aantal ingelezen/getoonde records.
