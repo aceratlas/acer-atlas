@@ -1,3 +1,13 @@
+Acer Atlas v6.16 — OneDrive-testconfiguratie
+
+De Microsoft Client ID is vooraf ingevuld voor de Acer Atlas-appregistratie. Dit is een publieke client-ID, geen wachtwoord of client secret. De redirect-URI voor deze registratie is https://aceratlas.github.io/acer-atlas/. De OneDrive-aanmelding en synchronisatie moeten nog op de gepubliceerde site getest worden.
+
+Acer Atlas v6.15 — OneDrive-integratie (testversie)
+
+Deze release is gebaseerd op de herstelde v6.14-code. De OneDrive-koppeling gebruikt Microsoft Graph met gedelegeerde machtiging Files.ReadWrite.AppFolder, zodat Acer Atlas alleen in de eigen appmap van de aangemelde gebruiker schrijft. Een Microsoft Entra-appregistratie met SPA-platform en de exacte redirect-URI is vereist; vul de Client ID in via Instellingen → Gegevensopslag. De redirect-URI wordt daar getoond.
+
+Belangrijk: test eerst met een back-up. OneDrive wordt pas gebruikt nadat de gebruiker zelf expliciet verbinding maakt. Bij een bestaande cloudkopie vraagt de app of die moet worden geladen of dat lokale gegevens moeten worden geüpload.
+
 Acer Atlas v6.14 — herstelrelease
 
 Deze release herstelt de app op basis van de laatst bekende werkende v6.12-codebasis. De experimentele OneDrive-opslagcode uit v6.13 is niet meegenomen. Bestaande lokale gegevens blijven op hetzelfde apparaat behouden doordat de opslag sleutels en gegevensstructuur niet zijn gewijzigd. De nieuwe service-worker-cacheversie dwingt de browser om de appbestanden opnieuw op te halen.
