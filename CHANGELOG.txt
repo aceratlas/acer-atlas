@@ -1,5 +1,6 @@
 Acer Atlas v8.1.2
 - Base: user-confirmed working v8.1.1.
-- Encyclopedia search remains; cards are alphabetically ordered by default.
-- Sort/species/clear controls hidden; renderer no longer dereferences the removed species select.
-- Database records preserved; cache/build version bumped to 812.
+- Encyclopedia sort/species/clear controls are hidden with CSS only.
+- Their DOM elements remain present so existing JavaScript references do not break.
+- Search and all app pages otherwise unchanged.
+- Cache version/build tag updated to 812.
