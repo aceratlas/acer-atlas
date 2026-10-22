@@ -1,8 +1,8 @@
 {
-  "app": "Acer Atlas v7.6",
-  "version": "7.7-database-load-fix",
-  "record_count": 1030,
-  "note": "v7.3: imported unique Acer names from the user-provided 38-page Esveld inventory PDF. 1,469 inventory lines collapsed to 1,018 unique normalized names; 94 matched existing records and received inventory codes/source evidence; 924 new name-only records added. The inventory provides names and location/catalog codes, not cultivar traits, so missing traits remain explicitly unknown and review_needed=true. v7.4: app version corrected to 7.4; encyclopedia supports alphabetical name sorting and species-first sorting. Display names now show cultivar epithet without the leading botanical species; standalone species/taxon entries without a cultivar name are omitted from the encyclopedia. Encyclopedia sorting is applied to the filtered result list.",
+  "app": "Acer Atlas",
+  "version": "8.0-clean-database",
+  "record_count": 1015,
+  "note": "Cleaned database migrated from the user's v7.5 baseline. Same accepted botanical names merged; alternate spellings retained as synonyms. Source claims have not all been independently re-verified.",
   "records": [
     {
       "id": "cultivar-ariadne",
@@ -89,7 +89,9 @@
       "id": "cultivar-benimaiko",
       "name": "Beni-maiko",
       "accepted_name": "Acer palmatum 'Beni-maiko'",
-      "synonyms": [],
+      "synonyms": [
+        "Beni maiko"
+      ],
       "group": "unknown",
       "traits": {
         "nl": "Compacte struik met helder rozerood voorjaarsblad dat later via rood naar groen met nerven verkleurt. Hoogte na 10 jaar circa 250 cm; goed winterhard.",
@@ -118,6 +120,11 @@
           "title": "Plantentuin Esveld — individueel gecontroleerd cultivarprofiel",
           "url": "https://esveld.nl/a/product/acer-palmatum-beni-maiko/",
           "supports": "Cultivar characteristics and horticultural description; historical details only where explicitly stated on the page"
+        },
+        {
+          "title": "Plantentuin Esveld — inventarislijst (door gebruiker aangeleverd PDF)",
+          "url": "https://www.esveld.nl/catal/gedruktecat.pdf",
+          "supports": "Presence of this Acer name in the inventory list only; not cultivar traits or historical claims"
         }
       ],
       "historical_notes": {
@@ -154,13 +161,18 @@
         "source_scope": "Algemene teeltinformatie voor Acer palmatum / Acer shirasawanum; cultivar-specifieke details alleen waar expliciet genoemd."
       },
       "photos": [],
-      "data_completeness": "partly documented"
+      "data_completeness": "partly documented",
+      "esveld_inventory_codes": [
+        "b08"
+      ]
     },
     {
       "id": "cultivar-benitsukasa",
       "name": "Beni-tsukasa",
       "accepted_name": "Acer palmatum 'Beni-tsukasa'",
-      "synonyms": [],
+      "synonyms": [
+        "Beni tsukasa"
+      ],
       "group": "unknown",
       "traits": {
         "nl": "Kenmerken nog niet individueel geverifieerd.",
@@ -199,6 +211,11 @@
           "title": "Plantentuin Esveld — zoekresultaat (individueel cultivarprofiel nog niet gecontroleerd)",
           "url": "https://esveld.nl/a/winkel/?compact=1&swoof=1&woof_text=Acer%20palmatum%20%27Beni-tsukasa%27",
           "supports": "Search starting point only; not evidence until the matching cultivar profile is reviewed"
+        },
+        {
+          "title": "Plantentuin Esveld — inventarislijst (door gebruiker aangeleverd PDF)",
+          "url": "https://www.esveld.nl/catal/gedruktecat.pdf",
+          "supports": "Presence of this Acer name in the inventory list only; not cultivar traits or historical claims"
         }
       ],
       "historical_notes": {
@@ -235,7 +252,10 @@
       },
       "photos": [],
       "data_completeness": "needs cultivar-specific research",
-      "last_checked": "2026-10-21"
+      "last_checked": "2026-10-21",
+      "esveld_inventory_codes": [
+        "c11"
+      ]
     },
     {
       "id": "cultivar-bloodgood",
@@ -419,7 +439,9 @@
       "id": "cultivar-chitoseyama",
       "name": "Chitose-yama",
       "accepted_name": "Acer palmatum 'Chitose-yama'",
-      "synonyms": [],
+      "synonyms": [
+        "Chitose yama"
+      ],
       "group": "unknown",
       "traits": {
         "nl": "Kenmerken nog niet individueel geverifieerd.",
@@ -458,6 +480,11 @@
           "title": "Plantentuin Esveld — zoekresultaat (individueel cultivarprofiel nog niet gecontroleerd)",
           "url": "https://esveld.nl/a/winkel/?compact=1&swoof=1&woof_text=Acer%20palmatum%20%27Chitose-yama%27",
           "supports": "Search starting point only; not evidence until the matching cultivar profile is reviewed"
+        },
+        {
+          "title": "Plantentuin Esveld — inventarislijst (door gebruiker aangeleverd PDF)",
+          "url": "https://www.esveld.nl/catal/gedruktecat.pdf",
+          "supports": "Presence of this Acer name in the inventory list only; not cultivar traits or historical claims"
         }
       ],
       "historical_notes": {
@@ -494,7 +521,10 @@
       },
       "photos": [],
       "data_completeness": "needs cultivar-specific research",
-      "last_checked": "2026-10-21"
+      "last_checked": "2026-10-21",
+      "esveld_inventory_codes": [
+        "a16"
+      ]
     },
     {
       "id": "cultivar-corallinum",
@@ -1023,7 +1053,9 @@
       "id": "cultivar-inabashidare",
       "name": "Inaba-shidare",
       "accepted_name": "Acer palmatum 'Inaba-shidare'",
-      "synonyms": [],
+      "synonyms": [
+        "Inaba shidare"
+      ],
       "group": "unknown",
       "traits": {
         "nl": "Kenmerken nog niet individueel geverifieerd.",
@@ -1062,6 +1094,11 @@
           "title": "Plantentuin Esveld — zoekresultaat (individueel cultivarprofiel nog niet gecontroleerd)",
           "url": "https://esveld.nl/a/winkel/?compact=1&swoof=1&woof_text=Acer%20palmatum%20%27Inaba-shidare%27",
           "supports": "Search starting point only; not evidence until the matching cultivar profile is reviewed"
+        },
+        {
+          "title": "Plantentuin Esveld — inventarislijst (door gebruiker aangeleverd PDF)",
+          "url": "https://www.esveld.nl/catal/gedruktecat.pdf",
+          "supports": "Presence of this Acer name in the inventory list only; not cultivar traits or historical claims"
         }
       ],
       "historical_notes": {
@@ -1098,7 +1135,11 @@
       },
       "photos": [],
       "data_completeness": "needs cultivar-specific research",
-      "last_checked": "2026-10-21"
+      "last_checked": "2026-10-21",
+      "esveld_inventory_codes": [
+        "c10",
+        "c13"
+      ]
     },
     {
       "id": "cultivar-katsura",
@@ -1283,7 +1324,9 @@
       "id": "cultivar-kiyohime",
       "name": "Kiyohime",
       "accepted_name": "Acer palmatum 'Kiyohime'",
-      "synonyms": [],
+      "synonyms": [
+        "Kiyo hime"
+      ],
       "group": "dwarf",
       "traits": {
         "nl": "Kleine, compacte struik; kleine donkergroene bladeren met rood-oranje rand of tint bij jong blad, geel-oranje in de herfst.",
@@ -1317,6 +1360,11 @@
           "title": "Plantentuin Esveld — zoekresultaat (individueel cultivarprofiel nog niet gecontroleerd)",
           "url": "https://esveld.nl/a/winkel/?compact=1&swoof=1&woof_text=Acer%20palmatum%20%27Kiyohime%27",
           "supports": "Search starting point only; not evidence until the matching cultivar profile is reviewed"
+        },
+        {
+          "title": "Plantentuin Esveld — inventarislijst (door gebruiker aangeleverd PDF)",
+          "url": "https://www.esveld.nl/catal/gedruktecat.pdf",
+          "supports": "Presence of this Acer name in the inventory list only; not cultivar traits or historical claims"
         }
       ],
       "historical_notes": {
@@ -1353,7 +1401,10 @@
         "source_scope": "Algemene teeltinformatie voor Acer palmatum / Acer shirasawanum; cultivar-specifieke details alleen waar expliciet genoemd."
       },
       "photos": [],
-      "data_completeness": "partly documented"
+      "data_completeness": "partly documented",
+      "esveld_inventory_codes": [
+        "c05"
+      ]
     },
     {
       "id": "cultivar-orangedream",
@@ -1811,7 +1862,9 @@
       "id": "cultivar-sangokaku",
       "name": "Sango-kaku",
       "accepted_name": "Acer palmatum 'Sango-kaku'",
-      "synonyms": [],
+      "synonyms": [
+        "Sango kaku"
+      ],
       "group": "palmatum",
       "traits": {
         "nl": "Opgaand groeiende struik met frisgroen blad, opvallende rode takken en gouden herfstkleur. Hoogte na 10 jaar circa 3 meter; goed winterhard.",
@@ -1840,6 +1893,11 @@
           "title": "Plantentuin Esveld — individueel gecontroleerd cultivarprofiel",
           "url": "https://esveld.nl/a/product/acer-palmatum-sango-kaku/",
           "supports": "Cultivar characteristics and horticultural description; historical details only where explicitly stated on the page"
+        },
+        {
+          "title": "Plantentuin Esveld — inventarislijst (door gebruiker aangeleverd PDF)",
+          "url": "https://www.esveld.nl/catal/gedruktecat.pdf",
+          "supports": "Presence of this Acer name in the inventory list only; not cultivar traits or historical claims"
         }
       ],
       "historical_notes": {
@@ -1904,7 +1962,10 @@
           "season": "Onbekend"
         }
       ],
-      "data_completeness": "partly documented"
+      "data_completeness": "partly documented",
+      "esveld_inventory_codes": [
+        "c20"
+      ]
     },
     {
       "id": "cultivar-seiryu",
@@ -2083,7 +2144,9 @@
       "id": "cultivar-shishigashira",
       "name": "Shishi-gashira",
       "accepted_name": "Acer palmatum 'Shishi-gashira'",
-      "synonyms": [],
+      "synonyms": [
+        "Shishi gashira"
+      ],
       "group": "unknown",
       "traits": {
         "nl": "Kenmerken nog niet individueel geverifieerd.",
@@ -2122,6 +2185,11 @@
           "title": "Plantentuin Esveld — zoekresultaat (individueel cultivarprofiel nog niet gecontroleerd)",
           "url": "https://esveld.nl/a/winkel/?compact=1&swoof=1&woof_text=Acer%20palmatum%20%27Shishi-gashira%27",
           "supports": "Search starting point only; not evidence until the matching cultivar profile is reviewed"
+        },
+        {
+          "title": "Plantentuin Esveld — inventarislijst (door gebruiker aangeleverd PDF)",
+          "url": "https://www.esveld.nl/catal/gedruktecat.pdf",
+          "supports": "Presence of this Acer name in the inventory list only; not cultivar traits or historical claims"
         }
       ],
       "historical_notes": {
@@ -2158,7 +2226,11 @@
       },
       "photos": [],
       "data_completeness": "needs cultivar-specific research",
-      "last_checked": "2026-10-21"
+      "last_checked": "2026-10-21",
+      "esveld_inventory_codes": [
+        "c08",
+        "c10"
+      ]
     },
     {
       "id": "cultivar-trompenburg",
@@ -2825,7 +2897,8 @@
       "name": "Sumi-nagashi",
       "accepted_name": "Acer palmatum 'Sumi-nagashi'",
       "synonyms": [
-        "Sumi Nagashi"
+        "Sumi Nagashi",
+        "Sumi nagashi"
       ],
       "group": "unknown",
       "traits": {
@@ -2875,6 +2948,11 @@
           "title": "Bays Nursery & Acer Centre — cultivaroverzicht",
           "url": "https://www.baysnurseryandacercentre.co.uk/our-plant-varieties/acer-palmatum",
           "supports": "Aanvullende seizoenskleur"
+        },
+        {
+          "title": "Plantentuin Esveld — inventarislijst (door gebruiker aangeleverd PDF)",
+          "url": "https://www.esveld.nl/catal/gedruktecat.pdf",
+          "supports": "Presence of this Acer name in the inventory list only; not cultivar traits or historical claims"
         }
       ],
       "historical_notes": {
@@ -2913,7 +2991,11 @@
       },
       "photos": [],
       "data_completeness": "partly documented; cultivar-specific research sources linked",
-      "last_checked": "2026-10-21"
+      "last_checked": "2026-10-21",
+      "esveld_inventory_codes": [
+        "c05",
+        "wes"
+      ]
     },
     {
       "id": "cultivar-firstghost",
@@ -3383,7 +3465,9 @@
       "id": "cultivar-ukigumo",
       "name": "Ukigumo",
       "accepted_name": "Acer palmatum 'Ukigumo'",
-      "synonyms": [],
+      "synonyms": [
+        "Uki gumo"
+      ],
       "group": "unknown",
       "traits": {
         "nl": "Bontbladige cultivar met witte tot crèmekleurige vlekken op groen blad. De verdeling van het bont kan per blad en groeiseizoen variëren; exacte herfstkleur nog niet bevestigd.",
@@ -3427,6 +3511,11 @@
           "title": "Szmit — catalogus Japanse esdoorns",
           "url": "https://szmit.pl/download/oferta/SZMIT_Katalog_EN2021_2022.pdf",
           "supports": "Vermelding van Ukigumo als sterk witgevlekt cultivar; geen volledige teeltfiche"
+        },
+        {
+          "title": "Plantentuin Esveld — inventarislijst (door gebruiker aangeleverd PDF)",
+          "url": "https://www.esveld.nl/catal/gedruktecat.pdf",
+          "supports": "Presence of this Acer name in the inventory list only; not cultivar traits or historical claims"
         }
       ],
       "historical_notes": {
@@ -3463,7 +3552,13 @@
       },
       "photos": [],
       "data_completeness": "partly documented; cultivar-specific research sources linked",
-      "last_checked": "2026-10-21"
+      "last_checked": "2026-10-21",
+      "esveld_inventory_codes": [
+        "b02",
+        "c05",
+        "c11",
+        "c19"
+      ]
     },
     {
       "id": "cultivar-murasakikiyohime",
@@ -3742,7 +3837,9 @@
       "id": "cultivar-kotonoito",
       "name": "Koto-no-ito",
       "accepted_name": "Acer palmatum 'Koto-no-ito'",
-      "synonyms": [],
+      "synonyms": [
+        "Koto no ito"
+      ],
       "group": "unknown",
       "traits": {
         "nl": "Kenmerken nog niet individueel geverifieerd.",
@@ -3781,6 +3878,11 @@
           "title": "Plantentuin Esveld — zoekresultaat (individueel cultivarprofiel nog niet gecontroleerd)",
           "url": "https://esveld.nl/a/winkel/?compact=1&swoof=1&woof_text=Acer%20palmatum%20%27Koto-no-ito%27",
           "supports": "Search starting point only; not evidence until the matching cultivar profile is reviewed"
+        },
+        {
+          "title": "Plantentuin Esveld — inventarislijst (door gebruiker aangeleverd PDF)",
+          "url": "https://www.esveld.nl/catal/gedruktecat.pdf",
+          "supports": "Presence of this Acer name in the inventory list only; not cultivar traits or historical claims"
         }
       ],
       "historical_notes": {
@@ -3817,7 +3919,10 @@
       },
       "photos": [],
       "data_completeness": "needs cultivar-specific research",
-      "last_checked": "2026-10-21"
+      "last_checked": "2026-10-21",
+      "esveld_inventory_codes": [
+        "a09"
+      ]
     },
     {
       "id": "cultivar-shaina",
@@ -3918,7 +4023,9 @@
       "id": "cultivar-higasayama",
       "name": "Higasayama",
       "accepted_name": "Acer palmatum 'Higasayama'",
-      "synonyms": [],
+      "synonyms": [
+        "Higasa yama"
+      ],
       "group": "unknown",
       "traits": {
         "nl": "Blad met zeven langwerpige, diep getande lobben; de bladranden zijn wit en onderbroken door groene banden langs de hoofdnerven. Jong blad kan roze getint zijn.",
@@ -3952,6 +4059,11 @@
           "title": "Plantentuin Esveld — zoekresultaat (individueel cultivarprofiel nog niet gecontroleerd)",
           "url": "https://esveld.nl/a/winkel/?compact=1&swoof=1&woof_text=Acer%20palmatum%20%27Higasayama%27",
           "supports": "Search starting point only; not evidence until the matching cultivar profile is reviewed"
+        },
+        {
+          "title": "Plantentuin Esveld — inventarislijst (door gebruiker aangeleverd PDF)",
+          "url": "https://www.esveld.nl/catal/gedruktecat.pdf",
+          "supports": "Presence of this Acer name in the inventory list only; not cultivar traits or historical claims"
         }
       ],
       "historical_notes": {
@@ -3988,7 +4100,11 @@
         "source_scope": "Algemene teeltinformatie voor Acer palmatum / Acer shirasawanum; cultivar-specifieke details alleen waar expliciet genoemd."
       },
       "photos": [],
-      "data_completeness": "partly documented"
+      "data_completeness": "partly documented",
+      "esveld_inventory_codes": [
+        "c05",
+        "d07"
+      ]
     },
     {
       "id": "cultivar-mikawakaen",
@@ -4075,7 +4191,9 @@
       "id": "cultivar-tamukeyama",
       "name": "Tamukeyama",
       "accepted_name": "Acer palmatum 'Tamukeyama'",
-      "synonyms": [],
+      "synonyms": [
+        "Tamuke yama"
+      ],
       "group": "unknown",
       "traits": {
         "nl": "Overhangende dissectum-cultivar met fijn ingesneden donker roodpaars blad. De kleur blijft doorgaans goed behouden en slaat in de herfst om naar felrood.",
@@ -4119,6 +4237,11 @@
           "title": "Spaargaren — catalogus Acer-cultivars",
           "url": "https://spaargaren.com/wp-content/uploads/2023/09/USA-COMPLEET_Spaargaren_us2023_2eProef.pdf",
           "supports": "Groeivorm en bladkleur door het seizoen"
+        },
+        {
+          "title": "Plantentuin Esveld — inventarislijst (door gebruiker aangeleverd PDF)",
+          "url": "https://www.esveld.nl/catal/gedruktecat.pdf",
+          "supports": "Presence of this Acer name in the inventory list only; not cultivar traits or historical claims"
         }
       ],
       "historical_notes": {
@@ -4155,7 +4278,11 @@
       },
       "photos": [],
       "data_completeness": "partly documented; cultivar-specific research sources linked",
-      "last_checked": "2026-10-21"
+      "last_checked": "2026-10-21",
+      "esveld_inventory_codes": [
+        "a08",
+        "c22"
+      ]
     },
     {
       "id": "cultivar-akashigitatsusawa",
@@ -12964,7 +13091,9 @@
       "id": "cultivar-acer-palmatum-summer-gold",
       "name": "Summer Gold",
       "accepted_name": "Acer palmatum 'Summer Gold'",
-      "synonyms": [],
+      "synonyms": [
+        "Summergold"
+      ],
       "group": "unknown",
       "traits": {
         "nl": "Cultivar vermeld in de A–Z-gids van Mr Maple. Individuele blad-, groei- en standplaatskenmerken zijn nog niet afzonderlijk geverifieerd.",
@@ -12993,6 +13122,11 @@
           "title": "Mr Maple — A–Z Cultivar Guide",
           "url": "https://mrmaple.com/pages/r-cultivars",
           "supports": "Cultivar/botanical name listing only; no trait claims inferred"
+        },
+        {
+          "title": "Plantentuin Esveld — inventarislijst (door gebruiker aangeleverd PDF)",
+          "url": "https://www.esveld.nl/catal/gedruktecat.pdf",
+          "supports": "Presence of this Acer name in the inventory list only; not cultivar traits or historical claims"
         }
       ],
       "historical_notes": {
@@ -13029,7 +13163,10 @@
         "source_scope": "Mr Maple A–Z-gids bevestigt hier alleen de naam, niet de teeltkenmerken."
       },
       "photos": [],
-      "data_completeness": "name only; traits pending"
+      "data_completeness": "name only; traits pending",
+      "esveld_inventory_codes": [
+        "c05"
+      ]
     },
     {
       "id": "cultivar-acer-palmatum-sweet-lorraine",
@@ -14569,7 +14706,9 @@
       "id": "cultivar-hana-chiru-sato",
       "name": "Hana chiru sato",
       "accepted_name": "Acer buergerianum 'Hana chiru sato'",
-      "synonyms": [],
+      "synonyms": [
+        "Hanachiru sato"
+      ],
       "group": "unknown",
       "traits": {
         "nl": "Eigenschappen volgens Mr Maple: Described as a white-variegated trident maple; the page notes bright white spring foliage.",
@@ -14598,6 +14737,11 @@
           "title": "Mr Maple — All Maples catalogue",
           "url": "https://mrmaple.com/collections/all-maples",
           "supports": "Name and brief horticultural description as displayed in the product catalogue"
+        },
+        {
+          "title": "Plantentuin Esveld — inventarislijst (door gebruiker aangeleverd PDF)",
+          "url": "https://www.esveld.nl/catal/gedruktecat.pdf",
+          "supports": "Presence of this Acer name in the inventory list only; not cultivar traits or historical claims"
         }
       ],
       "historical_notes": {
@@ -14626,7 +14770,10 @@
         "soil": "Onbekend",
         "hardiness": "Onbekend"
       },
-      "data_completeness": "partial"
+      "data_completeness": "partial",
+      "esveld_inventory_codes": [
+        "c05"
+      ]
     },
     {
       "id": "cultivar-inazuma-nishiki",
@@ -16759,79 +16906,6 @@
       "name_data": {
         "botanical_name": "Acer buergerianum 'Goshiki shidare'",
         "cultivar_name": "Goshiki shidare",
-        "synonyms": [],
-        "common_name": "Onbekend"
-      },
-      "species": "Acer buergerianum",
-      "plant_group": "Onbekend",
-      "growth_habit": "Onbekend",
-      "seasonal_characteristics": {
-        "spring": "Onbekend",
-        "summer": "Onbekend",
-        "autumn": "Onbekend"
-      },
-      "growth": {
-        "height_after_10_years": "Onbekend",
-        "width_after_10_years": "Onbekend",
-        "growth_rate": "Onbekend"
-      },
-      "site": {
-        "position": "Onbekend",
-        "soil": "Onbekend",
-        "climate_zone": "Onbekend",
-        "source_scope": "Nog niet onderzocht; geen teeltadvies afgeleid uit de inventarislijst."
-      },
-      "photos": [],
-      "data_completeness": "name-only",
-      "esveld_inventory_codes": [
-        "c05"
-      ]
-    },
-    {
-      "id": "esveld-acer-buergerianum-hanachiru-sato",
-      "name": "Hanachiru sato",
-      "accepted_name": "Acer buergerianum 'Hanachiru sato'",
-      "synonyms": [],
-      "group": "unknown",
-      "traits": {
-        "nl": "Eigenschappen nog niet individueel uit de inventarislijst vastgesteld.",
-        "en": "Traits not yet individually established from the inventory list."
-      },
-      "history": {
-        "nl": "Herkomst en introductiegeschiedenis nog niet onderzocht.",
-        "en": "Origin and introduction history not yet researched."
-      },
-      "introduction_year": null,
-      "selector_or_introducer": {
-        "nl": "Onbekend",
-        "en": "Unknown"
-      },
-      "origin": {
-        "nl": "Onbekend",
-        "en": "Unknown"
-      },
-      "evidence_status": "inventory-only",
-      "evidence_label": {
-        "nl": "Naam aangetroffen in Esveld-inventarislijst; eigenschappen nog niet verrijkt",
-        "en": "Name found in Esveld inventory list; traits not yet enriched"
-      },
-      "sources": [
-        {
-          "title": "Plantentuin Esveld — inventarislijst (door gebruiker aangeleverd PDF)",
-          "url": "https://www.esveld.nl/catal/gedruktecat.pdf",
-          "supports": "Presence of this Acer name in the inventory list only; not cultivar traits or historical claims"
-        }
-      ],
-      "historical_notes": {
-        "nl": "Selecteur/introducteur en introductiejaar niet vastgesteld; niet afleiden uit de inventarislijst.",
-        "en": "Selector/introducer and introduction year not established; do not infer from the inventory list."
-      },
-      "review_needed": true,
-      "last_checked": "2026-10-22",
-      "photo_status": "no-photo-yet",
-      "name_data": {
-        "botanical_name": "Acer buergerianum 'Hanachiru sato'",
-        "cultivar_name": "Hanachiru sato",
         "synonyms": [],
         "common_name": "Onbekend"
       },
@@ -27427,79 +27501,6 @@
       ]
     },
     {
-      "id": "esveld-acer-palmatum-beni-maiko",
-      "name": "Beni maiko",
-      "accepted_name": "Acer palmatum 'Beni maiko'",
-      "synonyms": [],
-      "group": "unknown",
-      "traits": {
-        "nl": "Eigenschappen nog niet individueel uit de inventarislijst vastgesteld.",
-        "en": "Traits not yet individually established from the inventory list."
-      },
-      "history": {
-        "nl": "Herkomst en introductiegeschiedenis nog niet onderzocht.",
-        "en": "Origin and introduction history not yet researched."
-      },
-      "introduction_year": null,
-      "selector_or_introducer": {
-        "nl": "Onbekend",
-        "en": "Unknown"
-      },
-      "origin": {
-        "nl": "Onbekend",
-        "en": "Unknown"
-      },
-      "evidence_status": "inventory-only",
-      "evidence_label": {
-        "nl": "Naam aangetroffen in Esveld-inventarislijst; eigenschappen nog niet verrijkt",
-        "en": "Name found in Esveld inventory list; traits not yet enriched"
-      },
-      "sources": [
-        {
-          "title": "Plantentuin Esveld — inventarislijst (door gebruiker aangeleverd PDF)",
-          "url": "https://www.esveld.nl/catal/gedruktecat.pdf",
-          "supports": "Presence of this Acer name in the inventory list only; not cultivar traits or historical claims"
-        }
-      ],
-      "historical_notes": {
-        "nl": "Selecteur/introducteur en introductiejaar niet vastgesteld; niet afleiden uit de inventarislijst.",
-        "en": "Selector/introducer and introduction year not established; do not infer from the inventory list."
-      },
-      "review_needed": true,
-      "last_checked": "2026-10-22",
-      "photo_status": "no-photo-yet",
-      "name_data": {
-        "botanical_name": "Acer palmatum 'Beni maiko'",
-        "cultivar_name": "Beni maiko",
-        "synonyms": [],
-        "common_name": "Onbekend"
-      },
-      "species": "Acer palmatum",
-      "plant_group": "Onbekend",
-      "growth_habit": "Onbekend",
-      "seasonal_characteristics": {
-        "spring": "Onbekend",
-        "summer": "Onbekend",
-        "autumn": "Onbekend"
-      },
-      "growth": {
-        "height_after_10_years": "Onbekend",
-        "width_after_10_years": "Onbekend",
-        "growth_rate": "Onbekend"
-      },
-      "site": {
-        "position": "Onbekend",
-        "soil": "Onbekend",
-        "climate_zone": "Onbekend",
-        "source_scope": "Nog niet onderzocht; geen teeltadvies afgeleid uit de inventarislijst."
-      },
-      "photos": [],
-      "data_completeness": "name-only",
-      "esveld_inventory_codes": [
-        "b08"
-      ]
-    },
-    {
       "id": "esveld-acer-palmatum-beni-musume",
       "name": "Beni musume",
       "accepted_name": "Acer palmatum 'Beni musume'",
@@ -27937,79 +27938,6 @@
       "data_completeness": "name-only",
       "esveld_inventory_codes": [
         "c20"
-      ]
-    },
-    {
-      "id": "esveld-acer-palmatum-beni-tsukasa",
-      "name": "Beni tsukasa",
-      "accepted_name": "Acer palmatum 'Beni tsukasa'",
-      "synonyms": [],
-      "group": "unknown",
-      "traits": {
-        "nl": "Eigenschappen nog niet individueel uit de inventarislijst vastgesteld.",
-        "en": "Traits not yet individually established from the inventory list."
-      },
-      "history": {
-        "nl": "Herkomst en introductiegeschiedenis nog niet onderzocht.",
-        "en": "Origin and introduction history not yet researched."
-      },
-      "introduction_year": null,
-      "selector_or_introducer": {
-        "nl": "Onbekend",
-        "en": "Unknown"
-      },
-      "origin": {
-        "nl": "Onbekend",
-        "en": "Unknown"
-      },
-      "evidence_status": "inventory-only",
-      "evidence_label": {
-        "nl": "Naam aangetroffen in Esveld-inventarislijst; eigenschappen nog niet verrijkt",
-        "en": "Name found in Esveld inventory list; traits not yet enriched"
-      },
-      "sources": [
-        {
-          "title": "Plantentuin Esveld — inventarislijst (door gebruiker aangeleverd PDF)",
-          "url": "https://www.esveld.nl/catal/gedruktecat.pdf",
-          "supports": "Presence of this Acer name in the inventory list only; not cultivar traits or historical claims"
-        }
-      ],
-      "historical_notes": {
-        "nl": "Selecteur/introducteur en introductiejaar niet vastgesteld; niet afleiden uit de inventarislijst.",
-        "en": "Selector/introducer and introduction year not established; do not infer from the inventory list."
-      },
-      "review_needed": true,
-      "last_checked": "2026-10-22",
-      "photo_status": "no-photo-yet",
-      "name_data": {
-        "botanical_name": "Acer palmatum 'Beni tsukasa'",
-        "cultivar_name": "Beni tsukasa",
-        "synonyms": [],
-        "common_name": "Onbekend"
-      },
-      "species": "Acer palmatum",
-      "plant_group": "Onbekend",
-      "growth_habit": "Onbekend",
-      "seasonal_characteristics": {
-        "spring": "Onbekend",
-        "summer": "Onbekend",
-        "autumn": "Onbekend"
-      },
-      "growth": {
-        "height_after_10_years": "Onbekend",
-        "width_after_10_years": "Onbekend",
-        "growth_rate": "Onbekend"
-      },
-      "site": {
-        "position": "Onbekend",
-        "soil": "Onbekend",
-        "climate_zone": "Onbekend",
-        "source_scope": "Nog niet onderzocht; geen teeltadvies afgeleid uit de inventarislijst."
-      },
-      "photos": [],
-      "data_completeness": "name-only",
-      "esveld_inventory_codes": [
-        "c11"
       ]
     },
     {
@@ -30071,79 +29999,6 @@
       "data_completeness": "name-only",
       "esveld_inventory_codes": [
         "wes"
-      ]
-    },
-    {
-      "id": "esveld-acer-palmatum-chitose-yama",
-      "name": "Chitose yama",
-      "accepted_name": "Acer palmatum 'Chitose yama'",
-      "synonyms": [],
-      "group": "unknown",
-      "traits": {
-        "nl": "Eigenschappen nog niet individueel uit de inventarislijst vastgesteld.",
-        "en": "Traits not yet individually established from the inventory list."
-      },
-      "history": {
-        "nl": "Herkomst en introductiegeschiedenis nog niet onderzocht.",
-        "en": "Origin and introduction history not yet researched."
-      },
-      "introduction_year": null,
-      "selector_or_introducer": {
-        "nl": "Onbekend",
-        "en": "Unknown"
-      },
-      "origin": {
-        "nl": "Onbekend",
-        "en": "Unknown"
-      },
-      "evidence_status": "inventory-only",
-      "evidence_label": {
-        "nl": "Naam aangetroffen in Esveld-inventarislijst; eigenschappen nog niet verrijkt",
-        "en": "Name found in Esveld inventory list; traits not yet enriched"
-      },
-      "sources": [
-        {
-          "title": "Plantentuin Esveld — inventarislijst (door gebruiker aangeleverd PDF)",
-          "url": "https://www.esveld.nl/catal/gedruktecat.pdf",
-          "supports": "Presence of this Acer name in the inventory list only; not cultivar traits or historical claims"
-        }
-      ],
-      "historical_notes": {
-        "nl": "Selecteur/introducteur en introductiejaar niet vastgesteld; niet afleiden uit de inventarislijst.",
-        "en": "Selector/introducer and introduction year not established; do not infer from the inventory list."
-      },
-      "review_needed": true,
-      "last_checked": "2026-10-22",
-      "photo_status": "no-photo-yet",
-      "name_data": {
-        "botanical_name": "Acer palmatum 'Chitose yama'",
-        "cultivar_name": "Chitose yama",
-        "synonyms": [],
-        "common_name": "Onbekend"
-      },
-      "species": "Acer palmatum",
-      "plant_group": "Onbekend",
-      "growth_habit": "Onbekend",
-      "seasonal_characteristics": {
-        "spring": "Onbekend",
-        "summer": "Onbekend",
-        "autumn": "Onbekend"
-      },
-      "growth": {
-        "height_after_10_years": "Onbekend",
-        "width_after_10_years": "Onbekend",
-        "growth_rate": "Onbekend"
-      },
-      "site": {
-        "position": "Onbekend",
-        "soil": "Onbekend",
-        "climate_zone": "Onbekend",
-        "source_scope": "Nog niet onderzocht; geen teeltadvies afgeleid uit de inventarislijst."
-      },
-      "photos": [],
-      "data_completeness": "name-only",
-      "esveld_inventory_codes": [
-        "a16"
       ]
     },
     {
@@ -38137,7 +37992,9 @@
       "id": "esveld-acer-palmatum-hi-no-tsukasa",
       "name": "Hi no tsukasa",
       "accepted_name": "Acer palmatum 'Hi no tsukasa'",
-      "synonyms": [],
+      "synonyms": [
+        "Hino tsukasa"
+      ],
       "group": "unknown",
       "traits": {
         "nl": "Eigenschappen nog niet individueel uit de inventarislijst vastgesteld.",
@@ -38203,7 +38060,8 @@
       "photos": [],
       "data_completeness": "name-only",
       "esveld_inventory_codes": [
-        "c14"
+        "c14",
+        "c22"
       ]
     },
     {
@@ -38277,80 +38135,6 @@
       "data_completeness": "name-only",
       "esveld_inventory_codes": [
         "c05"
-      ]
-    },
-    {
-      "id": "esveld-acer-palmatum-higasa-yama",
-      "name": "Higasa yama",
-      "accepted_name": "Acer palmatum 'Higasa yama'",
-      "synonyms": [],
-      "group": "unknown",
-      "traits": {
-        "nl": "Eigenschappen nog niet individueel uit de inventarislijst vastgesteld.",
-        "en": "Traits not yet individually established from the inventory list."
-      },
-      "history": {
-        "nl": "Herkomst en introductiegeschiedenis nog niet onderzocht.",
-        "en": "Origin and introduction history not yet researched."
-      },
-      "introduction_year": null,
-      "selector_or_introducer": {
-        "nl": "Onbekend",
-        "en": "Unknown"
-      },
-      "origin": {
-        "nl": "Onbekend",
-        "en": "Unknown"
-      },
-      "evidence_status": "inventory-only",
-      "evidence_label": {
-        "nl": "Naam aangetroffen in Esveld-inventarislijst; eigenschappen nog niet verrijkt",
-        "en": "Name found in Esveld inventory list; traits not yet enriched"
-      },
-      "sources": [
-        {
-          "title": "Plantentuin Esveld — inventarislijst (door gebruiker aangeleverd PDF)",
-          "url": "https://www.esveld.nl/catal/gedruktecat.pdf",
-          "supports": "Presence of this Acer name in the inventory list only; not cultivar traits or historical claims"
-        }
-      ],
-      "historical_notes": {
-        "nl": "Selecteur/introducteur en introductiejaar niet vastgesteld; niet afleiden uit de inventarislijst.",
-        "en": "Selector/introducer and introduction year not established; do not infer from the inventory list."
-      },
-      "review_needed": true,
-      "last_checked": "2026-10-22",
-      "photo_status": "no-photo-yet",
-      "name_data": {
-        "botanical_name": "Acer palmatum 'Higasa yama'",
-        "cultivar_name": "Higasa yama",
-        "synonyms": [],
-        "common_name": "Onbekend"
-      },
-      "species": "Acer palmatum",
-      "plant_group": "Onbekend",
-      "growth_habit": "Onbekend",
-      "seasonal_characteristics": {
-        "spring": "Onbekend",
-        "summer": "Onbekend",
-        "autumn": "Onbekend"
-      },
-      "growth": {
-        "height_after_10_years": "Onbekend",
-        "width_after_10_years": "Onbekend",
-        "growth_rate": "Onbekend"
-      },
-      "site": {
-        "position": "Onbekend",
-        "soil": "Onbekend",
-        "climate_zone": "Onbekend",
-        "source_scope": "Nog niet onderzocht; geen teeltadvies afgeleid uit de inventarislijst."
-      },
-      "photos": [],
-      "data_completeness": "name-only",
-      "esveld_inventory_codes": [
-        "c05",
-        "d07"
       ]
     },
     {
@@ -38571,79 +38355,6 @@
       "esveld_inventory_codes": [
         "a11",
         "wes"
-      ]
-    },
-    {
-      "id": "esveld-acer-palmatum-hino-tsukasa",
-      "name": "Hino tsukasa",
-      "accepted_name": "Acer palmatum 'Hino tsukasa'",
-      "synonyms": [],
-      "group": "unknown",
-      "traits": {
-        "nl": "Eigenschappen nog niet individueel uit de inventarislijst vastgesteld.",
-        "en": "Traits not yet individually established from the inventory list."
-      },
-      "history": {
-        "nl": "Herkomst en introductiegeschiedenis nog niet onderzocht.",
-        "en": "Origin and introduction history not yet researched."
-      },
-      "introduction_year": null,
-      "selector_or_introducer": {
-        "nl": "Onbekend",
-        "en": "Unknown"
-      },
-      "origin": {
-        "nl": "Onbekend",
-        "en": "Unknown"
-      },
-      "evidence_status": "inventory-only",
-      "evidence_label": {
-        "nl": "Naam aangetroffen in Esveld-inventarislijst; eigenschappen nog niet verrijkt",
-        "en": "Name found in Esveld inventory list; traits not yet enriched"
-      },
-      "sources": [
-        {
-          "title": "Plantentuin Esveld — inventarislijst (door gebruiker aangeleverd PDF)",
-          "url": "https://www.esveld.nl/catal/gedruktecat.pdf",
-          "supports": "Presence of this Acer name in the inventory list only; not cultivar traits or historical claims"
-        }
-      ],
-      "historical_notes": {
-        "nl": "Selecteur/introducteur en introductiejaar niet vastgesteld; niet afleiden uit de inventarislijst.",
-        "en": "Selector/introducer and introduction year not established; do not infer from the inventory list."
-      },
-      "review_needed": true,
-      "last_checked": "2026-10-22",
-      "photo_status": "no-photo-yet",
-      "name_data": {
-        "botanical_name": "Acer palmatum 'Hino tsukasa'",
-        "cultivar_name": "Hino tsukasa",
-        "synonyms": [],
-        "common_name": "Onbekend"
-      },
-      "species": "Acer palmatum",
-      "plant_group": "Onbekend",
-      "growth_habit": "Onbekend",
-      "seasonal_characteristics": {
-        "spring": "Onbekend",
-        "summer": "Onbekend",
-        "autumn": "Onbekend"
-      },
-      "growth": {
-        "height_after_10_years": "Onbekend",
-        "width_after_10_years": "Onbekend",
-        "growth_rate": "Onbekend"
-      },
-      "site": {
-        "position": "Onbekend",
-        "soil": "Onbekend",
-        "climate_zone": "Onbekend",
-        "source_scope": "Nog niet onderzocht; geen teeltadvies afgeleid uit de inventarislijst."
-      },
-      "photos": [],
-      "data_completeness": "name-only",
-      "esveld_inventory_codes": [
-        "c22"
       ]
     },
     {
@@ -40262,80 +39973,6 @@
       "data_completeness": "name-only",
       "esveld_inventory_codes": [
         "c05"
-      ]
-    },
-    {
-      "id": "esveld-acer-palmatum-inaba-shidare",
-      "name": "Inaba shidare",
-      "accepted_name": "Acer palmatum 'Inaba shidare'",
-      "synonyms": [],
-      "group": "unknown",
-      "traits": {
-        "nl": "Eigenschappen nog niet individueel uit de inventarislijst vastgesteld.",
-        "en": "Traits not yet individually established from the inventory list."
-      },
-      "history": {
-        "nl": "Herkomst en introductiegeschiedenis nog niet onderzocht.",
-        "en": "Origin and introduction history not yet researched."
-      },
-      "introduction_year": null,
-      "selector_or_introducer": {
-        "nl": "Onbekend",
-        "en": "Unknown"
-      },
-      "origin": {
-        "nl": "Onbekend",
-        "en": "Unknown"
-      },
-      "evidence_status": "inventory-only",
-      "evidence_label": {
-        "nl": "Naam aangetroffen in Esveld-inventarislijst; eigenschappen nog niet verrijkt",
-        "en": "Name found in Esveld inventory list; traits not yet enriched"
-      },
-      "sources": [
-        {
-          "title": "Plantentuin Esveld — inventarislijst (door gebruiker aangeleverd PDF)",
-          "url": "https://www.esveld.nl/catal/gedruktecat.pdf",
-          "supports": "Presence of this Acer name in the inventory list only; not cultivar traits or historical claims"
-        }
-      ],
-      "historical_notes": {
-        "nl": "Selecteur/introducteur en introductiejaar niet vastgesteld; niet afleiden uit de inventarislijst.",
-        "en": "Selector/introducer and introduction year not established; do not infer from the inventory list."
-      },
-      "review_needed": true,
-      "last_checked": "2026-10-22",
-      "photo_status": "no-photo-yet",
-      "name_data": {
-        "botanical_name": "Acer palmatum 'Inaba shidare'",
-        "cultivar_name": "Inaba shidare",
-        "synonyms": [],
-        "common_name": "Onbekend"
-      },
-      "species": "Acer palmatum",
-      "plant_group": "Onbekend",
-      "growth_habit": "Onbekend",
-      "seasonal_characteristics": {
-        "spring": "Onbekend",
-        "summer": "Onbekend",
-        "autumn": "Onbekend"
-      },
-      "growth": {
-        "height_after_10_years": "Onbekend",
-        "width_after_10_years": "Onbekend",
-        "growth_rate": "Onbekend"
-      },
-      "site": {
-        "position": "Onbekend",
-        "soil": "Onbekend",
-        "climate_zone": "Onbekend",
-        "source_scope": "Nog niet onderzocht; geen teeltadvies afgeleid uit de inventarislijst."
-      },
-      "photos": [],
-      "data_completeness": "name-only",
-      "esveld_inventory_codes": [
-        "c10",
-        "c13"
       ]
     },
     {
@@ -43638,79 +43275,6 @@
       ]
     },
     {
-      "id": "esveld-acer-palmatum-kiyo-hime",
-      "name": "Kiyo hime",
-      "accepted_name": "Acer palmatum 'Kiyo hime'",
-      "synonyms": [],
-      "group": "unknown",
-      "traits": {
-        "nl": "Eigenschappen nog niet individueel uit de inventarislijst vastgesteld.",
-        "en": "Traits not yet individually established from the inventory list."
-      },
-      "history": {
-        "nl": "Herkomst en introductiegeschiedenis nog niet onderzocht.",
-        "en": "Origin and introduction history not yet researched."
-      },
-      "introduction_year": null,
-      "selector_or_introducer": {
-        "nl": "Onbekend",
-        "en": "Unknown"
-      },
-      "origin": {
-        "nl": "Onbekend",
-        "en": "Unknown"
-      },
-      "evidence_status": "inventory-only",
-      "evidence_label": {
-        "nl": "Naam aangetroffen in Esveld-inventarislijst; eigenschappen nog niet verrijkt",
-        "en": "Name found in Esveld inventory list; traits not yet enriched"
-      },
-      "sources": [
-        {
-          "title": "Plantentuin Esveld — inventarislijst (door gebruiker aangeleverd PDF)",
-          "url": "https://www.esveld.nl/catal/gedruktecat.pdf",
-          "supports": "Presence of this Acer name in the inventory list only; not cultivar traits or historical claims"
-        }
-      ],
-      "historical_notes": {
-        "nl": "Selecteur/introducteur en introductiejaar niet vastgesteld; niet afleiden uit de inventarislijst.",
-        "en": "Selector/introducer and introduction year not established; do not infer from the inventory list."
-      },
-      "review_needed": true,
-      "last_checked": "2026-10-22",
-      "photo_status": "no-photo-yet",
-      "name_data": {
-        "botanical_name": "Acer palmatum 'Kiyo hime'",
-        "cultivar_name": "Kiyo hime",
-        "synonyms": [],
-        "common_name": "Onbekend"
-      },
-      "species": "Acer palmatum",
-      "plant_group": "Onbekend",
-      "growth_habit": "Onbekend",
-      "seasonal_characteristics": {
-        "spring": "Onbekend",
-        "summer": "Onbekend",
-        "autumn": "Onbekend"
-      },
-      "growth": {
-        "height_after_10_years": "Onbekend",
-        "width_after_10_years": "Onbekend",
-        "growth_rate": "Onbekend"
-      },
-      "site": {
-        "position": "Onbekend",
-        "soil": "Onbekend",
-        "climate_zone": "Onbekend",
-        "source_scope": "Nog niet onderzocht; geen teeltadvies afgeleid uit de inventarislijst."
-      },
-      "photos": [],
-      "data_completeness": "name-only",
-      "esveld_inventory_codes": [
-        "c05"
-      ]
-    },
-    {
       "id": "esveld-acer-palmatum-ko-chidori",
       "name": "Ko chidori",
       "accepted_name": "Acer palmatum 'Ko chidori'",
@@ -44957,79 +44521,6 @@
       "data_completeness": "name-only",
       "esveld_inventory_codes": [
         "a07"
-      ]
-    },
-    {
-      "id": "esveld-acer-palmatum-koto-no-ito",
-      "name": "Koto no ito",
-      "accepted_name": "Acer palmatum 'Koto no ito'",
-      "synonyms": [],
-      "group": "unknown",
-      "traits": {
-        "nl": "Eigenschappen nog niet individueel uit de inventarislijst vastgesteld.",
-        "en": "Traits not yet individually established from the inventory list."
-      },
-      "history": {
-        "nl": "Herkomst en introductiegeschiedenis nog niet onderzocht.",
-        "en": "Origin and introduction history not yet researched."
-      },
-      "introduction_year": null,
-      "selector_or_introducer": {
-        "nl": "Onbekend",
-        "en": "Unknown"
-      },
-      "origin": {
-        "nl": "Onbekend",
-        "en": "Unknown"
-      },
-      "evidence_status": "inventory-only",
-      "evidence_label": {
-        "nl": "Naam aangetroffen in Esveld-inventarislijst; eigenschappen nog niet verrijkt",
-        "en": "Name found in Esveld inventory list; traits not yet enriched"
-      },
-      "sources": [
-        {
-          "title": "Plantentuin Esveld — inventarislijst (door gebruiker aangeleverd PDF)",
-          "url": "https://www.esveld.nl/catal/gedruktecat.pdf",
-          "supports": "Presence of this Acer name in the inventory list only; not cultivar traits or historical claims"
-        }
-      ],
-      "historical_notes": {
-        "nl": "Selecteur/introducteur en introductiejaar niet vastgesteld; niet afleiden uit de inventarislijst.",
-        "en": "Selector/introducer and introduction year not established; do not infer from the inventory list."
-      },
-      "review_needed": true,
-      "last_checked": "2026-10-22",
-      "photo_status": "no-photo-yet",
-      "name_data": {
-        "botanical_name": "Acer palmatum 'Koto no ito'",
-        "cultivar_name": "Koto no ito",
-        "synonyms": [],
-        "common_name": "Onbekend"
-      },
-      "species": "Acer palmatum",
-      "plant_group": "Onbekend",
-      "growth_habit": "Onbekend",
-      "seasonal_characteristics": {
-        "spring": "Onbekend",
-        "summer": "Onbekend",
-        "autumn": "Onbekend"
-      },
-      "growth": {
-        "height_after_10_years": "Onbekend",
-        "width_after_10_years": "Onbekend",
-        "growth_rate": "Onbekend"
-      },
-      "site": {
-        "position": "Onbekend",
-        "soil": "Onbekend",
-        "climate_zone": "Onbekend",
-        "source_scope": "Nog niet onderzocht; geen teeltadvies afgeleid uit de inventarislijst."
-      },
-      "photos": [],
-      "data_completeness": "name-only",
-      "esveld_inventory_codes": [
-        "a09"
       ]
     },
     {
@@ -58606,79 +58097,6 @@
       ]
     },
     {
-      "id": "esveld-acer-palmatum-sango-kaku",
-      "name": "Sango kaku",
-      "accepted_name": "Acer palmatum 'Sango kaku'",
-      "synonyms": [],
-      "group": "unknown",
-      "traits": {
-        "nl": "Eigenschappen nog niet individueel uit de inventarislijst vastgesteld.",
-        "en": "Traits not yet individually established from the inventory list."
-      },
-      "history": {
-        "nl": "Herkomst en introductiegeschiedenis nog niet onderzocht.",
-        "en": "Origin and introduction history not yet researched."
-      },
-      "introduction_year": null,
-      "selector_or_introducer": {
-        "nl": "Onbekend",
-        "en": "Unknown"
-      },
-      "origin": {
-        "nl": "Onbekend",
-        "en": "Unknown"
-      },
-      "evidence_status": "inventory-only",
-      "evidence_label": {
-        "nl": "Naam aangetroffen in Esveld-inventarislijst; eigenschappen nog niet verrijkt",
-        "en": "Name found in Esveld inventory list; traits not yet enriched"
-      },
-      "sources": [
-        {
-          "title": "Plantentuin Esveld — inventarislijst (door gebruiker aangeleverd PDF)",
-          "url": "https://www.esveld.nl/catal/gedruktecat.pdf",
-          "supports": "Presence of this Acer name in the inventory list only; not cultivar traits or historical claims"
-        }
-      ],
-      "historical_notes": {
-        "nl": "Selecteur/introducteur en introductiejaar niet vastgesteld; niet afleiden uit de inventarislijst.",
-        "en": "Selector/introducer and introduction year not established; do not infer from the inventory list."
-      },
-      "review_needed": true,
-      "last_checked": "2026-10-22",
-      "photo_status": "no-photo-yet",
-      "name_data": {
-        "botanical_name": "Acer palmatum 'Sango kaku'",
-        "cultivar_name": "Sango kaku",
-        "synonyms": [],
-        "common_name": "Onbekend"
-      },
-      "species": "Acer palmatum",
-      "plant_group": "Onbekend",
-      "growth_habit": "Onbekend",
-      "seasonal_characteristics": {
-        "spring": "Onbekend",
-        "summer": "Onbekend",
-        "autumn": "Onbekend"
-      },
-      "growth": {
-        "height_after_10_years": "Onbekend",
-        "width_after_10_years": "Onbekend",
-        "growth_rate": "Onbekend"
-      },
-      "site": {
-        "position": "Onbekend",
-        "soil": "Onbekend",
-        "climate_zone": "Onbekend",
-        "source_scope": "Nog niet onderzocht; geen teeltadvies afgeleid uit de inventarislijst."
-      },
-      "photos": [],
-      "data_completeness": "name-only",
-      "esveld_inventory_codes": [
-        "c20"
-      ]
-    },
-    {
       "id": "esveld-acer-palmatum-saoshika",
       "name": "Saoshika",
       "accepted_name": "Acer palmatum 'Saoshika'",
@@ -60960,80 +60378,6 @@
       ]
     },
     {
-      "id": "esveld-acer-palmatum-shishi-gashira",
-      "name": "Shishi gashira",
-      "accepted_name": "Acer palmatum 'Shishi gashira'",
-      "synonyms": [],
-      "group": "unknown",
-      "traits": {
-        "nl": "Eigenschappen nog niet individueel uit de inventarislijst vastgesteld.",
-        "en": "Traits not yet individually established from the inventory list."
-      },
-      "history": {
-        "nl": "Herkomst en introductiegeschiedenis nog niet onderzocht.",
-        "en": "Origin and introduction history not yet researched."
-      },
-      "introduction_year": null,
-      "selector_or_introducer": {
-        "nl": "Onbekend",
-        "en": "Unknown"
-      },
-      "origin": {
-        "nl": "Onbekend",
-        "en": "Unknown"
-      },
-      "evidence_status": "inventory-only",
-      "evidence_label": {
-        "nl": "Naam aangetroffen in Esveld-inventarislijst; eigenschappen nog niet verrijkt",
-        "en": "Name found in Esveld inventory list; traits not yet enriched"
-      },
-      "sources": [
-        {
-          "title": "Plantentuin Esveld — inventarislijst (door gebruiker aangeleverd PDF)",
-          "url": "https://www.esveld.nl/catal/gedruktecat.pdf",
-          "supports": "Presence of this Acer name in the inventory list only; not cultivar traits or historical claims"
-        }
-      ],
-      "historical_notes": {
-        "nl": "Selecteur/introducteur en introductiejaar niet vastgesteld; niet afleiden uit de inventarislijst.",
-        "en": "Selector/introducer and introduction year not established; do not infer from the inventory list."
-      },
-      "review_needed": true,
-      "last_checked": "2026-10-22",
-      "photo_status": "no-photo-yet",
-      "name_data": {
-        "botanical_name": "Acer palmatum 'Shishi gashira'",
-        "cultivar_name": "Shishi gashira",
-        "synonyms": [],
-        "common_name": "Onbekend"
-      },
-      "species": "Acer palmatum",
-      "plant_group": "Onbekend",
-      "growth_habit": "Onbekend",
-      "seasonal_characteristics": {
-        "spring": "Onbekend",
-        "summer": "Onbekend",
-        "autumn": "Onbekend"
-      },
-      "growth": {
-        "height_after_10_years": "Onbekend",
-        "width_after_10_years": "Onbekend",
-        "growth_rate": "Onbekend"
-      },
-      "site": {
-        "position": "Onbekend",
-        "soil": "Onbekend",
-        "climate_zone": "Onbekend",
-        "source_scope": "Nog niet onderzocht; geen teeltadvies afgeleid uit de inventarislijst."
-      },
-      "photos": [],
-      "data_completeness": "name-only",
-      "esveld_inventory_codes": [
-        "c08",
-        "c10"
-      ]
-    },
-    {
       "id": "esveld-acer-palmatum-shishighosan",
       "name": "Shishighosan",
       "accepted_name": "Acer palmatum 'Shishighosan'",
@@ -62353,80 +61697,6 @@
       ]
     },
     {
-      "id": "esveld-acer-palmatum-sumi-nagashi",
-      "name": "Sumi nagashi",
-      "accepted_name": "Acer palmatum 'Sumi nagashi'",
-      "synonyms": [],
-      "group": "unknown",
-      "traits": {
-        "nl": "Eigenschappen nog niet individueel uit de inventarislijst vastgesteld.",
-        "en": "Traits not yet individually established from the inventory list."
-      },
-      "history": {
-        "nl": "Herkomst en introductiegeschiedenis nog niet onderzocht.",
-        "en": "Origin and introduction history not yet researched."
-      },
-      "introduction_year": null,
-      "selector_or_introducer": {
-        "nl": "Onbekend",
-        "en": "Unknown"
-      },
-      "origin": {
-        "nl": "Onbekend",
-        "en": "Unknown"
-      },
-      "evidence_status": "inventory-only",
-      "evidence_label": {
-        "nl": "Naam aangetroffen in Esveld-inventarislijst; eigenschappen nog niet verrijkt",
-        "en": "Name found in Esveld inventory list; traits not yet enriched"
-      },
-      "sources": [
-        {
-          "title": "Plantentuin Esveld — inventarislijst (door gebruiker aangeleverd PDF)",
-          "url": "https://www.esveld.nl/catal/gedruktecat.pdf",
-          "supports": "Presence of this Acer name in the inventory list only; not cultivar traits or historical claims"
-        }
-      ],
-      "historical_notes": {
-        "nl": "Selecteur/introducteur en introductiejaar niet vastgesteld; niet afleiden uit de inventarislijst.",
-        "en": "Selector/introducer and introduction year not established; do not infer from the inventory list."
-      },
-      "review_needed": true,
-      "last_checked": "2026-10-22",
-      "photo_status": "no-photo-yet",
-      "name_data": {
-        "botanical_name": "Acer palmatum 'Sumi nagashi'",
-        "cultivar_name": "Sumi nagashi",
-        "synonyms": [],
-        "common_name": "Onbekend"
-      },
-      "species": "Acer palmatum",
-      "plant_group": "Onbekend",
-      "growth_habit": "Onbekend",
-      "seasonal_characteristics": {
-        "spring": "Onbekend",
-        "summer": "Onbekend",
-        "autumn": "Onbekend"
-      },
-      "growth": {
-        "height_after_10_years": "Onbekend",
-        "width_after_10_years": "Onbekend",
-        "growth_rate": "Onbekend"
-      },
-      "site": {
-        "position": "Onbekend",
-        "soil": "Onbekend",
-        "climate_zone": "Onbekend",
-        "source_scope": "Nog niet onderzocht; geen teeltadvies afgeleid uit de inventarislijst."
-      },
-      "photos": [],
-      "data_completeness": "name-only",
-      "esveld_inventory_codes": [
-        "c05",
-        "wes"
-      ]
-    },
-    {
       "id": "esveld-acer-palmatum-sumi-shidare",
       "name": "Sumi shidare",
       "accepted_name": "Acer palmatum 'Sumi shidare'",
@@ -62545,79 +61815,6 @@
       "name_data": {
         "botanical_name": "Acer palmatum 'Summer Sunset'",
         "cultivar_name": "Summer Sunset",
-        "synonyms": [],
-        "common_name": "Onbekend"
-      },
-      "species": "Acer palmatum",
-      "plant_group": "Onbekend",
-      "growth_habit": "Onbekend",
-      "seasonal_characteristics": {
-        "spring": "Onbekend",
-        "summer": "Onbekend",
-        "autumn": "Onbekend"
-      },
-      "growth": {
-        "height_after_10_years": "Onbekend",
-        "width_after_10_years": "Onbekend",
-        "growth_rate": "Onbekend"
-      },
-      "site": {
-        "position": "Onbekend",
-        "soil": "Onbekend",
-        "climate_zone": "Onbekend",
-        "source_scope": "Nog niet onderzocht; geen teeltadvies afgeleid uit de inventarislijst."
-      },
-      "photos": [],
-      "data_completeness": "name-only",
-      "esveld_inventory_codes": [
-        "c05"
-      ]
-    },
-    {
-      "id": "esveld-acer-palmatum-summergold",
-      "name": "Summergold",
-      "accepted_name": "Acer palmatum 'Summergold'",
-      "synonyms": [],
-      "group": "unknown",
-      "traits": {
-        "nl": "Eigenschappen nog niet individueel uit de inventarislijst vastgesteld.",
-        "en": "Traits not yet individually established from the inventory list."
-      },
-      "history": {
-        "nl": "Herkomst en introductiegeschiedenis nog niet onderzocht.",
-        "en": "Origin and introduction history not yet researched."
-      },
-      "introduction_year": null,
-      "selector_or_introducer": {
-        "nl": "Onbekend",
-        "en": "Unknown"
-      },
-      "origin": {
-        "nl": "Onbekend",
-        "en": "Unknown"
-      },
-      "evidence_status": "inventory-only",
-      "evidence_label": {
-        "nl": "Naam aangetroffen in Esveld-inventarislijst; eigenschappen nog niet verrijkt",
-        "en": "Name found in Esveld inventory list; traits not yet enriched"
-      },
-      "sources": [
-        {
-          "title": "Plantentuin Esveld — inventarislijst (door gebruiker aangeleverd PDF)",
-          "url": "https://www.esveld.nl/catal/gedruktecat.pdf",
-          "supports": "Presence of this Acer name in the inventory list only; not cultivar traits or historical claims"
-        }
-      ],
-      "historical_notes": {
-        "nl": "Selecteur/introducteur en introductiejaar niet vastgesteld; niet afleiden uit de inventarislijst.",
-        "en": "Selector/introducer and introduction year not established; do not infer from the inventory list."
-      },
-      "review_needed": true,
-      "last_checked": "2026-10-22",
-      "photo_status": "no-photo-yet",
-      "name_data": {
-        "botanical_name": "Acer palmatum 'Summergold'",
-        "cultivar_name": "Summergold",
         "synonyms": [],
         "common_name": "Onbekend"
       },
@@ -63528,80 +62725,6 @@
       "esveld_inventory_codes": [
         "b02",
         "wes"
-      ]
-    },
-    {
-      "id": "esveld-acer-palmatum-tamuke-yama",
-      "name": "Tamuke yama",
-      "accepted_name": "Acer palmatum 'Tamuke yama'",
-      "synonyms": [],
-      "group": "unknown",
-      "traits": {
-        "nl": "Eigenschappen nog niet individueel uit de inventarislijst vastgesteld.",
-        "en": "Traits not yet individually established from the inventory list."
-      },
-      "history": {
-        "nl": "Herkomst en introductiegeschiedenis nog niet onderzocht.",
-        "en": "Origin and introduction history not yet researched."
-      },
-      "introduction_year": null,
-      "selector_or_introducer": {
-        "nl": "Onbekend",
-        "en": "Unknown"
-      },
-      "origin": {
-        "nl": "Onbekend",
-        "en": "Unknown"
-      },
-      "evidence_status": "inventory-only",
-      "evidence_label": {
-        "nl": "Naam aangetroffen in Esveld-inventarislijst; eigenschappen nog niet verrijkt",
-        "en": "Name found in Esveld inventory list; traits not yet enriched"
-      },
-      "sources": [
-        {
-          "title": "Plantentuin Esveld — inventarislijst (door gebruiker aangeleverd PDF)",
-          "url": "https://www.esveld.nl/catal/gedruktecat.pdf",
-          "supports": "Presence of this Acer name in the inventory list only; not cultivar traits or historical claims"
-        }
-      ],
-      "historical_notes": {
-        "nl": "Selecteur/introducteur en introductiejaar niet vastgesteld; niet afleiden uit de inventarislijst.",
-        "en": "Selector/introducer and introduction year not established; do not infer from the inventory list."
-      },
-      "review_needed": true,
-      "last_checked": "2026-10-22",
-      "photo_status": "no-photo-yet",
-      "name_data": {
-        "botanical_name": "Acer palmatum 'Tamuke yama'",
-        "cultivar_name": "Tamuke yama",
-        "synonyms": [],
-        "common_name": "Onbekend"
-      },
-      "species": "Acer palmatum",
-      "plant_group": "Onbekend",
-      "growth_habit": "Onbekend",
-      "seasonal_characteristics": {
-        "spring": "Onbekend",
-        "summer": "Onbekend",
-        "autumn": "Onbekend"
-      },
-      "growth": {
-        "height_after_10_years": "Onbekend",
-        "width_after_10_years": "Onbekend",
-        "growth_rate": "Onbekend"
-      },
-      "site": {
-        "position": "Onbekend",
-        "soil": "Onbekend",
-        "climate_zone": "Onbekend",
-        "source_scope": "Nog niet onderzocht; geen teeltadvies afgeleid uit de inventarislijst."
-      },
-      "photos": [],
-      "data_completeness": "name-only",
-      "esveld_inventory_codes": [
-        "a08",
-        "c22"
       ]
     },
     {
@@ -65369,82 +64492,6 @@
       "data_completeness": "name-only",
       "esveld_inventory_codes": [
         "a09"
-      ]
-    },
-    {
-      "id": "esveld-acer-palmatum-uki-gumo",
-      "name": "Uki gumo",
-      "accepted_name": "Acer palmatum 'Uki gumo'",
-      "synonyms": [],
-      "group": "unknown",
-      "traits": {
-        "nl": "Eigenschappen nog niet individueel uit de inventarislijst vastgesteld.",
-        "en": "Traits not yet individually established from the inventory list."
-      },
-      "history": {
-        "nl": "Herkomst en introductiegeschiedenis nog niet onderzocht.",
-        "en": "Origin and introduction history not yet researched."
-      },
-      "introduction_year": null,
-      "selector_or_introducer": {
-        "nl": "Onbekend",
-        "en": "Unknown"
-      },
-      "origin": {
-        "nl": "Onbekend",
-        "en": "Unknown"
-      },
-      "evidence_status": "inventory-only",
-      "evidence_label": {
-        "nl": "Naam aangetroffen in Esveld-inventarislijst; eigenschappen nog niet verrijkt",
-        "en": "Name found in Esveld inventory list; traits not yet enriched"
-      },
-      "sources": [
-        {
-          "title": "Plantentuin Esveld — inventarislijst (door gebruiker aangeleverd PDF)",
-          "url": "https://www.esveld.nl/catal/gedruktecat.pdf",
-          "supports": "Presence of this Acer name in the inventory list only; not cultivar traits or historical claims"
-        }
-      ],
-      "historical_notes": {
-        "nl": "Selecteur/introducteur en introductiejaar niet vastgesteld; niet afleiden uit de inventarislijst.",
-        "en": "Selector/introducer and introduction year not established; do not infer from the inventory list."
-      },
-      "review_needed": true,
-      "last_checked": "2026-10-22",
-      "photo_status": "no-photo-yet",
-      "name_data": {
-        "botanical_name": "Acer palmatum 'Uki gumo'",
-        "cultivar_name": "Uki gumo",
-        "synonyms": [],
-        "common_name": "Onbekend"
-      },
-      "species": "Acer palmatum",
-      "plant_group": "Onbekend",
-      "growth_habit": "Onbekend",
-      "seasonal_characteristics": {
-        "spring": "Onbekend",
-        "summer": "Onbekend",
-        "autumn": "Onbekend"
-      },
-      "growth": {
-        "height_after_10_years": "Onbekend",
-        "width_after_10_years": "Onbekend",
-        "growth_rate": "Onbekend"
-      },
-      "site": {
-        "position": "Onbekend",
-        "soil": "Onbekend",
-        "climate_zone": "Onbekend",
-        "source_scope": "Nog niet onderzocht; geen teeltadvies afgeleid uit de inventarislijst."
-      },
-      "photos": [],
-      "data_completeness": "name-only",
-      "esveld_inventory_codes": [
-        "b02",
-        "c05",
-        "c11",
-        "c19"
       ]
     },
     {
@@ -76237,5 +75284,5 @@
       ]
     }
   ],
-  "photo_count": 6
+  "photo_count": 9
 }

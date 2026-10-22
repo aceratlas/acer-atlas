@@ -1,9 +1,3 @@
-## Acer Atlas v7.6
-
-- Encyclopedie zonder sorteer- en soortfilter bovenaan; standaard alfabetisch op cultivarnaam.
-- Zoeken doorzoekt botanische naam, synoniemen, kenmerken, geschiedenis en bronverwijzingen.
-- Bekende aliasparen worden in de encyclopedie samengevoegd weergegeven, bronrecords blijven behouden.
-
 Acer Atlas v6.17 — herstel na fout in OneDrive-testversie
 
 Gebaseerd op de eerder door de gebruiker bevestigde werkende v6.14. De experimentele OneDrive-wijzigingen uit v6.15/v6.16 zijn teruggedraaid. Opslagsleutels voor collectie, wensenlijst en Seedlings zijn niet gewijzigd. Service-worker cacheversie verhoogd naar v6.17. Deze herstelversie is niet live in een echte browser getest; test na publicatie of pagina’s en knoppen werken. Wis geen browsergegevens.
