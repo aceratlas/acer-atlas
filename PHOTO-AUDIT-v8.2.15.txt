@@ -1,0 +1,41 @@
+Acer Atlas v8.2.15 — fotocontrole
+Datum: 22 oktober 2026
+
+Totaal records: 1016
+Records met ten minste één foto: 44
+Records zonder foto: 972
+Fotoverwijzingen: 72
+
+Letter | Zonder foto / totaal records
+---|---:
+A | 58 / 74
+B | 53 / 58
+C | 40 / 41
+D | 27 / 28
+E | 29 / 33
+F | 25 / 26
+G | 49 / 50
+H | 62 / 62
+I | 19 / 20
+J | 20 / 20
+K | 82 / 83
+L | 26 / 27
+M | 90 / 90
+N | 31 / 32
+O | 36 / 39
+P | 31 / 31
+Q | 1 / 1
+R | 62 / 62
+S | 108 / 113
+T | 49 / 49
+U | 12 / 12
+V | 10 / 11
+W | 26 / 27
+Y | 25 / 25
+Z | 1 / 1
+
+Batch 23 toegevoegd:
+- Seigen — Acediscovery, CC BY 4.0, bronpagina: https://commons.wikimedia.org/wiki/File:Acer-palmatum-Seigen-Madrid.jpg
+- Sumi-nagashi — Krzysztof Golik (Tournasol7), CC BY-SA 4.0, bronpagina: https://commons.wikimedia.org/wiki/File:Acer_palmatum_%27Sumi-nagashi%27_01.jpg
+
+Beide bronnen zijn op 22 oktober 2026 geopend en de cultivarvermelding en licentie zijn op de Commons-pagina gecontroleerd. Online beschikbaarheid van de bestanden is niet in de appbrowser getest.

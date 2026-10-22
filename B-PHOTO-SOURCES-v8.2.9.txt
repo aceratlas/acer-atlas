@@ -1,0 +1,21 @@
+Acer Atlas v8.2.9 — fotobatch 17 (B-reeks)
+
+B-reeks — foto toegevoegd
+- Cultivar: Acer palmatum 'Beni kawa' (synoniem in database: Beni-kawa).
+- Bestandspagina: https://commons.wikimedia.org/wiki/File:Japanese_Maple_%27Beni_Kawa%27_%28Acer_palmatum%29_%285695802528%29.jpg
+- Oorspronkelijke bron: https://www.flickr.com/photos/33590535@N06/5695802528/
+- Fotograaf: Drew Avery.
+- Datum genomen: 13 oktober 2009; Norfolk Botanical Garden.
+- Licentie: Creative Commons Attribution 2.0 Generic (CC BY 2.0).
+- Licentiecontrole: Commons vermeldt CC BY 2.0 en bevestigt dat de Flickr-upload door FlickreviewR op 25 mei 2014 is gecontroleerd.
+- Geen uitsnede of bewerking gemaakt.
+
+Voortgang op basis van cultivarnaam in accepted_name
+- B-cultivars vóór deze batch: 54 totaal, 50 zonder foto.
+- Na toevoeging van één exacte cultivar-foto: 49 B-cultivars zonder foto.
+- A-cultivars: 72 totaal, 56 zonder foto (ongewijzigd).
+
+Databasecontrole
+- Recordaantal blijft ongewijzigd: 1016.
+- Totaal aantal fotoverwijzingen: 54.
+- Bron/licentie gecontroleerd op 22 oktober 2026.

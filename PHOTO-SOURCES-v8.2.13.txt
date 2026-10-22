@@ -1,0 +1,30 @@
+Acer Atlas v8.2.13 — fotobatch 21 / bron- en metadata-audit
+Datum controle: 22 oktober 2026
+
+Toegevoegd aan bestaande cultivarrecords:
+
+1. Acer palmatum 'Waterfall'
+   Bestandspagina: https://commons.wikimedia.org/wiki/File:Acer_palmatum_cv_waterfall_1.jpg
+   Fotograaf: Mark Pellegrini
+   Opnamedatum: 2009-04-26
+   Licentie: CC BY-SA 2.5
+   Licentie-URL: https://creativecommons.org/licenses/by-sa/2.5/
+   Bronpagina gecontroleerd; licentie is CC BY-SA 2.5 (niet CC BY 3.0).
+
+2. Acer palmatum 'Viridis'
+   Bestandspagina: https://commons.wikimedia.org/wiki/File:Acer_palmatum_Viridis_1zz.jpg
+   Fotograaf: David J. Stang
+   Opnamedatum: 2006-04-19
+   Licentie: CC BY-SA 4.0
+   Licentie-URL: https://creativecommons.org/licenses/by-sa/4.0/
+
+Controle database:
+- Geen nieuwe cultivarrecords; recordaantal blijft 1.016.
+- Fotoverwijzingen geteld vanuit de daadwerkelijke photos-arrays: 68.
+- 40 cultivarrecords bevatten ten minste één fotoverwijzing.
+- 976 records hebben nog geen fotoverwijzing.
+- Alle 68 fotoverwijzingen hebben URL, Commons-bestandspagina, auteur, licentie, licentie-URL en credit.
+- Geen dubbele image-URL's gevonden.
+- photo_status is genormaliseerd voor records die wel foto's hebben maar nog een oude 'no-photo' status droegen.
+- De bronpagina's voor Waterfall en Viridis zijn live gecontroleerd. De overige 66 Commons-pagina's zijn in deze ronde niet individueel opnieuw live geopend; hun bestaande metadata is structureel gecontroleerd, niet opnieuw juridisch geverifieerd.
+- ZIP-integriteit en JSON-parse worden tijdens het bouwen gevalideerd. De app is niet live in een browser getest.

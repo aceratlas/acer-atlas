@@ -1,3 +1,34 @@
+## Latest update — v8.2.13 (photo batch 21 / source audit)
+
+- Added cultivar-specific Wikimedia Commons photo references for Acer palmatum 'Waterfall' and 'Viridis', with source page, photographer, license and credit.
+- Normalized stale photo-status labels for records already containing photo references.
+- Database: 1,016 cultivar records, 68 photo references, 40 records with photos; 976 records remain without a photo reference.
+- Full audit scope and letter-by-letter missing-photo counts are in PHOTO-AUDIT-v8.2.13.txt. The app has not been live-browser tested.
+- Database cache key updated to build=8213. GitHub has not been changed.
+
+## Latest update — v8.2.10 (photo batch 17)
+
+- Added a cultivar-specific Wikimedia Commons image for Acer palmatum 'Beni kawa'.
+- Photographer: Drew Avery; CC BY 2.0. Commons confirms the original Flickr source and license; attribution and license link are stored in the database.
+- Preserved all 1,016 cultivar records; photo references now total 54.
+- B cultivar records without photos: 49 (down from 50); A cultivar records without photos: 56.
+- App/database version set to 8.2.10; database cache key updated to build=8210.
+
+## Latest update — v8.2.8 (photo batch 15)
+
+- Added a licensed, cultivar-specific Wikimedia Commons photo for Acer palmatum 'Butterfly'.
+- Photographer: David J. Stang; CC BY-SA 4.0; attribution and license link recorded in the database.
+- Photo count updated from the database records; record count unchanged.
+- B records without photos: 55 (down from 56); A records without photos: 58.
+- App/database version set to 8.2.8; database cache key updated to build=828.
+
+## Latest update — v8.2.8 (photo batch 15)
+
+- Added a verified CC BY 3.0 photo for Acer palmatum 'Burgundy Lace'.
+- A-series remains at 58 records without a verified photo after this search pass.
+- B-series starts with 56 records without a verified photo.
+- Total cultivar records: 1016; photo references: 51.
+
 Acer Atlas v6.17 — herstel na fout in OneDrive-testversie
 
 Gebaseerd op de eerder door de gebruiker bevestigde werkende v6.14. De experimentele OneDrive-wijzigingen uit v6.15/v6.16 zijn teruggedraaid. Opslagsleutels voor collectie, wensenlijst en Seedlings zijn niet gewijzigd. Service-worker cacheversie verhoogd naar v6.17. Deze herstelversie is niet live in een echte browser getest; test na publicatie of pagina’s en knoppen werken. Wis geen browsergegevens.
@@ -145,3 +176,18 @@ Gebruikers kunnen in Instellingen kiezen uit Botanical Green, Japanese Maple en 
 - Taalkeuze kan door Nederlands, Engels, Duits en Frans bladeren. De nieuwe Seedlings-functie en belangrijkste navigatie zijn vertaald; enkele bestaande diepere schermteksten kunnen nog Engels blijven.
 - Back-up bevat nu ook Seedlings en accepteert de URL's van encyclopediefoto's.
 - Cloud-synchronisatie is nog niet actief. De huidige gegevens blijven lokaal; synchronisatie met OneDrive/Dropbox vereist expliciete OAuth-/API-integratie en een ontwerp voor conflicten tussen apparaten.
+
+
+## v8.2.5 — Foto insturen
+- Cultivars zonder gecontroleerde foto tonen een optie om een e-mailconcept te openen met cultivar, botanische soort en tekst over fotografienaamsvermelding en gebruiksrechten.
+- Het ontvangstadres staat voorlopig leeg en kan later worden ingesteld in `index.html` bij `PHOTO_SUBMISSION_EMAIL`. De inzending wordt niet automatisch geüpload; de gebruiker voegt de foto zelf toe aan de e-mail.
+
+
+Fotobatch 18 (v8.2.10): zes extra gecontroleerde fotoverwijzingen voor cultivars in de D–F-reeks. Zie PHOTO-SOURCES-v8.2.10.txt voor de originele bestands- en licentiepagina’s.
+
+
+## v8.2.11 — fotobatch 19 (22 oktober 2026)
+
+- Twee gecontroleerde Commons-fotoverwijzingen toegevoegd: Acer palmatum 'Inaba-shidare' (Don McCulley, CC BY-SA 4.0) en Acer palmatum 'Garnet' (David J. Stang, CC BY-SA 4.0).
+- Bronpagina, fotograaf en licentie vastgelegd in `PHOTO-SOURCES-v8.2.11.txt` en `cultivar-database.json`.
+- Geen nieuwe cultivarrecords toegevoegd; live browser-test niet uitgevoerd.

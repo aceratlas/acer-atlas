@@ -1,0 +1,23 @@
+Acer Atlas v8.2.6 — foto batch 14 (start B-reeks)
+
+A-reeks status
+- De huidige database telt 74 records waarvan de naam met A begint.
+- 16 A-records hebben minstens één foto; 58 A-records hebben nog geen foto.
+- Deze onderzoeksronde controleerde de Wikimedia Commons-cultivarcollectie en gerichte zoekopdrachten voor meerdere ontbrekende A-namen. Er werd geen extra exact aan een ontbrekende A-cultivar toe te wijzen foto met verifieerbare hergebruiklicentie gevonden.
+- Daarom zijn geen generieke soortfoto's of foto's van een andere cultivar aan A-records gekoppeld. De functie Foto insturen blijft beschikbaar voor gebruikersbijdragen.
+
+B-reeks — foto toegevoegd
+- Cultivar: Acer palmatum 'Burgundy Lace'
+- Bestandspagina: https://commons.wikimedia.org/wiki/File:Acer_palmatum_'Burgundy_lace_JPG1A.jpg
+- Afbeeldingsbron: https://commons.wikimedia.org/wiki/Special:FilePath/Acer_palmatum_%27Burgundy_lace_JPG1A.jpg
+- Fotograaf: Jean-Pol GRANDMONT
+- Datum op Commons: 23 oktober 2007
+- Licentie: CC BY 3.0
+- Licentievoorwaarden: naamsvermelding en link naar licentie; eventuele wijzigingen vermelden.
+- Geen uitsnede of bewerking gemaakt.
+
+B-reeks voortgang
+- Voor deze databasepass waren 57 B-records zonder foto.
+- Na toevoeging van één gecontroleerde foto zijn er 56 B-records zonder foto.
+
+Broncontrole uitgevoerd op 22 oktober 2026. Een foto telt alleen mee als de cultivar-identiteit en de bron/licentie voldoende specifiek zijn.

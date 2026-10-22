@@ -1,0 +1,21 @@
+Acer Atlas v8.2.11 — fotobatch 19 (G–K)
+Datum controle: 22 oktober 2026
+
+Twee foto's toegevoegd aan bestaande records die nog geen foto hadden.
+
+1. Acer palmatum 'Inaba-shidare'
+   Bestandspagina: https://commons.wikimedia.org/wiki/File:Acer_palmatum_%27Inaba_Shidare%27_IMG_1966.jpg
+   Fotograaf: Don McCulley
+   Opnamedatum: 19 oktober 2018
+   Identificatie: bestandspagina vermeldt dat de plant door een tuinlabel is geïdentificeerd.
+   Licentie: CC BY-SA 4.0
+   Licentie-URL: https://creativecommons.org/licenses/by-sa/4.0/
+
+2. Acer palmatum 'Garnet'
+   Bestandspagina: https://commons.wikimedia.org/wiki/File:Acer_palmatum_var._dissectum_Garnet_1zz.jpg
+   Fotograaf: David J. Stang
+   Opnamedatum: 12 oktober 2006
+   Licentie: CC BY-SA 4.0
+   Licentie-URL: https://creativecommons.org/licenses/by-sa/4.0/
+
+Beide afbeeldingen zijn gekoppeld aan de exacte bestaande cultivarrecords. Er zijn geen nieuwe cultivarrecords aangemaakt en de afbeeldingen zijn niet bewerkt. De bron, fotograaf en licentie zijn vastgelegd in cultivar-database.json.

@@ -1,0 +1,24 @@
+Acer Atlas v8.2.8 — fotobatch 15 (B-reeks)
+
+B-reeks — foto toegevoegd
+- Cultivar: Acer palmatum 'Butterfly'
+- Bestandspagina: https://commons.wikimedia.org/wiki/File:Acer_palmatum_Butterfly_0zz.jpg
+- Afbeeldingsbron: https://commons.wikimedia.org/wiki/Special:FilePath/Acer_palmatum_Butterfly_0zz.jpg
+- Fotograaf: David J. Stang
+- Datum op Commons: 12 april 2006
+- Licentie: Creative Commons Attribution-ShareAlike 4.0 International (CC BY-SA 4.0)
+- Licentievoorwaarden: naamsvermelding, link naar licentie en wijzigingen vermelden; aangepaste afgeleide werken moeten onder dezelfde of compatibele licentie worden gedeeld. Er is geen uitsnede of bewerking gemaakt.
+
+Voortgang B-reeks
+- Voor deze batch: 56 B-records zonder foto.
+- In deze batch is één exacte cultivar-foto met verifieerbare hergebruiklicentie toegevoegd.
+- Na deze batch: 55 B-records zonder foto.
+
+A-reeks
+- Ongewijzigd: 58 A-records zonder foto.
+
+Databasecontrole
+- Recordaantal blijft ongewijzigd: 1016.
+- Totaal aantal fotoverwijzingen: 52.
+- Foto is gekoppeld aan de exacte cultivar-record 'Butterfly' (Acer palmatum); er is geen algemene soortfoto gebruikt.
+- Bron/licentie gecontroleerd op 22 oktober 2026.

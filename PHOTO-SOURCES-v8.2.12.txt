@@ -1,0 +1,34 @@
+Acer Atlas v8.2.12 — fotobatch 20 (L–P)
+Datum controle: 22 oktober 2026
+
+Vier foto's toegevoegd aan bestaande records zonder foto. Alleen exact cultivar-gelabelde Commons-bestandspagina's met expliciete vrije licentie gebruikt. De afbeeldingen zijn niet bewerkt.
+
+1. Acer palmatum 'Linearilobum'
+   Bestandspagina: https://commons.wikimedia.org/wiki/File:Acer_palmatum_%27Linearilobum%27_JPG1L.jpg
+   Fotograaf: Jean-Pol GRANDMONT
+   Opnamedatum: 2008-10-04
+   Licentie: CC BY 3.0
+   Licentie-URL: https://creativecommons.org/licenses/by/3.0/
+
+2. Acer palmatum 'Nigrum'
+   Bestandspagina: https://commons.wikimedia.org/wiki/File:Acer_palmatum_Nigrum_0zz.jpg
+   Fotograaf: David J. Stang
+   Opnamedatum: 2005-10-05
+   Licentie: CC BY-SA 4.0
+   Licentie-URL: https://creativecommons.org/licenses/by-sa/4.0/
+
+3. Acer palmatum 'Okushimo'
+   Bestandspagina: https://commons.wikimedia.org/wiki/File:Acer_palmatum_Okushimo_0zz.jpg
+   Fotograaf: David J. Stang
+   Opnamedatum: 2005-09-14
+   Licentie: CC BY-SA 4.0
+   Licentie-URL: https://creativecommons.org/licenses/by-sa/4.0/
+
+4. Acer palmatum 'Oridono nishiki'
+   Bestandspagina: https://commons.wikimedia.org/wiki/File:Acer_palmatum_Oridono_nishiki_0zz.jpg
+   Fotograaf: David J. Stang
+   Opnamedatum: 2008-05-15
+   Licentie: CC BY-SA 4.0
+   Licentie-URL: https://creativecommons.org/licenses/by-sa/4.0/
+
+Alle bronnen, fotografen en licenties zijn vastgelegd in cultivar-database.json. Geen cultivarrecords toegevoegd. Totaal aantal records: 1016. Totaal aantal fotoverwijzingen: 66.

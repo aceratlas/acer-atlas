@@ -1,0 +1,48 @@
+Acer Atlas v8.2.10 — fotobatch 18 (B–F)
+Datum controle: 22 oktober 2026
+
+Zes foto's toegevoegd, uitsluitend aan bestaande records zonder foto:
+
+1. Acer palmatum 'Deshojo'
+   Bestandspagina: https://commons.wikimedia.org/wiki/File:Acer_palmatum_%27Deshojo%27_-_geograph.org.uk_-_6120910.jpg
+   Fotograaf: Jonathan Billinger
+   Licentie: CC BY-SA 2.0
+   Licentie: https://creativecommons.org/licenses/by-sa/2.0/
+
+2. Acer palmatum 'Eddisbury'
+   Bestandspagina: https://commons.wikimedia.org/wiki/File:Acer_palmatum_Eddisbury_-_Flickr_-_peganum_(1).jpg
+   Fotograaf: peganum
+   Datum opname: 21 april 2011
+   Licentie: CC BY-SA 2.0
+   Licentie: https://creativecommons.org/licenses/by-sa/2.0/
+
+3. Acer palmatum 'Elegans'
+   Bestandspagina: https://commons.wikimedia.org/wiki/File:Acer_palmatum_%27Elegans%27_JPG1L.jpg
+   Fotograaf: Jean-Pol GRANDMONT
+   Datum opname: 4 oktober 2008
+   Licentie gebruikt: CC BY-SA 3.0 (de bestandspagina vermeldt meerdere licenties)
+   Licentie: https://creativecommons.org/licenses/by-sa/3.0/
+
+4. Acer palmatum 'Emerald Lace'
+   Bestandspagina: https://commons.wikimedia.org/wiki/File:Acer_palmatum_Emerald_Lace_0zz.jpg
+   Fotograaf: David J. Stang
+   Datum opname: 14 september 2005
+   Licentie: CC BY-SA 4.0
+   Licentie: https://creativecommons.org/licenses/by-sa/4.0/
+
+5. Acer palmatum 'Emperor I'
+   Bestandspagina: https://commons.wikimedia.org/wiki/File:Acer_palmatum_Emperor_I_0zz.jpg
+   Fotograaf: David J. Stang
+   Datum opname: 14 september 2005
+   Licentie: CC BY-SA 4.0
+   Let op: bewust gekoppeld aan de exacte recordnaam 'Emperor I', niet aan een algemener 'Emperor'-record.
+   Licentie: https://creativecommons.org/licenses/by-sa/4.0/
+
+6. Acer palmatum 'Fireglow'
+   Bestandspagina: https://commons.wikimedia.org/wiki/File:Acer_palmatum_Fireglow_1zz.jpg
+   Fotograaf: David J. Stang
+   Datum opname: 8 augustus 2006
+   Licentie: CC BY-SA 4.0
+   Licentie: https://creativecommons.org/licenses/by-sa/4.0/
+
+Alle zes foto's zijn aan de bestaande database-records gekoppeld. Er zijn geen nieuwe cultivarrecords aangemaakt en geen foto's bijgesneden of aangepast. De beeld-URL, originele bestandsinformatie, fotograaf en licentie-URL staan in cultivar-database.json.

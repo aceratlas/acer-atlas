@@ -1,3 +1,11 @@
+Acer Atlas v8.2.13 — batch 21 / photo-source audit (2026-10-22)
+- Added verified Wikimedia Commons photo references for Acer palmatum 'Waterfall' (Mark Pellegrini, CC BY-SA 2.5) and 'Viridis' (David J. Stang, CC BY-SA 4.0).
+- Corrected stale photo_status values on records that already contained photo metadata.
+- Recounted actual database arrays: 1,016 records, 68 photo references, 40 records with photos.
+- Audited metadata completeness and duplicate image URLs; no missing required attribution fields or duplicate URLs found.
+- The 66 pre-existing Commons source pages were not all individually re-opened in this pass; see PHOTO-AUDIT-v8.2.13.txt.
+- Cache key updated to build=8213. No cultivar records added.
+
 Acer Atlas v8.1.2
 - Base: user-confirmed working v8.1.1.
 - Encyclopedia sort/species/clear controls are hidden with CSS only.
@@ -68,3 +76,40 @@ v8.2.4 — A-cultivar data batch 12
 - Added direct RHS/Esveld profile references and kept unknown historical details unfilled.
 - No photos added: no explicitly reusable cultivar-specific images were verified for these three in this batch.
 - Database record count and existing photo references preserved; cache/version updated.
+
+
+v8.2.5 — Photo submission option
+- Added a multilingual “Foto insturen / Submit a photo” link to cultivar profiles without verified photos.
+- The email draft includes cultivar name, botanical species, photographer credit, and a rights/permission confirmation.
+- Recipient address is a single empty configuration value for later setup; no backend or upload service is implied.
+- Preserved existing database records and photo attributions.
+
+
+Acer Atlas v8.2.6 — B photo batch 14
+- Closed this A-photo search pass without assigning generic images to missing A cultivars; 58 A records still have no verified photo.
+- Began the B series and added one verified Wikimedia Commons image for Acer palmatum 'Burgundy Lace'.
+- Attribution: Jean-Pol GRANDMONT, CC BY 3.0, photographed 23 October 2007; original file page and license linked in the record.
+- Preserved all 1,016 records; database now has 51 photo references.
+- Updated app version, database cache-buster and service-worker cache.
+
+
+Acer Atlas v8.2.8 — B photo batch 16
+- Added one exact cultivar-specific Wikimedia Commons photo for Acer palmatum 'Beni hime'.
+- Attribution: David J. Stang; CC BY-SA 4.0; original file page and license URL stored in the record.
+- Preserved all 1,016 cultivar records; photo references recalculated from database records.
+- Updated visible version, database build version and cache/service-worker references where applicable.
+
+
+Acer Atlas v8.2.9 — B photo batch 17
+- Added an exact cultivar-specific Wikimedia Commons image for Acer palmatum 'Beni kawa'.
+- Photographer: Drew Avery; original photo taken 13 October 2009 at Norfolk Botanical Garden.
+- License verified on the Commons file page: CC BY 2.0; original Flickr source linked.
+- Attribution and license metadata recorded in the cultivar record; no crop or image edit was made.
+- Preserved all 1,016 cultivar records; photo references recalculated from record data.
+- Updated visible version, database build query (829), and service-worker cache.
+
+
+Acer Atlas v8.2.15 — fotobatch 23 (R–S)
+- Added Commons image references for Seigen and Sumi-nagashi to existing records.
+- Recorded source page, photographer, license URL, attribution, and capture date where available.
+- Updated version/cache label; no new cultivar records.
