@@ -1,3 +1,7 @@
+Acer Atlas v6.14 — herstelrelease
+
+Deze release herstelt de app op basis van de laatst bekende werkende v6.12-codebasis. De experimentele OneDrive-opslagcode uit v6.13 is niet meegenomen. Bestaande lokale gegevens blijven op hetzelfde apparaat behouden doordat de opslag sleutels en gegevensstructuur niet zijn gewijzigd. De nieuwe service-worker-cacheversie dwingt de browser om de appbestanden opnieuw op te halen.
+
 # Acer Atlas v4.0 — collectie, favorieten en lijstweergave en afdrukken-export
 
 Deze versie bouwt voort op de aangeleverde v2.7-bestanden. De 58 cultivarrecords en bestaande lokale collectieopslag zijn behouden.
