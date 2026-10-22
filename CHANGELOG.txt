@@ -1,6 +1,5 @@
 Acer Atlas v8.1.2
-- Gebaseerd op de door gebruiker bevestigde werkende v8.1.1.
-- Encyclopedie: sorteer-, soorten- en wis-filterbediening uit de weergave gehaald.
-- Zoeken op naam blijft beschikbaar.
-- Database-inhoud ongewijzigd; alleen databaseversiemetadata bijgewerkt.
-- Service-worker cache en database build-tag bijgewerkt naar 812.
+- Base: user-confirmed working v8.1.1.
+- Encyclopedia search remains; cards are alphabetically ordered by default.
+- Sort/species/clear controls hidden; renderer no longer dereferences the removed species select.
+- Database records preserved; cache/build version bumped to 812.
