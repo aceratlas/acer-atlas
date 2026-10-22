@@ -127,3 +127,13 @@ Gebruikers kunnen in Instellingen kiezen uit Botanical Green, Japanese Maple en 
 ## v4.5 — Instellingen en knopteksten
 - Back-up en herstel staat onderaan Instellingen.
 - De knoppen voor informatie, collectie en wenslijst gebruiken duidelijke, gelijkvormige teksten.
+
+
+## v6.0 — Seedlings en encyclopediefoto's
+- Nieuwe sectie Seedlings onder Mijn collectie: eigen werknaam, soort/ouder, startdatum/kiemjaar, beschrijving en foto's voor voorjaar, zomer en herfst.
+- Seedlings worden lokaal opgeslagen in `acerAtlasSeedlings`; foto's worden verkleind voor browseropslag.
+- Wanneer een cultivar vanuit de encyclopedie aan de collectie wordt toegevoegd, wordt de beschikbare encyclopediefoto standaard als foto/omslagfoto meegenomen.
+- Bij het toevoegen van eigen foto's vraagt de app of de encyclopediefoto's behouden moeten blijven of vervangen worden.
+- Taalkeuze kan door Nederlands, Engels, Duits en Frans bladeren. De nieuwe Seedlings-functie en belangrijkste navigatie zijn vertaald; enkele bestaande diepere schermteksten kunnen nog Engels blijven.
+- Back-up bevat nu ook Seedlings en accepteert de URL's van encyclopediefoto's.
+- Cloud-synchronisatie is nog niet actief. De huidige gegevens blijven lokaal; synchronisatie met OneDrive/Dropbox vereist expliciete OAuth-/API-integratie en een ontwerp voor conflicten tussen apparaten.
