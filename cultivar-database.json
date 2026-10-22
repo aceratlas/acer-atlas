@@ -1,6 +1,6 @@
 {
   "app": "Acer Atlas",
-  "version": "8.0-clean-database",
+  "version": "8.1.2-clean-database",
   "record_count": 1015,
   "note": "Cleaned database migrated from the user's v7.5 baseline. Same accepted botanical names merged; alternate spellings retained as synonyms. Source claims have not all been independently re-verified.",
   "records": [

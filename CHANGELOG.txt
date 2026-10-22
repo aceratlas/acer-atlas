@@ -1,0 +1,6 @@
+Acer Atlas v8.1.2
+- Gebaseerd op de door gebruiker bevestigde werkende v8.1.1.
+- Encyclopedie: sorteer-, soorten- en wis-filterbediening uit de weergave gehaald.
+- Zoeken op naam blijft beschikbaar.
+- Database-inhoud ongewijzigd; alleen databaseversiemetadata bijgewerkt.
+- Service-worker cache en database build-tag bijgewerkt naar 812.
