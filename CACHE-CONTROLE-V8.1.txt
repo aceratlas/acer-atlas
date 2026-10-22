@@ -1,0 +1,6 @@
+Acer Atlas v8.1 cache control
+
+Upload all ZIP contents to the repository root and overwrite existing files.
+This version checks for a new service worker on app launch, uses network-first for HTML/database,
+and changes the database URL to build=810. If the browser still shows old content, close all Acer Atlas tabs,
+reopen the site, then use Ctrl+F5. The in-app database status should show the loaded count.

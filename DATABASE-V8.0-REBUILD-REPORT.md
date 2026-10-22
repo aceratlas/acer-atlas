@@ -43,3 +43,11 @@ This is a structural cleanup and migration of existing data, not a claim that ev
 - **Summer Gold** (Acer palmatum 'Summer Gold'): Summer Gold, Summergold; kept ID `cultivar-acer-palmatum-summer-gold`.
 - **Hana chiru sato** (Acer buergerianum 'Hana chiru sato'): Hana chiru sato, Hanachiru sato; kept ID `cultivar-hana-chiru-sato`.
 - **Hi no tsukasa** (Acer palmatum 'Hi no tsukasa'): Hi no tsukasa, Hino tsukasa; kept ID `esveld-acer-palmatum-hi-no-tsukasa`.
+
+
+## Cache hardening added in v8.1
+- New service-worker cache name: `acer-atlas-v81-cache-safe`.
+- The app asks the browser to update the service worker on launch with `updateViaCache: 'none'`.
+- The service worker uses network-first for the HTML and cultivar database, with cache fallback only when offline.
+- Database fetch URL changed to `?build=810`.
+- Old Acer Atlas service-worker caches are deleted when the new worker activates.
