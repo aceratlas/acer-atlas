@@ -1,0 +1,7 @@
+Acer Atlas v8.1.1 — herstelversie
+
+Gebaseerd op v8.1-cache-safe, niet op v8.2.
+De pagina-opbouw en navigatiecode zijn niet aangepast.
+De service-worker-cache heeft een nieuwe naam en de database build-tag is 811.
+Versiemetadata is waar gevonden bijgewerkt naar 8.1.1.
+Dit is een conservatieve herstelpoging, geen live browser-test. Controleer na upload de pagina's.
