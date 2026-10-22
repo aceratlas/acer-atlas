@@ -1,8 +1,8 @@
 {
   "app": "Acer Atlas",
-  "version": "7.6-species-sort-and-sync-name",
+  "version": "7.7",
   "record_count": 1030,
-  "note": "v7.3: imported unique Acer names from the user-provided 38-page Esveld inventory PDF. 1,469 inventory lines collapsed to 1,018 unique normalized names; 94 matched existing records and received inventory codes/source evidence; 924 new name-only records added. The inventory provides names and location/catalog codes, not cultivar traits, so missing traits remain explicitly unknown and review_needed=true. v7.4: app version corrected to 7.4; encyclopedia supports alphabetical name sorting and species-first sorting. Display names now show cultivar epithet without the leading botanical species; standalone species/taxon entries without a cultivar name are omitted from the encyclopedia. Encyclopedia sorting is applied to the filtered result list. | v7.6: encyclopedia sort uses canonical cultivar name for stable ordering; species filter is populated from all distinct species in the dataset.",
+  "note": "v7.7: encyclopedia controls removed to prioritize broad search; stable alphabetical ordering by canonical cultivar name; known duplicate aliases linked to canonical records.",
   "records": [
     {
       "id": "cultivar-ariadne",
@@ -15778,7 +15778,10 @@
       "id": "cultivar-adrian-s-compact",
       "name": "Adrian's Compact",
       "accepted_name": "Acer palmatum 'Adrian's Compact'",
-      "synonyms": [],
+      "synonyms": [
+        "Adriaan",
+        "Adriaan's Compact"
+      ],
       "group": "unknown",
       "traits": {
         "nl": "Eigenschappen volgens Mr Maple: Described as a dwarf, upright red Japanese maple.",
@@ -15807,6 +15810,11 @@
           "title": "Mr Maple — All Maples catalogue",
           "url": "https://mrmaple.com/collections/all-maples",
           "supports": "Name and brief horticultural description as displayed in the product catalogue"
+        },
+        {
+          "title": "Plantentuin Esveld — inventarislijst (door gebruiker aangeleverd PDF)",
+          "url": "https://www.esveld.nl/catal/gedruktecat.pdf",
+          "supports": "Presence of this Acer name in the inventory list only; not cultivar traits or historical claims"
         }
       ],
       "historical_notes": {
@@ -15835,7 +15843,10 @@
         "soil": "Onbekend",
         "hardiness": "Onbekend"
       },
-      "data_completeness": "partial"
+      "data_completeness": "partial",
+      "name_data": {
+        "cultivar_name": "Adrian's Compact"
+      }
     },
     {
       "id": "cultivar-aka-kawa-hime",
@@ -21414,7 +21425,9 @@
       "id": "esveld-acer-japonicum-aconitifolium",
       "name": "Aconitifolium",
       "accepted_name": "Acer japonicum 'Aconitifolium'",
-      "synonyms": [],
+      "synonyms": [
+        "Mai kujaku"
+      ],
       "group": "unknown",
       "traits": {
         "nl": "Eigenschappen nog niet individueel uit de inventarislijst vastgesteld.",
@@ -21481,7 +21494,9 @@
       "data_completeness": "name-only",
       "esveld_inventory_codes": [
         "c15"
-      ]
+      ],
+      "hidden_duplicate_of": "esveld-acer-japonicum-mai-kujaku",
+      "canonical_name": "Mai kujaku"
     },
     {
       "id": "esveld-acer-japonicum-attaryi",
@@ -22221,7 +22236,9 @@
       "id": "esveld-acer-japonicum-mai-kujaku",
       "name": "Mai kujaku",
       "accepted_name": "Acer japonicum 'Mai kujaku'",
-      "synonyms": [],
+      "synonyms": [
+        "Aconitifolium"
+      ],
       "group": "unknown",
       "traits": {
         "nl": "Eigenschappen nog niet individueel uit de inventarislijst vastgesteld.",
@@ -22262,7 +22279,9 @@
       "name_data": {
         "botanical_name": "Acer japonicum 'Mai kujaku'",
         "cultivar_name": "Mai kujaku",
-        "synonyms": [],
+        "synonyms": [
+          "Aconitifolium"
+        ],
         "common_name": "Onbekend"
       },
       "species": "Acer japonicum",
@@ -23541,7 +23560,9 @@
       "id": "esveld-acer-palmatum-adriaan-s-compact",
       "name": "Adriaan",
       "accepted_name": "Acer palmatum 'Adriaan's Compact'",
-      "synonyms": [],
+      "synonyms": [
+        "Adrian's Compact"
+      ],
       "group": "unknown",
       "traits": {
         "nl": "Eigenschappen nog niet individueel uit de inventarislijst vastgesteld.",
@@ -23608,7 +23629,9 @@
       "data_completeness": "name-only",
       "esveld_inventory_codes": [
         "c05"
-      ]
+      ],
+      "hidden_duplicate_of": "cultivar-adrian-s-compact",
+      "canonical_name": "Adrian's Compact"
     },
     {
       "id": "esveld-acer-palmatum-aekan-ies",
