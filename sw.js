@@ -1,4 +1,4 @@
-const CACHE='acer-atlas-v827-oshio-beni-photo-batch34';
+const CACHE='acer-atlas-v828-wensen-roadmap';
 const SHELL=['./','./index.html','./manifest.webmanifest','./icon.svg','./apple-touch-icon.png','./acer-maple-leaf.png'];
 self.addEventListener('install', event => {
   event.waitUntil(caches.open(CACHE).then(cache => cache.addAll(SHELL)).then(() => self.skipWaiting()));

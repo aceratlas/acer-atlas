@@ -1,0 +1,7 @@
+Acer Atlas v8.2.28 — prototype Wensen & Ontwikkeling
+
+- Publieke roadmap toegevoegd met OneDrive-onderzoek, desktop-layout en testerfeedback.
+- Wensenformulier maakt een e-mailconcept aan voor aceratlas.maple@outlook.com.
+- Inzendingen worden niet opgeslagen door de website. De gebruiker moet de e-mail zelf versturen.
+- De pagina en formulier zijn momenteel Nederlandstalig; vertalingen en browser/live tests zijn nog niet uitgevoerd.
+- Gebouwd op de aangeleverde geteste v8.2.27 ZIP.

@@ -173,3 +173,8 @@ Acer Atlas v8.2.24 — photo batch 31 (2026-10-22)
 - Database records retained: 1016; photo references: 84; records with photos: 56; records without photos: 960.
 - Updated visible app version, database cache query to build=8224, and service-worker cache key.
 - ZIP integrity and JavaScript syntax checks passed; browser runtime not tested.
+
+
+Acer Atlas v8.2.28 — prototype Wensen & Ontwikkeling
+- Added a roadmap page and mailto wish form to aceratlas.maple@outlook.com. No submissions are stored by the app.
+- OneDrive and desktop layout are shown as planned work, not as completed features.
