@@ -1,3 +1,10 @@
+Acer Atlas v8.2.31
+- Iconen toegevoegd aan de knoppen in het bovenste menu; labels blijven behouden bij taalwissel.
+- Foto insturen toont een formulier via het onderste menu én vanuit elk cultivarprofiel.
+- Vanuit een cultivarprofiel wordt de cultivarnaam vooraf ingevuld en gebruikt in het e-mailonderwerp.
+- Vanuit het formulier kun je terug naar hetzelfde cultivarprofiel.
+- Navigatie en service-worker-cache bijgewerkt.
+
 Acer Atlas v8.2.27 — photo batch 34 (2026-10-22)
 - Added a verified Wikimedia Commons photo reference for Acer palmatum 'Oshio beni' to its existing record.
 - Photographer: Jean-Pol GRANDMONT; license CC BY 3.0; attribution and license URL stored in photo metadata.
