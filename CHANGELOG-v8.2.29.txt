@@ -1,0 +1,7 @@
+Acer Atlas v8.2.29 — menu-aanpassing
+
+- Lijsten en Ontwikkeling verwijderd uit het bovenste tabmenu; beide blijven bereikbaar via het onderste menu.
+- Dubbele Wensen-knop onderin verwijderd.
+- De overgebleven knop heet Ontwikkeling.
+- De sectiekop is ook gewijzigd naar Ontwikkeling.
+- Gebaseerd op het aangeleverde v8.2.28-photo-submission-wishlist.zip.

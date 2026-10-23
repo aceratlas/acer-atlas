@@ -1,0 +1,11 @@
+Acer Atlas v8.2.28 — Wensen & foto-inzendingen prototype
+
+- Contactadres ingesteld: aceratlas.maple@outlook.com
+- Extra navigatie voor Wensen & Ontwikkeling en Foto insturen.
+- Wensen openen een mailconcept; de app slaat ze niet op.
+- Fotoformulier accepteert meerdere afbeeldingsbestanden en namen van cultivars. Vanuit een cultivarprofiel wordt de naam ingevuld.
+- Beperking: mailto kan geselecteerde foto’s niet automatisch als bijlage toevoegen. Gebruiker moet ze handmatig toevoegen aan de e-mail.
+- Dit is een prototype; browser- en mobiele tests zijn nog nodig.
+
+
+Menu-aanpassing v8.2.29: bovenste tabmenu bevat geen Lijsten of Ontwikkeling meer; deze staan in het onderste menu. Dubbele Wensen-knop verwijderd; knop heet Ontwikkeling.
