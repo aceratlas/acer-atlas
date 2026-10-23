@@ -1,8 +1,8 @@
 {
   "app": "Acer Atlas",
-  "version": "8.2.27",
-  "record_count": 1016,
-  "note": "Acer Atlas v8.2.19 — fotobatch 27 (V–Y). Twee cultivar-specifieke Wikimedia Commons-fotoreferenties toegevoegd aan bestaande records; bron- en licentiegegevens vastgelegd. Geen cultivarrecords toegevoegd of verwijderd.",
+  "version": "8.2.33",
+  "record_count": 1015,
+  "note": "Acer Atlas v8.2.19 — fotobatch 27 (V–Y). Twee cultivar-specifieke Wikimedia Commons-fotoreferenties toegevoegd aan bestaande records; bron- en licentiegegevens vastgelegd. Geen cultivarrecords toegevoegd of verwijderd. Duplicate entry “Adriaan” from the Esveld inventory merged into “Adrian's Compact”; “Adriaan” retained as a searchable alias.",
   "records": [
     {
       "id": "cultivar-ariadne",
@@ -16378,7 +16378,10 @@
       "id": "cultivar-adrian-s-compact",
       "name": "Adrian's Compact",
       "accepted_name": "Acer palmatum 'Adrian's Compact'",
-      "synonyms": [],
+      "synonyms": [
+        "Adriaan",
+        "Adriaan's Compact"
+      ],
       "group": "unknown",
       "traits": {
         "nl": "Eigenschappen volgens Mr Maple: Described as a dwarf, upright red Japanese maple.",
@@ -16407,11 +16410,16 @@
           "title": "Mr Maple — All Maples catalogue",
           "url": "https://mrmaple.com/collections/all-maples",
           "supports": "Name and brief horticultural description as displayed in the product catalogue"
+        },
+        {
+          "title": "Plantentuin Esveld — inventarislijst (door gebruiker aangeleverd PDF)",
+          "url": "https://www.esveld.nl/catal/gedruktecat.pdf",
+          "supports": "Presence of this Acer name in the inventory list only; not cultivar traits or historical claims"
         }
       ],
       "historical_notes": {
-        "nl": "Selecteur/introducteur en introductiejaar alleen vaststellen op basis van een betrouwbare cultivar-specifieke bron.",
-        "en": "Selector/introducer and introduction year should only be established from a reliable cultivar-specific source."
+        "nl": "Selecteur/introducteur en introductiejaar alleen vaststellen op basis van een betrouwbare cultivar-specifieke bron. Esveld vermeldt de naamvariant “Adriaan”; deze is als zoekbare alias gekoppeld aan Adrian’s Compact, zonder de naamvariant als afzonderlijke cultivar te behandelen.",
+        "en": "Selector/introducer and introduction year should only be established from a reliable cultivar-specific source. Esveld lists the name variant “Adriaan”; it is linked as a searchable alias to Adrian’s Compact, not treated as a separate cultivar."
       },
       "review_needed": true,
       "last_checked": "2026-10-22",
@@ -16435,7 +16443,10 @@
         "soil": "Onbekend",
         "hardiness": "Onbekend"
       },
-      "data_completeness": "partial"
+      "data_completeness": "partial",
+      "esveld_inventory_codes": [
+        "c05"
+      ]
     },
     {
       "id": "cultivar-aka-kawa-hime",
@@ -24230,79 +24241,6 @@
       "data_completeness": "name-only",
       "esveld_inventory_codes": [
         "a16"
-      ]
-    },
-    {
-      "id": "esveld-acer-palmatum-adriaan-s-compact",
-      "name": "Adriaan",
-      "accepted_name": "Acer palmatum 'Adriaan's Compact'",
-      "synonyms": [],
-      "group": "unknown",
-      "traits": {
-        "nl": "Eigenschappen nog niet individueel uit de inventarislijst vastgesteld.",
-        "en": "Traits not yet individually established from the inventory list."
-      },
-      "history": {
-        "nl": "Herkomst en introductiegeschiedenis nog niet onderzocht.",
-        "en": "Origin and introduction history not yet researched."
-      },
-      "introduction_year": null,
-      "selector_or_introducer": {
-        "nl": "Onbekend",
-        "en": "Unknown"
-      },
-      "origin": {
-        "nl": "Onbekend",
-        "en": "Unknown"
-      },
-      "evidence_status": "inventory-only",
-      "evidence_label": {
-        "nl": "Naam aangetroffen in Esveld-inventarislijst; eigenschappen nog niet verrijkt",
-        "en": "Name found in Esveld inventory list; traits not yet enriched"
-      },
-      "sources": [
-        {
-          "title": "Plantentuin Esveld — inventarislijst (door gebruiker aangeleverd PDF)",
-          "url": "https://www.esveld.nl/catal/gedruktecat.pdf",
-          "supports": "Presence of this Acer name in the inventory list only; not cultivar traits or historical claims"
-        }
-      ],
-      "historical_notes": {
-        "nl": "Selecteur/introducteur en introductiejaar niet vastgesteld; niet afleiden uit de inventarislijst.",
-        "en": "Selector/introducer and introduction year not established; do not infer from the inventory list."
-      },
-      "review_needed": true,
-      "last_checked": "2026-10-22",
-      "photo_status": "no-photo-yet",
-      "name_data": {
-        "botanical_name": "Acer palmatum 'Adriaan's Compact'",
-        "cultivar_name": "Acer palmatum 'Adriaan's Compact'",
-        "synonyms": [],
-        "common_name": "Onbekend"
-      },
-      "species": "Acer palmatum 'Adriaan's Compact'",
-      "plant_group": "Onbekend",
-      "growth_habit": "Onbekend",
-      "seasonal_characteristics": {
-        "spring": "Onbekend",
-        "summer": "Onbekend",
-        "autumn": "Onbekend"
-      },
-      "growth": {
-        "height_after_10_years": "Onbekend",
-        "width_after_10_years": "Onbekend",
-        "growth_rate": "Onbekend"
-      },
-      "site": {
-        "position": "Onbekend",
-        "soil": "Onbekend",
-        "climate_zone": "Onbekend",
-        "source_scope": "Nog niet onderzocht; geen teeltadvies afgeleid uit de inventarislijst."
-      },
-      "photos": [],
-      "data_completeness": "name-only",
-      "esveld_inventory_codes": [
-        "c05"
       ]
     },
     {

@@ -1,3 +1,7 @@
+Acer Atlas v8.2.33
+- Ontwikkeling-pagina verduidelijkt dat de encyclopedie een gezamenlijk groeiend project is dat steeds completer wordt met communitybijdragen.
+- Dubbele database-invoer “Adriaan” samengevoegd met “Adrian's Compact”; “Adriaan” blijft vindbaar als alias en de Esveld-bronvermelding is behouden.
+
 Acer Atlas v8.2.32
 - Bovenste menu gebruikt nu compacte knoppen met icoon boven tekst, gelijk aan de onderste navigatie.
 - De knoppen passen in drie gelijke kolommen op mobiele schermen.
