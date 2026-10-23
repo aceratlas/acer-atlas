@@ -1,0 +1,7 @@
+Acer Atlas v8.2.30
+
+Menu-indeling:
+- Boven: Encyclopedie, Mijn collectie, Lijsten (in die volgorde).
+- Onder: Ontwikkeling, Foto insturen, Privacy & copyright.
+- Instellingen blijft bereikbaar via de bestaande instellingen-/accountinterface, niet als knop in de onderste navigatie.
+- Nieuwe informatiepagina over privacy, foto-inzendingen, copyright en websiteontwikkeling.
