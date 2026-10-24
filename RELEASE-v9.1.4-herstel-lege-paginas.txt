@@ -1,0 +1,9 @@
+Acer Atlas v9.1.4 — herstel lege pagina's
+
+- Herstelt de plaatsing van de persoonlijke fotogalerij-code.
+- De viewer-code staat nu in het hoofdscript en niet meer in de PDF-exporttemplate.
+- Dit voorkomt dat de HTML-parser het hoofdscript voortijdig afsluit en de app-pagina's leeg blijven.
+- Behoudt de bestaande fotogalerij: grote hoofdfoto, schermvullende weergave, pijlen, swipe en sluiten met X/Escape.
+- Versie v9.1.3 blijft ongewijzigd beschikbaar; dit is een aparte herstelversie.
+
+Controle uitgevoerd: ZIP-inhoud, HTML-scriptblokken en JavaScript-syntaxis. Volledige browser-/hostingtest is niet uitgevoerd.
