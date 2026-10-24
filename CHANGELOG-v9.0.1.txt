@@ -1,0 +1,5 @@
+Acer Atlas v9.0.1 — taalcorrecties
+- Vertalingen toegevoegd voor de pagina Ontwikkeling, wensenformulieren, foto insturen, privacy/copyright, account- en back-upinstellingen.
+- Statische labels, knoppen, opties, placeholders en toegankelijkheidslabels volgen nu de geselecteerde taal (NL/EN/DE/FR).
+- Cacheversie bijgewerkt zodat de browser de aangepaste bestanden opnieuw ophaalt.
+- Alleen code-/bestandcontroles uitgevoerd; volledige browseracceptatietest nog vereist.
