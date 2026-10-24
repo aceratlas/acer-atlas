@@ -1,0 +1,11 @@
+ACER ATLAS v9.1.3 — Collectie: grote hoofdfoto en fotoviewer
+
+Nieuwe wijziging:
+- In de persoonlijke boomgegevens staat nu een grote hoofdfoto boven de fotobeheer-sectie.
+- Klik/tik op de hoofdfoto om deze beeldvullend te openen.
+- In de viewer kun je met pijlen, toetsenbord of vegen tussen de persoonlijke foto’s bladeren.
+- De X/Escape sluit de viewer.
+- Foto’s blijven gekoppeld aan de persoonlijke boomgegevens; de encyclopedie wordt hiervoor niet geopend.
+- Bestaande collectievelden, lokale opslag en eerdere versiebestanden zijn niet bewust gewijzigd.
+
+Controle uitgevoerd: ZIP-integriteit en inline JavaScript-syntaxis. Niet volledig getest in een echte browser.
