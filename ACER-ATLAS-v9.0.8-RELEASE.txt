@@ -1,0 +1,3 @@
+Acer Atlas v9.0.8
+
+Mijn collectie is visueel aangepast naar de referentie: tweekoloms raster op mobiel, grote foto bovenaan, witte naamstrook en hartje voor favorieten. Bestaande gegevens en opslagstructuur blijven behouden. De details/open-knop blijft beschikbaar onder elke kaart.
