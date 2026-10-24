@@ -13,9 +13,11 @@ service cloud.firestore {
         && (request.auth.uid == userId || isAcerAtlasAdmin());
       allow create: if request.auth != null
         && request.auth.uid == userId
-        && request.resource.data.keys().hasOnly(['plan', 'email', 'createdAt', 'updatedAt'])
+        && request.resource.data.keys().hasOnly(['plan', 'email', 'createdAt', 'updatedAt', 'plusInterest', 'plusInterestAt'])
         && request.resource.data.plan == 'free'
-        && request.resource.data.email is string;
+        && request.resource.data.email is string
+        && (!('plusInterest' in request.resource.data) || request.resource.data.plusInterest == true)
+        && (!('plusInterestAt' in request.resource.data) || request.resource.data.plusInterestAt is timestamp);
       allow update: if request.auth != null
         && request.auth.uid == userId
         && request.resource.data.plan == resource.data.plan
