@@ -1,0 +1,8 @@
+Acer Atlas v9.0.5
+
+- Mijn collectie blijft toegankelijk zonder account.
+- Wenslijst, Lijsten en Seedlings vereisen een bevestigd account.
+- Maximaal 5 seedlings; bestaande seedlings kunnen worden bewerkt/verwijderd ook als de limiet is bereikt.
+- Bestaande lokale gegevens worden niet verwijderd; ze blijven op dit apparaat opgeslagen en zijn na inloggen weer toegankelijk.
+- De bestaande limiet van 10 cultivars in de collectie blijft ongewijzigd.
+- Seedlings en lijsten blijven lokaal opgeslagen; er vindt geen upload of synchronisatie plaats.
