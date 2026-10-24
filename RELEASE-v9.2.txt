@@ -1,0 +1,8 @@
+Acer Atlas v9.2 — volledige vertaalcontrole
+
+- Uitgebreide Nederlandse → Engels/Duits/Frans vertaalwoordenlijst voor dynamische knoppen, fotoacties en encyclopedievelden.
+- Vertalingen worden ook toegepast op onderdelen die na het wisselen van taal dynamisch worden opgebouwd.
+- Extra gelokaliseerde encyclopediefilter, recordtelling en fototelling.
+- Behoudt de v9.1.10-basis en de bestaande foto-/opslagfuncties.
+
+Controle uitgevoerd: JavaScript-syntaxis en ZIP-inhoud. Nog nodig: handmatige browsercontrole van NL/EN/DE/FR op desktop en mobiel.
