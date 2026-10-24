@@ -1,0 +1,6 @@
+Acer Atlas v9.0.9
+
+- Favorietknop in Mijn collectie toont een ster in plaats van een hart.
+- De foto van een cultivar is klikbaar en opent de bestaande cultivar-detailpagina als er een match is.
+- De uitklapbare informatieknop op de collectiekaart is verborgen; informatie wordt via de cultivar-detailpagina geopend.
+- Bestaande collectiegegevens en lokale opslagstructuur zijn niet aangepast.
