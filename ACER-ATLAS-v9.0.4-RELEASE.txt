@@ -1,0 +1,10 @@
+Acer Atlas v9.0.4
+
+Wijziging:
+- Account verplicht voor het openen van Mijn collectie en voor het toevoegen/verwijderen van cultivars in de eigen collectie.
+- Niet-ingelogde gebruikers worden naar Account geleid met een duidelijke melding.
+- Openbare encyclopedie en cultivar-details blijven openbaar.
+- Lokale collectie, seedlings, back-up/restore en bestaande account-/Plus-functies zijn behouden.
+- Gratislimiet van 10 blijft ongewijzigd in de bestaande code.
+
+Let op: bestaande lokale gegevens worden niet gewist of naar een server geüpload. Test na publiceren op desktop en mobiel, zowel uitgelogd als ingelogd.
