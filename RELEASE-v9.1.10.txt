@@ -1,0 +1,9 @@
+Acer Atlas v9.1.10
+
+Gericht herstel voor het duurzaam opslaan van persoonlijke collectiegegevens en foto's.
+- Collectie blijft in localStorage werken zolang daar ruimte is.
+- Extra duurzame kopie van de collectie in IndexedDB, die grotere fotoverzamelingen aankan.
+- Bij starten wordt een nieuwere opgeslagen collectie hersteld als localStorage-opslag tekortschiet.
+- Bestaande collectie, fotoweergave, swipe, schermlagen en navigatie behouden.
+
+Alleen de gewijzigde bestanden in deze update-ZIP vervangen. Maak vooraf een back-up van je collectie.
