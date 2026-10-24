@@ -1,6 +1,11 @@
-Acer Atlas v9.1.2
+Acer Atlas v9.1.2 — herstel collectie-details
 
-Basis: v9.0.12 collectiefoto-fix.
+Inhoudelijke codewijzigingen:
+- Klik op een foto in Mijn collectie opent het persoonlijke boomformulier in volledig scherm; dit is onafhankelijk van een match in de encyclopedie.
+- Terug en Opslaan sluiten het volledige-schermformulier en herstellen de scrollpositie van Mijn collectie.
+- Het sluiten ruimt de volledige-schermstatus op voordat de collectie opnieuw wordt getekend.
 - Versieaanduiding bijgewerkt naar v9.1.2.
-- Versielabels bijgewerkt voor Nederlands, Engels, Duits en Frans.
-- Bestaande functionaliteit en lokale gegevensstructuur behouden.
+
+Talen: Nederlands, Engels, Duits en Frans.
+
+Controle: bestanden en JavaScript-syntaxis worden gecontroleerd; volledige interactietest in een echte browser is niet uitgevoerd. Maak vóór vervanging van een bestaande website altijd een back-up van de huidige bestanden.
