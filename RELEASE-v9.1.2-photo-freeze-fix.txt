@@ -1,0 +1,8 @@
+Acer Atlas v9.1.2 — fix voor vastlopende collectie-fotoklik
+
+Wijziging:
+- Bij openen van het persoonlijke boomformulier via de foto wordt de hover-transform van de bovenliggende kaart uitgeschakeld. Een fixed element binnen een getransformeerde kaart kan anders vast komen te zitten binnen die kaart in plaats van het volledige scherm te vullen.
+- Focus op het eerste veld is nu defensief afgehandeld.
+- De zichtbare versieaanduiding is v9.1.2.
+
+De volledige website is niet in een echte browser op alle apparaten getest. Test met een kopie en maak eerst een back-up van je collectie.
