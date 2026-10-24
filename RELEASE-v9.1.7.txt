@@ -1,0 +1,5 @@
+Acer Atlas v9.1.7
+
+Fix: personal collection detail editor is moved to the document body while fullscreen. This avoids parent stacking contexts causing Save/Back clicks to hit the underlying menu. Save and browser-back handling now locate the portaled editor.
+
+Based on the supplied v9.1.4 project plus v9.1.6 fixes.
