@@ -1,22 +1,42 @@
 rules_version = '2';
 service cloud.firestore {
   match /databases/{database}/documents {
+    function isAcerAtlasAdmin() {
+      return request.auth != null
+        && request.auth.token.email == 'aceratlas.maple@outlook.com';
+    }
+
     match /users/{userId} {
-      allow read: if request.auth != null && request.auth.uid == userId;
-      // Clients may create only a Free profile. A browser cannot grant itself Plus.
+      // Users can read their own profile; the designated admin can read profiles
+      // to manage Plus-interest requests. The admin cannot change plans here.
+      allow read: if request.auth != null
+        && (request.auth.uid == userId || isAcerAtlasAdmin());
       allow create: if request.auth != null
         && request.auth.uid == userId
         && request.resource.data.keys().hasOnly(['plan', 'email', 'createdAt', 'updatedAt'])
         && request.resource.data.plan == 'free'
         && request.resource.data.email is string;
-      // A client may update email/timestamp, but cannot change the plan.
       allow update: if request.auth != null
         && request.auth.uid == userId
         && request.resource.data.plan == resource.data.plan
         && resource.data.plan == 'free'
-        && request.resource.data.diff(resource.data).affectedKeys().hasOnly(['email', 'updatedAt', 'plusInterest'])
+        && request.resource.data.diff(resource.data).affectedKeys().hasOnly(['email', 'updatedAt', 'plusInterest', 'plusInterestAt'])
         && (!('plusInterest' in request.resource.data) || request.resource.data.plusInterest is bool);
       allow delete: if request.auth != null && request.auth.uid == userId;
+    }
+
+    // Queue a notification for the administrator. Firebase Trigger Email
+    // extension must be installed and configured for actual delivery.
+    match /mail/{mailId} {
+      allow create: if request.auth != null
+        && request.resource.data.to == 'aceratlas.maple@outlook.com'
+        && request.resource.data.type == 'plus-interest'
+        && request.resource.data.message is map
+        && request.resource.data.message.keys().hasOnly(['subject', 'text'])
+        && request.resource.data.message.subject == 'Acer Atlas Plus: nieuwe interesse'
+        && request.resource.data.message.text is string
+        && request.resource.data.message.text.size() < 2000;
+      allow read, update, delete: if isAcerAtlasAdmin();
     }
   }
 }
