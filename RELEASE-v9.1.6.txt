@@ -1,0 +1,12 @@
+Acer Atlas v9.1.6 — scrollherstel collectie
+
+Uitgangspunt: v9.1.5-update, met behoud van de grote hoofdfoto, fotoviewer en browsergeschiedenis.
+
+Correctie:
+- Bij vernieuwen wordt een schermvullend cultivar-detail niet automatisch opnieuw geopend. Dat kon na herladen in een getransformeerde collectiekaart terechtkomen en de scroll blokkeren.
+- Als de pagina tijdens een cultivar-detail wordt vernieuwd, keert de app terug naar Mijn collectie op de eerder opgeslagen positie.
+- De body-scrollvergrendeling wordt bij het opstarten expliciet opgeheven.
+- Bij het openen van een cultivar wordt de terugkeerpositie apart opgeslagen.
+- Service-worker-cache bijgewerkt naar v9.1.6.
+
+Niet uitgevoerd: volledige interactietest in een echte browser of op de live hosting. Test na publiceren verversen vanuit collectie, openen/sluiten van cultivar en foto toevoegen/vervangen van basisfoto.
