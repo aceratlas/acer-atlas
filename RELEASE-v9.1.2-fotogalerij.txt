@@ -1,0 +1,9 @@
+Acer Atlas v9.1.2 — grotere hoofdfoto en fotaviewer
+
+- In het persoonlijke boomformulier staat de gekozen overzichtsfoto groot bovenaan.
+- Klik op de hoofdfoto of een kleine foto om de fotaviewer te openen.
+- In de viewer kun je met links/rechts, pijltjestoetsen of swipen tussen de foto’s bladeren.
+- Sluiten met het kruisje of Escape.
+- De vaste knoppen onderaan blijven behouden.
+
+Browser- en apparaattests zijn nog nodig voordat deze versie online wordt gezet. Maak eerst een back-up van je collectie.
