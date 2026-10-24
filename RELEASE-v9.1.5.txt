@@ -1,0 +1,14 @@
+Acer Atlas v9.1.5 — collectie, browsergeschiedenis en foto's
+
+Uitgangspunt: aangeleverde v9.1.4, inclusief grote hoofdfoto en schermvullende fotoviewer.
+
+Wijzigingen:
+- Bij verversen wordt de laatst gebruikte app-sectie en scrollpositie hersteld; een geopende boomdetailweergave in Mijn collectie wordt waar mogelijk ook heropend.
+- De browsergeschiedenis houdt app-secties bij, zodat de Terug-knop binnen Acer Atlas kan navigeren. Terug vanuit een boomdetail sluit de detailweergave.
+- Na het toevoegen van foto's of het kiezen van een nieuwe overzichtsfoto blijft het detailvenster schermvullend geopend. Dit voorkomt dat de pagina met verborgen scroll vergrendeld lijkt na het opnieuw tekenen van de collectie.
+- De service-worker-cache is bijgewerkt naar v9.1.5, zodat oude gecachete bestanden worden vervangen.
+- Foto-opslagstructuur en bestaande collectiegegevens zijn niet bewust gewijzigd.
+
+Controle:
+- JavaScript-syntaxis gecontroleerd met Node.js voor alle inline scripts.
+- Volledige interactietest in een echte browser en op de live hosting is niet uitgevoerd; controleer na publiceren vooral foto toevoegen, overzichtsfoto kiezen, browser-terug en verversen.
