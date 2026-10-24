@@ -1,0 +1,8 @@
+Acer Atlas v9.0.7
+
+Wijziging:
+- Mijn collectie krijgt een fotogerichte kaartweergave, geïnspireerd op de promotionele mock-up.
+- Foto bovenaan, cultivar-naam en soort direct zichtbaar, acties onderaan.
+- Responsive raster op mobiel en desktop.
+
+Bestaande gegevensstructuur en lokale opslag zijn niet aangepast.
