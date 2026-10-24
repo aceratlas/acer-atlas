@@ -1,0 +1,6 @@
+Acer Atlas v9.0.11
+
+- Klik op de foto in Mijn collectie om persoonlijke boomgegevens schermvullend te openen.
+- Terug-knop brengt je terug naar dezelfde positie in Mijn collectie.
+- Opslaan bewaart wijzigingen en brengt je terug naar dezelfde positie.
+- Encyclopedie en wensenlijstgedrag blijven ongewijzigd.
