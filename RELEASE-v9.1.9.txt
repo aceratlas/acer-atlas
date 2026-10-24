@@ -1,0 +1,9 @@
+Acer Atlas v9.1.9 — collectie-foto’s herstellen
+
+Gebaseerd op v9.1.8.
+- Foto-editor blijft na toevoegen, verwijderen of kiezen van een overzichtsfoto correct als schermvullend detail geopend.
+- Vergrote fotoweergave vindt het juiste collectie-detail ook wanneer dit als portal direct onder body staat.
+- Pijlen en swipe gebruiken de persoonlijke foto’s van de juiste boom.
+- Service-worker-cache verhoogd naar v9.1.9.
+
+Installatie: vervang alleen index.html en sw.js door de bestanden uit deze update. RELEASE-v9.1.9.txt is een toelichting. Maak vooraf een back-up van je huidige versie/collectie.
