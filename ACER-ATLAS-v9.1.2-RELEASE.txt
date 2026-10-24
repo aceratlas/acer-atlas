@@ -1,0 +1,6 @@
+Acer Atlas v9.1.2
+
+Basis: v9.0.12 collectiefoto-fix.
+- Versieaanduiding bijgewerkt naar v9.1.2.
+- Versielabels bijgewerkt voor Nederlands, Engels, Duits en Frans.
+- Bestaande functionaliteit en lokale gegevensstructuur behouden.
