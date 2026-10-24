@@ -1,0 +1,10 @@
+Acer Atlas v9.1.8 — wenslijst informatieknop
+
+Gewijzigd:
+- De knop 'Informatie' / 'Open' en de cultivarafbeelding in de wenslijst openen nu de juiste cultivar in de encyclopedie.
+- Terug vanuit een detail dat vanuit de wenslijst is geopend, gaat terug naar de wenslijst.
+- Detailweergave verbergt ook de wenslijst om overlappende schermen te voorkomen.
+- Service-worker-cache bijgewerkt naar v9.1.8.
+
+Installatie: vervang alleen de bestanden die in deze update-ZIP staan.
+Controle: JavaScript-syntaxis gecontroleerd; geen volledige live-browser-test uitgevoerd.
