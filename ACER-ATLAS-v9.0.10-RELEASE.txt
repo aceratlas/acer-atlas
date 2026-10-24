@@ -1,0 +1,6 @@
+Acer Atlas v9.0.10
+
+- Mijn collectie: klikken op de foto opent de eigen gegevensvelden van die boom, niet de encyclopedie.
+- De persoonlijke gegevens blijven apart van de encyclopedische basisinformatie.
+- Wenslijst: de foto is klikbaar en opent de bijbehorende encyclopediepagina.
+- De oude lokale opslagstructuur is behouden.
