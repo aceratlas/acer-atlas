@@ -1,0 +1,11 @@
+Acer Atlas v9.3.8 – updatepakket
+
+Wijzigingen:
+- Het uitsnijkader volgt nu de verhouding van de foto in het collectieoverzicht.
+- De uitsnede wordt aangepast in de fotoviewer; het kader is alleen daar zichtbaar.
+- Tijdens bladeren door foto's kan iedere foto met 'Als hoofdfoto kiezen' als hoofdfoto worden ingesteld.
+- Zoomen en verplaatsen met aanraking werkt voor iedere foto in de viewer.
+- De gekozen hoofdfoto en uitsnede worden opgeslagen in de persoonlijke collectie.
+- Cacheversie verhoogd naar v9.3.8.
+
+Technische controles: JavaScript-syntaxis en ZIP-integriteit controleren. Niet volledig getest op fysieke telefoon.
