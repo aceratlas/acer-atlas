@@ -1,0 +1,27 @@
+ACER ATLAS PWA v9.4.1 — INSTALLATIE
+
+Dit pakket is voorbereid om Acer Atlas als installeerbare webapp (PWA) te publiceren.
+Het is nog niet gepubliceerd en dit ZIP-bestand alleen installeert de app niet rechtstreeks.
+
+BESTANDEN PUBLICEREN
+1. Maak eerst een back-up van de bestaande website.
+2. Upload ALLE bestanden uit deze map naar dezelfde hoofdmap op de webhosting.
+3. De website moet via HTTPS bereikbaar zijn.
+4. Controleer dat index.html, sw.js, manifest.webmanifest, cultivar-database.json en de drie icon-bestanden vanaf dezelfde map bereikbaar zijn.
+5. Open de website op een telefoon en test de app voordat je deze als hoofdversie gebruikt.
+
+INSTALLEREN OP ANDROID
+1. Open de HTTPS-link in Chrome.
+2. Kies 'Installeren' of 'Toevoegen aan startscherm' in het browsermenu.
+
+INSTALLEREN OP IPHONE
+1. Open de HTTPS-link in Safari.
+2. Tik op Deel.
+3. Kies 'Zet op beginscherm' en bevestig.
+
+BELANGRIJK
+- Maak geen wijzigingen aan bestaande hosting voordat een back-up is gemaakt.
+- Controleer eerst of collectie en foto's behouden blijven en of toevoegen/verwijderen werkt.
+- Offline ondersteuning betreft de app-shell en cultivar-database. Externe foto's, Firebase-diensten en functies die internet nodig hebben, kunnen offline beperkt zijn.
+- Lokale gegevens op één apparaat worden niet automatisch gesynchroniseerd naar een ander apparaat. Daarvoor is een afzonderlijk gecontroleerde synchronisatie-oplossing nodig.
+- Deze PWA is nog niet handmatig op Android en iPhone getest. Eerst op een testlocatie publiceren en testen.

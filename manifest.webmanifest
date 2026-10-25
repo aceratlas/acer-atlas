@@ -2,26 +2,19 @@
   "id": "./",
   "name": "Acer Atlas — Japanese Maple Encyclopedia",
   "short_name": "Acer Atlas",
-  "description": "Bilingual Japanese maple cultivar encyclopedia and personal collection",
+  "description": "Japanse esdoornencyclopedie en persoonlijke collectie",
   "start_url": "./",
   "scope": "./",
   "display": "standalone",
+  "orientation": "portrait-primary",
   "background_color": "#f7f6f0",
   "theme_color": "#193b2e",
   "lang": "nl",
+  "categories": ["education", "lifestyle"],
   "icons": [
-    {
-      "src": "acer-maple-leaf.png",
-      "sizes": "512x512",
-      "type": "image/png",
-      "purpose": "any maskable"
-    },
-    {
-      "src": "apple-touch-icon.png",
-      "sizes": "180x180",
-      "type": "image/png",
-      "purpose": "any"
-    }
+    {"src": "acer-maple-leaf.png", "sizes": "512x512", "type": "image/png", "purpose": "any maskable"},
+    {"src": "apple-touch-icon.png", "sizes": "180x180", "type": "image/png", "purpose": "any"},
+    {"src": "icon.svg", "sizes": "any", "type": "image/svg+xml", "purpose": "any"}
   ],
-  "version": "6.10"
+  "version": "9.4.1"
 }

@@ -1,5 +1,8 @@
-const CACHE='acer-atlas-v9.4.1';
-const SHELL=['./','./index.html','./manifest.webmanifest','./icon.svg','./apple-touch-icon.png','./acer-maple-leaf.png'];
+const CACHE = 'acer-atlas-pwa-v9.4.1';
+const SHELL = [
+  './', './index.html', './manifest.webmanifest', './icon.svg',
+  './apple-touch-icon.png', './acer-maple-leaf.png', './cultivar-database.json'
+];
 self.addEventListener('install', event => {
   event.waitUntil(caches.open(CACHE).then(cache => cache.addAll(SHELL)).then(() => self.skipWaiting()));
 });
@@ -17,14 +20,13 @@ self.addEventListener('fetch', event => {
   const isDatabase = url.pathname.endsWith('/cultivar-database.json');
   if (isHtml || isDatabase) {
     event.respondWith(
-      fetch(event.request, {cache: 'no-store'}).then(response => {
+      fetch(event.request, { cache: 'no-store' }).then(response => {
         if (!response.ok) throw new Error('Network response was not OK');
-        if (isHtml) {
-          const copy = response.clone();
-          caches.open(CACHE).then(cache => cache.put('./index.html', copy));
-        }
+        const copy = response.clone();
+        if (isHtml) caches.open(CACHE).then(cache => cache.put('./index.html', copy));
+        if (isDatabase) caches.open(CACHE).then(cache => cache.put('./cultivar-database.json', copy));
         return response;
-      }).catch(() => caches.match(isHtml ? './index.html' : event.request))
+      }).catch(() => caches.match(isHtml ? './index.html' : './cultivar-database.json'))
     );
     return;
   }

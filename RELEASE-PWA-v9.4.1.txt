@@ -1,0 +1,7 @@
+Acer Atlas PWA v9.4.1
+- Gebaseerd op de aangeleverde updatebestanden van Acer Atlas v9.4.1.
+- Manifest ingericht voor installatie op Android en iPhone.
+- Service worker-cache vernieuwd en app-shell plus cultivar-database in cache opgenomen.
+- App-versiemetadata bijgewerkt naar 9.4.1.
+- Installatie-instructies opgenomen.
+- Nog niet live gepubliceerd of handmatig getest op fysieke telefoons.
