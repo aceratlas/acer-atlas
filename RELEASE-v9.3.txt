@@ -1,0 +1,15 @@
+Acer Atlas v9.3 — Collectie tracking en delen
+
+Gebaseerd op de v9.2-update.
+
+Nieuw in deze testversie:
+- Bij een boom in Mijn collectie kan de gebruiker ontwikkeling per jaar en seizoen registreren (lente, zomer, herfst, winter).
+- Elke waarneming ondersteunt notities en een optionele eigen seizoensfoto.
+- Waarnemingen kunnen per boom worden teruggelezen en verwijderd.
+- Deelblok bij een boom: kies expliciet een eigen foto vanaf het apparaat en bewerk het bijschrift.
+- Op ondersteunde telefoons opent de native deeloptie; de gebruiker kiest zelf Instagram. Er wordt geen Acer Atlas-logo of watermerk op de foto gezet.
+- Geen directe Instagram-accountkoppeling of automatische publicatie.
+- Verhoogde service-worker-cacheversie zodat de nieuwe appbestanden worden opgehaald.
+
+Technische controle: inline JavaScript syntaxis gecontroleerd met Node.js; zip bevat index.html, sw.js en dit releasebestand.
+Nog nodig: handmatige test in browser op mobiel/desktop, opslag van foto's/notities, delen op Android/iOS en NL/EN/DE/FR vertalingen. Dit is een testupdate; maak voor installatie een back-up van je collectie.
