@@ -1,0 +1,18 @@
+Acer Atlas v9.3.1 — updatepakket (alleen gewijzigde bestanden)
+
+Basis: Acer Atlas v9.3.
+
+Wijzigingen:
+- Instagram-deeloptie uit de collectie-editor verwijderd.
+- Collectie bewerken heeft onderaan de knoppen in de volgorde Terug, Opslaan, Verwijderen.
+- Verwijderen uit collectie vraagt om bevestiging en verwijdert alleen de persoonlijke collectie-entry; de cultivar blijft in de encyclopedie.
+- Hoofdfoto kan worden ingezoomd en de uitsnede kan horizontaal/verticaal worden gepositioneerd. De opgeslagen uitsnede wordt per boom bewaard.
+- Ontwikkeling volgen staat standaard ingeklapt onder de standaardfoto's.
+- Ontwikkelingsfoto's en notities worden onder aparte jaarkaders gegroepeerd (bijv. 2024, 2025, 2026), met seizoenen binnen elk jaar.
+- Service-worker cache is bijgewerkt naar v9.3.1.
+
+Controles uitgevoerd:
+- JavaScript-syntaxcontrole met Node.js.
+- ZIP-integriteitscontrole.
+
+Let op: dit pakket is nog niet handmatig getest in een browser of op een telefoon. Test het eerst met een back-up van je collectie.
