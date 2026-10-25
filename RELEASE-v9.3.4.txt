@@ -1,0 +1,7 @@
+Acer Atlas v9.3.4 – kleine layoutcorrectie
+
+- Terug, Opslaan en Uit collectie staan in het boomgegevensscherm altijd naast elkaar, ook op smalle telefoonschermen.
+- De knoppen blijven even breed verdeeld over drie kolommen; tekst en iconen blijven zichtbaar.
+- Geen wijzigingen aan de fotobediening; dit blijft voor een volgende update.
+
+Installatie: vervang index.html en sw.js in het bestaande project.
