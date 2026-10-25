@@ -1,0 +1,17 @@
+Acer Atlas v9.3.2 — updatepakket
+
+Gebaseerd op v9.3 / de v9.3.1-update.
+
+Aanpassingen:
+- Boomgegevens en de knoppen Terug, Opslaan en Verwijderen staan weer buiten het uitklapgedeelte Ontwikkeling volgen.
+- Ontwikkeling volgen blijft standaard ingeklapt en staat na de standaardfoto's.
+- De schuifbalkjes voor de hoofdfoto zijn verwijderd.
+- Op apparaten met touchbediening kun je de hoofdfoto direct met één vinger verschuiven en met twee vingers in-/uitzoomen.
+- De uitsnede wordt bij Opslaan bewaard bij de betreffende boom.
+- Instagram-optie blijft verwijderd.
+- Service-worker-cache is bijgewerkt naar v9.3.2.
+
+Controle:
+JavaScript-syntaxis en ZIP-integriteit zijn gecontroleerd. De app is niet volledig handmatig getest op een telefoon of in een browser; test de wijzigingen na het vervangen van de bestanden.
+
+Pakket bevat alleen de gewijzigde bestanden: index.html, sw.js en dit releasebestand.
