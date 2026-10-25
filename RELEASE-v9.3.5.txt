@@ -1,0 +1,13 @@
+Acer Atlas v9.3.5 – vertalingen en hoofdfoto
+
+- Verwijderd: de tekst over zoomen die geen bedieningsfunctie had.
+- Hoofdfoto rechtstreeks bedienen: knijpen met twee vingers om in/uit te zoomen en slepen om de uitsnede te verplaatsen.
+- De uitsnede wordt per boom opgeslagen wanneer je op Opslaan drukt.
+- Een kader op de hoofdfoto helpt de uitsnede visueel te beoordelen.
+- De standaardwaarde “Onbekend” in invoervelden wordt vertaald naar Unknown, Unbekannt of Inconnu afhankelijk van de gekozen taal.
+- De bevestiging voor “Uit collectie” is vertaald in Nederlands, Engels, Duits en Frans.
+- Versie- en cacheversie bijgewerkt naar v9.3.5.
+
+Talen: Nederlands, Engels, Duits en Frans.
+Installatie: vervang index.html en sw.js in het bestaande project.
+Controle: JavaScript-syntaxis en ZIP-integriteit gecontroleerd. De bediening is nog niet volledig handmatig op een echte telefoon getest.
