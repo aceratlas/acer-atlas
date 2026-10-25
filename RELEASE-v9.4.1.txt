@@ -1,0 +1,8 @@
+Acer Atlas v9.4.1 — updatepakket
+
+Wijziging:
+- Hersteld: de verwijderactie kan nu de globale opslagfunctie aanroepen. Na bevestiging wordt de cultivar uit de persoonlijke collectie verwijderd, wordt de collectie opgeslagen en keert de app automatisch terug naar de collectiepagina.
+- Service-worker-cache verhoogd naar v9.4.1; oudere Acer Atlas-caches worden bij activatie verwijderd.
+
+Bestanden: index.html, sw.js.
+Controle: JavaScript-syntaxis, HTML-parsing en ZIP-integriteit gecontroleerd. Niet volledig handmatig getest in een browser of op een telefoon.
