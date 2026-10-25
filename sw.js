@@ -1,4 +1,4 @@
-const CACHE='acer-atlas-v9.3.8';
+const CACHE='acer-atlas-v9.3.9';
 const SHELL=['./','./index.html','./manifest.webmanifest','./icon.svg','./apple-touch-icon.png','./acer-maple-leaf.png'];
 self.addEventListener('install', event => {
   event.waitUntil(caches.open(CACHE).then(cache => cache.addAll(SHELL)).then(() => self.skipWaiting()));

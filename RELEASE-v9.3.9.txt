@@ -1,0 +1,10 @@
+Acer Atlas v9.3.9 – update
+
+- Verwijderd: kader rond de foto in de fotoviewer.
+- Verwijderd: functie en knop voor uitsnede opslaan.
+- Zoomen met twee vingers en tijdelijk verschuiven in de fotoviewer blijven beschikbaar.
+- De knop in het midden kiest de huidige foto als hoofdfoto; uitsnede-instellingen worden niet opgeslagen.
+- De foto als hoofdfoto instellen blijft werken tijdens het bladeren met Terug/Volgende.
+
+Installatie: vervang index.html en sw.js in het bestaande project.
+Controle: JavaScript-syntaxis en ZIP-integriteit worden afzonderlijk gecontroleerd. De volledige app is niet handmatig op een telefoon getest.
