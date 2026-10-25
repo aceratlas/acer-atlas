@@ -1,0 +1,15 @@
+Acer Atlas v9.3.6 – updatepakket
+
+Wijzigingen:
+- De uitsnede-editor is verplaatst naar de diavoorstelling/fotoweergave.
+- Het uitsnedeframe is alleen zichtbaar in de diavoorstelling.
+- In de diavoorstelling kan de hoofdfoto met twee vingers worden ingezoomd en met één of twee vingers worden verschoven, vergelijkbaar met Instagram.
+- De uitsnede wordt opgeslagen wanneer de fotoweergave wordt gesloten of naar een andere foto wordt gegaan.
+- De hoofdfoto in de boomgegevens toont de opgeslagen uitsnede; daar staat geen kader en zijn geen zoomschuifbalken.
+- Service-worker-cache bijgewerkt naar v9.3.6.
+
+Installatie:
+Vervang index.html en sw.js in het bestaande project. Maak vooraf een back-up.
+
+Controle:
+ZIP-integriteit en JavaScript-syntaxis controleren vóór gebruik. De interactie moet nog op een echte telefoon worden getest.
