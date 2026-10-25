@@ -1,0 +1,16 @@
+Acer Atlas v9.3.3 — updatepakket
+
+Gebaseerd op v9.3.2.
+
+Aanpassing:
+- De knoppen Terug, Opslaan en Uit collectie staan naast elkaar.
+- De knoppen zijn hoger gemaakt en hebben elk een duidelijk icoon.
+- De verwijderknop heet nu expliciet ‘Uit collectie’.
+- De foto-functionaliteit is in deze update niet aangepast; verdere foto-aanpassingen volgen in een volgende update.
+- Instagram-optie blijft verwijderd.
+- Service-worker-cache is bijgewerkt naar v9.3.3.
+
+Controle:
+JavaScript-syntaxis en ZIP-integriteit worden gecontroleerd. De app is niet volledig handmatig getest op een telefoon of in een browser.
+
+Pakket bevat alleen de gewijzigde bestanden: index.html, sw.js en dit releasebestand.
