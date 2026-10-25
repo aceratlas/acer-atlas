@@ -1,0 +1,8 @@
+Acer Atlas v9.4.0 update
+
+- Updated the visible version label in Dutch, English, German and French to v9.4.0.
+- Fixed “Uit collectie / Remove from collection”: after confirmation the item is removed from the actual collection array, saved to local storage/persistent storage, the editor closes, and the collection view is rendered again.
+- Bumped the service-worker cache to acer-atlas-v9.4.0. On activation, older acer-atlas-* caches are deleted.
+
+Package contains only changed files: index.html, sw.js and this release note.
+Checks: JavaScript syntax and ZIP integrity checked; full in-browser/device flow has not been manually tested.
