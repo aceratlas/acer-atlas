@@ -1,0 +1,10 @@
+Acer Atlas v9.3.7 update
+
+Gebaseerd op v9.3.6.
+- In de fotodiavoorstelling staan nu expliciete knoppen Terug, Uitsnede opslaan en Volgende.
+- Veegbediening voor wisselen van foto is verwijderd zodat deze niet botst met pinch-zoom.
+- Knijpen met twee vingers zoomt in/uit; slepen verplaatst de uitsnede.
+- Uitsnede opslaan bewaart de uitsnede bij de boom en past die toe op de hoofdfoto en de foto in het collectieoverzicht.
+- Bedieningslabels zijn beschikbaar in Nederlands, Engels, Duits en Frans.
+
+Controle: JavaScript-syntaxis en ZIP-integriteit gecontroleerd. Niet volledig handmatig getest op een echt toestel.
