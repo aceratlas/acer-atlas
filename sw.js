@@ -1,4 +1,4 @@
-const CACHE = 'acer-atlas-pwa-v9.5.8';
+const CACHE = 'acer-atlas-pwa-v9.5.9';
 const SHELL = [
   './', './index.html', './manifest.webmanifest', './icon.svg',
   './apple-touch-icon.png', './acer-maple-leaf.png', './cultivar-database.json'
