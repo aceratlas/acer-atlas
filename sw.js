@@ -1,5 +1,5 @@
-/* Acer Atlas v10.5.13 — force-update cache strategy */
-const CACHE = 'acer-atlas-pwa-v10.5.13';
+/* Acer Atlas v10.5.14 — force-update cache strategy */
+const CACHE = 'acer-atlas-pwa-v10.5.14';
 const APP_FILES = [
   './', './index.html', './manifest.webmanifest', './icon.svg',
   './apple-touch-icon.png', './acer-maple-leaf.png', './cultivar-database.json'
