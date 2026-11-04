@@ -1,17 +1,18 @@
-# Acer Atlas v10.5.10 — cache-updatecorrectie
+# Acer Atlas v10.5.11 — encyclopedie en meertalige correcties
 
-Deze release lost het terugkerende probleem op waarbij telefoons een oude appversie bleven tonen.
+Deze update bevat:
+- Eén consistente appversie: v10.5.11 (ook in de HTML-versiemetadata).
+- De volledige gefilterde encyclopedielijst wordt in één renderactie opgebouwd. De eerdere asynchrone batches konden door tussentijdse her-renderacties worden afgebroken, waardoor de lijst onvolledig bleef.
+- Sortering gebruikt de juiste taalinstelling voor Nederlands, Engels, Duits en Frans.
+- Bij een nieuw collectie-item wordt de selecteur/introducteur uit de centrale database overgenomen. Als die onbekend is, wordt de melding in de gekozen taal opgeslagen.
+- De persoonlijke collectie en het handmatig toevoegen van een boom blijven toegankelijk zonder account.
+- Nieuwe serviceworker-cache voor v10.5.11.
 
-- Appversie: v10.5.10.
-- Nieuwe, unieke serviceworker-cache: `acer-atlas-pwa-v10.5.10`.
-- De serviceworker haalt de appbestanden bij installatie opnieuw op met `cache: reload`.
-- De nieuwe serviceworker activeert direct (`skipWaiting`) en neemt de pagina over (`clients.claim`).
-- Oude Acer Atlas-cacheversies worden bij activatie verwijderd.
-- `index.html` en `cultivar-database.json` worden bij gebruik opnieuw van de server opgehaald met `no-store`.
-- Offline terugval is alleen mogelijk op bestanden uit de huidige releasecache; oude releasecaches worden niet gebruikt.
+De bestaande cultivar-database is niet aangepast. Databaseversie en alle bestaande records blijven behouden.
 
 ## Installatie
-Vervang in de GitHub-hoofdmap alle vier bestanden uit deze ZIP:
-`index.html`, `sw.js`, `README.md` en `cultivar-database.json`.
+Vervang in de GitHub-hoofdmap uitsluitend:
+- `index.html`
+- `sw.js`
 
-Upload alle bestanden in één keer. De database blijft versie 8.2.36.
+`cultivar-database.json` hoeft niet opnieuw te worden geüpload.
