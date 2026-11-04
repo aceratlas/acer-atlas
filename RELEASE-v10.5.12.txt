@@ -1,0 +1,10 @@
+Acer Atlas v10.5.12
+
+Encyclopedia rendering correction:
+- Removed the 80-item animation-frame batch renderer.
+- Every filtered encyclopedia result is now inserted into the grid in one render; there is no 60/80-item visibility cap or load-more paging.
+- Search continues to filter the full 1,016-record database, not only the cards previously rendered.
+- All existing Dutch, English, German and French labels/translations are retained.
+
+Service worker cache identity updated to v10.5.12.
+Database is intentionally unchanged.
