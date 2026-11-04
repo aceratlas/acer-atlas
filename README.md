@@ -1,27 +1,14 @@
-# Acer Atlas v10.5.6 — schone GitHub Pages-release
+# Acer Atlas v10.5.7
 
-Deze map bevat de bestanden die nodig zijn voor de statische Acer Atlas-website, plus `firestore.rules` als configuratiebestand voor Firebase.
+## Encyclopedie – volledige lijst
+- Versienummer verhoogd naar v10.5.7 zodat de update herkenbaar is.
+- De beperking van 60 zichtbare cultivars per laadronde is verwijderd: de volledige gefilterde en gesorteerde lijst wordt getoond.
+- Zoekfunctie en soortfilter blijven werken op de volledige ingeladen database.
+- Databasebestand en persoonlijke collectiegegevens worden niet gewijzigd.
+- Serviceworker-cache vernieuwd.
 
-## Publiceren op GitHub Pages
-1. Bewaar eerst de huidige GitHub-versie als terugvalkopie.
-2. Vervang daarna de inhoud van de publicatiemap/repository-root door de inhoud van deze ZIP.
-3. Laat GitHub Pages naar dezelfde branch en map verwijzen als voorheen.
-4. Open de website en voer zo nodig een harde verversing uit; de serviceworker-cache is vernieuwd naar v10.5.6.
+## Installatie
+Vervang in de GitHub-hoofdmap `index.html`, `sw.js` en `README.md`. Laat `cultivar-database.json` ongewijzigd staan.
 
-## Inhoud
-- `index.html` — app en interface
-- `cultivar-database.json` — cultivar-database v8.2.36 (1.016 records)
-- `sw.js` — PWA/serviceworker-cache v10.5.6
-- `manifest.webmanifest`, `icon.svg`, `apple-touch-icon.png`, `acer-maple-leaf.png` — PWA- en beeldassets
-- `firestore.rules` — Firebase-beveiligingsregels (configuratiebron; niet door GitHub Pages uitgevoerd)
-
-De oude rapporten, historische release-notities, CSV-importbestanden en losse scripts die niet door de huidige HTML worden geladen, zijn niet opgenomen in deze schone publicatie-ZIP.
-
-Persoonlijke collectie-, zaailing- en wensenlijstgegevens worden door de app lokaal in de browser opgeslagen. Deze bestanden vervangen of wissen die lokale gegevens niet.
-
-
-## Correctie encyclopedieweergave (v10.5.6)
-- Databasevelden met zowel de nieuwe als oudere veldnamen worden nu correct ingelezen.
-- Ontbrekende naamgegevens krijgen veilige terugvalwaarden op basis van de cultivarrecord.
-- Groei- en standplaatsvelden gebruiken ook de oudere veldnamen `height`, `width`, `rate`, `light` en `hardiness`.
-- De database zelf is ongewijzigd gebleven; de serviceworker-cache is vernieuwd zodat de correctie wordt opgehaald.
+## Controle
+ZIP-integriteit en JavaScript-syntaxis zijn gecontroleerd. De live weergave kan pas na publicatie in de browser worden bevestigd.
