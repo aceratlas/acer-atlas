@@ -1,17 +1,12 @@
-# Acer Atlas v10.5.8
+# Acer Atlas v10.5.9
 
-## Encyclopedie – volledige lijst
-- Versienummer verhoogd naar v10.5.8 zodat de update herkenbaar is.
-- De beperking van 60 zichtbare cultivars per laadronde is verwijderd: de volledige gefilterde en gesorteerde lijst wordt getoond.
-- Zoekfunctie en soortfilter blijven werken op de volledige ingeladen database.
-- Databasebestand en persoonlijke collectiegegevens worden niet gewijzigd.
-- Serviceworker-cache vernieuwd.
+## Encyclopedie: snelle zoekweergave
+- Alle records uit cultivar-database v8.2.36 blijven beschikbaar.
+- De volledige alfabetische lijst wordt getoond wanneer het zoekveld leeg is.
+- Zoeken filtert alle records; één letter en langere zoekopdrachten blijven ondersteund.
+- Zoekresultaten worden in kleine schermvriendelijke batches toegevoegd, zodat de interface niet vastloopt bij grote aantallen resultaten.
+- Bij een nieuwe zoekopdracht wordt een nog lopende vorige weergave afgebroken.
+- De zoekopdracht wordt op het eerstvolgende schermframe verwerkt; er is geen vaste wachttijd van 110 ms meer.
 
 ## Installatie
-Vervang in de GitHub-hoofdmap `index.html`, `sw.js` en `README.md`. Laat `cultivar-database.json` ongewijzigd staan.
-
-## Controle
-ZIP-integriteit en JavaScript-syntaxis zijn gecontroleerd. De live weergave kan pas na publicatie in de browser worden bevestigd.
-
-
-Encyclopedia search correction: one-character searches (such as “a”) match cultivar names, not generic botanical metadata. Longer searches cover cultivar names, synonyms, and cultivar-specific descriptive fields. The complete v8.2.36 database (1,016 records) is included in this package.
+Vervang op GitHub de bestanden uit deze ZIP, inclusief `cultivar-database.json`, zodat de app en database bij elkaar blijven.
