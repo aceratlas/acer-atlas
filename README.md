@@ -18,3 +18,10 @@ Deze map bevat de bestanden die nodig zijn voor de statische Acer Atlas-website,
 De oude rapporten, historische release-notities, CSV-importbestanden en losse scripts die niet door de huidige HTML worden geladen, zijn niet opgenomen in deze schone publicatie-ZIP.
 
 Persoonlijke collectie-, zaailing- en wensenlijstgegevens worden door de app lokaal in de browser opgeslagen. Deze bestanden vervangen of wissen die lokale gegevens niet.
+
+
+## Correctie encyclopedieweergave (v10.5.6)
+- Databasevelden met zowel de nieuwe als oudere veldnamen worden nu correct ingelezen.
+- Ontbrekende naamgegevens krijgen veilige terugvalwaarden op basis van de cultivarrecord.
+- Groei- en standplaatsvelden gebruiken ook de oudere veldnamen `height`, `width`, `rate`, `light` en `hardiness`.
+- De database zelf is ongewijzigd gebleven; de serviceworker-cache is vernieuwd zodat de correctie wordt opgehaald.

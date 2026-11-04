@@ -841,7 +841,7 @@ $('exportWishlistPdf')?.addEventListener('click',exportWishlistPdf);$('exportSee
 // Acer Atlas v8.0: clean database load with visible diagnostics.
 (async function loadCultivarDatabase(){
  try {
-  const response = await fetch('./cultivar-database.json?build=8236', {cache:'no-store'});
+  const response = await fetch('./cultivar-database.json?build=8237', {cache:'no-store'});
   if(!response.ok) throw new Error('database fetch failed');
   const payload = await response.json();
    const dbVersionLabel = $('cultivarDbVersion');
@@ -852,9 +852,67 @@ $('exportWishlistPdf')?.addEventListener('click',exportWishlistPdf);$('exportSee
    const prior = old.find(x => normCultivar(x.name) === normCultivar(rec.name)) || {};
    const ev = rec.evidence_label || {};
    const hist = rec.history || {};
-   const isRhsList = rec.evidence_status === 'rhs-list' || /Vermeld in RHS AGM-lijst|Listed in RHS AGM list/i.test(ev.nl||ev.en||''); const sourceStatus = isRhsList ? {nl:'',en:''} : {nl:ev.nl || 'Gegevens nog te controleren', en:ev.en || 'Information needs review'};
-   const sources = Array.isArray(rec.sources) ? rec.sources.map(x => ({title:x.title, url:x.url})) : [];
-   return {...prior, id:rec.id, name:rec.name, latin:rec.accepted_name || prior.latin || rec.name, synonyms:rec.synonyms || [], group:rec.group || 'unknown', color:prior.color || 'green', image:(Array.isArray(rec.photos) && rec.photos.length && rec.photos[0].url) ? rec.photos[0].url : (prior.image || ''), traits:rec.traits || prior.traits, history:hist, introduced:rec.introduction_year || null, breeder:(rec.selector_or_introducer && (rec.selector_or_introducer[lang] || rec.selector_or_introducer.nl || rec.selector_or_introducer.en)) || null, selectorOrIntroducer:rec.selector_or_introducer || null, origin:rec.origin || prior.origin, evidence:rec.evidence_status === 'supported' ? 'supported' : 'uncertain', sourceStatus, sourceStatusCode:rec.evidence_status || 'uncertain', sources, historicalNotes:rec.historical_notes || prior.historicalNotes || {nl:'Selecteur en introductiejaar niet vastgesteld.',en:'Selector and introduction year not established.'}, heightEstimate:rec.height_after_10_years || prior.heightEstimate, reviewNeeded:rec.review_needed !== false, nameData:rec.name_data || {}, speciesName:rec.species || 'Onbekend', plantGroup:rec.plant_group || 'Onbekend', growthHabit:rec.growth_habit || 'Onbekend', seasons:rec.seasonal_characteristics || {}, growthData:rec.growth || {}, siteData:rec.site || {}, photos:rec.photos || [], dataCompleteness:rec.data_completeness || 'needs cultivar-specific research'};
+   const isRhsList = rec.evidence_status === 'rhs-list' || /Vermeld in RHS AGM-lijst|Listed in RHS AGM list/i.test(ev.nl||ev.en||'');
+   const sourceStatus = isRhsList ? {nl:'',en:''} : {nl:ev.nl || 'Gegevens nog te controleren', en:ev.en || 'Information needs review'};
+   const sources = Array.isArray(rec.sources) ? rec.sources.filter(x => x && x.url).map(x => ({title:x.title || x.url, url:x.url})) : [];
+   const rawNameData = rec.name_data && typeof rec.name_data === 'object' ? rec.name_data : {};
+   const rawGrowth = rec.growth && typeof rec.growth === 'object' ? rec.growth : {};
+   const rawSite = rec.site && typeof rec.site === 'object' ? rec.site : {};
+   const rawPhotos = Array.isArray(rec.photos) ? rec.photos.filter(ph => ph && ph.url) : [];
+   // Support both current and legacy field names in the central database.
+   const nameData = {
+    ...rawNameData,
+    botanical_name: rawNameData.botanical_name || rec.accepted_name || rec.name,
+    cultivar_name: rawNameData.cultivar_name || rec.name,
+    synonyms: Array.isArray(rawNameData.synonyms) && rawNameData.synonyms.length ? rawNameData.synonyms : (Array.isArray(rec.synonyms) ? rec.synonyms : []),
+    common_name: rawNameData.common_name || 'Onbekend'
+   };
+   const growthData = {
+    ...rawGrowth,
+    height_after_10_years: rawGrowth.height_after_10_years ?? rawGrowth.height ?? 'Onbekend',
+    width_after_10_years: rawGrowth.width_after_10_years ?? rawGrowth.width ?? 'Onbekend',
+    growth_rate: rawGrowth.growth_rate ?? rawGrowth.rate ?? 'Onbekend'
+   };
+   const siteData = {
+    ...rawSite,
+    position: rawSite.position ?? rawSite.light ?? 'Onbekend',
+    soil: rawSite.soil ?? 'Onbekend',
+    climate_zone: rawSite.climate_zone ?? rawSite.hardiness ?? 'Onbekend'
+   };
+   const selector = rec.selector_or_introducer || null;
+   const selectorValue = selector && typeof selector === 'object' ? (selector[lang] || selector.nl || selector.en || '') : (selector || '');
+   return {
+    ...prior,
+    id:rec.id,
+    name:rec.name,
+    latin:rec.accepted_name || prior.latin || rec.name,
+    synonyms:Array.isArray(rec.synonyms) ? rec.synonyms : [],
+    group:rec.group || 'unknown',
+    color:prior.color || 'green',
+    image:rawPhotos.length ? rawPhotos[0].url : (prior.image || ''),
+    traits:rec.traits || prior.traits,
+    history:hist,
+    introduced:rec.introduction_year || null,
+    breeder:String(selectorValue || '').trim() || null,
+    selectorOrIntroducer:selector,
+    origin:rec.origin || prior.origin,
+    evidence:rec.evidence_status === 'supported' ? 'supported' : 'uncertain',
+    sourceStatus,
+    sourceStatusCode:rec.evidence_status || 'uncertain',
+    sources,
+    historicalNotes:rec.historical_notes || prior.historicalNotes || {nl:'Selecteur en introductiejaar niet vastgesteld.',en:'Selector and introduction year not established.'},
+    heightEstimate:rec.height_after_10_years || growthData.height_after_10_years || prior.heightEstimate,
+    reviewNeeded:rec.review_needed !== false,
+    nameData,
+    speciesName:rec.species || 'Onbekend',
+    plantGroup:rec.plant_group || 'Onbekend',
+    growthHabit:rec.growth_habit || 'Onbekend',
+    seasons:rec.seasonal_characteristics || {},
+    growthData,
+    siteData,
+    photos:rawPhotos,
+    dataCompleteness:rec.data_completeness || 'needs cultivar-specific research'
+   };
   });
   document.documentElement.dataset.acerAtlasVersion='10.5.6';
   if($('langSelect'))$('langSelect').value=lang;
