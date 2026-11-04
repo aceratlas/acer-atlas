@@ -1,4 +1,4 @@
-# Acer Atlas v10.4.5 — schone GitHub Pages-release
+# Acer Atlas v10.5.6 — schone GitHub Pages-release
 
 Deze map bevat de bestanden die nodig zijn voor de statische Acer Atlas-website, plus `firestore.rules` als configuratiebestand voor Firebase.
 
@@ -6,12 +6,12 @@ Deze map bevat de bestanden die nodig zijn voor de statische Acer Atlas-website,
 1. Bewaar eerst de huidige GitHub-versie als terugvalkopie.
 2. Vervang daarna de inhoud van de publicatiemap/repository-root door de inhoud van deze ZIP.
 3. Laat GitHub Pages naar dezelfde branch en map verwijzen als voorheen.
-4. Open de website en voer zo nodig een harde verversing uit; de serviceworker-cache is vernieuwd naar v10.4.5.
+4. Open de website en voer zo nodig een harde verversing uit; de serviceworker-cache is vernieuwd naar v10.5.6.
 
 ## Inhoud
 - `index.html` — app en interface
-- `cultivar-database.json` — volledige cultivar-database (1.014 records)
-- `sw.js` — PWA/serviceworker-cache v10.4.5
+- `cultivar-database.json` — cultivar-database v8.2.36 (1.016 records)
+- `sw.js` — PWA/serviceworker-cache v10.5.6
 - `manifest.webmanifest`, `icon.svg`, `apple-touch-icon.png`, `acer-maple-leaf.png` — PWA- en beeldassets
 - `firestore.rules` — Firebase-beveiligingsregels (configuratiebron; niet door GitHub Pages uitgevoerd)
 

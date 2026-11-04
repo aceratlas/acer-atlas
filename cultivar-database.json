@@ -1,8 +1,8 @@
 {
   "app": "Acer Atlas",
-  "version": "8.2.35",
-  "record_count": 1014,
-  "note": "Acer Atlas v8.2.19 — fotobatch 27 (V–Y). Twee cultivar-specifieke Wikimedia Commons-fotoreferenties toegevoegd aan bestaande records; bron- en licentiegegevens vastgelegd. Geen cultivarrecords toegevoegd of verwijderd. Duplicate entry “Adriaan” from the Esveld inventory merged into “Adrian's Compact”; “Adriaan” retained as a searchable alias. Database bijgewerkt op 2026-10-29: Seryo-record aangevuld; twee vierkante gebruikersfoto's ingebed. Alleen cultivar-database.json gewijzigd. Deshojo-duplicaat samengevoegd op 2026-11-02: cultivar-deshojo is het behouden hoofdrecord; Mr Maple-vermelding, tweede Wikimedia Commons-foto en bron-/licentiegegevens zijn toegevoegd. 'Deshojo' blijft als doorzoekbare schrijfvariant behouden. Shin-deshōjō blijft een afzonderlijk cultivarrecord. Alleen de cultivar-database gewijzigd.",
+  "version": "8.2.36",
+  "record_count": 1016,
+  "note": "Acer Atlas database v8.2.36 — twee nieuwe cultivarrecords toegevoegd: Going Green (Sonkootgre) en Bronze Age. Bestaande JSON-structuur behouden. Selecteur/introducer vastgelegd in selector_or_introducer; Bronze Age taxonomische bronafwijking expliciet bewaard. Geen foto’s toegevoegd zonder gecontroleerde hergebruiksrechten.",
   "records": [
     {
       "id": "cultivar-ariadne",
@@ -76207,6 +76207,188 @@
       "esveld_inventory_codes": [
         "c05"
       ]
+    },
+    {
+      "id": "cultivar-going-green",
+      "name": "Going Green",
+      "accepted_name": "Acer palmatum 'Sonkootgre'",
+      "synonyms": [
+        "Acer palmatum 'Going Green'",
+        "Sonkootgre"
+      ],
+      "group": "unknown",
+      "traits": {
+        "nl": "Compacte, opgaand groeiende Japanse esdoorn met dicht vertakte kroon. Handvormig, 5–7-lobbig blad: licht limoengroen in het voorjaar, helder- tot middengroen in de zomer en geel, oranje tot rood in de herfst. Opvallend kenmerk zijn de heldergroene jonge takken die ook in de winter zichtbaar blijven. Esveld vermeldt circa 2 m hoogte na 10 jaar.",
+        "en": "Compact, upright Japanese maple with a densely branched crown. Palmate, 5–7-lobed leaves emerge lime green in spring, mature to bright or medium green in summer, and turn yellow, orange to red in autumn. A distinctive feature is the bright green young branches, visible even in winter. Esveld lists approximately 2 m height after 10 years."
+      },
+      "history": {
+        "nl": "GOING GREEN® is de handelsnaam; ‘Sonkootgre’ is de cultivarbenaming. Arboretum Wojsławice vermeldt Van Son & Koot (Nederland) en 2013. Havlis beschrijft de cultivar als door Van Son & Koot gekweekt en in Europa geregistreerd in 2013. Het exacte juridische registratienummer is in deze database-invoer niet onafhankelijk gecontroleerd.",
+        "en": "GOING GREEN® is the trade name; ‘Sonkootgre’ is the cultivar denomination. Arboretum Wojsławice lists Van Son & Koot (Netherlands) and 2013. Havlis describes the cultivar as bred by Van Son & Koot and registered in Europe in 2013. The exact legal registration number has not been independently verified for this database entry."
+      },
+      "introduction_year": 2013,
+      "selector_or_introducer": {
+        "nl": "Van Son & Koot (selectie / kweker; toegeschreven door Arboretum Wojsławice en Havlis)",
+        "en": "Van Son & Koot (selection / nursery; attributed by Arboretum Wojsławice and Havlis)"
+      },
+      "origin": {
+        "nl": "Nederland",
+        "en": "Netherlands"
+      },
+      "evidence_status": "documented",
+      "evidence_label": {
+        "nl": "Cultivarnaam, kenmerken en herkomst gecontroleerd bij meerdere bronnen; handelsnaam en cultivarbenaming onderscheiden",
+        "en": "Cultivar name, traits and origin checked against multiple sources; trade name and cultivar denomination distinguished"
+      },
+      "sources": [
+        {
+          "title": "Arboretum Wojsławice — Index Plantarum, loofbomen",
+          "url": "https://arboretumwojslawice.pl/index-plantarum/index-plantarum-drzewa-lisciaste/",
+          "supports": "Lists Acer palmatum GOING GREEN, cultivar denomination Sonkootgre, Van Son & Koot (Netherlands), 2013."
+        },
+        {
+          "title": "Havlis — Acer palmatum Sonkootgre (Going Green)",
+          "url": "https://www.havlis.cz/catalogue/acer-palmatum-sonkootgre-going-green-174-japanese-maple",
+          "supports": "Trade name and cultivar denomination; attributes breeding to Van Son & Koot; describes compact habit, 2–3 m size, palmate 5–7-lobed leaves, seasonal colour and 2013 European registration (registration number not independently checked)."
+        },
+        {
+          "title": "Plantentuin Esveld — Acer palmatum Sonkootgre (Going Green)",
+          "url": "https://esveld.nl/a/product/acer-palmatum-sonkootgre-going-green/",
+          "supports": "Cultivar-specific description: bright green winter branches, orange autumn colour, green summer foliage, lobed leaves, upright habit, approximately 2 m after 10 years, 1–1.5 m width, partial shade and very hardy."
+        },
+        {
+          "title": "Royal Horticultural Society — Acer palmatum Sonkootgre",
+          "url": "https://www.rhs.org.uk/plants/348412/acer-palmatum-sonkootgre/details",
+          "supports": "Name relationship and synonym usage; leaf form and seasonal colours; habit, mature size range, deciduous nature, sheltered position, moist but well-drained soil and H6 hardiness."
+        }
+      ],
+      "historical_notes": {
+        "nl": "GOING GREEN® is de gangbare zichtbare handelsnaam. ‘Sonkootgre’ is de cultivarbenaming die onder meer door RHS en Esveld wordt gebruikt. Selecteur / kweker: Van Son & Koot, Nederland. Introductie / registratiejaar: 2013 volgens Arboretum Wojsławice en Havlis. Geen foto toegevoegd: er is nog geen beeld met gecontroleerde hergebruiksrechten vastgelegd.",
+        "en": "GOING GREEN® is the preferred visible trade name. ‘Sonkootgre’ is the cultivar denomination used by RHS and Esveld, among others. Selector / nursery: Van Son & Koot, Netherlands. Introduction / registration year: 2013 according to Arboretum Wojsławice and Havlis. No photo added: no image with verified reuse rights has been recorded."
+      },
+      "review_needed": false,
+      "height_after_10_years": "Circa 2 m na 10 jaar (Esveld)",
+      "last_checked": "2026-11-04",
+      "photo_status": "no-photo-yet",
+      "name_data": {
+        "botanical_name": "Acer palmatum 'Sonkootgre'",
+        "cultivar_name": "Sonkootgre",
+        "synonyms": [
+          "Acer palmatum 'Going Green'",
+          "Going Green®"
+        ],
+        "common_name": "Going Green"
+      },
+      "species": "Acer palmatum",
+      "plant_group": "Onbekend",
+      "growth_habit": "Compact, opgaand en dicht vertakt",
+      "seasonal_characteristics": {
+        "spring": "Licht limoengroen tot helder lichtgroen jong blad.",
+        "summer": "Helder- tot middengroen blad.",
+        "autumn": "Geel, oranje tot rood; Esveld vermeldt oranje.",
+        "winter": "Opvallend heldergroene jonge takken."
+      },
+      "growth": {
+        "height_after_10_years": "Circa 2 m (Esveld)",
+        "width_after_10_years": "Circa 1–1,5 m (Esveld; opgegeven breedte)",
+        "growth_rate": "Langzaam tot gematigd; niet exact gekwantificeerd in de geraadpleegde bronnen."
+      },
+      "site": {
+        "position": "Zon tot halfschaduw; beschutte standplaats. RHS vermeldt dat bladkleur het best is in halfschaduw.",
+        "soil": "Vochtig maar goed doorlatend; humusrijke grond wordt door Esveld genoemd.",
+        "climate_zone": "RHS-hardheidsclassificatie H6; Esveld omschrijft de plant als zeer winterhard.",
+        "source_scope": "Cultivar-specifieke gegevens waar expliciet beschreven; standplaats- en bodemadvies gebaseerd op RHS en Esveld."
+      },
+      "photos": [],
+      "data_completeness": "documented; no rights-cleared photo",
+      "esveld_inventory_codes": []
+    },
+    {
+      "id": "cultivar-bronze-age",
+      "name": "Bronze Age",
+      "accepted_name": "Acer shirasawanum 'Bronze Age'",
+      "synonyms": [],
+      "group": "unknown",
+      "traits": {
+        "nl": "Opgaand groeiende, langzaam groeiende Japanse esdoorn met opvallend bronskleurig tot bronsrood jong blad en heldergroene nerven. Het zomerblad wordt groener, met bronskleurige tot donker bronsrode accenten. De herfstkleur varieert van geel en oranje tot rood en paars. Buchholz Nursery vermeldt circa 8 × 8 ft (ongeveer 2,4 × 2,4 m) na 10 jaar.",
+        "en": "Upright, slow-growing Japanese maple with striking bronze to bronze-red young foliage and bright green veins. Summer foliage becomes greener, retaining bronze to dark bronze-red accents. Autumn colour varies from yellow and orange to red and purple. Buchholz Nursery lists approximately 8 × 8 ft (about 2.4 × 2.4 m) at 10 years."
+      },
+      "history": {
+        "nl": "Gevonden en geïntroduceerd door Talon Buchholz van Buchholz Nursery (Oregon, Verenigde Staten). Buchholz beschrijft de plant als mogelijk een hybride waarbij Acer palmatum betrokken kan zijn. De kwekerij vermeldt dat de zaailing rond 2002 kiemde en ongeveer tien jaar later werd benoemd, vermeerderd en verkocht. Maillot vermeldt Guy Maillot als introducteur in Europa. De botanische plaatsing is niet eenduidig: Buchholz Nursery en MrMaple gebruiken Acer shirasawanum; Maillot verkoopt de cultivar als Acer palmatum. Deze afwijkende handels-/taxonomische plaatsing is niet als bewezen synonymie vastgelegd.",
+        "en": "Found and introduced by Talon Buchholz of Buchholz Nursery (Oregon, USA). Buchholz describes the plant as a possible hybrid involving Acer palmatum. The nursery states that the seedling germinated around 2002 and was named, propagated and sold about a decade later. Maillot identifies Guy Maillot as the European introducer. Botanical placement is not consistent: Buchholz Nursery and MrMaple use Acer shirasawanum; Maillot sells the cultivar as Acer palmatum. This differing trade/taxonomic placement is not recorded as a confirmed synonym."
+      },
+      "introduction_year": null,
+      "selector_or_introducer": {
+        "nl": "Talon Buchholz (vinder en oorspronkelijke introducteur); Guy Maillot (introducteur in Europa volgens Maillot)",
+        "en": "Talon Buchholz (finder and original introducer); Guy Maillot (European introducer according to Maillot)"
+      },
+      "origin": {
+        "nl": "Verenigde Staten (Buchholz Nursery, Oregon); in Europa geïntroduceerd door Guy Maillot volgens Maillot.",
+        "en": "United States (Buchholz Nursery, Oregon); introduced in Europe by Guy Maillot according to Maillot."
+      },
+      "evidence_status": "partial",
+      "evidence_label": {
+        "nl": "Kenmerken en introducteur door kwekerijbron bevestigd; botanische plaatsing verschilt tussen bronnen",
+        "en": "Traits and introducer supported by nursery source; botanical placement differs between sources"
+      },
+      "sources": [
+        {
+          "title": "Buchholz Nursery — Acer shirasawanum Bronze Age",
+          "url": "https://buchholznursery.com/products/acer-shirasawanum-bronze-age-bronze-age-full-moon-maple",
+          "supports": "Uses Acer shirasawanum; upright habit, slow growth, foliage and autumn colour, approximate 10-year size, possible hybrid with Acer palmatum, found and introduced by Talon Buchholz."
+        },
+        {
+          "title": "MrMaple — Acer shirasawanum Bronze Age",
+          "url": "https://mrmaple.com/products/buy-acer-shirasawanum-bronze-age-bronze-full-moon-japanese-maple",
+          "supports": "Uses Acer shirasawanum; describes bronze new growth, darker green summer foliage, variable autumn colour, Talon Buchholz as finder and introducer, possible hybrid status and 8–10 ft expected size after 10 years. Also explicitly states image reuse restrictions."
+        },
+        {
+          "title": "Talon Buchholz — recollection of Bronze Age introduction (republished article)",
+          "url": "https://flora1006.rssing.com/chan-58579048/latest.php",
+          "supports": "First-person account attributed to Talon Buchholz: Buchholz Nursery was the introducer; seedling germinated around 2002 and was named, propagated and sold about a decade later; parentage uncertain but Acer palmatum probably involved."
+        },
+        {
+          "title": "Maillot-Erable — Bronze Age",
+          "url": "https://www.maillot-erable.com/en/boutique/37_acer-palmatum/11935_bronze-age",
+          "supports": "Uses Acer palmatum in its product classification; spring reddish-brown foliage with green veins, green summer foliage, orange autumn colour; identifies Talon Buchholz Nursery as origin and Guy Maillot as European introducer."
+        }
+      ],
+      "historical_notes": {
+        "nl": "Voorlopige primaire plaatsing: Acer shirasawanum ‘Bronze Age’, conform de oorspronkelijke kwekerij Buchholz Nursery en MrMaple. Maillot-Erable en Maillot-Bonsai verkopen dezelfde naam als Acer palmatum ‘Bronze Age’. Buchholz noemt de mogelijkheid van een hybride met Acer palmatum en geeft aan dat de exacte ouderlijke afkomst niet zeker is. Daarom is Acer palmatum hier een alternatieve bronvermelding, geen bevestigd botanisch synoniem. Talon Buchholz is de oorspronkelijke vinder/introducteur; Guy Maillot wordt door Maillot genoemd als Europese introducteur. Introductiejaar niet exact vastgesteld. Geen foto toegevoegd vanwege expliciete beperkingen op beeldhergebruik bij MrMaple en ontbreken van een apart rechten-gecontroleerd beeld.",
+        "en": "Provisional primary placement: Acer shirasawanum ‘Bronze Age’, following the original breeder Buchholz Nursery and MrMaple. Maillot-Erable and Maillot-Bonsai sell the same name as Acer palmatum ‘Bronze Age’. Buchholz notes a possible hybrid involving Acer palmatum and states that exact parentage is uncertain. Therefore Acer palmatum is recorded as an alternative source classification, not a confirmed botanical synonym. Talon Buchholz is the original finder/introducer; Maillot identifies Guy Maillot as the European introducer. Exact introduction year not established. No photo added because MrMaple explicitly restricts image reuse and no separately rights-cleared image has been verified."
+      },
+      "review_needed": true,
+      "height_after_10_years": "Circa 2,4 m hoog × 2,4 m breed volgens Buchholz Nursery; MrMaple noemt circa 2,4–3 m hoogte.",
+      "last_checked": "2026-11-04",
+      "photo_status": "no-photo-yet",
+      "name_data": {
+        "botanical_name": "Acer shirasawanum 'Bronze Age'",
+        "cultivar_name": "Bronze Age",
+        "synonyms": [],
+        "common_name": "Bronze Age"
+      },
+      "species": "Acer shirasawanum (voorlopige plaatsing; mogelijke hybride met Acer palmatum)",
+      "plant_group": "Onbekend",
+      "growth_habit": "Opgaand; langzaam groeiend",
+      "seasonal_characteristics": {
+        "spring": "Bronskleurig tot bronsrood blad met opvallende heldergroene nerven.",
+        "summer": "Groener blad met bronskleurige tot donker bronsrode accenten; beschrijvingen verschillen enigszins per bron.",
+        "autumn": "Variabel: geel, oranje, rood tot paars.",
+        "winter": "Onbekend; betrouwbare cultivar-specifieke beschrijving niet gevonden."
+      },
+      "growth": {
+        "height_after_10_years": "Circa 2,4 m (Buchholz); MrMaple noemt 2,4–3 m.",
+        "width_after_10_years": "Circa 2,4 m (Buchholz).",
+        "growth_rate": "Langzaam (Buchholz Nursery)."
+      },
+      "site": {
+        "position": "Zon tot halfschaduw; Buchholz adviseert gedeeltelijke zon en middag-schaduw. Maillot vermeldt volle lichtinval tot volle zon.",
+        "soil": "Goed doorlatende grond.",
+        "climate_zone": "Buchholz en MrMaple vermelden USDA-zones 5–9.",
+        "source_scope": "Cultivar-specifieke gegevens uit Buchholz Nursery, MrMaple en Maillot; standplaatsadviezen verschillen enigszins tussen bronnen."
+      },
+      "photos": [],
+      "data_completeness": "partly documented; taxonomic placement requires review; no rights-cleared photo",
+      "esveld_inventory_codes": []
     }
   ],
   "photo_count": 89,
