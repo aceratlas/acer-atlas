@@ -1,0 +1,7 @@
+Acer Atlas v10.5.13
+
+- Encyclopedia renders all filtered cultivar records; removed the 80-record requestAnimationFrame batch limit.
+- One-character searches include cultivar names and synonyms across the complete database.
+- Language changes refresh selector/introducer values from their original multilingual data without requiring a page reload.
+- App version metadata and service-worker cache version aligned to 10.5.13.
+- cultivar-database.json and user data are unchanged.
