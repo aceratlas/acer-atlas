@@ -1,0 +1,70 @@
+name: Validate and publish Acer Atlas database
+
+on:
+  push:
+    paths:
+      - "incoming/cultivar-database.json"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  validate-and-publish:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+
+      - name: Validate database JSON and structure
+        run: |
+          node <<'NODE'
+          const fs = require('fs');
+          const path = 'incoming/cultivar-database.json';
+          if (!fs.existsSync(path)) {
+            throw new Error('Missing incoming/cultivar-database.json');
+          }
+          const raw = fs.readFileSync(path, 'utf8');
+          const db = JSON.parse(raw);
+          if (!db || typeof db !== 'object' || Array.isArray(db)) {
+            throw new Error('Database root must be a JSON object');
+          }
+          if (!Array.isArray(db.records)) {
+            throw new Error('Database must contain a records array');
+          }
+          if (db.records.length === 0) {
+            throw new Error('Database records array is empty');
+          }
+          if (Number(db.record_count) !== db.records.length ||
+              Number(db.records_count) !== db.records.length) {
+            throw new Error('record_count and records_count must both match records.length');
+          }
+          if (!db.version || typeof db.version !== 'string') {
+            throw new Error('Database version is missing');
+          }
+          const ids = new Set();
+          for (const record of db.records) {
+            if (!record || typeof record !== 'object' || !record.id || !record.name) {
+              throw new Error('Every record must have an id and name');
+            }
+            if (ids.has(record.id)) {
+              throw new Error('Duplicate cultivar id: ' + record.id);
+            }
+            ids.add(record.id);
+          }
+          console.log(`Validated database v${db.version}: ${db.records.length} records`);
+          NODE
+
+      - name: Publish validated database
+        run: |
+          cp incoming/cultivar-database.json cultivar-database.json
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add cultivar-database.json
+          if git diff --cached --quiet; then
+            echo "No database changes to publish."
+            exit 0
+          fi
+          VERSION=$(node -p "require('./cultivar-database.json').version")
+          git commit -m "Publish Acer Atlas cultivar database v${VERSION}"
+          git push
