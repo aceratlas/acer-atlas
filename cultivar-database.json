@@ -1,8 +1,8 @@
 {
   "app": "Acer Atlas",
-  "version": "8.2.40",
-  "record_count": 1017,
-  "note": "Database v8.2.39: descriptive cultivar text standardized; source attribution consolidated in the source list; Wikimedia Commons page links omitted.",
+  "version": "8.2.41",
+  "record_count": 1018,
+  "note": "Database v8.2.41: Acer palmatum 'Shinrin Yoku' toegevoegd; bron Nova Plants.",
   "records": [
     {
       "id": "cultivar-ariadne",
@@ -70226,8 +70226,86 @@
       "photos": [],
       "data_completeness": "partly documented",
       "last_checked": "2026-11-05"
+    },
+    {
+      "id": "cultivar-shinrin-yoku",
+      "name": "Shinrin Yoku",
+      "accepted_name": "Acer palmatum 'Shinrin Yoku'",
+      "synonyms": [
+        "Shinirin Yoku",
+        "Acer palmatum 'Shinirin Yoku'"
+      ],
+      "group": "unknown",
+      "traits": {
+        "nl": "Opgaand groeiende Japanse esdoorn met opvallend diep ingesneden, relatief groot blad. Het blad loopt in het voorjaar kersenrood uit, verkleurt in de zomer naar helder zuurgroen en kleurt in de herfst felrood. De bast heeft een opvallend geaderd patroon dat doet denken aan esdoorns met slangenbast.",
+        "en": "Upright Japanese maple with striking, deeply divided, relatively large leaves. Foliage emerges cherry red in spring, turns bright acid green in summer and becomes vivid red in autumn. The bark has a distinctive veined pattern reminiscent of snake-bark maples."
+      },
+      "history": {
+        "nl": "Selectie van Nova Plants, ontdekt op de kwekerij door Jordy Truchet. De kweker gebruikt in de producttitel de spelling ‘Shinrin Yoku’, maar schrijft in de beschrijving ook ‘Shinirin Yoku’. De exacte formele cultivarbenaming is daarom nog niet onafhankelijk bevestigd.",
+        "en": "A Nova Plants selection discovered at the nursery by Jordy Truchet. The nursery uses the spelling ‘Shinrin Yoku’ in the product title but also writes ‘Shinirin Yoku’ in the description. The exact formal cultivar denomination has therefore not been independently confirmed."
+      },
+      "introduction_year": null,
+      "selector_or_introducer": {
+        "nl": "Jordy Truchet (ontdekker/selecteur bij Nova Plants).",
+        "en": "Jordy Truchet (discoverer/selector at Nova Plants)."
+      },
+      "origin": {
+        "nl": "Nova Plants, Frankrijk.",
+        "en": "Nova Plants, France."
+      },
+      "evidence_status": "partial",
+      "evidence_label": {
+        "nl": "Cultivarkenmerken en selecteur beschreven door de kweker; naamspelling en onafhankelijke bevestiging vragen nog controle.",
+        "en": "Cultivar traits and selector described by the nursery; spelling and independent confirmation still require verification."
+      },
+      "sources": [
+        {
+          "title": "Nova Plants — Acer palmatum ‘Shinrin Yoku’",
+          "url": "https://www.novaplants.fr/acer-palmatum-shinrin-yoku",
+          "supports": "Product title and cultivar description; selection discovered by Jordy Truchet; leaf shape and seasonal colours; veined bark; upright habit; height 4 m and width 3 m. Description also spells the name ‘Shinirin Yoku’."
+        }
+      ],
+      "historical_notes": {
+        "nl": "De producttitel luidt ‘Shinrin Yoku’, terwijl de beschrijvende tekst ook ‘Shinirin Yoku’ gebruikt. Voorlopig is de titelspelling als hoofdnaam opgenomen en de afwijkende spelling als synoniem. Introductiejaar niet vermeld.",
+        "en": "The product title uses ‘Shinrin Yoku’, while the description also uses ‘Shinirin Yoku’. The title spelling is provisionally used as the main name and the alternative spelling is listed as a synonym. No introduction year is given."
+      },
+      "review_needed": true,
+      "last_checked": "2026-11-05",
+      "height_after_10_years": "Onbekend; opgegeven uiteindelijke hoogte circa 4 m",
+      "photo_status": "no-rights-cleared-photo",
+      "name_data": {
+        "botanical_name": "Acer palmatum 'Shinrin Yoku'",
+        "cultivar_name": "Shinrin Yoku",
+        "synonyms": [
+          "Shinirin Yoku",
+          "Acer palmatum 'Shinirin Yoku'"
+        ],
+        "common_name": "Japanse esdoorn"
+      },
+      "species": "Acer palmatum",
+      "plant_group": "Onbekend",
+      "growth_habit": "Opgaand, krachtig groeiend",
+      "seasonal_characteristics": {
+        "spring": "Kersenrood jong blad.",
+        "summer": "Helder zuurgroen blad.",
+        "autumn": "Felrood herfstblad.",
+        "winter": "Geaderde bast met een patroon dat doet denken aan slangenbast-esdoorns."
+      },
+      "growth": {
+        "height_after_10_years": "Onbekend; kweker geeft circa 4 m als hoogte op.",
+        "width_after_10_years": "Onbekend; kweker geeft circa 3 m als breedte op.",
+        "growth_rate": "Krachtig en vlot groeiend."
+      },
+      "site": {
+        "position": "Volgens de kweker geschikt voor een zonnige standplaats en goed bestand tegen zon.",
+        "soil": "Niet specifiek vermeld; kies humusrijke, vochthoudende maar goed doorlatende grond.",
+        "climate_zone": "Volgens de kweker bijzonder winterhard; exacte klimaatzone niet vermeld.",
+        "source_scope": "Cultivarspecifieke kenmerken en standplaatsclaims volgens Nova Plants; aanvullende bodemaanbeveling is algemene teeltinformatie voor Acer palmatum."
+      },
+      "photos": [],
+      "data_completeness": "partly documented; no rights-cleared photo"
     }
   ],
   "photo_count": 89,
-  "records_count": 1017
+  "records_count": 1018
 }
