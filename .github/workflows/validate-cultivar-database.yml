@@ -1,0 +1,76 @@
+name: Validate Acer Atlas database
+
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - cultivar-database.json
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Validate JSON and cultivar records
+        run: |
+          node <<'NODE'
+          const fs = require('fs');
+          const data = JSON.parse(fs.readFileSync('cultivar-database.json', 'utf8'));
+
+          if (!data || typeof data !== 'object' || Array.isArray(data)) {
+            throw new Error('Database root must be a JSON object.');
+          }
+          if (!Array.isArray(data.records)) {
+            throw new Error('Database must contain a records array.');
+          }
+          if (data.records.length === 0) {
+            throw new Error('Records array is empty; refusing publication.');
+          }
+
+          const seen = new Set();
+          const duplicates = [];
+          for (const [index, record] of data.records.entries()) {
+            if (!record || typeof record !== 'object' || Array.isArray(record)) {
+              throw new Error(`Record at index ${index} is not an object.`);
+            }
+            const id = record.id ?? record.cultivar_id ?? record.cultivarId;
+            if (id !== undefined && id !== null && String(id).trim() !== '') {
+              const key = String(id).trim().toLowerCase();
+              if (seen.has(key)) duplicates.push(String(id));
+              seen.add(key);
+            }
+          }
+          if (duplicates.length) {
+            throw new Error('Duplicate cultivar IDs: ' + [...new Set(duplicates)].join(', '));
+          }
+
+          const version = data.version ?? data.database_version ?? data.databaseVersion ?? 'not specified';
+          console.log('Database JSON: valid');
+          console.log('Cultivar records:', data.records.length);
+          console.log('Unique IDs checked:', seen.size);
+          console.log('Database version:', version);
+          NODE
+
+      - name: Save previous database as a backup artifact
+        if: github.event_name == 'push' && github.event.before != '0000000000000000000000000000000000000000'
+        run: |
+          mkdir -p database-backup
+          git show "${{ github.event.before }}:cultivar-database.json" > database-backup/cultivar-database-previous.json
+
+      - name: Upload previous database backup
+        if: github.event_name == 'push' && github.event.before != '0000000000000000000000000000000000000000'
+        uses: actions/upload-artifact@v4
+        with:
+          name: acer-atlas-database-backup-${{ github.run_number }}
+          path: database-backup/cultivar-database-previous.json
+          retention-days: 90
+          if-no-files-found: error
