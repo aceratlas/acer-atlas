@@ -1,8 +1,8 @@
 {
   "app": "Acer Atlas",
-  "version": "8.2.36",
-  "record_count": 1016,
-  "note": "Acer Atlas database v8.2.36 — twee nieuwe cultivarrecords toegevoegd: Going Green (Sonkootgre) en Bronze Age. Bestaande JSON-structuur behouden. Selecteur/introducer vastgelegd in selector_or_introducer; Bronze Age taxonomische bronafwijking expliciet bewaard. Geen foto’s toegevoegd zonder gecontroleerde hergebruiksrechten.",
+  "version": "8.2.37",
+  "record_count": 1017,
+  "note": "Acer Atlas database v8.2.37 — Acer palmatum ‘Brown Sugar’ (JWW7) toegevoegd met selecteur Jan-Willem Wezelenburg, seizoenskenmerken, groei- en standplaatsinformatie en bronverwijzingen. Beni shigitatsu sawa toegevoegd als synoniem bij het bestaande Aka shigitatsu sawa-record op basis van gebruikersbevestiging; Shigitatsu sawa zonder Aka blijft een afzonderlijk record. Butterscotch (JWW8) blijft afzonderlijk. Geen nieuwe foto’s toegevoegd zonder gecontroleerde hergebruiksrechten.",
   "records": [
     {
       "id": "cultivar-ariadne",
@@ -4604,7 +4604,9 @@
       "name": "Aka shigitatsu sawa",
       "accepted_name": "Acer palmatum 'Aka shigitatsu sawa'",
       "synonyms": [
-        "Aka Shigitatsu Sawa"
+        "Aka Shigitatsu Sawa",
+        "Beni shigitatsu sawa",
+        "Beni Shigitatsu Sawa"
       ],
       "group": "unknown",
       "traits": {
@@ -4612,8 +4614,8 @@
         "en": "Traits not yet individually verified."
       },
       "history": {
-        "nl": "Historische herkomst nog niet voldoende geverifieerd.",
-        "en": "Historical origin not yet sufficiently verified."
+        "nl": "Historische herkomst nog niet voldoende geverifieerd. De gebruiker heeft bevestigd dat “Beni shigitatsu sawa” dezelfde cultivar aanduidt; deze naam is daarom als synoniem opgenomen. “Shigitatsu sawa” zonder Aka blijft een afzonderlijk record.",
+        "en": "Historical origin not yet sufficiently verified. The user confirmed that “Beni shigitatsu sawa” refers to the same cultivar; it is therefore recorded as a synonym. “Shigitatsu sawa” without Aka remains a separate record."
       },
       "introduction_year": null,
       "selector_or_introducer": {
@@ -4657,7 +4659,9 @@
         "botanical_name": "Acer palmatum 'Aka shigitatsu sawa'",
         "cultivar_name": "Aka shigitatsu sawa",
         "synonyms": [
-          "Aka Shigitatsu Sawa"
+          "Aka Shigitatsu Sawa",
+          "Beni shigitatsu sawa",
+          "Beni Shigitatsu Sawa"
         ],
         "common_name": "Onbekend"
       },
@@ -4710,7 +4714,7 @@
         }
       ],
       "data_completeness": "needs cultivar-specific research",
-      "last_checked": "2026-10-21"
+      "last_checked": "2026-11-05"
     },
     {
       "id": "cultivar-benikomachi",
@@ -76389,8 +76393,94 @@
       "photos": [],
       "data_completeness": "partly documented; taxonomic placement requires review; no rights-cleared photo",
       "esveld_inventory_codes": []
+    },
+    {
+      "id": "cultivar-brown-sugar-jww7",
+      "name": "Brown Sugar",
+      "accepted_name": "Acer palmatum 'Brown Sugar'",
+      "synonyms": [
+        "JWW7",
+        "Acer palmatum 'JWW7'"
+      ],
+      "group": "palmatum",
+      "traits": {
+        "nl": "Gezonde, sterk groeiende Japanse esdoorn. Loopt in het voorjaar uit met chocoladebruin tot donkergroen blad. De tweede groeischeut na de langste dag is helder rood en groeit door tot in september. Vormt door goede vertakking relatief snel een volle struik. De takken blijven in de winter helder rood. Goed winterhard.",
+        "en": "A healthy, strongly growing Japanese maple. Spring growth emerges chocolate brown to dark green. The second flush after midsummer is bright red and continues growing until September. Good branching helps it form a full shrub relatively quickly. The branches remain bright red in winter. Hardy."
+      },
+      "history": {
+        "nl": "Selectie van Jan-Willem Wezelenburg uit Hazerswoude, Nederland. De selectie werd in 2017–2018 als JWW7 (Brown Sugar) voorgesteld. De officiële handels-/beschermingsaanduiding wordt vermeld als Acer palmatum Brown Sugar (PBR) JWW7.",
+        "en": "Selection by Jan-Willem Wezelenburg of Hazerswoude, the Netherlands. The selection was presented in 2017–2018 as JWW7 (Brown Sugar). The official trade/protection designation is listed as Acer palmatum Brown Sugar (PBR) JWW7."
+      },
+      "introduction_year": 2017,
+      "selector_or_introducer": {
+        "nl": "Jan-Willem Wezelenburg",
+        "en": "Jan-Willem Wezelenburg"
+      },
+      "origin": {
+        "nl": "Nederland (Hazerswoude)",
+        "en": "The Netherlands (Hazerswoude)"
+      },
+      "evidence_status": "documented",
+      "evidence_label": {
+        "nl": "Cultivarprofiel en selecteur bevestigd door licentiegever en kwekerijbronnen",
+        "en": "Cultivar profile and selector confirmed by licensor and nursery sources"
+      },
+      "sources": [
+        {
+          "title": "Van Vliet New Plants — Acer palmatum Brown Sugar (PBR) JWW7",
+          "url": "https://newplants.nl/plants/acer-palmatum-brown-sugar/",
+          "supports": "Official designation, selector/breeder, spring and summer foliage, strong growth, branching, winter branch colour and hardiness; PVR EU48802 and US Plant Patent PP30091."
+        },
+        {
+          "title": "Plantentuin Esveld — Acer palmatum JWW7 (Brown Sugar)",
+          "url": "https://esveld.nl/a/product/acer-palmatum-jww7-brown-sugar/",
+          "supports": "Height about 200 cm after 10 years, autumn orange tones, bronze-green foliage, upright habit, 3–5 cm leaves, partial shade, humus-rich soil and moderate water requirement."
+        },
+        {
+          "title": "Plantarium 2018 novelty announcement — Acer palmatum JWW7 (Brown Sugar)",
+          "url": "https://www.bpnieuws.nl/article/8016377/eerste-aanmeldingen-noviteitenkeuring-van-plantarium-2018/",
+          "supports": "Selection by Jan-Willem Wezelenburg and presentation as JWW7 (Brown Sugar) in 2018."
+        }
+      ],
+      "historical_notes": {
+        "nl": "JWW7 is de selectienaam/code; Brown Sugar is de handelsnaam. Niet verwarren met Acer palmatum “Butterscotch” JWW8, een afzonderlijke selectie. Introductiejaar als cultivar niet exact vastgesteld; 2017 is het vroegste gevonden openbare Plantarium-nieuwsbericht en 2018 een latere noviteitenpresentatie.",
+        "en": "JWW7 is the selection code; Brown Sugar is the trade name. Do not confuse it with Acer palmatum “Butterscotch” JWW8, a separate selection. The exact cultivar introduction year is not established; 2017 is the earliest located public Plantarium announcement, with a later 2018 novelty presentation."
+      },
+      "review_needed": true,
+      "photo_status": "no-rights-cleared-photo",
+      "name_data": {
+        "botanical_name": "Acer palmatum 'Brown Sugar'",
+        "cultivar_name": "Brown Sugar",
+        "synonyms": [
+          "JWW7",
+          "Acer palmatum 'JWW7'"
+        ],
+        "common_name": "Japanese maple"
+      },
+      "species": "Acer palmatum",
+      "plant_group": "Japanse esdoorn",
+      "growth_habit": "Opgaand, sterk groeiend en goed vertakkend",
+      "seasonal_characteristics": {
+        "spring": "Chocoladebruin tot donkergroen jong blad.",
+        "summer": "Tweede groeischeut na de langste dag helder rood; groeit door tot september. Ouder blad kleurt richting bronsgroen.",
+        "autumn": "Oranje herfsttinten (Esveld)."
+      },
+      "growth": {
+        "height_after_10_years": "Circa 200 cm na 10 jaar",
+        "width_after_10_years": "Onbekend",
+        "growth_rate": "Sterk groeiend; vertakt goed en vormt relatief snel een volle struik."
+      },
+      "site": {
+        "position": "Halfschaduw.",
+        "soil": "Humusrijke (bos)grond; zorg voor goede afwatering.",
+        "climate_zone": "Goed winterhard; exacte klimaatzone niet vastgesteld.",
+        "source_scope": "Cultivarspecifieke kenmerken uit Van Vliet New Plants en Esveld."
+      },
+      "photos": [],
+      "data_completeness": "partly documented",
+      "last_checked": "2026-11-05"
     }
   ],
   "photo_count": 89,
-  "records_count": null
+  "records_count": 1017
 }
