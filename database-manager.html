@@ -1,4 +1,4 @@
-<!doctype html><html lang="nl" data-acer-atlas-manager-version="0.2.0"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Acer Atlas · Datamanager v0.2.0</title><style>
+<!doctype html><html lang="nl" data-acer-atlas-manager-version="0.2.0"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Acer Atlas · Datamanager v0.2.1</title><style>
 :root{font-family:Inter,Segoe UI,Arial,sans-serif;color:#202820;background:#f4f6f2}
 *{box-sizing:border-box}body{margin:0;background:#f4f6f2;color:#202820}
 button,input,textarea,select{font:inherit}button{cursor:pointer}
@@ -96,7 +96,7 @@ label{display:block;font-size:12px;font-weight:700;color:#526156;margin:12px 0 5
 <header class="hero">
  <div class="top">
   <div class="brand"><span class="mark" aria-hidden="true">🍁</span><div><h1>ACER ATLAS</h1><small>Databasebeheer</small></div></div>
-  <div class="top-right"><button id="backBtn" class="back-btn" type="button">← Terug</button><span class="version">DATAMANAGER v0.2.0</span></div>
+  <div class="top-right"><button id="backBtn" class="back-btn" type="button">← Terug</button><span class="version">DATAMANAGER v0.2.1</span></div>
  </div>
 </header>
 <main class="page">
@@ -206,7 +206,7 @@ function panelMarkup(r,id){
  kenmerken:`<label>Kenmerken (Nederlands)</label><textarea id="traits_nl" rows="5">${esc(r.traits?.nl||'')}</textarea><label>Kenmerken (Engels)</label><textarea id="traits_en" rows="5">${esc(r.traits?.en||'')}</textarea>`,
  herkomst:`<div class="grid2">${field('Selector / introducteur (NL)','selector_nl',r.selector_or_introducer?.nl)}${field('Selector / introducteur (EN)','selector_en',r.selector_or_introducer?.en)}${field('Introductiejaar','introduction_year',r.introduction_year)}${field('Herkomst (Nederlands)','origin_nl',r.origin?.nl)}${field('Herkomst (Engels)','origin_en',r.origin?.en)}</div><label>Historische achtergrond (Nederlands)</label><textarea id="history_nl" rows="4">${esc(r.history?.nl||r.historical_notes?.nl||'')}</textarea><label>Historische achtergrond (Engels)</label><textarea id="history_en" rows="4">${esc(r.history?.en||r.historical_notes?.en||'')}</textarea>`,
  synoniemen:`<label>Synoniemen</label><textarea id="synonyms" rows="8">${esc(Array.isArray(r.synonyms)?r.synonyms.join('\\n'):r.synonyms||'')}</textarea><p class="flyout-note">Zet ieder synoniem op een aparte regel.</p>`,
- fotos:`<div class="photo-count">${r.photos.length} foto(’s) gekoppeld · geen maximum</div><div class="bulk-upload"><b>Meerdere foto’s tegelijk toevoegen</b><p class="flyout-note">Selecteer in één keer alle foto’s die bij deze cultivar horen. Iedere foto wordt aan dit cultivarrecord toegevoegd.</p><input id="bulkPhotos" type="file" accept="image/*" multiple><p class="flyout-note" id="bulkPhotoStatus">Meerdere bestanden selecteren is mogelijk. Maximaal 12 MB per foto.</p></div><div id="photos">${r.photos.map((p,i)=>photoHtml(p,i)).join('')||'<div class="flyout-empty">Nog geen foto’s toegevoegd.</div>'}</div>`,
+ fotos:`<div class="photo-count">${r.photos.length} foto(’s) gekoppeld · geen maximum</div><div class="bulk-upload"><b>Meerdere foto’s tegelijk toevoegen</b><p class="flyout-note">Selecteer in één keer alle foto’s die bij deze cultivar horen. Iedere foto wordt aan dit cultivarrecord toegevoegd.</p><input id="bulkPhotos" type="file" accept="image/*" multiple><p class="flyout-note" id="bulkPhotoStatus">Meerdere bestanden selecteren is mogelijk. Maximaal 12 MB per foto. Nieuwe foto's worden automatisch verkleind (max. 1920 px, WebP waar mogelijk).</p></div><div id="photos">${r.photos.map((p,i)=>photoHtml(p,i)).join('')||'<div class="flyout-empty">Nog geen foto’s toegevoegd.</div>'}</div>`,
  bronnen:`<p class="flyout-note">Bronvermeldingen voor dit cultivarrecord. Bewerk de gegevens in JSON-vorm.</p><textarea id="sources" rows="12" spellcheck="false">${esc(JSON.stringify(r.sources||[],null,2))}</textarea>`
  };
  return panels[id]||'';
@@ -231,15 +231,62 @@ function showFlyout(id,preserve=true){
   const bulk=$('bulkPhotos');if(bulk)bulk.onchange=async ev=>{
    const files=[...(ev.target.files||[])];if(!files.length)return;
    const valid=files.filter(f=>f.type.startsWith('image/')&&f.size<=12*1024*1024),rejected=files.length-valid.length;
-   $('bulkPhotoStatus').textContent=`${valid.length} foto(’s) worden ingelezen…`;
-   for(const file of valid){try{const data=await readAsDataURL(file);r.photos.push({url:data,author:'',license:'',license_url:'',credit:'',season:'',date_taken:''});}catch(e){console.error(e);}}
+   let originalTotal=0,storedTotal=0,optimizedCount=0;
+   $('bulkPhotoStatus').textContent=`${valid.length} foto(’s) worden ingelezen en geoptimaliseerd…`;
+   for(let i=0;i<valid.length;i++){
+    const file=valid[i];
+    try{
+     const optimized=await optimizeImage(file);
+     const data=await readAsDataURL(optimized);
+     r.photos.push({url:data,author:'',license:'',license_url:'',credit:'',season:'',date_taken:''});
+     originalTotal+=file.size;storedTotal+=optimized.size;
+     if(optimized.size<file.size)optimizedCount++;
+     $('bulkPhotoStatus').textContent=`Foto ${i+1} van ${valid.length} verwerkt…`;
+    }catch(e){console.error(e);}
+   }
    if(rejected)alert(`${rejected} bestand(en) overgeslagen: kies afbeeldingsbestanden van maximaal 12 MB per foto.`);
-   showFlyout('fotos',false);$('status').textContent=`${valid.length} foto(’s) toegevoegd aan het lokale concept.`;
+   showFlyout('fotos',false);
+   $('status').textContent=`${valid.length} foto(’s) toegevoegd. ${optimizedCount} geoptimaliseerd: ${formatBytes(originalTotal)} origineel → ${formatBytes(storedTotal)} opgeslagen (exclusief JSON/Base64-overhead). Wijzigingen staan in het lokale concept.`;
   };
   $('photos')?.querySelectorAll('[data-remove]').forEach(b=>b.onclick=()=>{try{captureFlyoutValues();}catch(e){alert(e.message);return;}r.photos.splice(+b.dataset.remove,1);showFlyout('fotos',false);});
  }
 }
 function closeFlyout(){$('flyoutBackdrop').classList.add('hidden');}
+// Nieuwe galerijfoto's worden vóór opslag verkleind. Bestaande databasefoto's blijven ongewijzigd.
+const PHOTO_MAX_DIMENSION=1920,PHOTO_WEBP_QUALITY=0.82;
+function formatBytes(bytes){if(!Number.isFinite(bytes)||bytes<=0)return '0 B';const units=['B','KB','MB','GB'];const i=Math.min(Math.floor(Math.log(bytes)/Math.log(1024)),units.length-1);return (bytes/Math.pow(1024,i)).toFixed(i===0?0:1)+' '+units[i];}
+async function optimizeImage(file){
+ if(!file||!file.type.startsWith('image/'))throw new Error('Geen geldig afbeeldingsbestand.');
+ // Behoud vector- en bewegende afbeeldingen; deze mogen niet worden platgeslagen.
+ if(file.type==='image/svg+xml'||file.type==='image/gif')return file;
+ let bitmap=null,objectUrl=null;
+ try{
+  if('createImageBitmap' in window)bitmap=await createImageBitmap(file);
+  else{
+   objectUrl=URL.createObjectURL(file);
+   bitmap=await new Promise((resolve,reject)=>{const img=new Image();img.onload=()=>resolve(img);img.onerror=()=>reject(new Error('Afbeelding kon niet worden geopend'));img.src=objectUrl;});
+  }
+  const width=bitmap.width||bitmap.naturalWidth,height=bitmap.height||bitmap.naturalHeight;
+  if(!width||!height)throw new Error('Afbeeldingsformaat kon niet worden bepaald.');
+  const scale=Math.min(1,PHOTO_MAX_DIMENSION/Math.max(width,height));
+  const canvas=document.createElement('canvas');
+  canvas.width=Math.max(1,Math.round(width*scale));canvas.height=Math.max(1,Math.round(height*scale));
+  const ctx=canvas.getContext('2d',{alpha:true});
+  if(!ctx)throw new Error('Canvas is niet beschikbaar.');
+  ctx.drawImage(bitmap,0,0,canvas.width,canvas.height);
+  let compressed=await new Promise(resolve=>canvas.toBlob(resolve,'image/webp',PHOTO_WEBP_QUALITY));
+  if(!compressed||compressed.type!=='image/webp'){
+   // Fallback naar JPEG voor JPEG-bronnen; andere formaten blijven origineel om transparantie te behouden.
+   if(file.type==='image/jpeg'||file.type==='image/jpg'){
+    compressed=await new Promise(resolve=>canvas.toBlob(resolve,'image/jpeg',0.84));
+   }else return file;
+  }
+  return compressed&&compressed.size<file.size?compressed:file;
+ }finally{
+  if(bitmap&&typeof bitmap.close==='function')bitmap.close();
+  if(objectUrl)URL.revokeObjectURL(objectUrl);
+ }
+}
 function readAsDataURL(file){return new Promise((resolve,reject)=>{const reader=new FileReader();reader.onload=()=>resolve(reader.result);reader.onerror=()=>reject(reader.error||new Error('Foto kon niet worden gelezen'));reader.readAsDataURL(file);});}
 function photoHtml(p,i){
  const preview=p.url?`<img src="${esc(p.url)}" alt="Foto ${i+1}" style="max-width:150px;max-height:110px;object-fit:contain;border-radius:6px;margin:8px 0">`:'';
