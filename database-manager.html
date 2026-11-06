@@ -1,83 +1,271 @@
-<!doctype html><html lang="nl"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Acer Atlas · Databasebeheer</title><style>
-:root{font-family:Inter,Segoe UI,Arial,sans-serif;color:#202820;background:#f4f6f2}*{box-sizing:border-box}body{margin:0}.top{background:#20392b;color:white;padding:20px 26px}.top h1{margin:0;font-size:22px}.top p{margin:5px 0 0;color:#d8e5d9;font-size:13px}.wrap{max-width:1440px;margin:auto;padding:18px;display:grid;grid-template-columns:330px 1fr;gap:16px}.panel{background:white;border:1px solid #dce4dc;border-radius:12px;padding:16px;box-shadow:0 2px 8px #2039200a}.toolbar{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:12px}button,.filebtn{border:1px solid #c8d4c9;background:#fff;border-radius:8px;padding:9px 12px;cursor:pointer;font-weight:600;color:#263c2d}button.primary{background:#294c36;color:white;border-color:#294c36}button.warn{color:#8b3b2b}.filebtn input{display:none}input,select,textarea{width:100%;border:1px solid #ccd7ce;border-radius:7px;padding:9px;font:inherit;background:#fff}label{display:block;font-size:12px;font-weight:700;color:#526156;margin:12px 0 5px}.hint{font-size:12px;color:#69766c}.stats{display:flex;gap:8px;margin:10px 0}.stat{background:#f0f5f0;padding:9px;border-radius:8px;flex:1}.stat b{display:block;font-size:18px}.list{max-height:66vh;overflow:auto;margin-top:10px}.item{padding:9px;border-bottom:1px solid #edf0ed;cursor:pointer;border-radius:6px}.item:hover,.item.active{background:#edf4ed}.item small{display:block;color:#718075}.grid2{display:grid;grid-template-columns:1fr 1fr;gap:12px}.section{border-top:1px solid #e5ebe5;margin-top:18px;padding-top:14px}.section h3{margin:0 0 8px;font-size:15px}.photo{border:1px solid #e0e7e0;padding:10px;border-radius:9px;margin:9px 0}.photohead{display:flex;justify-content:space-between;align-items:center}.photo-fields{display:grid;grid-template-columns:2fr 1fr 1fr;gap:8px}.status{padding:9px 12px;border-radius:8px;background:#f0f5f0;margin:10px 0;font-size:13px}.danger{color:#a33}.hidden{display:none}.footer{padding:10px 18px;color:#647168;font-size:12px;max-width:1440px;margin:auto}@media(max-width:850px){.wrap{grid-template-columns:1fr}.list{max-height:35vh}.grid2,.photo-fields{grid-template-columns:1fr}}
-</style><script src="https://www.gstatic.com/firebasejs/10.14.1/firebase-app-compat.js"></script><script src="https://www.gstatic.com/firebasejs/10.14.1/firebase-auth-compat.js"></script><script src="https://www.gstatic.com/firebasejs/10.14.1/firebase-storage-compat.js"></script>
-</head><body>
-<div id="authGate" style="max-width:460px;margin:8vh auto;background:white;border:1px solid #dce4dc;border-radius:14px;padding:24px;box-shadow:0 4px 24px #20392012">
-<h2 style="margin-top:0;color:#20392b">Acer Atlas databasebeheer</h2>
-<p>Deze beheeromgeving is uitsluitend toegankelijk voor het geverifieerde beheerdersaccount.</p>
-<div id="authMessage" role="status" style="margin:12px 0;color:#8b3b2b"></div>
-<label>E-mailadres<input id="adminEmail" type="email" autocomplete="username" value="aceratlas.maple@outlook.com"></label>
-<label>Wachtwoord<input id="adminPassword" type="password" autocomplete="current-password"></label>
-<div class="toolbar" style="margin-top:12px"><button class="primary" id="adminLogin">Inloggen</button></div>
+<!doctype html><html lang="nl" data-acer-atlas-manager-version="0.2.0"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Acer Atlas · Datamanager v0.2.0</title><style>
+:root{font-family:Inter,Segoe UI,Arial,sans-serif;color:#202820;background:#f4f6f2}
+*{box-sizing:border-box}body{margin:0;background:#f4f6f2;color:#202820}
+button,input,textarea,select{font:inherit}button{cursor:pointer}
+.hero{background:#193b2e;color:#fff;padding:18px 20px;border-radius:0 0 22px 22px}
+.top{max-width:1080px;margin:auto;display:flex;align-items:center;justify-content:space-between;gap:12px}
+.brand{display:flex;align-items:center;gap:10px;min-width:0}
+.mark{width:42px;height:42px;display:flex;align-items:center;justify-content:center;border-radius:10px;background:#f7f6f0;color:#193b2e;font-size:27px;flex:0 0 42px}
+.brand h1{font-size:20px;line-height:1;margin:0;letter-spacing:.02em}
+.brand small{color:#d5e3d6;display:block;margin-top:6px;font-size:13px}
+.top-right{display:flex;align-items:center;gap:12px}
+.version{font-size:12px;font-weight:800;letter-spacing:.04em;color:#193b2e;background:#e5ecdf;border:1px solid #b8cdbb;border-radius:20px;padding:7px 11px;white-space:nowrap}
+.back-btn{display:none;border:1px solid #789381;background:transparent;color:#fff;border-radius:20px;padding:8px 13px;font-weight:700;white-space:nowrap}
+.back-btn.visible{display:inline-flex;align-items:center;gap:7px}
+.back-btn:hover,.back-btn:focus-visible{background:#315d46;outline:2px solid #d9e7ce;outline-offset:2px}
+.page{max-width:1080px;margin:24px auto;padding:0 18px 30px}
+.search-card,.detail-card,.tool-card{background:#fff;border:1px solid #dce4dc;border-radius:16px;padding:20px;box-shadow:0 2px 9px #2039200a}
+.search-card{max-width:760px;margin:7vh auto 0}
+.eyebrow{color:#6b796d;font-size:12px;font-weight:800;text-transform:uppercase;letter-spacing:.08em}
+.search-card h2{margin:6px 0 7px;font-size:26px;color:#20392b}
+.search-card p{margin:0 0 18px;color:#647168;font-size:14px}
+.search-wrap{position:relative}
+input,textarea,select{width:100%;border:1px solid #ccd7ce;border-radius:9px;padding:11px;background:#fff;color:#202820}
+#search{font-size:17px;padding:14px 15px;border-radius:12px}
+.suggestions{position:absolute;z-index:20;top:calc(100% + 6px);left:0;right:0;background:#fff;border:1px solid #cbd7cc;border-radius:12px;box-shadow:0 8px 22px #20392b20;max-height:360px;overflow:auto}
+.suggestions.hidden{display:none}
+.suggestion{padding:11px 13px;border-bottom:1px solid #edf1ed;cursor:pointer}
+.suggestion:last-child{border-bottom:0}
+.suggestion:hover,.suggestion.active{background:#edf4ed}
+.suggestion small{display:block;color:#718075;margin-top:2px}
+.suggestion-empty{padding:12px;color:#718075;font-size:13px}
+.stats{display:flex;gap:10px;margin:17px 0}
+.stat{background:#f0f5f0;padding:10px 13px;border-radius:10px;flex:1}
+.stat b{display:block;font-size:20px;color:#193b2e}
+.hint{font-size:12px;color:#69766c}
+.toolbar{display:flex;gap:8px;flex-wrap:wrap;margin:14px 0 0}
+button,.filebtn{border:1px solid #c8d4c9;background:#fff;border-radius:9px;padding:9px 12px;cursor:pointer;font-weight:650;color:#263c2d}
+button.primary{background:#294c36;color:white;border-color:#294c36}
+button.warn{color:#8b3b2b}
+.filebtn{display:inline-flex;align-items:center}
+.filebtn input{display:none}
+.hidden{display:none!important}
+.detail-head{display:flex;align-items:flex-start;justify-content:space-between;gap:12px;flex-wrap:wrap;margin-bottom:15px}
+.detail-head h2{font-size:28px;margin:3px 0 4px;color:#193b2e}
+.accepted{font-style:italic;color:#647168}
+.detail-actions{display:flex;gap:8px;flex-wrap:wrap}
+.summary-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:11px;margin:16px 0}
+.summary-item{background:#f4f7f3;border-radius:11px;padding:12px;min-width:0}
+.summary-item small{display:block;color:#718075;font-size:11px;margin-bottom:4px}
+.summary-item strong{font-size:14px;overflow-wrap:anywhere}
+.detail-section{border-top:1px solid #e6ece6;padding:15px 0}
+.detail-section:first-child{border-top:0}
+.section-head{display:flex;justify-content:space-between;align-items:center;gap:10px}
+.section-head h3{font-size:16px;margin:0;color:#294c36}
+.section-preview{font-size:13px;color:#526156;margin-top:8px;white-space:pre-wrap;overflow-wrap:anywhere}
+.edit-btn{padding:7px 11px;font-size:12px;background:#f4f7f3}
+.photo-strip{display:flex;gap:8px;flex-wrap:wrap;margin-top:10px}
+.photo-strip img{width:76px;height:76px;object-fit:cover;border-radius:9px;border:1px solid #dce4dc}
+.status{padding:10px 12px;border-radius:9px;background:#f0f5f0;margin:14px 0;font-size:13px}
+.danger{color:#a33}
+.footer{padding:8px 18px 22px;color:#647168;font-size:11px;max-width:1080px;margin:auto;text-align:center}
+.flyout-backdrop{position:fixed;inset:0;background:#14251dcc;z-index:50;display:flex;justify-content:flex-end}
+.flyout-backdrop.hidden{display:none}
+.flyout-panel{width:min(620px,100%);height:100%;overflow:auto;background:#fbfcfa;padding:20px;box-shadow:-10px 0 35px #0002}
+.flyout-head{display:flex;align-items:center;justify-content:space-between;gap:12px;border-bottom:1px solid #dce5dc;padding-bottom:13px;margin-bottom:12px}
+.flyout-head h3{margin:0;color:#193b2e}
+.flyout-close{font-size:22px;line-height:1;padding:6px 10px}
+.flyout-note{font-size:12px;color:#69766c;margin:0 0 12px}
+.grid2{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+label{display:block;font-size:12px;font-weight:700;color:#526156;margin:12px 0 5px}
+.section-nav{display:flex;gap:7px;flex-wrap:wrap;margin:12px 0}
+.section-nav button{background:#f4f7f3}
+.section-nav button.active{background:#294c36;color:#fff;border-color:#294c36}
+.flyout-fields{padding-bottom:20px}
+.photo{border:1px solid #e0e7e0;padding:10px;border-radius:9px;margin:9px 0;background:#fff}
+.photohead{display:flex;justify-content:space-between;align-items:center}
+.photo-fields{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px}
+.photo img{display:block}
+.photo-count{font-size:12px;color:#69766c}
+.bulk-upload{border:1px dashed #9db29f;border-radius:10px;padding:14px;background:#f5f8f4;margin:10px 0}
+.bulk-upload input{margin-top:8px}
+.flyout-empty{color:#69766c;font-size:13px;padding:22px 8px;text-align:center}
+.footer-version{font-weight:700;color:#435b49}
+@media(max-width:650px){.hero{padding:15px 13px}.brand h1{font-size:17px}.brand small{font-size:11px}.mark{width:37px;height:37px;flex-basis:37px;font-size:24px}.top-right{gap:6px}.version{font-size:10px;padding:6px 8px}.back-btn{font-size:12px;padding:7px 9px}.page{padding:0 12px 25px;margin:18px auto}.search-card,.detail-card,.tool-card{padding:15px}.search-card{margin-top:5vh}.search-card h2{font-size:23px}.summary-grid{grid-template-columns:1fr 1fr}.detail-head h2{font-size:24px}.grid2,.photo-fields{grid-template-columns:1fr}.flyout-panel{padding:14px}}
+</style></head><body>
+<div id="authGate" style="max-width:520px;margin:10vh auto;padding:24px;background:#fff;border:1px solid #dce4dc;border-radius:14px">
+ <h2 style="margin-top:0">Acer Atlas — beheerderstoegang</h2>
+ <p class="hint">Log in met het geautoriseerde Acer Atlas-beheerdersaccount om de Datamanager te openen.</p>
+ <label for="adminEmail">E-mailadres</label><input id="adminEmail" type="email" autocomplete="username" value="aceratlas.maple@outlook.com">
+ <label for="adminPassword">Wachtwoord</label><input id="adminPassword" type="password" autocomplete="current-password">
+ <button class="primary" id="adminLogin" type="button" style="margin-top:12px">Inloggen</button>
+ <p id="authMessage" class="hint" role="status" aria-live="polite"></p>
 </div>
 <div id="managerShell" hidden>
-<header class="top"><h1>🌿 Acer Atlas · Database Manager</h1><p>Lokale beheeromgeving · werkt met het bestaande cultivar-database.json-formaat</p></header><main class="wrap"><aside class="panel"><div class="toolbar"><label class="filebtn">Database openen<input id="file" type="file" accept=".json,application/json"></label><button id="loadSample">Startdatabase laden</button></div><div class="stats"><div class="stat"><b id="count">—</b><span class="hint">cultivars</span></div><div class="stat"><b id="photosCount">—</b><span class="hint">foto's</span></div></div><input id="search" placeholder="Zoek cultivar…"><div class="toolbar" style="margin-top:10px"><button class="primary" id="add">+ Cultivar</button><button id="saveDraft">Concept opslaan</button></div><div class="hint" id="draftInfo">Concept blijft op deze computer bewaard.</div><div class="list" id="list"></div></aside><section class="panel"><div class="toolbar"><button class="primary" id="export">Database exporteren</button><button id="review">Database controleren</button><button id="rawToggle">Geavanceerde gegevens</button></div><div class="status" id="status">Open de startdatabase of laad je eigen JSON-bestand. Wijzigingen worden pas actief na export en jouw publicatie.</div><div id="editor"><p class="hint">Selecteer links een cultivar om de gegevens te bewerken.</p></div><div id="rawWrap" class="hidden"><label>Volledige JSON (alle velden)</label><textarea id="raw" rows="24" spellcheck="false"></textarea><button id="applyRaw">JSON toepassen</button></div></section></main><div class="footer">v0.1.2 · Nederlandstalig · Foto's lokaal selecteren · Geen verbinding met GitHub of OneDrive in deze eerste lokale proefversie. De originele live database wordt niet gewijzigd.</div>
-<script>window.AA_START_DATABASE = null</script>
-<script>
-const acerFirebaseConfig = { apiKey: "AIzaSyA7rngg93Gt37SeTMnad6NyKvxtTB934as", authDomain: "acer-atlas.firebaseapp.com", projectId: "acer-atlas", storageBucket: "acer-atlas.firebasestorage.app", messagingSenderId: "236357012316", appId: "1:236357012316:web:0e67b44a2a6df01e34cf99" };
-const ACER_ATLAS_ADMIN_EMAIL = "aceratlas.maple@outlook.com";
-let aaAuth=null, aaStorage=null;
-try { if (!firebase.apps.length) firebase.initializeApp(acerFirebaseConfig); aaAuth=firebase.auth(); aaStorage=firebase.storage(); } catch(e) { console.error("Firebase initialisatie mislukt",e); }
 
-let db=null, selected=null, filtered=[];const $=id=>document.getElementById(id);const clone=x=>JSON.parse(JSON.stringify(x));
-function count(){if(!db)return;$('count').textContent=db.records.length;$('photosCount').textContent=db.records.reduce((n,r)=>n+(Array.isArray(r.photos)?r.photos.length:0),0);}
-function renderList(){if(!db)return;let q=$('search').value.toLowerCase();filtered=db.records.filter(r=>(r.name||'').toLowerCase().includes(q)||(r.accepted_name||'').toLowerCase().includes(q)).sort((a,b)=>(a.name||'').localeCompare(b.name||''));$('list').innerHTML=filtered.map(r=>`<div class="item ${selected===r.id?'active':''}" data-id="${esc(r.id)}"><b>${esc(r.name||'(naamloos)')}</b><small>${esc(r.species||'')} · ${(r.photos||[]).length} foto('s)</small></div>`).join('');$('list').querySelectorAll('.item').forEach(el=>el.onclick=()=>select(el.dataset.id));}
-function esc(s){return String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));}
-function select(id){selected=id;renderList();renderEditor();}
-function field(label,key,val,wide=false){return `<div ${wide?'style="grid-column:1/-1"':''}><label>${label}</label><input data-key="${key}" value="${esc(val??'')}"></div>`}
-function renderEditor(){let r=db?.records.find(x=>x.id===selected);if(!r){$('editor').innerHTML='<p class="hint">Selecteer links een cultivar.</p>';return;}r.photos=Array.isArray(r.photos)?r.photos:[];$('editor').innerHTML=`<div class="toolbar"><strong style="font-size:18px">${esc(r.name)}</strong><span style="flex:1"></span><button class="warn" id="delete">Verwijder cultivar</button></div><div class="grid2">${field('Cultivarnaam','name',r.name)}${field('Geaccepteerde naam','accepted_name',r.accepted_name)}${field('Soort','species',r.species)}${field('Cultivargroep','group',r.group==='unknown'?'Nog niet ingedeeld':r.group)}${field('Selector / introducer (NL)','selector_nl',r.selector_or_introducer?.nl)}${field('Selector / introducer (EN)','selector_en',r.selector_or_introducer?.en)}${field('Introductiejaar','introduction_year',r.introduction_year)}${field('Herkomst (Nederlands)','origin_nl',r.origin?.nl)}${field('Herkomst (Engels)','origin_en',r.origin?.en)}${field('Hoogte na 10 jaar','height_after_10_years',r.height_after_10_years)}${field('Laatst gecontroleerd','last_checked',r.last_checked)}</div><div class="section"><h3>Synoniemen</h3><textarea id="synonyms" rows="2">${esc(Array.isArray(r.synonyms)?r.synonyms.join('\n'):r.synonyms||'')}</textarea><p class="hint">Eén synoniem per regel.</p></div><div class="section"><h3>Foto’s <span class="hint">(${r.photos.length}) · onbeperkt</span></h3><p class="hint">Selecteer een foto vanaf je computer. De foto wordt in het exportbestand opgenomen.</p><div id="photos">${r.photos.map((p,i)=>photoHtml(p,i)).join('')}</div><button id="addPhoto">+ Foto toevoegen</button></div><div class="section"><h3>Beschrijving en achtergrond</h3><label>Kenmerken (Nederlands)</label><textarea id="traits_nl" rows="3">${esc(r.traits?.nl||'')}</textarea><label>Kenmerken (Engels)</label><textarea id="traits_en" rows="3">${esc(r.traits?.en||'')}</textarea><label>Historische achtergrond (Nederlands)</label><textarea id="history_nl" rows="3">${esc(r.history?.nl||r.historical_notes?.nl||'')}</textarea><label>Historische achtergrond (Engels)</label><textarea id="history_en" rows="3">${esc(r.history?.en||r.historical_notes?.en||'')}</textarea><details style="margin-top:12px"><summary>Bronnen beheren (gevorderd)</summary><p class="hint">Dit onderdeel is bedoeld voor het beheren van bronvermeldingen.</p><textarea id="sources" rows="5">${esc(JSON.stringify(r.sources||[],null,2))}</textarea></details></div><div class="toolbar" style="margin-top:16px"><button class="primary" id="apply">Wijzigingen toepassen</button></div>`;
-$('delete').onclick=()=>{if(confirm('Deze cultivar uit het concept verwijderen?')){db.records=db.records.filter(x=>x.id!==selected);selected=null;syncMeta();renderList();renderEditor();}};
-$('addPhoto').onclick=()=>{r.photos.push({url:'',author:'',license:'',license_url:'',credit:'',season:'',date_taken:''});renderEditor();};
-$('photos').querySelectorAll('[data-photo-file]').forEach(inp=>inp.onchange=async ev=>{
- const file=ev.target.files?.[0];if(!file)return;
- if(!file.type.startsWith('image/')){alert('Kies een afbeeldingsbestand.');return;}
- if(file.size>12*1024*1024){alert('Deze foto is groter dan 12 MB. Kies een kleinere foto.');return;}
- const reader=new FileReader();
- reader.onload=()=>{const idx=Number(inp.dataset.photoFile);r.photos[idx].url=reader.result;renderEditor();$('status').textContent='Foto toegevoegd. Klik onderaan op Wijzigingen toepassen en exporteer daarna de database.';};
- reader.onerror=()=>alert('De foto kon niet worden ingelezen.');
- reader.readAsDataURL(file);
-});
-$('photos').querySelectorAll('[data-remove]').forEach(b=>b.onclick=()=>{r.photos.splice(+b.dataset.remove,1);renderEditor();});
-$('apply').onclick=()=>{document.querySelectorAll('#editor [data-key]').forEach(el=>{let k=el.dataset.key;if(k==='selector_nl'||k==='selector_en'){r.selector_or_introducer=r.selector_or_introducer&&typeof r.selector_or_introducer==='object'?r.selector_or_introducer:{};r.selector_or_introducer[k==='selector_nl'?'nl':'en']=el.value;}else if(k==='origin_nl'||k==='origin_en'){r.origin=r.origin&&typeof r.origin==='object'?r.origin:{};r.origin[k==='origin_nl'?'nl':'en']=el.value;}else{r[k]=el.value;}});r.synonyms=$('synonyms').value.split('\n').map(x=>x.trim()).filter(Boolean);r.traits=r.traits&&typeof r.traits==='object'?r.traits:{};r.traits.nl=$('traits_nl').value;r.traits.en=$('traits_en').value;r.history=r.history&&typeof r.history==='object'?r.history:{};r.history.nl=$('history_nl').value;r.history.en=$('history_en').value;try{r.sources=JSON.parse($('sources').value||'[]');}catch(e){alert('Bronnen bevat geen geldige JSON.');return;}r.photos=[...document.querySelectorAll('.photo')].map(card=>{let p={};card.querySelectorAll('[data-photo]').forEach(el=>p[el.dataset.photo]=el.value);return p;});r.photos=r.photos.filter(p=>p.url.trim());syncMeta();renderList();renderEditor();$('status').textContent='Wijzigingen toegepast in het concept. Vergeet niet het concept op te slaan of te exporteren.';};
-}
-function photoHtml(p,i){
- const preview=p.url?`<img src="${esc(p.url)}" alt="Foto ${i+1}" style="max-width:150px;max-height:110px;object-fit:contain;border-radius:6px;margin:8px 0">`:'';
- return `<div class="photo"><div class="photohead"><b>Foto ${i+1}</b><button class="warn" data-remove="${i}">Foto verwijderen</button></div>
- <div>${preview}</div>
- <label class="filebtn" style="display:inline-block;margin:8px 0">Foto selecteren op computer<input type="file" accept="image/*" data-photo-file="${i}" style="display:none"></label>
- <span class="hint">${p.url&&p.url.startsWith('data:')?'Foto toegevoegd vanaf deze computer':(p.url?'Er is een bestaande fotolink':'Nog geen foto geselecteerd')}</span>
- <div class="photo-fields">${[['author','Fotograaf'],['license','Gebruikslicentie'],['license_url','Link naar licentie'],['credit','Fotocredit'],['season','Seizoen'],['date_taken','Datum foto']].map(([k,l])=>`<div><label>${l}</label><input data-photo="${k}" value="${esc(p[k]||'')}"></div>`).join('')}</div>
- <input type="hidden" data-photo="url" value="${esc(p.url||'')}"></div>`;
-}
-function syncMeta(){db.record_count=db.records.length;db.records_count=db.records.length;db.photo_count=db.records.reduce((n,r)=>n+(r.photos||[]).length,0);}
-function load(data){if(!data||!Array.isArray(data.records))throw Error('JSON heeft geen records-array.');db=clone(data);db.records.forEach(r=>{if(!Array.isArray(r.photos))r.photos=[]});selected=db.records[0]?.id||null;syncMeta();count();renderList();renderEditor();$('status').textContent=`Database geladen: ${db.records.length} cultivars en ${db.photo_count} foto's. Wijzigingen blijven lokaal totdat je exporteert.`;}
-$('file').onchange=async e=>{try{load(JSON.parse(await e.target.files[0].text()));}catch(err){alert('Database kon niet worden geopend: '+err.message)}};
-$('loadSample').onclick=()=>loadDevelopmentDatabase();
-$('search').oninput=renderList;$('add').onclick=()=>{if(!db){alert('Laad eerst een database.');return;}let id='aa-'+Date.now();db.records.push({id,name:'Nieuwe cultivar',photos:[],synonyms:[],sources:[]});syncMeta();select(id);};
-$('saveDraft').onclick=async()=>{if(!db)return;syncMeta();const json=JSON.stringify(db,null,2);try{if(!aaAuth?.currentUser||aaAuth.currentUser.email?.toLowerCase()!==ACER_ATLAS_ADMIN_EMAIL||!aaAuth.currentUser.emailVerified)throw Error('Beheerderssessie ontbreekt of is niet geverifieerd.');await aaStorage.ref('devdatabase/cultivar-database.json').putString(json,'raw',{contentType:'application/json'});$('draftInfo').textContent='Ontwikkelconcept opgeslagen op '+new Date().toLocaleString();$('status').textContent='Concept opgeslagen in Firebase-ontwikkelopslag. De live database is niet gewijzigd.';}catch(e){$('status').textContent='Cloudopslag niet beschikbaar: '+(e.message||e)+'. Gebruik Database exporteren om je werk veilig als JSON te bewaren.';}};
-$('export').onclick=()=>{if(!db)return alert('Laad eerst een database.');syncMeta();let blob=new Blob([JSON.stringify(db,null,2)],{type:'application/json'});let a=document.createElement('a');a.href=URL.createObjectURL(blob);a.download='cultivar-database.json';a.click();URL.revokeObjectURL(a.href);$('status').textContent='JSON-export aangemaakt. Controleer het bestand voordat je het publiceert.';};
-$('review').onclick=()=>{if(!db)return;syncMeta();let issues=[];let ids=new Set();db.records.forEach((r,i)=>{if(!r.name?.trim())issues.push(`Record ${i+1}: naam ontbreekt`);if(ids.has(r.id))issues.push(`Dubbel ID: ${r.id}`);ids.add(r.id);(r.photos||[]).forEach((p,j)=>{if(!p.url?.trim())issues.push(`${r.name}: foto ${j+1} heeft geen URL`);});});$('status').innerHTML=issues.length?`<b class="danger">Controle: ${issues.length} aandachtspunt(en)</b><br>${issues.slice(0,30).map(esc).join('<br>')}`:`<b>Controle geslaagd.</b><br>${db.records.length} cultivars · ${db.photo_count} foto's · geen lege namen of dubbele ID's gevonden.<br>Dit is nog geen publicatie. Exporteer de JSON en publiceer pas na jouw expliciete akkoord.`;};
-$('rawToggle').onclick=()=>{$('rawWrap').classList.toggle('hidden');$('raw').value=db?JSON.stringify(db,null,2):'';};$('applyRaw').onclick=()=>{try{load(JSON.parse($('raw').value));$('rawWrap').classList.add('hidden');}catch(e){alert('Ongeldige JSON: '+e.message)}};
+<header class="hero">
+ <div class="top">
+  <div class="brand"><span class="mark" aria-hidden="true">🍁</span><div><h1>ACER ATLAS</h1><small>Databasebeheer</small></div></div>
+  <div class="top-right"><button id="backBtn" class="back-btn" type="button">← Terug</button><span class="version">DATAMANAGER v0.2.0</span></div>
+ </div>
+</header>
+<main class="page">
+ <section id="searchPage" class="search-card">
+  <div class="eyebrow">Cultivar database</div>
+  <h2>Zoek een cultivar</h2>
+  <p>Typ een cultivarnaam en selecteer het juiste resultaat. Daarna opent de overzichtelijke cultivar-pagina.</p>
+  <div class="search-wrap"><input id="search" placeholder="Zoek op cultivarnaam of synoniem…" autocomplete="off" aria-label="Zoek cultivar"><div id="suggestions" class="suggestions hidden"></div></div>
+  <div class="stats"><div class="stat"><b id="count">—</b><span class="hint">cultivars in database</span></div><div class="stat"><b id="photosCount">—</b><span class="hint">gekoppelde foto’s</span></div></div>
+  <div class="toolbar">
+   <label class="filebtn">Database openen<input id="file" type="file" accept=".json,application/json"></label>
+   <button id="loadSample">Startdatabase laden</button>
+   <button class="primary" id="add">+ Nieuwe cultivar</button>
+  </div>
+  <div class="toolbar"><button id="saveDraft">Concept opslaan</button><button id="export">Database exporteren</button><button id="review">Database controleren</button><button id="rawToggle">Geavanceerde gegevens</button></div>
+  <div class="hint" id="draftInfo">Concept blijft op deze computer bewaard.</div>
+  <div class="status" id="status">Open de startdatabase of laad je eigen JSON-bestand. Selecteer daarna een cultivar om de gegevens te bekijken en te bewerken.</div>
+  <div id="rawWrap" class="hidden"><label>Volledige JSON (alle velden)</label><textarea id="raw" rows="18" spellcheck="false"></textarea><button id="applyRaw">JSON toepassen</button></div>
+ </section>
+ <section id="detailPage" class="detail-card hidden">
+  <div id="editor"><p class="hint">Selecteer eerst een cultivar.</p></div>
+ </section>
+</main>
+<div class="flyout-backdrop hidden" id="flyoutBackdrop">
+ <section class="flyout-panel" role="dialog" aria-modal="true" aria-labelledby="flyoutTitle">
+  <div class="flyout-head"><div><div class="eyebrow">Cultivar bewerken</div><h3 id="flyoutTitle">Onderdeel</h3></div><button type="button" class="flyout-close" id="flyoutClose" aria-label="Sluiten">×</button></div>
+  <div class="section-nav" id="flyoutNav"></div>
+  <div class="flyout-fields" id="flyoutFields"></div>
+  <div class="toolbar"><button class="primary" id="apply">Wijzigingen toepassen</button><button id="cancelFlyout">Annuleren</button></div>
+ </section>
+</div>
+</div>
+<script src="https://www.gstatic.com/firebasejs/10.14.1/firebase-app-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/10.14.1/firebase-auth-compat.js"></script>
+<script>
+const aaFirebaseConfig={apiKey:"AIzaSyA7rngg93Gt37SeTMnad6NyKvxtTB934as",authDomain:"acer-atlas.firebaseapp.com",projectId:"acer-atlas",storageBucket:"acer-atlas.firebasestorage.app",messagingSenderId:"236357012316",appId:"1:236357012316:web:0e67b44a2a6df01e34cf99"};
+const ACER_ATLAS_ADMIN_EMAIL="aceratlas.maple@outlook.com";
+if(!firebase.apps.length)firebase.initializeApp(aaFirebaseConfig);
+const aaAuth=firebase.auth();
+const $a=id=>document.getElementById(id);
+const aaPersistenceReady=aaAuth.setPersistence(firebase.auth.Auth.Persistence.LOCAL);
 async function loadDevelopmentDatabase(){
  $('status').textContent='Ontwikkeldatabase wordt geladen…';
- try { const response=await fetch('https://raw.githubusercontent.com/aceratlas/acer-atlas/devdatabase/cultivar-database.json',{cache:'no-store'}); if(!response.ok) throw Error('HTTP '+response.status); const data=await response.json(); load(data); $('status').textContent='Ontwikkeldatabase geladen vanaf branch devdatabase. Wijzigingen worden niet automatisch naar productie gepubliceerd.'; }
- catch(e) { $('status').textContent='Laden van de ontwikkeldatabase mislukt: '+(e.message||e)+'. Je kunt ook een JSON-back-up openen via Database openen.'; }
+ try{const response=await fetch('https://raw.githubusercontent.com/aceratlas/acer-atlas/devdatabase/cultivar-database.json',{cache:'no-store'});if(!response.ok)throw Error('HTTP '+response.status);const data=await response.json();load(data);$('status').textContent='Ontwikkeldatabase geladen vanaf branch devdatabase. Wijzigingen worden niet automatisch naar productie gepubliceerd.';}catch(e){$('status').textContent='Laden van de ontwikkeldatabase mislukt: '+(e.message||e)+'. Je kunt ook een JSON-back-up openen via Database openen.';}
 }
-function showManager(user){$('authGate').hidden=true;$('managerShell').hidden=false;loadDevelopmentDatabase();}
-async function verifyAdmin(user){
- if(!user)return;
- if(user.email?.toLowerCase()!==ACER_ATLAS_ADMIN_EMAIL){$('authMessage').textContent='Dit account heeft geen toegang tot databasebeheer.';await aaAuth.signOut();return;}
- if(!user.emailVerified){$('authMessage').textContent='Bevestig eerst het e-mailadres van dit account en log daarna opnieuw in.';await aaAuth.signOut();return;}
- $('authMessage').textContent='';showManager(user);
+function showManager(){ $('authGate').hidden=true;$('managerShell').hidden=false;loadDevelopmentDatabase();}
+async function verifyManagerUser(user){if(!user)return;if(user.email?.toLowerCase()!==ACER_ATLAS_ADMIN_EMAIL){$('authMessage').textContent='Dit account heeft geen toegang tot databasebeheer.';await aaAuth.signOut();return;}if(!user.emailVerified){$('authMessage').textContent='Bevestig eerst het e-mailadres en log daarna opnieuw in.';await aaAuth.signOut();return;}$('authMessage').textContent='';showManager();}
+aaPersistenceReady.then(()=>aaAuth.onAuthStateChanged(user=>{if(user)verifyManagerUser(user);else{$('authGate').hidden=false;$('managerShell').hidden=true;}})).catch(e=>{$('authMessage').textContent='Firebase-sessie kon niet worden hersteld: '+(e.message||e);});
+$a('adminLogin').onclick=async()=>{const email=$('adminEmail').value.trim().toLowerCase(),password=$('adminPassword').value;if(email!==ACER_ATLAS_ADMIN_EMAIL){$('authMessage').textContent='Alleen het aangewezen Acer Atlas-beheerdersaccount heeft toegang.';return;}if(!password){$('authMessage').textContent='Vul je wachtwoord in.';return;}try{$('authMessage').textContent='Bezig met inloggen…';await aaPersistenceReady;const cred=await aaAuth.signInWithEmailAndPassword(email,password);await cred.user.reload();await verifyManagerUser(aaAuth.currentUser);}catch(e){$('authMessage').textContent='Inloggen mislukt: '+(e.message||e);}};
+$a('adminPassword').addEventListener('keydown',e=>{if(e.key==='Enter')$('adminLogin').click();});
+</script>
+<script>
+let db=null, selected=null, suggestionIndex=-1, suggestionItems=[], activeFlyout='basis', pendingPhotos=[];
+const $=id=>document.getElementById(id), clone=x=>JSON.parse(JSON.stringify(x));
+const flyoutSections=[['basis','Basisgegevens'],['kenmerken','Kenmerken'],['herkomst','Herkomst & geschiedenis'],['synoniemen','Synoniemen'],['fotos','Foto’s'],['bronnen','Bronnen']];
+function esc(s){return String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));}
+function count(){if(!db)return;$('count').textContent=db.records.length;$('photosCount').textContent=db.records.reduce((n,r)=>n+(Array.isArray(r.photos)?r.photos.length:0),0);}
+function syncMeta(){db.record_count=db.records.length;db.records_count=db.records.length;db.photo_count=db.records.reduce((n,r)=>n+(r.photos||[]).length,0);count();}
+function closeSuggestions(){$('suggestions').classList.add('hidden');$('suggestions').innerHTML='';suggestionItems=[];suggestionIndex=-1;}
+function renderSuggestions(){
+ if(!db)return;const q=$('search').value.trim().toLocaleLowerCase('nl'),box=$('suggestions');
+ if(!q){closeSuggestions();return;}
+ const matches=db.records.filter(r=>[r.name,r.accepted_name,...(Array.isArray(r.synonyms)?r.synonyms:[])].some(v=>String(v||'').toLocaleLowerCase('nl').includes(q)))
+ .sort((a,b)=>{const an=String(a.name||'').toLocaleLowerCase('nl'),bn=String(b.name||'').toLocaleLowerCase('nl');return (an.startsWith(q)?0:1)-(bn.startsWith(q)?0:1)||an.localeCompare(bn,'nl');}).slice(0,15);
+ suggestionItems=matches;suggestionIndex=-1;
+ if(!matches.length){box.innerHTML='<div class="suggestion-empty">Geen cultivar gevonden.</div>';box.classList.remove('hidden');return;}
+ box.innerHTML=matches.map((r,i)=>`<div class="suggestion" role="option" aria-selected="false" data-suggestion-index="${i}"><b>${esc(r.name||'(naamloos)')}</b><small>${esc(r.accepted_name||r.species||'')} · ${(r.photos||[]).length} foto(’s)</small></div>`).join('');
+ box.querySelectorAll('[data-suggestion-index]').forEach(el=>el.onmousedown=e=>{e.preventDefault();const item=suggestionItems[Number(el.dataset.suggestionIndex)];if(item)select(item.id);});
+ box.classList.remove('hidden');
 }
-$('adminLogin').onclick=async()=>{
- const email=$('adminEmail').value.trim().toLowerCase(),password=$('adminPassword').value;
- if(email!==ACER_ATLAS_ADMIN_EMAIL){$('authMessage').textContent='Alleen het aangewezen Acer Atlas-beheerdersaccount heeft toegang.';return;}
- if(!password){$('authMessage').textContent='Vul je wachtwoord in.';return;}
- try{$('authMessage').textContent='Bezig met inloggen…';const cred=await aaAuth.signInWithEmailAndPassword(email,password);await cred.user.reload();await verifyAdmin(aaAuth.currentUser);}
- catch(e){$('authMessage').textContent='Inloggen mislukt: '+(e.message||e);}
-};
-$('adminPassword').addEventListener('keydown',e=>{if(e.key==='Enter')$('adminLogin').click();});
-if(aaAuth){aaAuth.onAuthStateChanged(user=>{if(user)verifyAdmin(user);else{$('authGate').hidden=false;$('managerShell').hidden=true;}});}
-else{$('authMessage').textContent='Firebase kon niet worden gestart. Vernieuw de pagina of probeer later opnieuw.';}
+function moveSuggestion(delta){if(!suggestionItems.length)return;suggestionIndex=Math.max(0,Math.min(suggestionItems.length-1,suggestionIndex+delta));$('suggestions').querySelectorAll('[data-suggestion-index]').forEach((el,i)=>{el.classList.toggle('active',i===suggestionIndex);el.setAttribute('aria-selected',i===suggestionIndex?'true':'false');});$('suggestions').querySelector('[data-suggestion-index="'+suggestionIndex+'"]')?.scrollIntoView({block:'nearest'});}
+function select(id){if(!db)return;selected=id;closeSuggestions();$('searchPage').classList.add('hidden');$('detailPage').classList.remove('hidden');$('backBtn').classList.add('visible');activeFlyout='basis';renderEditor();$('status').textContent='Cultivar geopend. Gebruik de knoppen bij de onderdelen om gegevens te bewerken.';}
+function backToSearch(){closeFlyout();selected=null;$('detailPage').classList.add('hidden');$('searchPage').classList.remove('hidden');$('backBtn').classList.remove('visible');$('search').value='';$('search').focus();}
+function field(label,key,val,wide=false){return `<div ${wide?'style="grid-column:1/-1"':''}><label>${label}</label><input data-key="${key}" value="${esc(val??'')}"></div>`;}
+function preview(value){return esc(value||'Nog niet ingevuld');}
+function detailSection(id,title,summary){return `<div class="detail-section"><div class="section-head"><h3>${title}</h3><button class="edit-btn" type="button" data-edit="${id}">Bewerken</button></div><div class="section-preview">${summary}</div></div>`;}
+function renderEditor(){
+ const r=db?.records.find(x=>x.id===selected);if(!r)return;
+ r.photos=Array.isArray(r.photos)?r.photos:[];
+ const trait=typeof r.traits==='object'?(r.traits.nl||r.traits.en||''):r.traits;
+ const hist=typeof r.history==='object'?(r.history.nl||r.history.en||''):(r.history||'');
+ const photos=r.photos.slice(0,8).map(p=>p.url?`<img src="${esc(p.url)}" alt="Cultivarfoto" loading="lazy">`:'').join('');
+ $('editor').innerHTML=`
+  <div class="detail-head"><div><div class="eyebrow">Cultivaroverzicht</div><h2>${esc(r.name||'Naamloze cultivar')}</h2><div class="accepted">${esc(r.accepted_name||r.species||'')}</div></div><div class="detail-actions"><button class="warn" id="delete">Cultivar verwijderen</button><button class="primary" id="detailExport">Database exporteren</button></div></div>
+  <div class="summary-grid">
+   <div class="summary-item"><small>Soort</small><strong>${preview(r.species)}</strong></div>
+   <div class="summary-item"><small>Selector / introducteur</small><strong>${preview(r.selector_or_introducer?.nl||r.selector_or_introducer?.en)}</strong></div>
+   <div class="summary-item"><small>Introductiejaar</small><strong>${preview(r.introduction_year)}</strong></div>
+   <div class="summary-item"><small>Groep</small><strong>${preview(r.group==='unknown'?'Nog niet ingedeeld':r.group)}</strong></div>
+   <div class="summary-item"><small>Hoogte na 10 jaar</small><strong>${preview(r.height_after_10_years||r.growth?.height_after_10_years)}</strong></div>
+   <div class="summary-item"><small>Aantal foto’s</small><strong>${r.photos.length}</strong></div>
+  </div>
+  ${detailSection('basis','Basisgegevens',`Cultivarnaam: ${esc(r.name||'')} · Geaccepteerde naam: ${esc(r.accepted_name||'')} · Laatst gecontroleerd: ${esc(r.last_checked||'Onbekend')}`)}
+  ${detailSection('kenmerken','Kenmerken',preview(trait))}
+  ${detailSection('herkomst','Herkomst & geschiedenis',preview(hist))}
+  ${detailSection('synoniemen','Synoniemen',preview(Array.isArray(r.synonyms)?r.synonyms.join(', '):r.synonyms))}
+  <div class="detail-section"><div class="section-head"><h3>Foto’s</h3><button class="edit-btn" type="button" data-edit="fotos">Foto’s beheren</button></div><div class="section-preview">${r.photos.length} foto(’s) gekoppeld · meerdere foto’s tegelijk toevoegen mogelijk.</div><div class="photo-strip">${photos}</div></div>
+  ${detailSection('bronnen','Bronnen',`${Array.isArray(r.sources)?r.sources.length:0} bronvermelding(en) gekoppeld`)}
+  <div class="status" id="detailStatus">Je bekijkt de cultivar in het lokale concept. Bewerk een onderdeel via de knop ernaast.</div>`;
+ $('editor').querySelectorAll('[data-edit]').forEach(b=>b.onclick=()=>showFlyout(b.dataset.edit));
+ $('delete').onclick=()=>{if(confirm('Deze cultivar uit het concept verwijderen?')){db.records=db.records.filter(x=>x.id!==selected);syncMeta();backToSearch();$('status').textContent='Cultivar verwijderd uit het lokale concept.';}};
+ $('detailExport').onclick=exportDatabase;
+}
+function panelMarkup(r,id){
+ const panels={
+ basis:`<div class="grid2">${field('Cultivarnaam','name',r.name)}${field('Geaccepteerde naam','accepted_name',r.accepted_name)}${field('Soort','species',r.species)}${field('Cultivargroep','group',r.group)}${field('Hoogte na 10 jaar','height_after_10_years',r.height_after_10_years)}${field('Laatst gecontroleerd','last_checked',r.last_checked)}</div>`,
+ kenmerken:`<label>Kenmerken (Nederlands)</label><textarea id="traits_nl" rows="5">${esc(r.traits?.nl||'')}</textarea><label>Kenmerken (Engels)</label><textarea id="traits_en" rows="5">${esc(r.traits?.en||'')}</textarea>`,
+ herkomst:`<div class="grid2">${field('Selector / introducteur (NL)','selector_nl',r.selector_or_introducer?.nl)}${field('Selector / introducteur (EN)','selector_en',r.selector_or_introducer?.en)}${field('Introductiejaar','introduction_year',r.introduction_year)}${field('Herkomst (Nederlands)','origin_nl',r.origin?.nl)}${field('Herkomst (Engels)','origin_en',r.origin?.en)}</div><label>Historische achtergrond (Nederlands)</label><textarea id="history_nl" rows="4">${esc(r.history?.nl||r.historical_notes?.nl||'')}</textarea><label>Historische achtergrond (Engels)</label><textarea id="history_en" rows="4">${esc(r.history?.en||r.historical_notes?.en||'')}</textarea>`,
+ synoniemen:`<label>Synoniemen</label><textarea id="synonyms" rows="8">${esc(Array.isArray(r.synonyms)?r.synonyms.join('\\n'):r.synonyms||'')}</textarea><p class="flyout-note">Zet ieder synoniem op een aparte regel.</p>`,
+ fotos:`<div class="photo-count">${r.photos.length} foto(’s) gekoppeld · geen maximum</div><div class="bulk-upload"><b>Meerdere foto’s tegelijk toevoegen</b><p class="flyout-note">Selecteer in één keer alle foto’s die bij deze cultivar horen. Iedere foto wordt aan dit cultivarrecord toegevoegd.</p><input id="bulkPhotos" type="file" accept="image/*" multiple><p class="flyout-note" id="bulkPhotoStatus">Meerdere bestanden selecteren is mogelijk. Maximaal 12 MB per foto.</p></div><div id="photos">${r.photos.map((p,i)=>photoHtml(p,i)).join('')||'<div class="flyout-empty">Nog geen foto’s toegevoegd.</div>'}</div>`,
+ bronnen:`<p class="flyout-note">Bronvermeldingen voor dit cultivarrecord. Bewerk de gegevens in JSON-vorm.</p><textarea id="sources" rows="12" spellcheck="false">${esc(JSON.stringify(r.sources||[],null,2))}</textarea>`
+ };
+ return panels[id]||'';
+}
+function captureFlyoutValues(){
+ const r=db?.records.find(x=>x.id===selected),f=$('flyoutFields');if(!r||!f)return;
+ f.querySelectorAll('[data-key]').forEach(el=>{const k=el.dataset.key;if(k==='selector_nl'||k==='selector_en'){r.selector_or_introducer=r.selector_or_introducer&&typeof r.selector_or_introducer==='object'?r.selector_or_introducer:{};r.selector_or_introducer[k==='selector_nl'?'nl':'en']=el.value;}else if(k==='origin_nl'||k==='origin_en'){r.origin=r.origin&&typeof r.origin==='object'?r.origin:{};r.origin[k==='origin_nl'?'nl':'en']=el.value;}else{r[k]=el.value;}});
+ if($('synonyms'))r.synonyms=$('synonyms').value.split('\n').map(x=>x.trim()).filter(Boolean);
+ if($('traits_nl')||$('traits_en')){r.traits=r.traits&&typeof r.traits==='object'?r.traits:{};if($('traits_nl'))r.traits.nl=$('traits_nl').value;if($('traits_en'))r.traits.en=$('traits_en').value;}
+ if($('history_nl')||$('history_en')){r.history=r.history&&typeof r.history==='object'?r.history:{};if($('history_nl'))r.history.nl=$('history_nl').value;if($('history_en'))r.history.en=$('history_en').value;}
+ if($('photos'))r.photos=[...$('photos').querySelectorAll('.photo')].map(card=>{let p={};card.querySelectorAll('[data-photo]').forEach(el=>p[el.dataset.photo]=el.value);return p;});
+ if($('sources')){try{r.sources=JSON.parse($('sources').value||'[]');}catch(e){throw new Error('Bronnen bevat geen geldige JSON.');}}
+}
+function showFlyout(id,preserve=true){
+ if(preserve&&$('flyoutBackdrop')&&!$('flyoutBackdrop').classList.contains('hidden')){try{captureFlyoutValues();}catch(e){alert(e.message);return;}}
+ const r=db?.records.find(x=>x.id===selected);if(!r)return;
+ activeFlyout=id;$('flyoutTitle').textContent=flyoutSections.find(x=>x[0]===id)?.[1]||'Onderdeel';
+ $('flyoutNav').innerHTML=flyoutSections.map(([key,label])=>`<button type="button" data-flyout="${key}" class="${key===id?'active':''}">${label}</button>`).join('');
+ $('flyoutFields').innerHTML=panelMarkup(r,id);$('flyoutBackdrop').classList.remove('hidden');
+ $('flyoutNav').querySelectorAll('[data-flyout]').forEach(b=>b.onclick=()=>showFlyout(b.dataset.flyout,true));
+ if(id==='fotos'){
+  const bulk=$('bulkPhotos');if(bulk)bulk.onchange=async ev=>{
+   const files=[...(ev.target.files||[])];if(!files.length)return;
+   const valid=files.filter(f=>f.type.startsWith('image/')&&f.size<=12*1024*1024),rejected=files.length-valid.length;
+   $('bulkPhotoStatus').textContent=`${valid.length} foto(’s) worden ingelezen…`;
+   for(const file of valid){try{const data=await readAsDataURL(file);r.photos.push({url:data,author:'',license:'',license_url:'',credit:'',season:'',date_taken:''});}catch(e){console.error(e);}}
+   if(rejected)alert(`${rejected} bestand(en) overgeslagen: kies afbeeldingsbestanden van maximaal 12 MB per foto.`);
+   showFlyout('fotos',false);$('status').textContent=`${valid.length} foto(’s) toegevoegd aan het lokale concept.`;
+  };
+  $('photos')?.querySelectorAll('[data-remove]').forEach(b=>b.onclick=()=>{try{captureFlyoutValues();}catch(e){alert(e.message);return;}r.photos.splice(+b.dataset.remove,1);showFlyout('fotos',false);});
+ }
+}
+function closeFlyout(){$('flyoutBackdrop').classList.add('hidden');}
+function readAsDataURL(file){return new Promise((resolve,reject)=>{const reader=new FileReader();reader.onload=()=>resolve(reader.result);reader.onerror=()=>reject(reader.error||new Error('Foto kon niet worden gelezen'));reader.readAsDataURL(file);});}
+function photoHtml(p,i){
+ const preview=p.url?`<img src="${esc(p.url)}" alt="Foto ${i+1}" style="max-width:150px;max-height:110px;object-fit:contain;border-radius:6px;margin:8px 0">`:'';
+ return `<div class="photo"><div class="photohead"><b>Foto ${i+1}</b><button type="button" class="warn" data-remove="${i}">Foto verwijderen</button></div><div>${preview}</div><span class="hint">${p.url&&p.url.startsWith('data:')?'Foto lokaal toegevoegd':(p.url?'Bestaande fotolink':'Nog geen foto geselecteerd')}</span><div class="photo-fields">${[['author','Fotograaf'],['license','Gebruikslicentie'],['license_url','Link naar licentie'],['credit','Fotocredit'],['season','Seizoen'],['date_taken','Datum foto']].map(([k,l])=>`<div><label>${l}</label><input data-photo="${k}" value="${esc(p[k]||'')}"></div>`).join('')}</div><input type="hidden" data-photo="url" value="${esc(p.url||'')}"></div>`;
+}
+function load(data){
+ if(!data||!Array.isArray(data.records))throw Error('JSON heeft geen records-array.');
+ db=clone(data);db.records.forEach(r=>{if(!Array.isArray(r.photos))r.photos=[];});
+ selected=null;syncMeta();backToSearch();$('status').textContent=`Database geladen: ${db.records.length} cultivars en ${db.photo_count||0} foto’s. Zoek hierboven een cultivar om te beginnen.`;
+}
+function exportDatabase(){if(!db)return alert('Laad eerst een database.');syncMeta();const blob=new Blob([JSON.stringify(db,null,2)],{type:'application/json'});const a=document.createElement('a');a.href=URL.createObjectURL(blob);a.download='cultivar-database.json';a.click();URL.revokeObjectURL(a.href);$('status').textContent='JSON-export aangemaakt. Controleer het bestand voordat je het publiceert.';}
+$('file').onchange=async e=>{try{if(e.target.files[0])load(JSON.parse(await e.target.files[0].text()));}catch(err){alert('Database kon niet worden geopend: '+err.message);}};
+$('loadSample').onclick=loadDevelopmentDatabase;
+$('search').oninput=renderSuggestions;
+$('search').onkeydown=e=>{if(e.key==='ArrowDown'&&suggestionItems.length){e.preventDefault();moveSuggestion(1);}else if(e.key==='ArrowUp'&&suggestionItems.length){e.preventDefault();moveSuggestion(-1);}else if(e.key==='Enter'&&suggestionItems.length){e.preventDefault();const item=suggestionItems[suggestionIndex<0?0:suggestionIndex];if(item)select(item.id);}else if(e.key==='Escape')closeSuggestions();};
+document.addEventListener('click',e=>{if(!e.target.closest('.search-wrap'))closeSuggestions();});
+$('backBtn').onclick=backToSearch;
+$('add').onclick=()=>{if(!db){alert('Laad eerst een database.');return;}const id='aa-'+Date.now();db.records.push({id,name:'Nieuwe cultivar',photos:[],synonyms:[],sources:[]});syncMeta();select(id);showFlyout('basis',false);};
+$('saveDraft').onclick=()=>{if(!db)return;localStorage.setItem('aa-db-manager-draft',JSON.stringify(db));$('draftInfo').textContent='Concept opgeslagen op '+new Date().toLocaleString();$('status').textContent='Concept lokaal opgeslagen in deze browser. Dit is geen cloudback-up.';};
+$('export').onclick=exportDatabase;
+$('review').onclick=()=>{if(!db)return;syncMeta();const issues=[],ids=new Set();db.records.forEach((r,i)=>{if(!r.name?.trim())issues.push(`Record ${i+1}: naam ontbreekt`);if(ids.has(r.id))issues.push(`Dubbel ID: ${r.id}`);ids.add(r.id);(r.photos||[]).forEach((p,j)=>{if(!p.url?.trim())issues.push(`${r.name}: foto ${j+1} heeft geen URL`);});});$('status').innerHTML=issues.length?`<b class="danger">Controle: ${issues.length} aandachtspunt(en)</b><br>${issues.slice(0,30).map(esc).join('<br>')}`:`<b>Controle geslaagd.</b><br>${db.records.length} cultivars · ${db.photo_count} foto’s · geen lege namen of dubbele ID’s gevonden.<br>Dit is nog geen publicatie.`;};
+$('rawToggle').onclick=()=>{$('rawWrap').classList.toggle('hidden');$('raw').value=db?JSON.stringify(db,null,2):'';};
+$('applyRaw').onclick=()=>{try{load(JSON.parse($('raw').value));$('rawWrap').classList.add('hidden');}catch(e){alert('Ongeldige JSON: '+e.message);}};
+$('apply').onclick=()=>{try{captureFlyoutValues();}catch(e){alert(e.message);return;}syncMeta();closeFlyout();renderEditor();$('status').textContent='Wijzigingen toegepast in het lokale concept. Vergeet niet het concept op te slaan of te exporteren.';};
+$('cancelFlyout').onclick=closeFlyout;$('flyoutClose').onclick=closeFlyout;
+$('flyoutBackdrop').addEventListener('mousedown',e=>{if(e.target===$('flyoutBackdrop'))closeFlyout();});
+document.addEventListener('keydown',e=>{if(e.key==='Escape')closeFlyout();});
+const draft=localStorage.getItem('aa-db-manager-draft');if(draft){try{load(JSON.parse(draft));$('draftInfo').textContent='Eerder lokaal concept gevonden. Je kunt dit concept gebruiken of een andere database openen.';}catch(e){loadDevelopmentDatabase();}}else{loadDevelopmentDatabase();}
 </script></body></html>
