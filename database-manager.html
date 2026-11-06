@@ -231,22 +231,22 @@ function showFlyout(id,preserve=true){
   const bulk=$('bulkPhotos');if(bulk)bulk.onchange=async ev=>{
    const files=[...(ev.target.files||[])];if(!files.length)return;
    const valid=files.filter(f=>f.type.startsWith('image/')&&f.size<=12*1024*1024),rejected=files.length-valid.length;
-   let originalTotal=0,storedTotal=0,optimizedCount=0;
+   let originalTotal=0,storedTotal=0,optimizedCount=0,addedCount=0;
    $('bulkPhotoStatus').textContent=`${valid.length} foto(’s) worden ingelezen en geoptimaliseerd…`;
    for(let i=0;i<valid.length;i++){
-    const file=valid[i];
+    const file=valid[i];let stored=file;
+    try{stored=await optimizeImage(file);}catch(e){console.warn('Optimaliseren mislukt; origineel wordt gebruikt.',e);}
     try{
-     const optimized=await optimizeImage(file);
-     const data=await readAsDataURL(optimized);
+     const data=await readAsDataURL(stored);
      r.photos.push({url:data,author:'',license:'',license_url:'',credit:'',season:'',date_taken:''});
-     originalTotal+=file.size;storedTotal+=optimized.size;
-     if(optimized.size<file.size)optimizedCount++;
+     addedCount++;originalTotal+=file.size;storedTotal+=stored.size;
+     if(stored.size<file.size)optimizedCount++;
      $('bulkPhotoStatus').textContent=`Foto ${i+1} van ${valid.length} verwerkt…`;
-    }catch(e){console.error(e);}
+    }catch(e){console.error('Foto kon niet worden toegevoegd:',e);}
    }
    if(rejected)alert(`${rejected} bestand(en) overgeslagen: kies afbeeldingsbestanden van maximaal 12 MB per foto.`);
    showFlyout('fotos',false);
-   $('status').textContent=`${valid.length} foto(’s) toegevoegd. ${optimizedCount} geoptimaliseerd: ${formatBytes(originalTotal)} origineel → ${formatBytes(storedTotal)} opgeslagen (exclusief JSON/Base64-overhead). Wijzigingen staan in het lokale concept.`;
+   $('status').textContent=`${addedCount} van ${valid.length} foto(’s toegevoegd. ${optimizedCount} geoptimaliseerd: ${formatBytes(originalTotal)} origineel → ${formatBytes(storedTotal)} opgeslagen (exclusief JSON/Base64-overhead). Wijzigingen staan in het lokale concept.`;
   };
   $('photos')?.querySelectorAll('[data-remove]').forEach(b=>b.onclick=()=>{try{captureFlyoutValues();}catch(e){alert(e.message);return;}r.photos.splice(+b.dataset.remove,1);showFlyout('fotos',false);});
  }
