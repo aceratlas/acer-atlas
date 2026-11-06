@@ -1,5 +1,5 @@
-/* Acer Atlas v10.5.31 — validated stale-while-revalidate database cache */
-const CACHE = 'acer-atlas-pwa-v10.5.31';
+/* Acer Atlas v10.5.33 — validated stale-while-revalidate database cache */
+const CACHE = 'acer-atlas-pwa-v10.5.33';
 const DATABASE_KEY = './cultivar-database.json';
 const APP_FILES = [
   './', './index.html', './manifest.webmanifest', './icon.svg',
