@@ -1,0 +1,11 @@
+rules_version = '2';
+service firebase.storage {
+  match /b/{bucket}/o {
+    // Only the verified Acer Atlas administrator may read or write the development database.
+    match /devdatabase/{allPaths=**} {
+      allow read, write: if request.auth != null
+        && request.auth.token.email == 'aceratlas.maple@outlook.com'
+        && request.auth.token.email_verified == true;
+    }
+  }
+}
