@@ -1,4 +1,4 @@
-<!doctype html><html lang="nl" data-acer-atlas-manager-version="0.2.6"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Acer Atlas · Datamanager v0.2.7</title><style>
+<!doctype html><html lang="nl" data-acer-atlas-manager-version="0.2.8"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Acer Atlas · Datamanager v0.2.8</title><style>
 :root{font-family:Inter,Segoe UI,Arial,sans-serif;color:#202820;background:#f4f6f2}
 *{box-sizing:border-box}body{margin:0;background:#f4f6f2;color:#202820}
 button,input,textarea,select{font:inherit}button{cursor:pointer}
@@ -88,7 +88,7 @@ label{display:block;font-size:12px;font-weight:700;color:#526156;margin:12px 0 5
 <header class="hero">
  <div class="top">
   <div class="brand"><span class="mark" aria-hidden="true">🍁</span><div><h1>ACER ATLAS</h1><small>Databasebeheer</small></div></div>
-  <div class="top-right"><a class="app-link" href="./index.html#collection">← Terug naar Acer Atlas</a><button id="backBtn" class="back-btn" type="button">← Terug</button><span class="version">DATAMANAGER v0.2.7</span></div>
+  <div class="top-right"><a class="app-link" href="./index.html#collection">← Terug naar Acer Atlas</a><button id="backBtn" class="back-btn" type="button">← Terug</button><span class="version">DATAMANAGER v0.2.8</span></div>
  </div>
 </header>
 <main class="page">
@@ -107,7 +107,7 @@ label{display:block;font-size:12px;font-weight:700;color:#526156;margin:12px 0 5
   <div class="tool-card" style="margin-top:14px;padding:14px">
    <b>Publiceren naar Acer Atlas</b>
    <p class="hint">Voer je GitHub-token eenmalig in. Vink aan als je wilt dat deze browser het token op dit apparaat onthoudt. Het token wordt niet naar Acer Atlas of GitHub opgeslagen; het wordt alleen gebruikt voor uploads.</p>
-   <div class="toolbar"><input id="githubToken" type="password" autocomplete="off" placeholder="GitHub-token" style="max-width:420px"><button class="primary" id="uploadGithub">Upload database</button></div>
+   <div class="toolbar"><input id="githubToken" type="password" autocomplete="off" placeholder="GitHub-token" style="max-width:420px"><button class="primary" id="uploadGithub">Database publiceren</button></div>
    <div class="toolbar" style="align-items:center"><label style="margin:0;font-weight:500"><input id="rememberGithubToken" type="checkbox" style="width:auto;margin-right:6px">Onthoud token op dit apparaat</label><button id="clearGithubToken" type="button">Token wissen</button></div>
    <div class="hint" id="uploadInfo">Upload wordt eerst gevalideerd; daarna publiceert GitHub Actions de database automatisch.</div>
   </div>
@@ -127,7 +127,7 @@ label{display:block;font-size:12px;font-weight:700;color:#526156;margin:12px 0 5
   <div class="toolbar"><button class="primary" id="apply">Wijzigingen toepassen</button><button id="cancelFlyout">Annuleren</button></div>
  </section>
 </div>
-<div class="footer"><span class="footer-version">Acer Atlas Datamanager v0.2.7</span> · Wijzigingen blijven lokaal totdat je de JSON exporteert. De live database wordt niet automatisch aangepast.</div>
+<div class="footer"><span class="footer-version">Acer Atlas Datamanager v0.2.8</span> · Wijzigingen worden pas centraal opgeslagen nadat je op Opslaan klikt en GitHub de database heeft gepubliceerd.</div>
 <script>/* De actuele database wordt rechtstreeks uit cultivar-database.json geladen. */</script>
 <script>
 let db=null, selected=null, suggestionIndex=-1, suggestionItems=[], activeFlyout='basis', pendingPhotos=[];
@@ -161,7 +161,7 @@ function renderEditor(){
  const hist=typeof r.history==='object'?(r.history.nl||r.history.en||''):(r.history||'');
  const photos=r.photos.slice(0,8).map(p=>p.url?`<img src="${esc(p.url)}" alt="Cultivarfoto" loading="lazy">`:'').join('');
  $('editor').innerHTML=`
-  <div class="detail-head"><div><div class="eyebrow">Cultivaroverzicht</div><h2>${esc(r.name||'Naamloze cultivar')}</h2><div class="accepted">${esc(r.accepted_name||r.species||'')}</div></div><div class="detail-actions"><button class="warn" id="delete">Cultivar verwijderen</button><button class="primary" id="detailExport">Database exporteren</button></div></div>
+  <div class="detail-head"><div><div class="eyebrow">Cultivaroverzicht</div><h2>${esc(r.name||'Naamloze cultivar')}</h2><div class="accepted">${esc(r.accepted_name||r.species||'')}</div></div><div class="detail-actions"><button class="warn" id="delete">Cultivar verwijderen</button><button class="primary" id="saveCultivar">Opslaan</button><button id="detailExport">Exporteren</button></div></div>
   <div class="summary-grid">
    <div class="summary-item"><small>Soort</small><strong>${preview(r.species)}</strong></div>
    <div class="summary-item"><small>Selector / introducteur</small><strong>${preview(r.selector_or_introducer?.nl||r.selector_or_introducer?.en)}</strong></div>
@@ -176,10 +176,10 @@ function renderEditor(){
   ${detailSection('synoniemen','Synoniemen',preview(Array.isArray(r.synonyms)?r.synonyms.join(', '):r.synonyms))}
   <div class="detail-section"><div class="section-head"><h3>Foto’s</h3><button class="edit-btn" type="button" data-edit="fotos">Foto’s beheren</button></div><div class="section-preview">${r.photos.length} foto(’s) gekoppeld · meerdere foto’s tegelijk toevoegen mogelijk.</div><div class="photo-strip">${photos}</div></div>
   ${detailSection('bronnen','Bronnen',`${Array.isArray(r.sources)?r.sources.length:0} bronvermelding(en) gekoppeld`)}
-  <div class="status" id="detailStatus">Je bekijkt de cultivar in het lokale concept. Bewerk een onderdeel via de knop ernaast.</div>`;
+  <div class="status" id="detailStatus">Je bekijkt de cultivar. Bewerk een onderdeel en klik daarna op Opslaan om de volledige database centraal te publiceren.</div>`;
  $('editor').querySelectorAll('[data-edit]').forEach(b=>b.onclick=()=>showFlyout(b.dataset.edit));
  $('delete').onclick=()=>{if(confirm('Deze cultivar uit het concept verwijderen?')){db.records=db.records.filter(x=>x.id!==selected);syncMeta();backToSearch();$('status').textContent='Cultivar verwijderd uit het lokale concept.';}};
- $('detailExport').onclick=exportDatabase;
+ $('detailExport').onclick=exportDatabase;\n $('saveCultivar').onclick=()=>{\n  if(!$('githubToken').value.trim()&&!localStorage.getItem('aa-github-token')&&!sessionStorage.getItem('aa-github-token')){\n   const entered=prompt('Vul je GitHub-token in om deze wijziging op te slaan in de centrale database.');\n   if(!entered)return;\n   $('githubToken').value=entered.trim();\n  }\n  $('uploadGithub').click();\n };
 }
 function panelMarkup(r,id){
  const panels={
@@ -272,7 +272,7 @@ $('uploadGithub').onclick=async()=>{
  if(!db)return alert('Laad eerst de database.');
  const token=$('githubToken').value.trim()||localStorage.getItem('aa-github-token')||sessionStorage.getItem('aa-github-token');
  if(!token){alert('Voer eerst je GitHub-token in.');$('githubToken').focus();return;}
- if(!confirm('De database wordt naar GitHub geüpload. GitHub controleert het bestand en publiceert het daarna automatisch. Doorgaan?'))return;
+ if(!confirm('De volledige database wordt naar GitHub geüpload. GitHub controleert het bestand, maakt eerst een back-up van de huidige database en publiceert daarna de nieuwe versie. Doorgaan?'))return;
  const btn=$('uploadGithub');btn.disabled=true;btn.textContent='Bezig met uploaden…';
  try{
   if($('rememberGithubToken').checked)localStorage.setItem('aa-github-token',token);else{localStorage.removeItem('aa-github-token');sessionStorage.setItem('aa-github-token',token);}
@@ -291,13 +291,13 @@ $('uploadGithub').onclick=async()=>{
   $('uploadInfo').textContent='Upload ontvangen door GitHub. Database v'+uploadDb.version+' wordt nu automatisch gevalideerd en gepubliceerd. Commit: '+(result.commit?.sha||'aangemaakt')+'.';
   $('status').textContent='Upload naar incoming geslaagd. GitHub Actions voert nu de validatie en publicatie uit.';
  }catch(e){$('uploadInfo').textContent='Upload mislukt: '+e.message;alert('Upload mislukt: '+e.message);}
- finally{btn.disabled=false;btn.textContent='Upload database';}
+ finally{btn.disabled=false;btn.textContent='Database publiceren';}
 };
 
 $('review').onclick=()=>{if(!db)return;syncMeta();const issues=[],ids=new Set();db.records.forEach((r,i)=>{if(!r.name?.trim())issues.push(`Record ${i+1}: naam ontbreekt`);if(ids.has(r.id))issues.push(`Dubbel ID: ${r.id}`);ids.add(r.id);(r.photos||[]).forEach((p,j)=>{if(!p.url?.trim())issues.push(`${r.name}: foto ${j+1} heeft geen URL`);});});$('status').innerHTML=issues.length?`<b class="danger">Controle: ${issues.length} aandachtspunt(en)</b><br>${issues.slice(0,30).map(esc).join('<br>')}`:`<b>Controle geslaagd.</b><br>${db.records.length} cultivars · ${db.photo_count} foto’s · geen lege namen of dubbele ID’s gevonden.<br>Dit is nog geen publicatie.`;};
 $('rawToggle').onclick=()=>{$('rawWrap').classList.toggle('hidden');$('raw').value=db?JSON.stringify(db,null,2):'';};
 $('applyRaw').onclick=()=>{try{load(JSON.parse($('raw').value));$('rawWrap').classList.add('hidden');}catch(e){alert('Ongeldige JSON: '+e.message);}};
-$('apply').onclick=()=>{try{captureFlyoutValues();}catch(e){alert(e.message);return;}syncMeta();closeFlyout();renderEditor();$('status').textContent='Wijzigingen toegepast in het lokale concept. Vergeet niet het concept op te slaan of te exporteren.';};
+$('apply').onclick=()=>{try{captureFlyoutValues();}catch(e){alert(e.message);return;}syncMeta();closeFlyout();renderEditor();$('status').textContent='Wijzigingen toegepast in het concept. Klik op Opslaan om ze naar de centrale database te publiceren.';};
 $('cancelFlyout').onclick=closeFlyout;$('flyoutClose').onclick=closeFlyout;
 $('flyoutBackdrop').addEventListener('mousedown',e=>{if(e.target===$('flyoutBackdrop'))closeFlyout();});
 document.addEventListener('keydown',e=>{if(e.key==='Escape')closeFlyout();});
