@@ -1,4 +1,4 @@
-<!doctype html><html lang="nl" data-acer-atlas-manager-version="0.3.6"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Acer Atlas · Datamanager v0.3.6</title><style>
+<!doctype html><html lang="nl" data-acer-atlas-manager-version="0.3.7"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Acer Atlas · Datamanager v0.3.7</title><style>
 :root{font-family:Inter,Segoe UI,Arial,sans-serif;color:#202820;background:#f4f6f2}
 *{box-sizing:border-box}body{margin:0;background:#f4f6f2;color:#202820}
 button,input,textarea,select{font:inherit}button{cursor:pointer}
@@ -88,7 +88,7 @@ label{display:block;font-size:12px;font-weight:700;color:#526156;margin:12px 0 5
 <header class="hero">
  <div class="top">
   <div class="brand"><span class="mark" aria-hidden="true">🍁</span><div><h1>ACER ATLAS</h1><small>Databasebeheer</small></div></div>
-  <div class="top-right"><a class="app-link" href="./index.html#collection">← Terug naar Acer Atlas</a><button id="backBtn" class="back-btn" type="button">← Terug</button><span class="version">DATAMANAGER v0.3.6</span></div>
+  <div class="top-right"><a class="app-link" href="./index.html#collection">← Terug naar Acer Atlas</a><button id="backBtn" class="back-btn" type="button">← Terug</button><span class="version">DATAMANAGER v0.3.7</span></div>
  </div>
 </header>
 <main class="page">
@@ -133,7 +133,7 @@ label{display:block;font-size:12px;font-weight:700;color:#526156;margin:12px 0 5
   <div class="toolbar"><button class="primary" id="apply">Wijzigingen toepassen</button><button id="cancelFlyout">Annuleren</button></div>
  </section>
 </div>
-<div class="footer"><span class="footer-version">Acer Atlas Datamanager v0.3.6</span> · Opslaan bewaart je wijzigingen lokaal als concept. Publiceren naar GitHub doe je apart wanneer je klaar bent.</div>
+<div class="footer"><span class="footer-version">Acer Atlas Datamanager v0.3.7</span> · Opslaan bewaart je wijzigingen lokaal als concept. Publiceren naar GitHub doe je apart wanneer je klaar bent.</div>
 <script>/* De actuele database wordt rechtstreeks uit cultivar-database.json geladen. */</script>
 <script>
 let db=null, selected=null, suggestionIndex=-1, suggestionItems=[], activeFlyout='basis', pendingPhotos=[];
@@ -456,9 +456,19 @@ document.addEventListener('keydown',e=>{if(e.key==='Escape')closeFlyout();});
 (async()=>{
  try{await loadLiveDatabase();}catch(e){$('status').textContent='Live database kon niet automatisch worden geladen. Open cultivar-database.json handmatig. '+e.message;}
  try{
+  const liveDb=db;
   const draft=await readLocalDraft();
-  if(draft&&Array.isArray(draft.records)){load(draft);$('draftInfo').textContent='Eerder lokaal concept gevonden en geladen. Dit concept is nog niet gepubliceerd.';}
-  else{
+  if(draft&&Array.isArray(draft.records)){
+   const liveParts=readDatabaseVersion(liveDb).parts, draftParts=readDatabaseVersion(draft).parts;
+   const liveNum=liveParts.slice(1).reduce((n,v)=>n*1000+Number(v),Number(liveParts[1]));
+   const draftNum=draftParts.slice(1).reduce((n,v)=>n*1000+Number(v),Number(draftParts[1]));
+   if(draftNum>=liveNum){
+    load(draft);
+    $('draftInfo').textContent='Lokaal concept v'+readDatabaseVersion(draft).value+' geladen. '+(draftNum===liveNum?'Dit concept heeft dezelfde databaseversie als online; eventuele lokale wijzigingen blijven behouden.':'Dit concept is nieuwer dan de online database en is daarom behouden.');
+   }else{
+    $('draftInfo').textContent='Online database v'+readDatabaseVersion(liveDb).value+' is nieuwer dan het lokale concept v'+readDatabaseVersion(draft).value+'. De manager gebruikt de nieuwste online database; het oudere concept is niet overschreven.';
+   }
+  }else{
    const legacy=localStorage.getItem('aa-db-manager-draft');
    if(legacy){try{const parsed=JSON.parse(legacy);load(parsed);await saveLocalDraft(parsed);localStorage.removeItem('aa-db-manager-draft');$('draftInfo').textContent='Bestaand lokaal concept overgezet naar ruime browseropslag.';}catch(e){$('draftInfo').textContent='Oud lokaal concept kon niet worden overgezet: '+e.message;}}
   }
