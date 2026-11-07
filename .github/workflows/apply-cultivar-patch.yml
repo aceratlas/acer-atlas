@@ -145,7 +145,7 @@ jobs:
             console.log('Preserved ' + totalPhotos + ' photos across all cultivars');
             console.log('Optimized ' + optimized + ' embedded WebP photos; saved ' + savedBytes + ' bytes');
             console.log('Skipped photo optimizations: ' + skipped);
-            console.log('Backup created: ' + backupName);
+            console.log('Retained three distinct backup versions where available.');
           })().catch(error => {
             console.error(error);
             process.exit(1);
