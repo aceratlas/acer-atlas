@@ -1,4 +1,4 @@
-<!doctype html><html lang="nl" data-acer-atlas-manager-version="0.3.7"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Acer Atlas · Datamanager v0.3.7</title><style>
+<!doctype html><html lang="nl" data-acer-atlas-manager-version="0.3.8"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Acer Atlas · Datamanager v0.3.8</title><style>
 :root{font-family:Inter,Segoe UI,Arial,sans-serif;color:#202820;background:#f4f6f2}
 *{box-sizing:border-box}body{margin:0;background:#f4f6f2;color:#202820}
 button,input,textarea,select{font:inherit}button{cursor:pointer}
@@ -88,7 +88,7 @@ label{display:block;font-size:12px;font-weight:700;color:#526156;margin:12px 0 5
 <header class="hero">
  <div class="top">
   <div class="brand"><span class="mark" aria-hidden="true">🍁</span><div><h1>ACER ATLAS</h1><small>Databasebeheer</small></div></div>
-  <div class="top-right"><a class="app-link" href="./index.html#collection">← Terug naar Acer Atlas</a><button id="backBtn" class="back-btn" type="button">← Terug</button><span class="version">DATAMANAGER v0.3.7</span></div>
+  <div class="top-right"><a class="app-link" href="./index.html#collection">← Terug naar Acer Atlas</a><button id="backBtn" class="back-btn" type="button">← Terug</button><span class="version">DATAMANAGER v0.3.8</span></div>
  </div>
 </header>
 <main class="page">
@@ -98,6 +98,7 @@ label{display:block;font-size:12px;font-weight:700;color:#526156;margin:12px 0 5
   <p>Typ een cultivarnaam en selecteer het juiste resultaat. Daarna opent de overzichtelijke cultivar-pagina.</p>
   <div class="search-wrap"><input id="search" placeholder="Zoek op cultivarnaam of synoniem…" autocomplete="off" aria-label="Zoek cultivar"><div id="suggestions" class="suggestions hidden"></div></div>
   <div class="stats"><div class="stat"><b id="count">—</b><span class="hint">cultivars in database</span></div><div class="stat"><b id="photosCount">—</b><span class="hint">gekoppelde foto’s</span></div><div class="stat"><b id="databaseVersion">—</b><span class="hint">databaseversie</span></div></div>
+  <div class="hint" id="nextVersion" style="margin-top:8px;font-weight:700">Volgende publicatie: wordt berekend na het laden van de database.</div>
   <div class="toolbar">
    <label class="filebtn">Database openen<input id="file" type="file" accept=".json,application/json"></label>
    <button id="loadSample">Startdatabase laden</button>
@@ -133,7 +134,7 @@ label{display:block;font-size:12px;font-weight:700;color:#526156;margin:12px 0 5
   <div class="toolbar"><button class="primary" id="apply">Wijzigingen toepassen</button><button id="cancelFlyout">Annuleren</button></div>
  </section>
 </div>
-<div class="footer"><span class="footer-version">Acer Atlas Datamanager v0.3.7</span> · Opslaan bewaart je wijzigingen lokaal als concept. Publiceren naar GitHub doe je apart wanneer je klaar bent.</div>
+<div class="footer"><span class="footer-version">Acer Atlas Datamanager v0.3.8</span> · Opslaan bewaart je wijzigingen lokaal als concept. Publiceren naar GitHub doe je apart wanneer je klaar bent.</div>
 <script>/* De actuele database wordt rechtstreeks uit cultivar-database.json geladen. */</script>
 <script>
 let db=null, selected=null, suggestionIndex=-1, suggestionItems=[], activeFlyout='basis', pendingPhotos=[];
@@ -141,7 +142,7 @@ const $=id=>document.getElementById(id), clone=x=>JSON.parse(JSON.stringify(x));
 const flyoutSections=[['basis','Basisgegevens'],['kenmerken','Kenmerken'],['herkomst','Herkomst & geschiedenis'],['synoniemen','Synoniemen'],['fotos','Foto’s'],['bronnen','Bronnen']];
 function esc(s){return String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));}
 function count(){if(!db)return;$('count').textContent=db.records.length;$('photosCount').textContent=db.records.reduce((n,r)=>n+(Array.isArray(r.photos)?r.photos.length:0),0);}
-function syncMeta(){db.record_count=db.records.length;db.records_count=db.records.length;db.photo_count=db.records.reduce((n,r)=>n+(r.photos||[]).length,0);count();const v=(()=>{try{return readDatabaseVersion(db).value;}catch(e){return 'Onbekend';}})();if($('databaseVersion'))$('databaseVersion').textContent=v==='Onbekend'?v:'v'+v;}
+function syncMeta(){db.record_count=db.records.length;db.records_count=db.records.length;db.photo_count=db.records.reduce((n,r)=>n+(r.photos||[]).length,0);count();const v=(()=>{try{return readDatabaseVersion(db).value;}catch(e){return 'Onbekend';}})();if($('databaseVersion'))$('databaseVersion').textContent=v==='Onbekend'?v:'v'+v;if($('nextVersion')){try{$('nextVersion').textContent='Volgende publicatie: v'+nextDatabaseVersion(db)+' (wordt pas definitief bij upload)';}catch(e){$('nextVersion').textContent='Volgende publicatie: versie niet vast te stellen';}}}
 function closeSuggestions(){$('suggestions').classList.add('hidden');$('suggestions').innerHTML='';suggestionItems=[];suggestionIndex=-1;}
 function renderSuggestions(){
  if(!db)return;const q=$('search').value.trim().toLocaleLowerCase('nl'),box=$('suggestions');
