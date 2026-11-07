@@ -1,4 +1,4 @@
-<!doctype html><html lang="nl" data-acer-atlas-manager-version="0.3.5"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Acer Atlas · Datamanager v0.3.5</title><style>
+<!doctype html><html lang="nl" data-acer-atlas-manager-version="0.3.6"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Acer Atlas · Datamanager v0.3.6</title><style>
 :root{font-family:Inter,Segoe UI,Arial,sans-serif;color:#202820;background:#f4f6f2}
 *{box-sizing:border-box}body{margin:0;background:#f4f6f2;color:#202820}
 button,input,textarea,select{font:inherit}button{cursor:pointer}
@@ -88,7 +88,7 @@ label{display:block;font-size:12px;font-weight:700;color:#526156;margin:12px 0 5
 <header class="hero">
  <div class="top">
   <div class="brand"><span class="mark" aria-hidden="true">🍁</span><div><h1>ACER ATLAS</h1><small>Databasebeheer</small></div></div>
-  <div class="top-right"><a class="app-link" href="./index.html#collection">← Terug naar Acer Atlas</a><button id="backBtn" class="back-btn" type="button">← Terug</button><span class="version">DATAMANAGER v0.3.5</span></div>
+  <div class="top-right"><a class="app-link" href="./index.html#collection">← Terug naar Acer Atlas</a><button id="backBtn" class="back-btn" type="button">← Terug</button><span class="version">DATAMANAGER v0.3.6</span></div>
  </div>
 </header>
 <main class="page">
@@ -110,6 +110,12 @@ label{display:block;font-size:12px;font-weight:700;color:#526156;margin:12px 0 5
    <div class="toolbar"><input id="githubToken" type="password" autocomplete="off" placeholder="GitHub-token" style="max-width:420px"><button class="primary" id="uploadGithub">Database publiceren</button></div>
    <div class="toolbar" style="align-items:center"><label style="margin:0;font-weight:500"><input id="rememberGithubToken" type="checkbox" style="width:auto;margin-right:6px">Onthoud token op dit apparaat</label><button id="clearGithubToken" type="button">Token wissen</button></div>
    <div class="hint" id="uploadInfo">Upload wordt eerst gevalideerd; daarna publiceert GitHub Actions de database automatisch.</div>
+   <div class="tool-card" style="margin-top:14px;padding:14px">
+    <b>Databaseback-ups</b>
+    <p class="hint">De manager bewaart automatisch de drie meest recente gepubliceerde databases in GitHub. Bij iedere publicatie schuiven de back-ups één plaats op.</p>
+    <div class="toolbar"><button id="refreshBackups" type="button">Back-ups vernieuwen</button><select id="backupSelect" aria-label="Kies een databaseback-up" style="min-width:220px;max-width:100%"><option value="">Back-ups laden…</option></select><button id="restoreBackup" type="button">Back-up herstellen en publiceren</button></div>
+    <div class="hint" id="backupInfo">Back-ups worden in de GitHub-repository bewaard en zijn daardoor ook op andere apparaten beschikbaar.</div>
+   </div>
   </div>
   <div class="hint" id="draftInfo">Concept blijft op deze computer bewaard.</div>
   <div class="status" id="status">Open de startdatabase of laad je eigen JSON-bestand. Selecteer daarna een cultivar om de gegevens te bekijken en te bewerken.</div>
@@ -339,6 +345,78 @@ $('githubToken').value=localStorage.getItem('aa-github-token')||sessionStorage.g
 $('rememberGithubToken').checked=!!localStorage.getItem('aa-github-token');
 $('clearGithubToken').onclick=()=>{localStorage.removeItem('aa-github-token');sessionStorage.removeItem('aa-github-token');$('githubToken').value='';$('rememberGithubToken').checked=false;$('uploadInfo').textContent='Token uit deze browser verwijderd.';};
 $('rememberGithubToken').onchange=()=>{if($('rememberGithubToken').checked){const t=$('githubToken').value.trim();if(t)localStorage.setItem('aa-github-token',t);}else localStorage.removeItem('aa-github-token');};
+
+const BACKUP_PATHS=['database-backups/backup-1.json','database-backups/backup-2.json','database-backups/backup-3.json'];
+function githubHeaders(token){return {'Authorization':'Bearer '+token,'Accept':'application/vnd.github+json','X-GitHub-Api-Version':'2022-11-28','Content-Type':'application/json'};}
+async function githubSha(path,token){
+ const res=await fetch('https://api.github.com/repos/aceratlas/acer-atlas/contents/'+path+'?ref=main',{headers:githubHeaders(token)});
+ if(res.status===404)return null;
+ const data=await res.json().catch(()=>({}));
+ if(!res.ok)throw new Error(data.message||'GitHub kon '+path+' niet controleren.');
+ return data.sha||null;
+}
+async function githubRaw(path){
+ const res=await fetch('https://raw.githubusercontent.com/aceratlas/acer-atlas/main/'+path+'?ts='+Date.now(),{cache:'no-store'});
+ if(res.status===404)return null;
+ if(!res.ok)throw new Error('Back-upbestand niet leesbaar: '+path+' ('+res.status+').');
+ return await res.text();
+}
+async function githubWrite(path,content,message,token){
+ const sha=await githubSha(path,token);
+ const encoded=bytesToBase64(new TextEncoder().encode(content));
+ const res=await fetch('https://api.github.com/repos/aceratlas/acer-atlas/contents/'+path,{method:'PUT',headers:githubHeaders(token),body:JSON.stringify({message,content:encoded,branch:'main',...(sha?{sha}:{})})});
+ const data=await res.json().catch(()=>({}));
+ if(!res.ok)throw new Error(data.message||'GitHub kon back-up niet opslaan: '+path);
+ return data;
+}
+async function rotateDatabaseBackups(token){
+ const live=await fetch('./cultivar-database.json?backup='+Date.now(),{cache:'no-store'});
+ if(!live.ok)throw new Error('De huidige online database kon niet worden gelezen; er is niets gepubliceerd.');
+ const liveText=await live.text();
+ const liveDb=JSON.parse(liveText);
+ const liveVersion=readDatabaseVersion(liveDb).value;
+ const previous=[];
+ for(let i=0;i<2;i++)previous.push(await githubRaw(BACKUP_PATHS[i]));
+ const snapshots=[liveText,...previous].filter(x=>x!==null);
+ for(let i=0;i<Math.min(3,snapshots.length);i++){
+  const parsed=JSON.parse(snapshots[i]);const v=readDatabaseVersion(parsed).value;
+  await githubWrite(BACKUP_PATHS[i],snapshots[i],'Acer Atlas database back-up v'+v+' (positie '+(i+1)+')',token);
+ }
+ return {version:liveVersion,count:snapshots.length};
+}
+async function refreshBackupList(){
+ const token=$('githubToken').value.trim()||localStorage.getItem('aa-github-token')||sessionStorage.getItem('aa-github-token');
+ const sel=$('backupSelect');sel.innerHTML='<option value="">Back-ups laden…</option>';
+ if(!token){sel.innerHTML='<option value="">Voer eerst je GitHub-token in</option>';$('backupInfo').textContent='Een GitHub-token met Contents-lees- en schrijfrechten is nodig.';return;}
+ try{
+  const entries=[];
+  for(let i=0;i<3;i++){
+   const raw=await githubRaw(BACKUP_PATHS[i]);
+   if(raw){const data=JSON.parse(raw);entries.push({path:BACKUP_PATHS[i],version:readDatabaseVersion(data).value,index:i+1});}
+  }
+  sel.innerHTML=entries.length?'<option value="">Selecteer een back-up…</option>':'<option value="">Nog geen back-ups beschikbaar</option>';
+  for(const e of entries){const o=document.createElement('option');o.value=e.path;o.textContent='Back-up '+e.index+' · database v'+e.version;sel.appendChild(o);}
+  $('backupInfo').textContent=entries.length+' van maximaal 3 back-ups beschikbaar. Opgeslagen in GitHub.';
+ }catch(e){sel.innerHTML='<option value="">Back-ups niet beschikbaar</option>';$('backupInfo').textContent='Back-ups laden mislukt: '+e.message;}
+}
+$('refreshBackups').onclick=refreshBackupList;
+$('restoreBackup').onclick=async()=>{
+ const path=$('backupSelect').value;
+ if(!path)return alert('Selecteer eerst een beschikbare back-up.');
+ const token=$('githubToken').value.trim()||localStorage.getItem('aa-github-token')||sessionStorage.getItem('aa-github-token');
+ if(!token)return alert('Voer eerst je GitHub-token in.');
+ const btn=$('restoreBackup');btn.disabled=true;
+ try{
+  const raw=await githubRaw(path);if(!raw)throw new Error('De geselecteerde back-up bestaat niet meer.');
+  const restored=JSON.parse(raw);const version=readDatabaseVersion(restored).value;
+  if(!confirm('Database v'+version+' als nieuwe publicatie herstellen? De huidige online database wordt eerst als back-up veiliggesteld. De herstelde database krijgt automatisch een nieuw versienummer.'))return;
+  db=restored;syncMeta();await saveLocalDraft(db);
+  $('backupInfo').textContent='Back-up v'+version+' geladen. Publicatie wordt gestart…';
+  $('uploadGithub').click();
+ }catch(e){alert('Herstellen mislukt: '+e.message);$('backupInfo').textContent='Herstellen mislukt: '+e.message;}
+ finally{btn.disabled=false;}
+};
+
 $('uploadGithub').onclick=async()=>{
  if(!db)return alert('Laad eerst de database.');
  const token=$('githubToken').value.trim()||localStorage.getItem('aa-github-token')||sessionStorage.getItem('aa-github-token');
@@ -349,6 +427,8 @@ $('uploadGithub').onclick=async()=>{
   if($('rememberGithubToken').checked)localStorage.setItem('aa-github-token',token);else{localStorage.removeItem('aa-github-token');sessionStorage.setItem('aa-github-token',token);}
   if(!$('flyoutBackdrop').classList.contains('hidden'))captureFlyoutValues();
   syncMeta();const uploadDb=clone(db);const currentVersion=readDatabaseVersion(uploadDb).value;uploadDb.version=nextDatabaseVersion(uploadDb);
+  const backupResult=await rotateDatabaseBackups(token);
+  $('backupInfo').textContent='Back-up gemaakt van online database v'+backupResult.version+'. '+backupResult.count+' van maximaal 3 versies veiliggesteld.';
   const raw=JSON.stringify(uploadDb);
   const bytes=new TextEncoder().encode(raw);
   const encoded=bytesToBase64(bytes);
@@ -383,5 +463,6 @@ document.addEventListener('keydown',e=>{if(e.key==='Escape')closeFlyout();});
    if(legacy){try{const parsed=JSON.parse(legacy);load(parsed);await saveLocalDraft(parsed);localStorage.removeItem('aa-db-manager-draft');$('draftInfo').textContent='Bestaand lokaal concept overgezet naar ruime browseropslag.';}catch(e){$('draftInfo').textContent='Oud lokaal concept kon niet worden overgezet: '+e.message;}}
   }
  }catch(e){$('draftInfo').textContent='Lokaal concept kon niet worden gecontroleerd: '+e.message;}
+  try{await refreshBackupList();}catch(e){}
 })();
 </script></body></html>
