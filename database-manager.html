@@ -1,4 +1,4 @@
-<!doctype html><html lang="nl" data-acer-atlas-manager-version="0.3.3"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Acer Atlas · Datamanager v0.3.3</title><style>
+<!doctype html><html lang="nl" data-acer-atlas-manager-version="0.3.4"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Acer Atlas · Datamanager v0.3.4</title><style>
 :root{font-family:Inter,Segoe UI,Arial,sans-serif;color:#202820;background:#f4f6f2}
 *{box-sizing:border-box}body{margin:0;background:#f4f6f2;color:#202820}
 button,input,textarea,select{font:inherit}button{cursor:pointer}
@@ -88,7 +88,7 @@ label{display:block;font-size:12px;font-weight:700;color:#526156;margin:12px 0 5
 <header class="hero">
  <div class="top">
   <div class="brand"><span class="mark" aria-hidden="true">🍁</span><div><h1>ACER ATLAS</h1><small>Databasebeheer</small></div></div>
-  <div class="top-right"><a class="app-link" href="./index.html#collection">← Terug naar Acer Atlas</a><button id="backBtn" class="back-btn" type="button">← Terug</button><span class="version">DATAMANAGER v0.3.3</span></div>
+  <div class="top-right"><a class="app-link" href="./index.html#collection">← Terug naar Acer Atlas</a><button id="backBtn" class="back-btn" type="button">← Terug</button><span class="version">DATAMANAGER v0.3.4</span></div>
  </div>
 </header>
 <main class="page">
@@ -127,7 +127,7 @@ label{display:block;font-size:12px;font-weight:700;color:#526156;margin:12px 0 5
   <div class="toolbar"><button class="primary" id="apply">Wijzigingen toepassen</button><button id="cancelFlyout">Annuleren</button></div>
  </section>
 </div>
-<div class="footer"><span class="footer-version">Acer Atlas Datamanager v0.3.3</span> · Opslaan bewaart je wijzigingen lokaal als concept. Publiceren naar GitHub doe je apart wanneer je klaar bent.</div>
+<div class="footer"><span class="footer-version">Acer Atlas Datamanager v0.3.4</span> · Opslaan bewaart je wijzigingen lokaal als concept. Publiceren naar GitHub doe je apart wanneer je klaar bent.</div>
 <script>/* De actuele database wordt rechtstreeks uit cultivar-database.json geladen. */</script>
 <script>
 let db=null, selected=null, suggestionIndex=-1, suggestionItems=[], activeFlyout='basis', pendingPhotos=[];
@@ -199,7 +199,7 @@ function panelMarkup(r,id){
  basis:`<div class="grid2">${field('Cultivarnaam','name',r.name)}${field('Geaccepteerde naam','accepted_name',r.accepted_name)}${field('Soort','species',r.species)}${field('Cultivargroep','group',r.group)}${field('Hoogte na 10 jaar','height_after_10_years',r.height_after_10_years)}${field('Laatst gecontroleerd','last_checked',r.last_checked)}</div>`,
  kenmerken:`<label>Kenmerken (Nederlands)</label><textarea id="traits_nl" rows="5">${esc(r.traits?.nl||'')}</textarea><label>Kenmerken (Engels)</label><textarea id="traits_en" rows="5">${esc(r.traits?.en||'')}</textarea>`,
  herkomst:`<div class="grid2">${field('Selector / introducteur (NL)','selector_nl',r.selector_or_introducer?.nl)}${field('Selector / introducteur (EN)','selector_en',r.selector_or_introducer?.en)}${field('Introductiejaar','introduction_year',r.introduction_year)}${field('Herkomst (Nederlands)','origin_nl',r.origin?.nl)}${field('Herkomst (Engels)','origin_en',r.origin?.en)}</div><label>Historische achtergrond (Nederlands)</label><textarea id="history_nl" rows="4">${esc(r.history?.nl||r.historical_notes?.nl||'')}</textarea><label>Historische achtergrond (Engels)</label><textarea id="history_en" rows="4">${esc(r.history?.en||r.historical_notes?.en||'')}</textarea>`,
- synoniemen:`<label>Synoniemen</label><textarea id="synonyms" rows="8">${esc(Array.isArray(r.synonyms)?r.synonyms.join('\\n'):r.synonyms||'')}</textarea><p class="flyout-note">Zet ieder synoniem op een aparte regel.</p>`,
+ synoniemen:`<label>Synoniemen</label><textarea id="synonyms" rows="8">${esc(Array.isArray(r.synonyms)?r.synonyms.join('\n'):Array.isArray(r.synonyms?.nl)?r.synonyms.nl.join('\n'):r.synonyms||'')}</textarea><p class="flyout-note">Zet ieder synoniem op een aparte regel.</p>`,
  fotos:`<div class="photo-count">${r.photos.length} foto(’s) gekoppeld · geen maximum</div><div class="bulk-upload"><b>Meerdere foto’s tegelijk toevoegen</b><p class="flyout-note">Selecteer in één keer alle foto’s die bij deze cultivar horen. Iedere foto wordt aan dit cultivarrecord toegevoegd.</p><input id="bulkPhotos" type="file" accept="image/*" multiple><p class="flyout-note" id="bulkPhotoStatus">Meerdere bestanden selecteren is mogelijk. Nieuwe rasterfoto’s worden automatisch verkleind tot maximaal 1200 px en gecomprimeerd (WebP 78%); GIF- en SVG-bestanden blijven ongewijzigd.</p></div><div id="photos">${r.photos.map((p,i)=>photoHtml(p,i)).join('')||'<div class="flyout-empty">Nog geen foto’s toegevoegd.</div>'}</div>`,
  bronnen:`<p class="flyout-note">Bronvermeldingen voor dit cultivarrecord. Bewerk de gegevens in JSON-vorm.</p><textarea id="sources" rows="12" spellcheck="false">${esc(JSON.stringify(r.sources||[],null,2))}</textarea>`
  };
@@ -208,7 +208,7 @@ function panelMarkup(r,id){
 function captureFlyoutValues(){
  const r=db?.records.find(x=>x.id===selected),f=$('flyoutFields');if(!r||!f)return;
  f.querySelectorAll('[data-key]').forEach(el=>{const k=el.dataset.key;if(k==='selector_nl'||k==='selector_en'){r.selector_or_introducer=r.selector_or_introducer&&typeof r.selector_or_introducer==='object'?r.selector_or_introducer:{};r.selector_or_introducer[k==='selector_nl'?'nl':'en']=el.value;}else if(k==='origin_nl'||k==='origin_en'){r.origin=r.origin&&typeof r.origin==='object'?r.origin:{};r.origin[k==='origin_nl'?'nl':'en']=el.value;}else{r[k]=el.value;}});
- if($('synonyms'))r.synonyms=$('synonyms').value.split('\n').map(x=>x.trim()).filter(Boolean);
+ if($('synonyms')){const entered=$('synonyms').value.split(/\r?\n/).map(x=>x.trim()).filter(Boolean);r.synonyms=entered;}
  if($('traits_nl')||$('traits_en')){r.traits=r.traits&&typeof r.traits==='object'?r.traits:{};if($('traits_nl'))r.traits.nl=$('traits_nl').value;if($('traits_en'))r.traits.en=$('traits_en').value;}
  if($('history_nl')||$('history_en')){r.history=r.history&&typeof r.history==='object'?r.history:{};if($('history_nl'))r.history.nl=$('history_nl').value;if($('history_en'))r.history.en=$('history_en').value;}
  if($('photos'))r.photos=[...$('photos').querySelectorAll('.photo')].map(card=>{let p={};card.querySelectorAll('[data-photo]').forEach(el=>p[el.dataset.photo]=el.value);return p;});
@@ -359,7 +359,7 @@ $('uploadGithub').onclick=async()=>{
   const put=await fetch('https://api.github.com/repos/aceratlas/acer-atlas/contents/'+path,{method:'PUT',headers,body:JSON.stringify({message:'Upload Acer Atlas database v'+uploadDb.version,content:encoded,branch:'main',...(sha?{sha}:{})})});
   const result=await put.json().catch(()=>({}));
   if(!put.ok)throw new Error(result.message||'GitHub heeft de upload geweigerd ('+put.status+').');
-  db=uploadDb;syncMeta();localStorage.setItem('aa-db-manager-draft',JSON.stringify(db));
+  db=uploadDb;syncMeta();try{await saveLocalDraft(db);}catch(draftError){$('draftInfo').textContent='Publicatie is ontvangen, maar het lokale concept kon niet worden bijgewerkt: '+draftError.message;}
   $('uploadInfo').textContent='Upload ontvangen door GitHub. Database v'+currentVersion+' → v'+uploadDb.version+' wordt nu automatisch gevalideerd en gepubliceerd. Commit: '+(result.commit?.sha||'aangemaakt')+'.';
   $('status').textContent='Upload naar incoming geslaagd. GitHub Actions voert nu de validatie en publicatie uit.';
  }catch(e){$('uploadInfo').textContent='Upload mislukt: '+e.message;alert('Upload mislukt: '+e.message);}
