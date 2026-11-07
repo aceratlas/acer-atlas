@@ -157,5 +157,6 @@ jobs:
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git add cultivar-database.json backups/
-          git commit -m "Publish Acer Atlas database v8.2.58 — Hyotei and photo optimization"
+          VERSION=$(node -p "require('./cultivar-database.json').version")
+          git commit -m "Publish Acer Atlas cultivar database v${VERSION} — Hyohtei and photo optimization"
           git push
