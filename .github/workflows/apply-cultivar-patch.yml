@@ -88,16 +88,57 @@ jobs:
 
             const backupDir = 'backups';
             fs.mkdirSync(backupDir, { recursive: true });
-            const stamp = new Date().toISOString().slice(0, 19).replaceAll('-', '').replaceAll(':', '') + 'Z';
-            const backupName = 'cultivar-database-v' + patch.expected_database_version + '-' + stamp + '.json';
-            fs.copyFileSync(livePath, path.join(backupDir, backupName));
-
-            const backups = fs.readdirSync(backupDir)
-              .filter(name => name.startsWith('cultivar-database-v') && name.endsWith('.json'))
-              .sort((a, b) => a.slice(a.lastIndexOf('-') + 1).replace('.json', '').localeCompare(b.slice(b.lastIndexOf('-') + 1).replace('.json', '')));
-            for (const old of backups.slice(0, Math.max(0, backups.length - 3))) {
-              fs.unlinkSync(path.join(backupDir, old));
+            const files = fs.readdirSync(backupDir)
+              .filter(name => name.startsWith('cultivar-database-v') && name.endsWith('.json'));
+            const alreadyBackedUp = files.some(name => {
+              try {
+                return String(JSON.parse(fs.readFileSync(path.join(backupDir, name), 'utf8')).version) === String(patch.expected_database_version);
+              } catch { return false; }
+            });
+            if (!alreadyBackedUp) {
+              const stamp = new Date().toISOString().slice(0, 19).replaceAll('-', '').replaceAll(':', '') + 'Z';
+              const backupName = 'cultivar-database-v' + patch.expected_database_version + '-' + stamp + '.json';
+              fs.copyFileSync(livePath, path.join(backupDir, backupName));
+              console.log('Backup created:', backupName);
+            } else {
+              console.log('Previous database version already backed up:', patch.expected_database_version);
             }
+
+            const allBackups = fs.readdirSync(backupDir)
+              .filter(name => name.startsWith('cultivar-database-v') && name.endsWith('.json'));
+            const latestByVersion = new Map();
+            for (const name of allBackups) {
+              try {
+                const filePath = path.join(backupDir, name);
+                const version = String(JSON.parse(fs.readFileSync(filePath, 'utf8')).version || 'unknown');
+                const previous = latestByVersion.get(version);
+                if (!previous || fs.statSync(filePath).mtimeMs > fs.statSync(path.join(backupDir, previous)).mtimeMs) {
+                  latestByVersion.set(version, name);
+                }
+              } catch (error) {
+                console.log('Skipping unreadable backup:', name, error.message);
+              }
+            }
+            const compareVersions = (a, b) => {
+              const aa = a.split('.').map(Number), bb = b.split('.').map(Number);
+              for (let i = 0; i < Math.max(aa.length, bb.length); i++) {
+                const diff = (bb[i] || 0) - (aa[i] || 0);
+                if (diff) return diff;
+              }
+              return 0;
+            };
+            const keep = new Set([...latestByVersion.entries()]
+              .sort((a, b) => compareVersions(a[0], b[0]))
+              .slice(0, 3)
+              .map(entry => entry[1]));
+            for (const name of allBackups) {
+              if (!keep.has(name)) {
+                fs.unlinkSync(path.join(backupDir, name));
+                console.log('Removed duplicate or older backup:', name);
+              }
+            }
+
+            db.photo_count = db.records.reduce((sum, item) => sum + (Array.isArray(item.photos) ? item.photos.length : 0), 0);
 
             fs.writeFileSync(livePath, JSON.stringify(db));
             console.log('Applied patch to ' + record.name + '; database v' + db.version);
