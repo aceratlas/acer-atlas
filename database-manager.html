@@ -109,7 +109,7 @@ label{display:block;font-size:12px;font-weight:700;color:#526156;margin:12px 0 5
    <p class="hint">Voer je GitHub-token eenmalig in. Vink aan als je wilt dat deze browser het token op dit apparaat onthoudt. Het token wordt niet naar Acer Atlas of GitHub opgeslagen; het wordt alleen gebruikt voor uploads.</p>
    <div class="toolbar"><input id="githubToken" type="password" autocomplete="off" placeholder="GitHub-token" style="max-width:420px"><button class="primary" id="uploadGithub">Database publiceren</button></div>
    <div class="toolbar" style="align-items:center"><label style="margin:0;font-weight:500"><input id="rememberGithubToken" type="checkbox" style="width:auto;margin-right:6px">Onthoud token op dit apparaat</label><button id="clearGithubToken" type="button">Token wissen</button></div>
-   <div class="hint" id="uploadInfo">Upload wordt eerst gevalideerd; daarna publiceert GitHub Actions de database automatisch.</div>
+   <div class="hint" id="uploadInfo">Bij publicatie worden bestaande ingesloten foto's waar mogelijk opnieuw verkleind, daarna valideert GitHub Actions de database en publiceert de nieuwe versie.</div>
    <div class="tool-card" style="margin-top:14px;padding:14px">
     <b>Databaseback-ups</b>
     <p class="hint">De manager bewaart automatisch de drie meest recente gepubliceerde databases in GitHub. Bij iedere publicatie schuiven de back-ups één plaats op.</p>
@@ -375,12 +375,21 @@ async function rotateDatabaseBackups(token){
  const liveText=await live.text();
  const liveDb=JSON.parse(liveText);
  const liveVersion=readDatabaseVersion(liveDb).value;
- const previous=[];
- for(let i=0;i<2;i++)previous.push(await githubRaw(BACKUP_PATHS[i]));
- const snapshots=[liveText,...previous].filter(x=>x!==null);
- for(let i=0;i<Math.min(3,snapshots.length);i++){
-  const parsed=JSON.parse(snapshots[i]);const v=readDatabaseVersion(parsed).value;
-  await githubWrite(BACKUP_PATHS[i],snapshots[i],'Acer Atlas database back-up v'+v+' (positie '+(i+1)+')',token);
+ const existing=[];
+ for(const path of BACKUP_PATHS){const raw=await githubRaw(path);if(raw)existing.push(raw);}
+ const unique=new Map();
+ for(const raw of [liveText,...existing]){
+  const version=readDatabaseVersion(JSON.parse(raw)).value;
+  if(!unique.has(version))unique.set(version,raw);
+ }
+ const compare=(a,b)=>{
+  const aa=a.split('.').map(Number),bb=b.split('.').map(Number);
+  for(let i=0;i<Math.max(aa.length,bb.length);i++){const d=(bb[i]||0)-(aa[i]||0);if(d)return d;}
+  return 0;
+ };
+ const snapshots=[...unique.entries()].sort((a,b)=>compare(a[0],b[0])).slice(0,3);
+ for(let i=0;i<snapshots.length;i++){
+  await githubWrite(BACKUP_PATHS[i],snapshots[i][1],'Acer Atlas database back-up v'+snapshots[i][0]+' (positie '+(i+1)+')',token);
  }
  return {version:liveVersion,count:snapshots.length};
 }
