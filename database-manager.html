@@ -103,7 +103,7 @@ label{display:block;font-size:12px;font-weight:700;color:#526156;margin:12px 0 5
    <button id="loadSample">Startdatabase laden</button>
    <button class="primary" id="add">+ Nieuwe cultivar</button>
   </div>
-  <div class="toolbar"><button id="saveDraft">Concept lokaal opslaan</button><button id="export">JSON downloaden</button><button id="review">Database controleren</button><button id="rawToggle">Geavanceerde gegevens</button></div>
+  <div class="toolbar"><button id="saveDraft">Concept opslaan</button><button id="export">JSON downloaden</button><button id="review">Database controleren</button><button id="rawToggle">Geavanceerde gegevens</button></div>
   <div class="tool-card" style="margin-top:14px;padding:14px">
    <b>Publiceren naar Acer Atlas</b>
    <p class="hint">Voer je GitHub-token eenmalig in. Vink aan als je wilt dat deze browser het token op dit apparaat onthoudt. Het token wordt niet naar Acer Atlas of GitHub opgeslagen; het wordt alleen gebruikt voor uploads.</p>
@@ -161,7 +161,7 @@ function renderEditor(){
  const hist=typeof r.history==='object'?(r.history.nl||r.history.en||''):(r.history||'');
  const photos=r.photos.slice(0,8).map(p=>p.url?`<img src="${esc(p.url)}" alt="Cultivarfoto" loading="lazy">`:'').join('');
  $('editor').innerHTML=`
-  <div class="detail-head"><div><div class="eyebrow">Cultivaroverzicht</div><h2>${esc(r.name||'Naamloze cultivar')}</h2><div class="accepted">${esc(r.accepted_name||r.species||'')}</div></div><div class="detail-actions"><button class="warn" id="delete">Cultivar verwijderen</button><button class="primary" id="saveCultivar">Opslaan &amp; publiceren</button><button id="detailExport">JSON downloaden</button></div></div>
+  <div class="detail-head"><div><div class="eyebrow">Cultivaroverzicht</div><h2>${esc(r.name||'Naamloze cultivar')}</h2><div class="accepted">${esc(r.accepted_name||r.species||'')}</div></div><div class="detail-actions"><button class="warn" id="delete">Cultivar verwijderen</button><button class="primary" id="saveCultivar">Opslaan</button><button id="detailExport">JSON downloaden</button></div></div>
   <div class="summary-grid">
    <div class="summary-item"><small>Soort</small><strong>${preview(r.species)}</strong></div>
    <div class="summary-item"><small>Selector / introducteur</small><strong>${preview(r.selector_or_introducer?.nl||r.selector_or_introducer?.en)}</strong></div>
@@ -181,12 +181,15 @@ function renderEditor(){
  $('delete').onclick=()=>{if(confirm('Deze cultivar uit het concept verwijderen?')){db.records=db.records.filter(x=>x.id!==selected);syncMeta();backToSearch();$('status').textContent='Cultivar verwijderd uit het lokale concept.';}};
  $('detailExport').onclick=exportDatabase;
  $('saveCultivar').onclick=()=>{
-  if(!$('githubToken').value.trim()&&!localStorage.getItem('aa-github-token')&&!sessionStorage.getItem('aa-github-token')){
-   const entered=prompt('Vul je GitHub-token in om deze wijziging op te slaan in de centrale database.');
-   if(!entered)return;
-   $('githubToken').value=entered.trim();
-  }
-  $('uploadGithub').click();
+  try{
+   if(!$('flyoutBackdrop').classList.contains('hidden'))captureFlyoutValues();
+   syncMeta();
+   localStorage.setItem('aa-db-manager-draft',JSON.stringify(db));
+   $('draftInfo').textContent='Lokaal concept opgeslagen op '+new Date().toLocaleString()+'. Nog niet gepubliceerd.';
+   $('status').textContent='Wijzigingen opgeslagen in het lokale databaseconcept. Je kunt nu een andere cultivar aanpassen. Publiceren doe je pas als je helemaal klaar bent.';
+   closeFlyout();
+   backToSearch();
+  }catch(e){alert('Opslaan mislukt: '+e.message);}
  };
 }
 function panelMarkup(r,id){
@@ -267,7 +270,7 @@ $('search').onkeydown=e=>{if(e.key==='ArrowDown'&&suggestionItems.length){e.prev
 document.addEventListener('click',e=>{if(!e.target.closest('.search-wrap'))closeSuggestions();});
 $('backBtn').onclick=backToSearch;
 $('add').onclick=()=>{if(!db){alert('Laad eerst een database.');return;}const id='aa-'+Date.now();db.records.push({id,name:'Nieuwe cultivar',photos:[],synonyms:[],sources:[]});syncMeta();select(id);showFlyout('basis',false);};
-$('saveDraft').onclick=()=>{if(!db)return;localStorage.setItem('aa-db-manager-draft',JSON.stringify(db));$('draftInfo').textContent='Concept opgeslagen op '+new Date().toLocaleString();$('status').textContent='Concept lokaal opgeslagen in deze browser. Dit is geen cloudback-up.';};
+$('saveDraft').onclick=()=>{if(!db)return;localStorage.setItem('aa-db-manager-draft',JSON.stringify(db));$('draftInfo').textContent='Concept opgeslagen op '+new Date().toLocaleString();$('status').textContent='Concept lokaal opgeslagen in deze browser. Dit is geen cloudback-up en publiceert niets.';};
 $('export').onclick=exportDatabase;
 
 function bytesToBase64(bytes){let binary='';const chunk=0x8000;for(let i=0;i<bytes.length;i+=chunk)binary+=String.fromCharCode(...bytes.subarray(i,i+chunk));return btoa(binary);}
