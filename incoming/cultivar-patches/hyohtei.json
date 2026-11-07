@@ -1,7 +1,7 @@
 {
-  "expected_database_version": "8.2.58",
-  "new_database_version": "8.2.59",
-  "database_note": "Database v8.2.59: Hyohtei-gegevens gecontroleerd en aangevuld op basis van Plantentuin Esveld; alle bestaande foto's behouden en ingebedde WebP-foto's waar mogelijk opnieuw gecomprimeerd.",
+  "expected_database_version": "8.2.57",
+  "new_database_version": "8.2.58",
+  "database_note": "Database v8.2.58: Hyohtei-gegevens gecontroleerd en aangevuld op basis van Plantentuin Esveld; alle bestaande foto's behouden en ingebedde WebP-foto's waar mogelijk opnieuw gecomprimeerd.",
   "record_id": "aa-1794086259007",
   "updates": {
     "name": "Hyohtei",
@@ -12,8 +12,8 @@
     "group": "unknown",
     "species": "Acer palmatum",
     "traits": {
-      "nl": "Roodbladige Japanse esdoorn met middelgrote, tot aan de basis ingesneden bladeren en gezaagde bladlobben. De diepe insnijdingen geven het blad een fijne indruk, maar het is niet kantachtig. De groei is opgaand. Hoogte na 10 jaar circa 250 cm. Bloeit in mei met rode bloemen. Redelijk tot goede herfstkleuren.",
-      "en": "Red-leaved Japanese maple with medium-sized leaves cut to the base and toothed lobes. The deep divisions give the foliage a fine appearance, but it is not lace-like. Upright habit. About 250 cm tall after 10 years. Red flowers in May. Fair to good autumn colour."
+      "nl": "Roodbladige Japanse esdoorn met middelgrote, tot aan de basis ingesneden bladeren en gezaagde bladlobben. De diepe insnijdingen geven het blad een fijne indruk, maar het is niet kantachtig. De groei is opgaand. Hoogte na 10 jaar circa 250 cm. Bloeit in mei met rode bloemen. Redelijk tot goede herfstkleuren. Vruchten zijn bruin en rijpen in augustus–september; de vruchten geuren licht.",
+      "en": "Red-leaved Japanese maple with medium-sized leaves cut to the base and toothed lobes. The deep divisions give the foliage a fine appearance, but it is not lace-like. Upright habit. About 250 cm tall after 10 years. Red flowers in May. Fair to good autumn colour. Fruits are brown and ripen in August–September; the fruits are slightly scented."
     },
     "history": {
       "nl": "Herkomst, selecteur en introductiejaar zijn niet vermeld in het cultivarprofiel van Plantentuin Esveld.",
@@ -71,7 +71,9 @@
       "position": "Halfschaduw",
       "soil": "Humusrijke (bos)grond",
       "climate_zone": "Goed winterhard",
-      "source_scope": "Cultivar-specifieke gegevens overgenomen uit het profiel van Plantentuin Esveld."
+      "source_scope": "Cultivar-specifieke gegevens overgenomen uit het profiel van Plantentuin Esveld.",
+      "water_needs": "Matig water",
+      "wind_sensitivity": "Matig windgevoelig"
     },
     "data_completeness": "partly documented",
     "esveld_inventory_codes": [
