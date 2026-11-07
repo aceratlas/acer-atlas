@@ -1,7 +1,7 @@
 {
   "expected_database_version": "8.2.59",
   "new_database_version": "8.2.60",
-  "database_note": "Database v8.2.60: Hyohtei-gegevens gecontroleerd en aangevuld op basis van Plantentuin Esveld; alle bestaande foto's behouden en ingebedde WebP-foto's waar mogelijk opnieuw gecomprimeerd.",
+  "database_note": "Database v8.2.60: Hyohtei-gegevens gecontroleerd en aangevuld op basis van Plantentuin Esveld, inclusief waterbehoefte, windgevoeligheid en vruchtkenmerken; alle foto's behouden en waar mogelijk opnieuw gecomprimeerd.",
   "record_id": "aa-1794086259007",
   "updates": {
     "name": "Hyohtei",
