@@ -1,4 +1,4 @@
-<!doctype html><html lang="nl" data-acer-atlas-manager-version="0.2.8"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Acer Atlas · Datamanager v0.2.8</title><style>
+<!doctype html><html lang="nl" data-acer-atlas-manager-version="0.2.8"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Acer Atlas · Datamanager v0.2.9</title><style>
 :root{font-family:Inter,Segoe UI,Arial,sans-serif;color:#202820;background:#f4f6f2}
 *{box-sizing:border-box}body{margin:0;background:#f4f6f2;color:#202820}
 button,input,textarea,select{font:inherit}button{cursor:pointer}
@@ -88,7 +88,7 @@ label{display:block;font-size:12px;font-weight:700;color:#526156;margin:12px 0 5
 <header class="hero">
  <div class="top">
   <div class="brand"><span class="mark" aria-hidden="true">🍁</span><div><h1>ACER ATLAS</h1><small>Databasebeheer</small></div></div>
-  <div class="top-right"><a class="app-link" href="./index.html#collection">← Terug naar Acer Atlas</a><button id="backBtn" class="back-btn" type="button">← Terug</button><span class="version">DATAMANAGER v0.2.8</span></div>
+  <div class="top-right"><a class="app-link" href="./index.html#collection">← Terug naar Acer Atlas</a><button id="backBtn" class="back-btn" type="button">← Terug</button><span class="version">DATAMANAGER v0.2.9</span></div>
  </div>
 </header>
 <main class="page">
@@ -127,7 +127,7 @@ label{display:block;font-size:12px;font-weight:700;color:#526156;margin:12px 0 5
   <div class="toolbar"><button class="primary" id="apply">Wijzigingen toepassen</button><button id="cancelFlyout">Annuleren</button></div>
  </section>
 </div>
-<div class="footer"><span class="footer-version">Acer Atlas Datamanager v0.2.8</span> · Wijzigingen worden pas centraal opgeslagen nadat je op Opslaan klikt en GitHub de database heeft gepubliceerd.</div>
+<div class="footer"><span class="footer-version">Acer Atlas Datamanager v0.2.9</span> · Wijzigingen worden pas centraal opgeslagen nadat je op Opslaan klikt en GitHub de database heeft gepubliceerd.</div>
 <script>/* De actuele database wordt rechtstreeks uit cultivar-database.json geladen. */</script>
 <script>
 let db=null, selected=null, suggestionIndex=-1, suggestionItems=[], activeFlyout='basis', pendingPhotos=[];
@@ -179,7 +179,15 @@ function renderEditor(){
   <div class="status" id="detailStatus">Je bekijkt de cultivar. Bewerk een onderdeel en klik daarna op Opslaan om de volledige database centraal te publiceren.</div>`;
  $('editor').querySelectorAll('[data-edit]').forEach(b=>b.onclick=()=>showFlyout(b.dataset.edit));
  $('delete').onclick=()=>{if(confirm('Deze cultivar uit het concept verwijderen?')){db.records=db.records.filter(x=>x.id!==selected);syncMeta();backToSearch();$('status').textContent='Cultivar verwijderd uit het lokale concept.';}};
- $('detailExport').onclick=exportDatabase;\n $('saveCultivar').onclick=()=>{\n  if(!$('githubToken').value.trim()&&!localStorage.getItem('aa-github-token')&&!sessionStorage.getItem('aa-github-token')){\n   const entered=prompt('Vul je GitHub-token in om deze wijziging op te slaan in de centrale database.');\n   if(!entered)return;\n   $('githubToken').value=entered.trim();\n  }\n  $('uploadGithub').click();\n };
+ $('detailExport').onclick=exportDatabase;
+ $('saveCultivar').onclick=()=>{
+  if(!$('githubToken').value.trim()&&!localStorage.getItem('aa-github-token')&&!sessionStorage.getItem('aa-github-token')){
+   const entered=prompt('Vul je GitHub-token in om deze wijziging op te slaan in de centrale database.');
+   if(!entered)return;
+   $('githubToken').value=entered.trim();
+  }
+  $('uploadGithub').click();
+ };
 }
 function panelMarkup(r,id){
  const panels={
