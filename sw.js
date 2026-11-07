@@ -1,6 +1,6 @@
-/* Acer Atlas v10.5.53 — network-first validated database cache */
-const CACHE = 'acer-atlas-pwa-v10.5.53';
-const DATABASE_KEY = './cultivar-database.json';
+/* Acer Atlas v10.5.54 — network-first validated database cache */
+const CACHE = 'acer-atlas-pwa-v10.5.54';
+const DATABASE_KEY = './cultivar-database.json?v=10.5.54';
 const APP_FILES = [
   './', './index.html', './manifest.webmanifest', './icon.svg',
   './apple-touch-icon.png', './acer-maple-leaf.png'
@@ -43,7 +43,7 @@ self.addEventListener('install', event => {
       for (const key of existingKeys) {
         if (key === CACHE || !key.startsWith('acer-atlas-')) continue;
         const oldCache = await caches.open(key);
-        const candidate = await oldCache.match(DATABASE_KEY);
+        const candidate = await oldCache.match(DATABASE_KEY) || await oldCache.match('./cultivar-database.json');
         if (await isCompleteDatabase(candidate)) {
           retainedDatabase = candidate;
           await cache.put(DATABASE_KEY, candidate.clone());
