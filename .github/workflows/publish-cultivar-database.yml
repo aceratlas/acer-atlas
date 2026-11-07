@@ -65,14 +65,14 @@ jobs:
           if (fs.existsSync(livePath)) {
             const current = JSON.parse(fs.readFileSync(livePath, 'utf8'));
             const version = String(current.version || 'unknown').replace(/[^0-9A-Za-z._-]/g, '_');
-            const stamp = new Date().toISOString().replace(/[-:]/g, '').replace(/\\.\\d{3}Z$/, 'Z');
+            const stamp = new Date().toISOString().slice(0, 19).replaceAll('-', '').replaceAll(':', '') + 'Z';
             fs.mkdirSync(backupDir, { recursive: true });
             const backupPath = path.join(backupDir, `cultivar-database-v${version}-${stamp}.json`);
             fs.copyFileSync(livePath, backupPath);
             console.log('Created backup:', backupPath);
             const backups = fs.readdirSync(backupDir)
-              .filter(name => /^cultivar-database-v.*-\\d{8}T\\d{6}Z\\.json$/.test(name))
-              .sort((a, b) => a.slice(a.lastIndexOf('-') + 1).localeCompare(b.slice(b.lastIndexOf('-') + 1)));
+              .filter(name => name.startsWith('cultivar-database-v') && name.endsWith('.json'))
+              .sort((a, b) => a.slice(a.lastIndexOf('-') + 1).replace('.json', '').localeCompare(b.slice(b.lastIndexOf('-') + 1).replace('.json', '')));
             for (const old of backups.slice(0, Math.max(0, backups.length - 3))) {
               fs.unlinkSync(path.join(backupDir, old));
               console.log('Removed oldest backup:', old);
