@@ -1,0 +1,81 @@
+{
+  "expected_database_version": "8.2.57",
+  "new_database_version": "8.2.58",
+  "database_note": "Database v8.2.58: cultivarrecord Hyohtei aangevuld op basis van Plantentuin Esveld; bestaande gebruikersfoto's behouden.",
+  "record_id": "aa-1794086259007",
+  "updates": {
+    "name": "Hyohtei",
+    "accepted_name": "Acer palmatum 'Hyohtei'",
+    "synonyms": [
+      "Hyotei"
+    ],
+    "group": "unknown",
+    "species": "Acer palmatum",
+    "traits": {
+      "nl": "Roodbladige Japanse esdoorn met middelgrote, tot aan de basis ingesneden bladeren en gezaagde bladlobben. De diepe insnijdingen geven het blad een fijne indruk, maar het is niet kantachtig. De groei is opgaand. Hoogte na 10 jaar circa 250 cm. Bloeit in mei met rode bloemen. Redelijk tot goede herfstkleuren.",
+      "en": "Red-leaved Japanese maple with medium-sized leaves cut to the base and toothed lobes. The deep divisions give the foliage a fine appearance, but it is not lace-like. Upright habit. About 250 cm tall after 10 years. Red flowers in May. Fair to good autumn colour."
+    },
+    "history": {
+      "nl": "Herkomst, selecteur en introductiejaar zijn niet vermeld in het cultivarprofiel van Plantentuin Esveld.",
+      "en": "Origin, selector and introduction year are not stated in the Plantentuin Esveld cultivar profile."
+    },
+    "introduction_year": null,
+    "selector_or_introducer": {
+      "nl": "Onbekend",
+      "en": "Unknown"
+    },
+    "origin": {
+      "nl": "Onbekend",
+      "en": "Unknown"
+    },
+    "evidence_status": "partial",
+    "evidence_label": {
+      "nl": "Cultivarkenmerken gecontroleerd bij Plantentuin Esveld; historische gegevens niet vermeld",
+      "en": "Cultivar characteristics checked against Plantentuin Esveld; historical details not stated"
+    },
+    "sources": [
+      {
+        "title": "Plantentuin Esveld — Acer palmatum ‘Hyohtei’",
+        "url": "https://esveld.nl/a/product/acer-palmatum-hyohtei/",
+        "supports": "Cultivar-specific foliage, leaf size and shape, upright habit, height after 10 years, flowering, autumn colour, width, hardiness, position, soil, water needs and wind sensitivity."
+      }
+    ],
+    "historical_notes": {
+      "nl": "Selecteur / introducteur en introductiejaar: niet vermeld door Esveld; daarom onbekend gelaten.",
+      "en": "Selector / introducer and introduction year: not stated by Esveld; therefore left unknown."
+    },
+    "review_needed": true,
+    "height_after_10_years": "250 cm na 10 jaar",
+    "last_checked": "2026-11-07",
+    "name_data": {
+      "botanical_name": "Acer palmatum 'Hyohtei'",
+      "cultivar_name": "Hyohtei",
+      "synonyms": [
+        "Hyotei"
+      ],
+      "common_name": "Japanse esdoorn"
+    },
+    "plant_group": "Onbekend",
+    "growth_habit": "Opgaand; iets hoger dan breed of los groeiend",
+    "seasonal_characteristics": {
+      "spring": "Rood blad; Esveld specificeert geen afzonderlijke voorjaarskleur.",
+      "summer": "Roodbladig; Esveld specificeert geen afzonderlijke zomerkleur.",
+      "autumn": "Redelijk tot goede herfstkleuren; exacte kleur niet gespecificeerd."
+    },
+    "growth": {
+      "height_after_10_years": "250 cm na 10 jaar",
+      "width_after_10_years": "1–1,5 m (Esveld geeft een breedteklasse, geen leeftijdsmaat)",
+      "growth_rate": "Onbekend"
+    },
+    "site": {
+      "position": "Halfschaduw",
+      "soil": "Humusrijke (bos)grond",
+      "climate_zone": "Goed winterhard",
+      "source_scope": "Cultivar-specifieke gegevens overgenomen uit het profiel van Plantentuin Esveld."
+    },
+    "data_completeness": "partly documented",
+    "esveld_inventory_codes": [
+      "p01"
+    ]
+  }
+}
