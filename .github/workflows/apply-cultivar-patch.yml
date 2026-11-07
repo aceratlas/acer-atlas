@@ -1,0 +1,80 @@
+name: Apply Acer Atlas cultivar patch
+
+on:
+  push:
+    paths:
+      - "incoming/cultivar-patches/*.json"
+
+permissions:
+  contents: write
+
+jobs:
+  apply-patch:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+
+      - name: Apply validated cultivar patch and back up current database
+        run: |
+          node <<'NODE'
+          const fs = require('fs');
+          const path = require('path');
+          const patchPath = process.env.GITHUB_WORKSPACE + '/incoming/cultivar-patches/hyohtei.json';
+          const livePath = 'cultivar-database.json';
+          const patch = JSON.parse(fs.readFileSync(patchPath, 'utf8'));
+          const db = JSON.parse(fs.readFileSync(livePath, 'utf8'));
+
+          if (!Array.isArray(db.records)) throw new Error('Database records array missing');
+          if (db.version !== patch.expected_database_version) {
+            throw new Error('Database version mismatch: expected ' + patch.expected_database_version + ', found ' + db.version);
+          }
+          const record = db.records.find(item => item.id === patch.record_id);
+          if (!record) throw new Error('Cultivar record not found: ' + patch.record_id);
+
+          const photosBefore = JSON.stringify(record.photos || []);
+          for (const [key, value] of Object.entries(patch.updates)) {
+            if (key === 'id' || key === 'photos') throw new Error('Patch cannot replace id or photos');
+            record[key] = value;
+          }
+          if (JSON.stringify(record.photos || []) !== photosBefore) {
+            throw new Error('Existing cultivar photos changed unexpectedly');
+          }
+
+          db.version = patch.new_database_version;
+          db.note = patch.database_note;
+          db.record_count = db.records.length;
+          db.records_count = db.records.length;
+
+          const ids = db.records.map(item => item.id);
+          if (new Set(ids).size !== ids.length) throw new Error('Duplicate cultivar IDs detected');
+          if (db.record_count !== db.records.length || db.records_count !== db.records.length) {
+            throw new Error('Record count validation failed');
+          }
+
+          const backupDir = 'backups';
+          fs.mkdirSync(backupDir, { recursive: true });
+          const stamp = new Date().toISOString().replace(/[-:]/g, '').replace(/\\.\\d{3}Z$/, 'Z');
+          const backupName = 'cultivar-database-v' + patch.expected_database_version + '-' + stamp + '.json';
+          fs.copyFileSync(livePath, path.join(backupDir, backupName));
+
+          const backups = fs.readdirSync(backupDir)
+            .filter(name => /^cultivar-database-v.*-\\d{8}T\\d{6}Z\\.json$/.test(name))
+            .sort((a, b) => a.slice(a.lastIndexOf('-') + 1).localeCompare(b.slice(b.lastIndexOf('-') + 1)));
+          for (const old of backups.slice(0, Math.max(0, backups.length - 3))) {
+            fs.unlinkSync(path.join(backupDir, old));
+          }
+
+          fs.writeFileSync(livePath, JSON.stringify(db));
+          console.log('Applied patch to ' + record.name + '; database v' + db.version);
+          console.log('Preserved ' + (record.photos || []).length + ' existing photos');
+          console.log('Backup created: ' + backupName);
+          NODE
+
+      - name: Commit published database and backup
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add cultivar-database.json backups/
+          git commit -m "Publish Acer Atlas database v8.2.58 — Hyohtei"
+          git push
