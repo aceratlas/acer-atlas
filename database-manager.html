@@ -1,4 +1,4 @@
-<!doctype html><html lang="nl" data-acer-atlas-manager-version="0.3.1"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Acer Atlas · Datamanager v0.3.1</title><style>
+<!doctype html><html lang="nl" data-acer-atlas-manager-version="0.3.1"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Acer Atlas · Datamanager v0.3.2</title><style>
 :root{font-family:Inter,Segoe UI,Arial,sans-serif;color:#202820;background:#f4f6f2}
 *{box-sizing:border-box}body{margin:0;background:#f4f6f2;color:#202820}
 button,input,textarea,select{font:inherit}button{cursor:pointer}
@@ -180,16 +180,18 @@ function renderEditor(){
  $('editor').querySelectorAll('[data-edit]').forEach(b=>b.onclick=()=>showFlyout(b.dataset.edit));
  $('delete').onclick=()=>{if(confirm('Deze cultivar uit het concept verwijderen?')){db.records=db.records.filter(x=>x.id!==selected);syncMeta();backToSearch();$('status').textContent='Cultivar verwijderd uit het lokale concept.';}};
  $('detailExport').onclick=exportDatabase;
- $('saveCultivar').onclick=()=>{
+ $('saveCultivar').onclick=async()=>{
+  const btn=$('saveCultivar');btn.disabled=true;
   try{
    if(!$('flyoutBackdrop').classList.contains('hidden'))captureFlyoutValues();
    syncMeta();
-   localStorage.setItem('aa-db-manager-draft',JSON.stringify(db));
+   await saveLocalDraft(db);
    $('draftInfo').textContent='Lokaal concept opgeslagen op '+new Date().toLocaleString()+'. Nog niet gepubliceerd.';
    $('status').textContent='Wijzigingen opgeslagen in het lokale databaseconcept. Je kunt nu een andere cultivar aanpassen. Publiceren doe je pas als je helemaal klaar bent.';
    closeFlyout();
    backToSearch();
   }catch(e){alert('Opslaan mislukt: '+e.message);}
+  finally{btn.disabled=false;}
  };
 }
 function panelMarkup(r,id){
@@ -261,6 +263,34 @@ function load(data){
  db=clone(data);db.records.forEach(r=>{if(!Array.isArray(r.photos))r.photos=[];});
  selected=null;syncMeta();backToSearch();$('status').textContent=`Database geladen: ${db.records.length} cultivars en ${db.photo_count||0} foto’s. Zoek hierboven een cultivar om te beginnen.`;
 }
+function openDraftStore(){
+ return new Promise((resolve,reject)=>{
+  if(!('indexedDB' in window)){reject(new Error('Deze browser ondersteunt geen IndexedDB-opslag.'));return;}
+  const request=indexedDB.open('acer-atlas-manager',1);
+  request.onupgradeneeded=()=>{if(!request.result.objectStoreNames.contains('drafts'))request.result.createObjectStore('drafts');};
+  request.onsuccess=()=>resolve(request.result);
+  request.onerror=()=>reject(request.error||new Error('Lokale conceptopslag kon niet worden geopend.'));
+ });
+}
+async function saveLocalDraft(data){
+ const database=await openDraftStore();
+ await new Promise((resolve,reject)=>{
+  const tx=database.transaction('drafts','readwrite');
+  tx.objectStore('drafts').put(data,'current');
+  tx.oncomplete=resolve;tx.onerror=()=>reject(tx.error||new Error('Lokale opslag mislukt.'));
+  tx.onabort=()=>reject(tx.error||new Error('Lokale opslag afgebroken.'));
+ });
+ database.close();
+}
+async function readLocalDraft(){
+ const database=await openDraftStore();
+ const value=await new Promise((resolve,reject)=>{
+  const tx=database.transaction('drafts','readonly'),request=tx.objectStore('drafts').get('current');
+  request.onsuccess=()=>resolve(request.result||null);
+  request.onerror=()=>reject(request.error||new Error('Lokaal concept kon niet worden gelezen.'));
+ });
+ database.close();return value;
+}
 function exportDatabase(){if(!db)return alert('Laad eerst een database.');syncMeta();const blob=new Blob([JSON.stringify(db,null,2)],{type:'application/json'});const a=document.createElement('a');a.href=URL.createObjectURL(blob);a.download='cultivar-database.json';a.click();URL.revokeObjectURL(a.href);$('status').textContent='JSON-export aangemaakt. Controleer het bestand voordat je het publiceert.';}
 $('file').onchange=async e=>{try{if(e.target.files[0])load(JSON.parse(await e.target.files[0].text()));}catch(err){alert('Database kon niet worden geopend: '+err.message);}};
 async function loadLiveDatabase(){const res=await fetch('./cultivar-database.json?ts='+Date.now(),{cache:'no-store'});if(!res.ok)throw new Error('Live database niet bereikbaar ('+res.status+').');load(await res.json());$('draftInfo').textContent='Actuele database van GitHub geladen.';}
@@ -270,7 +300,7 @@ $('search').onkeydown=e=>{if(e.key==='ArrowDown'&&suggestionItems.length){e.prev
 document.addEventListener('click',e=>{if(!e.target.closest('.search-wrap'))closeSuggestions();});
 $('backBtn').onclick=backToSearch;
 $('add').onclick=()=>{if(!db){alert('Laad eerst een database.');return;}const id='aa-'+Date.now();db.records.push({id,name:'Nieuwe cultivar',photos:[],synonyms:[],sources:[]});syncMeta();select(id);showFlyout('basis',false);};
-$('saveDraft').onclick=()=>{if(!db)return;localStorage.setItem('aa-db-manager-draft',JSON.stringify(db));$('draftInfo').textContent='Concept opgeslagen op '+new Date().toLocaleString();$('status').textContent='Concept lokaal opgeslagen in deze browser. Dit is geen cloudback-up en publiceert niets.';};
+$('saveDraft').onclick=async()=>{if(!db)return;try{await saveLocalDraft(db);$('draftInfo').textContent='Concept opgeslagen op '+new Date().toLocaleString();$('status').textContent='Concept lokaal opgeslagen in deze browser. Dit is geen cloudback-up en publiceert niets.';}catch(e){alert('Concept opslaan mislukt: '+e.message);}};
 $('export').onclick=exportDatabase;
 
 function bytesToBase64(bytes){let binary='';const chunk=0x8000;for(let i=0;i<bytes.length;i+=chunk)binary+=String.fromCharCode(...bytes.subarray(i,i+chunk));return btoa(binary);}
@@ -321,6 +351,15 @@ $('apply').onclick=()=>{try{captureFlyoutValues();}catch(e){alert(e.message);ret
 $('cancelFlyout').onclick=closeFlyout;$('flyoutClose').onclick=closeFlyout;
 $('flyoutBackdrop').addEventListener('mousedown',e=>{if(e.target===$('flyoutBackdrop'))closeFlyout();});
 document.addEventListener('keydown',e=>{if(e.key==='Escape')closeFlyout();});
-loadLiveDatabase().catch(e=>{$('status').textContent='Live database kon niet automatisch worden geladen. Open cultivar-database.json handmatig. '+e.message;});
-const draft=localStorage.getItem('aa-db-manager-draft');if(draft){try{load(JSON.parse(draft));$('draftInfo').textContent='Eerder lokaal concept gevonden. Je kunt dit concept gebruiken of een andere database openen.';}catch(e){}}
+(async()=>{
+ try{await loadLiveDatabase();}catch(e){$('status').textContent='Live database kon niet automatisch worden geladen. Open cultivar-database.json handmatig. '+e.message;}
+ try{
+  const draft=await readLocalDraft();
+  if(draft&&Array.isArray(draft.records)){load(draft);$('draftInfo').textContent='Eerder lokaal concept gevonden en geladen. Dit concept is nog niet gepubliceerd.';}
+  else{
+   const legacy=localStorage.getItem('aa-db-manager-draft');
+   if(legacy){try{const parsed=JSON.parse(legacy);load(parsed);await saveLocalDraft(parsed);localStorage.removeItem('aa-db-manager-draft');$('draftInfo').textContent='Bestaand lokaal concept overgezet naar ruime browseropslag.';}catch(e){$('draftInfo').textContent='Oud lokaal concept kon niet worden overgezet: '+e.message;}}
+  }
+ }catch(e){$('draftInfo').textContent='Lokaal concept kon niet worden gecontroleerd: '+e.message;}
+})();
 </script></body></html>
