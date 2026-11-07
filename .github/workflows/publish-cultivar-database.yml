@@ -87,7 +87,7 @@ jobs:
           cp incoming/cultivar-database.json cultivar-database.json
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add cultivar-database.json
+          git add cultivar-database.json backups/
           if git diff --cached --quiet; then
             echo "No database changes to publish."
             exit 0
