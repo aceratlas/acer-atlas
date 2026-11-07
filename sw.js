@@ -1,5 +1,5 @@
-/* Acer Atlas v10.5.47 — validated stale-while-revalidate database cache */
-const CACHE = 'acer-atlas-pwa-v10.5.47';
+/* Acer Atlas v10.5.48 — network-first validated database cache */
+const CACHE = 'acer-atlas-pwa-v10.5.48';
 const DATABASE_KEY = './cultivar-database.json';
 const APP_FILES = [
   './', './index.html', './manifest.webmanifest', './icon.svg',
@@ -94,23 +94,19 @@ self.addEventListener('fetch', event => {
   const isDatabase = url.pathname.endsWith('/cultivar-database.json');
 
   if (isDatabase) {
-    // Return the last complete database immediately; refresh the cache in the background.
-    const updatePromise = caches.open(CACHE).then(cache => refreshDatabase(cache));
-    event.waitUntil(updatePromise.catch(error => {
-      console.warn('Acer Atlas database refresh skipped; cached copy retained.', error);
-    }));
+    // Network first: always try to load the latest published database.
+    // Fall back to the last validated complete copy only when offline/unavailable.
     event.respondWith((async () => {
       const cache = await caches.open(CACHE);
-      const cached = await cache.match(DATABASE_KEY);
-      if (cached && await isCompleteDatabase(cached)) return cached;
-
       try {
-        await updatePromise;
+        await refreshDatabase(cache);
         const fresh = await cache.match(DATABASE_KEY);
         if (fresh && await isCompleteDatabase(fresh)) return fresh;
       } catch (error) {
-        console.warn('Acer Atlas database unavailable.', error);
+        console.warn('Acer Atlas: latest database unavailable; using validated cached copy.', error);
       }
+      const cached = await cache.match(DATABASE_KEY);
+      if (cached && await isCompleteDatabase(cached)) return cached;
       return new Response('De volledige Acer Atlas-database is nog niet beschikbaar. Controleer je internetverbinding en probeer opnieuw.', {
         status: 503, headers: {'Content-Type': 'text/plain; charset=utf-8'}
       });
