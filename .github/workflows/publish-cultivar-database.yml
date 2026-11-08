@@ -151,10 +151,10 @@ jobs:
                   }
                   const output = await sharp(input)
                     .rotate()
-                    .resize({ width: 1600, height: 1600, fit: 'inside', withoutEnlargement: true })
-                    .webp({ quality: 78, effort: 4 })
+                    .resize({ width: 800, height: 800, fit: 'inside', withoutEnlargement: true })
+                    .webp({ quality: 70, effort: 6 })
                     .toBuffer();
-                  if (output.length < input.length * 0.97) {
+                  if (output.length < input.length) {
                     photo.url = 'data:image/webp;base64,' + output.toString('base64');
                     afterBytes += output.length;
                     changed++;
@@ -167,10 +167,17 @@ jobs:
                 }
               }
             }
-            fs.writeFileSync(file, JSON.stringify(db));
+            db.record_count = db.records.length;
+            db.records_count = db.records.length;
+            db.photo_count = db.records.reduce((sum, record) => sum + (Array.isArray(record.photos) ? record.photos.length : 0), 0);
+            const optimizedRaw = JSON.stringify(db);
+            JSON.parse(optimizedRaw); // Final parse check after optimization.
+            fs.writeFileSync(file, optimizedRaw);
             const saved = beforeBytes ? ((beforeBytes - afterBytes) / beforeBytes * 100).toFixed(1) : '0.0';
+            const finalBytes = Buffer.byteLength(optimizedRaw, 'utf8');
             console.log(`Photo optimization: ${changed}/${checked} images reduced; embedded photo bytes ${beforeBytes} -> ${afterBytes} (${saved}% smaller).`);
-            console.log('Database JSON minified and saved.');
+            console.log(`Final database size: ${finalBytes} bytes; records: ${db.records.length}; photos: ${db.photo_count}; version: ${db.version}.`);
+            console.log('Database JSON minified and final parse check passed.');
           })().catch(error => { console.error(error); process.exit(1); });
           NODE
       - name: Publish validated database
