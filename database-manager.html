@@ -1,4 +1,4 @@
-<!doctype html><html lang="nl" data-acer-atlas-manager-version="0.4.3"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Acer Atlas · Datamanager v0.4.3</title><style>
+<!doctype html><html lang="nl" data-acer-atlas-manager-version="0.4.4"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Acer Atlas · Datamanager v0.4.4</title><style>
 :root{font-family:Inter,Segoe UI,Arial,sans-serif;color:#202820;background:#f4f6f2}
 *{box-sizing:border-box}body{margin:0;background:#f4f6f2;color:#202820}
 button,input,textarea,select{font:inherit}button{cursor:pointer}
@@ -88,7 +88,7 @@ label{display:block;font-size:12px;font-weight:700;color:#526156;margin:12px 0 5
 <header class="hero">
  <div class="top">
   <div class="brand"><span class="mark" aria-hidden="true">🍁</span><div><h1>ACER ATLAS</h1><small>Databasebeheer</small></div></div>
-  <div class="top-right"><a class="app-link" href="./index.html#collection">← Terug naar Acer Atlas</a><button id="backBtn" class="back-btn" type="button">← Terug</button><span class="version">DATAMANAGER v0.4.3</span></div>
+  <div class="top-right"><a class="app-link" href="./index.html#collection">← Terug naar Acer Atlas</a><button id="backBtn" class="back-btn" type="button">← Terug</button><span class="version">DATAMANAGER v0.4.4</span></div>
  </div>
 </header>
 <main class="page">
@@ -110,6 +110,8 @@ label{display:block;font-size:12px;font-weight:700;color:#526156;margin:12px 0 5
    <b>Publiceren naar Acer Atlas</b>
    <p class="hint">Publiceer de geladen database. De voortgang en resultaten verschijnen hieronder.</p>
    <div class="toolbar"><button class="primary" id="uploadGithub">Database publiceren</button></div>
+   <label class="hint" style="display:flex;align-items:center;gap:8px;margin-top:10px"><input id="uploadPhotosToCloudflare" type="checkbox" style="width:auto;margin:0"> Ook foto’s naar Cloudflare uploaden (alleen foto’s die in de JSON zijn ingesloten)</label>
+   <p class="hint">Standaard uit: de database wordt dan gepubliceerd zonder foto’s te migreren en bestaande fotoverwijzingen blijven ongewijzigd.</p>
    <div class="hint" id="uploadInfo" role="status" aria-live="polite">Klaar om te publiceren. Na het starten zie je hier de foto-upload, database-upload en validatie.</div>
    <div class="hint" id="draftInfo">Concept blijft op deze computer bewaard.</div>
    <div class="status" id="status" role="status" aria-live="polite">Open de startdatabase of laad je eigen JSON-bestand. Selecteer daarna een cultivar om de gegevens te bekijken en te bewerken.</div>
@@ -146,7 +148,7 @@ label{display:block;font-size:12px;font-weight:700;color:#526156;margin:12px 0 5
   <div class="toolbar"><button class="primary" id="apply">Wijzigingen toepassen</button><button id="cancelFlyout">Annuleren</button></div>
  </section>
 </div>
-<div class="footer"><span class="footer-version">Acer Atlas Datamanager v0.4.3</span> · Opslaan bewaart je wijzigingen lokaal als concept. Publiceren naar GitHub doe je apart wanneer je klaar bent.</div>
+<div class="footer"><span class="footer-version">Acer Atlas Datamanager v0.4.4</span> · Opslaan bewaart je wijzigingen lokaal als concept. Publiceren naar GitHub doe je apart wanneer je klaar bent.</div>
 <script>/* De actuele database wordt rechtstreeks uit cultivar-database.json geladen. */</script>
 <script>
 let db=null, selected=null, suggestionIndex=-1, suggestionItems=[], activeFlyout='basis', pendingPhotos=[];
@@ -493,7 +495,7 @@ $('uploadGithub').onclick=async()=>{
  try{
   if($('rememberGithubToken').checked)localStorage.setItem('aa-github-token',token);else{localStorage.removeItem('aa-github-token');sessionStorage.setItem('aa-github-token',token);}
   if(!$('flyoutBackdrop').classList.contains('hidden'))captureFlyoutValues();
-  syncMeta();const uploadDb=clone(db);const currentVersion=readDatabaseVersion(uploadDb).value;if(!isRestore)uploadDb.version=nextDatabaseVersion(uploadDb);const photoToken=$('photoApiToken').value.trim()||sessionStorage.getItem('aa-photo-api-token')||'';if(photoToken)sessionStorage.setItem('aa-photo-api-token',photoToken);const photoResult=await uploadDataPhotosToR2(uploadDb,photoToken);
+  syncMeta();const uploadDb=clone(db);const currentVersion=readDatabaseVersion(uploadDb).value;if(!isRestore)uploadDb.version=nextDatabaseVersion(uploadDb);const photoToken=$('photoApiToken').value.trim()||sessionStorage.getItem('aa-photo-api-token')||'';if(photoToken)sessionStorage.setItem('aa-photo-api-token',photoToken);const photoResult=$('uploadPhotosToCloudflare').checked?await uploadDataPhotosToR2(uploadDb,photoToken):{uploaded:0,kept:0,skipped:true};
   const backupResult=await rotateDatabaseBackups(token);
   $('backupInfo').textContent='Back-up gemaakt van online database v'+backupResult.version+'. '+backupResult.count+' van maximaal 3 versies veiliggesteld.';
   const raw=JSON.stringify(uploadDb);
