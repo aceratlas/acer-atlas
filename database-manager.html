@@ -1,4 +1,4 @@
-<!doctype html><html lang="nl" data-acer-atlas-manager-version="0.4.5"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Acer Atlas · Datamanager v0.4.5</title><style>
+<!doctype html><html lang="nl" data-acer-atlas-manager-version="0.4.6"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Acer Atlas · Datamanager v0.4.6</title><style>
 :root{font-family:Inter,Segoe UI,Arial,sans-serif;color:#202820;background:#f4f6f2}
 *{box-sizing:border-box}body{margin:0;background:#f4f6f2;color:#202820}
 button,input,textarea,select{font:inherit}button{cursor:pointer}
@@ -88,7 +88,7 @@ label{display:block;font-size:12px;font-weight:700;color:#526156;margin:12px 0 5
 <header class="hero">
  <div class="top">
   <div class="brand"><span class="mark" aria-hidden="true">🍁</span><div><h1>ACER ATLAS</h1><small>Databasebeheer</small></div></div>
-  <div class="top-right"><a class="app-link" href="./index.html#collection">← Terug naar Acer Atlas</a><button id="backBtn" class="back-btn" type="button">← Terug</button><span class="version">DATAMANAGER v0.4.5</span></div>
+  <div class="top-right"><a class="app-link" href="./index.html#collection">← Terug naar Acer Atlas</a><button id="backBtn" class="back-btn" type="button">← Terug</button><span class="version">DATAMANAGER v0.4.6</span></div>
  </div>
 </header>
 <main class="page">
@@ -101,26 +101,20 @@ label{display:block;font-size:12px;font-weight:700;color:#526156;margin:12px 0 5
   <div class="hint" id="nextVersion" style="margin-top:8px;font-weight:700">Volgende publicatie: wordt berekend na het laden van de database.</div>
   <div class="toolbar">
    <label class="filebtn">Database openen<input id="file" type="file" accept=".json,application/json"></label>
-   <button id="loadSample">Startdatabase laden</button>
+   
    <button class="primary" id="add">+ Nieuwe cultivar</button>
   </div>
-  <div class="toolbar"><button id="saveDraft">Concept opslaan</button><button id="export">JSON downloaden</button><button id="review">Database controleren</button><button id="rawToggle" aria-expanded="false">Geavanceerde gegevens</button></div>
+  <div class="toolbar"><button id="saveDraft">Concept opslaan</button><button id="export">JSON downloaden</button><button id="review">Snelle controle</button><button id="rawToggle" aria-expanded="false">Geavanceerde gegevens</button><span class="hint">Controleert lokaal op lege namen, dubbele ID’s en ontbrekende foto-URL’s. Publiceren gebeurt apart.</span></div>
   <div id="rawWrap" class="hidden tool-card" style="margin-top:10px;padding:14px"><label>Volledige JSON (alle velden)</label><textarea id="raw" rows="18" spellcheck="false"></textarea><button id="applyRaw">JSON toepassen</button></div>
   <div class="tool-card" style="margin-top:14px;padding:14px">
    <b>Publiceren naar Acer Atlas</b>
    <p class="hint">Publiceer de geladen database. De voortgang en resultaten verschijnen hieronder.</p>
    <div class="toolbar"><button class="primary" id="uploadGithub">Database publiceren</button></div>
-   <label class="hint" style="display:flex;align-items:center;gap:8px;margin-top:10px"><input id="uploadPhotosToCloudflare" type="checkbox" style="width:auto;margin:0"> Ook foto’s naar Cloudflare uploaden (alleen foto’s die in de JSON zijn ingesloten)</label>
-   <p class="hint">Standaard uit: de database wordt dan gepubliceerd zonder foto’s te migreren en bestaande fotoverwijzingen blijven ongewijzigd.</p>
+   <label class="hint" style="display:flex;align-items:center;gap:8px;margin-top:10px"><input id="uploadPhotosToCloudflare" type="checkbox" checked style="width:auto;margin:0"> Ook foto’s naar Cloudflare uploaden (alleen foto’s die in de JSON zijn ingesloten)</label>
+   <p class="hint">Standaard aan: ingesloten foto’s worden tijdens publicatie naar Cloudflare geüpload. Zet het vinkje uit als je alleen de database wilt publiceren. Bestaande foto-URL’s worden niet opnieuw geüpload.</p>
    <div class="hint" id="uploadInfo" role="status" aria-live="polite">Klaar om te publiceren. Na het starten zie je hier de foto-upload, database-upload en validatie.</div>
    <div class="hint" id="draftInfo">Concept blijft op deze computer bewaard.</div>
    <div class="status" id="status" role="status" aria-live="polite">Open de startdatabase of laad je eigen JSON-bestand. Selecteer daarna een cultivar om de gegevens te bekijken en te bewerken.</div>
-  </div>
-  <div class="tool-card" style="margin-top:14px;padding:14px">
-   <b>Beschikbare databaseback-ups</b>
-   <p class="hint">Hier zie je welke drie versies daadwerkelijk in GitHub zijn opgeslagen. De lijst wordt automatisch geladen en kan handmatig worden vernieuwd.</p>
-   <div id="backupOverview" class="hint" aria-live="polite">Back-ups worden geladen…</div>
-   <div class="toolbar"><button id="refreshBackupsVisible" type="button">Back-ups vernieuwen</button></div>
   </div>
   <details class="tool-card" style="margin-top:14px;padding:14px">
    <summary style="cursor:pointer;font-weight:700">Tokens en databaseback-ups</summary>
@@ -134,6 +128,12 @@ label{display:block;font-size:12px;font-weight:700;color:#526156;margin:12px 0 5
      <div class="toolbar"><button id="refreshBackups" type="button">Back-ups vernieuwen</button><select id="backupSelect" aria-label="Kies een databaseback-up" style="min-width:220px;max-width:100%"><option value="">Back-ups laden…</option></select><button id="restoreBackup" type="button">Back-up herstellen en publiceren</button></div>
      <div class="hint" id="backupInfo">Back-ups worden in de GitHub-repository bewaard en zijn daardoor ook op andere apparaten beschikbaar.</div>
     </div>
+  <div class="tool-card" style="margin-top:14px;padding:14px">
+   <b>Beschikbare databaseback-ups</b>
+   <p class="hint">Hier zie je welke drie versies daadwerkelijk in GitHub zijn opgeslagen. De lijst wordt automatisch geladen en kan handmatig worden vernieuwd.</p>
+   <div id="backupOverview" class="hint" aria-live="polite">Back-ups worden geladen…</div>
+   <div class="toolbar"><button id="refreshBackupsVisible" type="button">Back-ups vernieuwen</button></div>
+  </div>
    </div>
   </details> </section>
  <section id="detailPage" class="detail-card hidden">
@@ -345,7 +345,6 @@ function exportDatabase(){
 }
 $('file').onchange=async e=>{try{if(e.target.files[0])load(JSON.parse(await e.target.files[0].text()));}catch(err){alert('Database kon niet worden geopend: '+err.message);}};
 async function loadLiveDatabase(){const res=await fetch('./cultivar-database.json?ts='+Date.now(),{cache:'no-store'});if(!res.ok)throw new Error('Live database niet bereikbaar ('+res.status+').');load(await res.json());$('draftInfo').textContent='Actuele database van GitHub geladen.';}
-$('loadSample').onclick=async()=>{try{await loadLiveDatabase();}catch(e){alert('Database laden mislukt: '+e.message);}};
 $('search').oninput=renderSuggestions;
 $('search').onkeydown=e=>{if(e.key==='ArrowDown'&&suggestionItems.length){e.preventDefault();moveSuggestion(1);}else if(e.key==='ArrowUp'&&suggestionItems.length){e.preventDefault();moveSuggestion(-1);}else if(e.key==='Enter'&&suggestionItems.length){e.preventDefault();const item=suggestionItems[suggestionIndex<0?0:suggestionIndex];if(item)select(item.id);}else if(e.key==='Escape')closeSuggestions();};
 document.addEventListener('click',e=>{if(!e.target.closest('.search-wrap'))closeSuggestions();});
