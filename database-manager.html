@@ -1,4 +1,4 @@
-<!doctype html><html lang="nl" data-acer-atlas-manager-version="0.4.4"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Acer Atlas · Datamanager v0.4.4</title><style>
+<!doctype html><html lang="nl" data-acer-atlas-manager-version="0.4.5"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Acer Atlas · Datamanager v0.4.5</title><style>
 :root{font-family:Inter,Segoe UI,Arial,sans-serif;color:#202820;background:#f4f6f2}
 *{box-sizing:border-box}body{margin:0;background:#f4f6f2;color:#202820}
 button,input,textarea,select{font:inherit}button{cursor:pointer}
@@ -88,7 +88,7 @@ label{display:block;font-size:12px;font-weight:700;color:#526156;margin:12px 0 5
 <header class="hero">
  <div class="top">
   <div class="brand"><span class="mark" aria-hidden="true">🍁</span><div><h1>ACER ATLAS</h1><small>Databasebeheer</small></div></div>
-  <div class="top-right"><a class="app-link" href="./index.html#collection">← Terug naar Acer Atlas</a><button id="backBtn" class="back-btn" type="button">← Terug</button><span class="version">DATAMANAGER v0.4.4</span></div>
+  <div class="top-right"><a class="app-link" href="./index.html#collection">← Terug naar Acer Atlas</a><button id="backBtn" class="back-btn" type="button">← Terug</button><span class="version">DATAMANAGER v0.4.5</span></div>
  </div>
 </header>
 <main class="page">
@@ -125,9 +125,9 @@ label{display:block;font-size:12px;font-weight:700;color:#526156;margin:12px 0 5
   <details class="tool-card" style="margin-top:14px;padding:14px">
    <summary style="cursor:pointer;font-weight:700">Tokens en databaseback-ups</summary>
    <div style="margin-top:12px">
-    <p class="hint">Tokens worden alleen lokaal in deze browser gebruikt. De Cloudflare-fototoken wordt alleen voor deze browsersessie bewaard.</p>
+    <p class="hint">Tokens worden alleen lokaal in deze browser gebruikt. Een token wordt alleen blijvend op dit apparaat bewaard als je het bijbehorende vinkje aanzet. Let op: lokale opslag is niet versleuteld.</p>
     <div class="toolbar"><input id="githubToken" type="password" autocomplete="off" placeholder="GitHub-token" style="max-width:420px"><label style="margin:0;font-weight:500"><input id="rememberGithubToken" type="checkbox" style="width:auto;margin-right:6px">Onthoud token op dit apparaat</label><button id="clearGithubToken" type="button">Token wissen</button></div>
-    <div class="toolbar"><input id="photoApiToken" type="password" autocomplete="off" placeholder="Foto-API-token (Cloudflare)" style="max-width:420px"><button id="clearPhotoApiToken" type="button">Foto-token wissen</button></div>
+    <div class="toolbar"><input id="photoApiToken" type="password" autocomplete="off" placeholder="Foto-API-token (Cloudflare)" style="max-width:420px"><label style="margin:0;font-weight:500"><input id="rememberPhotoApiToken" type="checkbox" style="width:auto;margin-right:6px">Onthoud Cloudflare-token op dit apparaat</label><button id="clearPhotoApiToken" type="button">Foto-token wissen</button></div>
     <div class="tool-card" style="margin-top:14px;padding:14px">
      <b>Databaseback-ups</b>
      <p class="hint">De manager bewaart automatisch de drie meest recente gepubliceerde databases in GitHub. Bij iedere publicatie schuiven de back-ups één plaats op.</p>
@@ -367,8 +367,11 @@ function nextDatabaseVersion(data){
 $('githubToken').value=localStorage.getItem('aa-github-token')||sessionStorage.getItem('aa-github-token')||'';
 $('rememberGithubToken').checked=!!localStorage.getItem('aa-github-token');
 const PHOTO_API_BASE='https://pi.aceratlas-maple-6e9.workers.dev';
-$('photoApiToken').value=sessionStorage.getItem('aa-photo-api-token')||'';
-$('clearPhotoApiToken').onclick=()=>{sessionStorage.removeItem('aa-photo-api-token');$('photoApiToken').value='';$('uploadInfo').textContent='Foto-API-token uit deze browsersessie verwijderd.';};
+$('photoApiToken').value=localStorage.getItem('aa-photo-api-token')||sessionStorage.getItem('aa-photo-api-token')||'';
+$('rememberPhotoApiToken').checked=!!localStorage.getItem('aa-photo-api-token');
+$('photoApiToken').addEventListener('input',()=>{const t=$('photoApiToken').value.trim();if($('rememberPhotoApiToken').checked){if(t)localStorage.setItem('aa-photo-api-token',t);else localStorage.removeItem('aa-photo-api-token');}else sessionStorage.setItem('aa-photo-api-token',t);});
+$('rememberPhotoApiToken').onchange=()=>{const t=$('photoApiToken').value.trim();if($('rememberPhotoApiToken').checked){if(t)localStorage.setItem('aa-photo-api-token',t);}else localStorage.removeItem('aa-photo-api-token');};
+$('clearPhotoApiToken').onclick=()=>{localStorage.removeItem('aa-photo-api-token');sessionStorage.removeItem('aa-photo-api-token');$('photoApiToken').value='';$('rememberPhotoApiToken').checked=false;$('uploadInfo').textContent='Cloudflare-fototoken uit deze browser verwijderd.';};
 async function uploadDataPhotosToR2(data,token){
  const photos=data.records.flatMap(record=>(record.photos||[]).map((photo,index)=>({record,photo,index})).filter(x=>typeof x.photo.url==='string'&&x.photo.url.startsWith('data:')));
  if(!photos.length)return {uploaded:0,kept:0};
@@ -495,7 +498,7 @@ $('uploadGithub').onclick=async()=>{
  try{
   if($('rememberGithubToken').checked)localStorage.setItem('aa-github-token',token);else{localStorage.removeItem('aa-github-token');sessionStorage.setItem('aa-github-token',token);}
   if(!$('flyoutBackdrop').classList.contains('hidden'))captureFlyoutValues();
-  syncMeta();const uploadDb=clone(db);const currentVersion=readDatabaseVersion(uploadDb).value;if(!isRestore)uploadDb.version=nextDatabaseVersion(uploadDb);const photoToken=$('photoApiToken').value.trim()||sessionStorage.getItem('aa-photo-api-token')||'';if(photoToken)sessionStorage.setItem('aa-photo-api-token',photoToken);const photoResult=$('uploadPhotosToCloudflare').checked?await uploadDataPhotosToR2(uploadDb,photoToken):{uploaded:0,kept:0,skipped:true};
+  syncMeta();const uploadDb=clone(db);const currentVersion=readDatabaseVersion(uploadDb).value;if(!isRestore)uploadDb.version=nextDatabaseVersion(uploadDb);const photoToken=$('photoApiToken').value.trim()||localStorage.getItem('aa-photo-api-token')||sessionStorage.getItem('aa-photo-api-token')||'';if(photoToken){sessionStorage.setItem('aa-photo-api-token',photoToken);if($('rememberPhotoApiToken').checked)localStorage.setItem('aa-photo-api-token',photoToken);else localStorage.removeItem('aa-photo-api-token');}const photoResult=$('uploadPhotosToCloudflare').checked?await uploadDataPhotosToR2(uploadDb,photoToken):{uploaded:0,kept:0,skipped:true};
   const backupResult=await rotateDatabaseBackups(token);
   $('backupInfo').textContent='Back-up gemaakt van online database v'+backupResult.version+'. '+backupResult.count+' van maximaal 3 versies veiliggesteld.';
   const raw=JSON.stringify(uploadDb);
