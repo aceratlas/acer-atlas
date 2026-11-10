@@ -1,4 +1,4 @@
-<!doctype html><html lang="nl" data-acer-atlas-manager-version="0.4.10"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Acer Atlas · Datamanager v0.4.10</title><style>
+<!doctype html><html lang="nl" data-acer-atlas-manager-version="0.4.11"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Acer Atlas · Datamanager v0.4.11</title><style>
 :root{font-family:Inter,Segoe UI,Arial,sans-serif;color:#202820;background:#f4f6f2}
 *{box-sizing:border-box}body{margin:0;background:#f4f6f2;color:#202820}
 button,input,textarea,select{font:inherit}button{cursor:pointer}
@@ -88,7 +88,7 @@ label{display:block;font-size:12px;font-weight:700;color:#526156;margin:12px 0 5
 <header class="hero">
  <div class="top">
   <div class="brand"><span class="mark" aria-hidden="true">🍁</span><div><h1>ACER ATLAS</h1><small>Databasebeheer</small></div></div>
-  <div class="top-right"><a class="app-link" href="./index.html#collection">← Terug naar Acer Atlas</a><button id="backBtn" class="back-btn" type="button">← Terug</button><span class="version">DATAMANAGER v0.4.10</span></div>
+  <div class="top-right"><a class="app-link" href="./index.html#collection">← Terug naar Acer Atlas</a><button id="backBtn" class="back-btn" type="button">← Terug</button><span class="version">DATAMANAGER v0.4.11</span></div>
  </div>
 </header>
 <main class="page">
@@ -107,8 +107,9 @@ label{display:block;font-size:12px;font-weight:700;color:#526156;margin:12px 0 5
   <div id="newCultivarPanel" class="tool-card hidden" style="margin-top:14px;padding:16px">
    <b>Nieuwe cultivar voorbereiden</b>
    <p class="hint" style="margin-top:8px">Plak één of meerdere bronlinks, één per regel. De automatische gegevensverwerking wordt later via een aparte Cloudflare-Worker aangesloten. Je kunt nu al een cultivar met deze bronnen aanmaken.</p>
-   <label for="newCultivarName">Cultivarnaam</label><input id="newCultivarName" placeholder="Bijvoorbeeld Burgundy Lime" autocomplete="off">
-   <label for="newCultivarUrls">Bronlinks (één URL per regel)</label><textarea id="newCultivarUrls" rows="5" placeholder="https://..."></textarea>
+   <label for="newCultivarName">Cultivarnaam (automatisch uit de eerste link)</label><input id="newCultivarName" placeholder="Wordt afgeleid uit de eerste link" autocomplete="off">
+   <label>Bronlinks</label><div id="newCultivarLinks" style="display:grid;gap:8px"><input class="cultivar-source-url" type="url" placeholder="Eerste bronlink (bijv. Esveld)" autocomplete="url"><input class="cultivar-source-url" type="url" placeholder="Tweede bronlink (bijv. MrMaple)" autocomplete="url"></div>
+   <div class="toolbar"><button id="addCultivarLink" type="button">+ Link toevoegen</button></div>
    <div class="toolbar"><button class="primary" id="prepareCultivar" type="button">Cultivar aanmaken met bronnen</button><button id="fetchCultivarInfo" type="button" disabled title="Beschikbaar zodra de nieuwe Cloudflare-Worker is gekoppeld">Gegevens ophalen (binnenkort)</button><button id="cancelNewCultivar" type="button">Annuleren</button></div>
    <div class="hint" id="newCultivarInfo" role="status" aria-live="polite">Er wordt niets automatisch gepubliceerd.</div>
   </div>
@@ -158,7 +159,7 @@ label{display:block;font-size:12px;font-weight:700;color:#526156;margin:12px 0 5
   <div class="toolbar"><button class="primary" id="apply">Wijzigingen toepassen</button><button id="cancelFlyout">Annuleren</button></div>
  </section>
 </div>
-<div class="footer"><span class="footer-version">Acer Atlas Datamanager v0.4.10</span> · Opslaan bewaart je wijzigingen lokaal als concept. Publiceren naar GitHub doe je apart wanneer je klaar bent.</div>
+<div class="footer"><span class="footer-version">Acer Atlas Datamanager v0.4.11</span> · Opslaan bewaart je wijzigingen lokaal als concept. Publiceren naar GitHub doe je apart wanneer je klaar bent.</div>
 <script>/* De actuele database wordt rechtstreeks uit cultivar-database.json geladen. */</script>
 <script>
 let db=null, selected=null, suggestionIndex=-1, suggestionItems=[], activeFlyout='basis', pendingPhotos=[];
@@ -361,20 +362,44 @@ $('search').oninput=renderSuggestions;
 $('search').onkeydown=e=>{if(e.key==='ArrowDown'&&suggestionItems.length){e.preventDefault();moveSuggestion(1);}else if(e.key==='ArrowUp'&&suggestionItems.length){e.preventDefault();moveSuggestion(-1);}else if(e.key==='Enter'&&suggestionItems.length){e.preventDefault();const item=suggestionItems[suggestionIndex<0?0:suggestionIndex];if(item)select(item.id);}else if(e.key==='Escape')closeSuggestions();};
 document.addEventListener('click',e=>{if(!e.target.closest('.search-wrap'))closeSuggestions();});
 $('backBtn').onclick=backToSearch;
+function cultivarNameFromUrl(value){
+ try{
+  const url=new URL(value);const parts=decodeURIComponent(url.pathname).split('/').filter(Boolean);
+  let slug=(parts[parts.length-1]||'').replace(/\.(html?|php)$/i,'').replace(/[-_]+/g,' ').trim();
+  slug=slug.replace(/^acer\s+(palmatum|shirasawanum|japonicum|circinatum|pensylvanicum|rubrum|griseum|buergerianum)\s+/i,'');
+  slug=slug.replace(/^acer\s+/i,'').replace(/\b(product|products|shop|buy)\b/gi,'').trim();
+  if(!slug)return '';
+  return slug.split(/\s+/).map(word=>word.charAt(0).toLocaleUpperCase('nl')+word.slice(1)).join(' ');
+ }catch(e){return '';}
+}
+function updateCultivarNameFromFirstLink(){
+ const first=$('newCultivarLinks').querySelector('.cultivar-source-url');
+ const name=cultivarNameFromUrl(first?.value||'');
+ const field=$('newCultivarName');
+ if(name&&!field.dataset.manual)field.value=name;
+}
+$('newCultivarName').addEventListener('input',()=>{$('newCultivarName').dataset.manual='1';});
+$('newCultivarLinks').addEventListener('input',e=>{if(e.target.matches('.cultivar-source-url')&&e.target=== $('newCultivarLinks').querySelector('.cultivar-source-url')){delete $('newCultivarName').dataset.manual;updateCultivarNameFromFirstLink();}});
 $('add').onclick=()=>{if(!db){alert('Laad eerst een database.');return;}$('newCultivarPanel').classList.remove('hidden');$('newCultivarName').focus();};
+$('addCultivarLink').onclick=()=>{
+ const box=$('newCultivarLinks');const input=document.createElement('input');
+ input.className='cultivar-source-url';input.type='url';input.placeholder='Extra bronlink';input.autocomplete='url';box.appendChild(input);input.focus();
+};
 $('cancelNewCultivar').onclick=()=>{$('newCultivarPanel').classList.add('hidden');};
 $('prepareCultivar').onclick=()=>{
  if(!db){alert('Laad eerst een database.');return;}
  const name=$('newCultivarName').value.trim();
- if(!name){$('newCultivarInfo').textContent='Vul eerst een cultivarnaam in.';return;}
- const lines=$('newCultivarUrls').value.split(/\r?\n/).map(x=>x.trim()).filter(Boolean);
+ if(!name){$('newCultivarInfo').textContent='Vul een geldige eerste bronlink in zodat de cultivarnaam automatisch kan worden bepaald.';return;}
+ const lines=[...$('newCultivarLinks').querySelectorAll('.cultivar-source-url')].map(x=>x.value.trim()).filter(Boolean);
  const urls=[];
  for(const line of lines){let url;try{url=new URL(line);}catch(e){$('newCultivarInfo').textContent='Ongeldige link: '+line;return;}if(!['https:','http:'].includes(url.protocol)){$('newCultivarInfo').textContent='Alleen http(s)-links zijn toegestaan.';return;}if(!urls.includes(url.href))urls.push(url.href);}
+ if(!urls.length){$('newCultivarInfo').textContent='Voeg minimaal één bronlink toe.';return;}
  const norm=s=>String(s||'').trim().toLocaleLowerCase('nl');
  if(db.records.some(r=>norm(r.name)===norm(name)||norm(r.accepted_name)===norm(name)||((r.synonyms||[]).some(x=>norm(x)===norm(name))))){$('newCultivarInfo').textContent='Deze naam bestaat mogelijk al in de database. Controleer eerst de bestaande cultivar.';return;}
  const id='aa-'+Date.now();
  db.records.push({id,name,photos:[],synonyms:[],sources:urls.map(url=>({title:new URL(url).hostname,url}))});
- syncMeta();$('newCultivarPanel').classList.add('hidden');$('newCultivarName').value='';$('newCultivarUrls').value='';
+ syncMeta();$('newCultivarPanel').classList.add('hidden');$('newCultivarName').value='';delete $('newCultivarName').dataset.manual;
+ $('newCultivarLinks').innerHTML='<input class="cultivar-source-url" type="url" placeholder="Eerste bronlink (bijv. Esveld)" autocomplete="url"><input class="cultivar-source-url" type="url" placeholder="Tweede bronlink (bijv. MrMaple)" autocomplete="url">';
  select(id);showFlyout('basis',false);
  $('status').textContent='Nieuwe cultivar als lokaal concept toegevoegd met '+urls.length+' bronlink(s). Controleer de gegevens en publiceer later apart.';
 };
