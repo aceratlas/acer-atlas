@@ -1,4 +1,4 @@
-<!doctype html><html lang="nl" data-acer-atlas-manager-version="0.4.8"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Acer Atlas · Datamanager v0.4.8</title><style>
+<!doctype html><html lang="nl" data-acer-atlas-manager-version="0.4.9"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Acer Atlas · Datamanager v0.4.9</title><style>
 :root{font-family:Inter,Segoe UI,Arial,sans-serif;color:#202820;background:#f4f6f2}
 *{box-sizing:border-box}body{margin:0;background:#f4f6f2;color:#202820}
 button,input,textarea,select{font:inherit}button{cursor:pointer}
@@ -88,7 +88,7 @@ label{display:block;font-size:12px;font-weight:700;color:#526156;margin:12px 0 5
 <header class="hero">
  <div class="top">
   <div class="brand"><span class="mark" aria-hidden="true">🍁</span><div><h1>ACER ATLAS</h1><small>Databasebeheer</small></div></div>
-  <div class="top-right"><a class="app-link" href="./index.html#collection">← Terug naar Acer Atlas</a><button id="backBtn" class="back-btn" type="button">← Terug</button><span class="version">DATAMANAGER v0.4.8</span></div>
+  <div class="top-right"><a class="app-link" href="./index.html#collection">← Terug naar Acer Atlas</a><button id="backBtn" class="back-btn" type="button">← Terug</button><span class="version">DATAMANAGER v0.4.9</span></div>
  </div>
 </header>
 <main class="page">
@@ -124,7 +124,7 @@ label{display:block;font-size:12px;font-weight:700;color:#526156;margin:12px 0 5
     <div class="toolbar"><input id="photoApiToken" type="password" autocomplete="off" placeholder="Foto-API-token (Cloudflare)" style="max-width:420px"><label style="margin:0;font-weight:500"><input id="rememberPhotoApiToken" type="checkbox" style="width:auto;margin-right:6px">Onthoud Cloudflare-token op dit apparaat</label><button id="clearPhotoApiToken" type="button">Foto-token wissen</button></div>
     <div class="tool-card" style="margin-top:14px;padding:14px">
      <b>Databaseback-ups</b>
-     <p class="hint">De manager bewaart automatisch de drie meest recente gepubliceerde databases in GitHub. Bij iedere publicatie schuiven de back-ups één plaats op.</p>
+     <p class="hint">De manager bewaart automatisch de vijf meest recente gepubliceerde databases in GitHub. Bij iedere publicatie schuiven de back-ups één plaats op.</p>
      <div class="toolbar"><button class="primary" id="createBackup" type="button">Back-up maken</button><button id="refreshBackups" type="button">Back-ups vernieuwen</button><select id="backupSelect" aria-label="Kies een databaseback-up" style="min-width:220px;max-width:100%"><option value="">Back-ups laden…</option></select><button id="restoreBackup" type="button">Back-up herstellen en publiceren</button></div>
      <div class="hint" id="backupInfo">Back-ups worden in de GitHub-repository bewaard en zijn daardoor ook op andere apparaten beschikbaar.</div>
     </div>
@@ -148,7 +148,7 @@ label{display:block;font-size:12px;font-weight:700;color:#526156;margin:12px 0 5
   <div class="toolbar"><button class="primary" id="apply">Wijzigingen toepassen</button><button id="cancelFlyout">Annuleren</button></div>
  </section>
 </div>
-<div class="footer"><span class="footer-version">Acer Atlas Datamanager v0.4.8</span> · Opslaan bewaart je wijzigingen lokaal als concept. Publiceren naar GitHub doe je apart wanneer je klaar bent.</div>
+<div class="footer"><span class="footer-version">Acer Atlas Datamanager v0.4.9</span> · Opslaan bewaart je wijzigingen lokaal als concept. Publiceren naar GitHub doe je apart wanneer je klaar bent.</div>
 <script>/* De actuele database wordt rechtstreeks uit cultivar-database.json geladen. */</script>
 <script>
 let db=null, selected=null, suggestionIndex=-1, suggestionItems=[], activeFlyout='basis', pendingPhotos=[];
@@ -398,7 +398,7 @@ async function uploadDataPhotosToR2(data,token){
 $('clearGithubToken').onclick=()=>{localStorage.removeItem('aa-github-token');sessionStorage.removeItem('aa-github-token');$('githubToken').value='';$('rememberGithubToken').checked=false;$('uploadInfo').textContent='Token uit deze browser verwijderd.';};
 $('rememberGithubToken').onchange=()=>{if($('rememberGithubToken').checked){const t=$('githubToken').value.trim();if(t)localStorage.setItem('aa-github-token',t);}else localStorage.removeItem('aa-github-token');};
 
-const BACKUP_PATHS=['database-backups/backup-1.json','database-backups/backup-2.json','database-backups/backup-3.json'];
+const BACKUP_PATHS=['database-backups/backup-1.json','database-backups/backup-2.json','database-backups/backup-3.json','database-backups/backup-4.json','database-backups/backup-5.json'];
 function githubHeaders(token){return {'Authorization':'Bearer '+token,'Accept':'application/vnd.github+json','X-GitHub-Api-Version':'2022-11-28','Content-Type':'application/json'};}
 async function githubSha(path,token){
  const res=await fetch('https://api.github.com/repos/aceratlas/acer-atlas/contents/'+path+'?ref=main',{headers:githubHeaders(token)});
@@ -450,7 +450,7 @@ async function refreshBackupList(){
  const overview=$('backupOverview');if(overview)overview.textContent='Back-ups worden opgehaald uit GitHub…';
  try{
   const entries=[];
-  for(let i=0;i<3;i++){
+  for(let i=0;i<5;i++){
    const raw=await githubRaw(BACKUP_PATHS[i]);
    if(raw){const data=JSON.parse(raw);entries.push({path:BACKUP_PATHS[i],version:readDatabaseVersion(data).value,index:i+1});}
   }
@@ -458,7 +458,7 @@ async function refreshBackupList(){
   for(const e of entries){const o=document.createElement('option');o.value=e.path;o.textContent='Back-up '+e.index+' · database v'+e.version;sel.appendChild(o);}
   const summary=entries.length?entries.map(e=>'<div style="display:flex;justify-content:space-between;gap:12px;padding:8px 10px;margin:6px 0;background:#f0f5f0;border-radius:8px"><strong>Back-up '+e.index+'</strong><span>Database v'+e.version+'</span><code>'+e.path+'</code></div>').join(''):'Er zijn nog geen back-ups gevonden.';
   if(overview)overview.innerHTML=summary;
-  $('backupInfo').textContent=entries.length+' van maximaal 3 back-ups beschikbaar. Opgeslagen in GitHub.';
+  $('backupInfo').textContent=entries.length+' van maximaal 5 back-ups beschikbaar. Opgeslagen in GitHub.';
  }catch(e){sel.innerHTML='<option value="">Back-ups niet beschikbaar</option>';$('backupInfo').textContent='Back-ups laden mislukt: '+e.message;if(overview)overview.textContent='Back-ups laden mislukt: '+e.message;}
 }
 $('refreshBackups').onclick=refreshBackupList;
@@ -470,7 +470,7 @@ $('createBackup').onclick=async()=>{
  $('backupInfo').textContent='De huidige online database wordt veiliggesteld…';
  try{
   const result=await rotateDatabaseBackups(token);
-  $('backupInfo').textContent='Back-up gemaakt van online database v'+result.version+'. '+result.count+' van maximaal 3 back-upversies veiliggesteld.';
+  $('backupInfo').textContent='Back-up gemaakt van online database v'+result.version+'. '+result.count+' van maximaal 5 back-upversies veiliggesteld.';
   await refreshBackupList();
   alert('Back-up gemaakt van database v'+result.version+'.');
  }catch(e){
@@ -517,7 +517,7 @@ $('uploadGithub').onclick=async()=>{
   if(!$('flyoutBackdrop').classList.contains('hidden'))captureFlyoutValues();
   syncMeta();const uploadDb=clone(db);const currentVersion=readDatabaseVersion(uploadDb).value;if(!isRestore)uploadDb.version=nextDatabaseVersion(uploadDb);const photoToken=$('photoApiToken').value.trim()||localStorage.getItem('aa-photo-api-token')||sessionStorage.getItem('aa-photo-api-token')||'';if(photoToken){sessionStorage.setItem('aa-photo-api-token',photoToken);if($('rememberPhotoApiToken').checked)localStorage.setItem('aa-photo-api-token',photoToken);else localStorage.removeItem('aa-photo-api-token');}const photoResult=$('uploadPhotosToCloudflare').checked?await uploadDataPhotosToR2(uploadDb,photoToken):{uploaded:0,kept:0,skipped:true};
   const backupResult=await rotateDatabaseBackups(token);
-  $('backupInfo').textContent='Back-up gemaakt van online database v'+backupResult.version+'. '+backupResult.count+' van maximaal 3 versies veiliggesteld.';
+  $('backupInfo').textContent='Back-up gemaakt van online database v'+backupResult.version+'. '+backupResult.count+' van maximaal 5 versies veiliggesteld.';
   const raw=JSON.stringify(uploadDb);
   const bytes=new TextEncoder().encode(raw);
   const encoded=bytesToBase64(bytes);
