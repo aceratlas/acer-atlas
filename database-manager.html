@@ -1,4 +1,4 @@
-<!doctype html><html lang="nl" data-acer-atlas-manager-version="0.4.9"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Acer Atlas · Datamanager v0.4.9</title><style>
+<!doctype html><html lang="nl" data-acer-atlas-manager-version="0.4.10"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Acer Atlas · Datamanager v0.4.10</title><style>
 :root{font-family:Inter,Segoe UI,Arial,sans-serif;color:#202820;background:#f4f6f2}
 *{box-sizing:border-box}body{margin:0;background:#f4f6f2;color:#202820}
 button,input,textarea,select{font:inherit}button{cursor:pointer}
@@ -88,7 +88,7 @@ label{display:block;font-size:12px;font-weight:700;color:#526156;margin:12px 0 5
 <header class="hero">
  <div class="top">
   <div class="brand"><span class="mark" aria-hidden="true">🍁</span><div><h1>ACER ATLAS</h1><small>Databasebeheer</small></div></div>
-  <div class="top-right"><a class="app-link" href="./index.html#collection">← Terug naar Acer Atlas</a><button id="backBtn" class="back-btn" type="button">← Terug</button><span class="version">DATAMANAGER v0.4.9</span></div>
+  <div class="top-right"><a class="app-link" href="./index.html#collection">← Terug naar Acer Atlas</a><button id="backBtn" class="back-btn" type="button">← Terug</button><span class="version">DATAMANAGER v0.4.10</span></div>
  </div>
 </header>
 <main class="page">
@@ -103,6 +103,16 @@ label{display:block;font-size:12px;font-weight:700;color:#526156;margin:12px 0 5
    <label class="filebtn">Database openen<input id="file" type="file" accept=".json,application/json"></label>
    
    <button class="primary" id="add">+ Nieuwe cultivar</button>
+  </div>
+  <div id="newCultivarPanel" class="tool-card hidden" style="margin-top:14px;padding:16px">
+   <b>Nieuwe cultivar voorbereiden</b>
+   <p class="hint" style="margin-top:8px">Plak één of meerdere bronlinks, één per regel. De automatische gegevensverwerking wordt later via een aparte Cloudflare-Worker aangesloten. Je kunt nu al een cultivar met deze bronnen aanmaken.</p>
+   <label for="newCultivarName">Cultivarnaam</label><input id="newCultivarName" placeholder="Bijvoorbeeld Burgundy Lime" autocomplete="off">
+   <label for="newCultivarUrls">Bronlinks (één URL per regel)</label><textarea id="newCultivarUrls" rows="5" placeholder="https://..."></textarea>
+   <div class="toolbar"><button class="primary" id="prepareCultivar" type="button">Cultivar aanmaken met bronnen</button><button id="fetchCultivarInfo" type="button" disabled title="Beschikbaar zodra de nieuwe Cloudflare-Worker is gekoppeld">Gegevens ophalen (binnenkort)</button><button id="cancelNewCultivar" type="button">Annuleren</button></div>
+   <div class="hint" id="newCultivarInfo" role="status" aria-live="polite">Er wordt niets automatisch gepubliceerd.</div>
+  </div>
+  <div class="toolbar"
   </div>
   <div class="toolbar"><button id="saveDraft">Concept opslaan</button><button id="export">JSON downloaden</button><button id="review">Snelle controle</button><button id="rawToggle" aria-expanded="false">Geavanceerde gegevens</button><span class="hint">Controleert lokaal op lege namen, dubbele ID’s en ontbrekende foto-URL’s. Publiceren gebeurt apart.</span></div>
   <div id="rawWrap" class="hidden tool-card" style="margin-top:10px;padding:14px"><label>Volledige JSON (alle velden)</label><textarea id="raw" rows="18" spellcheck="false"></textarea><button id="applyRaw">JSON toepassen</button></div>
@@ -148,7 +158,7 @@ label{display:block;font-size:12px;font-weight:700;color:#526156;margin:12px 0 5
   <div class="toolbar"><button class="primary" id="apply">Wijzigingen toepassen</button><button id="cancelFlyout">Annuleren</button></div>
  </section>
 </div>
-<div class="footer"><span class="footer-version">Acer Atlas Datamanager v0.4.9</span> · Opslaan bewaart je wijzigingen lokaal als concept. Publiceren naar GitHub doe je apart wanneer je klaar bent.</div>
+<div class="footer"><span class="footer-version">Acer Atlas Datamanager v0.4.10</span> · Opslaan bewaart je wijzigingen lokaal als concept. Publiceren naar GitHub doe je apart wanneer je klaar bent.</div>
 <script>/* De actuele database wordt rechtstreeks uit cultivar-database.json geladen. */</script>
 <script>
 let db=null, selected=null, suggestionIndex=-1, suggestionItems=[], activeFlyout='basis', pendingPhotos=[];
@@ -351,7 +361,23 @@ $('search').oninput=renderSuggestions;
 $('search').onkeydown=e=>{if(e.key==='ArrowDown'&&suggestionItems.length){e.preventDefault();moveSuggestion(1);}else if(e.key==='ArrowUp'&&suggestionItems.length){e.preventDefault();moveSuggestion(-1);}else if(e.key==='Enter'&&suggestionItems.length){e.preventDefault();const item=suggestionItems[suggestionIndex<0?0:suggestionIndex];if(item)select(item.id);}else if(e.key==='Escape')closeSuggestions();};
 document.addEventListener('click',e=>{if(!e.target.closest('.search-wrap'))closeSuggestions();});
 $('backBtn').onclick=backToSearch;
-$('add').onclick=()=>{if(!db){alert('Laad eerst een database.');return;}const id='aa-'+Date.now();db.records.push({id,name:'Nieuwe cultivar',photos:[],synonyms:[],sources:[]});syncMeta();select(id);showFlyout('basis',false);};
+$('add').onclick=()=>{if(!db){alert('Laad eerst een database.');return;}$('newCultivarPanel').classList.remove('hidden');$('newCultivarName').focus();};
+$('cancelNewCultivar').onclick=()=>{$('newCultivarPanel').classList.add('hidden');};
+$('prepareCultivar').onclick=()=>{
+ if(!db){alert('Laad eerst een database.');return;}
+ const name=$('newCultivarName').value.trim();
+ if(!name){$('newCultivarInfo').textContent='Vul eerst een cultivarnaam in.';return;}
+ const lines=$('newCultivarUrls').value.split(/\r?\n/).map(x=>x.trim()).filter(Boolean);
+ const urls=[];
+ for(const line of lines){let url;try{url=new URL(line);}catch(e){$('newCultivarInfo').textContent='Ongeldige link: '+line;return;}if(!['https:','http:'].includes(url.protocol)){$('newCultivarInfo').textContent='Alleen http(s)-links zijn toegestaan.';return;}if(!urls.includes(url.href))urls.push(url.href);}
+ const norm=s=>String(s||'').trim().toLocaleLowerCase('nl');
+ if(db.records.some(r=>norm(r.name)===norm(name)||norm(r.accepted_name)===norm(name)||((r.synonyms||[]).some(x=>norm(x)===norm(name))))){$('newCultivarInfo').textContent='Deze naam bestaat mogelijk al in de database. Controleer eerst de bestaande cultivar.';return;}
+ const id='aa-'+Date.now();
+ db.records.push({id,name,photos:[],synonyms:[],sources:urls.map(url=>({title:new URL(url).hostname,url}))});
+ syncMeta();$('newCultivarPanel').classList.add('hidden');$('newCultivarName').value='';$('newCultivarUrls').value='';
+ select(id);showFlyout('basis',false);
+ $('status').textContent='Nieuwe cultivar als lokaal concept toegevoegd met '+urls.length+' bronlink(s). Controleer de gegevens en publiceer later apart.';
+};
 $('saveDraft').onclick=async()=>{if(!db)return;try{await saveLocalDraft(db);$('draftInfo').textContent='Concept opgeslagen op '+new Date().toLocaleString();$('status').textContent='Concept lokaal opgeslagen in deze browser. Dit is geen cloudback-up en publiceert niets.';}catch(e){alert('Concept opslaan mislukt: '+e.message);}};
 $('export').onclick=exportDatabase;
 
