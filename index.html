@@ -1068,6 +1068,55 @@ function reopenCollectionPhotoEditor(plantId){const id=String(plantId);let field
  // Avoid opening the separate photo viewer when interacting with the cover crop.
  document.addEventListener('click',e=>{const img=e.target.closest('.collection-main-photo');if(img){e.preventDefault();e.stopImmediatePropagation();return;}const saveButton=e.target.closest('[data-save-plant]');if(saveButton){const id=saveButton.dataset.savePlant,plant=findPlant(id);if(plant){const s=getState(id);plant.coverCrop={scale:s.scale,x:s.x,y:s.y,locked:true};try{localStorage.setItem('acerAtlasCollection',JSON.stringify(window.collection))}catch(_){}if(typeof save==='function')save();}return;}const remove=e.target.closest('[data-remove-from-collection]');if(remove){e.preventDefault();e.stopPropagation();const id=String(remove.dataset.removeFromCollection||'');const l=(document.documentElement.lang||'nl').slice(0,2);const msg={nl:'Deze boom uit je persoonlijke collectie verwijderen? De cultivar blijft in de encyclopedie staan.',en:'Remove this tree from your personal collection? The cultivar will remain in the encyclopedia.',de:'Diesen Baum aus deiner persönlichen Sammlung entfernen? Die Sorte bleibt in der Enzyklopädie.',fr:'Retirer cet arbre de votre collection personnelle ? Le cultivar restera dans l’encyclopédie.'};if(!id||!confirm(msg[l]||msg.en))return;collection=collection.filter(p=>String(p.id)!==id);save();document.querySelectorAll('.collection-fields.is-fullscreen').forEach(el=>{el.classList.remove('is-fullscreen');el.classList.add('hidden')});document.body.style.overflow='';try{history.replaceState({acerAtlas:true,view:'collection',detail:false},'',location.pathname+location.search+'#collection')}catch(_){}renderCollection();renderCards();window.scrollTo({top:0,behavior:'auto'});toast(({nl:'Uit collectie verwijderd',en:'Removed from collection',de:'Aus der Sammlung entfernt',fr:'Retiré de la collection'})[l]||'Removed from collection');return;}const opener=e.target.closest('[data-cultivar-detail]');if(opener){const id=opener.dataset.cultivarDetail;setTimeout(()=>{const p=findPlant(id);if(p?.coverCrop)cropState.set(String(id),{scale:Number(p.coverCrop.scale||1),x:Number(p.coverCrop.x||0),y:Number(p.coverCrop.y||0)});paint(id);},180);}});
  document.addEventListener('click',e=>{const opener=e.target.closest('[data-cultivar-detail]');if(!opener)return;const id=opener.dataset.cultivarDetail;setTimeout(()=>paint(id),200);});
+
+ // v10.5.75: reliable touch/pointer pan and pinch zoom for the collection's large photo.
+ function photoPoint(e){return {x:e.clientX,y:e.clientY};}
+ function photoDistance(a,b){return Math.hypot(a.x-b.x,a.y-b.y);}
+ function photoMid(a,b){return {x:(a.x+b.x)/2,y:(a.y+b.y)/2};}
+ function photoPaint(img,state){img.style.transformOrigin='center center';img.style.objectFit='cover';img.style.transform=`translate(${state.x}%, ${state.y}%) scale(${state.scale})`;}
+ document.addEventListener('pointerdown',e=>{
+  const img=e.target.closest('.collection-main-photo');
+  if(!img)return;
+  if(e.pointerType==='mouse'&&e.button!==0)return;
+  const fields=img.closest('.collection-fields'),id=fields?.dataset.collectionFields;
+  if(!id)return;
+  const state=getState(id);
+  if(!gesture||gesture.img!==img)gesture={img,id,pointers:new Map(),base:{...state}};
+  gesture.pointers.set(e.pointerId,photoPoint(e));
+  try{img.setPointerCapture(e.pointerId)}catch(_){}
+  const pts=[...gesture.pointers.values()];
+  gesture.base={...getState(id)};
+  if(pts.length>=2){gesture.startDistance=Math.max(1,photoDistance(pts[0],pts[1]));gesture.startMid=photoMid(pts[0],pts[1]);}
+  else{gesture.startPoint=pts[0];}
+  e.preventDefault();
+ },{passive:false});
+ document.addEventListener('pointermove',e=>{
+  if(!gesture?.pointers.has(e.pointerId))return;
+  const img=gesture.img,id=gesture.id,state=getState(id);
+  gesture.pointers.set(e.pointerId,photoPoint(e));
+  const pts=[...gesture.pointers.values()],w=Math.max(1,img.clientWidth),h=Math.max(1,img.clientHeight);
+  if(pts.length>=2){
+   const mid=photoMid(pts[0],pts[1]);
+   state.scale=clamp(gesture.base.scale*(photoDistance(pts[0],pts[1])/Math.max(1,gesture.startDistance||1)),1,5);
+   state.x=clamp(gesture.base.x+(mid.x-gesture.startMid.x)/w*100,-100,100);
+   state.y=clamp(gesture.base.y+(mid.y-gesture.startMid.y)/h*100,-100,100);
+   photoPaint(img,state);e.preventDefault();
+  }else if(pts.length===1&&gesture.base.scale>1.01){
+   state.x=clamp(gesture.base.x+(pts[0].x-gesture.startPoint.x)/w*100,-100,100);
+   state.y=clamp(gesture.base.y+(pts[0].y-gesture.startPoint.y)/h*100,-100,100);
+   photoPaint(img,state);e.preventDefault();
+  }
+ },{passive:false});
+ function finishPhotoGesture(e){
+  if(!gesture?.pointers.has(e.pointerId))return;
+  gesture.pointers.delete(e.pointerId);
+  if(!gesture.pointers.size){gesture=null;return;}
+  const pts=[...gesture.pointers.values()];
+  gesture.base={...getState(gesture.id)};
+  gesture.startPoint=pts[0];gesture.startDistance=0;gesture.startMid=pts[0];
+ }
+ document.addEventListener('pointerup',finishPhotoGesture);
+ document.addEventListener('pointercancel',finishPhotoGesture);
  // PWA installation control in Settings.
  let acerAtlasInstallPrompt=null;
  const installText={
