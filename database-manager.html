@@ -1,4 +1,4 @@
-<!doctype html><html lang="nl" data-acer-atlas-manager-version="0.4.12"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Acer Atlas · Datamanager v0.4.12</title><style>
+<!doctype html><html lang="nl" data-acer-atlas-manager-version="0.4.13"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Acer Atlas · Datamanager v0.4.13</title><style>
 :root{font-family:Inter,Segoe UI,Arial,sans-serif;color:#202820;background:#f4f6f2}
 *{box-sizing:border-box}body{margin:0;background:#f4f6f2;color:#202820}
 button,input,textarea,select{font:inherit}button{cursor:pointer}
@@ -88,7 +88,7 @@ label{display:block;font-size:12px;font-weight:700;color:#526156;margin:12px 0 5
 <header class="hero">
  <div class="top">
   <div class="brand"><span class="mark" aria-hidden="true">🍁</span><div><h1>ACER ATLAS</h1><small>Databasebeheer</small></div></div>
-  <div class="top-right"><a class="app-link" href="./index.html#collection">← Terug naar Acer Atlas</a><button id="backBtn" class="back-btn" type="button">← Terug</button><span class="version">DATAMANAGER v0.4.12</span></div>
+  <div class="top-right"><a class="app-link" href="./index.html#collection">← Terug naar Acer Atlas</a><button id="backBtn" class="back-btn" type="button">← Terug</button><span class="version">DATAMANAGER v0.4.13</span></div>
  </div>
 </header>
 <main class="page">
@@ -111,7 +111,8 @@ label{display:block;font-size:12px;font-weight:700;color:#526156;margin:12px 0 5
    <label>Bronlinks (standaard twee, maximaal vijf)</label><div id="newCultivarLinks" style="display:grid;gap:8px"><input class="cultivar-source-url" type="url" placeholder="Eerste bronlink (bijv. Esveld)" autocomplete="url"><input class="cultivar-source-url" type="url" placeholder="Tweede bronlink (bijv. MrMaple)" autocomplete="url"></div>
    <div class="toolbar"><button id="addCultivarLink" type="button">+ Link toevoegen</button></div>
    <label for="cultivarAiKey">Cloudflare AI-sleutel</label><input id="cultivarAiKey" type="password" autocomplete="off" placeholder="Plak hier de ATLAS_WORKER_KEY" style="max-width:520px">
-   <p class="hint">De sleutel wordt alleen tijdens deze browsersessie gebruikt en niet in de database opgeslagen. Gebruik dezelfde Worker-sleutel die in Cloudflare als ATLAS_WORKER_KEY is ingesteld.</p>
+   <div class="toolbar" style="align-items:center;gap:12px;margin-top:8px"><label style="display:flex;align-items:center;gap:8px;margin:0;font-weight:500"><input id="rememberCultivarAiKey" type="checkbox" style="width:auto;margin:0"> Sleutel op dit apparaat onthouden</label><button id="clearCultivarAiKey" type="button">Sleutel wissen</button></div>
+   <p class="hint">Standaard wordt de sleutel alleen deze browsersessie gebruikt. Met het vinkje wordt hij lokaal in deze browser bewaard (niet in de database of op GitHub). Gebruik dit alleen op een vertrouwd, persoonlijk apparaat.</p>
    <div class="toolbar"><button class="primary" id="fetchCultivarInfo" type="button">Gegevens ophalen met AI</button><button id="prepareCultivar" type="button">Alleen cultivar met bronnen aanmaken</button><button id="cancelNewCultivar" type="button">Annuleren</button></div>
    <div class="hint" id="newCultivarInfo" role="status" aria-live="polite">Er wordt niets automatisch gepubliceerd. Controleer AI-resultaten voordat je ze opslaat.</div>
   </div>
@@ -161,7 +162,7 @@ label{display:block;font-size:12px;font-weight:700;color:#526156;margin:12px 0 5
   <div class="toolbar"><button class="primary" id="apply">Wijzigingen toepassen</button><button id="cancelFlyout">Annuleren</button></div>
  </section>
 </div>
-<div class="footer"><span class="footer-version">Acer Atlas Datamanager v0.4.12</span> · Opslaan bewaart je wijzigingen lokaal als concept. Publiceren naar GitHub doe je apart wanneer je klaar bent.</div>
+<div class="footer"><span class="footer-version">Acer Atlas Datamanager v0.4.13</span> · Opslaan bewaart je wijzigingen lokaal als concept. Publiceren naar GitHub doe je apart wanneer je klaar bent.</div>
 <script>/* De actuele database wordt rechtstreeks uit cultivar-database.json geladen. */</script>
 <script>
 let db=null, selected=null, suggestionIndex=-1, suggestionItems=[], activeFlyout='basis', pendingPhotos=[];
@@ -448,6 +449,12 @@ function mergeAiCultivar(target,source){
  const hardiness=get('hardiness','winter_hardiness');if(hardiness!==undefined)target.hardiness=hardiness;
  return target;
 }
+const CULTIVAR_AI_KEY_STORAGE='aa-cultivar-ai-key';
+$('cultivarAiKey').value=localStorage.getItem(CULTIVAR_AI_KEY_STORAGE)||sessionStorage.getItem(CULTIVAR_AI_KEY_STORAGE)||'';
+$('rememberCultivarAiKey').checked=!!localStorage.getItem(CULTIVAR_AI_KEY_STORAGE);
+$('cultivarAiKey').addEventListener('input',()=>{const key=$('cultivarAiKey').value.trim();if($('rememberCultivarAiKey').checked){if(key)localStorage.setItem(CULTIVAR_AI_KEY_STORAGE,key);else localStorage.removeItem(CULTIVAR_AI_KEY_STORAGE);}else{if(key)sessionStorage.setItem(CULTIVAR_AI_KEY_STORAGE,key);else sessionStorage.removeItem(CULTIVAR_AI_KEY_STORAGE);}});
+$('rememberCultivarAiKey').onchange=()=>{const key=$('cultivarAiKey').value.trim();if($('rememberCultivarAiKey').checked){if(key)localStorage.setItem(CULTIVAR_AI_KEY_STORAGE,key);sessionStorage.removeItem(CULTIVAR_AI_KEY_STORAGE);}else{localStorage.removeItem(CULTIVAR_AI_KEY_STORAGE);if(key)sessionStorage.setItem(CULTIVAR_AI_KEY_STORAGE,key);}};
+$('clearCultivarAiKey').onclick=()=>{localStorage.removeItem(CULTIVAR_AI_KEY_STORAGE);sessionStorage.removeItem(CULTIVAR_AI_KEY_STORAGE);$('cultivarAiKey').value='';$('rememberCultivarAiKey').checked=false;$('newCultivarInfo').textContent='Cloudflare AI-sleutel uit deze browser verwijderd.';};
 $('fetchCultivarInfo').onclick=async()=>{
  const btn=$('fetchCultivarInfo'),key=$('cultivarAiKey').value.trim();
  if(!key){$('newCultivarInfo').textContent='Vul eerst de Cloudflare AI-sleutel in (ATLAS_WORKER_KEY).';$('cultivarAiKey').focus();return;}
