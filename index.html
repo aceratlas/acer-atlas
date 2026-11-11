@@ -550,6 +550,7 @@ function exportWishlistPdf(){
 /* v10.5.35: search uses a plain-text editable surface instead of an input field. */
 </style></head><body><main><div class="actions"><button class="print" onclick="window.print()">${eh(printLabel)}</button><button class="close" onclick="window.close()">${eh(closeLabel)}</button></div><h1>${eh(title)}</h1><p class="meta">${listT('wishlistCount')}: <strong>${rows.length}</strong> · ${new Date().toLocaleDateString(({nl:'nl-NL',en:'en-GB',de:'de-DE',fr:'fr-FR'})[lang]||'en-GB')}</p><table><thead><tr><th style="width:38px">#</th><th>${listT('name')}</th><th>${listT('species')}</th></tr></thead><tbody>${body}</tbody></table></main>
 
+<!-- GitHub Pages deployment retry 2026-11-12 -->
 </body></html>`;
  const win=window.open('','_blank');if(!win){toast(listT('allowPopups'));return}win.document.open();win.document.write(html);win.document.close();
 }
