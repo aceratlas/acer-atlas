@@ -200,8 +200,12 @@ function renderEditor(){
   <div id="aiUpdatePanel" class="detail-section hidden" style="margin-top:12px">
    <h3>Bronlinks voor AI-update</h3>
    <p class="section-preview">Plak hieronder één of meer URL’s, elk op een eigen regel (maximaal 5). De bestaande cultivar blijft ongewijzigd totdat je het voorstel goedkeurt.</p>
-   <label for="aiSourceLinks">Bronlinks</label>
-   <textarea id="aiSourceLinks" rows="4" placeholder="https://voorbeeld.nl/cultivar&#10;https://andere-bron.com/maple"></textarea>
+   <label>Bronlinks (standaard twee, maximaal vijf)</label>
+   <div id="aiUpdateLinks" style="display:grid;gap:8px">
+    <input class="ai-update-source-url" type="url" placeholder="Eerste bronlink (bijv. Esveld)" autocomplete="url">
+    <input class="ai-update-source-url" type="url" placeholder="Tweede bronlink (bijv. MrMaple)" autocomplete="url">
+   </div>
+   <div class="toolbar"><button type="button" id="addAiUpdateLink">+ Link toevoegen</button></div>
    <div class="detail-actions" style="margin-top:10px"><button type="button" id="aiRunUpdate" class="primary">Bronnen verwerken</button><button type="button" id="aiCancelUpdate">Annuleren</button></div>
   </div>
   <div class="summary-grid">
@@ -225,13 +229,17 @@ function renderEditor(){
  $('aiUpdateCultivar').onclick=()=>{
   const panel=$('aiUpdatePanel');
   panel.classList.remove('hidden');
-  $('aiSourceLinks').focus();
+  $('aiUpdateLinks').querySelector('.ai-update-source-url')?.focus();
  };
- $('aiCancelUpdate').onclick=()=>{$('aiUpdatePanel').classList.add('hidden');$('aiSourceLinks').value='';};
+ $('addAiUpdateLink').onclick=()=>{
+  const box=$('aiUpdateLinks');
+  if(box.querySelectorAll('.ai-update-source-url').length>=5){$('detailStatus').textContent='Je kunt maximaal vijf bronlinks toevoegen.';return;}
+  const input=document.createElement('input');input.className='ai-update-source-url';input.type='url';input.placeholder='Extra bronlink';input.autocomplete='url';box.appendChild(input);input.focus();
+ };
+ $('aiCancelUpdate').onclick=()=>{$('aiUpdatePanel').classList.add('hidden');$('aiUpdateLinks').querySelectorAll('.ai-update-source-url').forEach((input,index)=>{if(index<2)input.value='';else input.remove();});};
  $('aiRunUpdate').onclick=async()=>{
   const record=db?.records.find(x=>x.id===selected);if(!record)return;
-  const rawLinks=$('aiSourceLinks').value||'';
-  const urls=[...new Set(rawLinks.split(/[\\n;,]+/).map(x=>x.trim()).filter(Boolean))];
+  const urls=[...new Set([...$('aiUpdateLinks').querySelectorAll('.ai-update-source-url')].map(input=>input.value.trim()).filter(Boolean))];
   if(!urls.length){$('detailStatus').textContent='Vul eerst één of meer bronlinks in.';return;}
   if(urls.length>5){$('detailStatus').textContent='Maximaal vijf bronlinks toegestaan.';return;}
   for(const value of urls){try{const u=new URL(value);if(!['http:','https:'].includes(u.protocol))throw 0;}catch(e){$('detailStatus').textContent='Ongeldige bronlink: '+value;return;}}
