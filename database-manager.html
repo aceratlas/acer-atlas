@@ -1,4 +1,4 @@
-<!doctype html><html lang="nl" data-acer-atlas-manager-version="0.4.13"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Acer Atlas · Datamanager v0.4.13</title><style>
+<!doctype html><html lang="nl" data-acer-atlas-manager-version="0.4.14"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Acer Atlas · Datamanager v0.4.14</title><style>
 :root{font-family:Inter,Segoe UI,Arial,sans-serif;color:#202820;background:#f4f6f2}
 *{box-sizing:border-box}body{margin:0;background:#f4f6f2;color:#202820}
 button,input,textarea,select{font:inherit}button{cursor:pointer}
@@ -196,7 +196,7 @@ function renderEditor(){
  const hist=typeof r.history==='object'?(r.history.nl||r.history.en||''):(r.history||'');
  const photos=r.photos.slice(0,8).map(p=>p.url?`<img src="${esc(p.url)}" alt="Cultivarfoto" loading="lazy">`:'').join('');
  $('editor').innerHTML=`
-  <div class="detail-head"><div><div class="eyebrow">Cultivaroverzicht</div><h2>${esc(r.name||'Naamloze cultivar')}</h2><div class="accepted">${esc(r.accepted_name||r.species||'')}</div></div><div class="detail-actions"><button class="warn" id="delete">Cultivar verwijderen</button><button class="primary" id="saveCultivar">Opslaan</button><button id="detailExport">JSON downloaden</button></div></div>
+  <div class="detail-head"><div><div class="eyebrow">Cultivaroverzicht</div><h2>${esc(r.name||'Naamloze cultivar')}</h2><div class="accepted">${esc(r.accepted_name||r.species||'')}</div></div><div class="detail-actions"><button type="button" id="aiUpdateCultivar">Bijwerken met AI</button><button class="warn" id="delete">Cultivar verwijderen</button><button class="primary" id="saveCultivar">Opslaan</button><button id="detailExport">JSON downloaden</button></div></div>
   <div class="summary-grid">
    <div class="summary-item"><small>Soort</small><strong>${preview(r.species)}</strong></div>
    <div class="summary-item"><small>Selector / introducteur</small><strong>${preview(r.selector_or_introducer?.nl||r.selector_or_introducer?.en)}</strong></div>
@@ -215,6 +215,45 @@ function renderEditor(){
  $('editor').querySelectorAll('[data-edit]').forEach(b=>b.onclick=()=>showFlyout(b.dataset.edit));
  $('delete').onclick=()=>{if(confirm('Deze cultivar uit het concept verwijderen?')){db.records=db.records.filter(x=>x.id!==selected);syncMeta();backToSearch();$('status').textContent='Cultivar verwijderd uit het lokale concept.';}};
  $('detailExport').onclick=exportDatabase;
+ $('aiUpdateCultivar').onclick=async()=>{
+  const record=db?.records.find(x=>x.id===selected);if(!record)return;
+  const rawLinks=prompt('Plak één of meer bronlinks, elk op een eigen regel. De bestaande cultivar blijft ongewijzigd tot je het voorstel goedkeurt.','');
+  if(rawLinks===null)return;
+  const urls=[...new Set(rawLinks.split(/[\\n;,]+/).map(x=>x.trim()).filter(Boolean))];
+  if(!urls.length){$('detailStatus').textContent='Geen bronlinks opgegeven.';return;}
+  if(urls.length>5){$('detailStatus').textContent='Maximaal vijf bronlinks toegestaan.';return;}
+  for(const value of urls){try{const u=new URL(value);if(!['http:','https:'].includes(u.protocol))throw 0;}catch(e){$('detailStatus').textContent='Ongeldige bronlink: '+value;return;}}
+  let key=localStorage.getItem(CULTIVAR_AI_KEY_STORAGE)||sessionStorage.getItem(CULTIVAR_AI_KEY_STORAGE)||'';
+  if(!key){key=prompt('Voer de Cloudflare AI-sleutel (ATLAS_WORKER_KEY) in:','')||'';if(!key)return;}
+  const btn=$('aiUpdateCultivar');btn.disabled=true;btn.textContent='AI verwerkt…';
+  try{
+   const proposal=JSON.parse(JSON.stringify(record));let successes=0;const errors=[];
+   for(let n=0;n<urls.length;n++){
+    $('detailStatus').textContent='Bron '+(n+1)+' van '+urls.length+' wordt verwerkt…';
+    const response=await fetch(CULTIVAR_AI_WORKER+'/process',{method:'POST',headers:{'Content-Type':'application/json','Authorization':'Bearer '+key},body:JSON.stringify({url:urls[n]})});
+    const body=await response.text();let payload;try{payload=JSON.parse(body);}catch(e){throw new Error('Worker gaf geen geldige JSON terug (HTTP '+response.status+').');}
+    if(!response.ok||payload.success===false)throw new Error(payload.error||payload.message||('Worker-fout HTTP '+response.status));
+    const parsed=extractAiObject(payload);if(parsed&&typeof parsed==='object'){mergeAiCultivar(proposal,parsed);successes++;}else errors.push(urls[n]+': geen gegevens herkend');
+   }
+   if(!successes)throw new Error(errors.join('; ')||'Geen cultivar-informatie ontvangen.');
+   proposal.photos=record.photos;proposal.id=record.id;
+   proposal.sources=[...(Array.isArray(record.sources)?record.sources:[]),...urls.map(url=>({title:new URL(url).hostname,url}))].filter((x,i,a)=>a.findIndex(y=>y.url===x.url)===i);
+   proposal.last_checked=new Date().toISOString().slice(0,10);proposal.review_needed=true;
+   const keys=[...new Set([...Object.keys(record),...Object.keys(proposal)])];
+   const changed=keys.filter(k=>JSON.stringify(record[k])!==JSON.stringify(proposal[k]));
+   const protectedKeys=['id','photos'];
+   const safeChanged=changed.filter(k=>!protectedKeys.includes(k));
+   if(!safeChanged.length){$('detailStatus').textContent='De AI heeft geen nieuwe wijzigingen voorgesteld.';return;}
+   const summary=safeChanged.map(k=>k+': '+String(JSON.stringify(record[k]??'—')).slice(0,130)+' → '+String(JSON.stringify(proposal[k]??'—')).slice(0,180)).join('\\n\\n');
+   if(!confirm('AI-UPDATE VOORSTEL voor '+(record.name||record.id)+'\\n\\nGewijzigde velden ('+safeChanged.length+'):\\n\\n'+summary+'\\n\\nFoto’s en record-ID blijven behouden. Toepassen op het lokale concept?')){$('detailStatus').textContent='Voorstel afgewezen. De cultivar is niet gewijzigd.';return;}
+   const index=db.records.findIndex(x=>x.id===record.id);if(index<0)throw new Error('Cultivar niet meer gevonden in de database.');
+   db.records[index]=proposal;syncMeta();await saveLocalDraft(db);renderEditor();
+   $('status').textContent='AI-update toegepast op het lokale concept. Controleer de cultivar en publiceer pas wanneer je klaar bent.';
+   $('detailStatus').textContent='AI-update toegepast. Foto’s en bestaande record-ID zijn behouden; nog niet gepubliceerd.';
+  }catch(error){$('detailStatus').textContent='AI-update niet voltooid: '+(error?.message||String(error));}
+  finally{btn.disabled=false;btn.textContent='Bijwerken met AI';}
+ };
+
  $('saveCultivar').onclick=async()=>{
   const btn=$('saveCultivar');btn.disabled=true;
   try{
