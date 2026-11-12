@@ -197,6 +197,13 @@ function renderEditor(){
  const photos=r.photos.slice(0,8).map(p=>p.url?`<img src="${esc(p.url)}" alt="Cultivarfoto" loading="lazy">`:'').join('');
  $('editor').innerHTML=`
   <div class="detail-head"><div><div class="eyebrow">Cultivaroverzicht</div><h2>${esc(r.name||'Naamloze cultivar')}</h2><div class="accepted">${esc(r.accepted_name||r.species||'')}</div></div><div class="detail-actions"><button type="button" id="aiUpdateCultivar">Bijwerken met AI</button><button class="warn" id="delete">Cultivar verwijderen</button><button class="primary" id="saveCultivar">Opslaan</button><button id="detailExport">JSON downloaden</button></div></div>
+  <div id="aiUpdatePanel" class="detail-section hidden" style="margin-top:12px">
+   <h3>Bronlinks voor AI-update</h3>
+   <p class="section-preview">Plak hieronder één of meer URL’s, elk op een eigen regel (maximaal 5). De bestaande cultivar blijft ongewijzigd totdat je het voorstel goedkeurt.</p>
+   <label for="aiSourceLinks">Bronlinks</label>
+   <textarea id="aiSourceLinks" rows="4" placeholder="https://voorbeeld.nl/cultivar&#10;https://andere-bron.com/maple"></textarea>
+   <div class="detail-actions" style="margin-top:10px"><button type="button" id="aiRunUpdate" class="primary">Bronnen verwerken</button><button type="button" id="aiCancelUpdate">Annuleren</button></div>
+  </div>
   <div class="summary-grid">
    <div class="summary-item"><small>Soort</small><strong>${preview(r.species)}</strong></div>
    <div class="summary-item"><small>Selector / introducteur</small><strong>${preview(r.selector_or_introducer?.nl||r.selector_or_introducer?.en)}</strong></div>
@@ -215,17 +222,22 @@ function renderEditor(){
  $('editor').querySelectorAll('[data-edit]').forEach(b=>b.onclick=()=>showFlyout(b.dataset.edit));
  $('delete').onclick=()=>{if(confirm('Deze cultivar uit het concept verwijderen?')){db.records=db.records.filter(x=>x.id!==selected);syncMeta();backToSearch();$('status').textContent='Cultivar verwijderd uit het lokale concept.';}};
  $('detailExport').onclick=exportDatabase;
- $('aiUpdateCultivar').onclick=async()=>{
+ $('aiUpdateCultivar').onclick=()=>{
+  const panel=$('aiUpdatePanel');
+  panel.classList.remove('hidden');
+  $('aiSourceLinks').focus();
+ };
+ $('aiCancelUpdate').onclick=()=>{$('aiUpdatePanel').classList.add('hidden');$('aiSourceLinks').value='';};
+ $('aiRunUpdate').onclick=async()=>{
   const record=db?.records.find(x=>x.id===selected);if(!record)return;
-  const rawLinks=prompt('Plak één of meer bronlinks, elk op een eigen regel. De bestaande cultivar blijft ongewijzigd tot je het voorstel goedkeurt.','');
-  if(rawLinks===null)return;
+  const rawLinks=$('aiSourceLinks').value||'';
   const urls=[...new Set(rawLinks.split(/[\\n;,]+/).map(x=>x.trim()).filter(Boolean))];
-  if(!urls.length){$('detailStatus').textContent='Geen bronlinks opgegeven.';return;}
+  if(!urls.length){$('detailStatus').textContent='Vul eerst één of meer bronlinks in.';return;}
   if(urls.length>5){$('detailStatus').textContent='Maximaal vijf bronlinks toegestaan.';return;}
   for(const value of urls){try{const u=new URL(value);if(!['http:','https:'].includes(u.protocol))throw 0;}catch(e){$('detailStatus').textContent='Ongeldige bronlink: '+value;return;}}
   let key=localStorage.getItem(CULTIVAR_AI_KEY_STORAGE)||sessionStorage.getItem(CULTIVAR_AI_KEY_STORAGE)||'';
   if(!key){key=prompt('Voer de Cloudflare AI-sleutel (ATLAS_WORKER_KEY) in:','')||'';if(!key)return;}
-  const btn=$('aiUpdateCultivar');btn.disabled=true;btn.textContent='AI verwerkt…';
+  const btn=$('aiRunUpdate');btn.disabled=true;btn.textContent='AI verwerkt…';
   try{
    const proposal=JSON.parse(JSON.stringify(record));let successes=0;const errors=[];
    for(let n=0;n<urls.length;n++){
@@ -241,17 +253,16 @@ function renderEditor(){
    proposal.last_checked=new Date().toISOString().slice(0,10);proposal.review_needed=true;
    const keys=[...new Set([...Object.keys(record),...Object.keys(proposal)])];
    const changed=keys.filter(k=>JSON.stringify(record[k])!==JSON.stringify(proposal[k]));
-   const protectedKeys=['id','photos'];
-   const safeChanged=changed.filter(k=>!protectedKeys.includes(k));
+   const safeChanged=changed.filter(k=>!['id','photos'].includes(k));
    if(!safeChanged.length){$('detailStatus').textContent='De AI heeft geen nieuwe wijzigingen voorgesteld.';return;}
    const summary=safeChanged.map(k=>k+': '+String(JSON.stringify(record[k]??'—')).slice(0,130)+' → '+String(JSON.stringify(proposal[k]??'—')).slice(0,180)).join('\\n\\n');
    if(!confirm('AI-UPDATE VOORSTEL voor '+(record.name||record.id)+'\\n\\nGewijzigde velden ('+safeChanged.length+'):\\n\\n'+summary+'\\n\\nFoto’s en record-ID blijven behouden. Toepassen op het lokale concept?')){$('detailStatus').textContent='Voorstel afgewezen. De cultivar is niet gewijzigd.';return;}
    const index=db.records.findIndex(x=>x.id===record.id);if(index<0)throw new Error('Cultivar niet meer gevonden in de database.');
-   db.records[index]=proposal;syncMeta();await saveLocalDraft(db);renderEditor();
+   db.records[index]=proposal;syncMeta();await saveLocalDraft(db);$('aiUpdatePanel').classList.add('hidden');renderEditor();
    $('status').textContent='AI-update toegepast op het lokale concept. Controleer de cultivar en publiceer pas wanneer je klaar bent.';
    $('detailStatus').textContent='AI-update toegepast. Foto’s en bestaande record-ID zijn behouden; nog niet gepubliceerd.';
   }catch(error){$('detailStatus').textContent='AI-update niet voltooid: '+(error?.message||String(error));}
-  finally{btn.disabled=false;btn.textContent='Bijwerken met AI';}
+  finally{btn.disabled=false;btn.textContent='Bronnen verwerken';}
  };
 
  $('saveCultivar').onclick=async()=>{
