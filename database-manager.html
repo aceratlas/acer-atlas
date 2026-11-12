@@ -208,6 +208,12 @@ function renderEditor(){
    <div class="toolbar"><button type="button" id="addAiUpdateLink">+ Link toevoegen</button></div>
    <div class="detail-actions" style="margin-top:10px"><button type="button" id="aiRunUpdate" class="primary">Bronnen verwerken</button><button type="button" id="aiCancelUpdate">Annuleren</button></div>
   </div>
+  <div id="aiReviewPanel" class="detail-section hidden" style="margin-top:12px">
+   <h3 id="aiReviewTitle">AI-voorstel controleren</h3>
+   <p class="section-preview">Vergelijk per veld de huidige waarde met het AI-voorstel. Alleen aangevinkte velden worden overgenomen. Lege velden zijn alvast geselecteerd; bestaande gegevens niet.</p>
+   <div id="aiReviewList"></div>
+   <div class="detail-actions"><button type="button" id="aiReviewApply" class="primary">Geselecteerde wijzigingen toepassen</button><button type="button" id="aiReviewCancel">Annuleren</button></div>
+  </div>
   <div class="summary-grid">
    <div class="summary-item"><small>Soort</small><strong>${preview(r.species)}</strong></div>
    <div class="summary-item"><small>Selector / introducteur</small><strong>${preview(r.selector_or_introducer?.nl||r.selector_or_introducer?.en)}</strong></div>
@@ -263,12 +269,28 @@ function renderEditor(){
    const changed=keys.filter(k=>JSON.stringify(record[k])!==JSON.stringify(proposal[k]));
    const safeChanged=changed.filter(k=>!['id','photos'].includes(k));
    if(!safeChanged.length){$('detailStatus').textContent='De AI heeft geen nieuwe wijzigingen voorgesteld.';return;}
-   const summary=safeChanged.map(k=>k+': '+String(JSON.stringify(record[k]??'—')).slice(0,130)+' → '+String(JSON.stringify(proposal[k]??'—')).slice(0,180)).join('\\n\\n');
-   if(!confirm('AI-UPDATE VOORSTEL voor '+(record.name||record.id)+'\\n\\nGewijzigde velden ('+safeChanged.length+'):\\n\\n'+summary+'\\n\\nFoto’s en record-ID blijven behouden. Toepassen op het lokale concept?')){$('detailStatus').textContent='Voorstel afgewezen. De cultivar is niet gewijzigd.';return;}
-   const index=db.records.findIndex(x=>x.id===record.id);if(index<0)throw new Error('Cultivar niet meer gevonden in de database.');
-   db.records[index]=proposal;syncMeta();await saveLocalDraft(db);$('aiUpdatePanel').classList.add('hidden');renderEditor();
-   $('status').textContent='AI-update toegepast op het lokale concept. Controleer de cultivar en publiceer pas wanneer je klaar bent.';
-   $('detailStatus').textContent='AI-update toegepast. Foto’s en bestaande record-ID zijn behouden; nog niet gepubliceerd.';
+   const reviewKeys=safeChanged.filter(k=>!['sources','last_checked','review_needed'].includes(k));
+   const review=$('aiReviewPanel');const list=$('aiReviewList');
+   const pretty=value=>value===undefined||value===null||value===''?'—':(typeof value==='object'?JSON.stringify(value,null,2):String(value));
+   list.innerHTML=reviewKeys.map((k,n)=>{
+    const oldValue=record[k],newValue=proposal[k];
+    const isEmpty=oldValue===undefined||oldValue===null||oldValue===''||(typeof oldValue==='string'&&['onbekend','unknown','—','-'].includes(oldValue.trim().toLowerCase()));
+    return '<div class="tool-card" style="padding:12px;margin:10px 0"><label style="display:flex;align-items:center;gap:8px;font-weight:700"><input type="checkbox" class="ai-review-choice" data-key="'+esc(k)+'" '+(isEmpty?'checked':'')+' style="width:auto"> '+esc(k)+'</label><div class="grid2" style="margin-top:8px"><div><small>Huidige waarde</small><pre style="white-space:pre-wrap;overflow-wrap:anywhere;margin:4px 0">'+esc(pretty(oldValue))+'</pre></div><div><small>Voorstel AI</small><pre style="white-space:pre-wrap;overflow-wrap:anywhere;margin:4px 0">'+esc(pretty(newValue))+'</pre></div></div></div>';
+   }).join('');
+   review.classList.remove('hidden');
+   $('aiReviewTitle').textContent='Controleer AI-voorstel voor '+(record.name||record.id);
+   $('aiReviewApply').onclick=async()=>{
+    const chosen=[...list.querySelectorAll('.ai-review-choice:checked')].map(x=>x.dataset.key);
+    const applied=JSON.parse(JSON.stringify(record));
+    chosen.forEach(k=>{applied[k]=proposal[k];});
+    applied.sources=proposal.sources;applied.last_checked=proposal.last_checked;applied.review_needed=true;
+    const index=db.records.findIndex(x=>x.id===record.id);if(index<0)throw new Error('Cultivar niet meer gevonden in de database.');
+    db.records[index]=applied;syncMeta();await saveLocalDraft(db);review.classList.add('hidden');$('aiUpdatePanel').classList.add('hidden');renderEditor();
+    $('status').textContent='Geselecteerde AI-wijzigingen toegepast op het lokale concept. Nog niet gepubliceerd.';
+    $('detailStatus').textContent='AI-update toegepast. Foto’s en record-ID zijn behouden; nog niet gepubliceerd.';
+   };
+   $('aiReviewCancel').onclick=()=>{review.classList.add('hidden');$('detailStatus').textContent='Voorstel geannuleerd. De cultivar is niet gewijzigd.';};
+   $('detailStatus').textContent='AI-voorstel klaar. Controleer de velden en vink alleen aan wat je wilt overnemen.';
   }catch(error){$('detailStatus').textContent='AI-update niet voltooid: '+(error?.message||String(error));}
   finally{btn.disabled=false;btn.textContent='Bronnen verwerken';}
  };
