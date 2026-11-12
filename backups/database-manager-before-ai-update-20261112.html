@@ -1,0 +1,721 @@
+<!doctype html><html lang="nl" data-acer-atlas-manager-version="0.4.13"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Acer Atlas · Datamanager v0.4.13</title><style>
+:root{font-family:Inter,Segoe UI,Arial,sans-serif;color:#202820;background:#f4f6f2}
+*{box-sizing:border-box}body{margin:0;background:#f4f6f2;color:#202820}
+button,input,textarea,select{font:inherit}button{cursor:pointer}
+.hero{background:#193b2e;color:#fff;padding:18px 20px;border-radius:0 0 22px 22px}
+.top{max-width:1080px;margin:auto;display:flex;align-items:center;justify-content:space-between;gap:12px}
+.brand{display:flex;align-items:center;gap:10px;min-width:0}
+.mark{width:42px;height:42px;display:flex;align-items:center;justify-content:center;border-radius:10px;background:#f7f6f0;color:#193b2e;font-size:27px;flex:0 0 42px}
+.brand h1{font-size:20px;line-height:1;margin:0;letter-spacing:.02em}
+.brand small{color:#d5e3d6;display:block;margin-top:6px;font-size:13px}
+.top-right{display:flex;align-items:center;gap:12px}
+.version{font-size:12px;font-weight:800;letter-spacing:.04em;color:#193b2e;background:#e5ecdf;border:1px solid #b8cdbb;border-radius:20px;padding:7px 11px;white-space:nowrap}
+.app-link{display:inline-flex;align-items:center;justify-content:center;border:1px solid #d5e3d6;background:#e5ecdf;color:#193b2e;text-decoration:none;border-radius:20px;padding:8px 12px;font-size:12px;font-weight:800;white-space:nowrap}
+.app-link:hover,.app-link:focus-visible{background:#fff;outline:2px solid #d9e7ce;outline-offset:2px}
+.back-btn{display:none;border:1px solid #789381;background:transparent;color:#fff;border-radius:20px;padding:8px 13px;font-weight:700;white-space:nowrap}
+.back-btn.visible{display:inline-flex;align-items:center;gap:7px}
+.back-btn:hover,.back-btn:focus-visible{background:#315d46;outline:2px solid #d9e7ce;outline-offset:2px}
+.page{max-width:1080px;margin:24px auto;padding:0 18px 30px}
+.search-card,.detail-card,.tool-card{background:#fff;border:1px solid #dce4dc;border-radius:16px;padding:20px;box-shadow:0 2px 9px #2039200a}
+.search-card{max-width:760px;margin:7vh auto 0}
+.eyebrow{color:#6b796d;font-size:12px;font-weight:800;text-transform:uppercase;letter-spacing:.08em}
+.search-card h2{margin:6px 0 7px;font-size:26px;color:#20392b}
+.search-card p{margin:0 0 18px;color:#647168;font-size:14px}
+.search-wrap{position:relative}
+input,textarea,select{width:100%;border:1px solid #ccd7ce;border-radius:9px;padding:11px;background:#fff;color:#202820}
+#search{font-size:17px;padding:14px 15px;border-radius:12px}
+.suggestions{position:absolute;z-index:20;top:calc(100% + 6px);left:0;right:0;background:#fff;border:1px solid #cbd7cc;border-radius:12px;box-shadow:0 8px 22px #20392b20;max-height:360px;overflow:auto}
+.suggestions.hidden{display:none}
+.suggestion{padding:11px 13px;border-bottom:1px solid #edf1ed;cursor:pointer}
+.suggestion:last-child{border-bottom:0}
+.suggestion:hover,.suggestion.active{background:#edf4ed}
+.suggestion small{display:block;color:#718075;margin-top:2px}
+.suggestion-empty{padding:12px;color:#718075;font-size:13px}
+.stats{display:flex;gap:10px;margin:17px 0}
+.stat{background:#f0f5f0;padding:10px 13px;border-radius:10px;flex:1}
+.stat b{display:block;font-size:20px;color:#193b2e}
+.hint{font-size:12px;color:#69766c}
+.toolbar{display:flex;gap:8px;flex-wrap:wrap;margin:14px 0 0}
+button,.filebtn{border:1px solid #c8d4c9;background:#fff;border-radius:9px;padding:9px 12px;cursor:pointer;font-weight:650;color:#263c2d}
+button.primary{background:#294c36;color:white;border-color:#294c36}
+button.warn{color:#8b3b2b}
+.filebtn{display:inline-flex;align-items:center}
+.filebtn input{display:none}
+.hidden{display:none!important}
+.detail-head{display:flex;align-items:flex-start;justify-content:space-between;gap:12px;flex-wrap:wrap;margin-bottom:15px}
+.detail-head h2{font-size:28px;margin:3px 0 4px;color:#193b2e}
+.accepted{font-style:italic;color:#647168}
+.detail-actions{display:flex;gap:8px;flex-wrap:wrap}
+.summary-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:11px;margin:16px 0}
+.summary-item{background:#f4f7f3;border-radius:11px;padding:12px;min-width:0}
+.summary-item small{display:block;color:#718075;font-size:11px;margin-bottom:4px}
+.summary-item strong{font-size:14px;overflow-wrap:anywhere}
+.detail-section{border-top:1px solid #e6ece6;padding:15px 0}
+.detail-section:first-child{border-top:0}
+.section-head{display:flex;justify-content:space-between;align-items:center;gap:10px}
+.section-head h3{font-size:16px;margin:0;color:#294c36}
+.section-preview{font-size:13px;color:#526156;margin-top:8px;white-space:pre-wrap;overflow-wrap:anywhere}
+.edit-btn{padding:7px 11px;font-size:12px;background:#f4f7f3}
+.photo-strip{display:flex;gap:8px;flex-wrap:wrap;margin-top:10px}
+.photo-strip img{width:76px;height:76px;object-fit:cover;border-radius:9px;border:1px solid #dce4dc}
+.status{padding:10px 12px;border-radius:9px;background:#f0f5f0;margin:14px 0;font-size:13px}
+.danger{color:#a33}
+.footer{padding:8px 18px 22px;color:#647168;font-size:11px;max-width:1080px;margin:auto;text-align:center}
+.flyout-backdrop{position:fixed;inset:0;background:#14251dcc;z-index:50;display:flex;justify-content:flex-end}
+.flyout-backdrop.hidden{display:none}
+.flyout-panel{width:min(620px,100%);height:100%;overflow:auto;background:#fbfcfa;padding:20px;box-shadow:-10px 0 35px #0002}
+.flyout-head{display:flex;align-items:center;justify-content:space-between;gap:12px;border-bottom:1px solid #dce5dc;padding-bottom:13px;margin-bottom:12px}
+.flyout-head h3{margin:0;color:#193b2e}
+.flyout-close{font-size:22px;line-height:1;padding:6px 10px}
+.flyout-note{font-size:12px;color:#69766c;margin:0 0 12px}
+.grid2{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+label{display:block;font-size:12px;font-weight:700;color:#526156;margin:12px 0 5px}
+.section-nav{display:flex;gap:7px;flex-wrap:wrap;margin:12px 0}
+.section-nav button{background:#f4f7f3}
+.section-nav button.active{background:#294c36;color:#fff;border-color:#294c36}
+.flyout-fields{padding-bottom:20px}
+.photo{border:1px solid #e0e7e0;padding:10px;border-radius:9px;margin:9px 0;background:#fff}
+.photohead{display:flex;justify-content:space-between;align-items:center}
+.photo-fields{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px}
+.photo img{display:block}
+.photo-count{font-size:12px;color:#69766c}
+.bulk-upload{border:1px dashed #9db29f;border-radius:10px;padding:14px;background:#f5f8f4;margin:10px 0}
+.bulk-upload input{margin-top:8px}
+.flyout-empty{color:#69766c;font-size:13px;padding:22px 8px;text-align:center}
+.footer-version{font-weight:700;color:#435b49}
+@media(max-width:650px){.hero{padding:15px 13px}.brand h1{font-size:17px}.brand small{font-size:11px}.mark{width:37px;height:37px;flex-basis:37px;font-size:24px}.top-right{gap:6px}.version{font-size:10px;padding:6px 8px}.back-btn{font-size:12px;padding:7px 9px}.page{padding:0 12px 25px;margin:18px auto}.search-card,.detail-card,.tool-card{padding:15px}.search-card{margin-top:5vh}.search-card h2{font-size:23px}.summary-grid{grid-template-columns:1fr 1fr}.detail-head h2{font-size:24px}.grid2,.photo-fields{grid-template-columns:1fr}.flyout-panel{padding:14px}}
+</style></head><body>
+<header class="hero">
+ <div class="top">
+  <div class="brand"><span class="mark" aria-hidden="true">🍁</span><div><h1>ACER ATLAS</h1><small>Databasebeheer</small></div></div>
+  <div class="top-right"><a class="app-link" href="./index.html#collection">← Terug naar Acer Atlas</a><button id="backBtn" class="back-btn" type="button">← Terug</button><span class="version">DATAMANAGER v0.4.13</span></div>
+ </div>
+</header>
+<main class="page">
+ <section id="searchPage" class="search-card">
+  <div class="eyebrow">Cultivar database</div>
+  <h2>Zoek een cultivar</h2>
+  <p>Typ een cultivarnaam en selecteer het juiste resultaat. Daarna opent de overzichtelijke cultivar-pagina.</p>
+  <div class="search-wrap"><input id="search" placeholder="Zoek op cultivarnaam of synoniem…" autocomplete="off" aria-label="Zoek cultivar"><div id="suggestions" class="suggestions hidden"></div></div>
+  <div class="stats"><div class="stat"><b id="count">—</b><span class="hint">cultivars in database</span></div><div class="stat"><b id="photosCount">—</b><span class="hint">gekoppelde foto’s</span></div><div class="stat"><b id="databaseVersion">—</b><span class="hint">databaseversie</span></div></div>
+  <div class="hint" id="nextVersion" style="margin-top:8px;font-weight:700">Volgende publicatie: wordt berekend na het laden van de database.</div>
+  <div class="toolbar">
+   <label class="filebtn">Database openen<input id="file" type="file" accept=".json,application/json"></label>
+   
+   <button class="primary" id="add">+ Nieuwe cultivar</button>
+  </div>
+  <div id="newCultivarPanel" class="tool-card hidden" style="margin-top:14px;padding:16px">
+   <b>Nieuwe cultivar voorbereiden</b>
+   <p class="hint" style="margin-top:8px">Voeg maximaal vijf cultivar- of bronpagina’s toe. Acer Atlas haalt de gegevens per link op via de Cloudflare AI-Worker. Je kunt de resultaten controleren en aanpassen; er wordt nooit automatisch gepubliceerd.</p>
+   <label for="newCultivarName">Cultivarnaam (wordt automatisch uit de eerste link afgeleid)</label><input id="newCultivarName" placeholder="Wordt afgeleid uit de eerste link" autocomplete="off">
+   <label>Bronlinks (standaard twee, maximaal vijf)</label><div id="newCultivarLinks" style="display:grid;gap:8px"><input class="cultivar-source-url" type="url" placeholder="Eerste bronlink (bijv. Esveld)" autocomplete="url"><input class="cultivar-source-url" type="url" placeholder="Tweede bronlink (bijv. MrMaple)" autocomplete="url"></div>
+   <div class="toolbar"><button id="addCultivarLink" type="button">+ Link toevoegen</button></div>
+   <label for="cultivarAiKey">Cloudflare AI-sleutel</label><input id="cultivarAiKey" type="password" autocomplete="off" placeholder="Plak hier de ATLAS_WORKER_KEY" style="max-width:520px">
+   <div class="toolbar" style="align-items:center;gap:12px;margin-top:8px"><label style="display:flex;align-items:center;gap:8px;margin:0;font-weight:500"><input id="rememberCultivarAiKey" type="checkbox" style="width:auto;margin:0"> Sleutel op dit apparaat onthouden</label><button id="clearCultivarAiKey" type="button">Sleutel wissen</button></div>
+   <p class="hint">Standaard wordt de sleutel alleen deze browsersessie gebruikt. Met het vinkje wordt hij lokaal in deze browser bewaard (niet in de database of op GitHub). Gebruik dit alleen op een vertrouwd, persoonlijk apparaat.</p>
+   <div class="toolbar"><button class="primary" id="fetchCultivarInfo" type="button">Gegevens ophalen met AI</button><button id="prepareCultivar" type="button">Alleen cultivar met bronnen aanmaken</button><button id="cancelNewCultivar" type="button">Annuleren</button></div>
+   <div class="hint" id="newCultivarInfo" role="status" aria-live="polite">Er wordt niets automatisch gepubliceerd. Controleer AI-resultaten voordat je ze opslaat.</div>
+  </div>
+  <div class="toolbar"
+  </div>
+  <div class="toolbar"><button id="saveDraft">Concept opslaan</button><button id="export">JSON downloaden</button><button id="review">Snelle controle</button><button id="rawToggle" aria-expanded="false">Geavanceerde gegevens</button><span class="hint">Controleert lokaal op lege namen, dubbele ID’s en ontbrekende foto-URL’s. Publiceren gebeurt apart.</span></div>
+  <div id="rawWrap" class="hidden tool-card" style="margin-top:10px;padding:14px"><label>Volledige JSON (alle velden)</label><textarea id="raw" rows="18" spellcheck="false"></textarea><button id="applyRaw">JSON toepassen</button></div>
+  <div class="tool-card" style="margin-top:14px;padding:14px">
+   <b>Publiceren naar Acer Atlas</b>
+   <p class="hint">Publiceer de geladen database. De voortgang en resultaten verschijnen hieronder.</p>
+   <div class="toolbar"><button class="primary" id="uploadGithub">Database publiceren</button></div>
+   <label class="hint" style="display:flex;align-items:center;gap:8px;margin-top:10px"><input id="uploadPhotosToCloudflare" type="checkbox" checked style="width:auto;margin:0"> Ook foto’s naar Cloudflare uploaden (alleen foto’s die in de JSON zijn ingesloten)</label>
+   <p class="hint">Standaard aan: ingesloten foto’s worden tijdens publicatie naar Cloudflare geüpload. Zet het vinkje uit als je alleen de database wilt publiceren. Bestaande foto-URL’s worden niet opnieuw geüpload.</p>
+   <div class="hint" id="uploadInfo" role="status" aria-live="polite">Klaar om te publiceren. Na het starten zie je hier de foto-upload, database-upload en validatie.</div>
+   <div class="hint" id="draftInfo">Concept blijft op deze computer bewaard.</div>
+   <div class="status" id="status" role="status" aria-live="polite">Open de startdatabase of laad je eigen JSON-bestand. Selecteer daarna een cultivar om de gegevens te bekijken en te bewerken.</div>
+  </div>
+  <details class="tool-card" style="margin-top:14px;padding:14px">
+   <summary style="cursor:pointer;font-weight:700">Tokens en databaseback-ups</summary>
+   <div style="margin-top:12px">
+    <p class="hint">Tokens worden alleen lokaal in deze browser gebruikt. Een token wordt alleen blijvend op dit apparaat bewaard als je het bijbehorende vinkje aanzet. Let op: lokale opslag is niet versleuteld.</p>
+    <div class="toolbar"><input id="githubToken" type="password" autocomplete="off" placeholder="GitHub-token" style="max-width:420px"><label style="margin:0;font-weight:500"><input id="rememberGithubToken" type="checkbox" style="width:auto;margin-right:6px">Onthoud token op dit apparaat</label><button id="clearGithubToken" type="button">Token wissen</button></div>
+    <div class="toolbar"><input id="photoApiToken" type="password" autocomplete="off" placeholder="Foto-API-token (Cloudflare)" style="max-width:420px"><label style="margin:0;font-weight:500"><input id="rememberPhotoApiToken" type="checkbox" style="width:auto;margin-right:6px">Onthoud Cloudflare-token op dit apparaat</label><button id="clearPhotoApiToken" type="button">Foto-token wissen</button></div>
+    <div class="tool-card" style="margin-top:14px;padding:14px">
+     <b>Databaseback-ups</b>
+     <p class="hint">De manager bewaart automatisch de vijf meest recente gepubliceerde databases in GitHub. Bij iedere publicatie schuiven de back-ups één plaats op.</p>
+     <div class="toolbar"><button class="primary" id="createBackup" type="button">Back-up maken</button><button id="refreshBackups" type="button">Back-ups vernieuwen</button><select id="backupSelect" aria-label="Kies een databaseback-up" style="min-width:220px;max-width:100%"><option value="">Back-ups laden…</option></select><button id="restoreBackup" type="button">Back-up herstellen en publiceren</button></div>
+     <div class="hint" id="backupInfo">Back-ups worden in de GitHub-repository bewaard en zijn daardoor ook op andere apparaten beschikbaar.</div>
+    </div>
+  <div class="tool-card" style="margin-top:14px;padding:14px">
+   <b>Beschikbare databaseback-ups</b>
+   <p class="hint">Hier zie je welke drie versies daadwerkelijk in GitHub zijn opgeslagen. De lijst wordt automatisch geladen en kan handmatig worden vernieuwd.</p>
+   <div id="backupOverview" class="hint" aria-live="polite">Back-ups worden geladen…</div>
+   <div class="toolbar"><button id="refreshBackupsVisible" type="button">Back-ups vernieuwen</button></div>
+  </div>
+   </div>
+  </details> </section>
+ <section id="detailPage" class="detail-card hidden">
+  <div id="editor"><p class="hint">Selecteer eerst een cultivar.</p></div>
+ </section>
+</main>
+<div class="flyout-backdrop hidden" id="flyoutBackdrop">
+ <section class="flyout-panel" role="dialog" aria-modal="true" aria-labelledby="flyoutTitle">
+  <div class="flyout-head"><div><div class="eyebrow">Cultivar bewerken</div><h3 id="flyoutTitle">Onderdeel</h3></div><button type="button" class="flyout-close" id="flyoutClose" aria-label="Sluiten">×</button></div>
+  <div class="section-nav" id="flyoutNav"></div>
+  <div class="flyout-fields" id="flyoutFields"></div>
+  <div class="toolbar"><button class="primary" id="apply">Wijzigingen toepassen</button><button id="cancelFlyout">Annuleren</button></div>
+ </section>
+</div>
+<div class="footer"><span class="footer-version">Acer Atlas Datamanager v0.4.13</span> · Opslaan bewaart je wijzigingen lokaal als concept. Publiceren naar GitHub doe je apart wanneer je klaar bent.</div>
+<script>/* De actuele database wordt rechtstreeks uit cultivar-database.json geladen. */</script>
+<script>
+let db=null, selected=null, suggestionIndex=-1, suggestionItems=[], activeFlyout='basis', pendingPhotos=[];
+const $=id=>document.getElementById(id), clone=x=>JSON.parse(JSON.stringify(x));
+const flyoutSections=[['basis','Basisgegevens'],['kenmerken','Kenmerken'],['herkomst','Herkomst & geschiedenis'],['synoniemen','Synoniemen'],['fotos','Foto’s'],['bronnen','Bronnen']];
+function esc(s){return String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));}
+function count(){if(!db)return;$('count').textContent=db.records.length;$('photosCount').textContent=db.records.reduce((n,r)=>n+(Array.isArray(r.photos)?r.photos.length:0),0);}
+function syncMeta(){db.record_count=db.records.length;db.records_count=db.records.length;db.photo_count=db.records.reduce((n,r)=>n+(r.photos||[]).length,0);count();const v=(()=>{try{return readDatabaseVersion(db).value;}catch(e){return 'Onbekend';}})();if($('databaseVersion'))$('databaseVersion').textContent=v==='Onbekend'?v:'v'+v;if($('nextVersion')){try{$('nextVersion').textContent='Volgende publicatie: v'+nextDatabaseVersion(db)+' (wordt pas definitief bij upload)';}catch(e){$('nextVersion').textContent='Volgende publicatie: versie niet vast te stellen';}}}
+function closeSuggestions(){$('suggestions').classList.add('hidden');$('suggestions').innerHTML='';suggestionItems=[];suggestionIndex=-1;}
+function renderSuggestions(){
+ if(!db)return;const q=$('search').value.trim().toLocaleLowerCase('nl'),box=$('suggestions');
+ if(!q){closeSuggestions();return;}
+ const matches=db.records.filter(r=>[r.name,r.accepted_name,...(Array.isArray(r.synonyms)?r.synonyms:[])].some(v=>String(v||'').toLocaleLowerCase('nl').includes(q)))
+ .sort((a,b)=>{const an=String(a.name||'').toLocaleLowerCase('nl'),bn=String(b.name||'').toLocaleLowerCase('nl');return (an.startsWith(q)?0:1)-(bn.startsWith(q)?0:1)||an.localeCompare(bn,'nl');}).slice(0,15);
+ suggestionItems=matches;suggestionIndex=-1;
+ if(!matches.length){box.innerHTML='<div class="suggestion-empty">Geen cultivar gevonden.</div>';box.classList.remove('hidden');return;}
+ box.innerHTML=matches.map((r,i)=>`<div class="suggestion" role="option" aria-selected="false" data-suggestion-index="${i}"><b>${esc(r.name||'(naamloos)')}</b><small>${esc(r.accepted_name||r.species||'')} · ${(r.photos||[]).length} foto(’s)</small></div>`).join('');
+ box.querySelectorAll('[data-suggestion-index]').forEach(el=>el.onmousedown=e=>{e.preventDefault();const item=suggestionItems[Number(el.dataset.suggestionIndex)];if(item)select(item.id);});
+ box.classList.remove('hidden');
+}
+function moveSuggestion(delta){if(!suggestionItems.length)return;suggestionIndex=Math.max(0,Math.min(suggestionItems.length-1,suggestionIndex+delta));$('suggestions').querySelectorAll('[data-suggestion-index]').forEach((el,i)=>{el.classList.toggle('active',i===suggestionIndex);el.setAttribute('aria-selected',i===suggestionIndex?'true':'false');});$('suggestions').querySelector('[data-suggestion-index="'+suggestionIndex+'"]')?.scrollIntoView({block:'nearest'});}
+function select(id){if(!db)return;selected=id;closeSuggestions();$('searchPage').classList.add('hidden');$('detailPage').classList.remove('hidden');$('backBtn').classList.add('visible');activeFlyout='basis';renderEditor();$('status').textContent='Cultivar geopend. Gebruik de knoppen bij de onderdelen om gegevens te bewerken.';}
+function backToSearch(){closeFlyout();selected=null;$('detailPage').classList.add('hidden');$('searchPage').classList.remove('hidden');$('backBtn').classList.remove('visible');$('search').value='';$('search').focus();}
+function field(label,key,val,wide=false){return `<div ${wide?'style="grid-column:1/-1"':''}><label>${label}</label><input data-key="${key}" value="${esc(val??'')}"></div>`;}
+function preview(value){return esc(value||'Nog niet ingevuld');}
+function detailSection(id,title,summary){return `<div class="detail-section"><div class="section-head"><h3>${title}</h3><button class="edit-btn" type="button" data-edit="${id}">Bewerken</button></div><div class="section-preview">${summary}</div></div>`;}
+function renderEditor(){
+ const r=db?.records.find(x=>x.id===selected);if(!r)return;
+ r.photos=Array.isArray(r.photos)?r.photos:[];
+ const trait=typeof r.traits==='object'?(r.traits.nl||r.traits.en||''):r.traits;
+ const hist=typeof r.history==='object'?(r.history.nl||r.history.en||''):(r.history||'');
+ const photos=r.photos.slice(0,8).map(p=>p.url?`<img src="${esc(p.url)}" alt="Cultivarfoto" loading="lazy">`:'').join('');
+ $('editor').innerHTML=`
+  <div class="detail-head"><div><div class="eyebrow">Cultivaroverzicht</div><h2>${esc(r.name||'Naamloze cultivar')}</h2><div class="accepted">${esc(r.accepted_name||r.species||'')}</div></div><div class="detail-actions"><button class="warn" id="delete">Cultivar verwijderen</button><button class="primary" id="saveCultivar">Opslaan</button><button id="detailExport">JSON downloaden</button></div></div>
+  <div class="summary-grid">
+   <div class="summary-item"><small>Soort</small><strong>${preview(r.species)}</strong></div>
+   <div class="summary-item"><small>Selector / introducteur</small><strong>${preview(r.selector_or_introducer?.nl||r.selector_or_introducer?.en)}</strong></div>
+   <div class="summary-item"><small>Introductiejaar</small><strong>${preview(r.introduction_year)}</strong></div>
+   <div class="summary-item"><small>Groep</small><strong>${preview(r.group==='unknown'?'Nog niet ingedeeld':r.group)}</strong></div>
+   <div class="summary-item"><small>Hoogte na 10 jaar</small><strong>${preview(r.height_after_10_years||r.growth?.height_after_10_years)}</strong></div>
+   <div class="summary-item"><small>Aantal foto’s</small><strong>${r.photos.length}</strong></div>
+  </div>
+  ${detailSection('basis','Basisgegevens',`Cultivarnaam: ${esc(r.name||'')} · Geaccepteerde naam: ${esc(r.accepted_name||'')} · Laatst gecontroleerd: ${esc(r.last_checked||'Onbekend')}`)}
+  ${detailSection('kenmerken','Kenmerken',preview(trait))}
+  ${detailSection('herkomst','Herkomst & geschiedenis',preview(hist))}
+  ${detailSection('synoniemen','Synoniemen',preview(Array.isArray(r.synonyms)?r.synonyms.join(', '):r.synonyms))}
+  <div class="detail-section"><div class="section-head"><h3>Foto’s</h3><button class="edit-btn" type="button" data-edit="fotos">Foto’s beheren</button></div><div class="section-preview">${r.photos.length} foto(’s) gekoppeld · meerdere foto’s tegelijk toevoegen mogelijk.</div><div class="photo-strip">${photos}</div></div>
+  ${detailSection('bronnen','Bronnen',`${Array.isArray(r.sources)?r.sources.length:0} bronvermelding(en) gekoppeld`)}
+  <div class="status" id="detailStatus">Je bekijkt de cultivar. Bewerk een onderdeel en klik daarna op Opslaan om de volledige database centraal te publiceren.</div>`;
+ $('editor').querySelectorAll('[data-edit]').forEach(b=>b.onclick=()=>showFlyout(b.dataset.edit));
+ $('delete').onclick=()=>{if(confirm('Deze cultivar uit het concept verwijderen?')){db.records=db.records.filter(x=>x.id!==selected);syncMeta();backToSearch();$('status').textContent='Cultivar verwijderd uit het lokale concept.';}};
+ $('detailExport').onclick=exportDatabase;
+ $('saveCultivar').onclick=async()=>{
+  const btn=$('saveCultivar');btn.disabled=true;
+  try{
+   if(!$('flyoutBackdrop').classList.contains('hidden'))captureFlyoutValues();
+   syncMeta();
+   await saveLocalDraft(db);
+   $('draftInfo').textContent='Lokaal concept opgeslagen op '+new Date().toLocaleString()+'. Nog niet gepubliceerd.';
+   $('status').textContent='Wijzigingen opgeslagen in het lokale databaseconcept. Je kunt nu een andere cultivar aanpassen. Publiceren doe je pas als je helemaal klaar bent.';
+   closeFlyout();
+   backToSearch();
+  }catch(e){alert('Opslaan mislukt: '+e.message);}
+  finally{btn.disabled=false;}
+ };
+}
+function panelMarkup(r,id){
+ const panels={
+ basis:`<div class="grid2">${field('Cultivarnaam','name',r.name)}${field('Geaccepteerde naam','accepted_name',r.accepted_name)}${field('Soort','species',r.species)}${field('Cultivargroep','group',r.group)}${field('Hoogte na 10 jaar','height_after_10_years',r.height_after_10_years)}${field('Laatst gecontroleerd','last_checked',r.last_checked)}</div>`,
+ kenmerken:`<label>Kenmerken (Nederlands)</label><textarea id="traits_nl" rows="5">${esc(r.traits?.nl||'')}</textarea><label>Kenmerken (Engels)</label><textarea id="traits_en" rows="5">${esc(r.traits?.en||'')}</textarea>`,
+ herkomst:`<div class="grid2">${field('Selector / introducteur (NL)','selector_nl',r.selector_or_introducer?.nl)}${field('Selector / introducteur (EN)','selector_en',r.selector_or_introducer?.en)}${field('Introductiejaar','introduction_year',r.introduction_year)}${field('Herkomst (Nederlands)','origin_nl',r.origin?.nl)}${field('Herkomst (Engels)','origin_en',r.origin?.en)}</div><label>Historische achtergrond (Nederlands)</label><textarea id="history_nl" rows="4">${esc(r.history?.nl||r.historical_notes?.nl||'')}</textarea><label>Historische achtergrond (Engels)</label><textarea id="history_en" rows="4">${esc(r.history?.en||r.historical_notes?.en||'')}</textarea>`,
+ synoniemen:`<label>Synoniemen</label><textarea id="synonyms" rows="8">${esc(Array.isArray(r.synonyms)?r.synonyms.join('\n'):Array.isArray(r.synonyms?.nl)?r.synonyms.nl.join('\n'):r.synonyms||'')}</textarea><p class="flyout-note">Zet ieder synoniem op een aparte regel.</p>`,
+ fotos:`<div class="photo-count">${r.photos.length} foto(’s) gekoppeld · geen maximum</div><div class="bulk-upload"><b>Meerdere foto’s tegelijk toevoegen</b><p class="flyout-note">Selecteer in één keer alle foto’s die bij deze cultivar horen. Iedere foto wordt aan dit cultivarrecord toegevoegd.</p><input id="bulkPhotos" type="file" accept="image/*" multiple><p class="flyout-note" id="bulkPhotoStatus">Meerdere bestanden selecteren is mogelijk. Nieuwe rasterfoto’s worden automatisch verkleind tot maximaal 900 px en gecomprimeerd tot maximaal circa 150 KB (WebP); GIF- en SVG-bestanden blijven ongewijzigd.</p></div><div id="photos">${r.photos.map((p,i)=>photoHtml(p,i)).join('')||'<div class="flyout-empty">Nog geen foto’s toegevoegd.</div>'}</div>`,
+ bronnen:`<p class="flyout-note">Bronvermeldingen voor dit cultivarrecord. Bewerk de gegevens in JSON-vorm.</p><textarea id="sources" rows="12" spellcheck="false">${esc(JSON.stringify(r.sources||[],null,2))}</textarea>`
+ };
+ return panels[id]||'';
+}
+function captureFlyoutValues(){
+ const r=db?.records.find(x=>x.id===selected),f=$('flyoutFields');if(!r||!f)return;
+ f.querySelectorAll('[data-key]').forEach(el=>{const k=el.dataset.key;if(k==='selector_nl'||k==='selector_en'){r.selector_or_introducer=r.selector_or_introducer&&typeof r.selector_or_introducer==='object'?r.selector_or_introducer:{};r.selector_or_introducer[k==='selector_nl'?'nl':'en']=el.value;}else if(k==='origin_nl'||k==='origin_en'){r.origin=r.origin&&typeof r.origin==='object'?r.origin:{};r.origin[k==='origin_nl'?'nl':'en']=el.value;}else{r[k]=el.value;}});
+ if($('synonyms')){const entered=$('synonyms').value.split(/\r?\n/).map(x=>x.trim()).filter(Boolean);r.synonyms=entered;}
+ if($('traits_nl')||$('traits_en')){r.traits=r.traits&&typeof r.traits==='object'?r.traits:{};if($('traits_nl'))r.traits.nl=$('traits_nl').value;if($('traits_en'))r.traits.en=$('traits_en').value;}
+ if($('history_nl')||$('history_en')){r.history=r.history&&typeof r.history==='object'?r.history:{};if($('history_nl'))r.history.nl=$('history_nl').value;if($('history_en'))r.history.en=$('history_en').value;}
+ if($('photos'))r.photos=[...$('photos').querySelectorAll('.photo')].map(card=>{let p={};card.querySelectorAll('[data-photo]').forEach(el=>p[el.dataset.photo]=el.value);return p;});
+ if($('sources')){try{r.sources=JSON.parse($('sources').value||'[]');}catch(e){throw new Error('Bronnen bevat geen geldige JSON.');}}
+}
+function showFlyout(id,preserve=true){
+ if(preserve&&$('flyoutBackdrop')&&!$('flyoutBackdrop').classList.contains('hidden')){try{captureFlyoutValues();}catch(e){alert(e.message);return;}}
+ const r=db?.records.find(x=>x.id===selected);if(!r)return;
+ activeFlyout=id;$('flyoutTitle').textContent=flyoutSections.find(x=>x[0]===id)?.[1]||'Onderdeel';
+ $('flyoutNav').innerHTML=flyoutSections.map(([key,label])=>`<button type="button" data-flyout="${key}" class="${key===id?'active':''}">${label}</button>`).join('');
+ $('flyoutFields').innerHTML=panelMarkup(r,id);$('flyoutBackdrop').classList.remove('hidden');
+ $('flyoutNav').querySelectorAll('[data-flyout]').forEach(b=>b.onclick=()=>showFlyout(b.dataset.flyout,true));
+ if(id==='fotos'){
+  const bulk=$('bulkPhotos');if(bulk)bulk.onchange=async ev=>{
+   const files=[...(ev.target.files||[])];if(!files.length)return;
+   try{captureFlyoutValues();}catch(e){alert(e.message);return;}
+   const valid=files.filter(f=>f.type.startsWith('image/')),rejected=files.length-valid.length;
+   let added=0,failed=0;
+   $('bulkPhotoStatus').textContent=`${valid.length} foto(’s) worden ingelezen en waar mogelijk verkleind…`;
+   for(const file of valid){try{const data=await optimizeImageAsDataURL(file);r.photos.push({url:data,author:'',license:'',license_url:'',credit:'',season:'',date_taken:''});added++;}catch(e){console.error(e);failed++;}}
+   if(rejected||failed)alert(`${rejected+failed} bestand(en) konden niet worden toegevoegd. Controleer of het geldige afbeeldingsbestanden zijn.`);
+   showFlyout('fotos',false);$('status').textContent=`${added} foto(’s) toegevoegd aan het lokale concept. Nieuwe rasterfoto’s zijn gecomprimeerd en blijven volledig in de JSON opgeslagen.`;
+  };
+  $('photos')?.querySelectorAll('[data-main]').forEach(b=>b.onclick=()=>{try{captureFlyoutValues();}catch(e){alert(e.message);return;}const index=Number(b.dataset.main);if(!Number.isInteger(index)||index<0||index>=r.photos.length)return;const [chosen]=r.photos.splice(index,1);r.photos.unshift(chosen);showFlyout('fotos',false);$('status').textContent='Hoofdfoto ingesteld. De gekozen foto staat nu als eerste in de fotoreeks.';});
+  $('photos')?.querySelectorAll('[data-remove]').forEach(b=>b.onclick=()=>{try{captureFlyoutValues();}catch(e){alert(e.message);return;}r.photos.splice(+b.dataset.remove,1);showFlyout('fotos',false);});
+ }
+}
+function closeFlyout(){$('flyoutBackdrop').classList.add('hidden');}
+function readAsDataURL(file){return new Promise((resolve,reject)=>{const reader=new FileReader();reader.onload=()=>resolve(reader.result);reader.onerror=()=>reject(reader.error||new Error('Foto kon niet worden gelezen'));reader.readAsDataURL(file);});}
+async function optimizeImageAsDataURL(file){
+ // Animated GIFs and SVGs retain their original format; raster photos are resized and compressed before entering the database.
+ if(file.type==='image/gif'||file.type==='image/svg+xml')return await readAsDataURL(file);
+ const source=await readAsDataURL(file);
+ const img=new Image();
+ await new Promise((resolve,reject)=>{img.onload=resolve;img.onerror=()=>reject(new Error('Afbeelding kon niet worden geopend'));img.src=source;});
+ const targetBytes=150*1024;let best=null;
+ for(const maxSide of [900,800,700,600]){
+  const scale=Math.min(1,maxSide/Math.max(img.naturalWidth,img.naturalHeight));
+  const width=Math.max(1,Math.round(img.naturalWidth*scale)),height=Math.max(1,Math.round(img.naturalHeight*scale));
+  const canvas=document.createElement('canvas');canvas.width=width;canvas.height=height;
+  const ctx=canvas.getContext('2d');if(!ctx)throw new Error('Canvas niet beschikbaar');ctx.drawImage(img,0,0,width,height);
+  for(const quality of [0.66,0.58,0.50,0.44]){
+   let blob=await new Promise(resolve=>canvas.toBlob(resolve,'image/webp',quality));
+   if(!blob||blob.type!=='image/webp'){
+    blob=await new Promise(resolve=>canvas.toBlob(resolve,'image/jpeg',quality));
+    if(!blob)throw new Error('Afbeelding kon niet worden gecomprimeerd');
+   }
+   if(!best||blob.size<best.size)best=blob;
+   if(blob.size<=targetBytes)return await readAsDataURL(blob);
+  }
+ }
+ if(!best)throw new Error('Afbeelding kon niet worden gecomprimeerd');
+ return await readAsDataURL(best);
+}
+function photoHtml(p,i){
+ const isMain=i===0;
+ const preview=p.url?`<img src="${esc(p.url)}" alt="Foto ${i+1}" style="max-width:150px;max-height:110px;object-fit:contain;border-radius:6px;margin:8px 0">`:'';
+ return `<div class="photo" style="${isMain?'border:2px solid #527a58;background:#f4f8f2':''}"><div class="photohead"><b>Foto ${i+1} ${isMain?'· HOOFDFOTO':''}</b><div style="display:flex;gap:6px;flex-wrap:wrap">${isMain?'<span class="hint" style="font-weight:800;color:#294c36;padding:7px">★ Hoofdfoto</span>':`<button type="button" data-main="${i}">★ Als hoofdfoto instellen</button>`}<button type="button" class="warn" data-remove="${i}">Foto verwijderen</button></div></div><div>${preview}</div><span class="hint">${p.url&&p.url.startsWith('data:')?'Foto lokaal toegevoegd':(p.url?'Bestaande fotolink':'Nog geen foto geselecteerd')}</span><div class="photo-fields">${[['author','Fotograaf'],['license','Gebruikslicentie'],['license_url','Link naar licentie'],['credit','Fotocredit'],['season','Seizoen'],['date_taken','Datum foto']].map(([k,l])=>`<div><label>${l}</label><input data-photo="${k}" value="${esc(p[k]||'')}"></div>`).join('')}</div><input type="hidden" data-photo="url" value="${esc(p.url||'')}"></div>`;
+}
+function load(data){
+ if(!data||!Array.isArray(data.records))throw Error('JSON heeft geen records-array.');
+ db=clone(data);db.records.forEach(r=>{if(!Array.isArray(r.photos))r.photos=[];});
+ selected=null;syncMeta();backToSearch();$('status').textContent=`Database geladen: ${db.records.length} cultivars en ${db.photo_count||0} foto’s. Zoek hierboven een cultivar om te beginnen.`;
+}
+function openDraftStore(){
+ return new Promise((resolve,reject)=>{
+  if(!('indexedDB' in window)){reject(new Error('Deze browser ondersteunt geen IndexedDB-opslag.'));return;}
+  const request=indexedDB.open('acer-atlas-manager',1);
+  request.onupgradeneeded=()=>{if(!request.result.objectStoreNames.contains('drafts'))request.result.createObjectStore('drafts');};
+  request.onsuccess=()=>resolve(request.result);
+  request.onerror=()=>reject(request.error||new Error('Lokale conceptopslag kon niet worden geopend.'));
+ });
+}
+async function saveLocalDraft(data){
+ const database=await openDraftStore();
+ await new Promise((resolve,reject)=>{
+  const tx=database.transaction('drafts','readwrite');
+  tx.objectStore('drafts').put(data,'current');
+  tx.oncomplete=resolve;tx.onerror=()=>reject(tx.error||new Error('Lokale opslag mislukt.'));
+  tx.onabort=()=>reject(tx.error||new Error('Lokale opslag afgebroken.'));
+ });
+ database.close();
+}
+async function readLocalDraft(){
+ const database=await openDraftStore();
+ const value=await new Promise((resolve,reject)=>{
+  const tx=database.transaction('drafts','readonly'),request=tx.objectStore('drafts').get('current');
+  request.onsuccess=()=>resolve(request.result||null);
+  request.onerror=()=>reject(request.error||new Error('Lokaal concept kon niet worden gelezen.'));
+ });
+ database.close();return value;
+}
+function exportDatabase(){
+ if(!db)return alert('Laad eerst een database.');
+ let url=null,a=null;
+ try{
+  syncMeta();
+  const json=JSON.stringify(db);
+  const blob=new Blob([json],{type:'application/json;charset=utf-8'});
+  url=URL.createObjectURL(blob);
+  a=document.createElement('a');
+  a.href=url;
+  a.download='cultivar-database.json';
+  a.style.display='none';
+  document.body.appendChild(a);
+  a.click();
+  const exportedVersion=(()=>{try{return readDatabaseVersion(db).value;}catch(e){return 'onbekend';}})();$('status').textContent='Exporteren geslaagd. De databaseversie in het gedownloade bestand is '+(exportedVersion==='onbekend'?'onbekend':'v'+exportedVersion)+'.';
+  setTimeout(()=>{if(a?.parentNode)a.parentNode.removeChild(a);if(url)URL.revokeObjectURL(url);},60000);
+ }catch(e){
+  if(a?.parentNode)a.parentNode.removeChild(a);
+  if(url)URL.revokeObjectURL(url);
+  alert('Exporteren mislukt: '+(e?.message||String(e)));
+  $('status').textContent='JSON-export mislukt. Je lokale concept is niet gewijzigd.';
+ }
+}
+$('file').onchange=async e=>{try{if(e.target.files[0])load(JSON.parse(await e.target.files[0].text()));}catch(err){alert('Database kon niet worden geopend: '+err.message);}};
+async function loadLiveDatabase(){const res=await fetch('./cultivar-database.json?ts='+Date.now(),{cache:'no-store'});if(!res.ok)throw new Error('Live database niet bereikbaar ('+res.status+').');load(await res.json());$('draftInfo').textContent='Actuele database van GitHub geladen.';}
+$('search').oninput=renderSuggestions;
+$('search').onkeydown=e=>{if(e.key==='ArrowDown'&&suggestionItems.length){e.preventDefault();moveSuggestion(1);}else if(e.key==='ArrowUp'&&suggestionItems.length){e.preventDefault();moveSuggestion(-1);}else if(e.key==='Enter'&&suggestionItems.length){e.preventDefault();const item=suggestionItems[suggestionIndex<0?0:suggestionIndex];if(item)select(item.id);}else if(e.key==='Escape')closeSuggestions();};
+document.addEventListener('click',e=>{if(!e.target.closest('.search-wrap'))closeSuggestions();});
+$('backBtn').onclick=backToSearch;
+function cultivarNameFromUrl(value){
+ try{
+  const url=new URL(value);const parts=decodeURIComponent(url.pathname).split('/').filter(Boolean);
+  let slug=(parts[parts.length-1]||'').replace(/\.(html?|php)$/i,'').replace(/[-_]+/g,' ').trim();
+  slug=slug.replace(/^acer\s+(palmatum|shirasawanum|japonicum|circinatum|pensylvanicum|rubrum|griseum|buergerianum)\s+/i,'');
+  slug=slug.replace(/^acer\s+/i,'').replace(/\b(product|products|shop|buy)\b/gi,'').trim();
+  if(!slug)return '';
+  return slug.split(/\s+/).map(word=>word.charAt(0).toLocaleUpperCase('nl')+word.slice(1)).join(' ');
+ }catch(e){return '';}
+}
+function updateCultivarNameFromFirstLink(){
+ const first=$('newCultivarLinks').querySelector('.cultivar-source-url');
+ const name=cultivarNameFromUrl(first?.value||'');
+ const field=$('newCultivarName');
+ if(name&&!field.dataset.manual)field.value=name;
+}
+$('newCultivarName').addEventListener('input',()=>{$('newCultivarName').dataset.manual='1';});
+$('newCultivarLinks').addEventListener('input',e=>{if(e.target.matches('.cultivar-source-url')&&e.target=== $('newCultivarLinks').querySelector('.cultivar-source-url')){delete $('newCultivarName').dataset.manual;updateCultivarNameFromFirstLink();}});
+$('add').onclick=()=>{if(!db){alert('Laad eerst een database.');return;}$('newCultivarPanel').classList.remove('hidden');$('newCultivarName').focus();};
+$('addCultivarLink').onclick=()=>{
+ const box=$('newCultivarLinks');
+ if(box.querySelectorAll('.cultivar-source-url').length>=5){$('newCultivarInfo').textContent='Je kunt maximaal vijf bronlinks toevoegen.';return;}
+ const input=document.createElement('input');input.className='cultivar-source-url';input.type='url';input.placeholder='Extra bronlink';input.autocomplete='url';box.appendChild(input);input.focus();
+};
+$('cancelNewCultivar').onclick=()=>{$('newCultivarPanel').classList.add('hidden');};
+const CULTIVAR_AI_WORKER='https://acer-cultivar.aceratlas-maple-6e9.workers.dev';
+function extractAiObject(payload){
+ let value=payload;
+ for(let depth=0;depth<5;depth++){
+  if(value&&typeof value==='object'){
+   if(Array.isArray(value))return value[0]||{};
+   if(value.choices?.[0]?.message?.content!==undefined){value=value.choices[0].message.content;continue;}
+   if(value.cultivar&&typeof value.cultivar==='object'){value=value.cultivar;continue;}
+   if(value.result!==undefined){value=value.result;continue;}
+   if(value.data!==undefined){value=value.data;continue;}
+   if(value.output!==undefined){value=value.output;continue;}
+   if(value.content!==undefined&&Object.keys(value).length<=4){value=value.content;continue;}
+   return value;
+  }
+  if(typeof value==='string'){
+   let raw=value.trim().replace(/^```(?:json)?\s*/i,'').replace(/\s*```$/,'');
+   try{value=JSON.parse(raw);continue;}catch(e){
+    const first=raw.indexOf('{'),last=raw.lastIndexOf('}');
+    if(first>=0&&last>first){try{value=JSON.parse(raw.slice(first,last+1));continue;}catch(ignore){}}
+    throw new Error('De AI-Worker gaf geen geldige JSON terug. Controleer of de Worker-versie 0.3.0 actief is.');
+   }
+  }
+  break;
+ }
+ throw new Error('De AI-Worker gaf geen herkenbare cultivar-gegevens terug.');
+}
+function asText(value){if(value===null||value===undefined)return '';if(typeof value==='string'||typeof value==='number')return String(value);return '';}
+function bilingual(value,nlKey,enKey){
+ if(value&&typeof value==='object')return {nl:asText(value.nl||value[nlKey]||value.dutch),en:asText(value.en||value[enKey]||value.english)};
+ return {nl:asText(value),en:''};
+}
+function mergeAiCultivar(target,source){
+ const get=(...keys)=>{for(const k of keys){if(source[k]!==undefined&&source[k]!==null&&source[k]!=='')return source[k];}return undefined;};
+ const name=asText(get('name','cultivar_name','cultivarName','cultivar'));
+ if(name)target.name=name;
+ const accepted=asText(get('accepted_name','botanical_name','acceptedName'));
+ if(accepted)target.accepted_name=accepted;
+ const species=asText(get('species','botanical_species'));
+ if(species)target.species=species;
+ const synonyms=get('synonyms','synonym');
+ if(Array.isArray(synonyms))target.synonyms=[...new Set([...(target.synonyms||[]),...synonyms.map(asText).filter(Boolean)])];
+ else if(typeof synonyms==='string')target.synonyms=[...new Set([...(target.synonyms||[]),...synonyms.split(/[;,\n]/).map(x=>x.trim()).filter(Boolean)])];
+ const traits=get('traits','characteristics','description');
+ if(traits!==undefined){const b=bilingual(traits);target.traits={...(target.traits||{}),...(b.nl?{nl:b.nl}:{}),...(b.en?{en:b.en}:{})};}
+ const history=get('history','historical_background','background');
+ if(history!==undefined){const b=bilingual(history);target.history={...(target.history||{}),...(b.nl?{nl:b.nl}:{}),...(b.en?{en:b.en}:{})};}
+ const selector=get('selector_or_introducer','selector','introducer','originator');
+ if(selector!==undefined){const b=bilingual(selector);target.selector_or_introducer={...(target.selector_or_introducer||{}),...(b.nl?{nl:b.nl}:{}),...(b.en?{en:b.en}:{})};}
+ const origin=get('origin','origin_country','country_of_origin');
+ if(origin!==undefined){const b=bilingual(origin);target.origin={...(target.origin||{}),...(b.nl?{nl:b.nl}:{}),...(b.en?{en:b.en}:{})};}
+ const year=get('introduction_year','introductionYear','year_introduced');if(year!==undefined)target.introduction_year=year;
+ const height=get('height_after_10_years','height','height_10_years');if(height!==undefined)target.height_after_10_years=asText(height);
+ const habit=get('growth_habit','growth_form','habit');if(habit!==undefined)target.growth_habit=habit;
+ const foliage=get('foliage','leaf_colour','leaf_color');if(foliage!==undefined)target.foliage=foliage;
+ const autumn=get('autumn_colour','autumn_color','fall_color');if(autumn!==undefined)target.autumn_colour=autumn;
+ const position=get('position','exposure','site');if(position!==undefined)target.site=typeof position==='object'?position:{nl:asText(position)};
+ const hardiness=get('hardiness','winter_hardiness');if(hardiness!==undefined)target.hardiness=hardiness;
+ return target;
+}
+const CULTIVAR_AI_KEY_STORAGE='aa-cultivar-ai-key';
+$('cultivarAiKey').value=localStorage.getItem(CULTIVAR_AI_KEY_STORAGE)||sessionStorage.getItem(CULTIVAR_AI_KEY_STORAGE)||'';
+$('rememberCultivarAiKey').checked=!!localStorage.getItem(CULTIVAR_AI_KEY_STORAGE);
+$('cultivarAiKey').addEventListener('input',()=>{const key=$('cultivarAiKey').value.trim();if($('rememberCultivarAiKey').checked){if(key)localStorage.setItem(CULTIVAR_AI_KEY_STORAGE,key);else localStorage.removeItem(CULTIVAR_AI_KEY_STORAGE);}else{if(key)sessionStorage.setItem(CULTIVAR_AI_KEY_STORAGE,key);else sessionStorage.removeItem(CULTIVAR_AI_KEY_STORAGE);}});
+$('rememberCultivarAiKey').onchange=()=>{const key=$('cultivarAiKey').value.trim();if($('rememberCultivarAiKey').checked){if(key)localStorage.setItem(CULTIVAR_AI_KEY_STORAGE,key);sessionStorage.removeItem(CULTIVAR_AI_KEY_STORAGE);}else{localStorage.removeItem(CULTIVAR_AI_KEY_STORAGE);if(key)sessionStorage.setItem(CULTIVAR_AI_KEY_STORAGE,key);}};
+$('clearCultivarAiKey').onclick=()=>{localStorage.removeItem(CULTIVAR_AI_KEY_STORAGE);sessionStorage.removeItem(CULTIVAR_AI_KEY_STORAGE);$('cultivarAiKey').value='';$('rememberCultivarAiKey').checked=false;$('newCultivarInfo').textContent='Cloudflare AI-sleutel uit deze browser verwijderd.';};
+$('fetchCultivarInfo').onclick=async()=>{
+ const btn=$('fetchCultivarInfo'),key=$('cultivarAiKey').value.trim();
+ if(!key){$('newCultivarInfo').textContent='Vul eerst de Cloudflare AI-sleutel in (ATLAS_WORKER_KEY).';$('cultivarAiKey').focus();return;}
+ const lines=[...$('newCultivarLinks').querySelectorAll('.cultivar-source-url')].map(x=>x.value.trim()).filter(Boolean),urls=[];
+ for(const line of lines){let u;try{u=new URL(line);}catch(e){$('newCultivarInfo').textContent='Ongeldige bronlink: '+line;return;}if(!['https:','http:'].includes(u.protocol)){$('newCultivarInfo').textContent='Alleen http(s)-links zijn toegestaan.';return;}if(!urls.includes(u.href))urls.push(u.href);}
+ if(!urls.length){$('newCultivarInfo').textContent='Voeg minimaal één bronlink toe.';return;}
+ if(urls.length>5){$('newCultivarInfo').textContent='Maximaal vijf bronlinks zijn toegestaan.';return;}
+ btn.disabled=true;const original=btn.textContent;btn.textContent='AI verwerkt de bronnen…';
+ try{
+  let combined={},success=0;const errors=[];
+  for(let i=0;i<urls.length;i++){
+   $('newCultivarInfo').textContent='Bron '+(i+1)+' van '+urls.length+' wordt opgehaald: '+urls[i];
+   const response=await fetch(CULTIVAR_AI_WORKER+'/process',{method:'POST',headers:{'Content-Type':'application/json','Authorization':'Bearer '+key},body:JSON.stringify({url:urls[i]})});
+   const raw=await response.text();let payload;try{payload=JSON.parse(raw);}catch(e){throw new Error('Worker gaf geen JSON terug (HTTP '+response.status+').');}
+   if(!response.ok||payload.success===false)throw new Error(payload.error||payload.message||('Worker-fout HTTP '+response.status));
+   const parsed=extractAiObject(payload);if(parsed&&typeof parsed==='object'){
+    combined=mergeAiCultivar(combined,parsed);success++;
+   }else errors.push(urls[i]+': geen gegevens herkend');
+  }
+  if(!success)throw new Error(errors.join('; ')||'Geen cultivar-gegevens ontvangen.');
+  const typedName=$('newCultivarName').value.trim();if(typedName&&!combined.name)combined.name=typedName;
+  if(!combined.name)combined.name=cultivarNameFromUrl(urls[0]);
+  if(!combined.name)throw new Error('De cultivarnaam kon niet worden vastgesteld. Vul de naam handmatig in.');
+  const norm=s=>String(s||'').trim().toLocaleLowerCase('nl');
+  const duplicate=db.records.find(r=>norm(r.name)===norm(combined.name)||norm(r.accepted_name)===norm(combined.name)||(r.synonyms||[]).some(x=>norm(x)===norm(combined.name)));
+  if(duplicate)throw new Error('Deze cultivar bestaat mogelijk al ('+(duplicate.name||duplicate.id)+'). Er is niets toegevoegd; open eerst het bestaande record.');
+  const sources=urls.map(url=>({title:new URL(url).hostname,url}));
+  const record={id:'aa-'+Date.now(),name:combined.name,accepted_name:combined.accepted_name||'',species:combined.species||'Acer palmatum',synonyms:combined.synonyms||[],group:'unknown',traits:combined.traits||{},history:combined.history||{},selector_or_introducer:combined.selector_or_introducer||{nl:'Onbekend',en:'Unknown'},origin:combined.origin||{nl:'Onbekend',en:'Unknown'},introduction_year:combined.introduction_year??null,height_after_10_years:combined.height_after_10_years||'',growth_habit:combined.growth_habit||'',foliage:combined.foliage||'',autumn_colour:combined.autumn_colour||'',site:combined.site||{},hardiness:combined.hardiness||'',sources,photos:[],evidence_status:'partial',review_needed:true,last_checked:new Date().toISOString().slice(0,10)};
+  db.records.push(record);syncMeta();await saveLocalDraft(db);$('newCultivarPanel').classList.add('hidden');$('newCultivarName').value='';delete $('newCultivarName').dataset.manual;$('newCultivarLinks').innerHTML='<input class="cultivar-source-url" type="url" placeholder="Eerste bronlink (bijv. Esveld)" autocomplete="url"><input class="cultivar-source-url" type="url" placeholder="Tweede bronlink (bijv. MrMaple)" autocomplete="url">';$('cultivarAiKey').value='';select(record.id);showFlyout('basis',false);
+  $('status').textContent='AI-import als lokaal concept opgeslagen. '+success+' bron(nen) verwerkt. Controleer alle gegevens, vooral historische claims en introductiejaar; publiceren gebeurt apart.';
+  $('newCultivarInfo').textContent='';
+ }catch(error){$('newCultivarInfo').textContent='AI-import niet voltooid: '+(error?.message||String(error));}
+ finally{btn.disabled=false;btn.textContent=original;}
+};
+$('prepareCultivar').onclick=()=>{
+ if(!db){alert('Laad eerst een database.');return;}
+ const name=$('newCultivarName').value.trim();
+ if(!name){$('newCultivarInfo').textContent='Vul een geldige eerste bronlink in zodat de cultivarnaam automatisch kan worden bepaald.';return;}
+ const lines=[...$('newCultivarLinks').querySelectorAll('.cultivar-source-url')].map(x=>x.value.trim()).filter(Boolean);
+ const urls=[];
+ for(const line of lines){let url;try{url=new URL(line);}catch(e){$('newCultivarInfo').textContent='Ongeldige link: '+line;return;}if(!['https:','http:'].includes(url.protocol)){$('newCultivarInfo').textContent='Alleen http(s)-links zijn toegestaan.';return;}if(!urls.includes(url.href))urls.push(url.href);}
+ if(!urls.length){$('newCultivarInfo').textContent='Voeg minimaal één bronlink toe.';return;}
+ const norm=s=>String(s||'').trim().toLocaleLowerCase('nl');
+ if(db.records.some(r=>norm(r.name)===norm(name)||norm(r.accepted_name)===norm(name)||((r.synonyms||[]).some(x=>norm(x)===norm(name))))){$('newCultivarInfo').textContent='Deze naam bestaat mogelijk al in de database. Controleer eerst de bestaande cultivar.';return;}
+ const id='aa-'+Date.now();
+ db.records.push({id,name,photos:[],synonyms:[],sources:urls.map(url=>({title:new URL(url).hostname,url}))});
+ syncMeta();$('newCultivarPanel').classList.add('hidden');$('newCultivarName').value='';delete $('newCultivarName').dataset.manual;
+ $('newCultivarLinks').innerHTML='<input class="cultivar-source-url" type="url" placeholder="Eerste bronlink (bijv. Esveld)" autocomplete="url"><input class="cultivar-source-url" type="url" placeholder="Tweede bronlink (bijv. MrMaple)" autocomplete="url">';$('cultivarAiKey').value='';
+ select(id);showFlyout('basis',false);
+ $('status').textContent='Nieuwe cultivar als lokaal concept toegevoegd met '+urls.length+' bronlink(s). Controleer de gegevens en publiceer later apart.';
+};
+$('saveDraft').onclick=async()=>{if(!db)return;try{await saveLocalDraft(db);$('draftInfo').textContent='Concept opgeslagen op '+new Date().toLocaleString();$('status').textContent='Concept lokaal opgeslagen in deze browser. Dit is geen cloudback-up en publiceert niets.';}catch(e){alert('Concept opslaan mislukt: '+e.message);}};
+$('export').onclick=exportDatabase;
+
+function bytesToBase64(bytes){let binary='';const chunk=0x8000;for(let i=0;i<bytes.length;i+=chunk)binary+=String.fromCharCode(...bytes.subarray(i,i+chunk));return btoa(binary);}
+function readDatabaseVersion(data){
+ const candidates=[data?.version,data?.database_version,data?.meta?.version,data?.metadata?.version];
+ for(const value of candidates){const m=String(value??'').trim().replace(/^v/i,'').match(/^(\d+)\.(\d+)\.(\d+)$/);if(m)return {value:m[0],parts:m};}
+ throw new Error('De database bevat geen geldige versie in het formaat x.y.z. Er is niets geüpload.');
+}
+function nextDatabaseVersion(data){
+ const current=readDatabaseVersion(data),m=current.parts;
+ return m[1]+'.'+m[2]+'.'+(Number(m[3])+1);
+}
+$('githubToken').value=localStorage.getItem('aa-github-token')||sessionStorage.getItem('aa-github-token')||'';
+$('rememberGithubToken').checked=!!localStorage.getItem('aa-github-token');
+const PHOTO_API_BASE='https://pi.aceratlas-maple-6e9.workers.dev';
+$('photoApiToken').value=localStorage.getItem('aa-photo-api-token')||sessionStorage.getItem('aa-photo-api-token')||'';
+$('rememberPhotoApiToken').checked=!!localStorage.getItem('aa-photo-api-token');
+$('photoApiToken').addEventListener('input',()=>{const t=$('photoApiToken').value.trim();if($('rememberPhotoApiToken').checked){if(t)localStorage.setItem('aa-photo-api-token',t);else localStorage.removeItem('aa-photo-api-token');}else sessionStorage.setItem('aa-photo-api-token',t);});
+$('rememberPhotoApiToken').onchange=()=>{const t=$('photoApiToken').value.trim();if($('rememberPhotoApiToken').checked){if(t)localStorage.setItem('aa-photo-api-token',t);}else localStorage.removeItem('aa-photo-api-token');};
+$('clearPhotoApiToken').onclick=()=>{localStorage.removeItem('aa-photo-api-token');sessionStorage.removeItem('aa-photo-api-token');$('photoApiToken').value='';$('rememberPhotoApiToken').checked=false;$('uploadInfo').textContent='Cloudflare-fototoken uit deze browser verwijderd.';};
+async function uploadDataPhotosToR2(data,token){
+ const photos=data.records.flatMap(record=>(record.photos||[]).map((photo,index)=>({record,photo,index})).filter(x=>typeof x.photo.url==='string'&&x.photo.url.startsWith('data:')));
+ if(!photos.length)return {uploaded:0,kept:0};
+ if(!token)throw new Error('Vul eerst de Foto-API-token van Cloudflare in. De nieuwe foto staat nog alleen in het lokale concept.');
+ let uploaded=0,kept=0;
+ for(const item of photos){
+  const {record,photo,index}=item;
+  const blob=await (await fetch(photo.url)).blob();
+  const type=blob.type||photo.url.slice(5,photo.url.indexOf(';'));
+  if(!['image/webp','image/jpeg','image/png'].includes(type)){kept++;continue;}
+  const ext=type==='image/jpeg'?'jpg':type==='image/png'?'png':'webp';
+  const slug=String(record.id||record.name||'cultivar').normalize('NFKD').replace(/[\\u0300-\\u036f]/g,'').toLowerCase().replace(/[^a-z0-9_-]+/g,'-').replace(/^-+|-+$/g,'').slice(0,70)||'cultivar';
+  const key='cultivars/'+slug+'/'+Date.now()+'-'+(index+1)+'.'+ext;
+  const response=await fetch(PHOTO_API_BASE+'/upload/'+key,{method:'PUT',headers:{'Authorization':'Bearer '+token,'Content-Type':type},body:blob});
+  const result=await response.json().catch(()=>({}));
+  if(!response.ok||!result.success)throw new Error('Foto upload mislukt voor '+(record.name||slug)+': '+(result.error||response.status));
+  photo.url=PHOTO_API_BASE+'/photo/'+key;
+  uploaded++;
+ }
+ return {uploaded,kept};
+}
+
+$('clearGithubToken').onclick=()=>{localStorage.removeItem('aa-github-token');sessionStorage.removeItem('aa-github-token');$('githubToken').value='';$('rememberGithubToken').checked=false;$('uploadInfo').textContent='Token uit deze browser verwijderd.';};
+$('rememberGithubToken').onchange=()=>{if($('rememberGithubToken').checked){const t=$('githubToken').value.trim();if(t)localStorage.setItem('aa-github-token',t);}else localStorage.removeItem('aa-github-token');};
+
+const BACKUP_PATHS=['database-backups/backup-1.json','database-backups/backup-2.json','database-backups/backup-3.json','database-backups/backup-4.json','database-backups/backup-5.json'];
+function githubHeaders(token){return {'Authorization':'Bearer '+token,'Accept':'application/vnd.github+json','X-GitHub-Api-Version':'2022-11-28','Content-Type':'application/json'};}
+async function githubSha(path,token){
+ const res=await fetch('https://api.github.com/repos/aceratlas/acer-atlas/contents/'+path+'?ref=main',{headers:githubHeaders(token)});
+ if(res.status===404)return null;
+ const data=await res.json().catch(()=>({}));
+ if(!res.ok)throw new Error(data.message||'GitHub kon '+path+' niet controleren.');
+ return data.sha||null;
+}
+async function githubRaw(path){
+ const res=await fetch('https://raw.githubusercontent.com/aceratlas/acer-atlas/main/'+path+'?ts='+Date.now(),{cache:'no-store'});
+ if(res.status===404)return null;
+ if(!res.ok)throw new Error('Back-upbestand niet leesbaar: '+path+' ('+res.status+').');
+ return await res.text();
+}
+async function githubWrite(path,content,message,token){
+ const sha=await githubSha(path,token);
+ const encoded=bytesToBase64(new TextEncoder().encode(content));
+ const res=await fetch('https://api.github.com/repos/aceratlas/acer-atlas/contents/'+path,{method:'PUT',headers:githubHeaders(token),body:JSON.stringify({message,content:encoded,branch:'main',...(sha?{sha}:{})})});
+ const data=await res.json().catch(()=>({}));
+ if(!res.ok)throw new Error(data.message||'GitHub kon back-up niet opslaan: '+path);
+ return data;
+}
+async function rotateDatabaseBackups(token){
+ const live=await fetch('./cultivar-database.json?backup='+Date.now(),{cache:'no-store'});
+ if(!live.ok)throw new Error('De huidige online database kon niet worden gelezen; er is niets gepubliceerd.');
+ const liveText=await live.text();
+ const liveDb=JSON.parse(liveText);
+ const liveVersion=readDatabaseVersion(liveDb).value;
+ const existing=[];
+ for(const path of BACKUP_PATHS){const raw=await githubRaw(path);if(raw)existing.push(raw);}
+ const unique=new Map();
+ for(const raw of [liveText,...existing]){
+  const version=readDatabaseVersion(JSON.parse(raw)).value;
+  if(!unique.has(version))unique.set(version,raw);
+ }
+ const compare=(a,b)=>{
+  const aa=a.split('.').map(Number),bb=b.split('.').map(Number);
+  for(let i=0;i<Math.max(aa.length,bb.length);i++){const d=(bb[i]||0)-(aa[i]||0);if(d)return d;}
+  return 0;
+ };
+ const snapshots=[...unique.entries()].sort((a,b)=>compare(a[0],b[0])).slice(0,3);
+ for(let i=0;i<snapshots.length;i++){
+  await githubWrite(BACKUP_PATHS[i],snapshots[i][1],'Acer Atlas database back-up v'+snapshots[i][0]+' (positie '+(i+1)+')',token);
+ }
+ return {version:liveVersion,count:snapshots.length};
+}
+async function refreshBackupList(){
+ const sel=$('backupSelect');sel.innerHTML='<option value="">Back-ups laden…</option>';
+ const overview=$('backupOverview');if(overview)overview.textContent='Back-ups worden opgehaald uit GitHub…';
+ try{
+  const entries=[];
+  for(let i=0;i<5;i++){
+   const raw=await githubRaw(BACKUP_PATHS[i]);
+   if(raw){const data=JSON.parse(raw);entries.push({path:BACKUP_PATHS[i],version:readDatabaseVersion(data).value,index:i+1});}
+  }
+  sel.innerHTML=entries.length?'<option value="">Selecteer een back-up…</option>':'<option value="">Nog geen back-ups beschikbaar</option>';
+  for(const e of entries){const o=document.createElement('option');o.value=e.path;o.textContent='Back-up '+e.index+' · database v'+e.version;sel.appendChild(o);}
+  const summary=entries.length?entries.map(e=>'<div style="display:flex;justify-content:space-between;gap:12px;padding:8px 10px;margin:6px 0;background:#f0f5f0;border-radius:8px"><strong>Back-up '+e.index+'</strong><span>Database v'+e.version+'</span><code>'+e.path+'</code></div>').join(''):'Er zijn nog geen back-ups gevonden.';
+  if(overview)overview.innerHTML=summary;
+  $('backupInfo').textContent=entries.length+' van maximaal 5 back-ups beschikbaar. Opgeslagen in GitHub.';
+ }catch(e){sel.innerHTML='<option value="">Back-ups niet beschikbaar</option>';$('backupInfo').textContent='Back-ups laden mislukt: '+e.message;if(overview)overview.textContent='Back-ups laden mislukt: '+e.message;}
+}
+$('refreshBackups').onclick=refreshBackupList;
+$('createBackup').onclick=async()=>{
+ const btn=$('createBackup');
+ const token=$('githubToken').value.trim()||localStorage.getItem('aa-github-token')||sessionStorage.getItem('aa-github-token');
+ if(!token){alert('Voer eerst je GitHub-token in om een back-up op te slaan.');return;}
+ btn.disabled=true;btn.textContent='Back-up maken…';
+ $('backupInfo').textContent='De huidige online database wordt veiliggesteld…';
+ try{
+  const result=await rotateDatabaseBackups(token);
+  $('backupInfo').textContent='Back-up gemaakt van online database v'+result.version+'. '+result.count+' van maximaal 5 back-upversies veiliggesteld.';
+  await refreshBackupList();
+  alert('Back-up gemaakt van database v'+result.version+'.');
+ }catch(e){
+  $('backupInfo').textContent='Back-up maken mislukt: '+e.message;
+  alert('Back-up maken mislukt: '+e.message);
+ }finally{btn.disabled=false;btn.textContent='Back-up maken';}
+};
+$('refreshBackupsVisible').onclick=refreshBackupList;
+let restorePublishPending=false;
+$('restoreBackup').onclick=async()=>{
+ const path=$('backupSelect').value;
+ if(!path)return alert('Selecteer eerst een beschikbare back-up.');
+ const token=$('githubToken').value.trim()||localStorage.getItem('aa-github-token')||sessionStorage.getItem('aa-github-token');
+ if(!token)return alert('Voer eerst je GitHub-token in.');
+ const btn=$('restoreBackup');btn.disabled=true;
+ try{
+  const raw=await githubRaw(path);if(!raw)throw new Error('De geselecteerde back-up bestaat niet meer.');
+  const restored=JSON.parse(raw);const backupVersion=readDatabaseVersion(restored).value;
+  if(!Array.isArray(restored.records)||!restored.records.length)throw new Error('De back-up bevat geen geldige cultivargegevens.');
+  const liveResponse=await fetch('./cultivar-database.json?restorecheck='+Date.now(),{cache:'no-store'});
+  if(!liveResponse.ok)throw new Error('De huidige online database kon niet worden gecontroleerd. Er is niets hersteld.');
+  const liveDatabase=await liveResponse.json();
+  const liveVersion=readDatabaseVersion(liveDatabase).value;
+  const publishVersion=nextDatabaseVersion(liveDatabase);
+  if(!confirm('Back-up v'+backupVersion+' herstellen als nieuwe database v'+publishVersion+'? De huidige online database v'+liveVersion+' wordt eerst veiliggesteld. De back-up wordt dus niet onder een oud of dubbel versienummer gepubliceerd.'))return;
+  restored.version=publishVersion;
+  db=restored;syncMeta();await saveLocalDraft(db);
+  $('backupInfo').textContent='Back-up v'+backupVersion+' geladen. Wordt als nieuwe database v'+publishVersion+' gepubliceerd…';
+  restorePublishPending=true;
+  $('uploadGithub').click();
+ }catch(e){restorePublishPending=false;alert('Herstellen mislukt: '+e.message);$('backupInfo').textContent='Herstellen mislukt: '+e.message;}
+ finally{btn.disabled=false;}
+};
+
+$('uploadGithub').onclick=async()=>{
+ if(!db)return alert('Laad eerst de database.');
+ const isRestore=restorePublishPending;restorePublishPending=false;
+ const token=$('githubToken').value.trim()||localStorage.getItem('aa-github-token')||sessionStorage.getItem('aa-github-token');
+ if(!token){alert('Voer eerst je GitHub-token in.');$('githubToken').focus();return;}
+ if(!isRestore&&!confirm('De volledige database wordt naar GitHub geüpload. GitHub controleert het bestand, maakt eerst een back-up van de huidige database en publiceert daarna de nieuwe versie. Doorgaan?'))return;
+ const btn=$('uploadGithub');btn.disabled=true;btn.textContent='Bezig met uploaden…';
+ try{
+  if($('rememberGithubToken').checked)localStorage.setItem('aa-github-token',token);else{localStorage.removeItem('aa-github-token');sessionStorage.setItem('aa-github-token',token);}
+  if(!$('flyoutBackdrop').classList.contains('hidden'))captureFlyoutValues();
+  syncMeta();const uploadDb=clone(db);const currentVersion=readDatabaseVersion(uploadDb).value;if(!isRestore)uploadDb.version=nextDatabaseVersion(uploadDb);const photoToken=$('photoApiToken').value.trim()||localStorage.getItem('aa-photo-api-token')||sessionStorage.getItem('aa-photo-api-token')||'';if(photoToken){sessionStorage.setItem('aa-photo-api-token',photoToken);if($('rememberPhotoApiToken').checked)localStorage.setItem('aa-photo-api-token',photoToken);else localStorage.removeItem('aa-photo-api-token');}const photoResult=$('uploadPhotosToCloudflare').checked?await uploadDataPhotosToR2(uploadDb,photoToken):{uploaded:0,kept:0,skipped:true};
+  const backupResult=await rotateDatabaseBackups(token);
+  $('backupInfo').textContent='Back-up gemaakt van online database v'+backupResult.version+'. '+backupResult.count+' van maximaal 5 versies veiliggesteld.';
+  const raw=JSON.stringify(uploadDb);
+  const bytes=new TextEncoder().encode(raw);
+  const encoded=bytesToBase64(bytes);
+  const path='incoming/cultivar-database.json';
+  const headers={'Authorization':'Bearer '+token,'Accept':'application/vnd.github+json','X-GitHub-Api-Version':'2022-11-28','Content-Type':'application/json'};
+  const get=await fetch('https://api.github.com/repos/aceratlas/acer-atlas/contents/'+path,{headers});
+  let sha=null;if(get.ok){const current=await get.json();sha=current.sha;}else if(get.status!==404){const err=await get.json().catch(()=>({}));throw new Error(err.message||'GitHub kon de bestaande upload niet controleren.');}
+  const put=await fetch('https://api.github.com/repos/aceratlas/acer-atlas/contents/'+path,{method:'PUT',headers,body:JSON.stringify({message:'Upload Acer Atlas database v'+uploadDb.version,content:encoded,branch:'main',...(sha?{sha}:{})})});
+  const result=await put.json().catch(()=>({}));
+  if(!put.ok)throw new Error(result.message||'GitHub heeft de upload geweigerd ('+put.status+').');
+  db=uploadDb;syncMeta();try{await saveLocalDraft(db);}catch(draftError){$('draftInfo').textContent='Publicatie is ontvangen, maar het lokale concept kon niet worden bijgewerkt: '+draftError.message;}
+  $('uploadInfo').textContent=isRestore?'Herstel ontvangen door GitHub: back-upinhoud gepubliceerd als database v'+uploadDb.version+'. '+(photoResult.skipped?'Foto-upload overgeslagen; fotoverwijzingen ongewijzigd':photoResult.uploaded+' foto(’s) naar R2 geüpload'+(photoResult.kept?'; '+photoResult.kept+' niet-ondersteunde foto(’s) blijven in de JSON':''))+'. Commit: '+(result.commit?.sha||'aangemaakt')+'.':'Upload ontvangen door GitHub. Database v'+currentVersion+' → v'+uploadDb.version+' wordt nu automatisch gevalideerd en gepubliceerd. '+(photoResult.skipped?'Foto-upload overgeslagen; fotoverwijzingen ongewijzigd':photoResult.uploaded+' foto(’s) naar R2 geüpload'+(photoResult.kept?'; '+photoResult.kept+' niet-ondersteunde foto(’s) blijven in de JSON':''))+'. Commit: '+(result.commit?.sha||'aangemaakt')+'.';
+  $('status').textContent='Upload naar incoming geslaagd. GitHub Actions voert nu de validatie en publicatie uit.';
+ }catch(e){$('uploadInfo').textContent='Upload mislukt: '+e.message;alert('Upload mislukt: '+e.message);}
+ finally{btn.disabled=false;btn.textContent='Database publiceren';}
+};
+
+$('review').onclick=()=>{if(!db)return;syncMeta();const issues=[],ids=new Set();db.records.forEach((r,i)=>{if(!r.name?.trim())issues.push(`Record ${i+1}: naam ontbreekt`);if(ids.has(r.id))issues.push(`Dubbel ID: ${r.id}`);ids.add(r.id);(r.photos||[]).forEach((p,j)=>{if(!p.url?.trim())issues.push(`${r.name}: foto ${j+1} heeft geen URL`);});});$('status').innerHTML=issues.length?`<b class="danger">Controle: ${issues.length} aandachtspunt(en)</b><br>${issues.slice(0,30).map(esc).join('<br>')}`:`<b>Controle geslaagd.</b><br>${db.records.length} cultivars · ${db.photo_count} foto’s · geen lege namen of dubbele ID’s gevonden.<br>Dit is nog geen publicatie.`;};
+$('rawToggle').onclick=()=>{$('rawWrap').classList.toggle('hidden');$('raw').value=db?JSON.stringify(db,null,2):'';};
+$('applyRaw').onclick=()=>{try{load(JSON.parse($('raw').value));$('rawWrap').classList.add('hidden');}catch(e){alert('Ongeldige JSON: '+e.message);}};
+$('apply').onclick=()=>{try{captureFlyoutValues();}catch(e){alert(e.message);return;}syncMeta();closeFlyout();renderEditor();$('status').textContent='Wijzigingen toegepast in het concept. Klik op Opslaan om ze naar de centrale database te publiceren.';};
+$('cancelFlyout').onclick=closeFlyout;$('flyoutClose').onclick=closeFlyout;
+$('flyoutBackdrop').addEventListener('mousedown',e=>{if(e.target===$('flyoutBackdrop'))closeFlyout();});
+document.addEventListener('keydown',e=>{if(e.key==='Escape')closeFlyout();});
+(async()=>{
+ try{await loadLiveDatabase();}catch(e){$('status').textContent='Live database kon niet automatisch worden geladen. Open cultivar-database.json handmatig. '+e.message;}
+ try{
+  const liveDb=db;
+  const draft=await readLocalDraft();
+  if(draft&&Array.isArray(draft.records)){
+   const liveParts=readDatabaseVersion(liveDb).parts, draftParts=readDatabaseVersion(draft).parts;
+   const liveNum=liveParts.slice(1).reduce((n,v)=>n*1000+Number(v),Number(liveParts[1]));
+   const draftNum=draftParts.slice(1).reduce((n,v)=>n*1000+Number(v),Number(draftParts[1]));
+   if(draftNum>=liveNum){
+    load(draft);
+    $('draftInfo').textContent='Lokaal concept v'+readDatabaseVersion(draft).value+' geladen. '+(draftNum===liveNum?'Dit concept heeft dezelfde databaseversie als online; eventuele lokale wijzigingen blijven behouden.':'Dit concept is nieuwer dan de online database en is daarom behouden.');
+   }else{
+    $('draftInfo').textContent='Online database v'+readDatabaseVersion(liveDb).value+' is nieuwer dan het lokale concept v'+readDatabaseVersion(draft).value+'. De manager gebruikt de nieuwste online database; het oudere concept is niet overschreven.';
+   }
+  }else{
+   const legacy=localStorage.getItem('aa-db-manager-draft');
+   if(legacy){try{const parsed=JSON.parse(legacy);load(parsed);await saveLocalDraft(parsed);localStorage.removeItem('aa-db-manager-draft');$('draftInfo').textContent='Bestaand lokaal concept overgezet naar ruime browseropslag.';}catch(e){$('draftInfo').textContent='Oud lokaal concept kon niet worden overgezet: '+e.message;}}
+  }
+ }catch(e){$('draftInfo').textContent='Lokaal concept kon niet worden gecontroleerd: '+e.message;}
+  try{await refreshBackupList();}catch(e){}
+})();
+</script></body></html>
