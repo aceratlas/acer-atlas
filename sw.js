@@ -1,9 +1,9 @@
 /* Acer Atlas v10.5.94 — network-first validated database cache */
-const CACHE = 'acer-atlas-pwa-v10.5.94';
+const CACHE = 'acer-atlas-pwa-v10.5.95';
 const DATABASE_KEY = './cultivar-database.json?v=10.5.94';
 const APP_FILES = [
   './', './index.html', './acer-pot-detailed.webp', './acer-ground-detailed.webp', './manifest.webmanifest', './icon.svg',
-  './apple-touch-icon.png', './acer-maple-leaf.png', './acer-atlas-logo.webp'
+  './apple-touch-icon.png', './acer-maple-leaf.png', './acer-atlas-logo.webp', './database-manager.html?v=0.4.14'
 ];
 
 // A database is cacheable only when it parses and its complete record count matches.
@@ -92,6 +92,28 @@ self.addEventListener('fetch', event => {
   const isAppDocument = event.request.mode === 'navigate' ||
     url.pathname.endsWith('/index.html') || url.pathname.endsWith('/');
   const isDatabase = url.pathname.endsWith('/cultivar-database.json');
+
+  const isManager = url.pathname.endsWith('/database-manager.html');
+
+  if (isManager) {
+    // Manager: network first so a published manager update is not hidden by an old cache entry.
+    event.respondWith((async () => {
+      const cache = await caches.open(CACHE);
+      try {
+        const response = await fetch(new Request(event.request, {cache: 'no-store'}));
+        if (!response.ok) throw new Error(`HTTP ${response.status}`);
+        await cache.put(event.request, response.clone());
+        return response;
+      } catch (error) {
+        const cached = await cache.match(event.request);
+        if (cached) return cached;
+        return new Response('De Database Manager kan niet worden geladen. Controleer je internetverbinding en probeer opnieuw.', {
+          status: 503, headers: {'Content-Type': 'text/plain; charset=utf-8'}
+        });
+      }
+    })());
+    return;
+  }
 
   if (isDatabase) {
     // Network first: always try to load the latest published database.
