@@ -17,5 +17,5 @@
     {"src": "apple-touch-icon.png", "sizes": "180x180", "type": "image/png", "purpose": "any"},
     {"src": "icon.svg", "sizes": "any", "type": "image/svg+xml", "purpose": "any"}
   ],
-  "version": "10.5.91"
+  "version": "10.5.92"
 }
