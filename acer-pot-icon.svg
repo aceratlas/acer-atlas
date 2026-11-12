@@ -1,5 +1,5 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128">
-<defs><linearGradient id="leaf" x2="0" y2="1"><stop stop-color="#f04436"/><stop offset="1" stop-color="#a91420"/></linearGradient><linearGradient id="wood" x2="1" y2="0"><stop stop-color="#70401f"/><stop offset=".5" stop-color="#a96a35"/><stop offset="1" stop-color="#633719"/></linearGradient><linearGradient id="pot" x2="0" y2="1"><stop stop-color="#55585a"/><stop offset="1" stop-color="#292d30"/></linearGradient></defs>
+<defs><linearGradient id="leaf" x2="0" y2="1"><stop stop-color="#f04436"/><stop offset="1" stop-color="#a91420"/></linearGradient><linearGradient id="wood" x2="1" y2="0"><stop stop-color="#70401f"/><stop offset=".5" stop-color="#a96a35"/><stop offset="1" stop-color="#633719"/></linearGradient><linearGradient id="pot" x2="0" y2="1"><stop stop-color="#ffffff"/><stop offset=".58" stop-color="#f0f0ed"/><stop offset="1" stop-color="#d5d7d4"/></linearGradient></defs>
 <g fill="url(#leaf)" stroke="#8f1720" stroke-width="1.2" stroke-linejoin="round">
 <path d="M61 7 67 20 78 12 77 26 92 24 84 35 99 42 83 47 91 60 75 56 72 72 62 60 52 73 49 57 33 63 42 49 27 42 43 36 37 22 53 27Z"/>
 <path d="M29 34 34 44 44 38 43 50 55 49 48 59 60 65 47 70 52 82 39 76 33 88 27 76 15 82 20 69 8 63 21 57 16 45 29 50Z"/>
@@ -7,8 +7,8 @@
 <path d="M62 39 68 51 80 46 77 59 90 62 79 71 86 83 72 78 65 91 58 78 45 83 50 70 38 63 52 58 49 46Z"/>
 </g>
 <path d="M62 57 C60 69 58 79 62 91 M63 74 C49 66 42 59 38 51 M61 82 C77 70 87 61 94 49" fill="none" stroke="url(#wood)" stroke-width="7" stroke-linecap="round"/>
-<path d="M28 91 Q64 86 100 91 L94 119 Q64 126 34 119Z" fill="url(#pot)" stroke="#24282a" stroke-width="2"/>
-<path d="M26 90 Q64 84 102 90 L101 98 Q64 104 27 98Z" fill="#777b7d" stroke="#34383a" stroke-width="2"/>
+<path d="M28 91 Q64 86 100 91 L94 119 Q64 126 34 119Z" fill="url(#pot)" stroke="#8d9290" stroke-width="2"/>
+<path d="M26 90 Q64 84 102 90 L101 98 Q64 104 27 98Z" fill="#ffffff" stroke="#8d9290" stroke-width="2"/>
 <path d="M33 96 Q64 100 95 96" fill="none" stroke="#9a7047" stroke-width="3"/>
 <path d="M44 96l4-4m-4 4 7 1m26-2 5-4m-5 4 7 1" fill="none" stroke="#7e965a" stroke-width="2.5" stroke-linecap="round"/>
 </svg>
