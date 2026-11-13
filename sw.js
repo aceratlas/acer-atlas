@@ -1,9 +1,9 @@
 /* Acer Atlas v10.5.96 — network-first validated database cache */
-const CACHE = 'acer-atlas-pwa-v10.5.101';
+const CACHE = 'acer-atlas-pwa-v10.5.102';
 const DATABASE_KEY = './cultivar-database.json?v=10.5.94';
 const APP_FILES = [
   './', './index.html', './acer-pot-detailed.webp', './acer-ground-detailed.webp', './manifest.webmanifest', './icon.svg',
-  './apple-touch-icon.png', './acer-maple-leaf.png', './acer-atlas-logo.webp', './database-manager.html?v=0.4.17'
+  './apple-touch-icon.png', './acer-maple-leaf.png', './acer-atlas-logo.webp', './database-manager.html?v=0.4.18'
 ];
 
 // A database is cacheable only when it parses and its complete record count matches.
