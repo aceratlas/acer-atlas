@@ -1,5 +1,5 @@
-/* Acer Atlas v10.5.97 — network-first validated database cache */
-const CACHE = 'acer-atlas-pwa-v10.5.103';
+/* Acer Atlas v10.5.98 — network-first validated database cache */
+const CACHE = 'acer-atlas-pwa-v10.5.104';
 const DATABASE_KEY = './cultivar-database.json?v=10.5.94';
 const APP_FILES = [
   './', './index.html', './acer-pot-detailed.webp', './acer-ground-detailed.webp', './manifest.webmanifest', './icon.svg',
