@@ -1,4 +1,4 @@
-<!doctype html><html lang="nl" data-acer-atlas-manager-version="0.4.17"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Acer Atlas · Datamanager v0.4.17</title><style>
+<!doctype html><html lang="nl" data-acer-atlas-manager-version="0.4.18"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Acer Atlas · Datamanager v0.4.18</title><style>
 :root{font-family:Inter,Segoe UI,Arial,sans-serif;color:#202820;background:#f4f6f2}
 *{box-sizing:border-box}body{margin:0;background:#f4f6f2;color:#202820}
 button,input,textarea,select{font:inherit}button{cursor:pointer}
@@ -88,7 +88,7 @@ label{display:block;font-size:12px;font-weight:700;color:#526156;margin:12px 0 5
 <header class="hero">
  <div class="top">
   <div class="brand"><span class="mark" aria-hidden="true">🍁</span><div><h1>ACER ATLAS</h1><small>Databasebeheer</small></div></div>
-  <div class="top-right"><a class="app-link" href="./index.html#collection">← Terug naar Acer Atlas</a><button id="backBtn" class="back-btn" type="button">← Terug</button><span class="version">DATAMANAGER v0.4.17</span></div>
+  <div class="top-right"><a class="app-link" href="./index.html#collection">← Terug naar Acer Atlas</a><button id="backBtn" class="back-btn" type="button">← Terug</button><span class="version">DATAMANAGER v0.4.18</span></div>
  </div>
 </header>
 <main class="page">
@@ -162,10 +162,21 @@ label{display:block;font-size:12px;font-weight:700;color:#526156;margin:12px 0 5
   <div class="toolbar"><button class="primary" id="apply">Wijzigingen toepassen</button><button id="cancelFlyout">Annuleren</button></div>
  </section>
 </div>
-<div class="footer"><span class="footer-version">Acer Atlas Datamanager v0.4.17</span> · Opslaan bewaart je wijzigingen lokaal als concept. Publiceren naar GitHub doe je apart wanneer je klaar bent.</div>
+<div class="footer"><span class="footer-version">Acer Atlas Datamanager v0.4.18</span> · Opslaan bewaart je wijzigingen lokaal als concept. Publiceren naar GitHub doe je apart wanneer je klaar bent.</div>
 <script>/* De actuele database wordt rechtstreeks uit cultivar-database.json geladen. */</script>
 <script>
 let db=null, selected=null, suggestionIndex=-1, suggestionItems=[], activeFlyout='basis', pendingPhotos=[];
+const MANAGER_STATE_KEY='aa-db-manager-view-state';
+function managerFieldSnapshot(){const values={};document.querySelectorAll('#flyoutFields input:not([type=file]),#flyoutFields textarea,#flyoutFields select').forEach((el,i)=>{const key=el.id?'#'+el.id:el.dataset.photo?'photo:'+el.dataset.photo+':'+i:el.dataset.key?'key:'+el.dataset.key+':'+i:'field:'+i;values[key]=el.value;});return values;}
+function rememberManagerState(){try{const state={selected:selected||null,page:$('detailPage').classList.contains('hidden')?'search':'detail',search:$('search').value||'',scroll:window.scrollY||0,flyoutOpen:!$('flyoutBackdrop').classList.contains('hidden'),flyout:activeFlyout,flyoutScroll:$('flyoutPanel')?.scrollTop||0,fields:managerFieldSnapshot(),newCultivarOpen:!$('newCultivarPanel').classList.contains('hidden'),rawOpen:!$('rawWrap').classList.contains('hidden'),tokensOpen:document.querySelector('details.tool-card')?.open||false,aiPanelOpen:!$('aiUpdatePanel')?.classList.contains('hidden'),aiLinks:[...($('aiUpdateLinks')?.querySelectorAll('.ai-update-source-url')||[])].map(x=>x.value),newLinks:[...($('newCultivarLinks')?.querySelectorAll('.cultivar-source-url')||[])].map(x=>x.value),newName:$('newCultivarName')?.value||'',newNameManual:$('newCultivarName')?.dataset.manual||''};sessionStorage.setItem(MANAGER_STATE_KEY,JSON.stringify(state));}catch(e){}}
+function restoreManagerState(){let s;try{s=JSON.parse(sessionStorage.getItem(MANAGER_STATE_KEY)||'null')}catch(e){}if(!s)return;
+ if(s.page==='detail'&&s.selected&&db?.records.some(r=>String(r.id)===String(s.selected))){select(s.selected);if(s.flyoutOpen){showFlyout(s.flyout||'basis',false);Object.entries(s.fields||{}).forEach(([k,v])=>{let el=null;let m;if(k[0]==='#')el=$(k.slice(1));else if((m=k.match(/^photo:(.*):(\d+)$/)))el=$('flyoutFields').querySelectorAll('[data-photo="'+m[1]+'"]')[Number(m[2])];else if((m=k.match(/^key:(.*):(\d+)$/)))el=$('flyoutFields').querySelectorAll('[data-key="'+m[1]+'"]')[Number(m[2])];if(el)el.value=v;});try{captureFlyoutValues()}catch(e){}}if(s.aiPanelOpen)$('aiUpdatePanel')?.classList.remove('hidden');if(Array.isArray(s.aiLinks)&&$('aiUpdateLinks')){$('aiUpdateLinks').innerHTML='';s.aiLinks.slice(0,5).forEach((v,i)=>{const el=document.createElement('input');el.className='ai-update-source-url';el.type='url';el.placeholder=i===0?'Eerste bronlink':i===1?'Tweede bronlink':'Extra bronlink';el.value=v;$('aiUpdateLinks').appendChild(el);});}}
+ else{$('search').value=s.search||'';if(s.newCultivarOpen)$('newCultivarPanel').classList.remove('hidden');if(s.rawOpen)$('rawWrap').classList.remove('hidden');}
+ if(Array.isArray(s.newLinks)&&$('newCultivarLinks')){$('newCultivarLinks').innerHTML='';s.newLinks.slice(0,5).forEach((v,i)=>{const el=document.createElement('input');el.className='cultivar-source-url';el.type='url';el.placeholder=i===0?'Eerste bronlink':i===1?'Tweede bronlink':'Extra bronlink';el.value=v;$('newCultivarLinks').appendChild(el);});}
+ if($('newCultivarName')){$('newCultivarName').value=s.newName||'';$('newCultivarName').dataset.manual=s.newNameManual||'';}
+ const d=document.querySelector('details.tool-card');if(d)d.open=!!s.tokensOpen;requestAnimationFrame(()=>{window.scrollTo({top:Math.max(0,Number(s.scroll)||0),behavior:'auto'});if(s.flyoutOpen)$('flyoutPanel').scrollTop=Math.max(0,Number(s.flyoutScroll)||0);});}
+document.addEventListener('input',e=>{if(e.target.closest('main'))rememberManagerState();});document.addEventListener('change',e=>{if(e.target.closest('main'))rememberManagerState();});document.addEventListener('click',()=>setTimeout(rememberManagerState,0));window.addEventListener('scroll',rememberManagerState,{passive:true});window.addEventListener('pagehide',rememberManagerState);
+
 const $=id=>document.getElementById(id), clone=x=>JSON.parse(JSON.stringify(x));
 const flyoutSections=[['basis','Basisgegevens'],['kenmerken','Kenmerken'],['herkomst','Herkomst & geschiedenis'],['synoniemen','Synoniemen'],['fotos','Foto’s'],['bronnen','Bronnen']];
 function esc(s){return String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));}
@@ -797,5 +808,6 @@ document.addEventListener('keydown',e=>{if(e.key==='Escape')closeFlyout();});
   }
  }catch(e){$('draftInfo').textContent='Lokaal concept kon niet worden gecontroleerd: '+e.message;}
   try{await refreshBackupList();}catch(e){}
+ restoreManagerState();
 })();
 </script></body></html>
