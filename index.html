@@ -772,7 +772,7 @@ function exportWishlistPdf(){
  const formatBytes=n=>n>=1024*1024?(n/1024/1024).toFixed(2)+' MB':(n/1024).toFixed(1)+' KB';
  function scanPhotos(value,set,seen){
   if(typeof value==='string'){
-   if(/^data:image\\/[a-z0-9.+-]+;base64,/i.test(value))set.add(value);
+   if(/^data:image[/][a-z0-9.+-]+;base64,/i.test(value))set.add(value);
    return;
   }
   if(!value||typeof value!=='object'||seen.has(value))return;
