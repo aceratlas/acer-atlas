@@ -194,3 +194,8 @@ Acer Atlas v8.2.24 — photo batch 31 (2026-10-22)
 Acer Atlas v8.2.28 — prototype Wensen & Ontwikkeling
 - Added a roadmap page and mailto wish form to aceratlas.maple@outlook.com. No submissions are stored by the app.
 - OneDrive and desktop layout are shown as planned work, not as completed features.
+
+v10.7.8 — Waar te koop? in de encyclopedie
+- Nieuwe knop in het cultivarprofiel, uitsluitend vanuit de encyclopedie.
+- Opent een Google-zoekopdracht met botanische naam, cultivarnaam en een zoekterm in de ingestelde taal (NL/EN/DE/FR).
+- Acer Atlas toont of beheert geen voorraad, prijzen of kwekerijaanbod.
