@@ -203,3 +203,7 @@ v10.7.8 — Waar te koop? in de encyclopedie
 v10.7.9 — Waar te koop? subtieler vormgegeven
 - De opvallende volle knop is vervangen door een compacte, rustige tekstlink met winkelicoon.
 - De extra ondertitel is verborgen; de link blijft alleen zichtbaar vanuit de encyclopedie.
+
+v10.7.10 — Waar te koop? ook in wensenlijst
+- De bestaande subtiele Waar te koop-link is nu ook zichtbaar bij het openen van een cultivar vanuit de wensenlijst.
+- De link blijft ook beschikbaar vanuit de encyclopedie; overige detailweergaven zijn ongewijzigd.
