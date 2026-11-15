@@ -199,3 +199,7 @@ v10.7.8 — Waar te koop? in de encyclopedie
 - Nieuwe knop in het cultivarprofiel, uitsluitend vanuit de encyclopedie.
 - Opent een Google-zoekopdracht met botanische naam, cultivarnaam en een zoekterm in de ingestelde taal (NL/EN/DE/FR).
 - Acer Atlas toont of beheert geen voorraad, prijzen of kwekerijaanbod.
+
+v10.7.9 — Waar te koop? subtieler vormgegeven
+- De opvallende volle knop is vervangen door een compacte, rustige tekstlink met winkelicoon.
+- De extra ondertitel is verborgen; de link blijft alleen zichtbaar vanuit de encyclopedie.
