@@ -1,3 +1,7 @@
+Acer Atlas v10.7.19
+- De botanische soortnaam staat weer onder de cultivarnaam in de encyclopedie.
+- Collectie en Wenslijst blijven rechts naast de naam uitgelijnd, met Wenslijst onder Collectie.
+
 Acer Atlas v10.7.18
 - De labels Collectie en Wenslijst zijn iets groter gemaakt.
 - De labels zijn rechts uitgelijnd naast de cultivarnaam; de cultivarnaam houdt de resterende ruimte.
