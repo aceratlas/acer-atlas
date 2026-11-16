@@ -1,3 +1,8 @@
+Acer Atlas v10.7.20
+- Leeftijd van een individueel exemplaar wordt weer getoond in de exemplaarregel, berekend vanaf het kweekjaar.
+- Het kweekjaar kan per exemplaar worden ingevuld en opgeslagen.
+- Bestaande exemplaren zonder eigen kweekjaar gebruiken het kweekjaar van de boom als terugval, zodat bestaande leeftijdsinformatie behouden blijft.
+
 Acer Atlas v10.7.19
 - De botanische soortnaam staat weer onder de cultivarnaam in de encyclopedie.
 - Collectie en Wenslijst blijven rechts naast de naam uitgelijnd, met Wenslijst onder Collectie.
