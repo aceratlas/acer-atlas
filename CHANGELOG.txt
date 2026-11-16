@@ -229,3 +229,8 @@ v10.7.14 — Foto vóór naam, soortregel uit zoeklijsten
 - Foto staat duidelijk links vóór de cultivarnaam in zoeksuggesties en zoekresultaten.
 - De botanische soortregel (zoals Acer palmatum) is uit de zoekresultaten en suggesties weggelaten.
 - Collectie- en Wenslijstlabels blijven klein direct achter de cultivarnaam staan.
+
+
+v10.7.15 — Zoeklabels zonder vinkje en hartje
+- De labels Collectie en Wenslijst in de zoeksuggesties tonen geen vinkje of hartje meer.
+- De compacte labels achter de cultivarnaam blijven behouden; overige bediening en statusknoppen blijven ongewijzigd.
