@@ -211,3 +211,9 @@ v10.7.10 — Waar te koop? ook in wensenlijst
 v10.7.11 — Waar te koop? iets beter leesbaar
 - De tekstlink is een fractie groter gemaakt (13 naar 14 px) en het winkelicoon is iets vergroot.
 - De rustige, subtiele vormgeving en bestaande zoekfunctie blijven behouden.
+
+v10.7.12 — Collectie- en wensenlijststatus bij zoeken
+- Zoeksuggesties in de encyclopedie tonen nu labels wanneer een cultivar al in Mijn collectie en/of de wensenlijst staat.
+- Ook de zoekresultaten tonen deze statuslabels direct onder de cultivarnaam.
+- Statuslabels worden direct bijgewerkt wanneer een cultivar aan de collectie of wensenlijst wordt toegevoegd of eruit wordt verwijderd.
+- Bestaande knoppen en zoekfunctionaliteit blijven behouden.
