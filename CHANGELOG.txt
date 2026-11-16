@@ -217,3 +217,9 @@ v10.7.12 — Collectie- en wensenlijststatus bij zoeken
 - Ook de zoekresultaten tonen deze statuslabels direct onder de cultivarnaam.
 - Statuslabels worden direct bijgewerkt wanneer een cultivar aan de collectie of wensenlijst wordt toegevoegd of eruit wordt verwijderd.
 - Bestaande knoppen en zoekfunctionaliteit blijven behouden.
+
+
+v10.7.13 — Zoekstatus compact achter de cultivarnaam
+- De bestaande zoekweergave met foto en cultivarnaam blijft behouden.
+- De aanduidingen Collectie en/of Wenslijst staan nu klein direct achter de cultivarnaam, zowel in zoeksuggesties als in zoekresultaten.
+- De extra regel met statuslabels onder de naam is verwijderd; overige zoekinformatie en functionaliteit blijven behouden.
