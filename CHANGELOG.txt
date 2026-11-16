@@ -223,3 +223,9 @@ v10.7.13 — Zoekstatus compact achter de cultivarnaam
 - De bestaande zoekweergave met foto en cultivarnaam blijft behouden.
 - De aanduidingen Collectie en/of Wenslijst staan nu klein direct achter de cultivarnaam, zowel in zoeksuggesties als in zoekresultaten.
 - De extra regel met statuslabels onder de naam is verwijderd; overige zoekinformatie en functionaliteit blijven behouden.
+
+
+v10.7.14 — Foto vóór naam, soortregel uit zoeklijsten
+- Foto staat duidelijk links vóór de cultivarnaam in zoeksuggesties en zoekresultaten.
+- De botanische soortregel (zoals Acer palmatum) is uit de zoekresultaten en suggesties weggelaten.
+- Collectie- en Wenslijstlabels blijven klein direct achter de cultivarnaam staan.
