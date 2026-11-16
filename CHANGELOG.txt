@@ -1,3 +1,7 @@
+Acer Atlas v10.7.22
+- De huidige hoofdfoto in de exemplaargalerij krijgt een duidelijk donkergroen label ‘Hoofdfoto’.
+- De knop ‘Instellen als hoofdfoto’ blijft alleen zichtbaar bij foto’s die nog niet de hoofdfoto zijn.
+
 Acer Atlas v10.7.21
 - Verwijder het blok Uitgebreide cultivar gegevens uit de collectie.
 - Foto’s en exemplaargegevens blijven bij de individuele exemplaren.
