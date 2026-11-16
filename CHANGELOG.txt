@@ -1,3 +1,8 @@
+Acer Atlas v10.7.18
+- De labels Collectie en Wenslijst zijn iets groter gemaakt.
+- De labels zijn rechts uitgelijnd naast de cultivarnaam; de cultivarnaam houdt de resterende ruimte.
+- Wenslijst blijft onder Collectie wanneer beide labels zichtbaar zijn.
+
 Acer Atlas v10.7.17
 - Collectie- en Wenslijstlabels staan direct naast de cultivarnaam in de encyclopedie-lijstweergave, niet meer op een aparte regel.
 - De labels zijn iets groter en duidelijker leesbaar.
