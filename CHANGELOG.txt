@@ -1,3 +1,9 @@
+Acer Atlas v10.7.17
+- Collectie- en Wenslijstlabels staan direct naast de cultivarnaam in de encyclopedie-lijstweergave, niet meer op een aparte regel.
+- De labels zijn iets groter en duidelijker leesbaar.
+- Als beide labels zichtbaar zijn, staat Wenslijst onder Collectie.
+- De bestaande zoekresultaatlabels en kaartweergave blijven behouden.
+
 Acer Atlas v10.7.16
 - De lijstweergave van de encyclopedie toont nu dezelfde tekstlabels als de zoekresultaten: Collectie en/of Wenslijst direct naast de cultivarnaam.
 - De losse checkbox- en hartknoppen zijn uit deze lijstweergave verwijderd; de labels tonen alleen actieve lidmaatschappen.
