@@ -1,3 +1,8 @@
+Acer Atlas v10.7.23
+- Herstel de JavaScript-opbouw van de exemplaarfotogalerij; de knoppen werken weer.
+- De hoofdfoto krijgt een groen label ‘Hoofdfoto’; andere foto’s behouden de knop om hoofdfoto te worden.
+- Herstel de werking van de encyclopedie door de onderliggende scriptfout te verhelpen.
+
 Acer Atlas v10.7.22
 - De huidige hoofdfoto in de exemplaargalerij krijgt een duidelijk donkergroen label ‘Hoofdfoto’.
 - De knop ‘Instellen als hoofdfoto’ blijft alleen zichtbaar bij foto’s die nog niet de hoofdfoto zijn.
