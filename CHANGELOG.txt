@@ -1,3 +1,8 @@
+Acer Atlas v10.7.24
+- Voeg per exemplaarfoto de aparte actie ‘Instellen als collectiefoto’ toe.
+- De collectiefoto bepaalt de foto bij de cultivarnaam in de persoonlijke collectie; de hoofdfoto per exemplaar blijft onafhankelijk.
+- Na instellen worden de collectieafbeelding en het label direct bijgewerkt en opgeslagen.
+
 Acer Atlas v10.7.23
 - Herstel de JavaScript-opbouw van de exemplaarfotogalerij; de knoppen werken weer.
 - De hoofdfoto krijgt een groen label ‘Hoofdfoto’; andere foto’s behouden de knop om hoofdfoto te worden.
