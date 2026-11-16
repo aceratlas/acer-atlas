@@ -1,3 +1,8 @@
+Acer Atlas v10.7.25
+- Maak zoekresultaten rustiger: cultivarnaam op de eerste regel, botanische soort er direct onder en collectie-/wenslijststatus rechts.
+- Verwijder synoniemen uit de compacte suggestieregel zodat de resultaten beter scanbaar zijn.
+- Pas dezelfde uitlijning toe op encyclopedie-, collectie- en wensenlijstresultaten.
+
 Acer Atlas v10.7.24
 - Voeg per exemplaarfoto de aparte actie ‘Instellen als collectiefoto’ toe.
 - De collectiefoto bepaalt de foto bij de cultivarnaam in de persoonlijke collectie; de hoofdfoto per exemplaar blijft onafhankelijk.
