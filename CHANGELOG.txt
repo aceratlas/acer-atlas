@@ -1,3 +1,8 @@
+Acer Atlas v10.7.21
+- Verwijder het blok Uitgebreide cultivar gegevens uit de collectie.
+- Foto’s en exemplaargegevens blijven bij de individuele exemplaren.
+- Behoud een directe knop om de cultivar in de encyclopedie te bekijken.
+
 Acer Atlas v10.7.20
 - Leeftijd van een individueel exemplaar wordt weer getoond in de exemplaarregel, berekend vanaf het kweekjaar.
 - Het kweekjaar kan per exemplaar worden ingevuld en opgeslagen.
