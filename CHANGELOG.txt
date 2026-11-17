@@ -1,3 +1,9 @@
+v10.7.39
+- Eerste veilige koppeling van de persoonlijke collectie met Cloudflare: bij aanmelden wordt de cloudcollectie gecontroleerd.
+- Als Cloudflare nog leeg is, wordt de bestaande lokale collectie eenmalig gekopieerd.
+- Als er al een cloudcollectie bestaat, wordt de nieuwste versie lokaal hersteld; bij een nieuwere lokale collectie wordt niets automatisch overschreven.
+- Lokale opslag en IndexedDB blijven leidend voor offline gebruik; wenslijst en zaailingen blijven buiten deze eerste synchronisatiestap.
+
 Acer Atlas v10.7.38 — Database-update: de serviceworker controleert nu bij iedere databaseaanvraag of er een nieuwere volledige database is gepubliceerd. Alleen bij een geldige database wordt de cache vervangen; bij netwerkproblemen blijft de laatst geldige database beschikbaar. De app vraagt de database met het actuele versienummer op.
 Acer Atlas v10.7.37 — Updatebeheer: als een nieuwe serviceworker de besturing overneemt, herlaadt de reeds geopende app automatisch één keer zodat ook de encyclopedie direct de nieuwste interface toont. Back-upmetadata gebruikt eveneens het actuele versienummer.
 Acer Atlas v10.7.36 — Encyclopedie-detail: de bovenbalk met zoekveld blijft nu net als bij het openen van een collectie-exemplaar vast bovenaan staan. De snelknoppen en tabnavigatie worden verborgen; de detailinhoud begint onder de compacte bovenbalk.
