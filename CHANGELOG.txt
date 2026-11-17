@@ -1,3 +1,4 @@
+Acer Atlas v10.7.26 — Herstel geopende cultivar na verversen. De detail-ID en terugkeerpagina worden ook in de URL bewaard, zodat de detailpagina na herladen opnieuw kan worden geopend.
 Acer Atlas v10.7.25
 - Maak zoekresultaten rustiger: cultivarnaam op de eerste regel, botanische soort er direct onder en collectie-/wenslijststatus rechts.
 - Verwijder synoniemen uit de compacte suggestieregel zodat de resultaten beter scanbaar zijn.
