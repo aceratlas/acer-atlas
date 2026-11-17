@@ -27,6 +27,28 @@ service cloud.firestore {
       allow delete: if request.auth != null && request.auth.uid == userId;
     }
 
+    // Personal Acer Atlas data is stored in separate documents per account.
+    // No client can read or write another user's records.
+    function ownsAtlasAccount(userId) {
+      return request.auth != null && request.auth.uid == userId;
+    }
+
+    match /users/{userId}/atlasPlants/{plantId} {
+      allow read, create, update, delete: if ownsAtlasAccount(userId);
+    }
+
+    match /users/{userId}/atlasWishlist/{itemId} {
+      allow read, create, update, delete: if ownsAtlasAccount(userId);
+    }
+
+    match /users/{userId}/atlasSeedlings/{seedlingId} {
+      allow read, create, update, delete: if ownsAtlasAccount(userId);
+    }
+
+    match /users/{userId}/atlasMetadata/{metadataId} {
+      allow read, create, update, delete: if ownsAtlasAccount(userId);
+    }
+
     // Queue a notification for the administrator. Firebase Trigger Email
     // extension must be installed and configured for actual delivery.
     match /mail/{mailId} {
