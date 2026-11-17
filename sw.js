@@ -1,6 +1,6 @@
-/* Acer Atlas v10.7.37 — network-first validated database cache */
-const CACHE = 'acer-atlas-pwa-v10.7.37';
-const DATABASE_KEY = './cultivar-database.json?v=10.7.37';
+/* Acer Atlas v10.7.38 — network-first validated database cache */
+const CACHE = 'acer-atlas-pwa-v10.7.38';
+const DATABASE_KEY = './cultivar-database.json?v=10.7.38';
 const APP_FILES = [
   './', './index.html', './acer-pot-detailed.webp', './acer-ground-detailed.webp', './manifest.webmanifest', './icon.svg',
   './apple-touch-icon.png', './acer-maple-leaf.png', './acer-atlas-logo.webp', './database-manager.html?v=0.4.18'
@@ -116,24 +116,28 @@ self.addEventListener('fetch', event => {
   }
 
   if (isDatabase) {
-    // The database URL is versioned. The install step already fetches and validates
-    // this exact version, so serve the validated cache immediately on every app load.
-    // Only fetch from the network when no valid cached copy exists.
+    // Database content can be published independently of the app shell.
+    // Revalidate on every request so a newly published cultivar database is not
+    // hidden behind a valid but outdated cache. Keep the last complete copy for offline use.
     event.respondWith((async () => {
       const cache = await caches.open(CACHE);
-      const cached = await cache.match(DATABASE_KEY);
-      if (cached && await isCompleteDatabase(cached)) return cached;
-
+      const request = new Request(event.request, {cache: 'no-cache'});
       try {
-        await refreshDatabase(cache);
-        const fresh = await cache.match(DATABASE_KEY);
-        if (fresh && await isCompleteDatabase(fresh)) return fresh;
+        const response = await fetch(request);
+        if (await isCompleteDatabase(response)) {
+          const cacheUrl = new URL(DATABASE_KEY, self.registration.scope);
+          await cache.put(cacheUrl.href, response.clone());
+          return response;
+        }
+        throw new Error('Database response is incomplete or invalid; cached copy retained.');
       } catch (error) {
-        console.warn('Acer Atlas: database fetch failed.', error);
+        console.warn('Acer Atlas: database refresh failed; using last complete cached copy.', error);
+        const cached = await cache.match(DATABASE_KEY);
+        if (cached && await isCompleteDatabase(cached)) return cached;
+        return new Response('De volledige Acer Atlas-database is nog niet beschikbaar. Controleer je internetverbinding en probeer opnieuw.', {
+          status: 503, headers: {'Content-Type': 'text/plain; charset=utf-8'}
+        });
       }
-      return new Response('De volledige Acer Atlas-database is nog niet beschikbaar. Controleer je internetverbinding en probeer opnieuw.', {
-        status: 503, headers: {'Content-Type': 'text/plain; charset=utf-8'}
-      });
     })());
     return;
   }
