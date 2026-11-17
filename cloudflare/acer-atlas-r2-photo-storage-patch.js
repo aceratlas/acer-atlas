@@ -1,6 +1,6 @@
 /* Acer Atlas R2 photo-storage patch for Worker acer-cultivar.
 Keep the existing AI routes (/ , /usage and /process) unchanged.
-1. Change Access-Control-Allow-Methods to "GET, POST, PUT, OPTIONS".
+1. Change Access-Control-Allow-Methods to "GET, POST, PUT, DELETE, OPTIONS".
 2. Add the helpers below immediately before export default.
 3. Add the route block inside fetch(), immediately after const url = new URL(request.url);
    and BEFORE the existing GET "/" status route.
