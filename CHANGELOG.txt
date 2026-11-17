@@ -1,3 +1,7 @@
+Acer Atlas v10.7.42
+- Herstelkopie toegevoegd aan accountinstellingen. Deze export leest de huidige lokale collectie, IndexedDB-snapshot en de cloudcollectie van het ingelogde Firebase-account en downloadt die samen als JSON. De export schrijft of overschrijft niets.
+- Automatische cloudcollectiesynchronisatie blijft gepauzeerd ter bescherming van gegevens.
+
 Acer Atlas v10.7.41
 - Noodmaatregel: automatische Cloudflare-collectiesynchronisatie tijdelijk uitgeschakeld. De oude synchronisatie gebruikte één gedeelde lokale opslag voor alle ingelogde accounts en kon collecties verwisselen of overschrijven.
 - Bestaande lokale collectie en IndexedDB-opslag worden niet gewist. Cloudcollecties worden voorlopig niet opgehaald of geüpload totdat opslag per Firebase-gebruiker veilig is ingericht.
