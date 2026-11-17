@@ -1,6 +1,6 @@
 /* Acer Atlas R2 photo-storage patch for Worker acer-cultivar.
 Keep the existing AI routes (/ , /usage and /process) unchanged.
-1. Change Access-Control-Allow-Methods to "GET, POST, PUT, OPTIONS".
+1. Change Access-Control-Allow-Methods to "GET, POST, PUT, DELETE, OPTIONS".
 2. Add the helpers below immediately before export default.
 3. Add the route block inside fetch(), immediately after const url = new URL(request.url);
    and BEFORE the existing GET "/" status route.
@@ -83,6 +83,24 @@ if (url.pathname.startsWith("/account/")) {
   }
 
   const photoMatch = url.pathname.match(new RegExp("^/account/photos/([A-Za-z0-9_-]{1,100})$"));
+  if (photoMatch && request.method === "GET") {
+    const key = `users/${account.uid}/photos/${photoMatch[1]}`;
+    const object = await env.ATLAS_R2.get(key);
+    if (!object) return accountError("Foto niet gevonden.", 404);
+    const headers = new Headers(corsHeaders);
+    object.writeHttpMetadata(headers);
+    headers.set("Cache-Control", "private, max-age=3600");
+    headers.set("ETag", object.httpEtag);
+    return new Response(object.body, { status: 200, headers });
+  }
+
+  if (photoMatch && request.method === "DELETE") {
+    const key = `users/${account.uid}/photos/${photoMatch[1]}`;
+    const object = await env.ATLAS_R2.head(key);
+    if (!object) return response({ success: true, deleted: false, alreadyMissing: true });
+    await env.ATLAS_R2.delete(key);
+    return response({ success: true, deleted: true, photoId: photoMatch[1] });
+  }
   if (request.method === "PUT" && photoMatch) {
     const photoId = photoMatch[1];
     const contentType = (request.headers.get("Content-Type") || "").split(";")[0].trim().toLowerCase();
