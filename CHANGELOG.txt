@@ -1,3 +1,7 @@
+Acer Atlas v10.7.40
+- Cloudflare-fotodiagnose: de app controleert eerst afzonderlijk of de Worker het Firebase-token accepteert via /account/usage.
+- Bij een mislukte foto-upload toont de app nu de concrete Cloudflare-foutcode en foutmelding op de telefoon; de lokale foto blijft behouden.
+
 v10.7.39
 - Eerste veilige koppeling van de persoonlijke collectie met Cloudflare: bij aanmelden wordt de cloudcollectie gecontroleerd.
 - Als Cloudflare nog leeg is, wordt de bestaande lokale collectie eenmalig gekopieerd.
