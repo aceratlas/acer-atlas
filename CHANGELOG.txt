@@ -1,3 +1,4 @@
+Acer Atlas v10.7.28 — Definitief herstel van deep links na verversen. De bootcode overschreef eerder de detail-hash voordat de database en collectie geladen waren. Detailroutes blijven nu behouden en worden pas hersteld nadat database en persistente collectie gereed zijn.
 Acer Atlas v10.7.27 — Herstel van collectie-exemplaardetail na verversen. De #plant-ID route wordt bij het opstarten herkend; de collectie wordt geladen en het juiste exemplaar wordt opnieuw als detail geopend.
 Acer Atlas v10.7.26 — Herstel geopende cultivar na verversen. De detail-ID en terugkeerpagina worden ook in de URL bewaard, zodat de detailpagina na herladen opnieuw kan worden geopend.
 Acer Atlas v10.7.25
