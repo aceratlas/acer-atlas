@@ -43,7 +43,7 @@ async function verifyAcerFirebaseToken(request) {
     if (!response.ok) throw new Error("Firebase-sleutels konden niet worden opgehaald.");
     firebaseJwksCache = await response.json();
     const cacheControl = response.headers.get("Cache-Control") || "";
-    const maxAge = Number((cacheControl.match(/max-age=(\\d+)/i) || [])[1] || 3600);
+    const maxAge = Number((cacheControl.match(/max-age=([0-9]+)/i) || [])[1] || 3600);
     firebaseJwksExpiresAt = Date.now() + Math.min(Math.max(maxAge, 60), 86400) * 1000;
   }
 
@@ -82,7 +82,7 @@ if (url.pathname.startsWith("/account/")) {
     return response({ success: true, storage: "R2", authenticated: true });
   }
 
-  const photoMatch = url.pathname.match(/^\\/account\\/photos\\/([A-Za-z0-9_-]{1,100})$/);
+  const photoMatch = url.pathname.match(new RegExp("^/account/photos/([A-Za-z0-9_-]{1,100})$"));
   if (request.method === "PUT" && photoMatch) {
     const photoId = photoMatch[1];
     const contentType = (request.headers.get("Content-Type") || "").split(";")[0].trim().toLowerCase();
