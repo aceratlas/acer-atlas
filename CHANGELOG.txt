@@ -1,3 +1,7 @@
+Acer Atlas v10.7.41
+- Noodmaatregel: automatische Cloudflare-collectiesynchronisatie tijdelijk uitgeschakeld. De oude synchronisatie gebruikte één gedeelde lokale opslag voor alle ingelogde accounts en kon collecties verwisselen of overschrijven.
+- Bestaande lokale collectie en IndexedDB-opslag worden niet gewist. Cloudcollecties worden voorlopig niet opgehaald of geüpload totdat opslag per Firebase-gebruiker veilig is ingericht.
+
 Acer Atlas v10.7.40
 - Cloudflare-fotodiagnose: de app controleert eerst afzonderlijk of de Worker het Firebase-token accepteert via /account/usage.
 - Bij een mislukte foto-upload toont de app nu de concrete Cloudflare-foutcode en foutmelding op de telefoon; de lokale foto blijft behouden.
