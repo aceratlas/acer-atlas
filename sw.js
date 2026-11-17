@@ -1,6 +1,6 @@
-/* Acer Atlas v10.7.30 — network-first validated database cache */
-const CACHE = 'acer-atlas-pwa-v10.7.30';
-const DATABASE_KEY = './cultivar-database.json?v=10.7.30';
+/* Acer Atlas v10.7.31 — network-first validated database cache */
+const CACHE = 'acer-atlas-pwa-v10.7.31';
+const DATABASE_KEY = './cultivar-database.json?v=10.7.31';
 const APP_FILES = [
   './', './index.html', './acer-pot-detailed.webp', './acer-ground-detailed.webp', './manifest.webmanifest', './icon.svg',
   './apple-touch-icon.png', './acer-maple-leaf.png', './acer-atlas-logo.webp', './database-manager.html?v=0.4.18'
@@ -116,19 +116,21 @@ self.addEventListener('fetch', event => {
   }
 
   if (isDatabase) {
-    // Network first: always try to load the latest published database.
-    // Fall back to the last validated complete copy only when offline/unavailable.
+    // The database URL is versioned. The install step already fetches and validates
+    // this exact version, so serve the validated cache immediately on every app load.
+    // Only fetch from the network when no valid cached copy exists.
     event.respondWith((async () => {
       const cache = await caches.open(CACHE);
+      const cached = await cache.match(DATABASE_KEY);
+      if (cached && await isCompleteDatabase(cached)) return cached;
+
       try {
         await refreshDatabase(cache);
         const fresh = await cache.match(DATABASE_KEY);
         if (fresh && await isCompleteDatabase(fresh)) return fresh;
       } catch (error) {
-        console.warn('Acer Atlas: latest database unavailable; using validated cached copy.', error);
+        console.warn('Acer Atlas: database fetch failed.', error);
       }
-      const cached = await cache.match(DATABASE_KEY);
-      if (cached && await isCompleteDatabase(cached)) return cached;
       return new Response('De volledige Acer Atlas-database is nog niet beschikbaar. Controleer je internetverbinding en probeer opnieuw.', {
         status: 503, headers: {'Content-Type': 'text/plain; charset=utf-8'}
       });
