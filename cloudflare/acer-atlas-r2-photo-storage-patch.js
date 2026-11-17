@@ -83,6 +83,24 @@ if (url.pathname.startsWith("/account/")) {
   }
 
   const photoMatch = url.pathname.match(new RegExp("^/account/photos/([A-Za-z0-9_-]{1,100})$"));
+  if (photoMatch && request.method === "GET") {
+    const key = `users/${account.uid}/photos/${photoMatch[1]}`;
+    const object = await env.ATLAS_R2.get(key);
+    if (!object) return accountError("Foto niet gevonden.", 404);
+    const headers = new Headers(corsHeaders);
+    object.writeHttpMetadata(headers);
+    headers.set("Cache-Control", "private, max-age=3600");
+    headers.set("ETag", object.httpEtag);
+    return new Response(object.body, { status: 200, headers });
+  }
+
+  if (photoMatch && request.method === "DELETE") {
+    const key = `users/${account.uid}/photos/${photoMatch[1]}`;
+    const object = await env.ATLAS_R2.head(key);
+    if (!object) return response({ success: true, deleted: false, alreadyMissing: true });
+    await env.ATLAS_R2.delete(key);
+    return response({ success: true, deleted: true, photoId: photoMatch[1] });
+  }
   if (request.method === "PUT" && photoMatch) {
     const photoId = photoMatch[1];
     const contentType = (request.headers.get("Content-Type") || "").split(";")[0].trim().toLowerCase();
@@ -103,42 +121,5 @@ if (url.pathname.startsWith("/account/")) {
     return response({ success: true, photoId, size: body.byteLength, contentType });
   }
 
-  return accountError("Onbekend accountverzoek.", 404);
-}
-
-/* v0.4.1 R2 photo read/delete routes.
-   Insert inside the existing fetch() after: const url = new URL(request.url);
-   Keep the existing Firebase token verification helpers and response()/corsHeaders. */
-if (url.pathname.startsWith("/account/")) {
-  if (!env.ATLAS_R2) return accountError("R2-binding ATLAS_R2 ontbreekt.", 503);
-  let account;
-  try { account = await verifyAcerFirebaseToken(request); }
-  catch (error) { return accountError(error.message || "Firebase-authenticatie mislukt.", 401); }
-
-  if (request.method === "GET" && url.pathname === "/account/usage") {
-    return response({ success: true, storage: "R2", authenticated: true });
-  }
-
-  const photoMatch = url.pathname.match(/^\/account\/photos\/([A-Za-z0-9_-]{1,100})$/);
-  if (photoMatch && request.method === "GET") {
-    const key = `users/${account.uid}/photos/${photoMatch[1]}`;
-    const object = await env.ATLAS_R2.get(key);
-    if (!object) return accountError("Foto niet gevonden.", 404);
-    const headers = new Headers(corsHeaders);
-    object.writeHttpMetadata(headers);
-    headers.set("Cache-Control", "private, max-age=3600");
-    headers.set("ETag", object.httpEtag);
-    return new Response(object.body, { status: 200, headers });
-  }
-
-  if (photoMatch && request.method === "DELETE") {
-    const key = `users/${account.uid}/photos/${photoMatch[1]}`;
-    const object = await env.ATLAS_R2.head(key);
-    if (!object) return response({ success: true, deleted: false, alreadyMissing: true });
-    await env.ATLAS_R2.delete(key);
-    return response({ success: true, deleted: true, photoId: photoMatch[1] });
-  }
-
-  /* Keep the existing PUT upload route here, unchanged. */
   return accountError("Onbekend accountverzoek.", 404);
 }
