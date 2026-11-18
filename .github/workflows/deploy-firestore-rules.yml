@@ -1,3 +1,4 @@
+
 name: Deploy Acer Atlas Firestore rules
 
 on:
@@ -21,8 +22,23 @@ jobs:
             echo "::error::Missing GitHub Actions secret FIREBASE_SERVICE_ACCOUNT_ACER_ATLAS."
             exit 1
           fi
+
           printf '%s' "$FIREBASE_SERVICE_ACCOUNT" > "$RUNNER_TEMP/firebase-service-account.json"
-          node -e "const fs=require('fs'); const x=JSON.parse(fs.readFileSync(process.argv[1],'utf8')); if(!x.project_id || !x.client_email || !x.private_key) process.exit(1);" "$RUNNER_TEMP/firebase-service-account.json"
+
+          node - "$RUNNER_TEMP/firebase-service-account.json" <<'NODE'
+          const fs = require('fs');
+          const x = JSON.parse(fs.readFileSync(process.argv[2], 'utf8'));
+
+          if (!x.project_id || !x.client_email || !x.private_key) {
+            console.error('Invalid Firebase service account JSON.');
+            process.exit(1);
+          }
+
+          console.log('Firebase project:', x.project_id);
+          console.log('Service account:', x.client_email);
+          console.log('Private key: present (hidden)');
+          NODE
+
           echo "GOOGLE_APPLICATION_CREDENTIALS=$RUNNER_TEMP/firebase-service-account.json" >> "$GITHUB_ENV"
 
       - name: Deploy Firestore rules only
