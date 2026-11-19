@@ -821,6 +821,16 @@ function acerCloudComparableData(dataset,data){
  if(dataset!=='collection'||!Array.isArray(copy))return copy;
  for(const plant of copy){
   if(!plant||typeof plant!=='object')continue;
+  // Migrate the legacy collection cover into an explicit specimen/photo reference
+  // before removing old URL/data-URL fields from the canonical cloud comparison.
+  if(plant.collectionPhotoSpecimenId==null){
+   const legacyCover=plant.coverPhoto||plant.photo;
+   if(legacyCover){
+    const owner=(plant.specimens||[]).find(sp=>Array.isArray(sp.photos)&&sp.photos.includes(legacyCover));
+    const index=owner?.photos?.findIndex(photo=>photo===legacyCover)??-1;
+    if(owner&&index>=0){plant.collectionPhotoSpecimenId=String(owner.id);plant.collectionPhotoIndex=index;}
+   }
+  }
   const specimens=Array.isArray(plant.specimens)?plant.specimens:[];
   for(const sp of specimens){
    if(!sp||typeof sp!=='object')continue;
