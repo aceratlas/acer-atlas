@@ -836,8 +836,9 @@ async function acerSyncAccountDataset(dataset){
 }
 async function acerRefreshCloudDataset(dataset){
  await acerCloudQueues[dataset].catch(()=>{});
+ const previousRevision=Number(acerCloudRevisions[dataset]||0);
  const remote=await acerCloudReadDataset(dataset);
- if(!remote.exists)return false;
+ if(!remote.exists||Number(remote.revision||0)<=previousRevision)return false;
  if(dataset==='collection'&&Array.isArray(remote.data)){
   collection=remote.data;
   await persistCollectionSnapshot(collection,Date.now());
