@@ -851,10 +851,10 @@ async function acerMigrateCollectionPhotosToR2(){
 async function acerSyncAccountDataset(dataset){
  const remote=await acerCloudReadDataset(dataset);
  if(dataset==='collection'){
-  if(remote.exists){collection=Array.isArray(remote.data)?remote.data:[];await persistCollectionSnapshot(collection,Date.now());try{localStorage.setItem(acerAccountKey('acerAtlasCollection'),JSON.stringify(collection));localStorage.setItem(acerAccountKey('acerAtlasCollectionUpdatedAt'),String(Date.now()));}catch(_){}renderCollection();}
+  if(remote.exists){const cloudCollection=Array.isArray(remote.data)?remote.data:[];if(collection.length&&JSON.stringify(collection)!==JSON.stringify(cloudCollection)){try{localStorage.setItem('acerAtlasCloudConflictBackup:'+acerActiveStorageUid+':collection',JSON.stringify({savedAt:new Date().toISOString(),data:collection}));}catch(_){}}collection=cloudCollection;await persistCollectionSnapshot(collection,Date.now());try{localStorage.setItem(acerAccountKey('acerAtlasCollection'),JSON.stringify(collection));localStorage.setItem(acerAccountKey('acerAtlasCollectionUpdatedAt'),String(Date.now()));}catch(_){}renderCollection();}
   else{await acerMigrateCollectionPhotosToR2();await acerCloudWriteDataset('collection',Array.isArray(collection)?collection:[]);}
  }else if(dataset==='seedlings'){
-  if(remote.exists){seedlings=Array.isArray(remote.data)?remote.data:[];try{localStorage.setItem(acerAccountKey('acerAtlasSeedlings'),JSON.stringify(seedlings));}catch(_){}renderSeedlings();}
+  if(remote.exists){const cloudSeedlings=Array.isArray(remote.data)?remote.data:[];if(seedlings.length&&JSON.stringify(seedlings)!==JSON.stringify(cloudSeedlings)){try{localStorage.setItem('acerAtlasCloudConflictBackup:'+acerActiveStorageUid+':seedlings',JSON.stringify({savedAt:new Date().toISOString(),data:seedlings}));}catch(_){}}seedlings=cloudSeedlings;try{localStorage.setItem(acerAccountKey('acerAtlasSeedlings'),JSON.stringify(seedlings));}catch(_){}renderSeedlings();}
   else await acerCloudWriteDataset('seedlings',Array.isArray(seedlings)?seedlings:[]);
  }
 }
