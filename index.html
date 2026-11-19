@@ -834,6 +834,38 @@ async function acerSyncAccountDataset(dataset){
   else await acerCloudWriteDataset('seedlings',Array.isArray(seedlings)?seedlings:[]);
  }
 }
+async function acerRefreshCloudDataset(dataset){
+ await acerCloudQueues[dataset].catch(()=>{});
+ const remote=await acerCloudReadDataset(dataset);
+ if(!remote.exists)return false;
+ if(dataset==='collection'&&Array.isArray(remote.data)){
+  collection=remote.data;
+  await persistCollectionSnapshot(collection,Date.now());
+  try{localStorage.setItem(acerAccountKey('acerAtlasCollection'),JSON.stringify(collection));localStorage.setItem(acerAccountKey('acerAtlasCollectionUpdatedAt'),String(Date.now()));}catch(_){}
+  renderCollection();
+  return true;
+ }
+ if(dataset==='seedlings'&&Array.isArray(remote.data)){
+  seedlings=remote.data;
+  try{localStorage.setItem(acerAccountKey('acerAtlasSeedlings'),JSON.stringify(seedlings));}catch(_){}
+  renderSeedlings();
+  return true;
+ }
+ return false;
+}
+let acerCloudRefreshRunning=false;
+async function acerRefreshAccountCloudData(){
+ const user=acerAuth?.currentUser;
+ if(!user||!user.emailVerified||String(user.uid)!==acerActiveStorageUid||acerCloudCollectionSyncUid!==acerActiveStorageUid||acerCloudRefreshRunning)return;
+ acerCloudRefreshRunning=true;
+ try{
+  await acerRefreshCloudDataset('collection');
+  await acerRefreshCloudDataset('seedlings');
+ }catch(error){console.warn('Acer Atlas background cloud refresh failed; local data retained.',error);}
+ finally{acerCloudRefreshRunning=false;}
+}
+window.addEventListener('focus',()=>{acerRefreshAccountCloudData();});
+document.addEventListener('visibilitychange',()=>{if(document.visibilityState==='visible')acerRefreshAccountCloudData();});
 async function syncAcerAtlasCollectionOnLogin(user){
  const ready=await activateAcerAccountStorage(user);
  if(!ready)return false;
