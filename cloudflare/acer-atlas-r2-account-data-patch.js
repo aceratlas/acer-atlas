@@ -1,7 +1,8 @@
-/* Acer Atlas account-data R2 routes — compatible with Worker acer-cultivar v0.4.1.
+/* Acer Atlas account-data R2 routes — compatible with Worker acer-cultivar v0.4.1; publish as v0.4.2.
 
 Integration with the current Worker:
-- Keep verifyFirebaseUser(request), handleAccountRequest(), photo routes and AI routes.
+- Keep verifyFirebaseUser(request), handleAccountRequest(), photo routes and AI routes unchanged.
+- After integrating, change WORKER_VERSION from "0.4.1" to "0.4.2".
 - Insert the helper constants/functions at top level, before handleAccountRequest().
 - Inside handleAccountRequest(), insert the route block immediately AFTER the existing
   GET /account/usage route and BEFORE the photoMatch route.
