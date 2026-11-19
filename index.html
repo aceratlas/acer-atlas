@@ -978,13 +978,9 @@ async function acerCloudWriteCollectionSnapshot(source,options={}){
     const photoHash=await acerCloudPhotoFingerprint(photo);
     let samePhoto=false;
     if(meta){
-     if(meta.sha256){
-      samePhoto=meta.sha256===photoHash;
-     }else{
-      // Older cloud photo records predate fingerprints. Compare the actual
-      // stored image once before deciding whether this is still the same photo.
-      try{samePhoto=await acerCloudPhotoFingerprint(await acerCloudPhotoDataUrl(meta.photoId))===photoHash;}catch(_){samePhoto=false;}
-     }
+     // A matching fingerprint alone is not proof that the R2 object still exists.
+     // Read and fingerprint the actual object before reusing its reference.
+     try{samePhoto=await acerCloudPhotoFingerprint(await acerCloudPhotoDataUrl(meta.photoId))===photoHash;}catch(_){samePhoto=false;}
     }
     if(!samePhoto){
      const uploaded=await uploadAtlasPhotoToCloud(photo);
