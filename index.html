@@ -824,11 +824,35 @@ async function acerCloudReadDataset(dataset){
  acerCloudRevisions[dataset]=Number(result.revision||0);
  return result;
 }
+async function acerMigrateCollectionPhotosToR2(){
+ let uploaded=0;
+ for(const plant of (Array.isArray(collection)?collection:[])){
+  for(const specimen of (Array.isArray(plant?.specimens)?plant.specimens:[])){
+   if(!Array.isArray(specimen.photos))continue;
+   if(!Array.isArray(specimen.cloudPhotos))specimen.cloudPhotos=[];
+   for(let index=0;index<specimen.photos.length;index++){
+    const photo=specimen.photos[index];
+    if(typeof photo!=='string'||!photo.startsWith('data:image/'))continue;
+    if(specimen.cloudPhotos.some(meta=>Number(meta.photoIndex)===index&&meta.photoId))continue;
+    // Upload first; retain the local image unless R2 confirms the write.
+    const result=await uploadAtlasPhotoToCloud(photo);
+    specimen.cloudPhotos.push({photoId:result.photoId,photoIndex:index,size:result.size,contentType:result.contentType,uploadedAt:new Date().toISOString()});
+    uploaded++;
+   }
+  }
+ }
+ if(uploaded){
+  const updatedAt=Date.now();
+  await persistCollectionSnapshot(collection,updatedAt);
+  try{localStorage.setItem(acerAccountKey('acerAtlasCollection'),JSON.stringify(collection));localStorage.setItem(acerAccountKey('acerAtlasCollectionUpdatedAt'),String(updatedAt));}catch(_){}
+ }
+ return uploaded;
+}
 async function acerSyncAccountDataset(dataset){
  const remote=await acerCloudReadDataset(dataset);
  if(dataset==='collection'){
   if(remote.exists){collection=Array.isArray(remote.data)?remote.data:[];await persistCollectionSnapshot(collection,Date.now());try{localStorage.setItem(acerAccountKey('acerAtlasCollection'),JSON.stringify(collection));localStorage.setItem(acerAccountKey('acerAtlasCollectionUpdatedAt'),String(Date.now()));}catch(_){}renderCollection();}
-  else await acerCloudWriteDataset('collection',Array.isArray(collection)?collection:[]);
+  else{await acerMigrateCollectionPhotosToR2();await acerCloudWriteDataset('collection',Array.isArray(collection)?collection:[]);}
  }else if(dataset==='seedlings'){
   if(remote.exists){seedlings=Array.isArray(remote.data)?remote.data:[];try{localStorage.setItem(acerAccountKey('acerAtlasSeedlings'),JSON.stringify(seedlings));}catch(_){}renderSeedlings();}
   else await acerCloudWriteDataset('seedlings',Array.isArray(seedlings)?seedlings:[]);
