@@ -902,11 +902,12 @@ async function acerCloudWriteCollectionSnapshot(source){
  const uid=acerActiveStorageUid;
  if(uid){
   const updatedAt=Date.now();
-  await persistCollectionSnapshot(local,updatedAt);
+  try{await persistCollectionSnapshot(local,updatedAt);}
+  catch(error){console.warn('Acer Atlas: Cloudflare confirmed the collection save, but the local recovery snapshot could not be refreshed.',error);}
   try{
    localStorage.setItem(acerAccountKey('acerAtlasCollection',uid),JSON.stringify(local));
    localStorage.setItem(acerAccountKey('acerAtlasCollectionUpdatedAt',uid),String(updatedAt));
-  }catch(_){}
+  }catch(error){console.warn('Acer Atlas: Cloudflare confirmed the collection save, but localStorage could not be refreshed.',error);}
  }
  return true;
 }
@@ -1460,9 +1461,9 @@ save=async function(){
   try{
    // Do not persist a changed local snapshot until the account-scoped R2 write succeeds.
    await acerCloudWriteCollectionSnapshot(collection);
-   await acerWriteAccountSnapshot(uid);
    window.acerLastCollectionOnlineStatus='online';
    window.acerLastCloudDataError='';
+   try{await acerWriteAccountSnapshot(uid);}catch(localError){console.warn('Acer Atlas: cloud save succeeded; secondary local account snapshot refresh failed.',localError);}
    return true;
   }catch(error){
    window.acerLastCollectionOnlineStatus='failed';
