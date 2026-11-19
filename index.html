@@ -933,7 +933,7 @@ async function acerSyncAccountDataset(dataset){
     }
     if(Array.isArray(plant.photos))plant.photos=plant.photos.map(photo=>typeof photo==='string'&&photo.startsWith('data:image/')?null:photo);
     for(const key of ['photo','coverPhoto'])if(typeof plant[key]==='string'&&plant[key].startsWith('data:image/'))delete plant[key];
-    for(const sp of (Array.isArray(plant?.specimens)?plant.specimens:[]))for(const entry of (Array.isArray(sp?.developmentLog)?sp.developmentLog:[])){if(Array.isArray(entry.photos))entry.photos=entry.photos.map(photo=>typeof photo==='string'&&photo.startsWith('data:image/')?null:photo);if(typeof entry.photo==='string'&&entry.photo.startsWith('data:image/'))entry.photo=null;}
+    for(const sp of (Array.isArray(plant?.specimens)?plant.specimens:[]))for(const entry of (Array.isArray(sp?.developmentLog)?sp.developmentLog:[])){const entryPhotos=Array.isArray(entry.photos)?entry.photos:(entry.photo?[entry.photo]:[]);entry.photos=entryPhotos.map(photo=>typeof photo==='string'&&photo.startsWith('data:image/')?null:photo);if(typeof entry.photo==='string'&&entry.photo.startsWith('data:image/'))entry.photo=null;}
    }
    if(!verified.exists||JSON.stringify(verified.data)!==JSON.stringify(expected))throw new Error('De herstelde collectie kon niet volledig worden gecontroleerd in Cloudflare. De lokale collectie is behouden.');
   }else if(remote.exists){
