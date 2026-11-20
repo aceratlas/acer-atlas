@@ -1246,10 +1246,17 @@ async function publishRestoredBackupToCloud(){
  const user=acerAuth?.currentUser;
  const status=$('accountRecoveryStatus');
  const button=$('accountRecoveryPublish');
- if(!user||!user.emailVerified||String(user.uid)!==String(acerActiveStorageUid)){
-  if(status)status.textContent='Veiligheidsstop: log in met het account waarvoor je deze backup wilt herstellen. Er is niets overschreven.';
+ if(!user||!user.emailVerified){
+  if(status)status.textContent='Veiligheidsstop: log in met een bevestigd Acer Atlas-account. Er is niets overschreven.';
   return;
  }
+ if(acerActiveStorageUid&&String(user.uid)!==String(acerActiveStorageUid)){
+  if(status)status.textContent='Veiligheidsstop: het ingelogde account wijkt af van het actieve account. Er is niets overschreven.';
+  return;
+ }
+ // Recovery is allowed even when normal cloud-first login sync did not finish.
+ // The user has explicitly chosen this backup as the source of truth.
+ if(!acerActiveStorageUid){acerActiveStorageUid=String(user.uid);collectionSnapshotReady=true;}
  if(acerCloudLoginSyncInProgress){if(status)status.textContent='De online aanmelding wordt nog afgerond. Probeer het straks opnieuw.';return;}
  if(!window.confirm('Weet je zeker dat je de teruggezette backup naar Cloudflare wilt schrijven? De online collectie, wensenlijst en seedlings worden vervangen door de gegevens uit deze backup.'))return;
  if(button)button.disabled=true;
