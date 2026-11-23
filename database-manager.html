@@ -1,4 +1,4 @@
-<!doctype html><html lang="nl" data-acer-atlas-manager-version="0.4.19"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Acer Atlas · Datamanager v0.4.19</title><style>
+<!doctype html><html lang="nl" data-acer-atlas-manager-version="0.4.20"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Acer Atlas · Datamanager v0.4.20</title><style>
 :root{font-family:Inter,Segoe UI,Arial,sans-serif;color:#202820;background:#f4f6f2}
 *{box-sizing:border-box}body{margin:0;background:#f4f6f2;color:#202820}
 button,input,textarea,select{font:inherit}button{cursor:pointer}
@@ -554,12 +554,42 @@ function mergeAiCultivar(target,source){
  const origin=get('origin','origin_country','country_of_origin');
  if(origin!==undefined){const b=bilingual(origin);target.origin={...(target.origin||{}),...(b.nl?{nl:b.nl}:{}),...(b.en?{en:b.en}:{})};}
  const year=get('introduction_year','introductionYear','year_introduced');if(year!==undefined)target.introduction_year=year;
- const height=get('height_after_10_years','height','height_10_years');if(height!==undefined)target.height_after_10_years=asText(height);
- const habit=get('growth_habit','growth_form','habit');if(habit!==undefined)target.growth_habit=habit;
+ // De encyclopedie gebruikt geneste objecten voor seizoenen, groei en standplaats.
+ const seasons=get('seasons','seasonal_characteristics','foliage_by_season');
+ if(seasons&&typeof seasons==='object'){
+  target.seasons={...(target.seasons||{})};
+  for(const [key,aliases] of Object.entries({spring:['spring','lente','voorjaar'],summer:['summer','zomer'],autumn:['autumn','fall','herfst']})){
+   const value=aliases.map(alias=>seasons[alias]).find(value=>value!==undefined&&value!==null&&value!=='');
+   if(value!==undefined)target.seasons[key]=bilingual(value);
+  }
+ }
+ const growthSource=get('growthData','growth_data','growth')||{};
+ const height=get('height_after_10_years','height_10_years','height_after_10_years_cm','height');
+ const width=get('width_after_10_years','width_10_years','width_after_10_years_cm','width');
+ const rate=get('growth_rate','growthRate','growth_speed');
+ if(height!==undefined||width!==undefined||rate!==undefined||Object.keys(growthSource).length){
+  target.growthData={...(target.growthData||{})};
+  if(height!==undefined)target.growthData.height_after_10_years=asText(height);
+  if(width!==undefined)target.growthData.width_after_10_years=asText(width);
+  if(rate!==undefined)target.growthData.growth_rate=bilingual(rate);
+  if(growthSource.height_after_10_years!==undefined)target.growthData.height_after_10_years=asText(growthSource.height_after_10_years);
+  if(growthSource.width_after_10_years!==undefined)target.growthData.width_after_10_years=asText(growthSource.width_after_10_years);
+  if(growthSource.growth_rate!==undefined)target.growthData.growth_rate=bilingual(growthSource.growth_rate);
+ }
+ const siteSource=get('siteData','site_data','site')||{};
+ const position=get('position','exposure','site_position')??siteSource.position;
+ const soil=get('soil','soil_type','ground')??siteSource.soil;
+ const climate=get('climate_zone','climateZone','hardiness','winter_hardiness')??siteSource.climate_zone;
+ if(position!==undefined||soil!==undefined||climate!==undefined||Object.keys(siteSource).length){
+  target.siteData={...(target.siteData||{})};
+  if(position!==undefined)target.siteData.position=bilingual(position);
+  if(soil!==undefined)target.siteData.soil=bilingual(soil);
+  if(climate!==undefined)target.siteData.climate_zone=bilingual(climate);
+  for(const key of ['position','soil','climate_zone'])if(siteSource[key]!==undefined)target.siteData[key]=bilingual(siteSource[key]);
+ }
+ const habit=get('growth_habit','growth_form','habit');if(habit!==undefined)target.growthHabit=habit;
  const foliage=get('foliage','leaf_colour','leaf_color');if(foliage!==undefined)target.foliage=foliage;
  const autumn=get('autumn_colour','autumn_color','fall_color');if(autumn!==undefined)target.autumn_colour=autumn;
- const position=get('position','exposure','site');if(position!==undefined)target.site=typeof position==='object'?position:{nl:asText(position)};
- const hardiness=get('hardiness','winter_hardiness');if(hardiness!==undefined)target.hardiness=hardiness;
  return target;
 }
 const CULTIVAR_AI_KEY_STORAGE='aa-cultivar-ai-key';
