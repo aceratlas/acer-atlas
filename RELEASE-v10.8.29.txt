@@ -1,0 +1,7 @@
+ACER ATLAS v10.8.29
+
+Community delen – controleweergave
+- Na het selecteren van foto’s opent nu een aparte controleweergave.
+- De controle toont de gekozen foto’s met het ingestelde seizoen en de bijbehorende tekst.
+- De knop Publiceren blijft bewust uitgeschakeld totdat de aparte Community-opslag in Cloudflare is ingericht.
+- Er worden geen foto’s geüpload en de collectie, exemplaren en originele foto’s worden niet aangepast.
