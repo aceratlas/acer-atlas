@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="nl">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#f4f6f1">
+  <title>Acer Atlas Community — ontwikkelomgeving</title>
+  <style>
+    :root{color-scheme:light;--bg:#f4f6f1;--surface:#fff;--ink:#263229;--muted:#718075;--line:#dfe6dc;--green:#41694d;--soft:#e9f0e7;--amber:#8b641e}
+    *{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--ink);font:15px/1.5 system-ui,-apple-system,Segoe UI,sans-serif}
+    .wrap{width:min(1040px,calc(100% - 32px));margin:0 auto}
+    header{padding:28px 0 18px;border-bottom:1px solid var(--line)}
+    .top{display:flex;align-items:center;justify-content:space-between;gap:16px}
+    .brand{font-weight:750;letter-spacing:.02em;font-size:19px}.brand span{color:var(--green)}
+    .dev{font-size:12px;font-weight:700;color:var(--amber);background:#f7eedc;border:1px solid #ead9b6;border-radius:999px;padding:6px 10px}
+    h1{font-size:clamp(28px,5vw,40px);line-height:1.12;margin:30px 0 8px;letter-spacing:-.03em}
+    .intro{color:var(--muted);max-width:650px;margin:0}
+    main{padding:26px 0 60px}
+    .notice{display:flex;gap:13px;align-items:flex-start;padding:16px 18px;background:#fff9eb;border:1px solid #eedeb8;border-radius:15px;color:#73571f;margin-bottom:26px}
+    .notice strong{display:block;color:#5f4719;margin-bottom:2px}.notice p{margin:0;font-size:14px}
+    .toolbar{display:flex;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap;margin-bottom:16px}
+    h2{font-size:19px;margin:0}.filters{display:flex;gap:8px;flex-wrap:wrap}
+    .filter{border:1px solid var(--line);background:var(--surface);color:var(--muted);border-radius:999px;padding:7px 13px;font:inherit;font-size:13px}
+    .filter.active{background:var(--soft);border-color:#cbd9c9;color:var(--green);font-weight:650}
+    .empty{background:var(--surface);border:1px dashed #cbd6c9;border-radius:18px;padding:42px 20px;text-align:center}
+    .leaf{width:54px;height:54px;border-radius:17px;background:var(--soft);display:grid;place-items:center;margin:0 auto 15px;font-size:26px}
+    .empty h3{margin:0 0 6px;font-size:18px}.empty p{max-width:470px;margin:0 auto;color:var(--muted);font-size:14px}
+    .below{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:18px}
+    .panel{background:var(--surface);border:1px solid var(--line);border-radius:16px;padding:18px}
+    .panel h3{font-size:15px;margin:0 0 7px}.panel p{font-size:13px;color:var(--muted);margin:0}
+    footer{border-top:1px solid var(--line);padding:18px 0 28px;color:var(--muted);font-size:12px}
+    @media(max-width:620px){.below{grid-template-columns:1fr}.top{align-items:flex-start}}
+  </style>
+</head>
+<body>
+  <header><div class="wrap">
+    <div class="top"><div class="brand">ACER <span>ATLAS</span> <span style="color:var(--muted);font-weight:500">/ Community</span></div><div class="dev">ONTWIKKELOMGEVING</div></div>
+    <h1>Community</h1>
+    <p class="intro">Een plek om bijzondere Japanse esdoorns uit collecties van andere Acer-liefhebbers te ontdekken.</p>
+  </div></header>
+  <main class="wrap">
+    <section class="notice" aria-label="Ontwikkelstatus">
+      <div aria-hidden="true">🛠️</div><div><strong>Onder constructie — nog niet beschikbaar in Acer Atlas</strong><p>Dit is de aparte ontwikkelomgeving. De galerij is nog niet gekoppeld aan accounts, foto's of online opslag. Er worden hier geen echte gebruikersgegevens getoond of gewijzigd.</p></div>
+    </section>
+    <div class="toolbar">
+      <h2>Fotogalerij</h2>
+      <div class="filters" aria-label="Voorbeeldfilters">
+        <span class="filter active">Alles</span><span class="filter">Lente</span><span class="filter">Zomer</span><span class="filter">Herfst</span><span class="filter">Winter</span>
+      </div>
+    </div>
+    <section class="empty">
+      <div class="leaf" aria-hidden="true">🍁</div>
+      <h3>De galerij wordt opgebouwd</h3>
+      <p>Straks kun je hier foto's bekijken die leden bewust vanuit hun eigen collectie delen. Iedere foto krijgt een cultivarverwijzing naar de Acer Atlas-encyclopedie.</p>
+    </section>
+    <div class="below">
+      <section class="panel"><h3>Profielen van leden</h3><p>Een eigen profiel met gedeelde foto's. De opzet houdt rekening met een mogelijke volgfunctie in een latere versie.</p></section>
+      <section class="panel"><h3>Foto's waarderen en bewaren</h3><p>Likes en een directe actie om de gekoppelde cultivar aan je eigen wensenlijst toe te voegen. Reacties zijn niet voorzien.</p></section>
+      <section class="panel"><h3>Foto-informatie</h3><p>Bij iedere foto kan de plaatser een beschrijving en aanvullende informatie toevoegen. Meerdere foto's per cultivar zijn toegestaan.</p></section>
+      <section class="panel"><h3>Moderatie</h3><p>Een moderator kan communityberichten verwijderen. De persoonlijke collectie en originele privéfoto's blijven buiten bereik van deze functie.</p></section>
+    </div>
+  </main>
+  <footer><div class="wrap">Acer Atlas Community · Ontwikkelomgeving · Niet gekoppeld aan productiegegevens</div></footer>
+</body>
+</html>
