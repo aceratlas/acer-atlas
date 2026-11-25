@@ -1,0 +1,13 @@
+Acer Atlas v10.8.20
+Community — eerste versie
+
+- Nieuwe Community-tab, alleen beschikbaar voor ingelogde en geverifieerde accounts.
+- Gebruikers kunnen bewust één foto uit hun collectie kiezen en delen.
+- Gedeelde foto's staan los van de persoonlijke collectie en Cloudflare R2-privéfoto's.
+- Community-galerij met filters op cultivar en seizoen.
+- Ingelogde gebruikers kunnen foto's waarderen.
+- Eigen gedeelde foto's kunnen worden verwijderd.
+- Geen openbare deel-links, wedstrijden, reacties of publieke profielen.
+- Firebase Firestore- en Storage-regels bijgewerkt voor afgeschermde communitytoegang.
+
+Let op: publiceer firestore.rules en storage.rules in Firebase Console voordat de Community-functies werken.
