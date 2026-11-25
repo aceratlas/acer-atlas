@@ -1,0 +1,7 @@
+Acer Atlas v10.8.19
+
+Favorieten-PDF:
+- Eén PDF met vijf opeenvolgende onderdelen: Algemeen, Lente, Zomer, Herfst en Winter.
+- Een cultivar met meerdere favorietselecties verschijnt onder iedere toepasselijke titel.
+- Geen kolom Seizoen(en); iedere titel heeft een eigen tabel.
+- De gewone collectie-PDF blijft één doorlopende lijst.
