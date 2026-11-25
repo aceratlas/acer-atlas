@@ -1,0 +1,7 @@
+Acer Atlas v10.8.16
+
+- Seasonal favourites are now included in the general favourites list.
+- The collection sort option 'Favourites' includes cultivars with either a general favourite or at least one seasonal favourite.
+- The 'List: favourites' PDF export uses the same combined definition.
+- The existing general favourite toggle remains independent and unchanged.
+- Updated PWA and service-worker cache version to 10.8.16.
