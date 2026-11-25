@@ -6,11 +6,23 @@
   <meta name="theme-color" content="#f4f6f1">
   <title>Acer Atlas Community — ontwikkelomgeving</title>
   <style>
-    :root{color-scheme:light;--bg:#f4f6f1;--surface:#fff;--ink:#263229;--muted:#718075;--line:#dfe6dc;--green:#41694d;--soft:#e9f0e7;--amber:#8b641e}
+    :root{color-scheme:light;--bg:#f7f6f0;--surface:#fff;--ink:#1e2c24;--muted:#66736a;--line:#dce3d8;--green:#315d46;--forest:#193b2e;--soft:#e5ecdf;--amber:#8b641e}
     *{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--ink);font:15px/1.5 system-ui,-apple-system,Segoe UI,sans-serif}
     .wrap{width:min(1040px,calc(100% - 32px));margin:0 auto}
     header{padding:28px 0 18px;border-bottom:1px solid var(--line)}
 
+
+    .aa-hero{background:var(--forest);color:#fff;padding:24px 0 27px;border:0;border-radius:0 0 24px 24px}
+    .aa-brand-row{display:flex;align-items:center;justify-content:space-between;gap:12px}
+    .aa-brand{display:flex;align-items:center;gap:11px;min-width:0}
+    .aa-logo{width:46px;height:46px;object-fit:cover;border-radius:11px;background:#f7f6f0;box-shadow:0 1px 5px #0003;flex:0 0 46px}
+    .aa-brand-name{font-size:22px;line-height:1;font-weight:800;letter-spacing:.02em}
+    .aa-tagline{font-size:13px;color:#d5e3d6;margin-top:6px}
+    .aa-hero h1{font-size:clamp(27px,5vw,38px);line-height:1.08;margin:25px 0 8px;letter-spacing:-.03em;color:#fff}
+    .aa-hero .intro{color:#e1e9df;max-width:650px;margin:0}
+    .aa-hero .dev{flex-shrink:0}
+    .community-nav-wrap{padding-top:16px}
+    .community-nav{margin:0}
     .community-nav{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:7px;margin:0 0 20px}
     .community-nav-link{min-width:0;min-height:66px;padding:8px 4px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:4px;border:1px solid var(--line);border-radius:13px;background:var(--surface);color:var(--muted);text-decoration:none;text-align:center;font-size:11px;line-height:1.15}
     .community-nav-link .nav-icon{font-size:26px;line-height:1.05}
@@ -39,16 +51,24 @@
   </style>
 </head>
 <body>
-  <header><div class="wrap">
+  <header class="aa-hero"><div class="wrap">
+    <div class="aa-brand-row">
+      <div class="aa-brand">
+        <img class="aa-logo" src="./acer-atlas-logo.webp" alt="Acer Atlas-logo">
+        <div><div class="aa-brand-name">ACER ATLAS</div><div class="aa-tagline">Mijn Japanse esdoorncollectie · Community</div></div>
+      </div>
+      <div class="dev">ONTWIKKELOMGEVING</div>
+    </div>
+    <h1>Community</h1>
+    <p class="intro">Een plek om bijzondere Japanse esdoorns uit collecties van andere Acer-liefhebbers te ontdekken.</p>
+  </div></header>
+  <div class="wrap community-nav-wrap">
     <nav class="community-nav" aria-label="Acer Atlas navigatie">
       <a class="community-nav-link" href="./index.html"><span class="nav-icon" aria-hidden="true">📚</span><span>Encyclopedie</span></a>
       <a class="community-nav-link" href="./index.html"><span class="nav-icon" aria-hidden="true">🍁</span><span>Mijn collectie</span></a>
       <a class="community-nav-link active" href="./community-preview.html" aria-current="page"><span class="nav-icon" aria-hidden="true">🌿</span><span>Community</span></a>
     </nav>
-    <div class="top"><div class="brand">ACER <span>ATLAS</span> <span style="color:var(--muted);font-weight:500">/ Community</span></div><div class="dev">ONTWIKKELOMGEVING</div></div>
-    <h1>Community</h1>
-    <p class="intro">Een plek om bijzondere Japanse esdoorns uit collecties van andere Acer-liefhebbers te ontdekken.</p>
-  </div></header>
+  </div>
   <main class="wrap">
     <section class="notice" aria-label="Ontwikkelstatus">
       <div aria-hidden="true">🛠️</div><div><strong>Onder constructie — nog niet beschikbaar in Acer Atlas</strong><p>Dit is de aparte ontwikkelomgeving. De galerij is nog niet gekoppeld aan accounts, foto's of online opslag. Er worden hier geen echte gebruikersgegevens getoond of gewijzigd.</p></div>
