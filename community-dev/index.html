@@ -1,65 +1,77 @@
 <!doctype html>
 <html lang="nl">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="theme-color" content="#f4f6f1">
-  <title>Acer Atlas Community — ontwikkelomgeving</title>
-  <style>
-    :root{color-scheme:light;--bg:#f4f6f1;--surface:#fff;--ink:#263229;--muted:#718075;--line:#dfe6dc;--green:#41694d;--soft:#e9f0e7;--amber:#8b641e}
-    *{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--ink);font:15px/1.5 system-ui,-apple-system,Segoe UI,sans-serif}
-    .wrap{width:min(1040px,calc(100% - 32px));margin:0 auto}
-    header{padding:28px 0 18px;border-bottom:1px solid var(--line)}
-    .top{display:flex;align-items:center;justify-content:space-between;gap:16px}
-    .brand{font-weight:750;letter-spacing:.02em;font-size:19px}.brand span{color:var(--green)}
-    .dev{font-size:12px;font-weight:700;color:var(--amber);background:#f7eedc;border:1px solid #ead9b6;border-radius:999px;padding:6px 10px}
-    h1{font-size:clamp(28px,5vw,40px);line-height:1.12;margin:30px 0 8px;letter-spacing:-.03em}
-    .intro{color:var(--muted);max-width:650px;margin:0}
-    main{padding:26px 0 60px}
-    .notice{display:flex;gap:13px;align-items:flex-start;padding:16px 18px;background:#fff9eb;border:1px solid #eedeb8;border-radius:15px;color:#73571f;margin-bottom:26px}
-    .notice strong{display:block;color:#5f4719;margin-bottom:2px}.notice p{margin:0;font-size:14px}
-    .toolbar{display:flex;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap;margin-bottom:16px}
-    h2{font-size:19px;margin:0}.filters{display:flex;gap:8px;flex-wrap:wrap}
-    .filter{border:1px solid var(--line);background:var(--surface);color:var(--muted);border-radius:999px;padding:7px 13px;font:inherit;font-size:13px}
-    .filter.active{background:var(--soft);border-color:#cbd9c9;color:var(--green);font-weight:650}
-    .empty{background:var(--surface);border:1px dashed #cbd6c9;border-radius:18px;padding:42px 20px;text-align:center}
-    .leaf{width:54px;height:54px;border-radius:17px;background:var(--soft);display:grid;place-items:center;margin:0 auto 15px;font-size:26px}
-    .empty h3{margin:0 0 6px;font-size:18px}.empty p{max-width:470px;margin:0 auto;color:var(--muted);font-size:14px}
-    .below{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:18px}
-    .panel{background:var(--surface);border:1px solid var(--line);border-radius:16px;padding:18px}
-    .panel h3{font-size:15px;margin:0 0 7px}.panel p{font-size:13px;color:var(--muted);margin:0}
-    footer{border-top:1px solid var(--line);padding:18px 0 28px;color:var(--muted);font-size:12px}
-    @media(max-width:620px){.below{grid-template-columns:1fr}.top{align-items:flex-start}}
-  </style>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="theme-color" content="#193b2e">
+<title>Acer Atlas Community — voorbeeld</title>
+<style>
+:root{--forest:#193b2e;--leaf:#315d46;--sage:#e5ecdf;--cream:#f7f6f0;--ink:#1e2c24;--muted:#66736a;--line:#dce3d8;--amber:#fff0c9}
+*{box-sizing:border-box}body{margin:0;background:var(--cream);color:var(--ink);font:15px/1.45 system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif}
+.wrap{width:min(1040px,calc(100% - 28px));margin:auto}
+.aa-hero{background:var(--forest);color:#fff;padding:22px 0 24px;border-radius:0 0 24px 24px}
+.brandrow{display:flex;align-items:center;justify-content:space-between;gap:12px}.brand{display:flex;align-items:center;gap:10px;min-width:0}
+.logo{width:46px;height:46px;object-fit:cover;border-radius:11px;background:var(--cream);flex:0 0 46px}.brandname{font-size:21px;font-weight:800;line-height:1;letter-spacing:.02em}.tagline{font-size:12px;color:#d5e3d6;margin-top:5px}
+.dev{font-size:10px;font-weight:750;letter-spacing:.04em;color:#79551b;background:#fff0c9;border:1px solid #ead49a;border-radius:999px;padding:6px 9px;white-space:nowrap}
+.aa-hero h1{font-size:clamp(27px,5vw,36px);line-height:1.08;margin:24px 0 7px}.aa-hero p{color:#e1e9df;margin:0;max-width:650px}
+.navwrap{padding-top:14px}.nav{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:7px}
+.nav a{min-width:0;min-height:68px;padding:8px 4px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:4px;border:1px solid var(--line);border-radius:13px;background:#fff;color:var(--muted);text-decoration:none;text-align:center;font-size:11px;line-height:1.15}
+.nav a.active{background:var(--forest);border-color:var(--forest);color:#fff;font-weight:700}.navicon{font-size:26px;line-height:1}
+main{padding:20px 0 48px}.notice{display:flex;gap:10px;align-items:flex-start;padding:12px 14px;background:#fff9eb;border:1px solid #eedeb8;border-radius:13px;color:#73571f;margin-bottom:20px;font-size:13px}.notice strong{display:block;color:#5f4719;margin-bottom:2px}
+.sectionbar{display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap;margin:0 0 13px}.sectionbar h2{font-size:21px;margin:0}
+.filters{display:flex;gap:7px;overflow:auto;padding:1px 0 7px;max-width:100%}
+.filter{border:1px solid var(--line);background:#fff;color:var(--muted);border-radius:999px;padding:8px 13px;font:inherit;font-size:13px;white-space:nowrap;cursor:pointer}
+.filter.active{background:var(--sage);border-color:#bdcdb8;color:var(--forest);font-weight:700}
+.grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}
+.photo-card{background:#fff;border:1px solid var(--line);border-radius:16px;overflow:hidden;min-width:0;box-shadow:0 2px 8px #243c2b08}
+.photo-art{height:150px;display:flex;align-items:center;justify-content:center;position:relative;overflow:hidden}
+.photo-art:before,.photo-art:after{content:"";position:absolute;border-radius:50%;filter:blur(1px);opacity:.55}
+.photo-art:before{width:145px;height:145px;left:-35px;top:-48px;background:#ffffff55}.photo-art:after{width:120px;height:120px;right:-25px;bottom:-55px;background:#193b2e22}
+.art-red{background:linear-gradient(135deg,#f1d7ce,#bd6257 55%,#713d39)}.art-gold{background:linear-gradient(135deg,#f5edc9,#c5a74c 55%,#64774b)}.art-green{background:linear-gradient(135deg,#dce9d4,#82a878 55%,#355b42)}.art-orange{background:linear-gradient(135deg,#f7dfb8,#d88843 55%,#8b543b)}
+.leafemoji{font-size:76px;z-index:1;filter:drop-shadow(0 5px 5px #0002)}
+.example{position:absolute;left:9px;top:9px;background:#ffffffd9;color:#435448;border-radius:999px;padding:4px 7px;font-size:9px;font-weight:750;letter-spacing:.04em;z-index:2}
+.cardbody{padding:11px 12px 12px}.cultivar{font-size:16px;font-weight:750;line-height:1.2}.species{font-size:12px;color:var(--muted);font-style:italic;margin-top:3px}
+.byline{font-size:11px;color:var(--muted);margin-top:8px;display:flex;align-items:center;gap:6px}.avatar{width:22px;height:22px;display:inline-grid;place-items:center;background:var(--sage);border-radius:50%;font-size:12px}
+.description{font-size:12px;color:#46544a;margin:8px 0 0}
+.actions{display:flex;align-items:center;justify-content:space-between;gap:6px;margin-top:10px}.action{border:1px solid var(--line);background:#fff;border-radius:9px;padding:7px 9px;color:var(--forest);font-size:11px;font-weight:650;cursor:pointer}.action.liked{background:#f8e8e5;border-color:#e9c9c2;color:#9a4637}.action.wish{background:var(--sage);border-color:#cbd9c7}
+.profiles{margin-top:26px}.profiles h2{font-size:19px;margin:0 0 11px}.profilegrid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:9px}
+.profile{background:#fff;border:1px solid var(--line);border-radius:13px;padding:12px 8px;text-align:center}.profile .avatar{width:36px;height:36px;font-size:17px;margin:0 auto 6px}.profile strong{display:block;font-size:12px}.profile small{font-size:10px;color:var(--muted)}
+.footer{margin-top:22px;padding-top:13px;border-top:1px solid var(--line);font-size:11px;color:var(--muted)}
+.toast{position:fixed;left:50%;bottom:22px;transform:translateX(-50%);background:var(--forest);color:#fff;padding:10px 15px;border-radius:999px;box-shadow:0 5px 20px #0003;font-size:12px;max-width:90%;text-align:center;opacity:0;pointer-events:none;transition:opacity .2s}.toast.show{opacity:1}
+@media(min-width:650px){.grid{grid-template-columns:repeat(3,minmax(0,1fr));gap:15px}.photo-art{height:190px}.nav a{font-size:13px;min-height:64px}.profiles .profilegrid{grid-template-columns:repeat(3,1fr)}}
+@media(max-width:370px){.grid{grid-template-columns:1fr}.photo-art{height:170px}.dev{font-size:9px;padding:5px 7px}.brandname{font-size:19px}}
+</style>
 </head>
 <body>
-  <header><div class="wrap">
-    <div class="top"><div class="brand">ACER <span>ATLAS</span> <span style="color:var(--muted);font-weight:500">/ Community</span></div><div class="dev">ONTWIKKELOMGEVING</div></div>
-    <h1>Community</h1>
-    <p class="intro">Een plek om bijzondere Japanse esdoorns uit collecties van andere Acer-liefhebbers te ontdekken.</p>
-  </div></header>
-  <main class="wrap">
-    <section class="notice" aria-label="Ontwikkelstatus">
-      <div aria-hidden="true">🛠️</div><div><strong>Onder constructie — nog niet beschikbaar in Acer Atlas</strong><p>Dit is de aparte ontwikkelomgeving. De galerij is nog niet gekoppeld aan accounts, foto's of online opslag. Er worden hier geen echte gebruikersgegevens getoond of gewijzigd.</p></div>
-    </section>
-    <div class="toolbar">
-      <h2>Fotogalerij</h2>
-      <div class="filters" aria-label="Voorbeeldfilters">
-        <span class="filter active">Alles</span><span class="filter">Lente</span><span class="filter">Zomer</span><span class="filter">Herfst</span><span class="filter">Winter</span>
-      </div>
-    </div>
-    <section class="empty">
-      <div class="leaf" aria-hidden="true">🍁</div>
-      <h3>De galerij wordt opgebouwd</h3>
-      <p>Straks kun je hier foto's bekijken die leden bewust vanuit hun eigen collectie delen. Iedere foto krijgt een cultivarverwijzing naar de Acer Atlas-encyclopedie.</p>
-    </section>
-    <div class="below">
-      <section class="panel"><h3>Profielen van leden</h3><p>Een eigen profiel met gedeelde foto's. De opzet houdt rekening met een mogelijke volgfunctie in een latere versie.</p></section>
-      <section class="panel"><h3>Foto's waarderen en bewaren</h3><p>Likes en een directe actie om de gekoppelde cultivar aan je eigen wensenlijst toe te voegen. Reacties zijn niet voorzien.</p></section>
-      <section class="panel"><h3>Foto-informatie</h3><p>Bij iedere foto kan de plaatser een beschrijving en aanvullende informatie toevoegen. Meerdere foto's per cultivar zijn toegestaan.</p></section>
-      <section class="panel"><h3>Moderatie</h3><p>Een moderator kan communityberichten verwijderen. De persoonlijke collectie en originele privéfoto's blijven buiten bereik van deze functie.</p></section>
-    </div>
-  </main>
-  <footer><div class="wrap">Acer Atlas Community · Ontwikkelomgeving · Niet gekoppeld aan productiegegevens</div></footer>
-</body>
-</html>
+<header class="aa-hero"><div class="wrap">
+<div class="brandrow"><div class="brand"><img class="logo" src="./acer-atlas-logo.webp" alt="Acer Atlas-logo"><div><div class="brandname">ACER ATLAS</div><div class="tagline">Mijn Japanse esdoorncollectie · Community</div></div></div><div class="dev">VOORBEELDWEERGAVE</div></div>
+<h1>Community</h1><p>Ontdek Japanse esdoorns uit de collecties van andere Acer-liefhebbers.</p>
+</div></header>
+<div class="wrap navwrap"><nav class="nav" aria-label="Acer Atlas navigatie">
+<a href="../index.html"><span class="navicon">📚</span><span>Encyclopedie</span></a><a href="../index.html"><span class="navicon">🍁</span><span>Mijn collectie</span></a><a class="active" href="../community-preview.html" aria-current="page"><span class="navicon">🌿</span><span>Community</span></a>
+</nav></div>
+<main class="wrap">
+<div class="notice"><span aria-hidden="true">🧪</span><div><strong>Dit is een interactieve voorbeeldweergave</strong>De getoonde leden, foto's en acties zijn fictief. Er is geen koppeling met accounts, je collectie, wensenlijst of online opslag.</div></div>
+<div class="sectionbar"><h2>Fotogalerij</h2><span style="font-size:11px;color:var(--muted)">Voorbeeld · 4 foto's</span></div>
+<div class="filters" role="group" aria-label="Filter foto's op seizoen">
+<button class="filter active" data-filter="all">Alles</button><button class="filter" data-filter="spring">Lente</button><button class="filter" data-filter="summer">Zomer</button><button class="filter" data-filter="autumn">Herfst</button><button class="filter" data-filter="winter">Winter</button>
+</div>
+<section class="grid" id="gallery" aria-label="Voorbeeldfoto's">
+<article class="photo-card" data-season="spring"><div class="photo-art art-red"><span class="example">VOORBEELD · LENTE</span><span class="leafemoji">🍁</span></div><div class="cardbody"><div class="cultivar">Bloodgood</div><div class="species">Acer palmatum</div><div class="byline"><span class="avatar">M</span> Marieke · Boskoop</div><p class="description">Fris rood blad in het voorjaar.</p><div class="actions"><button class="action like" aria-pressed="false">♡ <span>Leuk</span></button><button class="action wish">＋ Wenslijst</button></div></div></article>
+<article class="photo-card" data-season="summer"><div class="photo-art art-green"><span class="example">VOORBEELD · ZOMER</span><span class="leafemoji">🌿</span></div><div class="cardbody"><div class="cultivar">Seiryu</div><div class="species">Acer palmatum dissectum</div><div class="byline"><span class="avatar">J</span> Jan · Friesland</div><p class="description">Fijn ingesneden blad met opgaande groei.</p><div class="actions"><button class="action like" aria-pressed="false">♡ <span>Leuk</span></button><button class="action wish">＋ Wenslijst</button></div></div></article>
+<article class="photo-card" data-season="autumn"><div class="photo-art art-orange"><span class="example">VOORBEELD · HERFST</span><span class="leafemoji">🍂</span></div><div class="cardbody"><div class="cultivar">Orange Dream</div><div class="species">Acer palmatum</div><div class="byline"><span class="avatar">E</span> Erik · Drenthe</div><p class="description">Warme geel-oranje herfstkleuren.</p><div class="actions"><button class="action like" aria-pressed="false">♡ <span>Leuk</span></button><button class="action wish">＋ Wenslijst</button></div></div></article>
+<article class="photo-card" data-season="winter"><div class="photo-art art-gold"><span class="example">VOORBEELD · WINTER</span><span class="leafemoji">🌳</span></div><div class="cardbody"><div class="cultivar">Sango-kaku</div><div class="species">Acer palmatum</div><div class="byline"><span class="avatar">L</span> Lisa · Utrecht</div><p class="description">De koraalrode takken vallen in de winter op.</p><div class="actions"><button class="action like" aria-pressed="false">♡ <span>Leuk</span></button><button class="action wish">＋ Wenslijst</button></div></div></article>
+</section>
+<section class="profiles"><h2>Ontdek leden</h2><div class="profilegrid">
+<div class="profile"><span class="avatar">M</span><strong>Marieke</strong><small>12 gedeelde foto's</small></div><div class="profile"><span class="avatar">J</span><strong>Jan</strong><small>8 gedeelde foto's</small></div><div class="profile"><span class="avatar">E</span><strong>Erik</strong><small>5 gedeelde foto's</small></div>
+</div></section>
+<div class="footer">Acer Atlas Community · Statische demo · Geen echte gebruikersgegevens</div>
+</main><div class="toast" id="toast" role="status" aria-live="polite"></div>
+<script>
+(function(){
+ const filters=[...document.querySelectorAll('[data-filter]')],cards=[...document.querySelectorAll('.photo-card')],toast=document.getElementById('toast');let toastTimer;
+ function message(text){toast.textContent=text;toast.classList.add('show');clearTimeout(toastTimer);toastTimer=setTimeout(()=>toast.classList.remove('show'),2300)}
+ filters.forEach(button=>button.addEventListener('click',()=>{filters.forEach(x=>x.classList.toggle('active',x===button));const season=button.dataset.filter;cards.forEach(card=>card.hidden=season!=='all'&&card.dataset.season!==season)}));
+ document.querySelectorAll('.like').forEach(button=>button.addEventListener('click',()=>{const active=button.getAttribute('aria-pressed')!=='true';button.setAttribute('aria-pressed',String(active));button.classList.toggle('liked',active);button.querySelector('span').textContent=active?'Leuk gevonden':'Leuk';button.firstChild.textContent=active?'♥ ':'♡ ';}));
+ document.querySelectorAll('.wish').forEach(button=>button.addEventListener('click',()=>message('Voorbeeldactie: straks voeg je deze cultivar toe aan je eigen wensenlijst.')));
+})();
+</script>
+</body></html>
