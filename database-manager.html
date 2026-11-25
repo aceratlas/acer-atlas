@@ -572,9 +572,9 @@ function mergeAiCultivar(target,source){
   if(height!==undefined)target.growthData.height_after_10_years=asText(height);
   if(width!==undefined)target.growthData.width_after_10_years=asText(width);
   if(rate!==undefined)target.growthData.growth_rate=bilingual(rate);
-  if(growthSource.height_after_10_years!==undefined)target.growthData.height_after_10_years=asText(growthSource.height_after_10_years);
-  if(growthSource.width_after_10_years!==undefined)target.growthData.width_after_10_years=asText(growthSource.width_after_10_years);
-  if(growthSource.growth_rate!==undefined)target.growthData.growth_rate=bilingual(growthSource.growth_rate);
+  if(growthSource.height_after_10_years!==undefined&&!isUnknown(growthSource.height_after_10_years))target.growthData.height_after_10_years=asText(growthSource.height_after_10_years);
+  if(growthSource.width_after_10_years!==undefined&&!isUnknown(growthSource.width_after_10_years))target.growthData.width_after_10_years=asText(growthSource.width_after_10_years);
+  if(growthSource.growth_rate!==undefined&&!isUnknown(growthSource.growth_rate))target.growthData.growth_rate=bilingual(growthSource.growth_rate);
  }
  const siteSource=get('siteData','site_data','site')||{};
  const position=get('position','exposure','site_position')??siteSource.position;
@@ -585,7 +585,7 @@ function mergeAiCultivar(target,source){
   if(position!==undefined)target.siteData.position=bilingual(position);
   if(soil!==undefined)target.siteData.soil=bilingual(soil);
   if(climate!==undefined)target.siteData.climate_zone=bilingual(climate);
-  for(const key of ['position','soil','climate_zone'])if(siteSource[key]!==undefined)target.siteData[key]=bilingual(siteSource[key]);
+  for(const key of ['position','soil','climate_zone'])if(siteSource[key]!==undefined&&!isUnknown(siteSource[key]))target.siteData[key]=bilingual(siteSource[key]);
  }
  const habit=get('growth_habit','growth_form','habit');if(habit!==undefined)target.growthHabit=habit;
  const foliage=get('foliage','leaf_colour','leaf_color');if(foliage!==undefined)target.foliage=foliage;
