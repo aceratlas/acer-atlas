@@ -1,0 +1,10 @@
+Acer Atlas v10.8.15
+
+- Added four personal seasonal-favourite toggles to each cultivar entry in My Collection: spring, summer, autumn and winter.
+- Seasonal favourites are stored on the collection cultivar record, not on individual specimens.
+- Existing general favourite remains unchanged.
+- Seasonal selections are saved through the existing collection save and Cloudflare R2 synchronisation flow.
+- Added seasonal icons to collection cards and a season filter to the collection filter panel.
+- Existing collection records remain compatible; missing seasonal-favourite data is treated as no seasons selected.
+- The central cultivar encyclopedia and cultivar-database.json are unchanged.
+- Updated the PWA and service-worker cache version to 10.8.15.
