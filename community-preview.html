@@ -10,6 +10,12 @@
     *{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--ink);font:15px/1.5 system-ui,-apple-system,Segoe UI,sans-serif}
     .wrap{width:min(1040px,calc(100% - 32px));margin:0 auto}
     header{padding:28px 0 18px;border-bottom:1px solid var(--line)}
+
+    .community-nav{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:7px;margin:0 0 20px}
+    .community-nav-link{min-width:0;min-height:66px;padding:8px 4px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:4px;border:1px solid var(--line);border-radius:13px;background:var(--surface);color:var(--muted);text-decoration:none;text-align:center;font-size:11px;line-height:1.15}
+    .community-nav-link .nav-icon{font-size:26px;line-height:1.05}
+    .community-nav-link.active{background:#193b2e;border-color:#193b2e;color:#fff;font-weight:700}
+    @media(min-width:700px){.community-nav-link{font-size:13px}.community-nav-link .nav-icon{font-size:27px}}
     .top{display:flex;align-items:center;justify-content:space-between;gap:16px}
     .brand{font-weight:750;letter-spacing:.02em;font-size:19px}.brand span{color:var(--green)}
     .dev{font-size:12px;font-weight:700;color:var(--amber);background:#f7eedc;border:1px solid #ead9b6;border-radius:999px;padding:6px 10px}
@@ -34,6 +40,11 @@
 </head>
 <body>
   <header><div class="wrap">
+    <nav class="community-nav" aria-label="Acer Atlas navigatie">
+      <a class="community-nav-link" href="./index.html"><span class="nav-icon" aria-hidden="true">📚</span><span>Encyclopedie</span></a>
+      <a class="community-nav-link" href="./index.html"><span class="nav-icon" aria-hidden="true">🍁</span><span>Mijn collectie</span></a>
+      <a class="community-nav-link active" href="./community-preview.html" aria-current="page"><span class="nav-icon" aria-hidden="true">🌿</span><span>Community</span></a>
+    </nav>
     <div class="top"><div class="brand">ACER <span>ATLAS</span> <span style="color:var(--muted);font-weight:500">/ Community</span></div><div class="dev">ONTWIKKELOMGEVING</div></div>
     <h1>Community</h1>
     <p class="intro">Een plek om bijzondere Japanse esdoorns uit collecties van andere Acer-liefhebbers te ontdekken.</p>
