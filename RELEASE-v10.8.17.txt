@@ -1,0 +1,7 @@
+Acer Atlas v10.8.17
+
+- De favorieten-PDF bevat nu een kolom Seizoen(en).
+- Alle gekozen seizoensfavorieten worden per cultivar vermeld.
+- Algemene favorieten zonder seizoenskeuze tonen Algemeen.
+- Vertalingen toegevoegd voor Nederlands, Engels, Duits en Frans.
+- PWA- en databasecacheversie bijgewerkt.
