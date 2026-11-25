@@ -1,0 +1,5 @@
+Acer Atlas v10.8.18
+
+- In de favorietenlijst staat Algemeen altijd vóór de seizoensfavorieten.
+- Als zowel algemeen als seizoensfavorieten zijn ingesteld, worden alle labels getoond in die volgorde.
+- PWA- en databasecacheversie bijgewerkt.
