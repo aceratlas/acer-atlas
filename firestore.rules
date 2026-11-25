@@ -5,12 +5,11 @@ service cloud.firestore {
       return request.auth != null
         && request.auth.token.email == 'aceratlas.maple@outlook.com';
     }
-
+    function verifiedUser() {
+      return request.auth != null && request.auth.token.email_verified == true;
+    }
     match /users/{userId} {
-      // Users can read their own profile; the designated admin can read profiles
-      // to manage Plus-interest requests. The admin cannot change plans here.
-      allow read: if request.auth != null
-        && (request.auth.uid == userId || isAcerAtlasAdmin());
+      allow read: if request.auth != null && (request.auth.uid == userId || isAcerAtlasAdmin());
       allow create: if request.auth != null
         && request.auth.uid == userId
         && request.resource.data.keys().hasOnly(['plan', 'email', 'createdAt', 'updatedAt', 'plusInterest', 'plusInterestAt'])
@@ -26,31 +25,37 @@ service cloud.firestore {
         && (!('plusInterest' in request.resource.data) || request.resource.data.plusInterest is bool);
       allow delete: if request.auth != null && request.auth.uid == userId;
     }
-
-    // Personal Acer Atlas data is stored in separate documents per account.
-    // No client can read or write another user's records.
-    function ownsAtlasAccount(userId) {
-      return request.auth != null && request.auth.uid == userId;
+    function ownsAtlasAccount(userId) { return request.auth != null && request.auth.uid == userId; }
+    match /users/{userId}/atlasPlants/{plantId} { allow read, create, update, delete: if ownsAtlasAccount(userId); }
+    match /users/{userId}/atlasWishlist/{itemId} { allow read, create, update, delete: if ownsAtlasAccount(userId); }
+    match /users/{userId}/atlasSeedlings/{seedlingId} { allow read, create, update, delete: if ownsAtlasAccount(userId); }
+    match /users/{userId}/atlasMetadata/{metadataId} { allow read, create, update, delete: if ownsAtlasAccount(userId); }
+    match /communityPhotos/{photoId} {
+      allow read: if verifiedUser();
+      allow create: if verifiedUser()
+        && request.resource.data.keys().hasOnly(['ownerUid','ownerLabel','cultivar','season','caption','storagePath','createdAt'])
+        && request.resource.data.ownerUid == request.auth.uid
+        && request.resource.data.ownerLabel is string
+        && request.resource.data.ownerLabel.size() <= 80
+        && request.resource.data.cultivar is string
+        && request.resource.data.cultivar.size() > 0
+        && request.resource.data.cultivar.size() <= 120
+        && request.resource.data.season in ['spring','summer','autumn','winter','unknown']
+        && request.resource.data.caption is string
+        && request.resource.data.caption.size() <= 240
+        && request.resource.data.storagePath is string
+        && request.resource.data.storagePath.matches('community/' + request.auth.uid + '/[A-Za-z0-9_-]+');
+      allow update: if false;
+      allow delete: if verifiedUser() && resource.data.ownerUid == request.auth.uid;
+      match /likes/{userId} {
+        allow read: if verifiedUser();
+        allow create: if verifiedUser() && request.auth.uid == userId
+          && request.resource.data.keys().hasOnly(['uid','createdAt'])
+          && request.resource.data.uid == request.auth.uid;
+        allow update: if false;
+        allow delete: if verifiedUser() && request.auth.uid == userId;
+      }
     }
-
-    match /users/{userId}/atlasPlants/{plantId} {
-      allow read, create, update, delete: if ownsAtlasAccount(userId);
-    }
-
-    match /users/{userId}/atlasWishlist/{itemId} {
-      allow read, create, update, delete: if ownsAtlasAccount(userId);
-    }
-
-    match /users/{userId}/atlasSeedlings/{seedlingId} {
-      allow read, create, update, delete: if ownsAtlasAccount(userId);
-    }
-
-    match /users/{userId}/atlasMetadata/{metadataId} {
-      allow read, create, update, delete: if ownsAtlasAccount(userId);
-    }
-
-    // Queue a notification for the administrator. Firebase Trigger Email
-    // extension must be installed and configured for actual delivery.
     match /mail/{mailId} {
       allow create: if request.auth != null
         && request.resource.data.to == 'aceratlas.maple@outlook.com'
