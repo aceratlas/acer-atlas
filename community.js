@@ -4,7 +4,7 @@
  const $=id=>document.getElementById(id);
  let storage=null, db=null, imageUrls=[];
  const seasonNames={spring:'Lente',summer:'Zomer',autumn:'Herfst',winter:'Winter',unknown:'Onbekend'};
- const user=()=>window.acerAuth?.currentUser;
+ const user=()=>acerAuth?.currentUser;
  const verified=()=>!!(user()&&user().emailVerified);
  const say=(message,error=false)=>{const el=$('communityShareStatus');if(el){el.textContent=message;el.style.color=error?'#9a4637':'';}};
  const photoChoices=plant=>{
@@ -19,14 +19,14 @@
   const plantSelect=$('communityPlant'),photoSelect=$('communityPhoto');
   if(!plantSelect||!photoSelect)return;
   const previous=plantSelect.value;
-  const plants=(Array.isArray(window.collection)?window.collection:[]).filter(p=>photoChoices(p).length);
+  const plants=(Array.isArray(collection)?collection:[]).filter(p=>photoChoices(p).length);
   plantSelect.innerHTML='<option value="">Kies een cultivar</option>'+plants.map(p=>'<option value="'+esc(String(p.id))+'">'+esc(p.name||p.cultivarName||p.cultivar||'Acer')+'</option>').join('');
   if(plants.some(p=>String(p.id)===previous))plantSelect.value=previous;
   fillPhotoSelect();
  }
  function esc(v){return String(v??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));}
  function fillPhotoSelect(){
-  const plant=(window.collection||[]).find(p=>String(p.id)===$('communityPlant')?.value);
+  const plant=(collection||[]).find(p=>String(p.id)===$('communityPlant')?.value);
   const choices=photoChoices(plant),sel=$('communityPhoto');
   if(!sel)return;
   sel.innerHTML=choices.length?choices.map((p,i)=>'<option value="'+i+'">'+esc(p.label)+'</option>').join(''):'<option value="">Geen lokaal beschikbare foto gevonden</option>';
@@ -34,7 +34,7 @@
  async function sharePhoto(e){
   e.preventDefault();
   if(!verified()){say('Log in met een bevestigd account om een foto te delen.',true);return;}
-  const plant=(window.collection||[]).find(p=>String(p.id)===$('communityPlant')?.value);
+  const plant=(collection||[]).find(p=>String(p.id)===$('communityPlant')?.value);
   const choices=photoChoices(plant),choice=choices[Number($('communityPhoto')?.value)];
   if(!plant||!choice){say('Kies een cultivar en een beschikbare foto.',true);return;}
   const button=$('communityShareButton');button.disabled=true;say('Foto wordt veilig geüpload…');
@@ -98,15 +98,15 @@
   }catch(err){console.error('Acer Atlas Community load failed',err);host.innerHTML='<div class="empty">De Community kon niet worden geladen. Controleer de verbinding en de Firebase-regels.</div>';}
  }
  function start(){
-  if(!window.firebase||!window.acerAuth||!window.acerDb)return;
-  try{storage=firebase.storage();db=window.acerDb;}catch(err){console.error(err);return;}
+  if(!window.firebase||!acerAuth||!acerDb)return;
+  try{storage=firebase.storage();db=acerDb;}catch(err){console.error(err);return;}
   $('communityPlant')?.addEventListener('change',fillPhotoSelect);
   $('communityShareForm')?.addEventListener('submit',sharePhoto);
   $('communityRefresh')?.addEventListener('click',render);
   $('communityFilterCultivar')?.addEventListener('change',render);
   $('communityFilterSeason')?.addEventListener('change',render);
   window.acerRenderCommunity=()=>{initSelectors();render();};
-  window.acerAuth.onAuthStateChanged(()=>{if(document.getElementById('community')&&!document.getElementById('community').classList.contains('hidden')){initSelectors();render();}});
+  acerAuth.onAuthStateChanged(()=>{if(document.getElementById('community')&&!document.getElementById('community').classList.contains('hidden')){initSelectors();render();}});
  }
  if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',start);else start();
 })();
