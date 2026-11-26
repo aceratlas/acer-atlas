@@ -1,4 +1,4 @@
-<!doctype html><html lang="nl" data-acer-atlas-manager-version="0.4.22"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Acer Atlas · Datamanager v0.4.22</title><style>
+<!doctype html><html lang="nl" data-acer-atlas-manager-version="0.4.23"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Acer Atlas · Datamanager v0.4.23</title><style>
 :root{font-family:Inter,Segoe UI,Arial,sans-serif;color:#202820;background:#f4f6f2}
 *{box-sizing:border-box}body{margin:0;background:#f4f6f2;color:#202820}
 button,input,textarea,select{font:inherit}button{cursor:pointer}
@@ -184,7 +184,7 @@ label{display:block;font-size:12px;font-weight:700;color:#526156;margin:12px 0 5
   <div class="toolbar"><button class="primary" id="apply">Wijzigingen toepassen</button><button id="cancelFlyout">Annuleren</button></div>
  </section>
 </div>
-<div class="footer"><span class="footer-version">Acer Atlas Datamanager v0.4.22</span> · Opslaan bewaart je wijzigingen lokaal als concept. Publiceren naar GitHub doe je apart wanneer je klaar bent.</div>
+<div class="footer"><span class="footer-version">Acer Atlas Datamanager v0.4.23</span> · Opslaan bewaart je wijzigingen lokaal als concept. Publiceren naar GitHub doe je apart wanneer je klaar bent.</div>
 <script>/* De actuele database wordt rechtstreeks uit cultivar-database.json geladen. */</script>
 <script>
 let db=null, selected=null, suggestionIndex=-1, suggestionItems=[], activeFlyout='basis', pendingPhotos=[];
@@ -607,6 +607,13 @@ function mergeAiCultivar(target,source){
  for(const key of ['water','wind','hardiness','container_suitability','pruning','drainage','ph'])if(siteSourceFull[key]!==undefined&&!isUnknown(siteSourceFull[key])){target.siteData=target.siteData||{};target.siteData[key]=bilingual(siteSourceFull[key]);}
  const fieldSources=get('field_sources','fieldSources');if(fieldSources&&typeof fieldSources==='object')target.field_sources={...(target.field_sources||{}),...fieldSources};
  const aiSources=get('sources');if(Array.isArray(aiSources))target.sources=[...(target.sources||[]),...aiSources].filter((item,index,all)=>item?.url&&all.findIndex(x=>x?.url===item.url)===index);
+ // Acer Atlas encyclopaedia reads the canonical snake_case database fields.
+ const plantGroup=get('plant_group','plantGroup','group');if(plantGroup!==undefined)target.plant_group=plantGroup;
+ if(target.growthHabit!==undefined)target.growth_habit=target.growthHabit;
+ if(target.seasons!==undefined)target.seasonal_characteristics=target.seasons;
+ if(target.growthData!==undefined)target.growth=target.growthData;
+ if(target.siteData!==undefined)target.site=target.siteData;
+ if(target.accepted_name&&!target.name_data?.botanical_name){target.name_data={...(target.name_data||{}),botanical_name:target.accepted_name};}
  return target;
 }
 const CULTIVAR_AI_KEY_STORAGE='aa-cultivar-ai-key';
