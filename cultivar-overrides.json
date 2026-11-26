@@ -1,0 +1,74 @@
+{
+  "records": [
+    {
+      "name": "Acer japonicum 'Abby's Weeping'",
+      "accepted_name": "Acer japonicum 'Abby's Weeping'",
+      "species": "Acer japonicum",
+      "plant_group": "Full Moon Maple (vollemaanesdoorn)",
+      "growth_habit": "Dwergvorm met laag, breed en licht tot duidelijk overhangende takken; de mate van treurvorm verschilt per kwekerbeschrijving.",
+      "synonyms": [],
+      "seasonal_characteristics": {
+        "spring": "Grote, diep ingesneden groene bladeren bij het uitlopen. De geraadpleegde kwekerbronnen beschrijven vooral de groene bladkleur; een uitgesproken rode voorjaarskleur is niet eenduidig bevestigd.",
+        "summer": "Middengroene tot groene, diep ingesneden bladeren. Bij warm weer kunnen roestkleurige tinten optreden.",
+        "autumn": "Sterke herfstverkleuring met geel, oranje en rood; sommige beschrijvingen vermelden ook paars tot donkerpaars aan de bladpunten.",
+        "winter": "Bladverliezend. In de winter zijn de takken kaal; de lage, overhangende takstructuur blijft zichtbaar."
+      },
+      "growth": {
+        "height_after_10_years": "Circa 60–120 cm (2–4 ft); MrMaple noemt 60–90 cm, Buchholz circa 60 cm en Maple Ridge 90–120 cm.",
+        "width_after_10_years": "Circa 90–120 cm (3–4 ft).",
+        "growth_rate": "Langzaam tot matig; bronnen verschillen in de kwalificatie.",
+        "form": "Dwergvorm, laag en breed, licht tot sterk overhangend."
+      },
+      "site": {
+        "position": "Bij voorkeur ochtendzon of gefilterd licht; beschermen tegen hete middagzon.",
+        "soil": "Goed doorlatende grond; bij voorkeur humusrijk en voedzaam. Zure tot neutrale grond wordt genoemd.",
+        "water": "Regelmatig water geven; grond gelijkmatig vochtig houden zonder langdurige waterverzadiging.",
+        "wind": "Een beschutte standplaats is verstandig vanwege de overhangende takken.",
+        "hardiness": "USDA-zone 5–9 (bronafhankelijk; Dawes Arboretum registreert zone 5).",
+        "drainage": "Goed doorlatend."
+      },
+      "origin": "Selectie van Acer japonicum; exacte herkomst en introductiegeschiedenis niet vastgesteld.",
+      "introduction_year": null,
+      "selector_or_introducer": null,
+      "sources": [
+        {
+          "title": "MrMaple – Acer japonicum 'Abby's Weeping'",
+          "url": "https://mrmaple.com/collections/the-mrmaple-files-japanese-maple-information/products/for-pickup-only-acer-japonicum-abby-s-weeping-dwarf-full-moon-japanese-maple-does-not-ship"
+        },
+        {
+          "title": "Buchholz Nursery – Acer japonicum 'Abby's Weeping'",
+          "url": "https://buchholznursery.com/collections/japanese-maples/products/acer-japonicum-abby-s-weeping-dwarf-full-moon-japanese-maple"
+        },
+        {
+          "title": "Don Schmidt Nursery – Laceleafs (Abby's Weeping)",
+          "url": "https://www.donschmidtnursery.com/books/laceleafs.pdf"
+        },
+        {
+          "title": "Maplestone Ornamentals – Abby's Weeping",
+          "url": "https://maplestoneornamentals.com/collections/japanese-maples/products/abbys-weeping"
+        },
+        {
+          "title": "The Dawes Arboretum – Acer japonicum 'Abby's Weeping'",
+          "url": "https://dawesarb.arboretumexplorer.org/taxon-19326.aspx"
+        }
+      ],
+      "field_sources": {
+        "species": "https://dawesarb.arboretumexplorer.org/taxon-19326.aspx",
+        "plant_group": "https://mrmaple.com/collections/the-mrmaple-files-japanese-maple-information/products/for-pickup-only-acer-japonicum-abby-s-weeping-dwarf-full-moon-japanese-maple-does-not-ship",
+        "growth_habit": "https://buchholznursery.com/collections/japanese-maples/products/acer-japonicum-abby-s-weeping-dwarf-full-moon-japanese-maple",
+        "seasonal_characteristics.spring": "https://mrmaple.com/collections/the-mrmaple-files-japanese-maple-information/products/for-pickup-only-acer-japonicum-abby-s-weeping-dwarf-full-moon-japanese-maple-does-not-ship",
+        "seasonal_characteristics.summer": "https://www.donschmidtnursery.com/books/laceleafs.pdf",
+        "seasonal_characteristics.autumn": "https://buchholznursery.com/collections/japanese-maples/products/acer-japonicum-abby-s-weeping-dwarf-full-moon-japanese-maple",
+        "seasonal_characteristics.winter": "https://www.donschmidtnursery.com/books/laceleafs.pdf",
+        "growth.height_after_10_years": "https://mrmaple.com/collections/the-mrmaple-files-japanese-maple-information/products/for-pickup-only-acer-japonicum-abby-s-weeping-dwarf-full-moon-japanese-maple-does-not-ship",
+        "growth.width_after_10_years": "https://mrmaple.com/collections/the-mrmaple-files-japanese-maple-information/products/for-pickup-only-acer-japonicum-abby-s-weeping-dwarf-full-moon-japanese-maple-does-not-ship",
+        "growth.growth_rate": "https://www.donschmidtnursery.com/books/laceleafs.pdf",
+        "site.position": "https://buchholznursery.com/collections/japanese-maples/products/acer-japonicum-abby-s-weeping-dwarf-full-moon-japanese-maple",
+        "site.soil": "https://plantlust.com/plants/39482/acer-japonicum-abbys-weeping/",
+        "site.hardiness": "https://mrmaple.com/collections/the-mrmaple-files-japanese-maple-information/products/for-pickup-only-acer-japonicum-abby-s-weeping-dwarf-full-moon-japanese-maple-does-not-ship"
+      },
+      "data_completeness": "researched-curator-override",
+      "review_needed": true
+    }
+  ]
+}
