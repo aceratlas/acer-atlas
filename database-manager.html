@@ -1,4 +1,4 @@
-<!doctype html><html lang="nl" data-acer-atlas-manager-version="0.4.25"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Acer Atlas · Datamanager v0.4.25</title><style>
+<!doctype html><html lang="nl" data-acer-atlas-manager-version="0.4.26"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Acer Atlas · Datamanager v0.4.26</title><style>
 :root{font-family:Inter,Segoe UI,Arial,sans-serif;color:#202820;background:#f4f6f2}
 *{box-sizing:border-box}body{margin:0;background:#f4f6f2;color:#202820}
 button,input,textarea,select{font:inherit}button{cursor:pointer}
@@ -184,7 +184,7 @@ label{display:block;font-size:12px;font-weight:700;color:#526156;margin:12px 0 5
   <div class="toolbar"><button class="primary" id="apply">Wijzigingen toepassen</button><button id="cancelFlyout">Annuleren</button></div>
  </section>
 </div>
-<div class="footer"><span class="footer-version">Acer Atlas Datamanager v0.4.25</span> · Opslaan bewaart je wijzigingen lokaal als concept. Publiceren naar GitHub doe je apart wanneer je klaar bent.</div>
+<div class="footer"><span class="footer-version">Acer Atlas Datamanager v0.4.26</span> · Opslaan bewaart je wijzigingen lokaal als concept. Publiceren naar GitHub doe je apart wanneer je klaar bent.</div>
 <script>/* De actuele database wordt rechtstreeks uit cultivar-database.json geladen. */</script>
 <script>
 let db=null, selected=null, suggestionIndex=-1, suggestionItems=[], activeFlyout='basis', pendingPhotos=[];
@@ -294,7 +294,7 @@ function renderEditor(){
   try{
    const proposal=JSON.parse(JSON.stringify(record));
    $('detailStatus').textContent='AI zoekt zelfstandig bij de afgesproken kwekers en vult alle cultivarvelden aan…';
-   const response=await fetch(CULTIVAR_AI_WORKER+'/process',{method:'POST',mode:'cors',credentials:'omit',cache:'no-store',headers:{'Content-Type':'application/json','X-Atlas-Key':key},body:JSON.stringify({urls,name:record.name||record.accepted_name||'',existing:record,discover_sources:true})});
+   const response=await fetch(CULTIVAR_AI_WORKER+'/process',{method:'POST',mode:'cors',credentials:'omit',cache:'no-store',headers:{'Content-Type':'application/json','Authorization':'Bearer '+key},body:JSON.stringify({urls,name:record.name||record.accepted_name||'',existing:record,discover_sources:true})});
    const body=await response.text();let payload;try{payload=JSON.parse(body);}catch(e){throw new Error('Worker gaf geen geldige JSON terug (HTTP '+response.status+').');}
    if(!response.ok||payload.success===false)throw new Error(payload.error||payload.message||('Worker-fout HTTP '+response.status));
    const parsed=extractAiObject(payload);if(!parsed||typeof parsed!=='object')throw new Error('Geen cultivar-informatie ontvangen.');
