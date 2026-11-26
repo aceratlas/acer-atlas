@@ -1,4 +1,4 @@
-<!doctype html><html lang="nl" data-acer-atlas-manager-version="0.4.21"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Acer Atlas · Datamanager v0.4.21</title><style>
+<!doctype html><html lang="nl" data-acer-atlas-manager-version="0.4.22"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Acer Atlas · Datamanager v0.4.22</title><style>
 :root{font-family:Inter,Segoe UI,Arial,sans-serif;color:#202820;background:#f4f6f2}
 *{box-sizing:border-box}body{margin:0;background:#f4f6f2;color:#202820}
 button,input,textarea,select{font:inherit}button{cursor:pointer}
@@ -184,7 +184,7 @@ label{display:block;font-size:12px;font-weight:700;color:#526156;margin:12px 0 5
   <div class="toolbar"><button class="primary" id="apply">Wijzigingen toepassen</button><button id="cancelFlyout">Annuleren</button></div>
  </section>
 </div>
-<div class="footer"><span class="footer-version">Acer Atlas Datamanager v0.4.21</span> · Opslaan bewaart je wijzigingen lokaal als concept. Publiceren naar GitHub doe je apart wanneer je klaar bent.</div>
+<div class="footer"><span class="footer-version">Acer Atlas Datamanager v0.4.22</span> · Opslaan bewaart je wijzigingen lokaal als concept. Publiceren naar GitHub doe je apart wanneer je klaar bent.</div>
 <script>/* De actuele database wordt rechtstreeks uit cultivar-database.json geladen. */</script>
 <script>
 let db=null, selected=null, suggestionIndex=-1, suggestionItems=[], activeFlyout='basis', pendingPhotos=[];
@@ -229,17 +229,23 @@ function renderEditor(){
  const hist=typeof r.history==='object'?(r.history.nl||r.history.en||''):(r.history||'');
  const photos=r.photos.slice(0,8).map(p=>p.url?`<img src="${esc(p.url)}" alt="Cultivarfoto" loading="lazy">`:'').join('');
  $('editor').innerHTML=`
-  <div class="detail-head"><div><div class="eyebrow">Cultivaroverzicht</div><h2>${esc(r.name||'Naamloze cultivar')}</h2><div class="accepted">${esc(r.accepted_name||r.species||'')}</div></div><div class="detail-actions"><button type="button" id="aiUpdateCultivar">Bijwerken met AI</button><button class="warn" id="delete">Cultivar verwijderen</button><button class="primary" id="saveCultivar">Opslaan</button><button id="detailExport">JSON downloaden</button></div></div>
+  <div class="detail-head"><div><div class="eyebrow">Cultivaroverzicht</div><h2>${esc(r.name||'Naamloze cultivar')}</h2><div class="accepted">${esc(r.accepted_name||r.species||'')}</div></div><div class="detail-actions"><button type="button" id="aiUpdateCultivar">Update via AI</button><button class="warn" id="delete">Cultivar verwijderen</button><button class="primary" id="saveCultivar">Opslaan</button><button id="detailExport">JSON downloaden</button></div></div>
   <div id="aiUpdatePanel" class="detail-section hidden" style="margin-top:12px">
-   <h3>Bronlinks voor AI-update</h3>
-   <p class="section-preview">Plak hieronder één of meer URL’s, elk op een eigen regel (maximaal 5). De bestaande cultivar blijft ongewijzigd totdat je het voorstel goedkeurt.</p>
-   <label>Bronlinks (standaard twee, maximaal vijf)</label>
-   <div id="aiUpdateLinks" style="display:grid;gap:8px">
-    <input class="ai-update-source-url" type="url" placeholder="Eerste bronlink (bijv. Esveld)" autocomplete="url">
-    <input class="ai-update-source-url" type="url" placeholder="Tweede bronlink (bijv. MrMaple)" autocomplete="url">
+   <h3>Volledige cultivar aanvullen met AI</h3>
+   <p class="section-preview">De AI zoekt zelf op basis van de cultivarnaam. Hij onderzoekt naamgegevens, groeivorm, alle vier seizoenen, groei, standplaats, verzorging en geschiedenis. Bestaande ingevulde gegevens en foto’s blijven behouden. Je controleert eerst het voorstel; er wordt niets automatisch gepubliceerd.</p>
+   <div class="tool-card" style="padding:12px;margin:10px 0">
+    <b>Bronvolgorde</b>
+    <p class="section-preview">1. Esveld · 2. MrMaple · 3. Maple Nursery Belgium · 4. Baumschule Nielsen · 5. Franse gespecialiseerde kwekerijen · 6. overige betrouwbare bronnen.</p>
    </div>
-   <div class="toolbar"><button type="button" id="addAiUpdateLink">+ Link toevoegen</button></div>
-   <div class="detail-actions" style="margin-top:10px"><button type="button" id="aiRunUpdate" class="primary">Bronnen verwerken</button><button type="button" id="aiCancelUpdate">Annuleren</button></div>
+   <details style="margin:10px 0">
+    <summary style="cursor:pointer;font-weight:700">Optionele bronlinks (voorlopig beschikbaar)</summary>
+    <p class="section-preview">Normaal niet nodig: de AI zoekt zelf. Je kunt hier maximaal vijf specifieke links meegeven als extra aanwijzing.</p>
+    <div id="aiUpdateLinks" style="display:grid;gap:8px">
+     <input class="ai-update-source-url" type="url" placeholder="Optionele bronlink (bijv. Esveld)" autocomplete="url">
+    </div>
+    <div class="toolbar"><button type="button" id="addAiUpdateLink">+ Link toevoegen</button></div>
+   </details>
+   <div class="detail-actions" style="margin-top:10px"><button type="button" id="aiRunUpdate" class="primary">Start AI-update</button><button type="button" id="aiCancelUpdate">Annuleren</button></div>
   </div>
   <div id="aiReviewPanel" class="detail-section hidden" style="margin-top:12px">
    <h3 id="aiReviewTitle">AI-voorstel controleren</h3>
@@ -268,7 +274,7 @@ function renderEditor(){
  $('aiUpdateCultivar').onclick=()=>{
   const panel=$('aiUpdatePanel');
   panel.classList.remove('hidden');
-  $('aiUpdateLinks').querySelector('.ai-update-source-url')?.focus();
+  $('aiRunUpdate')?.focus();
  };
  $('addAiUpdateLink').onclick=()=>{
   const box=$('aiUpdateLinks');
@@ -279,7 +285,7 @@ function renderEditor(){
  $('aiRunUpdate').onclick=async()=>{
   const record=db?.records.find(x=>x.id===selected);if(!record)return;
   const urls=[...new Set([...$('aiUpdateLinks').querySelectorAll('.ai-update-source-url')].map(input=>input.value.trim()).filter(Boolean))];
-  if(!urls.length){$('detailStatus').textContent='Vul eerst één of meer bronlinks in.';return;}
+  if(!(record.name||record.accepted_name||'').trim()){$('detailStatus').textContent='Deze cultivar heeft geen naam om op te zoeken.';return;}
   if(urls.length>5){$('detailStatus').textContent='Maximaal vijf bronlinks toegestaan.';return;}
   for(const value of urls){try{const u=new URL(value);if(!['http:','https:'].includes(u.protocol))throw 0;}catch(e){$('detailStatus').textContent='Ongeldige bronlink: '+value;return;}}
   let key=localStorage.getItem(CULTIVAR_AI_KEY_STORAGE)||sessionStorage.getItem(CULTIVAR_AI_KEY_STORAGE)||'';
@@ -287,15 +293,15 @@ function renderEditor(){
   const btn=$('aiRunUpdate');btn.disabled=true;btn.textContent='AI verwerkt…';
   try{
    const proposal=JSON.parse(JSON.stringify(record));
-   $('detailStatus').textContent='AI onderzoekt de opgegeven bronnen en zoekt aanvullend waar gegevens ontbreken…';
-   const response=await fetch(CULTIVAR_AI_WORKER+'/process',{method:'POST',headers:{'Content-Type':'application/json','Authorization':'Bearer '+key},body:JSON.stringify({urls,name:record.name||record.accepted_name||'',discover_sources:true})});
+   $('detailStatus').textContent='AI zoekt zelfstandig bij de afgesproken kwekers en vult alle cultivarvelden aan…';
+   const response=await fetch(CULTIVAR_AI_WORKER+'/process',{method:'POST',headers:{'Content-Type':'application/json','Authorization':'Bearer '+key},body:JSON.stringify({urls,name:record.name||record.accepted_name||'',existing:record,discover_sources:true})});
    const body=await response.text();let payload;try{payload=JSON.parse(body);}catch(e){throw new Error('Worker gaf geen geldige JSON terug (HTTP '+response.status+').');}
    if(!response.ok||payload.success===false)throw new Error(payload.error||payload.message||('Worker-fout HTTP '+response.status));
    const parsed=extractAiObject(payload);if(!parsed||typeof parsed!=='object')throw new Error('Geen cultivar-informatie ontvangen.');
    mergeAiCultivar(proposal,parsed);
    proposal.photos=record.photos;proposal.id=record.id;
    proposal.sources=[...(Array.isArray(record.sources)?record.sources:[]),...(Array.isArray(parsed.sources)?parsed.sources:[]),...urls.map(url=>({title:new URL(url).hostname,url}))].filter((x,i,a)=>a.findIndex(y=>y.url===x.url)===i);
-   proposal.field_sources={...(record.field_sources||{}),...(parsed.field_sources||{})};
+   proposal.field_sources={...(record.field_sources||{}),...(parsed.field_sources||{})};proposal.conflicts=[...(Array.isArray(record.conflicts)?record.conflicts:[]),...(Array.isArray(parsed.conflicts)?parsed.conflicts:[])];
    proposal.last_checked=new Date().toISOString().slice(0,10);proposal.review_needed=true;
    const keys=[...new Set([...Object.keys(record),...Object.keys(proposal)])];
    const changed=keys.filter(k=>JSON.stringify(record[k])!==JSON.stringify(proposal[k]));
@@ -322,9 +328,9 @@ function renderEditor(){
     $('detailStatus').textContent='AI-update toegepast. Foto’s en record-ID zijn behouden; nog niet gepubliceerd.';
    };
    $('aiReviewCancel').onclick=()=>{review.classList.add('hidden');$('detailStatus').textContent='Voorstel geannuleerd. De cultivar is niet gewijzigd.';};
-   $('detailStatus').textContent='AI-voorstel klaar. Controleer de velden en vink alleen aan wat je wilt overnemen.';
+   const sourceCount=Number(payload.source_count||0),foundCount=Number(payload.discovered_source_count||0);$('detailStatus').textContent='AI-voorstel klaar. '+sourceCount+' bronpagina’s gebruikt ('+foundCount+' zelf gevonden). Controleer de velden en vink aan wat je wilt overnemen.';
   }catch(error){$('detailStatus').textContent='AI-update niet voltooid: '+(error?.message||String(error));}
-  finally{btn.disabled=false;btn.textContent='Bronnen verwerken';}
+  finally{btn.disabled=false;btn.textContent='Start AI-update';}
  };
 
  $('saveCultivar').onclick=async()=>{
@@ -521,7 +527,7 @@ function extractAiObject(payload){
    try{value=JSON.parse(raw);continue;}catch(e){
     const first=raw.indexOf('{'),last=raw.lastIndexOf('}');
     if(first>=0&&last>first){try{value=JSON.parse(raw.slice(first,last+1));continue;}catch(ignore){}}
-    throw new Error('De AI-Worker gaf geen geldige JSON terug. Controleer of de Worker-versie 0.3.0 actief is.');
+    throw new Error('De AI-Worker gaf geen geldige JSON terug. Controleer of Worker 0.6.0 actief is.');
    }
   }
   break;
@@ -558,7 +564,7 @@ function mergeAiCultivar(target,source){
  const seasons=get('seasons','seasonal_characteristics','foliage_by_season');
  if(seasons&&typeof seasons==='object'){
   target.seasons={...(target.seasons||{})};
-  for(const [key,aliases] of Object.entries({spring:['spring','lente','voorjaar'],summer:['summer','zomer'],autumn:['autumn','fall','herfst']})){
+  for(const [key,aliases] of Object.entries({spring:['spring','lente','voorjaar'],summer:['summer','zomer'],autumn:['autumn','fall','herfst'],winter:['winter']})){
    const value=aliases.map(alias=>seasons[alias]).find(value=>value!==undefined&&value!==null&&value!==''&&!isUnknown(value));
    if(value!==undefined)target.seasons[key]=bilingual(value);
   }
@@ -590,6 +596,15 @@ function mergeAiCultivar(target,source){
  const habit=get('growth_habit','growth_form','habit');if(habit!==undefined)target.growthHabit=habit;
  const foliage=get('foliage','leaf_colour','leaf_color');if(foliage!==undefined)target.foliage=foliage;
  const autumn=get('autumn_colour','autumn_color','fall_color');if(autumn!==undefined)target.autumn_colour=autumn;
+ const extraFields={
+  discoverer:['discoverer','discovered_by'],breeder:['breeder','breeder_name'],flowers:['flowers','flower'],fruit:['fruit','fruits'],bark_and_twigs:['bark_and_twigs','bark','twigs'],water:['water','water_needs','moisture'],wind:['wind','wind_sensitivity'],hardiness:['hardiness','winter_hardiness'],climate_zone:['climate_zone','climateZone'],container_suitability:['container_suitability','pot_suitability'],pruning:['pruning','pruning_advice']
+ };
+ for(const [key,aliases] of Object.entries(extraFields)){const value=get(...aliases);if(value!==undefined)target[key]=value;}
+ const growthHabit=get('growth_habit','growth_form','habit');if(growthHabit!==undefined)target.growthHabit=growthHabit;
+ const growthSourceFull=get('growthData','growth_data','growth')||{};
+ for(const key of ['branching','crown_shape','mature_height','mature_width'])if(growthSourceFull[key]!==undefined&&!isUnknown(growthSourceFull[key])){target.growthData=target.growthData||{};target.growthData[key]=growthSourceFull[key];}
+ const siteSourceFull=get('siteData','site_data','site')||{};
+ for(const key of ['water','wind','hardiness','container_suitability','pruning','drainage','ph'])if(siteSourceFull[key]!==undefined&&!isUnknown(siteSourceFull[key])){target.siteData=target.siteData||{};target.siteData[key]=bilingual(siteSourceFull[key]);}
  const fieldSources=get('field_sources','fieldSources');if(fieldSources&&typeof fieldSources==='object')target.field_sources={...(target.field_sources||{}),...fieldSources};
  const aiSources=get('sources');if(Array.isArray(aiSources))target.sources=[...(target.sources||[]),...aiSources].filter((item,index,all)=>item?.url&&all.findIndex(x=>x?.url===item.url)===index);
  return target;
