@@ -14,7 +14,7 @@ const corsHeaders = {
 
 
 
-const WORKER_VERSION = "0.5.8";
+const WORKER_VERSION = "0.5.9";
 
 const AI_MODEL = "@cf/zai-org/glm-4.7-flash";
 
@@ -1508,7 +1508,7 @@ export default {
       const discoveredSources = [];
       const discoveryEnabled = body.discover_sources !== false && sources.length < MAX_SOURCE_COUNT;
 
-      // Zes gerichte zoekopdrachten in één onderzoeksronde; geen externe API of extra sleutel.
+      // Drie gerichte zoekopdrachten combineren de belangrijkste onderzoeksrichtingen binnen de subrequestlimiet.
       if (discoveryEnabled) {
         const searchName = cultivarName || sources[0]?.title || "Acer palmatum";
         const searchQueries = [
@@ -1550,7 +1550,7 @@ export default {
           success: false,
           version: WORKER_VERSION,
           error: "Geen bruikbare bronpagina gevonden. De automatische zoekopdracht leverde geen leesbare cultivarbronnen op.",
-          search_queries_attempted: 6,
+          search_queries_attempted: 3,
           search_errors: errors.filter(item => item.search),
           details: errors,
           discovered_source_count: 0
@@ -1569,7 +1569,8 @@ export default {
 
       // Alleen velden afdwingen die ook daadwerkelijk in het huidige AI-uitvoerschema staan.
       // traits en history zijn legacy-velden en maken geen deel uit van dit schema.
-      const requiredFields = ["name", "species"];
+      if (!data.name && cultivarName) data.name = cultivarName;
+      const requiredFields = ["name"];
       for (const field of requiredFields) {
         if (!(field in data) || data[field] === null || String(data[field]).trim() === "") {
           throw new Error("AI-resultaat mist verplicht veld: " + field);
