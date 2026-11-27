@@ -1,4 +1,4 @@
-<!doctype html><html lang="nl" data-acer-atlas-manager-version="0.4.26"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Acer Atlas · Datamanager v0.4.26</title><style>
+<!doctype html><html lang="nl" data-acer-atlas-manager-version="0.4.27"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Acer Atlas · Datamanager v0.4.27</title><style>
 :root{font-family:Inter,Segoe UI,Arial,sans-serif;color:#202820;background:#f4f6f2}
 *{box-sizing:border-box}body{margin:0;background:#f4f6f2;color:#202820}
 button,input,textarea,select{font:inherit}button{cursor:pointer}
@@ -99,7 +99,7 @@ label{display:block;font-size:12px;font-weight:700;color:#526156;margin:12px 0 5
 <header class="hero">
  <div class="top">
   <div class="brand"><span class="mark" aria-hidden="true">🍁</span><div><h1>ACER ATLAS</h1><small>Databasebeheer</small></div></div>
-  <div class="top-right"><a class="app-link" href="./index.html#collection">← Terug naar Acer Atlas</a><button id="backBtn" class="back-btn" type="button">← Terug</button><span class="version">DATAMANAGER v0.4.21</span></div>
+  <div class="top-right"><a class="app-link" href="./index.html#collection">← Terug naar Acer Atlas</a><button id="backBtn" class="back-btn" type="button">← Terug</button><span class="version">DATAMANAGER v0.4.27</span></div>
  </div>
 </header>
 <main class="page">
@@ -184,7 +184,7 @@ label{display:block;font-size:12px;font-weight:700;color:#526156;margin:12px 0 5
   <div class="toolbar"><button class="primary" id="apply">Wijzigingen toepassen</button><button id="cancelFlyout">Annuleren</button></div>
  </section>
 </div>
-<div class="footer"><span class="footer-version">Acer Atlas Datamanager v0.4.26</span> · Opslaan bewaart je wijzigingen lokaal als concept. Publiceren naar GitHub doe je apart wanneer je klaar bent.</div>
+<div class="footer"><span class="footer-version">Acer Atlas Datamanager v0.4.27</span> · Opslaan bewaart je wijzigingen lokaal als concept. Publiceren naar GitHub doe je apart wanneer je klaar bent.</div>
 <script>/* De actuele database wordt rechtstreeks uit cultivar-database.json geladen. */</script>
 <script>
 let db=null, selected=null, suggestionIndex=-1, suggestionItems=[], activeFlyout='basis', pendingPhotos=[];
@@ -200,7 +200,7 @@ function restoreManagerState(){let s;try{s=JSON.parse(sessionStorage.getItem(MAN
 document.addEventListener('input',e=>{if(e.target.closest('main'))rememberManagerState();});document.addEventListener('change',e=>{if(e.target.closest('main'))rememberManagerState();});document.addEventListener('click',()=>setTimeout(rememberManagerState,0));window.addEventListener('scroll',rememberManagerState,{passive:true});window.addEventListener('pagehide',rememberManagerState);
 
 const $=id=>document.getElementById(id), clone=x=>JSON.parse(JSON.stringify(x));
-const flyoutSections=[['basis','Basisgegevens'],['kenmerken','Kenmerken'],['herkomst','Herkomst & geschiedenis'],['synoniemen','Synoniemen'],['fotos','Foto’s'],['bronnen','Bronnen']];
+const flyoutSections=[['naam','Naamgegevens'],['seizoenen','Kenmerken per seizoen'],['groei','Groei en standplaats'],['herkomst','Herkomst en geschiedenis'],['aanvullend','Bronnen en aanvullende informatie'],['fotos','Foto’s']];
 function esc(s){return String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));}
 function count(){if(!db)return;$('count').textContent=db.records.length;$('photosCount').textContent=db.records.reduce((n,r)=>n+(Array.isArray(r.photos)?r.photos.length:0),0);}
 function syncMeta(){db.record_count=db.records.length;db.records_count=db.records.length;db.photo_count=db.records.reduce((n,r)=>n+(r.photos||[]).length,0);count();const v=(()=>{try{return readDatabaseVersion(db).value;}catch(e){return 'Onbekend';}})();if($('databaseVersion'))$('databaseVersion').textContent=v==='Onbekend'?v:'v'+v;if($('nextVersion')){try{$('nextVersion').textContent='Volgende publicatie: v'+nextDatabaseVersion(db)+' (wordt pas definitief bij upload)';}catch(e){$('nextVersion').textContent='Volgende publicatie: versie niet vast te stellen';}}}
@@ -261,12 +261,12 @@ function renderEditor(){
    <div class="summary-item"><small>Hoogte na 10 jaar</small><strong>${preview(r.height_after_10_years||r.growth?.height_after_10_years)}</strong></div>
    <div class="summary-item"><small>Aantal foto’s</small><strong>${r.photos.length}</strong></div>
   </div>
-  ${detailSection('basis','Basisgegevens',`Cultivarnaam: ${esc(r.name||'')} · Geaccepteerde naam: ${esc(r.accepted_name||'')} · Laatst gecontroleerd: ${esc(r.last_checked||'Onbekend')}`)}
-  ${detailSection('kenmerken','Kenmerken',preview(trait))}
-  ${detailSection('herkomst','Herkomst & geschiedenis',preview(hist))}
-  ${detailSection('synoniemen','Synoniemen',preview(Array.isArray(r.synonyms)?r.synonyms.join(', '):r.synonyms))}
+  ${detailSection('naam','Naamgegevens',`Cultivarnaam: ${esc(r.name||'')} · Geaccepteerde naam: ${esc(r.accepted_name||'')} · Laatst gecontroleerd: ${esc(r.last_checked||'Onbekend')}`)}
+  ${detailSection('aanvullend','Bronnen en aanvullende informatie',preview(trait))}
+  ${detailSection('herkomst','Herkomst en geschiedenis',preview(hist))}
+  ${detailSection('naam','Naamgegevens',preview(Array.isArray(r.synonyms)?r.synonyms.join(', '):r.synonyms))}
   <div class="detail-section"><div class="section-head"><h3>Foto’s</h3><button class="edit-btn" type="button" data-edit="fotos">Foto’s beheren</button></div><div class="section-preview">${r.photos.length} foto(’s) gekoppeld · meerdere foto’s tegelijk toevoegen mogelijk.</div><div class="photo-strip">${photos}</div></div>
-  ${detailSection('bronnen','Bronnen',`${Array.isArray(r.sources)?r.sources.length:0} bronvermelding(en) gekoppeld`)}
+  ${detailSection('aanvullend','Bronnen en aanvullende informatie',`${Array.isArray(r.sources)?r.sources.length:0} bronvermelding(en) gekoppeld`)}
   <div class="status" id="detailStatus">Je bekijkt de cultivar. Bewerk een onderdeel en klik daarna op Opslaan om de volledige database centraal te publiceren.</div>`;
  $('editor').querySelectorAll('[data-edit]').forEach(b=>b.onclick=()=>showFlyout(b.dataset.edit));
  $('delete').onclick=()=>{if(confirm('Deze cultivar uit het concept verwijderen?')){db.records=db.records.filter(x=>x.id!==selected);syncMeta();backToSearch();$('status').textContent='Cultivar verwijderd uit het lokale concept.';}};
@@ -351,24 +351,28 @@ function renderEditor(){
  };
 }
 function panelMarkup(r,id){
+ const nd=r.name_data&&typeof r.name_data==='object'?r.name_data:{},growth=r.growth&&typeof r.growth==='object'?r.growth:{},site=r.site&&typeof r.site==='object'?r.site:{},seasons=r.seasonal_characteristics&&typeof r.seasonal_characteristics==='object'?r.seasonal_characteristics:{};
  const panels={
- basis:`<div class="grid2">${field('Cultivarnaam','name',r.name)}${field('Geaccepteerde naam','accepted_name',r.accepted_name)}${field('Soort','species',r.species)}${field('Cultivargroep','group',r.group)}${field('Hoogte na 10 jaar','height_after_10_years',r.height_after_10_years)}${field('Laatst gecontroleerd','last_checked',r.last_checked)}</div>`,
- kenmerken:`<label>Kenmerken (Nederlands)</label><textarea id="traits_nl" rows="5">${esc(r.traits?.nl||'')}</textarea><label>Kenmerken (Engels)</label><textarea id="traits_en" rows="5">${esc(r.traits?.en||'')}</textarea>`,
- herkomst:`<div class="grid2">${field('Selector / introducteur (NL)','selector_nl',r.selector_or_introducer?.nl)}${field('Selector / introducteur (EN)','selector_en',r.selector_or_introducer?.en)}${field('Introductiejaar','introduction_year',r.introduction_year)}${field('Herkomst (Nederlands)','origin_nl',r.origin?.nl)}${field('Herkomst (Engels)','origin_en',r.origin?.en)}</div><label>Historische achtergrond (Nederlands)</label><textarea id="history_nl" rows="4">${esc(r.history?.nl||r.historical_notes?.nl||'')}</textarea><label>Historische achtergrond (Engels)</label><textarea id="history_en" rows="4">${esc(r.history?.en||r.historical_notes?.en||'')}</textarea>`,
- synoniemen:`<label>Synoniemen</label><textarea id="synonyms" rows="8">${esc(Array.isArray(r.synonyms)?r.synonyms.join('\n'):Array.isArray(r.synonyms?.nl)?r.synonyms.nl.join('\n'):r.synonyms||'')}</textarea><p class="flyout-note">Zet ieder synoniem op een aparte regel.</p>`,
- fotos:`<div class="photo-count">${r.photos.length} foto(’s) gekoppeld · geen maximum</div><div class="bulk-upload"><b>Meerdere foto’s tegelijk toevoegen</b><p class="flyout-note">Selecteer in één keer alle foto’s die bij deze cultivar horen. Iedere foto wordt aan dit cultivarrecord toegevoegd.</p><input id="bulkPhotos" type="file" accept="image/*" multiple><p class="flyout-note" id="bulkPhotoStatus">Meerdere bestanden selecteren is mogelijk. Nieuwe rasterfoto’s worden automatisch verkleind tot maximaal 900 px en gecomprimeerd tot maximaal circa 150 KB (WebP); GIF- en SVG-bestanden blijven ongewijzigd.</p></div><div id="photos">${r.photos.map((p,i)=>photoHtml(p,i)).join('')||'<div class="flyout-empty">Nog geen foto’s toegevoegd.</div>'}</div>`,
- bronnen:`<p class="flyout-note">Bronvermeldingen voor dit cultivarrecord. Bewerk de gegevens in JSON-vorm.</p><textarea id="sources" rows="12" spellcheck="false">${esc(JSON.stringify(r.sources||[],null,2))}</textarea>`
- };
- return panels[id]||'';
+ naam:`<div class="grid2">${field('Cultivarnaam','name',r.name)}${field('Botanische naam','accepted_name',r.accepted_name)}${field('Soort','species',r.species)}${field('Plantgroep','plant_group',r.plant_group)}${field('Groeivorm','growth_habit',r.growth_habit)}${field('Selector / introducteur (NL)','selector_nl',r.selector_or_introducer?.nl)}${field('Selector / introducteur (EN)','selector_en',r.selector_or_introducer?.en)}</div><label>Synoniemen (één per regel)</label><textarea id="synonyms_text" rows="4">${esc(Array.isArray(r.synonyms)?r.synonyms.join('\n'):r.synonyms||'')}</textarea><label>Overige naamgegevens (JSON)</label><textarea id="name_data" rows="6" spellcheck="false">${esc(JSON.stringify(nd,null,2))}</textarea>`,
+ seizoenen:`<label>Voorjaar</label><textarea id="season_spring" rows="3">${esc(seasons.spring||'')}</textarea><label>Zomer</label><textarea id="season_summer" rows="3">${esc(seasons.summer||'')}</textarea><label>Herfst</label><textarea id="season_autumn" rows="3">${esc(seasons.autumn||'')}</textarea><label>Winter</label><textarea id="season_winter" rows="3">${esc(seasons.winter||'')}</textarea>`,
+ groei:`<div class="grid2">${field('Hoogte na 10 jaar','height_after_10_years',growth.height_after_10_years||r.height_after_10_years)}${field('Breedte na 10 jaar','width_after_10_years',growth.width_after_10_years)}${field('Groeisnelheid','growth_rate',growth.growth_rate)}${field('Standplaats','site_position',site.position)}${field('Bodem','site_soil',site.soil)}${field('Klimaatzone / winterhardheid','site_climate_zone',site.climate_zone)}</div><label>Overige groeigegevens (JSON)</label><textarea id="growth_extra" rows="5">${esc(JSON.stringify(Object.fromEntries(Object.entries(growth).filter(([k])=>!['height_after_10_years','width_after_10_years','growth_rate'].includes(k))),null,2))}</textarea><label>Overige standplaatsgegevens (JSON)</label><textarea id="site_extra" rows="5">${esc(JSON.stringify(Object.fromEntries(Object.entries(site).filter(([k])=>!['position','soil','climate_zone'].includes(k))),null,2))}</textarea>`,
+ herkomst:`<div class="grid2">${field('Introductiejaar','introduction_year',r.introduction_year)}${field('Herkomst (Nederlands)','origin_nl',r.origin?.nl)}${field('Herkomst (Engels)','origin_en',r.origin?.en)}</div><label>Historische achtergrond (Nederlands)</label><textarea id="history_nl" rows="4">${esc(r.history?.nl||r.historical_notes?.nl||'')}</textarea><label>Historische achtergrond (Engels)</label><textarea id="history_en" rows="4">${esc(r.history?.en||r.historical_notes?.en||'')}</textarea>`,
+ aanvullend:`<label>Kenmerken en aanvullende informatie (Nederlands)</label><textarea id="traits_nl" rows="5">${esc(r.traits?.nl||'')}</textarea><label>Kenmerken en aanvullende informatie (Engels)</label><textarea id="traits_en" rows="5">${esc(r.traits?.en||'')}</textarea><p class="flyout-note">Bronvermeldingen (JSON)</p><textarea id="sources" rows="10" spellcheck="false">${esc(JSON.stringify(r.sources||[],null,2))}</textarea>`,
+ fotos:`<div class="photo-count">${r.photos.length} foto(’s) gekoppeld · geen maximum</div><div class="bulk-upload"><b>Meerdere foto’s tegelijk toevoegen</b><p class="flyout-note">Selecteer in één keer alle foto’s die bij deze cultivar horen.</p><input id="bulkPhotos" type="file" accept="image/*" multiple><p class="flyout-note" id="bulkPhotoStatus">Nieuwe rasterfoto’s worden automatisch verkleind en gecomprimeerd.</p></div><div id="photos">${r.photos.map((p,i)=>photoHtml(p,i)).join('')||'<div class="flyout-empty">Nog geen foto’s toegevoegd.</div>'}</div>`
+ };return panels[id]||'';
 }
 function captureFlyoutValues(){
  const r=db?.records.find(x=>x.id===selected),f=$('flyoutFields');if(!r||!f)return;
- f.querySelectorAll('[data-key]').forEach(el=>{const k=el.dataset.key;if(k==='selector_nl'||k==='selector_en'){r.selector_or_introducer=r.selector_or_introducer&&typeof r.selector_or_introducer==='object'?r.selector_or_introducer:{};r.selector_or_introducer[k==='selector_nl'?'nl':'en']=el.value;}else if(k==='origin_nl'||k==='origin_en'){r.origin=r.origin&&typeof r.origin==='object'?r.origin:{};r.origin[k==='origin_nl'?'nl':'en']=el.value;}else{r[k]=el.value;}});
- if($('synonyms')){const entered=$('synonyms').value.split(/\r?\n/).map(x=>x.trim()).filter(Boolean);r.synonyms=entered;}
+ f.querySelectorAll('[data-key]').forEach(el=>{const k=el.dataset.key;if(k==='selector_nl'||k==='selector_en'){r.selector_or_introducer=r.selector_or_introducer&&typeof r.selector_or_introducer==='object'?r.selector_or_introducer:{};r.selector_or_introducer[k==='selector_nl'?'nl':'en']=el.value;}else if(k==='origin_nl'||k==='origin_en'){r.origin=r.origin&&typeof r.origin==='object'?r.origin:{};r.origin[k==='origin_nl'?'nl':'en']=el.value;}else if(k==='height_after_10_years'){r.height_after_10_years=el.value;r.growth=r.growth&&typeof r.growth==='object'?r.growth:{};r.growth.height_after_10_years=el.value;}else if(k==='width_after_10_years'||k==='growth_rate'){r.growth=r.growth&&typeof r.growth==='object'?r.growth:{};r.growth[k]=el.value;}else if(k==='site_position'||k==='site_soil'||k==='site_climate_zone'){r.site=r.site&&typeof r.site==='object'?r.site:{};r.site[{site_position:'position',site_soil:'soil',site_climate_zone:'climate_zone'}[k]]=el.value;}else{r[k]=el.value;}});
+ if($('synonyms_text'))r.synonyms=$('synonyms_text').value.split(/\r?\n/).map(x=>x.trim()).filter(Boolean);
+ if($('name_data')){try{r.name_data=JSON.parse($('name_data').value||'{}');}catch(e){throw new Error('Naamgegevens bevat geen geldige JSON.');}}
+ if(['season_spring','season_summer','season_autumn','season_winter'].some(id=>$(id))){r.seasonal_characteristics=r.seasonal_characteristics&&typeof r.seasonal_characteristics==='object'?r.seasonal_characteristics:{};for(const [id,key] of [['season_spring','spring'],['season_summer','summer'],['season_autumn','autumn'],['season_winter','winter']])if($(id))r.seasonal_characteristics[key]=$(id).value;}
+ if($('growth_extra')){try{r.growth={...(r.growth||{}),...JSON.parse($('growth_extra').value||'{}')};}catch(e){throw new Error('Overige groeigegevens bevat geen geldige JSON.');}}
+ if($('site_extra')){try{r.site={...(r.site||{}),...JSON.parse($('site_extra').value||'{}')};}catch(e){throw new Error('Overige standplaatsgegevens bevat geen geldige JSON.');}}
  if($('traits_nl')||$('traits_en')){r.traits=r.traits&&typeof r.traits==='object'?r.traits:{};if($('traits_nl'))r.traits.nl=$('traits_nl').value;if($('traits_en'))r.traits.en=$('traits_en').value;}
  if($('history_nl')||$('history_en')){r.history=r.history&&typeof r.history==='object'?r.history:{};if($('history_nl'))r.history.nl=$('history_nl').value;if($('history_en'))r.history.en=$('history_en').value;}
- if($('photos'))r.photos=[...$('photos').querySelectorAll('.photo')].map(card=>{let p={};card.querySelectorAll('[data-photo]').forEach(el=>p[el.dataset.photo]=el.value);return p;});
  if($('sources')){try{r.sources=JSON.parse($('sources').value||'[]');}catch(e){throw new Error('Bronnen bevat geen geldige JSON.');}}
+ if($('photos'))r.photos=[...$('photos').querySelectorAll('.photo')].map(card=>{let p={};card.querySelectorAll('[data-photo]').forEach(el=>p[el.dataset.photo]=el.value);return p;});
 }
 function showFlyout(id,preserve=true){
  if(preserve&&$('flyoutBackdrop')&&!$('flyoutBackdrop').classList.contains('hidden')){try{captureFlyoutValues();}catch(e){alert(e.message);return;}}
