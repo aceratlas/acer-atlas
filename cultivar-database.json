@@ -10947,6 +10947,10 @@
         "hardiness": {
           "nl": "Goed winterhard.",
           "en": "Hardy."
+        },
+        "climate_zone": {
+          "nl": "Goed winterhard.",
+          "en": "Hardy."
         }
       },
       "photos": [],
