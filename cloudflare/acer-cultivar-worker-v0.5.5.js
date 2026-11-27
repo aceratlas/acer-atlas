@@ -1512,12 +1512,12 @@ export default {
       if (discoveryEnabled) {
         const searchName = cultivarName || sources[0]?.title || "Acer palmatum";
         const searchQueries = [
-          { field: "height_width", query: `"\${searchName}" height width Acer palmatum` },
-          { field: "growth", query: `"\${searchName}" growth rate habit Acer maple` },
-          { field: "introducer", query: `"\${searchName}" introduced by selected by originator Acer` },
-          { field: "introduction_year", query: `"\${searchName}" introduction year introduced Acer palmatum` },
-          { field: "seasons", query: `"\${searchName}" spring summer autumn winter foliage Acer` },
-          { field: "plant_group", query: `"\${searchName}" plant group dissectum linearilobum Acer palmatum` }
+          { field: "height_width", query: `"${searchName}" height width Acer palmatum` },
+          { field: "growth", query: `"${searchName}" growth rate habit Acer maple` },
+          { field: "introducer", query: `"${searchName}" introduced by selected by originator Acer` },
+          { field: "introduction_year", query: `"${searchName}" introduction year introduced Acer palmatum` },
+          { field: "seasons", query: `"${searchName}" spring summer autumn winter foliage Acer` },
+          { field: "plant_group", query: `"${searchName}" plant group dissectum linearilobum Acer palmatum` }
         ];
         for (const searchItem of searchQueries) {
           if (sources.length + discoveredSources.length >= MAX_SOURCE_COUNT) break;
