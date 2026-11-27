@@ -184,7 +184,7 @@ label{display:block;font-size:12px;font-weight:700;color:#526156;margin:12px 0 5
   <div class="toolbar"><button class="primary" id="apply">Wijzigingen toepassen</button><button id="cancelFlyout">Annuleren</button></div>
  </section>
 </div>
-<div class="footer"><span class="footer-version">Acer Atlas Datamanager v0.4.40</span> · Opslaan bewaart je wijzigingen lokaal als concept. Publiceren naar GitHub doe je apart wanneer je klaar bent.</div>
+<div class="footer"><span class="footer-version">Acer Atlas Datamanager v0.4.41</span> · Opslaan bewaart je wijzigingen lokaal als concept. Publiceren naar GitHub doe je apart wanneer je klaar bent.</div>
 <script>/* De actuele database wordt rechtstreeks uit cultivar-database.json geladen. */</script>
 <script>
 let db=null, selected=null, suggestionIndex=-1, suggestionItems=[], activeFlyout='basis', pendingPhotos=[];
@@ -725,17 +725,31 @@ $('fetchCultivarInfo').onclick=async()=>{
   if(!combined.name)combined.name=name;
   const sources=(Array.isArray(combined.sources)?combined.sources:[]).filter((x,i,a)=>x?.url&&a.findIndex(y=>y?.url===x.url)===i);
   if(!sources.length&&!urls.length)throw new Error('De AI vond geen bruikbare bronpagina’s. Probeer het later opnieuw of voeg zelf een bronlink toe.');
+  const sourceGrowth=combined.growth||combined.growthData||{};
+  const sourceSite=combined.site||combined.siteData||{};
+  const canonicalGrowth={
+   ...sourceGrowth,
+   ...(combined.height!==undefined&&combined.height!==''?{height_after_10_years:combined.height}:{}),
+   ...(combined.width!==undefined&&combined.width!==''?{width_after_10_years:combined.width}:{}),
+   ...(combined.growth_rate!==undefined&&combined.growth_rate!==''?{growth_rate:combined.growth_rate}:{}),
+   ...(combined.growth_habit!==undefined&&combined.growth_habit!==''?{growth_habit:combined.growth_habit}:{})
+  };
+  const canonicalSite={
+   ...sourceSite,
+   ...(combined.climate_zone!==undefined&&combined.climate_zone!==''?{climate_zone:combined.climate_zone}:{})
+  };
+  const canonicalSeasons=combined.seasonal_characteristics||combined.seasons||{};
   const record={
-   id:'aa-'+Date.now(),name:combined.name,accepted_name:combined.accepted_name||'',species:combined.species||'',
-   synonyms:combined.synonyms||[],group:'unknown',plant_group:combined.plant_group||'',traits:combined.traits||{},history:combined.history||{},
-   selector_or_introducer:combined.selector_or_introducer||{},origin:combined.origin||{},introduction_year:combined.introduction_year??null,
-   name_data:combined.name_data||{},seasonal_characteristics:combined.seasonal_characteristics||combined.seasons||{},
-   seasons:combined.seasons||combined.seasonal_characteristics||{},growth:combined.growth||combined.growthData||{},
-   site:combined.site||combined.siteData||{},height_after_10_years:combined.height_after_10_years||combined.growth?.height_after_10_years||'',
-   width_after_10_years:combined.width_after_10_years||combined.growth?.width_after_10_years||'',
-   growth_rate:combined.growth_rate||combined.growth?.growth_rate||'',growth_habit:combined.growth_habit||'',
-   foliage:combined.foliage||'',autumn_colour:combined.autumn_colour||'',hardiness:combined.hardiness||combined.climate_zone||'',
-   field_sources:combined.field_sources||{},conflicts:combined.conflicts||[],sources:[...sources,...urls.map(url=>({title:new URL(url).hostname,url}))].filter((x,i,a)=>a.findIndex(y=>y.url===x.url)===i),
+   id:'aa-'+Date.now(),name:combined.name,accepted_name:combined.accepted_name||'',species:combined.species||'Acer palmatum',
+   description:combined.description||'',synonyms:combined.synonyms||[],group:combined.plant_group||'unknown',plant_group:combined.plant_group||'',
+   traits:combined.traits||{},history:combined.history||{},selector_or_introducer:combined.selector_or_introducer||{},origin:combined.origin||{},introduction_year:combined.introduction_year??null,
+   name_data:combined.name_data||{},seasonal_characteristics:canonicalSeasons,seasons:canonicalSeasons,
+   growth:canonicalGrowth,site:canonicalSite,
+   height_after_10_years:canonicalGrowth.height_after_10_years||'',width_after_10_years:canonicalGrowth.width_after_10_years||'',
+   growth_rate:canonicalGrowth.growth_rate||'',growth_habit:combined.growth_habit||canonicalGrowth.growth_habit||'',
+   foliage:combined.foliage||'',autumn_colour:combined.autumn_colour||'',hardiness:canonicalSite.climate_zone||combined.hardiness||'',
+   field_sources:combined.field_sources||{},field_evidence:combined.field_evidence||{},conflicts:combined.conflicts||[],
+   sources:[...sources,...urls.map(url=>({title:new URL(url).hostname,url}))].filter((x,i,a)=>a.findIndex(y=>y.url===x.url)===i),
    photos:[],evidence_status:'partial',review_needed:true,last_checked:new Date().toISOString().slice(0,10)
   };
   db.records.push(record);syncMeta();await saveLocalDraft(db);
