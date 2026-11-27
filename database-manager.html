@@ -184,7 +184,7 @@ label{display:block;font-size:12px;font-weight:700;color:#526156;margin:12px 0 5
   <div class="toolbar"><button class="primary" id="apply">Wijzigingen toepassen</button><button id="cancelFlyout">Annuleren</button></div>
  </section>
 </div>
-<div class="footer"><span class="footer-version">Acer Atlas Datamanager v0.4.37</span> · Opslaan bewaart je wijzigingen lokaal als concept. Publiceren naar GitHub doe je apart wanneer je klaar bent.</div>
+<div class="footer"><span class="footer-version">Acer Atlas Datamanager v0.4.38</span> · Opslaan bewaart je wijzigingen lokaal als concept. Publiceren naar GitHub doe je apart wanneer je klaar bent.</div>
 <script>/* De actuele database wordt rechtstreeks uit cultivar-database.json geladen. */</script>
 <script>
 let db=null, selected=null, suggestionIndex=-1, suggestionItems=[], activeFlyout='basis', pendingPhotos=[];
@@ -299,7 +299,7 @@ function renderEditor(){
    const body=await response.text();let payload;try{payload=JSON.parse(body);}catch(e){throw new Error('Worker gaf geen geldige JSON terug (HTTP '+response.status+').');}
    if(!response.ok||payload.success===false)throw new Error(payload.error||payload.message||('Worker-fout HTTP '+response.status));
    const parsed=extractAiObject(payload);if(!parsed||typeof parsed!=='object')throw new Error('Geen cultivar-informatie ontvangen.');
-   const sourceCheck=filterAiCultivarSources(parsed.sources,record.name||record.accepted_name||'');
+   const sourceCheck=filterAiCultivarSources(parsed.sources);
    parsed.sources=sourceCheck.kept;
    mergeAiCultivar(proposal,parsed);
    proposal.photos=record.photos;proposal.id=record.id;
@@ -567,29 +567,16 @@ function bilingual(value,nlKey,enKey){
 function normalizeCultivarMatch(value){
  return String(value||'').normalize('NFD').replace(/[\\u0300-\\u036f]/g,'').toLowerCase().replace(/[^a-z0-9]+/g,' ').trim().replace(/\\s+/g,' ');
 }
-function isTrustedCultivarSource(item,cultivarName){
+function isTrustedCultivarSource(item){
  const rawUrl=typeof item==='string'?item:(item?.url||item?.uri||'');
- const title=typeof item==='object'?(item.title||item.name||item.label||''):'';
  if(!rawUrl)return false;
- let url;try{url=new URL(rawUrl);}catch(e){return false;}
- if(url.protocol!=='https:')return false;
- const host=url.hostname.toLowerCase().replace(/^www\\./,'');
- const trustedHosts=[
-  'esveld.nl','mrmaple.com','themaplenursery.com','baumschule-nielsen.de',
-  'agripeps.fr','pepinieres-maymou.com','erableduvaldejargeau.fr',
-  'pepinieres-ousson.fr','novaplants.fr','gondremer.com'
- ];
- if(!trustedHosts.some(domain=>host===domain||host.endsWith('.'+domain)))return false;
- const cultivar=normalizeCultivarMatch(cultivarName).replace(/^acer palmatum /,'').replace(/^acer /,'');
- if(!cultivar)return false;
- const haystack=normalizeCultivarMatch(title+' '+url.pathname+' '+url.search);
- return haystack.includes(cultivar);
+ try{const url=new URL(rawUrl);return url.protocol==='https:'&&!url.username&&!url.password;}catch(e){return false;}
 }
-function filterAiCultivarSources(items,cultivarName){
+function filterAiCultivarSources(items){
  const input=Array.isArray(items)?items:[];
  const kept=[],rejected=[];
  for(const item of input){
-  if(isTrustedCultivarSource(item,cultivarName))kept.push(item);
+  if(isTrustedCultivarSource(item))kept.push(item);
   else rejected.push(item);
  }
  return {kept,rejected};
