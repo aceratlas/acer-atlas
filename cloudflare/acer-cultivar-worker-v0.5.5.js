@@ -14,7 +14,7 @@ const corsHeaders = {
 
 
 
-const WORKER_VERSION = "0.5.6";
+const WORKER_VERSION = "0.5.7";
 
 const AI_MODEL = "@cf/zai-org/glm-4.7-flash";
 
@@ -1567,10 +1567,12 @@ export default {
         throw new Error("AI-resultaat is geen geldig object.");
       }
 
-      const requiredFields = ["name", "accepted_name", "species", "synonyms", "traits", "history"];
+      const requiredFields = ["name", "accepted_name", "species", "traits", "history"];
       for (const field of requiredFields) {
         if (!(field in data)) throw new Error("AI-resultaat mist verplicht veld: " + field);
       }
+      // Synoniemen zijn optioneel: een cultivar kan geen bekende synoniemen hebben.
+      if (!Array.isArray(data.synonyms)) data.synonyms = [];
 
       // Verwijder ontbrekende waarden volledig; nooit "Onbekend", lege tekst of null opslaan.
       const cleanValue = value => {
