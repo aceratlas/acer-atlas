@@ -14,7 +14,7 @@ const corsHeaders = {
 
 
 
-const WORKER_VERSION = "0.6.0";
+const WORKER_VERSION = "0.6.1";
 
 const AI_MODEL = "@cf/zai-org/glm-4.7-flash";
 
@@ -608,6 +608,7 @@ Beoordeel elk kenmerk afzonderlijk:
 - Groeisnelheid en groeivorm: alleen invullen als de bron dit expliciet ondersteunt. Leid 'compact' niet af tot 'bolvormig' of 'langzaam'.
 - Selecteur, ontdekker en introduceur: gebruik de juiste rol. Noem Dick van der Maat niet automatisch voor iedere cultivar die op zijn website staat.
 - Introductiejaar: publicatie-, prijs- of auteursrechtjaar is geen introductiejaar.
+- Omschrijving: schrijf een korte, feitelijke cultivaromschrijving (2–4 zinnen) met onderscheidende kenmerken. Alleen kenmerken die letterlijk uit de cultivarbronnen blijken; geen algemene soortinformatie. Koppel de omschrijving aan field_evidence.description met URL en letterlijk citaat.
 - Seizoenskenmerken: voorjaar, zomer, herfst en winter strikt gescheiden; geen ontbrekende seizoenen aanvullen.
 - Plantgroep en klimaatzone: alleen invullen bij expliciete cultivarvermelding.
 - Synoniemen: alleen opnemen als de bron een synoniem expliciet noemt.
@@ -637,6 +638,7 @@ Geef uitsluitend geldig JSON terug met deze structuur (laat onbewezen velden weg
   "growth_rate": "",
   "growth_habit": "",
   "climate_zone": "",
+  "description": "",
   "seasons": {"spring": "", "summer": "", "autumn": "", "winter": ""},
   "field_evidence": {
     "height": {"url": "", "quote": ""},
@@ -647,6 +649,7 @@ Geef uitsluitend geldig JSON terug met deze structuur (laat onbewezen velden weg
     "introduction_year": {"url": "", "quote": ""},
     "plant_group": {"url": "", "quote": ""},
     "climate_zone": {"url": "", "quote": ""},
+    "description": {"url": "", "quote": ""},
     "seasons.spring": {"url": "", "quote": ""},
     "seasons.summer": {"url": "", "quote": ""},
     "seasons.autumn": {"url": "", "quote": ""},
@@ -712,7 +715,7 @@ function validateFieldSources(data, sources) {
     const quote = normalize(item.quote);
     return quote.length >= 12 && pageText.includes(quote);
   };
-  const simpleFields = ["height","width","growth_rate","growth_habit","selector_or_introducer","introduction_year","plant_group","climate_zone"];
+  const simpleFields = ["height","width","growth_rate","growth_habit","selector_or_introducer","introduction_year","plant_group","climate_zone","description"];
   for (const field of simpleFields) {
     if (data[field] !== undefined && data[field] !== null && data[field] !== "" && hasProof(field)) {
       validated[field] = evidence[field].url;
@@ -1635,7 +1638,7 @@ export default {
         }
         return value;
       };
-      for (const field of ["name", "accepted_name", "species", "synonyms", "plant_group", "selector_or_introducer", "introduction_year", "height", "width", "growth_rate", "growth_habit", "climate_zone", "seasons", "field_sources", "field_evidence", "conflicts"]) {
+      for (const field of ["name", "accepted_name", "species", "synonyms", "plant_group", "selector_or_introducer", "introduction_year", "height", "width", "growth_rate", "growth_habit", "climate_zone", "seasons", "field_sources", "field_evidence", "description", "conflicts"]) {
         const value = cleanValue(data[field]);
         if (value === undefined) delete data[field];
         else data[field] = value;
