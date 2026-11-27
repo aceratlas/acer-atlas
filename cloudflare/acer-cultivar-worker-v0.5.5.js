@@ -14,7 +14,7 @@ const corsHeaders = {
 
 
 
-const WORKER_VERSION = "0.5.5";
+const WORKER_VERSION = "0.5.6";
 
 const AI_MODEL = "@cf/zai-org/glm-4.7-flash";
 
@@ -538,7 +538,7 @@ async function searchCultivarSources(query, excludedUrls = []) {
       for (const item of results) {
         if (!all.some(x => x.url === item.url)) all.push(item);
       }
-      if (all.length >= 8) break;
+      if (all.length >= 1) break;
     } catch (error) {
       errors.push(provider.name + ": " + (error.message || "zoekfout"));
     }
@@ -1512,12 +1512,9 @@ export default {
       if (discoveryEnabled) {
         const searchName = cultivarName || sources[0]?.title || "Acer palmatum";
         const searchQueries = [
-          { field: "height_width", query: `"${searchName}" height width Acer palmatum` },
-          { field: "growth", query: `"${searchName}" growth rate habit Acer maple` },
-          { field: "introducer", query: `"${searchName}" introduced by selected by originator Acer` },
-          { field: "introduction_year", query: `"${searchName}" introduction year introduced Acer palmatum` },
-          { field: "seasons", query: `"${searchName}" spring summer autumn winter foliage Acer` },
-          { field: "plant_group", query: `"${searchName}" plant group dissectum linearilobum Acer palmatum` }
+          { field: "growth", query: `"${searchName}" Acer palmatum cultivar height width growth rate habit` },
+          { field: "history", query: `"${searchName}" Acer palmatum cultivar introduced by selected by introduction year` },
+          { field: "seasons_group", query: `"${searchName}" Acer palmatum spring summer autumn winter foliage plant group` }
         ];
         for (const searchItem of searchQueries) {
           if (sources.length + discoveredSources.length >= MAX_SOURCE_COUNT) break;
@@ -1561,41 +1558,10 @@ export default {
       }
       let data = await runCultivarAi(env, cultivarName, allSources);
 
-      // Alleen bij ontbrekende kernvelden nog één gerichte zoekronde uitvoeren.
+      // Geen tweede zoekronde binnen dezelfde Worker-aanroep: dit voorkomt overschrijding
+      // van Cloudflare's subrequestlimiet. Ontbrekende velden blijven expliciet onbekend.
       const missingGroups = missingResearchFields(data);
-      let followUpSearches = 0;
-      if (missingGroups.length && allSources.length < MAX_SOURCE_COUNT) {
-        const targetedQueries = [];
-        if (missingGroups.includes("growth")) targetedQueries.push(`"${cultivarName || data.name}" Acer palmatum cultivar height width growth rate size`);
-        if (missingGroups.includes("site")) targetedQueries.push(`"${cultivarName || data.name}" Acer palmatum cultivar soil sun shade hardiness climate zone`);
-        if (missingGroups.includes("seasons")) targetedQueries.push(`"${cultivarName || data.name}" Acer palmatum spring summer autumn foliage colour`);
-        let added = 0;
-        for (const query of targetedQueries) {
-          if (allSources.length + added >= MAX_SOURCE_COUNT) break;
-          followUpSearches++;
-          try {
-            const candidates = await searchCultivarSources(query, allSources.map(source => source.url));
-            for (const candidate of candidates) {
-              if (allSources.length + added >= MAX_SOURCE_COUNT) break;
-              try {
-                const source = await readSourceCached(candidate.url);
-                if (allSources.some(item => item.url === source.url) || discoveredSources.some(item => item.url === source.url)) continue;
-                if (!source.text || source.text.length < 350) continue;
-                discoveredSources.push(source);
-                added++;
-              } catch (e) {
-                errors.push({ url: candidate.url, error: e.message });
-              }
-            }
-          } catch (e) {
-            errors.push({ search: query, error: "Gericht zoeken mislukt: " + e.message });
-          }
-        }
-        if (added > 0) {
-          allSources = orderSourcesByPriority([...sources, ...discoveredSources]).slice(0, MAX_SOURCE_COUNT);
-          data = await runCultivarAi(env, cultivarName, allSources);
-        }
-      }
+      const followUpSearches = 0;
 
       if (!data || typeof data !== "object" || Array.isArray(data)) {
         throw new Error("AI-resultaat is geen geldig object.");
