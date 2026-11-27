@@ -1,4 +1,4 @@
-<!doctype html><html lang="nl" data-acer-atlas-manager-version="0.4.27"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Acer Atlas · Datamanager v0.4.27</title><style>
+<!doctype html><html lang="nl" data-acer-atlas-manager-version="0.4.28"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Acer Atlas · Datamanager v0.4.28</title><style>
 :root{font-family:Inter,Segoe UI,Arial,sans-serif;color:#202820;background:#f4f6f2}
 *{box-sizing:border-box}body{margin:0;background:#f4f6f2;color:#202820}
 button,input,textarea,select{font:inherit}button{cursor:pointer}
@@ -99,7 +99,7 @@ label{display:block;font-size:12px;font-weight:700;color:#526156;margin:12px 0 5
 <header class="hero">
  <div class="top">
   <div class="brand"><span class="mark" aria-hidden="true">🍁</span><div><h1>ACER ATLAS</h1><small>Databasebeheer</small></div></div>
-  <div class="top-right"><a class="app-link" href="./index.html#collection">← Terug naar Acer Atlas</a><button id="backBtn" class="back-btn" type="button">← Terug</button><span class="version">DATAMANAGER v0.4.27</span></div>
+  <div class="top-right"><a class="app-link" href="./index.html#collection">← Terug naar Acer Atlas</a><button id="backBtn" class="back-btn" type="button">← Terug</button><span class="version">DATAMANAGER v0.4.28</span></div>
  </div>
 </header>
 <main class="page">
@@ -184,7 +184,7 @@ label{display:block;font-size:12px;font-weight:700;color:#526156;margin:12px 0 5
   <div class="toolbar"><button class="primary" id="apply">Wijzigingen toepassen</button><button id="cancelFlyout">Annuleren</button></div>
  </section>
 </div>
-<div class="footer"><span class="footer-version">Acer Atlas Datamanager v0.4.27</span> · Opslaan bewaart je wijzigingen lokaal als concept. Publiceren naar GitHub doe je apart wanneer je klaar bent.</div>
+<div class="footer"><span class="footer-version">Acer Atlas Datamanager v0.4.28</span> · Opslaan bewaart je wijzigingen lokaal als concept. Publiceren naar GitHub doe je apart wanneer je klaar bent.</div>
 <script>/* De actuele database wordt rechtstreeks uit cultivar-database.json geladen. */</script>
 <script>
 let db=null, selected=null, suggestionIndex=-1, suggestionItems=[], activeFlyout='basis', pendingPhotos=[];
@@ -313,18 +313,19 @@ function renderEditor(){
    if(!safeChanged.length){$('detailStatus').textContent='De AI heeft geen nieuwe wijzigingen voorgesteld.';return;}
    const reviewKeys=safeChanged.filter(k=>!['sources','last_checked','review_needed'].includes(k));
    const review=$('aiReviewPanel');const list=$('aiReviewList');
-   const pretty=value=>value===undefined||value===null||value===''?'—':(typeof value==='object'?JSON.stringify(value,null,2):String(value));
-   list.innerHTML=reviewKeys.map((k,n)=>{
-    const oldValue=record[k],newValue=proposal[k];
-    const isEmpty=oldValue===undefined||oldValue===null||oldValue===''||(typeof oldValue==='string'&&['onbekend','unknown','—','-'].includes(oldValue.trim().toLowerCase()));
-    return '<div class="tool-card" style="padding:12px;margin:10px 0"><label style="display:flex;align-items:center;gap:8px;font-weight:700"><input type="checkbox" class="ai-review-choice" data-key="'+esc(k)+'" '+(isEmpty?'checked':'')+' style="width:auto"> '+esc(k)+'</label><div class="grid2" style="margin-top:8px"><div><small>Huidige waarde</small><pre style="white-space:pre-wrap;overflow-wrap:anywhere;margin:4px 0">'+esc(pretty(oldValue))+'</pre></div><div><small>Voorstel AI</small><pre style="white-space:pre-wrap;overflow-wrap:anywhere;margin:4px 0">'+esc(pretty(newValue))+'</pre></div></div></div>';
-   }).join('');
+   const fieldLabels={name:'Cultivarnaam',accepted_name:'Botanische naam',species:'Soort',plant_group:'Plantgroep',growth_habit:'Groeivorm',synonyms:'Synoniemen',traits:'Algemene kenmerken',history:'Geschiedenis',selector_or_introducer:'Kweker / introducteur',origin:'Herkomst',introduction_year:'Introductiejaar',seasonal_characteristics:'Kenmerken per seizoen',seasons:'Kenmerken per seizoen',growth:'Groei',growthData:'Groei',growth_data:'Groei',site:'Standplaats',siteData:'Standplaats',site_data:'Standplaats',height_after_10_years:'Hoogte na 10 jaar',width_after_10_years:'Breedte na 10 jaar',growth_rate:'Groeisnelheid',position:'Standplaats',soil:'Bodem',climate_zone:'Klimaatzone / winterhardheid',spring:'Voorjaar',summer:'Zomer',autumn:'Herfst',winter:'Winter',nl:'Nederlands',en:'Engels',discoverer:'Ontdekker',breeder:'Kweker',flowers:'Bloemen',fruit:'Vruchten',bark_and_twigs:'Bast en twijgen',water:'Waterbehoefte',wind:'Windgevoeligheid',hardiness:'Winterhardheid',pruning:'Snoei',drainage:'Waterafvoer',branching:'Vertakking',crown_shape:'Kroonvorm',mature_height:'Uiteindelijke hoogte',mature_width:'Uiteindelijke breedte',foliage:'Blad',autumn_colour:'Herfstkleur'};
+   const pretty=value=>value===undefined||value===null||value===''?'Niet ingevuld':(typeof value==='object'?String(value.nl||value.en||'Niet ingevuld'):String(value));
+   const displayLabel=path=>{const parts=path.map(part=>fieldLabels[part]||String(part).replace(/_/g,' '));return parts.join(' – ');};
+   const entries=[];
+   const walk=(path,oldValue,newValue)=>{if(JSON.stringify(oldValue)===JSON.stringify(newValue))return;if(newValue&&typeof newValue==='object'&&!Array.isArray(newValue)){const keys=[...new Set([...Object.keys(oldValue&&typeof oldValue==='object'?oldValue:{}),...Object.keys(newValue)])];keys.forEach(key=>walk([...path,key],oldValue&&typeof oldValue==='object'?oldValue[key]:undefined,newValue[key]));return;}entries.push({path,oldValue,newValue});};
+   reviewKeys.forEach(k=>walk([k],record[k],proposal[k]));
+   list.innerHTML=entries.map(entry=>{const path=entry.path;const oldValue=entry.oldValue,newValue=entry.newValue;const isEmpty=oldValue===undefined||oldValue===null||oldValue===''||(typeof oldValue==='string'&&['onbekend','unknown','—','-'].includes(oldValue.trim().toLowerCase()));return '<div class="tool-card" style="padding:12px;margin:10px 0"><label style="display:flex;align-items:center;gap:8px;font-weight:700"><input type="checkbox" class="ai-review-choice" data-path="'+esc(JSON.stringify(path))+'" '+(isEmpty?'checked':'')+' style="width:auto"> '+esc(displayLabel(path))+'</label><div class="grid2" style="margin-top:8px"><div><small>Huidige waarde</small><div style="white-space:pre-wrap;overflow-wrap:anywhere;margin:4px 0">'+esc(pretty(oldValue))+'</div></div><div><small>Voorstel AI</small><div style="white-space:pre-wrap;overflow-wrap:anywhere;margin:4px 0">'+esc(pretty(newValue))+'</div></div></div></div>';}).join('');
    review.classList.remove('hidden');
    $('aiReviewTitle').textContent='Controleer AI-voorstel voor '+(record.name||record.id);
    $('aiReviewApply').onclick=async()=>{
-    const chosen=[...list.querySelectorAll('.ai-review-choice:checked')].map(x=>x.dataset.key);
+    const chosen=[...list.querySelectorAll('.ai-review-choice:checked')].map(x=>JSON.parse(x.dataset.path));
     const applied=JSON.parse(JSON.stringify(record));
-    chosen.forEach(k=>{applied[k]=proposal[k];});
+    chosen.forEach(path=>{let target=applied,source=proposal;for(let i=0;i<path.length-1;i++){const key=path[i];if(!target[key]||typeof target[key]!=='object')target[key]={};target=target[key];source=source[key];}target[path[path.length-1]]=source[path[path.length-1]];});
     applied.sources=proposal.sources;applied.last_checked=proposal.last_checked;applied.review_needed=true;
     const index=db.records.findIndex(x=>x.id===record.id);if(index<0)throw new Error('Cultivar niet meer gevonden in de database.');
     db.records[index]=applied;syncMeta();await saveLocalDraft(db);review.classList.add('hidden');$('aiUpdatePanel').classList.add('hidden');renderEditor();
