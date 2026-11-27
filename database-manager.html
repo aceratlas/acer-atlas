@@ -184,7 +184,7 @@ label{display:block;font-size:12px;font-weight:700;color:#526156;margin:12px 0 5
   <div class="toolbar"><button class="primary" id="apply">Wijzigingen toepassen</button><button id="cancelFlyout">Annuleren</button></div>
  </section>
 </div>
-<div class="footer"><span class="footer-version">Acer Atlas Datamanager v0.4.28</span> · Opslaan bewaart je wijzigingen lokaal als concept. Publiceren naar GitHub doe je apart wanneer je klaar bent.</div>
+<div class="footer"><span class="footer-version">Acer Atlas Datamanager v0.4.29</span> · Opslaan bewaart je wijzigingen lokaal als concept. Publiceren naar GitHub doe je apart wanneer je klaar bent.</div>
 <script>/* De actuele database wordt rechtstreeks uit cultivar-database.json geladen. */</script>
 <script>
 let db=null, selected=null, suggestionIndex=-1, suggestionItems=[], activeFlyout='basis', pendingPhotos=[];
@@ -200,7 +200,7 @@ function restoreManagerState(){let s;try{s=JSON.parse(sessionStorage.getItem(MAN
 document.addEventListener('input',e=>{if(e.target.closest('main'))rememberManagerState();});document.addEventListener('change',e=>{if(e.target.closest('main'))rememberManagerState();});document.addEventListener('click',()=>setTimeout(rememberManagerState,0));window.addEventListener('scroll',rememberManagerState,{passive:true});window.addEventListener('pagehide',rememberManagerState);
 
 const $=id=>document.getElementById(id), clone=x=>JSON.parse(JSON.stringify(x));
-const flyoutSections=[['naam','Naamgegevens'],['seizoenen','Kenmerken per seizoen'],['groei','Groei en standplaats'],['herkomst','Herkomst en geschiedenis'],['aanvullend','Bronnen en aanvullende informatie'],['fotos','Foto’s']];
+const flyoutSections=[['naam','Naamgegevens'],['seizoenen','Kenmerken per seizoen'],['groei','Groei en standplaats'],['fotos','Foto’s'],['aanvullend','Bronnen en aanvullende informatie'],['herkomst','Herkomst en geschiedenis']];
 function esc(s){return String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));}
 function count(){if(!db)return;$('count').textContent=db.records.length;$('photosCount').textContent=db.records.reduce((n,r)=>n+(Array.isArray(r.photos)?r.photos.length:0),0);}
 function syncMeta(){db.record_count=db.records.length;db.records_count=db.records.length;db.photo_count=db.records.reduce((n,r)=>n+(r.photos||[]).length,0);count();const v=(()=>{try{return readDatabaseVersion(db).value;}catch(e){return 'Onbekend';}})();if($('databaseVersion'))$('databaseVersion').textContent=v==='Onbekend'?v:'v'+v;if($('nextVersion')){try{$('nextVersion').textContent='Volgende publicatie: v'+nextDatabaseVersion(db)+' (wordt pas definitief bij upload)';}catch(e){$('nextVersion').textContent='Volgende publicatie: versie niet vast te stellen';}}}
@@ -262,11 +262,11 @@ function renderEditor(){
    <div class="summary-item"><small>Aantal foto’s</small><strong>${r.photos.length}</strong></div>
   </div>
   ${detailSection('naam','Naamgegevens',`Cultivarnaam: ${esc(r.name||'')} · Botanische naam: ${esc(r.accepted_name||'')} · Soort: ${esc(r.species||'')} · Plantgroep: ${esc(r.plant_group||'')} · Groeivorm: ${esc(r.growth_habit||'')} · Synoniemen: ${esc(Array.isArray(r.synonyms)?r.synonyms.join(', '):r.synonyms||'')}`)}
-  ${detailSection('aanvullend','Bronnen en aanvullende informatie',preview(trait))}
-  ${detailSection('herkomst','Herkomst en geschiedenis',preview(hist))}
   ${detailSection('seizoenen','Kenmerken per seizoen',preview(JSON.stringify(r.seasonal_characteristics||{},null,2)))}
   ${detailSection('groei','Groei en standplaats',preview(JSON.stringify({growth:r.growth||{},site:r.site||{}},null,2)))}
   <div class="detail-section"><div class="section-head"><h3>Foto’s</h3><button class="edit-btn" type="button" data-edit="fotos">Foto’s beheren</button></div><div class="section-preview">${r.photos.length} foto(’s) gekoppeld · meerdere foto’s tegelijk toevoegen mogelijk.</div><div class="photo-strip">${photos}</div></div>
+  ${detailSection('aanvullend','Bronnen en aanvullende informatie',preview(trait))}
+  ${detailSection('herkomst','Herkomst en geschiedenis',preview(hist))}
   
   <div class="status" id="detailStatus">Je bekijkt de cultivar. Bewerk een onderdeel en klik daarna op Opslaan om de volledige database centraal te publiceren.</div>`;
  $('editor').querySelectorAll('[data-edit]').forEach(b=>b.onclick=()=>showFlyout(b.dataset.edit));
