@@ -666,6 +666,10 @@ function mergeAiCultivar(target,source){
  if(fieldSources&&typeof fieldSources==='object')target.field_sources={...(target.field_sources||{}),...fieldSources};
  const fieldEvidence=pick('field_evidence','fieldEvidence');
  if(fieldEvidence&&typeof fieldEvidence==='object')target.field_evidence={...(target.field_evidence||{}),...fieldEvidence};
+ const researchSummary=pick('research_summary','researchSummary');
+ if(researchSummary&&typeof researchSummary==='object')target.research_summary=researchSummary;
+ const conflicts=pick('conflicts');
+ if(Array.isArray(conflicts))target.conflicts=conflicts;
  return target;
 }
 
