@@ -315,7 +315,7 @@ function renderEditor(){
    const review=$('aiReviewPanel');const list=$('aiReviewList');
    const fieldLabels={name:'Cultivarnaam',accepted_name:'Botanische naam',species:'Soort',plant_group:'Plantgroep',growth_habit:'Groeivorm',synonyms:'Synoniemen',traits:'Algemene kenmerken',history:'Geschiedenis',selector_or_introducer:'Kweker / introducteur',origin:'Herkomst',introduction_year:'Introductiejaar',seasonal_characteristics:'Kenmerken per seizoen',seasons:'Kenmerken per seizoen',growth:'Groei',growthData:'Groei',growth_data:'Groei',site:'Standplaats',siteData:'Standplaats',site_data:'Standplaats',height_after_10_years:'Hoogte na 10 jaar',width_after_10_years:'Breedte na 10 jaar',growth_rate:'Groeisnelheid',position:'Standplaats',soil:'Bodem',climate_zone:'Klimaatzone / winterhardheid',spring:'Voorjaar',summer:'Zomer',autumn:'Herfst',winter:'Winter',nl:'Nederlands',en:'Engels',discoverer:'Ontdekker',breeder:'Kweker',flowers:'Bloemen',fruit:'Vruchten',bark_and_twigs:'Bast en twijgen',water:'Waterbehoefte',wind:'Windgevoeligheid',hardiness:'Winterhardheid',pruning:'Snoei',drainage:'Waterafvoer',branching:'Vertakking',crown_shape:'Kroonvorm',mature_height:'Uiteindelijke hoogte',mature_width:'Uiteindelijke breedte',foliage:'Blad',autumn_colour:'Herfstkleur'};
    const pretty=value=>value===undefined||value===null||value===''?'Niet ingevuld':(typeof value==='object'?String(value.nl||value.en||'Niet ingevuld'):String(value));
-   const displayLabel=path=>{const parts=path.map(part=>fieldLabels[part]||String(part).replace(/_/g,' '));return parts.join(' – ');};
+   const displayLabel=path=>{const rootLabels={seasonal_characteristics:'Kenmerken per seizoen',growth:'Groei',site:'Standplaats'};const nestedLabels={position:'Positie',soil:'Bodem',climate_zone:'Klimaatzone / winterhardheid',height_after_10_years:'Hoogte na 10 jaar',width_after_10_years:'Breedte na 10 jaar',growth_rate:'Groeisnelheid',spring:'Voorjaar',summer:'Zomer',autumn:'Herfst',winter:'Winter',nl:'Nederlands',en:'Engels'};return path.map((part,index)=>(index===0&&rootLabels[part])||nestedLabels[part]||fieldLabels[part]||String(part).replace(/_/g,' ')).join(' – ');};
    const entries=[];
    const walk=(path,oldValue,newValue)=>{if(JSON.stringify(oldValue)===JSON.stringify(newValue))return;if(newValue&&typeof newValue==='object'&&!Array.isArray(newValue)){const keys=[...new Set([...Object.keys(oldValue&&typeof oldValue==='object'?oldValue:{}),...Object.keys(newValue)])];keys.forEach(key=>walk([...path,key],oldValue&&typeof oldValue==='object'?oldValue[key]:undefined,newValue[key]));return;}entries.push({path,oldValue,newValue});};
    reviewKeys.forEach(k=>walk([k],record[k],proposal[k]));
@@ -595,82 +595,86 @@ function filterAiCultivarSources(items,cultivarName){
  return {kept,rejected};
 }
 function mergeAiCultivar(target,source){
- const isUnknown=value=>typeof value==='string'&&['onbekend','unknown','—','-','n/a'].includes(value.trim().toLowerCase());
- const get=(...keys)=>{for(const k of keys){const value=source[k];if(value!==undefined&&value!==null&&value!==''&&!isUnknown(value))return value;}return undefined;};
- const name=asText(get('name','cultivar_name','cultivarName','cultivar'));
- if(name)target.name=name;
- const accepted=asText(get('accepted_name','botanical_name','acceptedName'));
- if(accepted)target.accepted_name=accepted;
- const species=asText(get('species','botanical_species'));
- if(species)target.species=species;
- const plantGroup=asText(get('plant_group','plantGroup','group'));
- if(plantGroup)target.plant_group=plantGroup;
- const synonyms=get('synonyms','synonym');
- if(Array.isArray(synonyms))target.synonyms=[...new Set([...(target.synonyms||[]),...synonyms.map(asText).filter(Boolean)])];
- else if(typeof synonyms==='string')target.synonyms=[...new Set([...(target.synonyms||[]),...synonyms.split(/[;,\n]/).map(x=>x.trim()).filter(Boolean)])];
- const traits=get('traits','characteristics','description');
- if(traits!==undefined){const b=bilingual(traits);target.traits={...(target.traits||{}),...(b.nl?{nl:b.nl}:{}),...(b.en?{en:b.en}:{})};}
- const history=get('history','historical_background','background');
- if(history!==undefined){const b=bilingual(history);target.history={...(target.history||{}),...(b.nl?{nl:b.nl}:{}),...(b.en?{en:b.en}:{})};}
- const selector=get('selector_or_introducer','selector','introducer','originator');
- if(selector!==undefined){const b=bilingual(selector);target.selector_or_introducer={...(target.selector_or_introducer||{}),...(b.nl?{nl:b.nl}:{}),...(b.en?{en:b.en}:{})};}
- const origin=get('origin','origin_country','country_of_origin');
- if(origin!==undefined){const b=bilingual(origin);target.origin={...(target.origin||{}),...(b.nl?{nl:b.nl}:{}),...(b.en?{en:b.en}:{})};}
- const year=get('introduction_year','introductionYear','year_introduced');if(year!==undefined)target.introduction_year=year;
- // De encyclopedie gebruikt geneste objecten voor seizoenen, groei en standplaats.
- const seasons=get('seasons','seasonal_characteristics','foliage_by_season');
- if(seasons&&typeof seasons==='object'){
-  target.seasons={...(target.seasons||{})};
-  for(const [key,aliases] of Object.entries({spring:['spring','lente','voorjaar'],summer:['summer','zomer'],autumn:['autumn','fall','herfst'],winter:['winter']})){
-   const value=aliases.map(alias=>seasons[alias]).find(value=>value!==undefined&&value!==null&&value!==''&&!isUnknown(value));
-   if(value!==undefined)target.seasons[key]=bilingual(value);
-  }
- }
- const growthSource=get('growthData','growth_data','growth')||{};
- const height=get('height_after_10_years','height_10_years','height_after_10_years_cm','height');
- const width=get('width_after_10_years','width_10_years','width_after_10_years_cm','width');
- const rate=get('growth_rate','growthRate','growth_speed');
- if(height!==undefined||width!==undefined||rate!==undefined||Object.keys(growthSource).length){
-  target.growthData={...(target.growthData||{})};
-  if(height!==undefined)target.growthData.height_after_10_years=asText(height);
-  if(width!==undefined)target.growthData.width_after_10_years=asText(width);
-  if(rate!==undefined)target.growthData.growth_rate=bilingual(rate);
-  if(growthSource.height_after_10_years!==undefined&&!isUnknown(growthSource.height_after_10_years))target.growthData.height_after_10_years=asText(growthSource.height_after_10_years);
-  if(growthSource.width_after_10_years!==undefined&&!isUnknown(growthSource.width_after_10_years))target.growthData.width_after_10_years=asText(growthSource.width_after_10_years);
-  if(growthSource.growth_rate!==undefined&&!isUnknown(growthSource.growth_rate))target.growthData.growth_rate=bilingual(growthSource.growth_rate);
- }
- const siteSource=get('siteData','site_data','site')||{};
- const position=get('position','exposure','site_position')??siteSource.position;
- const soil=get('soil','soil_type','ground')??siteSource.soil;
- const climate=get('climate_zone','climateZone','hardiness','winter_hardiness')??siteSource.climate_zone;
- if(position!==undefined||soil!==undefined||climate!==undefined||Object.keys(siteSource).length){
-  target.siteData={...(target.siteData||{})};
-  if(position!==undefined)target.siteData.position=bilingual(position);
-  if(soil!==undefined)target.siteData.soil=bilingual(soil);
-  if(climate!==undefined)target.siteData.climate_zone=bilingual(climate);
-  for(const key of ['position','soil','climate_zone'])if(siteSource[key]!==undefined&&!isUnknown(siteSource[key]))target.siteData[key]=bilingual(siteSource[key]);
- }
- const habit=get('growth_habit','growth_form','habit');if(habit!==undefined)target.growthHabit=habit;
- const foliage=get('foliage','leaf_colour','leaf_color');if(foliage!==undefined)target.foliage=foliage;
- const autumn=get('autumn_colour','autumn_color','fall_color');if(autumn!==undefined)target.autumn_colour=autumn;
- const extraFields={
-  discoverer:['discoverer','discovered_by'],breeder:['breeder','breeder_name'],flowers:['flowers','flower'],fruit:['fruit','fruits'],bark_and_twigs:['bark_and_twigs','bark','twigs'],water:['water','water_needs','moisture'],wind:['wind','wind_sensitivity'],hardiness:['hardiness','winter_hardiness'],climate_zone:['climate_zone','climateZone'],container_suitability:['container_suitability','pot_suitability'],pruning:['pruning','pruning_advice']
+ const isUnknown=value=>typeof value==='string'&&['onbekend','unknown','—','-','n/a','not known','not yet verified'].includes(value.trim().toLowerCase());
+ const pick=(...keys)=>{for(const key of keys){const value=source?.[key];if(value!==undefined&&value!==null&&value!==''&&!isUnknown(value))return value;}return undefined;};
+ const mergeBilingual=(current,incoming)=>{
+  if(incoming===undefined||incoming===null||incoming==='')return current;
+  if(typeof incoming!=='object'||Array.isArray(incoming))return {...(current&&typeof current==='object'?current:{}),nl:asText(incoming)};
+  const result={...(current&&typeof current==='object'?current:{})};
+  const nl=incoming.nl??incoming.dutch??incoming.nederlands;
+  const en=incoming.en??incoming.english;
+  if(nl!==undefined&&nl!==null&&nl!==''&&!isUnknown(nl))result.nl=asText(nl);
+  if(en!==undefined&&en!==null&&en!==''&&!isUnknown(en))result.en=asText(en);
+  return result;
  };
- for(const [key,aliases] of Object.entries(extraFields)){const value=get(...aliases);if(value!==undefined)target[key]=value;}
- const growthHabit=get('growth_habit','growth_form','habit');if(growthHabit!==undefined)target.growthHabit=growthHabit;
- const growthSourceFull=get('growthData','growth_data','growth')||{};
- for(const key of ['branching','crown_shape','mature_height','mature_width'])if(growthSourceFull[key]!==undefined&&!isUnknown(growthSourceFull[key])){target.growthData=target.growthData||{};target.growthData[key]=growthSourceFull[key];}
- const siteSourceFull=get('siteData','site_data','site')||{};
- for(const key of ['water','wind','hardiness','container_suitability','pruning','drainage','ph'])if(siteSourceFull[key]!==undefined&&!isUnknown(siteSourceFull[key])){target.siteData=target.siteData||{};target.siteData[key]=bilingual(siteSourceFull[key]);}
- const fieldSources=get('field_sources','fieldSources');if(fieldSources&&typeof fieldSources==='object')target.field_sources={...(target.field_sources||{}),...fieldSources};
- const aiSources=get('sources');if(Array.isArray(aiSources))target.sources=[...(target.sources||[]),...aiSources].filter((item,index,all)=>item?.url&&all.findIndex(x=>x?.url===item.url)===index);
- // Acer Atlas encyclopaedia reads the canonical snake_case database fields.
- const plantGroupValue=get('plant_group','plantGroup','group');if(plantGroupValue!==undefined)target.plant_group=plantGroupValue;
- if(target.growthHabit!==undefined)target.growth_habit=target.growthHabit;
- if(target.seasons!==undefined)target.seasonal_characteristics=target.seasons;
- if(target.growthData!==undefined)target.growth=target.growthData;
- if(target.siteData!==undefined)target.site=target.siteData;
- if(target.accepted_name&&!target.name_data?.botanical_name){target.name_data={...(target.name_data||{}),botanical_name:target.accepted_name};}
+ const assign=(key,...aliases)=>{const value=pick(...aliases);if(value!==undefined)target[key]=value;};
+ assign('name','name','cultivar_name','cultivarName','cultivar');
+ assign('accepted_name','accepted_name','botanical_name','acceptedName');
+ assign('species','species','botanical_species');
+ assign('plant_group','plant_group','plantGroup','group');
+ const synonyms=pick('synonyms','synonym');
+ if(Array.isArray(synonyms))target.synonyms=[...new Set([...(Array.isArray(target.synonyms)?target.synonyms:[]),...synonyms.map(asText).filter(Boolean)])];
+ else if(typeof synonyms==='string')target.synonyms=[...new Set([...(Array.isArray(target.synonyms)?target.synonyms:[]),...synonyms.split(/[;,\\n]/).map(x=>x.trim()).filter(Boolean)])];
+ for(const [key,aliases] of Object.entries({
+  traits:['traits','characteristics','description'],
+  history:['history','historical_background','background'],
+  selector_or_introducer:['selector_or_introducer','selector','introducer','originator'],
+  origin:['origin','origin_country','country_of_origin']
+ })){
+  const value=pick(...aliases);if(value!==undefined)target[key]=mergeBilingual(target[key],value);
+ }
+ assign('introduction_year','introduction_year','introductionYear','year_introduced');
+ // Canonieke encyclopedievelden: seasonal_characteristics, growth en site.
+ const seasonSource=pick('seasonal_characteristics','seasons','foliage_by_season');
+ if(seasonSource&&typeof seasonSource==='object'){
+  const seasons={...(target.seasonal_characteristics||{})};
+  for(const [key,aliases] of Object.entries({spring:['spring','lente','voorjaar'],summer:['summer','zomer'],autumn:['autumn','fall','herfst'],winter:['winter']})){
+   const value=aliases.map(alias=>seasonSource[alias]).find(v=>v!==undefined&&v!==null&&v!==''&&!isUnknown(v));
+   if(value!==undefined)seasons[key]=mergeBilingual(seasons[key],value);
+  }
+  target.seasonal_characteristics=seasons;
+ }
+ const growthSource=pick('growth','growth_data','growthData')||{};
+ const growth={...(target.growth||{})};
+ const growthAliases={
+  height_after_10_years:['height_after_10_years','height_10_years','height_after_10_years_cm','height'],
+  width_after_10_years:['width_after_10_years','width_10_years','width_after_10_years_cm','width'],
+  growth_rate:['growth_rate','growthRate','growth_speed'],
+  branching:['branching'],crown_shape:['crown_shape'],mature_height:['mature_height'],mature_width:['mature_width']
+ };
+ for(const [key,aliases] of Object.entries(growthAliases)){
+  let value=aliases.map(alias=>growthSource?.[alias]).find(v=>v!==undefined&&v!==null&&v!==''&&!isUnknown(v));
+  if(value===undefined)value=pick(...aliases);
+  if(value!==undefined)growth[key]=key==='growth_rate'?mergeBilingual(growth[key],value):value;
+ }
+ if(Object.keys(growth).length)target.growth=growth;
+ const siteSource=pick('site','site_data','siteData')||{};
+ const site={...(target.site||{})};
+ const siteAliases={
+  position:['position','exposure','site_position'],
+  soil:['soil','soil_type','ground'],
+  climate_zone:['climate_zone','climateZone','hardiness','winter_hardiness'],
+  water:['water','water_needs','moisture'],
+  wind:['wind','wind_sensitivity'],
+  container_suitability:['container_suitability','pot_suitability'],
+  pruning:['pruning','pruning_advice'],
+  drainage:['drainage'],ph:['ph']
+ };
+ for(const [key,aliases] of Object.entries(siteAliases)){
+  let value=aliases.map(alias=>siteSource?.[alias]).find(v=>v!==undefined&&v!==null&&v!==''&&!isUnknown(v));
+  if(value===undefined)value=pick(...aliases);
+  if(value!==undefined)site[key]=mergeBilingual(site[key],value);
+ }
+ if(Object.keys(site).length)target.site=site;
+ const habit=pick('growth_habit','growth_form','habit');if(habit!==undefined)target.growth_habit=habit;
+ assign('foliage','foliage','leaf_colour','leaf_color');
+ assign('autumn_colour','autumn_colour','autumn_color','fall_color');
+ for(const [key,aliases] of Object.entries({
+  discoverer:['discoverer','discovered_by'],breeder:['breeder','breeder_name'],
+  flowers:['flowers','flower'],fruit:['fruit','fruits'],bark_and_twigs:['bark_and_twigs','bark','twigs']
+ })){const value=pick(...aliases);if(value!==undefined)target[key]=value;}
+ const fieldSources=pick('field_sources','fieldSources');
+ if(fieldSources&&typeof fieldSources==='object')target.field_sources={...(target.field_sources||{}),...fieldSources};
  return target;
 }
 const CULTIVAR_AI_KEY_STORAGE='aa-cultivar-ai-key';
