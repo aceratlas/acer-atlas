@@ -267,7 +267,7 @@ function renderEditor(){
   ${detailSection('seizoenen','Kenmerken per seizoen',preview(JSON.stringify(r.seasonal_characteristics||{},null,2)))}
   ${detailSection('groei','Groei en standplaats',preview(JSON.stringify({growth:r.growth||{},site:r.site||{}},null,2)))}
   <div class="detail-section"><div class="section-head"><h3>Foto’s</h3><button class="edit-btn" type="button" data-edit="fotos">Foto’s beheren</button></div><div class="section-preview">${r.photos.length} foto(’s) gekoppeld · meerdere foto’s tegelijk toevoegen mogelijk.</div><div class="photo-strip">${photos}</div></div>
-  ${detailSection('aanvullend','Bronnen en aanvullende informatie',`${Array.isArray(r.sources)?r.sources.length:0} bronvermelding(en) gekoppeld`)}
+  
   <div class="status" id="detailStatus">Je bekijkt de cultivar. Bewerk een onderdeel en klik daarna op Opslaan om de volledige database centraal te publiceren.</div>`;
  $('editor').querySelectorAll('[data-edit]').forEach(b=>b.onclick=()=>showFlyout(b.dataset.edit));
  $('delete').onclick=()=>{if(confirm('Deze cultivar uit het concept verwijderen?')){db.records=db.records.filter(x=>x.id!==selected);syncMeta();backToSearch();$('status').textContent='Cultivar verwijderd uit het lokale concept.';}};
