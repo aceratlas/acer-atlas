@@ -261,10 +261,11 @@ function renderEditor(){
    <div class="summary-item"><small>Hoogte na 10 jaar</small><strong>${preview(r.height_after_10_years||r.growth?.height_after_10_years)}</strong></div>
    <div class="summary-item"><small>Aantal foto’s</small><strong>${r.photos.length}</strong></div>
   </div>
-  ${detailSection('naam','Naamgegevens',`Cultivarnaam: ${esc(r.name||'')} · Geaccepteerde naam: ${esc(r.accepted_name||'')} · Laatst gecontroleerd: ${esc(r.last_checked||'Onbekend')}`)}
+  ${detailSection('naam','Naamgegevens',`Cultivarnaam: ${esc(r.name||'')} · Botanische naam: ${esc(r.accepted_name||'')} · Soort: ${esc(r.species||'')} · Plantgroep: ${esc(r.plant_group||'')} · Groeivorm: ${esc(r.growth_habit||'')} · Synoniemen: ${esc(Array.isArray(r.synonyms)?r.synonyms.join(', '):r.synonyms||'')}`)}
   ${detailSection('aanvullend','Bronnen en aanvullende informatie',preview(trait))}
   ${detailSection('herkomst','Herkomst en geschiedenis',preview(hist))}
-  ${detailSection('naam','Naamgegevens',preview(Array.isArray(r.synonyms)?r.synonyms.join(', '):r.synonyms))}
+  ${detailSection('seizoenen','Kenmerken per seizoen',preview(JSON.stringify(r.seasonal_characteristics||{},null,2)))}
+  ${detailSection('groei','Groei en standplaats',preview(JSON.stringify({growth:r.growth||{},site:r.site||{}},null,2)))}
   <div class="detail-section"><div class="section-head"><h3>Foto’s</h3><button class="edit-btn" type="button" data-edit="fotos">Foto’s beheren</button></div><div class="section-preview">${r.photos.length} foto(’s) gekoppeld · meerdere foto’s tegelijk toevoegen mogelijk.</div><div class="photo-strip">${photos}</div></div>
   ${detailSection('aanvullend','Bronnen en aanvullende informatie',`${Array.isArray(r.sources)?r.sources.length:0} bronvermelding(en) gekoppeld`)}
   <div class="status" id="detailStatus">Je bekijkt de cultivar. Bewerk een onderdeel en klik daarna op Opslaan om de volledige database centraal te publiceren.</div>`;
