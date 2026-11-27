@@ -14,7 +14,7 @@ const corsHeaders = {
 
 
 
-const WORKER_VERSION = "0.5.9";
+const WORKER_VERSION = "0.6.0";
 
 const AI_MODEL = "@cf/zai-org/glm-4.7-flash";
 
@@ -598,51 +598,60 @@ function buildCultivarPrompt(name, sources) {
     "\nINHOUD:\n" + String(source.text || "").slice(0, MAX_SOURCE_TEXT)
   ).join("\n\n");
 
-  return `Je bent de gegevensredacteur van Acer Atlas, een encyclopedie over Japanse esdoorns.
+  return `Je bent de bronkritische gegevensredacteur van Acer Atlas.
 Onderzoek uitsluitend de cultivar: ${name}.
 
-Onderzoek de zes kenmerken afzonderlijk en gebruik alle aangeleverde bronpagina's:
-1. Hoogte en breedte: neem de maat en context exact over (volwassen maat, na 10 jaar, jaarlijks, enz.).
-2. Groeisnelheid en groeivorm: groeisnelheid alleen classificeren als langzaam, gemiddeld of snel wanneer de bron dit ondersteunt.
-3. Introduceur: onderscheid ontdekker, selecteur, introduceur en kweker.
-4. Introductiejaar: een prijsjaar of publicatiejaar is niet automatisch het introductiejaar.
-5. Seizoenskenmerken: voorjaar, zomer, herfst en winter afzonderlijk.
-6. Plantgroep: bijvoorbeeld dissectum, linearilobum, matsumurae of amoenum, uitsluitend wanneer onderbouwd.
+HOOFDREGEL: een veld mag alleen worden ingevuld als een aangeleverde bronpagina expliciet informatie over precies deze cultivar bevat. Algemene Acer palmatum-informatie, aannames, zoekresultaatsnippets en kennis uit je eigen modelgeheugen zijn geen bewijs.
 
-Neem ook de klimaatzone op wanneer een betrouwbare bron die expliciet vermeldt. Gebruik geen aparte velden voor bodem of standplaats.
+Beoordeel elk kenmerk afzonderlijk:
+- Hoogte en breedte: behoud de context exact. Maak onderscheid tussen hoogte na 10 jaar, volwassen hoogte en maximale hoogte. Zet een volwassen maat nooit om naar een 10-jaarsmaat.
+- Groeisnelheid en groeivorm: alleen invullen als de bron dit expliciet ondersteunt. Leid 'compact' niet af tot 'bolvormig' of 'langzaam'.
+- Selecteur, ontdekker en introduceur: gebruik de juiste rol. Noem Dick van der Maat niet automatisch voor iedere cultivar die op zijn website staat.
+- Introductiejaar: publicatie-, prijs- of auteursrechtjaar is geen introductiejaar.
+- Seizoenskenmerken: voorjaar, zomer, herfst en winter strikt gescheiden; geen ontbrekende seizoenen aanvullen.
+- Plantgroep en klimaatzone: alleen invullen bij expliciete cultivarvermelding.
+- Synoniemen: alleen opnemen als de bron een synoniem expliciet noemt.
 
-BRONREGELS:
-- Gebruik uitsluitend informatie die in de aangeleverde bronpagina's staat.
-- Vaste prioriteit bij dezelfde cultivar en hetzelfde kenmerk: 1. Esveld, 2. MrMaple, 3. Baumschule Nielsen, 4. Maple Nursery Belgium, 5. overige betrouwbare bronnen.
-- Een bron met hogere prioriteit is leidend wanneer beide bronnen aantoonbaar hetzelfde kenmerk behandelen. Noteer relevante tegenstrijdigheden in conflicts.
-- Ken ieder ingevuld kenmerk de precieze bron-URL toe in field_sources. Gebruik alleen URL's uit het bronmateriaal.
-- Gebruik algemene informatie over Acer palmatum nooit als bewijs voor een specifieke cultivar.
-- Verzin niets en vul ontbrekende gegevens niet aan vanuit algemene kennis.
-- Laat een ontbrekend kenmerk volledig weg uit het JSON-object. Gebruik nooit "Onbekend", "Unknown", lege tekst of null als vervangende waarde.
-- Gebruik Nederlands voor groeisnelheid en groeivorm; behoud bronmaten en eenheden.
-- Houd de vier seizoenen strikt gescheiden.
+BRONPRIORITEIT bij hetzelfde kenmerk en dezelfde cultivar: 1 Esveld, 2 MrMaple, 3 Baumschule Nielsen, 4 The Maple Nursery Belgium, 5 overige betrouwbare kwekerijen. Deze volgorde is alleen een tie-breaker wanneer beide bronnen aantoonbaar hetzelfde kenmerk behandelen. Verberg afwijkende waarden niet: zet beide waarden met hun bron in conflicts.
 
-Geef uitsluitend één geldig JSON-object terug. Gebruik alleen velden waarvoor bronbewijs bestaat. Mogelijke structuur:
+BEWIJSPLICHT:
+- Voor ieder ingevuld kenmerk geef je field_evidence met de exacte URL en een letterlijk citaat uit de inhoud van die bron.
+- Het citaat moet het ingevulde gegeven daadwerkelijk ondersteunen; parafraseer het citaat niet.
+- Gebruik uitsluitend URL's die hieronder staan.
+- Als een citaat niet beschikbaar is, laat het kenmerk weg.
+- Neem geen bron op als bewijs voor een kenmerk dat er niet in staat.
+- Geen "Onbekend", "Unknown", lege strings of null gebruiken.
+- Gebruik Nederlands voor groeisnelheid en groeivorm. Behoud maten en eenheden zoals de bron ze geeft.
+
+Geef uitsluitend geldig JSON terug met deze structuur (laat onbewezen velden weg):
 {
-  "name": "",
+  "name": "${name}",
   "accepted_name": "",
-  "species": "",
+  "species": "Acer palmatum",
   "synonyms": [],
   "plant_group": "",
   "selector_or_introducer": "",
   "introduction_year": 0,
   "height": "",
   "width": "",
-  "growth_rate": "langzaam | gemiddeld | snel",
+  "growth_rate": "",
   "growth_habit": "",
   "climate_zone": "",
-  "seasons": {
-    "spring": "",
-    "summer": "",
-    "autumn": "",
-    "winter": ""
+  "seasons": {"spring": "", "summer": "", "autumn": "", "winter": ""},
+  "field_evidence": {
+    "height": {"url": "", "quote": ""},
+    "width": {"url": "", "quote": ""},
+    "growth_rate": {"url": "", "quote": ""},
+    "growth_habit": {"url": "", "quote": ""},
+    "selector_or_introducer": {"url": "", "quote": ""},
+    "introduction_year": {"url": "", "quote": ""},
+    "plant_group": {"url": "", "quote": ""},
+    "climate_zone": {"url": "", "quote": ""},
+    "seasons.spring": {"url": "", "quote": ""},
+    "seasons.summer": {"url": "", "quote": ""},
+    "seasons.autumn": {"url": "", "quote": ""},
+    "seasons.winter": {"url": "", "quote": ""}
   },
-  "field_sources": {},
   "conflicts": [],
   "sources": []
 }
@@ -690,14 +699,42 @@ function missingResearchFields(data) {
 }
 
 function validateFieldSources(data, sources) {
-  const allowed = new Set(sources.map(source => source.url));
+  const byUrl = new Map(sources.map(source => [source.url, source]));
+  const evidence = data.field_evidence && typeof data.field_evidence === "object" ? data.field_evidence : {};
   const validated = {};
-  for (const [field, raw] of Object.entries(data.field_sources || {})) {
-    const values = Array.isArray(raw) ? raw : [raw];
-    const valid = [...new Set(values.filter(value => typeof value === "string" && allowed.has(value)))];
-    if (valid.length) validated[field] = valid.length === 1 ? valid[0] : valid;
+  const normalize = value => String(value || "").toLowerCase().replace(/\\s+/g, " ").replace(/[“”‘’"'.,;:!?()[\\]{}]/g, "").trim();
+  const hasProof = field => {
+    const item = evidence[field];
+    if (!item || typeof item !== "object" || typeof item.url !== "string" || typeof item.quote !== "string") return false;
+    const source = byUrl.get(item.url);
+    if (!source || item.quote.trim().length < 12) return false;
+    const pageText = normalize(source.text);
+    const quote = normalize(item.quote);
+    return quote.length >= 12 && pageText.includes(quote);
+  };
+  const simpleFields = ["height","width","growth_rate","growth_habit","selector_or_introducer","introduction_year","plant_group","climate_zone"];
+  for (const field of simpleFields) {
+    if (data[field] !== undefined && data[field] !== null && data[field] !== "" && hasProof(field)) {
+      validated[field] = evidence[field].url;
+    } else {
+      delete data[field];
+    }
+  }
+  if (data.seasons && typeof data.seasons === "object") {
+    for (const season of ["spring","summer","autumn","winter"]) {
+      const key = "seasons." + season;
+      if (data.seasons[season] !== undefined && hasProof(key)) validated[key] = evidence[key].url;
+      else delete data.seasons[season];
+    }
+    if (!Object.keys(data.seasons).length) delete data.seasons;
+  }
+  // Synonyms are only retained when each synonym has a verifiable field citation.
+  if (Array.isArray(data.synonyms) && data.synonyms.length) {
+    if (hasProof("synonyms")) validated.synonyms = evidence.synonyms.url;
+    else delete data.synonyms;
   }
   data.field_sources = validated;
+  data.field_evidence = Object.fromEntries(Object.entries(evidence).filter(([key]) => validated[key] || (key === "synonyms" && validated.synonyms)));
   data.sources = sources.map(source => ({ title: source.title, url: source.url }));
   return data;
 }
@@ -1598,7 +1635,7 @@ export default {
         }
         return value;
       };
-      for (const field of ["name", "accepted_name", "species", "synonyms", "plant_group", "selector_or_introducer", "introduction_year", "height", "width", "growth_rate", "growth_habit", "climate_zone", "seasons", "field_sources", "conflicts"]) {
+      for (const field of ["name", "accepted_name", "species", "synonyms", "plant_group", "selector_or_introducer", "introduction_year", "height", "width", "growth_rate", "growth_habit", "climate_zone", "seasons", "field_sources", "field_evidence", "conflicts"]) {
         const value = cleanValue(data[field]);
         if (value === undefined) delete data[field];
         else data[field] = value;
