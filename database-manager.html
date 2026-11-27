@@ -1,4 +1,4 @@
-<!doctype html><html lang="nl" data-acer-atlas-manager-version="0.4.42"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Acer Atlas · Datamanager v0.4.42</title><style>
+<!doctype html><html lang="nl" data-acer-atlas-manager-version="0.4.43"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Acer Atlas · Datamanager v0.4.43</title><style>
 :root{font-family:Inter,Segoe UI,Arial,sans-serif;color:#202820;background:#f4f6f2}
 *{box-sizing:border-box}body{margin:0;background:#f4f6f2;color:#202820}
 button,input,textarea,select{font:inherit}button{cursor:pointer}
@@ -99,7 +99,7 @@ label{display:block;font-size:12px;font-weight:700;color:#526156;margin:12px 0 5
 <header class="hero">
  <div class="top">
   <div class="brand"><span class="mark" aria-hidden="true">🍁</span><div><h1>ACER ATLAS</h1><small>Databasebeheer</small></div></div>
-  <div class="top-right"><a class="app-link" href="./index.html#collection">← Terug naar Acer Atlas</a><button id="backBtn" class="back-btn" type="button">← Terug</button><span class="version">DATAMANAGER v0.4.42</span></div>
+  <div class="top-right"><a class="app-link" href="./index.html#collection">← Terug naar Acer Atlas</a><button id="backBtn" class="back-btn" type="button">← Terug</button><span class="version">DATAMANAGER v0.4.43</span></div>
  </div>
 </header>
 <main class="page">
@@ -184,7 +184,7 @@ label{display:block;font-size:12px;font-weight:700;color:#526156;margin:12px 0 5
   <div class="toolbar"><button class="primary" id="apply">Wijzigingen toepassen</button><button id="cancelFlyout">Annuleren</button></div>
  </section>
 </div>
-<div class="footer"><span class="footer-version">Acer Atlas Datamanager v0.4.42</span> · Opslaan bewaart je wijzigingen lokaal als concept. Publiceren naar GitHub doe je apart wanneer je klaar bent.</div>
+<div class="footer"><span class="footer-version">Acer Atlas Datamanager v0.4.43</span> · Opslaan bewaart je wijzigingen lokaal als concept. Publiceren naar GitHub doe je apart wanneer je klaar bent.</div>
 <script>/* De actuele database wordt rechtstreeks uit cultivar-database.json geladen. */</script>
 <script>
 let db=null, selected=null, suggestionIndex=-1, suggestionItems=[], activeFlyout='basis', pendingPhotos=[];
@@ -265,6 +265,7 @@ function renderEditor(){
   ${detailSection('seizoenen','Kenmerken per seizoen',preview(JSON.stringify(r.seasonal_characteristics||{},null,2)))}
   ${detailSection('groei','Groei en standplaats',preview(JSON.stringify({growth:r.growth||{},site:r.site||{}},null,2)))}
   <div class="detail-section"><div class="section-head"><h3>Foto’s</h3><button class="edit-btn" type="button" data-edit="fotos">Foto’s beheren</button></div><div class="section-preview">${r.photos.length} foto(’s) gekoppeld · meerdere foto’s tegelijk toevoegen mogelijk.</div><div class="photo-strip">${photos}</div></div>
+  ${r.field_evidence?renderResearchReport(r.research_summary,r.field_evidence,r.sources):''}
   ${detailSection('aanvullend','Bronnen en aanvullende informatie',preview(trait))}
   ${detailSection('herkomst','Herkomst en geschiedenis',preview(hist))}
   
@@ -298,19 +299,19 @@ function renderEditor(){
    const response=await fetch(CULTIVAR_AI_WORKER+'/process',{method:'POST',mode:'cors',credentials:'omit',cache:'no-store',headers:{'Content-Type':'application/json','Authorization':'Bearer '+key},body:JSON.stringify({urls,name:record.name||record.accepted_name||'',existing:record,discover_sources:true})});
    const body=await response.text();let payload;try{payload=JSON.parse(body);}catch(e){throw new Error('Worker gaf geen geldige JSON terug (HTTP '+response.status+').');}
    if(!response.ok||payload.success===false)throw new Error(payload.error||payload.message||('Worker-fout HTTP '+response.status));
-   const parsed=extractAiObject(payload);if(!parsed||typeof parsed!=='object')throw new Error('Geen cultivar-informatie ontvangen.');
+   const parsed=payload.data&&typeof payload.data==='object'?payload.data:extractAiObject(payload);if(!parsed||typeof parsed!=='object')throw new Error('Geen cultivar-informatie ontvangen.');parsed.research_summary=payload.research_summary||parsed.research_summary||{};parsed.field_evidence=payload.field_evidence||parsed.field_evidence||{};
    const sourceCheck=filterAiCultivarSources(parsed.sources);
    parsed.sources=sourceCheck.kept;
    mergeAiCultivar(proposal,parsed);
    proposal.photos=record.photos;proposal.id=record.id;
    const manualSources=urls.map(url=>({title:new URL(url).hostname,url}));
    proposal.sources=[...(Array.isArray(record.sources)?record.sources:[]),...sourceCheck.kept,...manualSources].filter((x,i,a)=>a.findIndex(y=>(y.url||y.uri)===(x.url||x.uri))===i);
-   proposal.field_sources={...(record.field_sources||{}),...(parsed.field_sources||{})};proposal.conflicts=[...(Array.isArray(record.conflicts)?record.conflicts:[]),...(Array.isArray(parsed.conflicts)?parsed.conflicts:[])];
+   proposal.field_sources={...(record.field_sources||{}),...(parsed.field_sources||{})};proposal.conflicts=[...(Array.isArray(record.conflicts)?record.conflicts:[]),...(Array.isArray(parsed.conflicts)?parsed.conflicts:[])];proposal.field_evidence=parsed.field_evidence||{};proposal.research_summary=parsed.research_summary||{};proposal.research_status=payload.research_status||'orange';proposal.research_mode=payload.research_mode||'review_existing';
    proposal.last_checked=new Date().toISOString().slice(0,10);proposal.review_needed=true;
    const keys=[...new Set([...Object.keys(record),...Object.keys(proposal)])];
    const changed=keys.filter(k=>JSON.stringify(record[k])!==JSON.stringify(proposal[k]));
    const safeChanged=changed.filter(k=>!['id','photos'].includes(k));
-   if(!safeChanged.length){$('detailStatus').textContent='De AI heeft geen nieuwe wijzigingen voorgesteld.';return;}
+   if(!safeChanged.length){$('detailStatus').textContent='Er zijn geen veldwijzigingen voorgesteld. Bekijk hieronder wel het onderzoeksrapport en de broncontrole.';}
    const reviewKeys=safeChanged.filter(k=>!['sources','last_checked','review_needed'].includes(k));
    const review=$('aiReviewPanel');const list=$('aiReviewList');
    const fieldLabels={name:'Cultivarnaam',accepted_name:'Botanische naam',species:'Soort',plant_group:'Plantgroep',growth_habit:'Groeivorm',synonyms:'Synoniemen',traits:'Algemene kenmerken',history:'Geschiedenis',selector_or_introducer:'Kweker / introducteur',origin:'Herkomst',introduction_year:'Introductiejaar',seasonal_characteristics:'Kenmerken per seizoen',seasons:'Kenmerken per seizoen',growth:'Groei',growthData:'Groei',growth_data:'Groei',site:'Standplaats',siteData:'Standplaats',site_data:'Standplaats',height_after_10_years:'Hoogte na 10 jaar',width_after_10_years:'Breedte na 10 jaar',growth_rate:'Groeisnelheid',position:'Standplaats',soil:'Bodem',climate_zone:'Klimaatzone / winterhardheid',spring:'Voorjaar',summer:'Zomer',autumn:'Herfst',winter:'Winter',nl:'Nederlands',en:'Engels',discoverer:'Ontdekker',breeder:'Kweker',flowers:'Bloemen',fruit:'Vruchten',bark_and_twigs:'Bast en twijgen',water:'Waterbehoefte',wind:'Windgevoeligheid',hardiness:'Winterhardheid',pruning:'Snoei',drainage:'Waterafvoer',branching:'Vertakking',crown_shape:'Kroonvorm',mature_height:'Uiteindelijke hoogte',mature_width:'Uiteindelijke breedte',foliage:'Blad',autumn_colour:'Herfstkleur'};
@@ -319,7 +320,7 @@ function renderEditor(){
    const entries=[];
    const walk=(path,oldValue,newValue)=>{if(JSON.stringify(oldValue)===JSON.stringify(newValue))return;if(newValue&&typeof newValue==='object'&&!Array.isArray(newValue)){const keys=[...new Set([...Object.keys(oldValue&&typeof oldValue==='object'?oldValue:{}),...Object.keys(newValue)])];keys.forEach(key=>walk([...path,key],oldValue&&typeof oldValue==='object'?oldValue[key]:undefined,newValue[key]));return;}entries.push({path,oldValue,newValue});};
    reviewKeys.forEach(k=>walk([k],record[k],proposal[k]));
-   list.innerHTML=entries.map(entry=>{const path=entry.path;const oldValue=entry.oldValue,newValue=entry.newValue;const isEmpty=oldValue===undefined||oldValue===null||oldValue===''||(typeof oldValue==='string'&&['onbekend','unknown','—','-'].includes(oldValue.trim().toLowerCase()));return '<div class="tool-card" style="padding:12px;margin:10px 0"><label style="display:flex;align-items:center;gap:8px;font-weight:700"><input type="checkbox" class="ai-review-choice" data-path="'+esc(JSON.stringify(path))+'" '+(isEmpty?'checked':'')+' style="width:auto"> '+esc(displayLabel(path))+'</label><div class="grid2" style="margin-top:8px"><div><small>Huidige waarde</small><div style="white-space:pre-wrap;overflow-wrap:anywhere;margin:4px 0">'+esc(pretty(oldValue))+'</div></div><div><small>Voorstel AI</small><div style="white-space:pre-wrap;overflow-wrap:anywhere;margin:4px 0">'+esc(pretty(newValue))+'</div></div></div></div>';}).join('');
+   list.innerHTML=renderResearchReport(proposal.research_summary,proposal.field_evidence,proposal.sources)+(entries.length?entries.map(entry=>{const path=entry.path;const oldValue=entry.oldValue,newValue=entry.newValue;const isEmpty=oldValue===undefined||oldValue===null||oldValue===''||(typeof oldValue==='string'&&['onbekend','unknown','—','-'].includes(oldValue.trim().toLowerCase()));return '<div class="tool-card" style="padding:12px;margin:10px 0"><label style="display:flex;align-items:center;gap:8px;font-weight:700"><input type="checkbox" class="ai-review-choice" data-path="'+esc(JSON.stringify(path))+'" '+(isEmpty?'checked':'')+' style="width:auto"> '+esc(displayLabel(path))+'</label><div class="grid2" style="margin-top:8px"><div><small>Huidige waarde</small><div style="white-space:pre-wrap;overflow-wrap:anywhere;margin:4px 0">'+esc(pretty(oldValue))+'</div></div><div><small>Voorstel AI</small><div style="white-space:pre-wrap;overflow-wrap:anywhere;margin:4px 0">'+esc(pretty(newValue))+'</div></div></div></div>';}).join(''):'<div class="tool-card" style="padding:12px;margin:10px 0">Geen veldwaarden om te wijzigen. Het onderzoeksrapport hierboven laat zien welke eigenschappen wel en niet konden worden onderbouwd.</div>');
    review.classList.remove('hidden');
    $('aiReviewTitle').textContent='Controleer AI-voorstel voor '+(record.name||record.id);
    $('aiReviewApply').onclick=async()=>{
@@ -667,6 +668,19 @@ function mergeAiCultivar(target,source){
  if(fieldEvidence&&typeof fieldEvidence==='object')target.field_evidence={...(target.field_evidence||{}),...fieldEvidence};
  return target;
 }
+
+function renderResearchReport(summary,evidence,sources){
+ const labels={identity:'Cultivaridentiteit',plant_group:'Plantgroep',origin:'Herkomst',introduction_year:'Introductiejaar',selector_or_introducer:'Selecteur / introducteur',growth_habit:'Groeivorm',growth_rate:'Groeisnelheid',height_after_10_years:'Hoogte na 10 jaar',width_after_10_years:'Breedte na 10 jaar',mature_height:'Volwassen hoogte',mature_width:'Volwassen breedte',foliage:'Bladkenmerken',spring:'Voorjaarsblad',summer:'Zomerblad',autumn:'Herfstblad',winter:'Winterbeeld',autumn_colour:'Herfstkleur',position:'Standplaats',soil:'Bodem',hardiness:'Winterhardheid',water:'Waterbehoefte',wind:'Windgevoeligheid',drainage:'Drainage',pruning:'Snoei',flowers:'Bloemen',fruit:'Vruchten',bark_and_twigs:'Bast en twijgen'};
+ const statusLabel={supported:'Onderbouwd',conflicting:'Tegenstrijdig',not_found:'Niet gevonden'};
+ const statusColor={supported:'#26734d',conflicting:'#a66a13',not_found:'#a33d36'};
+ const rows=Object.entries(evidence||{}).map(([key,item])=>{
+  const status=item?.status||'not_found',urls=Array.isArray(item?.source_urls)?item.source_urls:[];
+  return '<div style="padding:9px 0;border-bottom:1px solid #e6ece6"><div style="display:flex;justify-content:space-between;gap:10px;flex-wrap:wrap"><strong>'+esc(labels[key]||key.replace(/_/g,' '))+'</strong><span style="font-weight:700;color:'+(statusColor[status]||'#647168')+'">'+esc(statusLabel[status]||status)+'</span></div><div style="font-size:13px;color:#526156;margin-top:4px">'+esc(item?.reason||'Geen toelichting')+'</div>'+(urls.length?'<div style="font-size:12px;margin-top:5px">'+urls.map((url,i)=>'<a href="'+esc(url)+'" target="_blank" rel="noopener noreferrer">Bron '+(i+1)+'</a>').join(' · ')+'</div>':'')+'</div>';
+ }).join('');
+ const counts=summary||{};
+ return '<section class="tool-card" style="padding:13px;margin:10px 0"><h4 style="margin:0 0 8px;color:#294c36">Onderzoeksrapport</h4><div style="font-size:13px;color:#526156;margin-bottom:9px">Onderbouwd: '+((counts.supported_fields||[]).length)+' · Tegenstrijdig: '+((counts.conflicting_fields||[]).length)+' · Niet gevonden: '+((counts.not_found_fields||[]).length)+'</div>'+(rows||'<p class="hint">De Worker heeft geen veldbewijs teruggegeven. Dit onderzoek is niet inhoudelijk te beoordelen.</p>')+'</section>';
+}
+
 const CULTIVAR_AI_KEY_STORAGE='aa-cultivar-ai-key';
 $('cultivarAiKey').value=localStorage.getItem(CULTIVAR_AI_KEY_STORAGE)||sessionStorage.getItem(CULTIVAR_AI_KEY_STORAGE)||'';
 $('rememberCultivarAiKey').checked=!!localStorage.getItem(CULTIVAR_AI_KEY_STORAGE);
@@ -720,7 +734,7 @@ $('fetchCultivarInfo').onclick=async()=>{
   const response=await fetch(CULTIVAR_AI_WORKER+'/process',{method:'POST',mode:'cors',credentials:'omit',cache:'no-store',headers:{'Content-Type':'application/json','Authorization':'Bearer '+key},body:JSON.stringify({urls,name,discover_sources:true})});
   const raw=await response.text();let payload;try{payload=JSON.parse(raw);}catch(e){throw new Error('Worker gaf geen JSON terug (HTTP '+response.status+').');}
   if(!response.ok||payload.success===false)throw new Error(payload.error||payload.message||('Worker-fout HTTP '+response.status));
-  const parsed=extractAiObject(payload);if(!parsed||typeof parsed!=='object')throw new Error('Geen cultivar-gegevens ontvangen.');
+  const parsed=payload.data&&typeof payload.data==='object'?payload.data:extractAiObject(payload);if(!parsed||typeof parsed!=='object')throw new Error('Geen cultivar-gegevens ontvangen.');parsed.research_summary=payload.research_summary||parsed.research_summary||{};parsed.field_evidence=payload.field_evidence||parsed.field_evidence||{};
   const combined=mergeAiCultivar({},parsed);
   if(!combined.name)combined.name=name;
   const sources=(Array.isArray(combined.sources)?combined.sources:[]).filter((x,i,a)=>x?.url&&a.findIndex(y=>y?.url===x.url)===i);
@@ -748,7 +762,7 @@ $('fetchCultivarInfo').onclick=async()=>{
    height_after_10_years:canonicalGrowth.height_after_10_years||'',width_after_10_years:canonicalGrowth.width_after_10_years||'',
    growth_rate:canonicalGrowth.growth_rate||'',growth_habit:combined.growth_habit||canonicalGrowth.growth_habit||'',
    foliage:combined.foliage||'',autumn_colour:combined.autumn_colour||'',hardiness:canonicalSite.climate_zone||combined.hardiness||'',
-   field_sources:combined.field_sources||{},field_evidence:combined.field_evidence||{},conflicts:combined.conflicts||[],
+   field_sources:combined.field_sources||{},field_evidence:combined.field_evidence||{},research_summary:combined.research_summary||{},research_status:payload.research_status||'orange',research_mode:payload.research_mode||'new_cultivar',conflicts:combined.conflicts||[],
    sources:[...sources,...urls.map(url=>({title:new URL(url).hostname,url}))].filter((x,i,a)=>a.findIndex(y=>y.url===x.url)===i),
    photos:[],evidence_status:'partial',review_needed:true,last_checked:new Date().toISOString().slice(0,10)
   };
