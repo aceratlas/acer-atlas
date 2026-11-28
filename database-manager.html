@@ -1,4 +1,4 @@
-<!doctype html><html lang="nl" data-acer-atlas-manager-version="0.4.51"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Acer Atlas · Datamanager v0.4.51</title><style>
+<!doctype html><html lang="nl" data-acer-atlas-manager-version="0.4.52"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Acer Atlas · Datamanager v0.4.52</title><style>
 :root{font-family:Inter,Segoe UI,Arial,sans-serif;color:#202820;background:#f4f6f2}
 *{box-sizing:border-box}body{margin:0;background:#f4f6f2;color:#202820}
 button,input,textarea,select{font:inherit}button{cursor:pointer}
@@ -101,7 +101,7 @@ label{display:block;font-size:12px;font-weight:700;color:#526156;margin:12px 0 5
 <header class="hero">
  <div class="top">
   <div class="brand"><span class="mark" aria-hidden="true">🍁</span><div><h1>ACER ATLAS</h1><small>Databasebeheer</small></div></div>
-  <div class="top-right"><a class="app-link" href="./index.html#collection">← Terug naar Acer Atlas</a><button id="backBtn" class="back-btn" type="button">← Terug</button><span class="version">DATAMANAGER v0.4.51</span></div>
+  <div class="top-right"><a class="app-link" href="./index.html#collection">← Terug naar Acer Atlas</a><button id="backBtn" class="back-btn" type="button">← Terug</button><span class="version">DATAMANAGER v0.4.52</span></div>
  </div>
 </header>
 <main class="page">
@@ -134,6 +134,8 @@ label{display:block;font-size:12px;font-weight:700;color:#526156;margin:12px 0 5
    <label for="newCultivarName">Cultivarnaam (verplicht)</label><input id="newCultivarName" placeholder="Bijv. Acer palmatum Sango-kaku" autocomplete="off">
    <label>Eigen bronlinks (optioneel, maximaal vijf)</label><div id="newCultivarLinks" style="display:grid;gap:8px"><input class="cultivar-source-url" type="url" placeholder="Eerste bronlink (bijv. Esveld)" autocomplete="url"><input class="cultivar-source-url" type="url" placeholder="Tweede bronlink (bijv. MrMaple)" autocomplete="url"></div>
    <div class="toolbar"><button id="addCultivarLink" type="button">+ Link toevoegen</button></div>
+   <label for="newCultivarResearchNotes">Vrije invoer (optioneel)</label><textarea id="newCultivarResearchNotes" rows="5" placeholder="Plak hier eigen gegevens, Google-resultaten of waarnemingen. Dit is gebruikersinput en wordt niet als gecontroleerde bron beschouwd."></textarea>
+   <p class="hint">Bronlinks en vrije invoer worden samen als onderzoekscontext gebruikt. Vrije invoer geldt niet als onafhankelijk bronbewijs.</p>
    <label for="cultivarAiKey">Cloudflare AI-sleutel</label><input id="cultivarAiKey" type="password" autocomplete="off" placeholder="Plak hier de ATLAS_WORKER_KEY" style="max-width:520px">
    <div class="toolbar" style="align-items:center;gap:12px;margin-top:8px"><label style="display:flex;align-items:center;gap:8px;margin:0;font-weight:500"><input id="rememberCultivarAiKey" type="checkbox" style="width:auto;margin:0"> Sleutel op dit apparaat onthouden</label><button id="clearCultivarAiKey" type="button">Sleutel wissen</button></div>
    <p class="hint">Standaard wordt de sleutel alleen deze browsersessie gebruikt. Met het vinkje wordt hij lokaal in deze browser bewaard (niet in de database of op GitHub). Gebruik dit alleen op een vertrouwd, persoonlijk apparaat.</p>
@@ -186,7 +188,7 @@ label{display:block;font-size:12px;font-weight:700;color:#526156;margin:12px 0 5
   <div class="toolbar"><button class="primary" id="apply">Wijzigingen toepassen</button><button id="cancelFlyout">Annuleren</button></div>
  </section>
 </div>
-<div class="footer"><span class="footer-version">Acer Atlas Datamanager v0.4.51</span> · Opslaan bewaart je wijzigingen lokaal als concept. Publiceren naar GitHub doe je apart wanneer je klaar bent.</div>
+<div class="footer"><span class="footer-version">Acer Atlas Datamanager v0.4.52</span> · Opslaan bewaart je wijzigingen lokaal als concept. Publiceren naar GitHub doe je apart wanneer je klaar bent.</div>
 <div id="processingOverlay" class="processing-overlay hidden" role="status" aria-live="polite" aria-label="Verwerking bezig"><div class="processing-box"><div class="processing-spinner" aria-hidden="true"></div><div class="processing-title" id="processingTitle">Even geduld</div><div class="processing-message" id="processingMessage">De Datamanager is bezig met verwerken.</div><div class="processing-track" aria-hidden="true"></div></div></div>
 <script>/* De actuele database wordt rechtstreeks uit cultivar-database.json geladen. */</script>
 <script>
@@ -250,6 +252,8 @@ function renderEditor(){
     </div>
     <div class="toolbar"><button type="button" id="addAiUpdateLink">+ Link toevoegen</button></div>
    </details>
+   <label for="aiUpdateResearchNotes">Vrije invoer (optioneel)</label>
+   <textarea id="aiUpdateResearchNotes" rows="5" placeholder="Plak eigen gegevens, Google-resultaten of waarnemingen. Wordt als gebruikersinput behandeld, niet als gecontroleerde bron."></textarea>
    <div class="detail-actions" style="margin-top:10px"><button type="button" id="aiRunUpdate" class="primary">Onderzoek starten</button><button type="button" id="aiCancelUpdate">Annuleren</button></div>
   </div>
   <div id="aiReviewPanel" class="detail-section hidden" style="margin-top:12px">
@@ -301,7 +305,7 @@ function renderEditor(){
   try{
    const proposal=JSON.parse(JSON.stringify(record));
    $('detailStatus').textContent='AI zoekt zelfstandig bij de afgesproken kwekers en vult alle cultivarvelden aan…';
-   const response=await fetch(CULTIVAR_AI_WORKER+'/process',{method:'POST',mode:'cors',credentials:'omit',cache:'no-store',headers:{'Content-Type':'application/json','Authorization':'Bearer '+key},body:JSON.stringify({urls,name:record.name||record.accepted_name||'',existing:record,discover_sources:true})});
+   const response=await fetch(CULTIVAR_AI_WORKER+'/process',{method:'POST',mode:'cors',credentials:'omit',cache:'no-store',headers:{'Content-Type':'application/json','Authorization':'Bearer '+key},body:JSON.stringify({urls,name:record.name||record.accepted_name||'',existing:record,user_notes:$('aiUpdateResearchNotes')?.value.trim()||'',discover_sources:true})});
    const body=await response.text();let payload;try{payload=JSON.parse(body);}catch(e){throw new Error('Worker gaf geen geldige JSON terug (HTTP '+response.status+').');}
    if(!response.ok||payload.success===false)throw new Error(payload.error||payload.message||('Worker-fout HTTP '+response.status));
    const parsed=payload.data&&typeof payload.data==='object'?payload.data:extractAiObject(payload);if(!parsed||typeof parsed!=='object')throw new Error('Geen cultivar-informatie ontvangen.');parsed.research_summary=payload.research_summary||parsed.research_summary||{};parsed.field_evidence=payload.field_evidence||parsed.field_evidence||{};
@@ -641,8 +645,6 @@ function mergeAiCultivar(target,source){
  for(const [key,aliases] of Object.entries(growthAliases)){
   let value=aliases.map(alias=>growthSource?.[alias]).find(v=>v!==undefined&&v!==null&&v!==''&&!isUnknown(v));
   if(value===undefined)value=pick(...aliases);
-  if(value===undefined&&key==='height_after_10_years')value=pick('height');
-  if(value===undefined&&key==='width_after_10_years')value=pick('width');
   if(value===undefined&&key==='growth_rate')value=pick('growth_rate');
   if(value!==undefined)growth[key]=key==='growth_rate'?mergeBilingual(growth[key],value):value;
  }
@@ -696,10 +698,10 @@ function renderResearchReport(summary,evidence,sources){
   const hasProof=!!(raw.quote||raw.citation||raw.excerpt);
   const status=raw.status||(hasProof?'supported':'not_found');
   const reason=raw.reason||raw.quote||raw.citation||raw.excerpt||'Geen expliciet bronbewijs teruggegeven.';
-  return '<div style="padding:9px 0;border-bottom:1px solid #e6ece6"><div style="display:flex;justify-content:space-between;gap:10px;flex-wrap:wrap"><strong>'+esc(labels[key]||key.replace(/[_.]/g,' '))+'</strong><span style="font-weight:700;color:'+(statusColor[status]||'#647168')+'">'+esc(statusLabel[status]||status)+'</span></div><div style="font-size:13px;color:#526156;margin-top:4px">'+esc(reason)+'</div>'+(urls.length?'<div style="font-size:12px;margin-top:5px">'+urls.map((url,i)=>'<a href="'+esc(url)+'" target="_blank" rel="noopener noreferrer">Bron '+(i+1)+'</a>').join(' · ')+'</div>':'')+'</div>';
+  return '<div style="padding:9px 0;border-bottom:1px solid #e6ece6"><div style="display:flex;justify-content:space-between;gap:10px;flex-wrap:wrap"><strong>'+esc(labels[key]||key.replace(/[_.]/g,' '))+'</strong><span style="font-weight:700;color:'+(statusColor[status]||'#647168')+'">'+esc(statusLabel[status]||status)+'</span></div><div style="font-size:13px;color:#526156;margin-top:4px">'+esc(reason)+'</div></div>';
  }).join('');
  const counts={supported:entries.filter(([,v])=>(v?.status||(v?.quote||v?.citation||v?.excerpt?'supported':'not_found'))==='supported').length,conflicting:entries.filter(([,v])=>v?.status==='conflicting').length,notFound:entries.filter(([,v])=>v?.status==='not_found'||(!v?.status&&!v?.quote&&!v?.citation&&!v?.excerpt)).length};
- return '<section class="tool-card" style="padding:13px;margin:10px 0"><h4 style="margin:0 0 8px;color:#294c36">Onderzoeksrapport</h4><div style="font-size:13px;color:#526156;margin-bottom:9px">Onderbouwd: '+counts.supported+' · Tegenstrijdig: '+counts.conflicting+' · Niet gevonden: '+counts.notFound+'</div>'+(rows||'<p class="hint">De Worker heeft geen veldbewijs teruggegeven. Dit onderzoek is niet inhoudelijk te beoordelen.</p>')+'</section>';
+ return '<section class="tool-card" style="padding:13px;margin:10px 0"><h4 style="margin:0 0 8px;color:#294c36">Onderzoeksrapport</h4><div style="font-size:13px;color:#526156;margin-bottom:9px">Onderbouwd: '+counts.supported+' · Tegenstrijdig: '+counts.conflicting+' · Niet gevonden: '+counts.notFound+'</div>'+(rows||'<p class="hint">De Worker heeft geen veldbewijs teruggegeven. Dit onderzoek is niet inhoudelijk te beoordelen.</p>')+(Array.isArray(sources)&&sources.length?'<div style="border-top:1px solid #e6ece6;margin-top:12px;padding-top:10px"><strong>Gebruikte bronnen</strong><ol style="font-size:12px;padding-left:20px">'+sources.map(source=>'<li style="margin:5px 0"><a href="'+esc(source.url||source.uri||'')+'" target="_blank" rel="noopener noreferrer">'+esc(source.title||source.url||source.uri||'Bron')+'</a></li>').join('')+'</ol></div>':'')+'</section>';
 }
 
 const CULTIVAR_AI_KEY_STORAGE='aa-cultivar-ai-key';
@@ -752,7 +754,7 @@ $('fetchCultivarInfo').onclick=async()=>{
  try{
   if($('rememberCultivarAiKey').checked)localStorage.setItem(CULTIVAR_AI_KEY_STORAGE,key);else sessionStorage.setItem(CULTIVAR_AI_KEY_STORAGE,key);
   $('newCultivarInfo').textContent='AI zoekt zelfstandig naar kwekersbronnen en onderzoekt de cultivar. Dit kan even duren…';
-  const response=await fetch(CULTIVAR_AI_WORKER+'/process',{method:'POST',mode:'cors',credentials:'omit',cache:'no-store',headers:{'Content-Type':'application/json','Authorization':'Bearer '+key},body:JSON.stringify({urls,name,discover_sources:true})});
+  const response=await fetch(CULTIVAR_AI_WORKER+'/process',{method:'POST',mode:'cors',credentials:'omit',cache:'no-store',headers:{'Content-Type':'application/json','Authorization':'Bearer '+key},body:JSON.stringify({urls,name,user_notes:$('newCultivarResearchNotes')?.value.trim()||'',discover_sources:true})});
   const raw=await response.text();let payload;try{payload=JSON.parse(raw);}catch(e){throw new Error('Worker gaf geen JSON terug (HTTP '+response.status+').');}
   if(!response.ok||payload.success===false)throw new Error(payload.error||payload.message||('Worker-fout HTTP '+response.status));
   const parsed=payload.data&&typeof payload.data==='object'?payload.data:extractAiObject(payload);if(!parsed||typeof parsed!=='object')throw new Error('Geen cultivar-gegevens ontvangen.');parsed.research_summary=payload.research_summary||parsed.research_summary||{};parsed.field_evidence=payload.field_evidence||parsed.field_evidence||{};
