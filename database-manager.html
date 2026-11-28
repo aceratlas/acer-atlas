@@ -1,4 +1,4 @@
-<!doctype html><html lang="nl" data-acer-atlas-manager-version="0.4.49"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Acer Atlas · Datamanager v0.4.49</title><style>
+<!doctype html><html lang="nl" data-acer-atlas-manager-version="0.4.50"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Acer Atlas · Datamanager v0.4.50</title><style>
 :root{font-family:Inter,Segoe UI,Arial,sans-serif;color:#202820;background:#f4f6f2}
 *{box-sizing:border-box}body{margin:0;background:#f4f6f2;color:#202820}
 button,input,textarea,select{font:inherit}button{cursor:pointer}
@@ -101,7 +101,7 @@ label{display:block;font-size:12px;font-weight:700;color:#526156;margin:12px 0 5
 <header class="hero">
  <div class="top">
   <div class="brand"><span class="mark" aria-hidden="true">🍁</span><div><h1>ACER ATLAS</h1><small>Databasebeheer</small></div></div>
-  <div class="top-right"><a class="app-link" href="./index.html#collection">← Terug naar Acer Atlas</a><button id="backBtn" class="back-btn" type="button">← Terug</button><span class="version">DATAMANAGER v0.4.49</span></div>
+  <div class="top-right"><a class="app-link" href="./index.html#collection">← Terug naar Acer Atlas</a><button id="backBtn" class="back-btn" type="button">← Terug</button><span class="version">DATAMANAGER v0.4.50</span></div>
  </div>
 </header>
 <main class="page">
@@ -186,7 +186,7 @@ label{display:block;font-size:12px;font-weight:700;color:#526156;margin:12px 0 5
   <div class="toolbar"><button class="primary" id="apply">Wijzigingen toepassen</button><button id="cancelFlyout">Annuleren</button></div>
  </section>
 </div>
-<div class="footer"><span class="footer-version">Acer Atlas Datamanager v0.4.49</span> · Opslaan bewaart je wijzigingen lokaal als concept. Publiceren naar GitHub doe je apart wanneer je klaar bent.</div>
+<div class="footer"><span class="footer-version">Acer Atlas Datamanager v0.4.50</span> · Opslaan bewaart je wijzigingen lokaal als concept. Publiceren naar GitHub doe je apart wanneer je klaar bent.</div>
 <div id="processingOverlay" class="processing-overlay hidden" role="status" aria-live="polite" aria-label="Verwerking bezig"><div class="processing-box"><div class="processing-spinner" aria-hidden="true"></div><div class="processing-title" id="processingTitle">Even geduld</div><div class="processing-message" id="processingMessage">De Datamanager is bezig met verwerken.</div><div class="processing-track" aria-hidden="true"></div></div></div>
 <script>/* De actuele database wordt rechtstreeks uit cultivar-database.json geladen. */</script>
 <script>
@@ -497,7 +497,7 @@ function exportDatabase(){
 }
 $('file').onchange=async e=>{try{if(e.target.files[0])load(JSON.parse(await e.target.files[0].text()));}catch(err){alert('Database kon niet worden geopend: '+err.message);}};
 async function loadLiveDatabase(){
- const urls=['./cultivar-database.json?v=10.8.38','https://aceratlas.github.io/acer-atlas/cultivar-database.json?v=10.8.38'];
+ const urls=['./cultivar-database.json?v=10.8.39','https://aceratlas.github.io/acer-atlas/cultivar-database.json?v=10.8.39'];
  const failures=[];
  for(const url of urls){
   try{
@@ -607,13 +607,12 @@ function mergeAiCultivar(target,source){
  assign('name','name','cultivar_name','cultivarName','cultivar');
  assign('accepted_name','accepted_name','botanical_name','acceptedName');
  assign('species','species','botanical_species');
- assign('description','description','cultivar_description');
  assign('plant_group','plant_group','plantGroup','group');
  const synonyms=pick('synonyms','synonym');
  if(Array.isArray(synonyms))target.synonyms=[...new Set([...(Array.isArray(target.synonyms)?target.synonyms:[]),...synonyms.map(asText).filter(Boolean)])];
  else if(typeof synonyms==='string')target.synonyms=[...new Set([...(Array.isArray(target.synonyms)?target.synonyms:[]),...synonyms.split(/[;,\\n]/).map(x=>x.trim()).filter(Boolean)])];
  for(const [key,aliases] of Object.entries({
-  traits:['traits','characteristics'],
+  traits:['traits','characteristics','description'],
   history:['history','historical_background','background'],
   selector_or_introducer:['selector_or_introducer','selector','introducer','originator'],
   origin:['origin','origin_country','country_of_origin']
@@ -634,14 +633,17 @@ function mergeAiCultivar(target,source){
  const growthSource=pick('growth','growth_data','growthData')||{};
  const growth={...(target.growth||{})};
  const growthAliases={
-  height_after_10_years:['height_after_10_years','height_10_years','height_after_10_years_cm','height'],
-  width_after_10_years:['width_after_10_years','width_10_years','width_after_10_years_cm','width'],
+  height_after_10_years:['height_after_10_years','height_10_years','height_after_10_years_cm'],
+  width_after_10_years:['width_after_10_years','width_10_years','width_after_10_years_cm'],
   growth_rate:['growth_rate','growthRate','growth_speed'],
   branching:['branching'],crown_shape:['crown_shape'],mature_height:['mature_height'],mature_width:['mature_width']
  };
  for(const [key,aliases] of Object.entries(growthAliases)){
   let value=aliases.map(alias=>growthSource?.[alias]).find(v=>v!==undefined&&v!==null&&v!==''&&!isUnknown(v));
   if(value===undefined)value=pick(...aliases);
+  if(value===undefined&&key==='height_after_10_years')value=pick('height');
+  if(value===undefined&&key==='width_after_10_years')value=pick('width');
+  if(value===undefined&&key==='growth_rate')value=pick('growth_rate');
   if(value!==undefined)growth[key]=key==='growth_rate'?mergeBilingual(growth[key],value):value;
  }
  if(Object.keys(growth).length)target.growth=growth;
@@ -660,6 +662,7 @@ function mergeAiCultivar(target,source){
  for(const [key,aliases] of Object.entries(siteAliases)){
   let value=aliases.map(alias=>siteSource?.[alias]).find(v=>v!==undefined&&v!==null&&v!==''&&!isUnknown(v));
   if(value===undefined)value=pick(...aliases);
+  if(value===undefined&&key==='climate_zone')value=pick('climate_zone');
   if(value!==undefined)site[key]=mergeBilingual(site[key],value);
  }
  if(Object.keys(site).length)target.site=site;
