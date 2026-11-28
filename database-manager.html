@@ -1,4 +1,4 @@
-<!doctype html><html lang="nl" data-acer-atlas-manager-version="0.4.47"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Acer Atlas · Datamanager v0.4.47</title><style>
+<!doctype html><html lang="nl" data-acer-atlas-manager-version="0.4.48"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Acer Atlas · Datamanager v0.4.48</title><style>
 :root{font-family:Inter,Segoe UI,Arial,sans-serif;color:#202820;background:#f4f6f2}
 *{box-sizing:border-box}body{margin:0;background:#f4f6f2;color:#202820}
 button,input,textarea,select{font:inherit}button{cursor:pointer}
@@ -101,7 +101,7 @@ label{display:block;font-size:12px;font-weight:700;color:#526156;margin:12px 0 5
 <header class="hero">
  <div class="top">
   <div class="brand"><span class="mark" aria-hidden="true">🍁</span><div><h1>ACER ATLAS</h1><small>Databasebeheer</small></div></div>
-  <div class="top-right"><a class="app-link" href="./index.html#collection">← Terug naar Acer Atlas</a><button id="backBtn" class="back-btn" type="button">← Terug</button><span class="version">DATAMANAGER v0.4.47</span></div>
+  <div class="top-right"><a class="app-link" href="./index.html#collection">← Terug naar Acer Atlas</a><button id="backBtn" class="back-btn" type="button">← Terug</button><span class="version">DATAMANAGER v0.4.48</span></div>
  </div>
 </header>
 <main class="page">
@@ -186,7 +186,7 @@ label{display:block;font-size:12px;font-weight:700;color:#526156;margin:12px 0 5
   <div class="toolbar"><button class="primary" id="apply">Wijzigingen toepassen</button><button id="cancelFlyout">Annuleren</button></div>
  </section>
 </div>
-<div class="footer"><span class="footer-version">Acer Atlas Datamanager v0.4.47</span> · Opslaan bewaart je wijzigingen lokaal als concept. Publiceren naar GitHub doe je apart wanneer je klaar bent.</div>
+<div class="footer"><span class="footer-version">Acer Atlas Datamanager v0.4.48</span> · Opslaan bewaart je wijzigingen lokaal als concept. Publiceren naar GitHub doe je apart wanneer je klaar bent.</div>
 <div id="processingOverlay" class="processing-overlay hidden" role="status" aria-live="polite" aria-label="Verwerking bezig"><div class="processing-box"><div class="processing-spinner" aria-hidden="true"></div><div class="processing-title" id="processingTitle">Even geduld</div><div class="processing-message" id="processingMessage">De Datamanager is bezig met verwerken.</div><div class="processing-track" aria-hidden="true"></div></div></div>
 <script>/* De actuele database wordt rechtstreeks uit cultivar-database.json geladen. */</script>
 <script>
@@ -329,6 +329,7 @@ function renderEditor(){
    for(let i=entries.length-1;i>=0;i--)if(excludedReviewPath(entries[i].path))entries.splice(i,1);
    list.innerHTML=renderResearchReport(proposal.research_summary,proposal.field_evidence,proposal.sources)+(entries.length?entries.map(entry=>{const path=entry.path;const oldValue=entry.oldValue,newValue=entry.newValue;const isEmpty=oldValue===undefined||oldValue===null||oldValue===''||(typeof oldValue==='string'&&['onbekend','unknown','—','-'].includes(oldValue.trim().toLowerCase()));return '<div class="tool-card" style="padding:12px;margin:10px 0"><label style="display:flex;align-items:center;gap:8px;font-weight:700"><input type="checkbox" class="ai-review-choice" data-path="'+esc(JSON.stringify(path))+'" '+(isEmpty?'checked':'')+' style="width:auto"> '+esc(displayLabel(path))+'</label><div class="grid2" style="margin-top:8px"><div><small>Huidige waarde</small><div style="white-space:pre-wrap;overflow-wrap:anywhere;margin:4px 0">'+esc(pretty(oldValue))+'</div></div><div><small>Voorstel AI</small><div style="white-space:pre-wrap;overflow-wrap:anywhere;margin:4px 0">'+esc(pretty(newValue))+'</div></div></div></div>';}).join(''):'<div class="tool-card" style="padding:12px;margin:10px 0">Geen veldwaarden om te wijzigen. Het onderzoeksrapport hierboven laat zien welke eigenschappen wel en niet konden worden onderbouwd.</div>');
    review.classList.remove('hidden');
+   requestAnimationFrame(()=>review.scrollIntoView({behavior:'smooth',block:'start'}));
    $('aiReviewTitle').textContent='Controleer AI-voorstel voor '+(record.name||record.id);
    $('aiReviewApply').onclick=async()=>{
     const chosen=[...list.querySelectorAll('.ai-review-choice:checked')].map(x=>JSON.parse(x.dataset.path));
@@ -496,7 +497,7 @@ function exportDatabase(){
 }
 $('file').onchange=async e=>{try{if(e.target.files[0])load(JSON.parse(await e.target.files[0].text()));}catch(err){alert('Database kon niet worden geopend: '+err.message);}};
 async function loadLiveDatabase(){
- const urls=['./cultivar-database.json?v=10.8.36','https://aceratlas.github.io/acer-atlas/cultivar-database.json?v=10.8.36'];
+ const urls=['./cultivar-database.json?v=10.8.37','https://aceratlas.github.io/acer-atlas/cultivar-database.json?v=10.8.37'];
  const failures=[];
  for(const url of urls){
   try{
