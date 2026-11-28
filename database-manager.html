@@ -1,4 +1,4 @@
-<!doctype html><html lang="nl" data-acer-atlas-manager-version="0.4.50"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Acer Atlas · Datamanager v0.4.50</title><style>
+<!doctype html><html lang="nl" data-acer-atlas-manager-version="0.4.51"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Acer Atlas · Datamanager v0.4.51</title><style>
 :root{font-family:Inter,Segoe UI,Arial,sans-serif;color:#202820;background:#f4f6f2}
 *{box-sizing:border-box}body{margin:0;background:#f4f6f2;color:#202820}
 button,input,textarea,select{font:inherit}button{cursor:pointer}
@@ -101,7 +101,7 @@ label{display:block;font-size:12px;font-weight:700;color:#526156;margin:12px 0 5
 <header class="hero">
  <div class="top">
   <div class="brand"><span class="mark" aria-hidden="true">🍁</span><div><h1>ACER ATLAS</h1><small>Databasebeheer</small></div></div>
-  <div class="top-right"><a class="app-link" href="./index.html#collection">← Terug naar Acer Atlas</a><button id="backBtn" class="back-btn" type="button">← Terug</button><span class="version">DATAMANAGER v0.4.50</span></div>
+  <div class="top-right"><a class="app-link" href="./index.html#collection">← Terug naar Acer Atlas</a><button id="backBtn" class="back-btn" type="button">← Terug</button><span class="version">DATAMANAGER v0.4.51</span></div>
  </div>
 </header>
 <main class="page">
@@ -186,7 +186,7 @@ label{display:block;font-size:12px;font-weight:700;color:#526156;margin:12px 0 5
   <div class="toolbar"><button class="primary" id="apply">Wijzigingen toepassen</button><button id="cancelFlyout">Annuleren</button></div>
  </section>
 </div>
-<div class="footer"><span class="footer-version">Acer Atlas Datamanager v0.4.50</span> · Opslaan bewaart je wijzigingen lokaal als concept. Publiceren naar GitHub doe je apart wanneer je klaar bent.</div>
+<div class="footer"><span class="footer-version">Acer Atlas Datamanager v0.4.51</span> · Opslaan bewaart je wijzigingen lokaal als concept. Publiceren naar GitHub doe je apart wanneer je klaar bent.</div>
 <div id="processingOverlay" class="processing-overlay hidden" role="status" aria-live="polite" aria-label="Verwerking bezig"><div class="processing-box"><div class="processing-spinner" aria-hidden="true"></div><div class="processing-title" id="processingTitle">Even geduld</div><div class="processing-message" id="processingMessage">De Datamanager is bezig met verwerken.</div><div class="processing-track" aria-hidden="true"></div></div></div>
 <script>/* De actuele database wordt rechtstreeks uit cultivar-database.json geladen. */</script>
 <script>
@@ -497,7 +497,7 @@ function exportDatabase(){
 }
 $('file').onchange=async e=>{try{if(e.target.files[0])load(JSON.parse(await e.target.files[0].text()));}catch(err){alert('Database kon niet worden geopend: '+err.message);}};
 async function loadLiveDatabase(){
- const urls=['./cultivar-database.json?v=10.8.39','https://aceratlas.github.io/acer-atlas/cultivar-database.json?v=10.8.39'];
+ const urls=['./cultivar-database.json?v=10.8.40','https://aceratlas.github.io/acer-atlas/cultivar-database.json?v=10.8.40'];
  const failures=[];
  for(const url of urls){
   try{
@@ -685,17 +685,21 @@ function mergeAiCultivar(target,source){
 }
 
 function renderResearchReport(summary,evidence,sources){
- const labels={identity:'Cultivaridentiteit',plant_group:'Plantgroep',origin:'Herkomst',introduction_year:'Introductiejaar',selector_or_introducer:'Selecteur / introducteur',growth_habit:'Groeivorm',growth_rate:'Groeisnelheid',height_after_10_years:'Hoogte na 10 jaar',width_after_10_years:'Breedte na 10 jaar',foliage:'Bladkenmerken',spring:'Voorjaarsblad',summer:'Zomerblad',autumn:'Herfstblad',winter:'Winterbeeld',position:'Standplaats',soil:'Bodem',climate_zone:'Klimaatzone',water:'Waterbehoefte',wind:'Windgevoeligheid'};
+ const labels={identity:'Cultivaridentiteit',name:'Cultivaridentiteit',plant_group:'Plantgroep',origin:'Herkomst',introduction_year:'Introductiejaar',selector_or_introducer:'Selecteur / introducteur',growth_habit:'Groeivorm',growth_rate:'Groeisnelheid',height:'Hoogte',width:'Breedte',height_after_10_years:'Hoogte na 10 jaar',width_after_10_years:'Breedte na 10 jaar',foliage:'Bladkenmerken',spring:'Voorjaarsblad',summer:'Zomerblad',autumn:'Herfstblad',winter:'Winterbeeld',position:'Standplaats',soil:'Bodem',climate_zone:'Klimaatzone',water:'Waterbehoefte',wind:'Windgevoeligheid',description:'Algemene kenmerken'};
  const statusLabel={supported:'Onderbouwd',conflicting:'Tegenstrijdig',not_found:'Niet gevonden'};
  const statusColor={supported:'#26734d',conflicting:'#a66a13',not_found:'#a33d36'};
- const excludedEvidenceKeys=new Set(['mature_height','mature_width','autumn_colour','hardiness','drainage','pruning','flowers','fruit','bark_and_twigs','branching','en','english']);
- const visibleEvidence=Object.entries(evidence||{}).filter(([key])=>!excludedEvidenceKeys.has(String(key).toLowerCase())&&!/(^|[_\.])(en|english)$/i.test(String(key)));
- const rows=visibleEvidence.map(([key,item])=>{
-  const status=item?.status||'not_found',urls=Array.isArray(item?.source_urls)?item.source_urls:[];
-  return '<div style="padding:9px 0;border-bottom:1px solid #e6ece6"><div style="display:flex;justify-content:space-between;gap:10px;flex-wrap:wrap"><strong>'+esc(labels[key]||key.replace(/_/g,' '))+'</strong><span style="font-weight:700;color:'+(statusColor[status]||'#647168')+'">'+esc(statusLabel[status]||status)+'</span></div><div style="font-size:13px;color:#526156;margin-top:4px">'+esc(item?.reason||'Geen toelichting')+'</div>'+(urls.length?'<div style="font-size:12px;margin-top:5px">'+urls.map((url,i)=>'<a href="'+esc(url)+'" target="_blank" rel="noopener noreferrer">Bron '+(i+1)+'</a>').join(' · ')+'</div>':'')+'</div>';
+ const excluded=new Set(['mature_height','mature_width','autumn_colour','hardiness','drainage','pruning','flowers','fruit','bark_and_twigs','branching','en','english']);
+ const entries=Object.entries(evidence||{}).filter(([key])=>!excluded.has(String(key).toLowerCase())&&!/(^|[_\\.])(en|english)$/i.test(String(key)));
+ const rows=entries.map(([key,item])=>{
+  const raw=typeof item==='string'?{quote:item}:item||{};
+  const urls=Array.isArray(raw.source_urls)?raw.source_urls:(raw.url?[raw.url]:[]);
+  const hasProof=!!(raw.quote||raw.citation||raw.excerpt);
+  const status=raw.status||(hasProof?'supported':'not_found');
+  const reason=raw.reason||raw.quote||raw.citation||raw.excerpt||'Geen expliciet bronbewijs teruggegeven.';
+  return '<div style="padding:9px 0;border-bottom:1px solid #e6ece6"><div style="display:flex;justify-content:space-between;gap:10px;flex-wrap:wrap"><strong>'+esc(labels[key]||key.replace(/[_.]/g,' '))+'</strong><span style="font-weight:700;color:'+(statusColor[status]||'#647168')+'">'+esc(statusLabel[status]||status)+'</span></div><div style="font-size:13px;color:#526156;margin-top:4px">'+esc(reason)+'</div>'+(urls.length?'<div style="font-size:12px;margin-top:5px">'+urls.map((url,i)=>'<a href="'+esc(url)+'" target="_blank" rel="noopener noreferrer">Bron '+(i+1)+'</a>').join(' · ')+'</div>':'')+'</div>';
  }).join('');
- const counts={supported_fields:visibleEvidence.filter(([,item])=>item?.status==='supported').map(([key])=>key),conflicting_fields:visibleEvidence.filter(([,item])=>item?.status==='conflicting').map(([key])=>key),not_found_fields:visibleEvidence.filter(([,item])=>!['supported','conflicting'].includes(item?.status)).map(([key])=>key)};
- return '<section class="tool-card" style="padding:13px;margin:10px 0"><h4 style="margin:0 0 8px;color:#294c36">Onderzoeksrapport</h4><div style="font-size:13px;color:#526156;margin-bottom:9px">Onderbouwd: '+((counts.supported_fields||[]).length)+' · Tegenstrijdig: '+((counts.conflicting_fields||[]).length)+' · Niet gevonden: '+((counts.not_found_fields||[]).length)+'</div>'+(rows||'<p class="hint">De Worker heeft geen veldbewijs teruggegeven. Dit onderzoek is niet inhoudelijk te beoordelen.</p>')+'</section>';
+ const counts={supported:entries.filter(([,v])=>(v?.status||(v?.quote||v?.citation||v?.excerpt?'supported':'not_found'))==='supported').length,conflicting:entries.filter(([,v])=>v?.status==='conflicting').length,notFound:entries.filter(([,v])=>v?.status==='not_found'||(!v?.status&&!v?.quote&&!v?.citation&&!v?.excerpt)).length};
+ return '<section class="tool-card" style="padding:13px;margin:10px 0"><h4 style="margin:0 0 8px;color:#294c36">Onderzoeksrapport</h4><div style="font-size:13px;color:#526156;margin-bottom:9px">Onderbouwd: '+counts.supported+' · Tegenstrijdig: '+counts.conflicting+' · Niet gevonden: '+counts.notFound+'</div>'+(rows||'<p class="hint">De Worker heeft geen veldbewijs teruggegeven. Dit onderzoek is niet inhoudelijk te beoordelen.</p>')+'</section>';
 }
 
 const CULTIVAR_AI_KEY_STORAGE='aa-cultivar-ai-key';
