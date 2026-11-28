@@ -547,6 +547,14 @@ async function searchCultivarSources(query, excludedUrls = []) {
   return all.slice(0, 8);
 }
 
+function isRelevantCultivarSource(source, cultivarName) {
+  const normalize = value => String(value || "").toLowerCase().normalize("NFD").replace(/[\\u0300-\\u036f]/g, "").replace(/[^a-z0-9]+/g, " ").trim();
+  const tokens = normalize(cultivarName).split(" ").filter(token => token.length >= 3 && token !== "acer" && token !== "palmatum");
+  const content = normalize((source.title || "") + " " + (source.text || "").slice(0, 5000));
+  const hasCultivar = tokens.length ? tokens.every(token => content.includes(token)) : content.includes(normalize(cultivarName));
+  return hasCultivar && /acer palmatum|japanese maple|japanse esdoorn|acer/.test(content);
+}
+
 async function readSourceCached(value) {
   const url = safeUrl(value);
   const cache = caches.default;
@@ -659,7 +667,7 @@ Geef uitsluitend geldig JSON terug met deze structuur (laat onbewezen velden weg
   "sources": []
 }
 
-GEBRUIKERSINPUT (niet onafhankelijk geverifieerd; uitsluitend gebruiken als context om de juiste informatie te zoeken, nooit als bronbewijs of letterlijk citaat):
+GEBRUIKERSINPUT (door de gebruiker aangeleverde onderzoeksinformatie; mag zelfstandig voorstellen onderbouwen. Verzin geen bron-URL. Citeer de relevante passage letterlijk en gebruik in field_evidence de speciale URL "user-input://provided-notes". Markeer deze herkomst als gebruikersinput, niet als onafhankelijk gecontroleerde webbron):
 ${userNotes || "Geen aanvullende gebruikersinput."}
 
 BRONMATERIAAL:
@@ -704,7 +712,7 @@ function missingResearchFields(data) {
   return fields;
 }
 
-function validateFieldSources(data, sources) {
+function validateFieldSources(data, sources, userNotes = "") {
   const byUrl = new Map(sources.map(source => [source.url, source]));
   const evidence = data.field_evidence && typeof data.field_evidence === "object" ? data.field_evidence : {};
   const validated = {};
@@ -712,8 +720,10 @@ function validateFieldSources(data, sources) {
   const hasProof = field => {
     const item = evidence[field];
     if (!item || typeof item !== "object" || typeof item.url !== "string" || typeof item.quote !== "string") return false;
+    if (item.quote.trim().length < 12) return false;
+    if (item.url === "user-input://provided-notes") return Boolean(userNotes.trim()) && normalize(userNotes).includes(normalize(item.quote));
     const source = byUrl.get(item.url);
-    if (!source || item.quote.trim().length < 12) return false;
+    if (!source) return false;
     const pageText = normalize(source.text);
     const quote = normalize(item.quote);
     return quote.length >= 12 && pageText.includes(quote);
@@ -1573,6 +1583,7 @@ export default {
                 const source = await readSourceCached(candidate.url);
                 if (seenUrls.has(source.url) || discoveredSources.some(item => item.url === source.url)) continue;
                 if (!source.text || source.text.length < 350) continue;
+                if (!isRelevantCultivarSource(source, cultivarName)) continue;
                 source.title = source.title || candidate.title || new URL(source.url).hostname;
                 discoveredSources.push(source);
                 break; // Eén nieuwe pagina per zoekrichting, zodat alle zes onderwerpen aan bod komen.
@@ -1645,14 +1656,14 @@ export default {
         }
         return value;
       };
-      for (const field of ["name", "accepted_name", "species", "synonyms", "plant_group", "selector_or_introducer", "introduction_year", "height", "width", "growth_rate", "growth_habit", "climate_zone", "seasons", "field_sources", "field_evidence", "description", "conflicts"]) {
+      for (const field of ["name", "accepted_name", "species", "synonyms", "plant_group", "selector_or_introducer", "introduction_year", "height_after_10_years", "width_after_10_years", "growth_rate", "growth_habit", "climate_zone", "seasons", "field_sources", "field_evidence", "description", "conflicts"]) {
         const value = cleanValue(data[field]);
         if (value === undefined) delete data[field];
         else data[field] = value;
       }
       // Oude velden uit het vorige schema worden niet meer teruggegeven.
       for (const field of ["position", "soil", "hardiness", "origin", "foliage", "autumn_colour", "growthData", "siteData"]) delete data[field];
-      data = validateFieldSources(data, allSources);
+      data = validateFieldSources(data, allSources, userNotes);
 
       // Botanische controles*
 
