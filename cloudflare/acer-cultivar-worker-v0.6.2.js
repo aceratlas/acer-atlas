@@ -1555,9 +1555,12 @@ export default {
       if (discoveryEnabled) {
         const searchName = cultivarName || sources[0]?.title || "Acer palmatum";
         const searchQueries = [
-          { field: "growth", query: `"${searchName}" Acer palmatum cultivar "after 10 years" height width growth rate habit` },
-          { field: "history", query: `"${searchName}" Acer palmatum cultivar introduced by selected by introduction year` },
-          { field: "seasons_group", query: `"${searchName}" Acer palmatum spring summer autumn winter foliage plant group` }
+          { field: "height_width_after_10_years", query: `"${searchName}" Acer palmatum cultivar "after 10 years" height width` },
+          { field: "growth", query: `"${searchName}" Acer palmatum cultivar growth rate growth habit branching form` },
+          { field: "selector_introduction", query: `"${searchName}" Acer palmatum selected by introduced by originator introduction year` },
+          { field: "identity_group", query: `"${searchName}" Acer palmatum cultivar plant group species synonyms origin` },
+          { field: "spring_summer", query: `"${searchName}" Acer palmatum spring foliage summer leaf characteristics` },
+          { field: "autumn_winter", query: `"${searchName}" Acer palmatum autumn colour winter appearance foliage` }
         ];
         for (const searchItem of searchQueries) {
           if (sources.length + discoveredSources.length >= MAX_SOURCE_COUNT) break;
