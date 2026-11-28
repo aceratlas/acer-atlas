@@ -1,4 +1,4 @@
-<!doctype html><html lang="nl" data-acer-atlas-manager-version="0.4.43"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Acer Atlas · Datamanager v0.4.43</title><style>
+<!doctype html><html lang="nl" data-acer-atlas-manager-version="0.4.44"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Acer Atlas · Datamanager v0.4.44</title><style>
 :root{font-family:Inter,Segoe UI,Arial,sans-serif;color:#202820;background:#f4f6f2}
 *{box-sizing:border-box}body{margin:0;background:#f4f6f2;color:#202820}
 button,input,textarea,select{font:inherit}button{cursor:pointer}
@@ -95,11 +95,13 @@ label{display:block;font-size:12px;font-weight:700;color:#526156;margin:12px 0 5
 .usage-meta{display:flex;gap:18px;flex-wrap:wrap;font-size:13px;color:#536457}
 .usage-note{font-size:12px;color:#68756b;line-height:1.45;margin-top:10px}
 .usage-status{font-size:12px;color:#68756b}
+
+.processing-overlay{position:fixed;inset:0;z-index:1000;background:rgba(17,35,25,.62);display:flex;align-items:center;justify-content:center;padding:20px}.processing-overlay.hidden{display:none!important}.processing-box{width:min(440px,100%);background:#fff;border:1px solid #dce4dc;border-radius:18px;padding:24px;box-shadow:0 18px 60px #0004;text-align:center}.processing-spinner{width:42px;height:42px;border:4px solid #e3ebe3;border-top-color:#38865b;border-radius:50%;animation:aa-spin .8s linear infinite;margin:0 auto 15px}.processing-title{font-size:17px;font-weight:800;color:#193b2e}.processing-message{font-size:13px;color:#647168;margin-top:7px;line-height:1.5}.processing-track{height:8px;background:#e8eee7;border-radius:99px;overflow:hidden;margin-top:18px}.processing-track:after{content:"";display:block;height:100%;width:38%;background:#38865b;border-radius:99px;animation:aa-progress 1.5s ease-in-out infinite}@keyframes aa-spin{to{transform:rotate(360deg)}}@keyframes aa-progress{0%{transform:translateX(-110%)}100%{transform:translateX(290%)}}@media(prefers-reduced-motion:reduce){.processing-spinner,.processing-track:after{animation:none}}
 </style></head><body>
 <header class="hero">
  <div class="top">
   <div class="brand"><span class="mark" aria-hidden="true">🍁</span><div><h1>ACER ATLAS</h1><small>Databasebeheer</small></div></div>
-  <div class="top-right"><a class="app-link" href="./index.html#collection">← Terug naar Acer Atlas</a><button id="backBtn" class="back-btn" type="button">← Terug</button><span class="version">DATAMANAGER v0.4.43</span></div>
+  <div class="top-right"><a class="app-link" href="./index.html#collection">← Terug naar Acer Atlas</a><button id="backBtn" class="back-btn" type="button">← Terug</button><span class="version">DATAMANAGER v0.4.44</span></div>
  </div>
 </header>
 <main class="page">
@@ -184,11 +186,14 @@ label{display:block;font-size:12px;font-weight:700;color:#526156;margin:12px 0 5
   <div class="toolbar"><button class="primary" id="apply">Wijzigingen toepassen</button><button id="cancelFlyout">Annuleren</button></div>
  </section>
 </div>
-<div class="footer"><span class="footer-version">Acer Atlas Datamanager v0.4.43</span> · Opslaan bewaart je wijzigingen lokaal als concept. Publiceren naar GitHub doe je apart wanneer je klaar bent.</div>
+<div class="footer"><span class="footer-version">Acer Atlas Datamanager v0.4.44</span> · Opslaan bewaart je wijzigingen lokaal als concept. Publiceren naar GitHub doe je apart wanneer je klaar bent.</div>
+<div id="processingOverlay" class="processing-overlay hidden" role="status" aria-live="polite" aria-label="Verwerking bezig"><div class="processing-box"><div class="processing-spinner" aria-hidden="true"></div><div class="processing-title" id="processingTitle">Even geduld</div><div class="processing-message" id="processingMessage">De Datamanager is bezig met verwerken.</div><div class="processing-track" aria-hidden="true"></div></div></div>
 <script>/* De actuele database wordt rechtstreeks uit cultivar-database.json geladen. */</script>
 <script>
 let db=null, selected=null, suggestionIndex=-1, suggestionItems=[], activeFlyout='basis', pendingPhotos=[];
 const MANAGER_STATE_KEY='aa-db-manager-view-state';
+function showProcessing(title,message){const overlay=$('processingOverlay');if(!overlay)return;$('processingTitle').textContent=title||'Even geduld';$('processingMessage').textContent=message||'De Datamanager is bezig met verwerken.';overlay.classList.remove('hidden');}
+function hideProcessing(){ $('processingOverlay')?.classList.add('hidden'); }
 function managerFieldSnapshot(){const values={};document.querySelectorAll('#flyoutFields input:not([type=file]),#flyoutFields textarea,#flyoutFields select').forEach((el,i)=>{const key=el.id?'#'+el.id:el.dataset.photo?'photo:'+el.dataset.photo+':'+i:el.dataset.key?'key:'+el.dataset.key+':'+i:'field:'+i;values[key]=el.value;});return values;}
 function rememberManagerState(){try{const state={selected:selected||null,page:$('detailPage').classList.contains('hidden')?'search':'detail',search:$('search').value||'',scroll:window.scrollY||0,flyoutOpen:!$('flyoutBackdrop').classList.contains('hidden'),flyout:activeFlyout,flyoutScroll:$('flyoutPanel')?.scrollTop||0,fields:managerFieldSnapshot(),newCultivarOpen:!$('newCultivarPanel').classList.contains('hidden'),rawOpen:!$('rawWrap').classList.contains('hidden'),tokensOpen:document.querySelector('details.tool-card')?.open||false,aiPanelOpen:!$('aiUpdatePanel')?.classList.contains('hidden'),aiLinks:[...($('aiUpdateLinks')?.querySelectorAll('.ai-update-source-url')||[])].map(x=>x.value),newLinks:[...($('newCultivarLinks')?.querySelectorAll('.cultivar-source-url')||[])].map(x=>x.value),newName:$('newCultivarName')?.value||'',newNameManual:$('newCultivarName')?.dataset.manual||''};sessionStorage.setItem(MANAGER_STATE_KEY,JSON.stringify(state));}catch(e){}}
 function restoreManagerState(){let s;try{s=JSON.parse(sessionStorage.getItem(MANAGER_STATE_KEY)||'null')}catch(e){}if(!s)return;
@@ -292,7 +297,7 @@ function renderEditor(){
   for(const value of urls){try{const u=new URL(value);if(!['http:','https:'].includes(u.protocol))throw 0;}catch(e){$('detailStatus').textContent='Ongeldige bronlink: '+value;return;}}
   let key=localStorage.getItem(CULTIVAR_AI_KEY_STORAGE)||sessionStorage.getItem(CULTIVAR_AI_KEY_STORAGE)||'';
   if(!key){key=prompt('Voer de Cloudflare AI-sleutel (ATLAS_WORKER_KEY) in:','')||'';if(!key)return;}
-  const btn=$('aiRunUpdate');btn.disabled=true;btn.textContent='AI verwerkt…';
+  const btn=$('aiRunUpdate');btn.disabled=true;btn.textContent='AI verwerkt…';showProcessing('Cultivar aanvullen','De AI zoekt informatie, controleert bronnen en vergelijkt de gevonden gegevens. Dit kan even duren.');
   try{
    const proposal=JSON.parse(JSON.stringify(record));
    $('detailStatus').textContent='AI zoekt zelfstandig bij de afgesproken kwekers en vult alle cultivarvelden aan…';
@@ -336,7 +341,7 @@ function renderEditor(){
    $('aiReviewCancel').onclick=()=>{review.classList.add('hidden');$('detailStatus').textContent='Voorstel geannuleerd. De cultivar is niet gewijzigd.';};
    const sourceCount=proposal.sources.length,foundCount=Number(payload.discovered_source_count||0),rejectedCount=sourceCheck.rejected.length;$('detailStatus').textContent='AI-voorstel klaar. '+sourceCount+' gecontroleerde bronvermeldingen gekoppeld ('+foundCount+' zelf gevonden). '+(rejectedCount?rejectedCount+' niet-passende of niet-goedgekeurde zoekresultaten genegeerd. ':'')+'Controleer de velden en vink aan wat je wilt overnemen.';
   }catch(error){const message=error?.message||String(error);$('detailStatus').textContent=message==='Failed to fetch'?'AI-Worker niet bereikbaar vanuit deze pagina (netwerk/CORS). De database is niet aangepast. Probeer opnieuw via https://aceratlas.github.io/acer-atlas/database-manager.html.':'AI-update niet voltooid: '+message;}
-  finally{btn.disabled=false;btn.textContent='Start AI-update';}
+  finally{hideProcessing();btn.disabled=false;btn.textContent='Start AI-update';}
  };
 
  $('saveCultivar').onclick=async()=>{
@@ -731,7 +736,7 @@ $('fetchCultivarInfo').onclick=async()=>{
  if(urls.length>5){$('newCultivarInfo').textContent='Maximaal vijf eigen bronlinks zijn toegestaan.';return;}
  const norm=v=>String(v||'').trim().toLocaleLowerCase('nl');
  if(db.records.some(r=>norm(r.name)===norm(name)||norm(r.accepted_name)===norm(name)||(r.synonyms||[]).some(x=>norm(x)===norm(name)))){$('newCultivarInfo').textContent='Deze naam bestaat mogelijk al. Open het bestaande cultivarrecord en gebruik Aanvullen.';return;}
- btn.disabled=true;const original=btn.textContent;btn.textContent='AI onderzoekt cultivar…';
+ btn.disabled=true;const original=btn.textContent;btn.textContent='AI onderzoekt cultivar…';showProcessing('Nieuwe cultivar onderzoeken','De AI zoekt kwekersbronnen, verzamelt informatie en controleert de gevonden gegevens. Dit kan even duren.');
  try{
   if($('rememberCultivarAiKey').checked)localStorage.setItem(CULTIVAR_AI_KEY_STORAGE,key);else sessionStorage.setItem(CULTIVAR_AI_KEY_STORAGE,key);
   $('newCultivarInfo').textContent='AI zoekt zelfstandig naar kwekersbronnen en onderzoekt de cultivar. Dit kan even duren…';
@@ -777,7 +782,7 @@ $('fetchCultivarInfo').onclick=async()=>{
   $('status').textContent='AI-onderzoek toegevoegd als lokaal concept. '+record.sources.length+' bron(nen) gekoppeld. Controleer alle gegevens voordat je publiceert.';
   $('newCultivarInfo').textContent='';
  }catch(error){$('newCultivarInfo').textContent='AI-onderzoek niet voltooid: '+(error?.message||String(error));}
- finally{btn.disabled=false;btn.textContent=original;}
+ finally{hideProcessing();btn.disabled=false;btn.textContent=original;}
 };
 $('prepareCultivar').onclick=()=>{
  if(!db){alert('Laad eerst een database.');return;}
