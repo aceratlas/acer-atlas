@@ -14,7 +14,7 @@ const corsHeaders = {
 
 
 
-const WORKER_VERSION = "0.6.2";
+const WORKER_VERSION = "0.6.3";
 
 const AI_MODEL = "@cf/zai-org/glm-4.7-flash";
 
@@ -590,7 +590,7 @@ function orderSourcesByPriority(sources) {
   );
 }
 
-function buildCultivarPrompt(name, sources) {
+function buildCultivarPrompt(name, sources, userNotes = "") {
   const sourceText = sources.map((source, index) =>
     "BRON " + (index + 1) +
     "\nURL: " + source.url +
@@ -604,7 +604,7 @@ Onderzoek uitsluitend de cultivar: ${name}.
 HOOFDREGEL: een veld mag alleen worden ingevuld als een aangeleverde bronpagina expliciet informatie over precies deze cultivar bevat. Algemene Acer palmatum-informatie, aannames, zoekresultaatsnippets en kennis uit je eigen modelgeheugen zijn geen bewijs.
 
 Beoordeel elk kenmerk afzonderlijk:
-- Hoogte en breedte: behoud de context exact. Maak onderscheid tussen hoogte na 10 jaar, volwassen hoogte en maximale hoogte. Zet een volwassen maat nooit om naar een 10-jaarsmaat.
+- Hoogte en breedte: vul uitsluitend hoogte na 10 jaar en breedte na 10 jaar in. Gebruik alleen een bron die expliciet een maat na 10 jaar vermeldt. Een volwassen eindmaat, maximale maat of maat zonder tijdscontext mag NOOIT in deze velden terechtkomen. Leid geen 10-jaarsmaat af en reken geen andere maat om. Als de bron alleen een volwassen of contextloze maat geeft, laat het 10-jaarsveld leeg.
 - Groeisnelheid en groeivorm: alleen invullen als de bron dit expliciet ondersteunt. Leid 'compact' niet af tot 'bolvormig' of 'langzaam'.
 - Selecteur, ontdekker en introduceur: gebruik de juiste rol. Noem Dick van der Maat niet automatisch voor iedere cultivar die op zijn website staat.
 - Introductiejaar: publicatie-, prijs- of auteursrechtjaar is geen introductiejaar.
@@ -633,16 +633,16 @@ Geef uitsluitend geldig JSON terug met deze structuur (laat onbewezen velden weg
   "plant_group": "",
   "selector_or_introducer": "",
   "introduction_year": 0,
-  "height": "",
-  "width": "",
+  "height_after_10_years": "",
+  "width_after_10_years": "",
   "growth_rate": "",
   "growth_habit": "",
   "climate_zone": "",
   "description": "",
   "seasons": {"spring": "", "summer": "", "autumn": "", "winter": ""},
   "field_evidence": {
-    "height": {"url": "", "quote": ""},
-    "width": {"url": "", "quote": ""},
+    "height_after_10_years": {"url": "", "quote": ""},
+    "width_after_10_years": {"url": "", "quote": ""},
     "growth_rate": {"url": "", "quote": ""},
     "growth_habit": {"url": "", "quote": ""},
     "selector_or_introducer": {"url": "", "quote": ""},
@@ -659,12 +659,15 @@ Geef uitsluitend geldig JSON terug met deze structuur (laat onbewezen velden weg
   "sources": []
 }
 
+GEBRUIKERSINPUT (niet onafhankelijk geverifieerd; uitsluitend gebruiken als context om de juiste informatie te zoeken, nooit als bronbewijs of letterlijk citaat):
+${userNotes || "Geen aanvullende gebruikersinput."}
+
 BRONMATERIAAL:
 ${sourceText}`;
 }
 
-async function runCultivarAi(env, name, sources) {
-  const prompt = buildCultivarPrompt(name, sources);
+async function runCultivarAi(env, name, sources, userNotes = "") {
+  const prompt = buildCultivarPrompt(name, sources, userNotes);
   const result = await env.AI.run(AI_MODEL, {
     messages: [
       {
@@ -690,7 +693,7 @@ function missingResearchFields(data) {
   const fields = [];
   const checks = {
     seasons: [data.seasons?.spring, data.seasons?.summer, data.seasons?.autumn, data.seasons?.winter],
-    growth: [data.height, data.width, data.growth_rate, data.growth_habit],
+    growth: [data.height_after_10_years, data.width_after_10_years, data.growth_rate, data.growth_habit],
     history: [data.selector_or_introducer, data.introduction_year],
     plant_group: [data.plant_group],
     climate_zone: [data.climate_zone]
@@ -715,7 +718,7 @@ function validateFieldSources(data, sources) {
     const quote = normalize(item.quote);
     return quote.length >= 12 && pageText.includes(quote);
   };
-  const simpleFields = ["height","width","growth_rate","growth_habit","selector_or_introducer","introduction_year","plant_group","climate_zone","description"];
+  const simpleFields = ["height_after_10_years","width_after_10_years","growth_rate","growth_habit","selector_or_introducer","introduction_year","plant_group","climate_zone","description"];
   for (const field of simpleFields) {
     if (data[field] !== undefined && data[field] !== null && data[field] !== "" && hasProof(field)) {
       validated[field] = evidence[field].url;
@@ -1552,7 +1555,7 @@ export default {
       if (discoveryEnabled) {
         const searchName = cultivarName || sources[0]?.title || "Acer palmatum";
         const searchQueries = [
-          { field: "growth", query: `"${searchName}" Acer palmatum cultivar height width growth rate habit` },
+          { field: "growth", query: `"${searchName}" Acer palmatum cultivar "after 10 years" height width growth rate habit` },
           { field: "history", query: `"${searchName}" Acer palmatum cultivar introduced by selected by introduction year` },
           { field: "seasons_group", query: `"${searchName}" Acer palmatum spring summer autumn winter foliage plant group` }
         ];
@@ -1596,7 +1599,8 @@ export default {
           discovered_source_count: 0
         }, 422);
       }
-      let data = await runCultivarAi(env, cultivarName, allSources);
+      const userNotes = String(body.user_notes || "").trim().slice(0, 12000);
+      let data = await runCultivarAi(env, cultivarName, allSources, userNotes);
 
       // Geen tweede zoekronde binnen dezelfde Worker-aanroep: dit voorkomt overschrijding
       // van Cloudflare's subrequestlimiet. Ontbrekende velden blijven expliciet onbekend.
