@@ -752,6 +752,7 @@ function validateFieldSources(data, sources, userNotes = "") {
   data.field_sources = validated;
   data.field_evidence = Object.fromEntries(Object.entries(evidence).filter(([key]) => validated[key] || (key === "synonyms" && validated.synonyms)));
   data.sources = sources.map(source => ({ title: source.title, url: source.url }));
+  if (userNotes.trim()) data.sources.push({ title: "Door gebruiker aangeleverde tekst", url: "user-input://provided-notes", type: "user_input" });
   return data;
 }
 
